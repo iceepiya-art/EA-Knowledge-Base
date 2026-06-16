@@ -1,0 +1,9 @@
+{
+  "_comment": "Copy this to telegram_config.json and fill in real values. Never commit telegram_config.json to git.",
+  "bot_token": "YOUR_BOT_TOKEN_HERE",
+  "chat_id": "YOUR_CHAT_ID_HERE",
+  "alert_on_risk_breach": true,
+  "alert_on_daily_summary": true,
+  "alert_on_new_signal": true,
+  "alert_on_script_error": true
+}

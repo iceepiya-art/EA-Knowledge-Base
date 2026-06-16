@@ -1,0 +1,8 @@
+EA Knowledge Brain Server Manager
+  http://localhost:5050
+  GET  /api/manager/status
+  POST /api/manager/start
+  POST /api/manager/stop
+  POST /api/manager/restart
+ * Serving Flask app 'server_manager'
+ * Debug mode: off

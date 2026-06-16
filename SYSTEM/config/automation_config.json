@@ -1,0 +1,100 @@
+{
+  "_comment": "QTrade OS safe semi-automation config. This layer imports data, writes reports, sends alerts, and logs actions only. It must never place trades, close trades, increase lots, change EA settings, deploy live systems, or override risk.",
+  "enabled": true,
+  "dry_run": false,
+  "human_approval_required_for": [
+    "trade_entry",
+    "trade_exit",
+    "lot_increase",
+    "ea_config_change",
+    "live_deployment",
+    "risk_override"
+  ],
+  "paths": {
+    "mt5_watch_folder": "DATA/raw/mt5_exports",
+    "daily_reports": "REPORTS/daily",
+    "weekly_reports": "REPORTS/weekly",
+    "ea_reports": "REPORTS/ea",
+    "risk_reports": "REPORTS/risk",
+    "session_reports": "REPORTS/session",
+    "pair_reports": "REPORTS/pair",
+    "obsidian_reports": "10_Research/05_Analytics_Insights",
+    "automation_state": "AUTOMATION/state",
+    "automation_logs": "AUTOMATION/logs"
+  },
+  "import": {
+    "default_strategy": "Unknown",
+    "default_symbol": "XAUUSD",
+    "broker_tz": 2,
+    "stable_file_seconds": 20,
+    "filename_rules": [
+      {
+        "contains": "qfield",
+        "strategy": "QField",
+        "symbol": "XAUUSD"
+      },
+      {
+        "contains": "ftmo",
+        "strategy": "FTMO",
+        "symbol": "XAUUSD"
+      },
+      {
+        "contains": "manual",
+        "strategy": "Manual",
+        "symbol": "XAUUSD"
+      },
+      {
+        "contains": "hedgegrid",
+        "strategy": "HedgeGrid_V23",
+        "symbol": "XAUUSD"
+      },
+      {
+        "contains": "smc",
+        "strategy": "SMC_Universal_EA",
+        "symbol": "XAUUSD"
+      },
+      {
+        "contains": "quantumqueen",
+        "strategy": "QuantumQueen",
+        "symbol": "XAUUSD"
+      },
+      {
+        "contains": "scalper",
+        "strategy": "NQ-GC_Scalper",
+        "symbol": "NQ"
+      }
+    ]
+  },
+  "alerts": {
+    "telegram_enabled": false,
+    "daily_summary_enabled": true,
+    "weekly_summary_enabled": true,
+    "risk_alerts_enabled": true,
+    "missing_data_enabled": true,
+    "abnormal_ea_enabled": true,
+    "missing_csv_after_hours": 36,
+    "daily_drawdown_warning_pct": 1.5,
+    "weekly_drawdown_warning_pct": 3.5,
+    "consecutive_loss_warning": 2,
+    "abnormal_ea_min_trades": 5,
+    "abnormal_ea_loss_usd": 500.0,
+    "abnormal_ea_winrate_drop_pct": 25.0,
+    "degradation_recent_days": 7,
+    "degradation_baseline_days": 30,
+    "alert_cooldown_minutes": 240
+  },
+  "reports": {
+    "account_balance": 50000.0,
+    "include_trade_links": true,
+    "include_ai_prompt": true,
+    "continuous_interval_seconds": 300,
+    "daily_review_hour": 23,
+    "weekly_review_day": "Sunday",
+    "weekly_review_hour": 18,
+    "generate_ea_reports": true,
+    "generate_risk_reports": true,
+    "generate_session_reports": true,
+    "generate_pair_reports": true,
+    "export_research_intelligence": true
+  }
+}

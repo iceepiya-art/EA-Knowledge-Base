@@ -1,0 +1,2544 @@
+{
+  "channels": {
+    "UCH8rO5y50N3kix9ORXot1eg": {
+      "channel_id": "UCH8rO5y50N3kix9ORXot1eg",
+      "channel_name": "How Can I Trade",
+      "last_scanned_at": "2026-05-24T14:18:11+07:00",
+      "url": "https://www.youtube.com/@howcanitrade"
+    },
+    "UCVKlLqRyS1eIGbGRRYNbTfA": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "last_scanned_at": "2026-05-31T21:14:35+07:00",
+      "url": "https://www.youtube.com/@Ninja25-Fx"
+    },
+    "UCmwLnxloCckJh4eNMP7yh6A": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "last_scanned_at": "2026-05-24T14:50:04+07:00",
+      "url": "https://www.youtube.com/@capfx"
+    }
+  },
+  "version": 1,
+  "videos": {
+    "-CCVMiUko_M": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 454.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:45+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\30cacb267302.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "SMC x PATTERN REVERSAL [NINJATHAI]",
+      "transcript_hash": "30cacb267302",
+      "url": "https://www.youtube.com/watch?v=-CCVMiUko_M",
+      "video_id": "-CCVMiUko_M"
+    },
+    "0N9a3Dfogo4": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 2552.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:18:21+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "[LIVE] Mini Bootcamp 3/3 [Price Cycle]",
+      "url": "https://www.youtube.com/watch?v=0N9a3Dfogo4",
+      "video_id": "0N9a3Dfogo4"
+    },
+    "0Z1Kkes8e7k": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 2563.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:13+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\1d7e0f37f1d9.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Pattern H&S / Smc / S&D (Model Sell Setup) By.NinjaThai",
+      "transcript_hash": "1d7e0f37f1d9",
+      "url": "https://www.youtube.com/watch?v=0Z1Kkes8e7k",
+      "video_id": "0Z1Kkes8e7k"
+    },
+    "0cj7OUd6d0U": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:18:41+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2024-09-16T14:02:31+00:00",
+      "status": "needs_transcript_check",
+      "title": "SMC Hybrid เทรดสด EP.18 กัปตัน เทรดดิ้ง",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=0cj7OUd6d0U",
+      "video_id": "0cj7OUd6d0U"
+    },
+    "1EXJtCZx-JQ": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 1964.0,
+      "error": "yt-dlp 429 for 1EXJtCZx-JQ: WARNING: The extractor specified to use impersonation for this download, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for ",
+      "failure_reason": "rate_limited",
+      "last_processed_at": "2026-06-13T21:50:31+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\7611e84ebc75.md"
+      ],
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "Price Cycle & S M C By.NinjaThai",
+      "transcript_hash": "7611e84ebc75",
+      "url": "https://www.youtube.com/watch?v=1EXJtCZx-JQ",
+      "video_id": "1EXJtCZx-JQ"
+    },
+    "1MiF19CBTOA": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "yt-dlp 429 for 1MiF19CBTOA: WARNING: The extractor specified to use impersonation for this download, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for ",
+      "failure_reason": "rate_limited",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:50:48+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\d2a628a55560.md"
+      ],
+      "published": "2026-04-26T13:59:50+00:00",
+      "status": "needs_transcript_check",
+      "title": "SMC x PATTERN W&M : กลับตัว | ตามเทรน | เบรกเทรนไลน์",
+      "transcript_hash": "d2a628a55560",
+      "url": "https://www.youtube.com/watch?v=1MiF19CBTOA",
+      "video_id": "1MiF19CBTOA"
+    },
+    "1OABJD4RIt0": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:52:40+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\2a90bd0d4563.md"
+      ],
+      "published": "2026-05-21T08:36:59+00:00",
+      "status": "structured_extracted",
+      "title": "SMC แบบนินจาเข้าใจ Pattern W ในคลิปเดียว",
+      "transcript_hash": "4602c8f20f9d",
+      "url": "https://www.youtube.com/watch?v=1OABJD4RIt0",
+      "video_id": "1OABJD4RIt0"
+    },
+    "1OwOnYSbTd8": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 3950.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:15:26+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "EP.9 RR หรือ Risk-Reward Ratio สิ่งที่ควรรู้ และคำแนะนำ By. NINJA , RIDER , RVT",
+      "url": "https://www.youtube.com/watch?v=1OwOnYSbTd8",
+      "video_id": "1OwOnYSbTd8"
+    },
+    "1UXvqB6M7ZE": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 389.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:32+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\22ac6c959f1e.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "(EURGBP)  SMC strategy + multiple time frame  Setup Trade NinjaThai 9.5RR",
+      "transcript_hash": "22ac6c959f1e",
+      "url": "https://www.youtube.com/watch?v=1UXvqB6M7ZE",
+      "video_id": "1UXvqB6M7ZE"
+    },
+    "1ZlLl_JM6i8": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 67.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:26:12+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\d62e0d7f6af6.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Consistently Ninja Thai",
+      "transcript_hash": "d62e0d7f6af6",
+      "url": "https://www.youtube.com/watch?v=1ZlLl_JM6i8",
+      "video_id": "1ZlLl_JM6i8"
+    },
+    "1b4c__Oehbs": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 772.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:27:52+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\ece8204f966e.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "(Multi Time frame) แนวโน้ม 15 นาที และ เข้าเทรดที่ 1 นาที โดยใช้ Price Cycle / NINJA THAI",
+      "transcript_hash": "ece8204f966e",
+      "url": "https://www.youtube.com/watch?v=1b4c__Oehbs",
+      "video_id": "1b4c__Oehbs"
+    },
+    "1vn1MWnqMBk": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 281.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:20+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\b7c873106b82.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Trade setup Forex \"  How to use \" Supply (DBD) By. NinjaThai",
+      "transcript_hash": "3b096cfccabf",
+      "url": "https://www.youtube.com/watch?v=1vn1MWnqMBk",
+      "video_id": "1vn1MWnqMBk"
+    },
+    "1y5qg26AZ6Q": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 4039.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:15:43+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "EP.8  Smc Trading Strategy & Market Structure AnalysisBy.NinjaThai",
+      "url": "https://www.youtube.com/watch?v=1y5qg26AZ6Q",
+      "video_id": "1y5qg26AZ6Q"
+    },
+    "2SE5kmHDGvU": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:09:44+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2025-05-12T16:15:47+00:00",
+      "status": "needs_transcript_check",
+      "title": "Trade & Teach with Capt. เทรดไป สอนไป",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=2SE5kmHDGvU",
+      "video_id": "2SE5kmHDGvU"
+    },
+    "2gW7rUQawPU": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 476.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:11+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\6e5ad473fbaf.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "EP.1 PATTERN  BASIC SETUP (PATTERN SETUP FVG+SUPPLY)",
+      "transcript_hash": "6e5ad473fbaf",
+      "url": "https://www.youtube.com/watch?v=2gW7rUQawPU",
+      "video_id": "2gW7rUQawPU"
+    },
+    "2hVcY9lm3DI": {
+      "channel_id": "UCH8rO5y50N3kix9ORXot1eg",
+      "channel_name": "How Can I Trade",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T13:34:43+07:00",
+      "last_processed_at": "2026-06-13T12:10:01+07:00",
+      "last_seen_at": "2026-05-24T14:18:11+07:00",
+      "note_paths": [],
+      "published": "2025-12-03T17:51:17+00:00",
+      "status": "needs_transcript_check",
+      "title": "เทรดยังไงก็ขาดทุน! ถ้ายังไม่รู้การหา Daily Bias (ดูคลิปจบเข้าใจทันที!)",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=2hVcY9lm3DI",
+      "video_id": "2hVcY9lm3DI"
+    },
+    "2leAoTP2tQc": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 291.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-06T21:39:59+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\c74c50b6ede4.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "KEYLEVEL & ORDER FLOW FOLLOW TREND NINJATHAI",
+      "transcript_hash": "c74c50b6ede4",
+      "url": "https://www.youtube.com/watch?v=2leAoTP2tQc",
+      "video_id": "2leAoTP2tQc"
+    },
+    "2vh3uG24EnM": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 376.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:04+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\163c73149b4f.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "[EP3] Price Cycle / S&D / SMC Hybrid / NINJATHAI",
+      "transcript_hash": "163c73149b4f",
+      "url": "https://www.youtube.com/watch?v=2vh3uG24EnM",
+      "video_id": "2vh3uG24EnM"
+    },
+    "39uSIyXTkus": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 464.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:31+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\228dcc29b9a2.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "BACKTEST NQ1 (SMC) By.NinjaThai",
+      "transcript_hash": "3e36ce60a5e3",
+      "url": "https://www.youtube.com/watch?v=39uSIyXTkus",
+      "video_id": "39uSIyXTkus"
+    },
+    "3DHLR7a2wkw": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 1172.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:01+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\5c8034e095fb.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "พลังของความล้มเหลว แนวคิดการเทรด และสร้างระบบขั้นต้น NINJA THAI",
+      "transcript_hash": "5c8034e095fb",
+      "url": "https://www.youtube.com/watch?v=3DHLR7a2wkw",
+      "video_id": "3DHLR7a2wkw"
+    },
+    "3FBapzGnd68": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 125.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:28:04+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\f643e84e410e.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Smc Trading Strategy M3 + RE-DIS (NinjaThai)",
+      "transcript_hash": "5b284399914b",
+      "url": "https://www.youtube.com/watch?v=3FBapzGnd68",
+      "video_id": "3FBapzGnd68"
+    },
+    "4SZaorMRztU": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 301.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:27+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\7e31081bf32e.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "[SMC] ฉบับ NINJA THAI 2025 (5 นาที)",
+      "transcript_hash": "7e31081bf32e",
+      "url": "https://www.youtube.com/watch?v=4SZaorMRztU",
+      "video_id": "4SZaorMRztU"
+    },
+    "5wdW3UWfjE0": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:51:47+07:00",
+      "last_seen_at": "2026-05-24T21:04:28+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\0f24c2c87ccf.md"
+      ],
+      "published": "2026-02-28T05:30:34+00:00",
+      "status": "structured_extracted",
+      "title": "Ninja Setup : FVG + OB + IMB เข้าไม้คมแบบเงียบๆ",
+      "transcript_hash": "0f24c2c87ccf",
+      "url": "https://www.youtube.com/watch?v=5wdW3UWfjE0",
+      "video_id": "5wdW3UWfjE0"
+    },
+    "5yutcleHAAM": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 71.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:51:40+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\03c890740e6a.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "ขอให้ทุกคนโชคดี",
+      "transcript_hash": "03c890740e6a",
+      "url": "https://www.youtube.com/watch?v=5yutcleHAAM",
+      "video_id": "5yutcleHAAM"
+    },
+    "6Ou5N82IRg8": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 366.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:40+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\9b0ea6afc402.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "BOSe + Pullback เทรดง่ายๆภายใน 6 นาที (NINJA THAI)",
+      "transcript_hash": "9b0ea6afc402",
+      "url": "https://www.youtube.com/watch?v=6Ou5N82IRg8",
+      "video_id": "6Ou5N82IRg8"
+    },
+    "6VqQRH3q2Xo": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 2516.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:24:57+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\4debcd5c40be.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Structure ChoCH + SOS และการใช้ Break block ในการเข้าเทรด",
+      "transcript_hash": "4debcd5c40be",
+      "url": "https://www.youtube.com/watch?v=6VqQRH3q2Xo",
+      "video_id": "6VqQRH3q2Xo"
+    },
+    "6r14hHOX3OA": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 421.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:51:46+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\0efcb03a7aa7.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "[EP2] SMC Confirm Model (NINJATHAI)",
+      "transcript_hash": "0efcb03a7aa7",
+      "url": "https://www.youtube.com/watch?v=6r14hHOX3OA",
+      "video_id": "6r14hHOX3OA"
+    },
+    "9eN6hUTC4fw": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 5121.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:16:47+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "EP.2 Order Block By.NinjaThai",
+      "url": "https://www.youtube.com/watch?v=9eN6hUTC4fw",
+      "video_id": "9eN6hUTC4fw"
+    },
+    "A2pps6NQCG8": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 352.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:50+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\3af5dbe6b827.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "SMC x Pattern 5M สำหรับคนอยากเทรดให้ชัด",
+      "transcript_hash": "3af5dbe6b827",
+      "url": "https://www.youtube.com/watch?v=A2pps6NQCG8",
+      "video_id": "A2pps6NQCG8"
+    },
+    "AHQ81XCZ_uo": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:52:28+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\2026-04-18_AHQ81XCZ_uo.md"
+      ],
+      "published": "2026-04-18T07:01:41+00:00",
+      "status": "structured_extracted",
+      "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+      "transcript_hash": "628e9e487d7d",
+      "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+      "video_id": "AHQ81XCZ_uo"
+    },
+    "AK_d6lugoFc": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 544.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:28:05+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\f75c858ade90.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "BSL Buy Side Liquidity — รหัสลับของตลาดที่สถาบัน (NinjaThai)",
+      "transcript_hash": "f75c858ade90",
+      "url": "https://www.youtube.com/watch?v=AK_d6lugoFc",
+      "video_id": "AK_d6lugoFc"
+    },
+    "AdikVPRfosU": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 37.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:44+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\a2ccc0e36d8f.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Fibo Targets Update Lv. (MTF M10/M5/M3/M1) By.NinjaThai",
+      "transcript_hash": "a2ccc0e36d8f",
+      "url": "https://www.youtube.com/watch?v=AdikVPRfosU",
+      "video_id": "AdikVPRfosU"
+    },
+    "BCutBEtG10Y": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:10:19+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2025-05-21T14:28:32+00:00",
+      "status": "needs_transcript_check",
+      "title": "Trade & Teach with Capt. เทรดไป สอนไป",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=BCutBEtG10Y",
+      "video_id": "BCutBEtG10Y"
+    },
+    "BTlmtbY6hsc": {
+      "channel_id": "UCH8rO5y50N3kix9ORXot1eg",
+      "channel_name": "How Can I Trade",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T13:34:43+07:00",
+      "last_processed_at": "2026-06-13T12:10:35+07:00",
+      "last_seen_at": "2026-05-24T14:18:11+07:00",
+      "note_paths": [],
+      "published": "2023-08-04T11:00:13+00:00",
+      "status": "needs_transcript_check",
+      "title": "ผมลอง Backtest ระบบ ICT และนี่คือผลลัพธ์ที่ได้...",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=BTlmtbY6hsc",
+      "video_id": "BTlmtbY6hsc"
+    },
+    "C7YQftdI7bw": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 2660.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:38+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\992e9b08ee87.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Market srtucture + Trendline Break By.Ninja",
+      "transcript_hash": "992e9b08ee87",
+      "url": "https://www.youtube.com/watch?v=C7YQftdI7bw",
+      "video_id": "C7YQftdI7bw"
+    },
+    "C9_pOkN1aAU": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 1354.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:51:51+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\1074aa5e334c.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "SMC x S&D BY.NINJATHAI",
+      "transcript_hash": "1074aa5e334c",
+      "url": "https://www.youtube.com/watch?v=C9_pOkN1aAU",
+      "video_id": "C9_pOkN1aAU"
+    },
+    "DNr6NV6qbG0": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 3527.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:24:48+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\45df453b9583.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "EP.7 Order Block By.NinjaThai",
+      "transcript_hash": "45df453b9583",
+      "url": "https://www.youtube.com/watch?v=DNr6NV6qbG0",
+      "video_id": "DNr6NV6qbG0"
+    },
+    "DX9SHfyDDms": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 716.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:03+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\619ae6a80184.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "KEY SUCCESS  ของฉัน กับอาชีพเทรดเดอร์",
+      "transcript_hash": "619ae6a80184",
+      "url": "https://www.youtube.com/watch?v=DX9SHfyDDms",
+      "video_id": "DX9SHfyDDms"
+    },
+    "Dc1IVyiYL7E": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 163.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:34+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\27f50d204ca1.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "ตรวจการบ้าน GEN3 แบบทดสอบที่ 11 หัวข้อ DP/TREND/FIB RE",
+      "transcript_hash": "8b464456b49c",
+      "url": "https://www.youtube.com/watch?v=Dc1IVyiYL7E",
+      "video_id": "Dc1IVyiYL7E"
+    },
+    "E8UA6C7DH4U": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 17.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:09+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\1913133f3c2d.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "My View GC1 20/1/68 (Gold) SMS By.NinjaThai",
+      "transcript_hash": "846ee7126cea",
+      "url": "https://www.youtube.com/watch?v=E8UA6C7DH4U",
+      "video_id": "E8UA6C7DH4U"
+    },
+    "EEwkTITG48E": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T13:25:58+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\bdb19c736806.md"
+      ],
+      "published": "2026-04-23T06:25:46+00:00",
+      "status": "structured_extracted",
+      "title": "EP.1 วันที่ฉันแพ้",
+      "transcript_hash": "487ab1510f61",
+      "url": "https://www.youtube.com/watch?v=EEwkTITG48E",
+      "video_id": "EEwkTITG48E"
+    },
+    "EsTcLSBHsWM": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:10:52+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2025-05-20T16:00:58+00:00",
+      "status": "needs_transcript_check",
+      "title": "Trade & Teach with Capt. เทรดไป สอนไป",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=EsTcLSBHsWM",
+      "video_id": "EsTcLSBHsWM"
+    },
+    "FIQuAIsQbWo": {
+      "channel_id": "UCH8rO5y50N3kix9ORXot1eg",
+      "channel_name": "How Can I Trade",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T13:34:43+07:00",
+      "last_processed_at": "2026-06-13T12:11:10+07:00",
+      "last_seen_at": "2026-05-24T14:18:11+07:00",
+      "note_paths": [],
+      "published": "2023-05-12T05:00:06+00:00",
+      "status": "needs_transcript_check",
+      "title": "เรียนรู้เรื่องทฤษฎีนี้จะทำให้การเทรดคุณง่ายขึ้นด้วย AMD Accumulation Manipulation Distribution",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=FIQuAIsQbWo",
+      "video_id": "FIQuAIsQbWo"
+    },
+    "G2tdrhAkThg": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 1598.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:46+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\32082a595f75.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "EP.2 SMC HYBRID PATTERN (NINJATHAI)",
+      "transcript_hash": "32082a595f75",
+      "url": "https://www.youtube.com/watch?v=G2tdrhAkThg",
+      "video_id": "G2tdrhAkThg"
+    },
+    "G3rByGWdlF4": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 407.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:51+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\afc84c7651ef.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "EP.1 SMC Strategy SMC ไม่ยากอย่างที่คุณคิด By.NinjaThai",
+      "transcript_hash": "aac7713fc3a1",
+      "url": "https://www.youtube.com/watch?v=G3rByGWdlF4",
+      "video_id": "G3rByGWdlF4"
+    },
+    "GI4IMBEXJUs": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 328.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:27+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\c6904b0028f3.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "[PATTERN REVERSAL] SMC HYBRID NINJA THAI 2025 ขั้นตอนการติดตั้ง จบภายใน 5 นาที",
+      "transcript_hash": "7a4c0ce77413",
+      "url": "https://www.youtube.com/watch?v=GI4IMBEXJUs",
+      "video_id": "GI4IMBEXJUs"
+    },
+    "Gdg8A74NCP8": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:11:27+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2025-05-16T18:39:08+00:00",
+      "status": "needs_transcript_check",
+      "title": "Trade & Teach with Capt. เทรดไป สอนไป",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=Gdg8A74NCP8",
+      "video_id": "Gdg8A74NCP8"
+    },
+    "GnA8QT8NGaU": {
+      "channel_id": "UCH8rO5y50N3kix9ORXot1eg",
+      "channel_name": "How Can I Trade",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T13:34:43+07:00",
+      "last_processed_at": "2026-06-13T12:11:43+07:00",
+      "last_seen_at": "2026-05-24T14:18:11+07:00",
+      "note_paths": [],
+      "published": "2026-01-16T18:32:56+00:00",
+      "status": "needs_transcript_check",
+      "title": "สูตรสำเร็จที่ทำให้ผมสามารถถอนกำไรจากการเทรดได้ 2 ล้านบาทในระยะเวลาเพียงแค่ 1 เดือน!",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=GnA8QT8NGaU",
+      "video_id": "GnA8QT8NGaU"
+    },
+    "HXxz5TRkk9E": {
+      "channel_id": "UCH8rO5y50N3kix9ORXot1eg",
+      "channel_name": "How Can I Trade",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T13:34:43+07:00",
+      "last_processed_at": "2026-06-13T12:18:59+07:00",
+      "last_seen_at": "2026-05-24T14:18:11+07:00",
+      "note_paths": [],
+      "published": "2025-10-10T17:04:44+00:00",
+      "status": "needs_transcript_check",
+      "title": "Live สอนสด ICT ตั้งแต่ Basic - Advance เข้าใจในคลิปเดียว!",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=HXxz5TRkk9E",
+      "video_id": "HXxz5TRkk9E"
+    },
+    "HkAP-HhS9Kw": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 4647.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:16:27+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "EP.10 Mindset ชีวิตเทรดเดอร์และความเป็นจริง All Team NINJA,FHT,AVT,RID,THE,RVT",
+      "url": "https://www.youtube.com/watch?v=HkAP-HhS9Kw",
+      "video_id": "HkAP-HhS9Kw"
+    },
+    "HwHxKy1rBJg": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 351.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:51:59+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\147ef7790e60.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "[SMC] M2 + RE-DIS  จบ 6-10 RR ภายในวัน (NINJATHAI)",
+      "transcript_hash": "147ef7790e60",
+      "url": "https://www.youtube.com/watch?v=HwHxKy1rBJg",
+      "video_id": "HwHxKy1rBJg"
+    },
+    "IUK4do2-n8U": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 3652.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:15:09+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "Follow-trend Structure + POI Entry รูปแบบ Pattern Reversal By.NinjaThai",
+      "url": "https://www.youtube.com/watch?v=IUK4do2-n8U",
+      "video_id": "IUK4do2-n8U"
+    },
+    "JCljdXqcZMU": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:22:57+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2024-09-17T03:45:00+00:00",
+      "status": "needs_transcript_check",
+      "title": "SMC Hybrid เทรดสด EP.19 กัปตัน เทรดดิ้ง",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=JCljdXqcZMU",
+      "video_id": "JCljdXqcZMU"
+    },
+    "JowGLzR6eHg": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:52:32+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\24a879fca050.md"
+      ],
+      "published": "2026-05-03T13:26:43+00:00",
+      "status": "structured_extracted",
+      "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+      "transcript_hash": "24a879fca050",
+      "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+      "video_id": "JowGLzR6eHg"
+    },
+    "JzZ0Z2jve8k": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 2687.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:24:43+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\742b4e6ec4e6.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Smart Money Concept x Market Structure Analysis [Style NinjaThai]",
+      "transcript_hash": "742b4e6ec4e6",
+      "url": "https://www.youtube.com/watch?v=JzZ0Z2jve8k",
+      "video_id": "JzZ0Z2jve8k"
+    },
+    "KUBQs8_3ois": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 317.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:51:57+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\138e455fc85e.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "[RECAP] XAUUSD 16/12/68 (NINJA THAI)",
+      "transcript_hash": "8a5bffe2dbd1",
+      "url": "https://www.youtube.com/watch?v=KUBQs8_3ois",
+      "video_id": "KUBQs8_3ois"
+    },
+    "KdHY1V2diHQ": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 362.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:38+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\29aca4b3a0a3.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "เฉลยการบ้าน 6/5/66 USDCAD H1 (CPB+FIBRE79-89%) NinjaThai",
+      "transcript_hash": "6c817320863d",
+      "url": "https://www.youtube.com/watch?v=KdHY1V2diHQ",
+      "video_id": "KdHY1V2diHQ"
+    },
+    "Lvh2yCleKss": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 4207.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:16:05+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "EP.6 Rejection & Smc trading model By.NinjaThai",
+      "url": "https://www.youtube.com/watch?v=Lvh2yCleKss",
+      "video_id": "Lvh2yCleKss"
+    },
+    "MtErhcAZ0LM": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 412.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:37+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\971721a61e38.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "(SMC) Smart Money Concept ง่ายๆ ภายใน 6 นาที",
+      "transcript_hash": "6368db0ca795",
+      "url": "https://www.youtube.com/watch?v=MtErhcAZ0LM",
+      "video_id": "MtErhcAZ0LM"
+    },
+    "NIP3GEIZdQY": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 444.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:24:51+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\4802950810e1.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Setup (Bearish) Liquidity Sweep CHoCH + BOS Down (Ninja  Thai)",
+      "transcript_hash": "4802950810e1",
+      "url": "https://www.youtube.com/watch?v=NIP3GEIZdQY",
+      "video_id": "NIP3GEIZdQY"
+    },
+    "NMLow0_Mrx0": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:19:21+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2024-08-31T01:00:15+00:00",
+      "status": "needs_transcript_check",
+      "title": "SMC Hybrid เทรดสด EP.15 กัปตัน เทรดดิ้ง",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=NMLow0_Mrx0",
+      "video_id": "NMLow0_Mrx0"
+    },
+    "NMQ68_oE7ak": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 2254.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:21+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\76f803ff8c5a.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Dow theory & Expansion,Retracement,consolidation,reversal  By.NinjaThai",
+      "transcript_hash": "76f803ff8c5a",
+      "url": "https://www.youtube.com/watch?v=NMQ68_oE7ak",
+      "video_id": "NMQ68_oE7ak"
+    },
+    "NqqMOZIgp8A": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 168.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:51:53+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\12b2838e57f1.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "(One Shorts) Model : Bearish Pennant + Fair Value Gaps 3-12RR",
+      "transcript_hash": "7093ad3781a7",
+      "url": "https://www.youtube.com/watch?v=NqqMOZIgp8A",
+      "video_id": "NqqMOZIgp8A"
+    },
+    "Pau3wP8jNYo": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:11:59+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2025-05-23T15:02:03+00:00",
+      "status": "needs_transcript_check",
+      "title": "Trade & Teach with Capt. เทรดไป สอนไป",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=Pau3wP8jNYo",
+      "video_id": "Pau3wP8jNYo"
+    },
+    "Q-KcGues0KQ": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:52:22+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\2026-03-29_Q-KcGues0KQ.md"
+      ],
+      "published": "2026-03-29T05:37:28+00:00",
+      "status": "structured_extracted",
+      "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+      "transcript_hash": "e55ed983ffb7c631927a11ef8942f982e8842c6548da76500e5185007aed451c",
+      "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+      "video_id": "Q-KcGues0KQ"
+    },
+    "QKPqAdZrw_g": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 387.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:26:15+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\dcea1c979f45.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Imbalance + Break block (Buy setup Asset : AUDUSD) By.NinjaThai",
+      "transcript_hash": "4b0781504a5d",
+      "url": "https://www.youtube.com/watch?v=QKPqAdZrw_g",
+      "video_id": "QKPqAdZrw_g"
+    },
+    "QWfwB72z158": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:52:15+07:00",
+      "last_seen_at": "2026-05-24T21:04:28+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\2026-03-07_QWfwB72z158.md"
+      ],
+      "published": "2026-03-07T08:03:00+00:00",
+      "status": "structured_extracted",
+      "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+      "transcript_hash": "15e9974a054f484c1c8a3872b936a97c70c9896ced800e5408bd9753e0ad5216",
+      "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+      "video_id": "QWfwB72z158"
+    },
+    "QpLeKR6f-U0": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 522.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:51:44+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\07e0a51a5c28.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "SMC x PRICE CYCLE 15RR XAUUSD (NINJATHAI)",
+      "transcript_hash": "5e69f4d1c1a6",
+      "url": "https://www.youtube.com/watch?v=QpLeKR6f-U0",
+      "video_id": "QpLeKR6f-U0"
+    },
+    "QpWkeAunU0w": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 2618.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:26:06+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\d143fd299573.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "BREAK BLOCK UPDATE 2025 NINJA THAI",
+      "transcript_hash": "d143fd299573",
+      "url": "https://www.youtube.com/watch?v=QpWkeAunU0w",
+      "video_id": "QpWkeAunU0w"
+    },
+    "R7feqYIMM2o": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 2879.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:28:17+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\fecdbfc6f17a.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Episode 7 Smc x Pattern M3  MTF By.NinjaThai",
+      "transcript_hash": "fecdbfc6f17a",
+      "url": "https://www.youtube.com/watch?v=R7feqYIMM2o",
+      "video_id": "R7feqYIMM2o"
+    },
+    "SZuI0YC-iBA": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 3492.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:27:32+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\e466f945a83e.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Episode 3 Pattern Reversal + Strcuture Confrim trend By.NinjaThai",
+      "transcript_hash": "e466f945a83e",
+      "url": "https://www.youtube.com/watch?v=SZuI0YC-iBA",
+      "video_id": "SZuI0YC-iBA"
+    },
+    "TZ1pi4p6N1A": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 148.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:27:54+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\efaafa85e928.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "(BB) Break Block & Block zone + Follow Trend (Sell) Smc Hybrid System! By.Ninja Thai",
+      "transcript_hash": "cefa6393d3bb",
+      "url": "https://www.youtube.com/watch?v=TZ1pi4p6N1A",
+      "video_id": "TZ1pi4p6N1A"
+    },
+    "UDCsz0faaZk": {
+      "channel_id": "UCH8rO5y50N3kix9ORXot1eg",
+      "channel_name": "How Can I Trade",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T13:34:43+07:00",
+      "last_processed_at": "2026-06-13T12:12:17+07:00",
+      "last_seen_at": "2026-05-24T14:18:11+07:00",
+      "note_paths": [],
+      "published": "2022-10-21T20:00:36+00:00",
+      "status": "needs_transcript_check",
+      "title": "FVG Fair Value Gap หรือ Imbalance โซนที่รายใหญ่รอเข้า!?",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=UDCsz0faaZk",
+      "video_id": "UDCsz0faaZk"
+    },
+    "Ub7_LCbIR0Y": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 95.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:28:12+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\fcf73fc62d5f.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Market Structure & Retracements and Extensions (1Min) By.NinjaThai",
+      "transcript_hash": "b13da42d48f3",
+      "url": "https://www.youtube.com/watch?v=Ub7_LCbIR0Y",
+      "video_id": "Ub7_LCbIR0Y"
+    },
+    "UiCLKMGm17A": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 240.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:55+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\b894f159e722.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "[RECAP] SMC Trade Setup (XAU 3/9/68) , NINJATHAI",
+      "transcript_hash": "b894f159e722",
+      "url": "https://www.youtube.com/watch?v=UiCLKMGm17A",
+      "video_id": "UiCLKMGm17A"
+    },
+    "Ul2eM2IFlu8": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:52:27+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\2026-04-12_Ul2eM2IFlu8.md"
+      ],
+      "published": "2026-04-12T04:59:26+00:00",
+      "status": "structured_extracted",
+      "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+      "transcript_hash": "8fa3d2ec493286013e7d1803d3e4b7fb98f3100d2b21dde5192426512d2b78a1",
+      "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+      "video_id": "Ul2eM2IFlu8"
+    },
+    "VUgVkHqNLog": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:52:25+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\2026-04-04_VUgVkHqNLog.md"
+      ],
+      "published": "2026-04-04T12:53:47+00:00",
+      "status": "structured_extracted",
+      "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+      "transcript_hash": "dc20070afa29e4f759e8cff87d62287c0182b738f1c0e0e21846f6203ef703d1",
+      "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+      "video_id": "VUgVkHqNLog"
+    },
+    "WHGnVFpOXpM": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 542.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:26:20+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\e21de83c4fcd.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "SMC & WYCKOFF PRICE CYCLE BY.NINJATHAI",
+      "transcript_hash": "e21de83c4fcd",
+      "url": "https://www.youtube.com/watch?v=WHGnVFpOXpM",
+      "video_id": "WHGnVFpOXpM"
+    },
+    "WLMHTE1veBc": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 2171.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:08:32+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "Dow theory  & Structure Episode 1 By.NinjaThai",
+      "url": "https://www.youtube.com/watch?v=WLMHTE1veBc",
+      "video_id": "WLMHTE1veBc"
+    },
+    "_HLwmKlmO1I": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 300.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:50+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\e28f9696b483.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Day Trade 5M & 1M SMC HYBRID 2025 NINJA THAI",
+      "transcript_hash": "e28f9696b483",
+      "url": "https://www.youtube.com/watch?v=_HLwmKlmO1I",
+      "video_id": "_HLwmKlmO1I"
+    },
+    "_INMTzzg-S8": {
+      "channel_id": "UCH8rO5y50N3kix9ORXot1eg",
+      "channel_name": "How Can I Trade",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T13:34:43+07:00",
+      "last_processed_at": "2026-06-13T12:12:34+07:00",
+      "last_seen_at": "2026-05-24T14:18:11+07:00",
+      "note_paths": [],
+      "published": "2022-10-16T14:34:04+00:00",
+      "status": "needs_transcript_check",
+      "title": "เคล็ดลับของการเป็นDay tradeและScalper (แถมการวิเคราะห์EUท้ายคลิป)",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=_INMTzzg-S8",
+      "video_id": "_INMTzzg-S8"
+    },
+    "_lzRumb5m-c": {
+      "channel_id": "UCH8rO5y50N3kix9ORXot1eg",
+      "channel_name": "How Can I Trade",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T13:34:43+07:00",
+      "last_processed_at": "2026-06-13T12:12:52+07:00",
+      "last_seen_at": "2026-05-24T14:18:11+07:00",
+      "note_paths": [],
+      "published": "2022-10-18T19:13:01+00:00",
+      "status": "needs_transcript_check",
+      "title": "สอบกองทุน FTMO ผ่านใน 1 Session ด้วยระบบ SMC ICT",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=_lzRumb5m-c",
+      "video_id": "_lzRumb5m-c"
+    },
+    "a1imqoMSNno": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:52:26+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\2026-04-06_a1imqoMSNno.md"
+      ],
+      "published": "2026-04-06T01:37:38+00:00",
+      "status": "structured_extracted",
+      "title": "Consistency  Explosion ด้วย SMC",
+      "transcript_hash": "a55bf0cc9e6a18278adcb88d395c97b8df6d5b02eab36abd963ff596683fe24c",
+      "url": "https://www.youtube.com/watch?v=a1imqoMSNno",
+      "video_id": "a1imqoMSNno"
+    },
+    "aqPir0vb-3s": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 3227.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:09:10+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "FREE SMC Full System | 50 Minutes Tutorial (NINJA THAI)",
+      "url": "https://www.youtube.com/watch?v=aqPir0vb-3s",
+      "video_id": "aqPir0vb-3s"
+    },
+    "avibJP_Zv-M": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 3289.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:09:27+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "EP.1 Order Block By.NinjaThai",
+      "url": "https://www.youtube.com/watch?v=avibJP_Zv-M",
+      "video_id": "avibJP_Zv-M"
+    },
+    "b1jzbUtF6w0": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 2133.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:17:58+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "Live : สอนนักเรียน หัวข้อ Structure การเทรดตามเทรน ด้วย \"Break block\"",
+      "url": "https://www.youtube.com/watch?v=b1jzbUtF6w0",
+      "video_id": "b1jzbUtF6w0"
+    },
+    "bekcaRq54YA": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 209.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:38+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\2a6cfbd21cf2.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Smc strategy / Ict trading strategy style NinjaThai Episode 1 30RR+",
+      "transcript_hash": "003d7cc0ae19",
+      "url": "https://www.youtube.com/watch?v=bekcaRq54YA",
+      "video_id": "bekcaRq54YA"
+    },
+    "bf97WLMwQck": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 1808.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:24:21+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\50eee1352127.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "[EP2] Price Cycle / S&D / SMC Hybrid / NINJATHAI",
+      "transcript_hash": "50eee1352127",
+      "url": "https://www.youtube.com/watch?v=bf97WLMwQck",
+      "video_id": "bf97WLMwQck"
+    },
+    "cJupkSflXXU": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 81.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:26+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\7d7ca5a08a81.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "STOPLOSS ของฉันนั้นสำคัญกับคุณใช้ไหม ? (NinjThai)",
+      "transcript_hash": "7d7ca5a08a81",
+      "url": "https://www.youtube.com/watch?v=cJupkSflXXU",
+      "video_id": "cJupkSflXXU"
+    },
+    "cx81HzU00lY": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 2471.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:14:34+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "Demande & Supply และข้อดีของการเก็บสถิติ",
+      "url": "https://www.youtube.com/watch?v=cx81HzU00lY",
+      "video_id": "cx81HzU00lY"
+    },
+    "dZy9rg8U4cA": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:19:38+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2024-09-10T01:00:31+00:00",
+      "status": "needs_transcript_check",
+      "title": "SMC Hybrid เทรดสด EP.16 กัปตัน เทรดดิ้ง",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=dZy9rg8U4cA",
+      "video_id": "dZy9rg8U4cA"
+    },
+    "eMEQmflJA1s": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 545.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:56+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\bb1cf64e7c98.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Hidden Supply + Model Entry (NinjaThai)",
+      "transcript_hash": "bb1cf64e7c98",
+      "url": "https://www.youtube.com/watch?v=eMEQmflJA1s",
+      "video_id": "eMEQmflJA1s"
+    },
+    "eOg2zLWoi3M": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "Automatic video transcription unavailable: gemini: <HttpError 400 when requesting https://generativelanguage.googleapis.com/$discovery/rest?version=v1beta&key=AQ.Ab8RN6K70d-dvSjZM94GqOWdodGXWDGxi7kpl87A9gSOHDjf3A returned \"API key not valid. Please pass a valid API key.\". Details: \"[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]\">",
+      "failure_reason": "transcription_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:20:43+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2024-08-28T11:00:45+00:00",
+      "status": "needs_transcript_check",
+      "title": "SMC Hybrid เทรดสด EP.14 กัปตัน เทรดดิ้ง",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=eOg2zLWoi3M",
+      "video_id": "eOg2zLWoi3M"
+    },
+    "ejEXng8YSOo": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 253.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:48+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\aaa620a8cb2c.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Demand & Pattern Double Top (NINJATHAI)",
+      "transcript_hash": "aaa620a8cb2c",
+      "url": "https://www.youtube.com/watch?v=ejEXng8YSOo",
+      "video_id": "ejEXng8YSOo"
+    },
+    "etP5HvBnYJQ": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 660.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:04:06+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "Pattern Reversal Double Bottom [W2] - (NinjaThai)",
+      "url": "https://www.youtube.com/watch?v=etP5HvBnYJQ",
+      "video_id": "etP5HvBnYJQ"
+    },
+    "fK-O8u64ggc": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 181.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:26:20+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\e1de55e404c8.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Signal + Buy/Sell Trade setup  NinjaThai",
+      "transcript_hash": "6948665ef6f8",
+      "url": "https://www.youtube.com/watch?v=fK-O8u64ggc",
+      "video_id": "fK-O8u64ggc"
+    },
+    "f_v98ygCIBM": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 333.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:27:51+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\ecc8271e8c11.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Stoploss = โอกาสไปต่อ (Ninja Thai)",
+      "transcript_hash": "4bf9ae59188f",
+      "url": "https://www.youtube.com/watch?v=f_v98ygCIBM",
+      "video_id": "f_v98ygCIBM"
+    },
+    "hgL8QBHxm_w": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 435.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:28:14+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\fd2aa4213a8c.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "SIMPLIFIED PRICE CYCLE 25/4/68 NAS100 NINJATHAI",
+      "transcript_hash": "fd2aa4213a8c",
+      "url": "https://www.youtube.com/watch?v=hgL8QBHxm_w",
+      "video_id": "hgL8QBHxm_w"
+    },
+    "i32nGdvcRQI": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 582.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:26:05+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\d13165b63d06.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "\"How to Trade Order Blocks | 1H Setup with 1M Entry\" (Ninja Thai)",
+      "transcript_hash": "4742c3fc385f",
+      "url": "https://www.youtube.com/watch?v=i32nGdvcRQI",
+      "video_id": "i32nGdvcRQI"
+    },
+    "i4AoxcXtcxQ": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 448.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:43+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\a15f8f96a435.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "เฉลยการบ้าน US30 TF H1 4 Entry By.NinjaThai",
+      "transcript_hash": "6ec61694aa4c",
+      "url": "https://www.youtube.com/watch?v=i4AoxcXtcxQ",
+      "video_id": "i4AoxcXtcxQ"
+    },
+    "iBXQ8xlkFOQ": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-31T21:14:35+07:00",
+      "last_processed_at": "2026-06-13T21:52:11+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\1b86e320840e.md"
+      ],
+      "published": "2026-05-28T08:51:56+00:00",
+      "status": "structured_extracted",
+      "title": "เราจะแกร่งขึ้น",
+      "transcript_hash": "1b86e320840e",
+      "url": "https://www.youtube.com/watch?v=iBXQ8xlkFOQ",
+      "video_id": "iBXQ8xlkFOQ"
+    },
+    "iEcZXsiBAp8": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 668.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:04:22+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "SSL & BSL ใช้งานอย่างไร เข้าใจภายใน 10 นาที (NinjaThai)",
+      "url": "https://www.youtube.com/watch?v=iEcZXsiBAp8",
+      "video_id": "iEcZXsiBAp8"
+    },
+    "iXiQ4wqskTc": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 181.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:36+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\28eb6c9bdd4e.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "SMC + DEMAND (เข้าใจง่ายภายใน 3 นาที) NINJA THAI",
+      "transcript_hash": "8189aa445c21",
+      "url": "https://www.youtube.com/watch?v=iXiQ4wqskTc",
+      "video_id": "iXiQ4wqskTc"
+    },
+    "ihrJ4fOK4uo": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 835.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:05:54+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "เข้าใจ Market Structure ภายใน 10 นาที (ฉบับนินจา)",
+      "url": "https://www.youtube.com/watch?v=ihrJ4fOK4uo",
+      "video_id": "ihrJ4fOK4uo"
+    },
+    "ix-iL7JnQzc": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 311.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:27:46+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\e5b6d01cd597.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Model M3 +BOS (NinjaThai)",
+      "transcript_hash": "8f5dcdf6413c",
+      "url": "https://www.youtube.com/watch?v=ix-iL7JnQzc",
+      "video_id": "ix-iL7JnQzc"
+    },
+    "j8sFijAhN3s": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 709.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:05:08+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "SMC HYBRID 2025 NinjaThai",
+      "url": "https://www.youtube.com/watch?v=j8sFijAhN3s",
+      "video_id": "j8sFijAhN3s"
+    },
+    "jne2J1hmeRA": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:52:21+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\2026-03-23_jne2J1hmeRA.md"
+      ],
+      "published": "2026-03-23T08:56:49+00:00",
+      "status": "structured_extracted",
+      "title": "SMC Ninja Full System 🔥",
+      "transcript_hash": "63b6d9d2b0f25460b730e94068d4a0e50bc2eac1bf3403b627584fcf92dbd89e",
+      "url": "https://www.youtube.com/watch?v=jne2J1hmeRA",
+      "video_id": "jne2J1hmeRA"
+    },
+    "jzxuMAslSfk": {
+      "channel_id": "UCH8rO5y50N3kix9ORXot1eg",
+      "channel_name": "How Can I Trade",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T13:34:43+07:00",
+      "last_processed_at": "2026-06-13T12:13:09+07:00",
+      "last_seen_at": "2026-05-24T14:18:11+07:00",
+      "note_paths": [],
+      "published": "2023-07-10T11:00:37+00:00",
+      "status": "needs_transcript_check",
+      "title": "หา Swing เป็นใน 3 นาที!! (สิ่งที่หลายคนใช้ผิด)",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=jzxuMAslSfk",
+      "video_id": "jzxuMAslSfk"
+    },
+    "k2yu9wRKPZM": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:21:15+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2024-09-20T01:00:23+00:00",
+      "status": "needs_transcript_check",
+      "title": "SMC Hybrid เทรดสด EP.20 กัปตัน เทรดดิ้ง",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=k2yu9wRKPZM",
+      "video_id": "k2yu9wRKPZM"
+    },
+    "kNmPINVjVHI": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 201.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:27:57+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\f01b2c5a5b32.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "CH BOS SOS + Demande + Lq By.NinjaThai",
+      "transcript_hash": "f01b2c5a5b32",
+      "url": "https://www.youtube.com/watch?v=kNmPINVjVHI",
+      "video_id": "kNmPINVjVHI"
+    },
+    "kyogygQMBYs": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 246.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:43+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\2d0acff3dda4.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "BACKTEST MSS+BOS+IDM By.NinjaThai Min30,Max50RR Winrate 30%",
+      "transcript_hash": "2d0acff3dda4",
+      "url": "https://www.youtube.com/watch?v=kyogygQMBYs",
+      "video_id": "kyogygQMBYs"
+    },
+    "nDIf5FSFTHc": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 413.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:24:42+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\7363b1e188be.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "ก้าวข้ามตัวเอง และคุณจะเทรดได้ดีขึ้น ภายใน 6 นาที (NINJA THAI)",
+      "transcript_hash": "7363b1e188be",
+      "url": "https://www.youtube.com/watch?v=nDIf5FSFTHc",
+      "video_id": "nDIf5FSFTHc"
+    },
+    "nZpg2-5Jbbg": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:21:35+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2024-08-27T14:54:32+00:00",
+      "status": "needs_transcript_check",
+      "title": "SMC Hybrid เทรดสด EP.13 กัปตัน เทรดดิ้ง",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=nZpg2-5Jbbg",
+      "video_id": "nZpg2-5Jbbg"
+    },
+    "o-gLXGX-JLA": {
+      "channel_id": "UCH8rO5y50N3kix9ORXot1eg",
+      "channel_name": "How Can I Trade",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T13:34:43+07:00",
+      "last_processed_at": "2026-06-13T12:13:26+07:00",
+      "last_seen_at": "2026-05-24T14:18:11+07:00",
+      "note_paths": [],
+      "published": "2022-09-14T19:09:02+00:00",
+      "status": "needs_transcript_check",
+      "title": "Market structure & Top-down analysis: การดูโครงสร้างตลาดและการใช้TFย่อยในการเข้าเทรด",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=o-gLXGX-JLA",
+      "video_id": "o-gLXGX-JLA"
+    },
+    "opr6NSwjDys": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 1748.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:08:14+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "การสร้างระบบเทรด และการตั้งเป้าหมาย [NINJATHAI]",
+      "url": "https://www.youtube.com/watch?v=opr6NSwjDys",
+      "video_id": "opr6NSwjDys"
+    },
+    "p9Up2Un2PNs": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 916.0,
+      "error": "Automatic video transcription unavailable: gemini: <HttpError 400 when requesting https://generativelanguage.googleapis.com/$discovery/rest?version=v1beta&key=AQ.Ab8RN6K70d-dvSjZM94GqOWdodGXWDGxi7kpl87A9gSOHDjf3A returned \"API key not valid. Please pass a valid API key.\". Details: \"[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]\">",
+      "failure_reason": "transcription_failed",
+      "last_processed_at": "2026-06-13T12:06:47+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "ทำไมเทรดเดอร์ถึงพลาด ทำนอกระบบ (Ninja Thai)",
+      "url": "https://www.youtube.com/watch?v=p9Up2Un2PNs",
+      "video_id": "p9Up2Un2PNs"
+    },
+    "pN1gw_H2utE": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 75.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:48+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\3300a1f0c491.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "H&S Model (Sell setup) - Pattern Reversal (Head & ) Ninja Thai",
+      "transcript_hash": "ce8ea99cf5fe",
+      "url": "https://www.youtube.com/watch?v=pN1gw_H2utE",
+      "video_id": "pN1gw_H2utE"
+    },
+    "pkwyPvSWlfA": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 515.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:51:56+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\12c79f934cb5.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "[RECAP USDJPY] SESSION ASIAN 3/11/68 (NINJATHAI)",
+      "transcript_hash": "f4c3506c76d2",
+      "url": "https://www.youtube.com/watch?v=pkwyPvSWlfA",
+      "video_id": "pkwyPvSWlfA"
+    },
+    "q6YdVAlGEf8": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 3016.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:08:50+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "S&D Demande & Supply HTF to LTF By.NinjaThai",
+      "url": "https://www.youtube.com/watch?v=q6YdVAlGEf8",
+      "video_id": "q6YdVAlGEf8"
+    },
+    "q95lG3gytVg": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 5248.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:17:08+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "EP.3 Order Block By.NinjaThai",
+      "url": "https://www.youtube.com/watch?v=q95lG3gytVg",
+      "video_id": "q95lG3gytVg"
+    },
+    "qKa1yKwj3VY": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 1144.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:07:34+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "Market Structure & SMC Confirm Model (NINJATHAI)",
+      "url": "https://www.youtube.com/watch?v=qKa1yKwj3VY",
+      "video_id": "qKa1yKwj3VY"
+    },
+    "qPigI-nI4qU": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:13:44+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2025-05-22T15:05:29+00:00",
+      "status": "needs_transcript_check",
+      "title": "Trade & Teach with Capt. เทรดไป สอนไป",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=qPigI-nI4qU",
+      "video_id": "qPigI-nI4qU"
+    },
+    "qlo_lfZzSPw": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 3614.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:14:51+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "EP.4 Liquidity By.NinjaThai",
+      "url": "https://www.youtube.com/watch?v=qlo_lfZzSPw",
+      "video_id": "qlo_lfZzSPw"
+    },
+    "qqFHu2YjfaI": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 342.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:45+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\de62e6e815b3.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "[RECAP] 14/8/68 XAUUSD TF2M (SMC) NINJATHAI",
+      "transcript_hash": "de62e6e815b3",
+      "url": "https://www.youtube.com/watch?v=qqFHu2YjfaI",
+      "video_id": "qqFHu2YjfaI"
+    },
+    "rSozWNJ0-vc": {
+      "channel_id": "UCH8rO5y50N3kix9ORXot1eg",
+      "channel_name": "How Can I Trade",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T13:34:43+07:00",
+      "last_processed_at": "2026-06-13T12:14:01+07:00",
+      "last_seen_at": "2026-05-24T14:18:11+07:00",
+      "note_paths": [],
+      "published": "2022-12-24T10:21:36+00:00",
+      "status": "needs_transcript_check",
+      "title": "Liquidity รายใหญ่เข้าเทรดอย่างไรคลิปนี้มีคำตอบ",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=rSozWNJ0-vc",
+      "video_id": "rSozWNJ0-vc"
+    },
+    "rTFRYuMUlXY": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 353.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:24:46+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\42ed5209b659.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "BREAK BLOCK + CPB-RT (Checklist trade setup)",
+      "transcript_hash": "42ed5209b659",
+      "url": "https://www.youtube.com/watch?v=rTFRYuMUlXY",
+      "video_id": "rTFRYuMUlXY"
+    },
+    "rX9-NthXtwI": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 837.0,
+      "error": "Automatic video transcription unavailable: gemini: <HttpError 400 when requesting https://generativelanguage.googleapis.com/$discovery/rest?version=v1beta&key=AQ.Ab8RN6K70d-dvSjZM94GqOWdodGXWDGxi7kpl87A9gSOHDjf3A returned \"API key not valid. Please pass a valid API key.\". Details: \"[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]\">",
+      "failure_reason": "transcription_failed",
+      "last_processed_at": "2026-06-13T12:06:03+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "+Ob (Order Block) + วิธีการใช้งานง่ายๆ ด้วย Pattern กลับตัวใน Rejection",
+      "url": "https://www.youtube.com/watch?v=rX9-NthXtwI",
+      "video_id": "rX9-NthXtwI"
+    },
+    "rpP2bTLe4ZA": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 413.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:19+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\b1cbc7173736.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "[SMC] MODEL PATTERN REVERSAL  BUY +7RR (NINJATHAI)",
+      "transcript_hash": "b1cbc7173736",
+      "url": "https://www.youtube.com/watch?v=rpP2bTLe4ZA",
+      "video_id": "rpP2bTLe4ZA"
+    },
+    "stSrxgw1bVI": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 672.0,
+      "error": "Automatic video transcription unavailable: gemini: <HttpError 400 when requesting https://generativelanguage.googleapis.com/$discovery/rest?version=v1beta&key=AQ.Ab8RN6K70d-dvSjZM94GqOWdodGXWDGxi7kpl87A9gSOHDjf3A returned \"API key not valid. Please pass a valid API key.\". Details: \"[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]\">",
+      "failure_reason": "transcription_failed",
+      "last_processed_at": "2026-06-13T12:04:34+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "Price Cycle / Order Block / SMC Hybrid / NINJATHAI",
+      "url": "https://www.youtube.com/watch?v=stSrxgw1bVI",
+      "video_id": "stSrxgw1bVI"
+    },
+    "t-l7bN5KBZY": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 1446.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:07:55+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "How to trade \"Break block\" Follow Trend EP.2",
+      "url": "https://www.youtube.com/watch?v=t-l7bN5KBZY",
+      "video_id": "t-l7bN5KBZY"
+    },
+    "tDWy82eU1lA": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:52:16+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\2026-03-15_tDWy82eU1lA.md"
+      ],
+      "published": "2026-03-15T11:44:22+00:00",
+      "status": "structured_extracted",
+      "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+      "transcript_hash": "7a74c2f9db71e2ee9a5aa671db33f7b7886c2e09af740d41b9a5ed524ec3fccd",
+      "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+      "video_id": "tDWy82eU1lA"
+    },
+    "tH7MRcMX50w": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 242.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:27:30+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\e3639bc18899.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "\" ฉันเชื่ออย่างสุดหัวใจว่าฉันทำได้ \" By.NinjThai",
+      "transcript_hash": "e3639bc18899",
+      "url": "https://www.youtube.com/watch?v=tH7MRcMX50w",
+      "video_id": "tH7MRcMX50w"
+    },
+    "tM5xernCmOI": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:14:18+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2025-05-13T17:56:49+00:00",
+      "status": "needs_transcript_check",
+      "title": "Trade & Teach with Capt. เทรดไป สอนไป",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=tM5xernCmOI",
+      "video_id": "tM5xernCmOI"
+    },
+    "tVLQ04TtKlo": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 3421.0,
+      "error": "Automatic video transcription unavailable: gemini: <HttpError 400 when requesting https://generativelanguage.googleapis.com/$discovery/rest?version=v1beta&key=AQ.Ab8RN6K70d-dvSjZM94GqOWdodGXWDGxi7kpl87A9gSOHDjf3A returned \"API key not valid. Please pass a valid API key.\". Details: \"[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]\">",
+      "failure_reason": "transcription_failed",
+      "last_processed_at": "2026-06-13T12:22:25+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "[LIVE] - PATTERN REVERSAL & SMC STRUCTURE - NINJATHAI",
+      "url": "https://www.youtube.com/watch?v=tVLQ04TtKlo",
+      "video_id": "tVLQ04TtKlo"
+    },
+    "tZZaZ8ZGZhM": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 281.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:26:09+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\d38b1940c543.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "BREAK BLOCK ZONE HTF TO (LTF) 50RR // MODEL SETUP",
+      "transcript_hash": "d38b1940c543",
+      "url": "https://www.youtube.com/watch?v=tZZaZ8ZGZhM",
+      "video_id": "tZZaZ8ZGZhM"
+    },
+    "tkEn6Aeuo8w": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 5327.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:17:33+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "EP.5 Market Structure พื้นฐานโครงสร้างราคา By.NinjaThai",
+      "url": "https://www.youtube.com/watch?v=tkEn6Aeuo8w",
+      "video_id": "tkEn6Aeuo8w"
+    },
+    "ty4C1Sx-0-I": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 353.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:26:21+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\e2711caf5dcd.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Model Sell Setup (Pattern Reversal + Smc) By.NinjaThai",
+      "transcript_hash": "e2711caf5dcd",
+      "url": "https://www.youtube.com/watch?v=ty4C1Sx-0-I",
+      "video_id": "ty4C1Sx-0-I"
+    },
+    "u2XKVpSZvFo": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:52:35+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\281e063c920d.md"
+      ],
+      "published": "2026-05-09T07:45:56+00:00",
+      "status": "structured_extracted",
+      "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+      "transcript_hash": "281e063c920d",
+      "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+      "video_id": "u2XKVpSZvFo"
+    },
+    "uNdAwqVHtco": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 624.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:26:00+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\bf05bc296cf9.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Multiple time frame analysis for day trading 15m to 1m By.NinjaThai",
+      "transcript_hash": "bf05bc296cf9",
+      "url": "https://www.youtube.com/watch?v=uNdAwqVHtco",
+      "video_id": "uNdAwqVHtco"
+    },
+    "v1CJTr2Phi0": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-31T21:14:35+07:00",
+      "last_processed_at": "2026-06-13T21:51:45+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\0929ebac83ca.md"
+      ],
+      "published": "2026-05-29T06:23:13+00:00",
+      "status": "structured_extracted",
+      "title": "NinjaThai in the zone",
+      "transcript_hash": "0929ebac83ca",
+      "url": "https://www.youtube.com/watch?v=v1CJTr2Phi0",
+      "video_id": "v1CJTr2Phi0"
+    },
+    "v1QwxDJpWSU": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 269.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:51:52+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\11b0aefc5e09.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "ตรวจการบ้านนักเรียน 17/5/66",
+      "transcript_hash": "11b0aefc5e09",
+      "url": "https://www.youtube.com/watch?v=v1QwxDJpWSU",
+      "video_id": "v1QwxDJpWSU"
+    },
+    "vdcf15Z_KIc": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 422.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T21:52:06+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\16522d335668.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "EP 1 LIQUDITY EQH EQL + PATTERN SETUP BY.NINJA THAI",
+      "transcript_hash": "16522d335668",
+      "url": "https://www.youtube.com/watch?v=vdcf15Z_KIc",
+      "video_id": "vdcf15Z_KIc"
+    },
+    "vl2heAtvWfg": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 378.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:26:18+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\de735f57a81a.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "ระบบเทรดสั้นจบในวัน RR5-10 ด้วย Pattern W/M",
+      "transcript_hash": "de735f57a81a",
+      "url": "https://www.youtube.com/watch?v=vl2heAtvWfg",
+      "video_id": "vl2heAtvWfg"
+    },
+    "vtvSQd9m--0": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 872.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:06:38+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "Market Structure & Smc Trading Strategy เข้าใจโครงสร้างภายใน 10 นาที [NINJATHAI]",
+      "url": "https://www.youtube.com/watch?v=vtvSQd9m--0",
+      "video_id": "vtvSQd9m--0"
+    },
+    "w8kN6lhhQ4E": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 410.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:24:22+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\52a27bf7b332.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "EPISODE 1 BREAK BLOCK ZONE  + PATTERN SETUP BY.NINJATHAI",
+      "transcript_hash": "52a27bf7b332",
+      "url": "https://www.youtube.com/watch?v=w8kN6lhhQ4E",
+      "video_id": "w8kN6lhhQ4E"
+    },
+    "wCOQma6A_Dw": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 433.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:24:45+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\794d75837a97.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "เข้าใจ SMC ใน 7 นาที : โครงสร้าง, โซน, จังหวะเข้า (NinjaThai)",
+      "transcript_hash": "794d75837a97",
+      "url": "https://www.youtube.com/watch?v=wCOQma6A_Dw",
+      "video_id": "wCOQma6A_Dw"
+    },
+    "wZTYT8kxvqY": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 748.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:05:30+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "USDCHF 18RR (Smc Trading Strategy) Cr.NinjaThai",
+      "url": "https://www.youtube.com/watch?v=wZTYT8kxvqY",
+      "video_id": "wZTYT8kxvqY"
+    },
+    "xawyzcfzZ40": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 2946.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:22:12+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "(Live) การใช้งาน Trendline และนำมายืนยันในการเทรดแบบง่ายๆ Ninja Thai",
+      "url": "https://www.youtube.com/watch?v=xawyzcfzZ40",
+      "video_id": "xawyzcfzZ40"
+    },
+    "y5v1CGHNmZ0": {
+      "channel_id": "UCmwLnxloCckJh4eNMP7yh6A",
+      "channel_name": "กัปตัน เทรดดิ้ง",
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "first_seen_at": "2026-05-24T14:50:04+07:00",
+      "last_processed_at": "2026-06-13T12:21:52+07:00",
+      "last_seen_at": "2026-05-24T14:50:04+07:00",
+      "note_paths": [],
+      "published": "2024-09-11T04:00:43+00:00",
+      "status": "needs_transcript_check",
+      "title": "SMC Hybrid เทรดสด EP.17 กัปตัน เทรดดิ้ง",
+      "transcript_hash": "",
+      "url": "https://www.youtube.com/watch?v=y5v1CGHNmZ0",
+      "video_id": "y5v1CGHNmZ0"
+    },
+    "yFtuN-Xm_UQ": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 416.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:28:02+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\f4daae02ae4e.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "SMC x PATTERN EP1. (NINJA THAI CLASS)",
+      "transcript_hash": "f4daae02ae4e",
+      "url": "https://www.youtube.com/watch?v=yFtuN-Xm_UQ",
+      "video_id": "yFtuN-Xm_UQ"
+    },
+    "yG-dbuiUHDA": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "error": "",
+      "failure_reason": "",
+      "first_seen_at": "2026-05-24T09:57:51+07:00",
+      "last_processed_at": "2026-06-13T21:52:19+07:00",
+      "last_seen_at": "2026-05-31T21:14:35+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\2026-03-22_yG-dbuiUHDA.md"
+      ],
+      "published": "2026-03-22T14:01:31+00:00",
+      "status": "structured_extracted",
+      "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+      "transcript_hash": "4a691f5ee849dd767f42b2c50c192c624712bfac237e5773b046647335de53f4",
+      "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+      "video_id": "yG-dbuiUHDA"
+    },
+    "yP5_jD34HWk": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 306.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:28:16+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\fd7ec2121a4e.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "[RECAP] USDJPY 1M & SSL15M , W&M NINJATHAI",
+      "transcript_hash": "fd7ec2121a4e",
+      "url": "https://www.youtube.com/watch?v=yP5_jD34HWk",
+      "video_id": "yP5_jD34HWk"
+    },
+    "yz8Mjlp2GKM": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 1104.0,
+      "error": "yt-dlp download failed",
+      "failure_reason": "download_failed",
+      "last_processed_at": "2026-06-13T12:07:15+07:00",
+      "published": "",
+      "status": "needs_transcript_check",
+      "title": "2024 (Episode 1) Market Structure &  Price Action",
+      "url": "https://www.youtube.com/watch?v=yz8Mjlp2GKM",
+      "video_id": "yz8Mjlp2GKM"
+    },
+    "zCVTKdQ9Etw": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 397.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-06T21:39:49+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\a49af5f59d8d.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "External Liquidity Sweep (Ninja Thai)",
+      "transcript_hash": "a49af5f59d8d",
+      "url": "https://www.youtube.com/watch?v=zCVTKdQ9Etw",
+      "video_id": "zCVTKdQ9Etw"
+    },
+    "zPFdEVneq4Y": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 241.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:25:36+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\96544e48ef99.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Episode 1 (Daily ประจำวัน นินจา) หัวข้อการแบ่งเวลา ในการฝึก",
+      "transcript_hash": "96544e48ef99",
+      "url": "https://www.youtube.com/watch?v=zPFdEVneq4Y",
+      "video_id": "zPFdEVneq4Y"
+    },
+    "zgEwObHU6qc": {
+      "channel_id": "UCVKlLqRyS1eIGbGRRYNbTfA",
+      "channel_name": "The Ninja [TH]",
+      "duration": 475.0,
+      "error": "",
+      "failure_reason": "",
+      "last_processed_at": "2026-06-13T13:23:58+07:00",
+      "note_paths": [
+        "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\youtube\\3dc6b96b8552.md"
+      ],
+      "published": "",
+      "status": "structured_extracted",
+      "title": "Backtesting SMC X PATTERN Strategies (NINJA THAI)",
+      "transcript_hash": "3dc6b96b8552",
+      "url": "https://www.youtube.com/watch?v=zgEwObHU6qc",
+      "video_id": "zgEwObHU6qc"
+    }
+  }
+}

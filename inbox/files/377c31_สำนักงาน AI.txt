@@ -1,0 +1,34 @@
+สร้าง “สำนักงาน AI” บนเครื่องตัวเองในไม่กี่คำสั่ง ด้วย My Virtual Office
+.
+ปัญหาของ AI Agent คือมันทำงานเก่งขึ้นเรื่อย ๆ แต่เรามองไม่เห็นว่าใครกำลังทำอะไรอยู่ หลายครั้ง agent กลายเป็นแค่ log, terminal หรือข้อความยาว ๆ ที่คนทั่วไปไม่อยากอ่าน
+.
+My Virtual Office แก้ปัญหานี้ด้วยการทำให้ agent กลายเป็น retro pixel-art AI workspace ที่เห็นเป็น office ใน browser โดย README ระบุว่าโปรเจกต์นี้ออกแบบมาสำหรับ OpenClaw และมี Hermes compatibility ผ่าน Hermes CLI/profile discovery ด้วย
+.
+ขั้นตอนที่ทำจริง
+.
+ขั้นตอนที่ 1 — Clone repo
+เปิด terminal แล้วรันคำสั่งนี้
+Bash
+git clone https://github.com/eliautobot/my-virtual-office.git
+cd my-virtual-office
+.
+ขั้นตอนที่ 2 — เปิดระบบด้วย Docker Compose
+ถ้าเครื่องมี Docker แล้ว ให้รัน
+Bash
+docker compose up -d
+จากนั้นเปิด browser ไปที่
+Plain Text
+http://localhost:8090/setup
+README ของโปรเจกต์ระบุ quick start ด้วย docker compose up -d และ setup wizard ที่ localhost:8090/setup โดยตรง
+.
+ขั้นตอนที่ 3 — เชื่อมกับ OpenClaw หรือ Hermes
+ใน setup wizard ให้ใส่ข้อมูล OpenClaw instance หรือเลือก demo mode ก่อนก็ได้ ถ้าจะเชื่อม Hermes ให้ดูว่าเครื่องมี Hermes CLI และ home directory ที่ระบบค้นหาได้ เพราะ repo ระบุว่าสามารถ discover Hermes Agent profiles เป็น office agents ได้
+.
+ขั้นตอนที่ 4 — เข้าใจ config สำคัญ
+ค่าที่ควรรู้คือ VO_PORT, VO_WS_PORT, VO_GATEWAY_URL, VO_OPENCLAW_PATH, VO_HERMES_ENABLED, VO_HERMES_HOME และ VO_HERMES_BIN เพราะทั้งหมดนี้เกี่ยวกับ port, gateway, path ของ OpenClaw และการเปิด Hermes compatibility
+.
+ขั้นตอนที่ 5 — อย่าเปิด public internet ตรง ๆ
+จุดนี้สำคัญมาก README ของ repo เตือนว่าไม่ควร expose Virtual Office ตรง public internet เพราะมันเป็น control surface สำหรับ OpenClaw agents ดังนั้นถ้าจะใช้จริงให้รัน local, VPN หรือ reverse proxy ที่มี auth เท่านั้น
+.
+สรุปคือ My Virtual Office เหมาะมากสำหรับตอนเปิดซีรีส์ เพราะมันทำให้คนเข้าใจทันทีว่า “AI agent ที่มองไม่เห็น” สามารถกลายเป็น office ที่เราเข้าใจได้
+Note: ถ้าใครอยากให้ผมทำต่อเป็น “ติดตั้ง OpenClaw ก่อน แล้วค่อยต่อ My Virtual Office” คอมเมนต์ว่า “AGENT” ไว้ได้เลยครับ

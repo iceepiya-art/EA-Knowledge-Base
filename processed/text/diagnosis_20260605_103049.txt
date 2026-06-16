@@ -1,0 +1,11 @@
+# CSV Diagnosis Report: ReportHistory-121059.xlsx
+
+## Summary
+The trading history reveals a strategy primarily focused on selling XAUUSD, often without consistent Stop Loss or Take Profit levels. While a single large-volume, short-duration trade generated significant profit, the majority of smaller-volume trades exhibit inconsistent profitability, with many losses accumulating over several hours, indicating poor risk management and reliance on outlier events.
+
+## Extracted Rules (To be integrated into EA)
+- Mandate Stop Loss for Every Trade: Implement a strict, predefined Stop Loss (S/L) for all trades to limit potential downside risk, as many losing trades currently lack this crucial protection.
+- Implement a Maximum Trade Duration Filter: Analyze the average duration of profitable trades and set a maximum holding period for trades, especially those in drawdown, to prevent prolonged exposure to adverse market conditions.
+- Review Small Volume (0.01 Lot) Entry/Exit Logic: Refine the entry and exit conditions specifically for the frequently used 0.01 lot trades, as their current performance shows a tendency for small gains to be offset by larger, prolonged losses.
+- Clarify Large Volume Trade Strategy: Investigate the specific conditions, intent, and risk parameters behind the exceptionally profitable, short-duration, large-volume trade (0.39 lots) to determine if its logic can be safely and consistently integrated or if it represents an anomaly.
+- Consider Dynamic Take Profit or Trailing Stop: Introduce a Take Profit (T/P) or a dynamic trailing stop mechanism to consistently lock in profits and prevent winning trades from reversing, as many current profitable exits appear to be manual or without a clear target.

@@ -1,0 +1,2610 @@
+{
+  "components": {
+    "entry": [
+      {
+        "concepts": [
+          "BOS"
+        ],
+        "frequency": 11,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use BOS as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "7661a5b75eb5",
+          "a1imqoMSNno",
+          "u2XKVpSZvFo",
+          "AHQ81XCZ_uo",
+          "QWfwB72z158",
+          "yG-dbuiUHDA",
+          "tDWy82eU1lA",
+          "JowGLzR6eHg",
+          "jne2J1hmeRA",
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "CHoCH"
+        ],
+        "frequency": 11,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use CHoCH as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "7661a5b75eb5",
+          "a1imqoMSNno",
+          "u2XKVpSZvFo",
+          "QWfwB72z158",
+          "yG-dbuiUHDA",
+          "tDWy82eU1lA",
+          "JowGLzR6eHg",
+          "jne2J1hmeRA",
+          "Q-KcGues0KQ",
+          "58db7c3d4de1"
+        ]
+      },
+      {
+        "concepts": [
+          "Liquidity Sweep"
+        ],
+        "frequency": 11,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Liquidity Sweep as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158",
+          "AHQ81XCZ_uo",
+          "JowGLzR6eHg",
+          "jne2J1hmeRA",
+          "a1imqoMSNno",
+          "Q-KcGues0KQ",
+          "yG-dbuiUHDA",
+          "u2XKVpSZvFo",
+          "7661a5b75eb5",
+          "77e0f78ec5d3",
+          "58db7c3d4de1"
+        ]
+      },
+      {
+        "concepts": [
+          "FVG"
+        ],
+        "frequency": 10,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use FVG as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "7661a5b75eb5",
+          "a1imqoMSNno",
+          "u2XKVpSZvFo",
+          "yG-dbuiUHDA",
+          "tDWy82eU1lA",
+          "JowGLzR6eHg",
+          "jne2J1hmeRA",
+          "Q-KcGues0KQ",
+          "58db7c3d4de1"
+        ]
+      },
+      {
+        "concepts": [
+          "Order Block"
+        ],
+        "frequency": 9,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Order Block as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158",
+          "AHQ81XCZ_uo",
+          "JowGLzR6eHg",
+          "yG-dbuiUHDA",
+          "jne2J1hmeRA",
+          "Q-KcGues0KQ",
+          "tDWy82eU1lA",
+          "u2XKVpSZvFo",
+          "7661a5b75eb5"
+        ]
+      },
+      {
+        "concepts": [
+          "Pattern M"
+        ],
+        "frequency": 9,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Pattern M as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "a1imqoMSNno",
+          "yG-dbuiUHDA",
+          "tDWy82eU1lA",
+          "jne2J1hmeRA",
+          "QWfwB72z158",
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "Pattern W"
+        ],
+        "frequency": 9,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Pattern W as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "a1imqoMSNno",
+          "yG-dbuiUHDA",
+          "tDWy82eU1lA",
+          "u2XKVpSZvFo",
+          "jne2J1hmeRA",
+          "QWfwB72z158",
+          "JowGLzR6eHg",
+          "Q-KcGues0KQ",
+          "7661a5b75eb5"
+        ]
+      },
+      {
+        "concepts": [
+          "Price Structure"
+        ],
+        "frequency": 8,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Price Structure as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "a1imqoMSNno",
+          "yG-dbuiUHDA",
+          "tDWy82eU1lA",
+          "u2XKVpSZvFo",
+          "jne2J1hmeRA",
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Risk Management"
+        ],
+        "frequency": 7,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Risk Management as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "yG-dbuiUHDA",
+          "Ul2eM2IFlu8",
+          "jne2J1hmeRA",
+          "JowGLzR6eHg",
+          "a1imqoMSNno",
+          "u2XKVpSZvFo",
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "W&M Pattern (Reversal Model)"
+        ],
+        "frequency": 6,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use W&M Pattern (Reversal Model) as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "JowGLzR6eHg",
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "SMC (Smart Money Concepts)",
+          "Pattern W",
+          "Order Block",
+          "Pattern M",
+          "Break of Structure (BOS)"
+        ],
+        "frequency": 5,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Entry at Buy Side Liquidity (BSL) or Sell Side Liquidity (SSL) levels",
+        "sources": [
+          "tDWy82eU1lA",
+          "yG-dbuiUHDA",
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Supply Zone"
+        ],
+        "frequency": 5,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Supply Zone as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "u2XKVpSZvFo",
+          "jne2J1hmeRA",
+          "Q-KcGues0KQ",
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Market Structure",
+          "Pattern W",
+          "Pattern M",
+          "Break of Structure (BOS)"
+        ],
+        "frequency": 4,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Entry confirmed when Pattern W or Pattern M forms with BOS break above next line",
+        "sources": [
+          "QWfwB72z158",
+          "tDWy82eU1lA",
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "SMC (Smart Money Concepts)",
+          "Market Structure",
+          "Order Block"
+        ],
+        "frequency": 3,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Enter SELL when BOS (Break of Structure) DOWN occurs, indicating downtrend momentum",
+        "sources": [
+          "tDWy82eU1lA",
+          "yG-dbuiUHDA",
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Demand Zone"
+        ],
+        "frequency": 3,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Demand Zone as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "jne2J1hmeRA",
+          "Q-KcGues0KQ",
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Demand and Supply"
+        ],
+        "frequency": 3,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Demand and Supply as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "jne2J1hmeRA",
+          "yG-dbuiUHDA",
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Retracement"
+        ],
+        "frequency": 3,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Retracement as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158",
+          "tDWy82eU1lA",
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Demand/Control"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Demand/Control as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Demand/Supply Zone"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Demand/Supply Zone as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158",
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Entry Signal"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Entry Signal as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Hidden Supply"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Hidden Supply as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "u2XKVpSZvFo",
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "Multi-timeframe Trading"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Multi-timeframe Trading as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "Pattern W & M (Reversal Patterns)"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Pattern W & M (Reversal Patterns) as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Strength of Character"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Strength of Character as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "Supply and Demand"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Supply and Demand as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "Q-KcGues0KQ",
+          "jne2J1hmeRA"
+        ]
+      },
+      {
+        "concepts": [
+          "Demand & Supply"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Demand & Supply as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Demand Supply"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Demand Supply as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Demand and Control (Supply/Demand zones)"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Demand and Control (Supply/Demand zones) as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Demand and Supply Zones"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Demand and Supply Zones as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "Demand/Supply Zones"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Demand/Supply Zones as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Entry Point (Point 4)"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Entry Point (Point 4) as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Entry Point Identification"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Entry Point Identification as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Entry Point Sequencing (1-2-3-4-5)"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Entry Point Sequencing (1-2-3-4-5) as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Entry Setup"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Entry Setup as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Fear and Doubt"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Fear and Doubt as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Final Swing Supply"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Final Swing Supply as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Final Swing"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Final Swing as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Fund Management Rules"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Fund Management Rules as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Hidden Demand"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Hidden Demand as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "High Low Formation"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use High Low Formation as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "Higher High"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Higher High as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Impulse Move"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Impulse Move as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Impulse and Retracement"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Impulse and Retracement as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Impulse"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Impulse as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Internal Structure"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Internal Structure as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "Key Level"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Key Level as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Liquidity Hunting"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Liquidity Hunting as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Liquidity Pool"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Liquidity Pool as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Liquidity Sweep + BOS Signal"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Liquidity Sweep + BOS Signal as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Liquidity Switch"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Liquidity Switch as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Liquidity Testing"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Liquidity Testing as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Long-term Consistency"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Long-term Consistency as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Long-term Profitability"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Long-term Profitability as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Lower Timeframe Entry"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Lower Timeframe Entry as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Lower Timeframe Entry with Higher Timeframe Direction"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Lower Timeframe Entry with Higher Timeframe Direction as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Momentum Analysis"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Momentum Analysis as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "Pattern W3"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Pattern W3 as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Pending Order Entry"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Pending Order Entry as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Reversal Pattern"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Reversal Pattern as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "Statistical Consistency"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Statistical Consistency as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Statistical Edge"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Statistical Edge as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Supply & Demand Zones"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Supply & Demand Zones as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Supply Level"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Supply Level as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Supply and Demand Zone"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Supply and Demand Zone as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "Supply and Demand Zones"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Supply and Demand Zones as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "Support/Supply Testing"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Support/Supply Testing as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Swing High/Low"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Swing High/Low as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "Swing Liquidity"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Swing Liquidity as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Swing and Liquidity"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Swing and Liquidity as an entry confirmation only after market structure, liquidity, and setup context align.",
+        "sources": [
+          "yG-dbuiUHDA"
+        ]
+      }
+    ],
+    "exit": [
+      {
+        "concepts": [
+          "Risk/Reward Ratio (RR)"
+        ],
+        "frequency": 4,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Risk/Reward Ratio (RR) to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "VUgVkHqNLog",
+          "AHQ81XCZ_uo",
+          "jne2J1hmeRA",
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "High Risk-Reward Ratio"
+        ],
+        "frequency": 3,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use High Risk-Reward Ratio to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Risk-Reward Ratio"
+        ],
+        "frequency": 3,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Risk-Reward Ratio to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "Ul2eM2IFlu8",
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Risk Reward Ratio"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Risk Reward Ratio to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "VUgVkHqNLog",
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Risk/Reward (RR)"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Risk/Reward (RR) to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "jne2J1hmeRA"
+        ]
+      },
+      {
+        "concepts": [
+          "Take Profit (TP)"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Take Profit (TP) to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Take Profit Levels"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Take Profit Levels to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "Ul2eM2IFlu8",
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Edge Development"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Edge Development to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Entry & Exit Strategy"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Entry & Exit Strategy to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Expansion Percentage (100%, 200%, 400%, 500%, 600%)"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Expansion Percentage (100%, 200%, 400%, 500%, 600%) to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Higher High/Higher Low"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Higher High/Higher Low to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "ICT Section Q Zone"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use ICT Section Q Zone to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "a1imqoMSNno"
+        ]
+      },
+      {
+        "concepts": [
+          "Impulse Movement"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Impulse Movement to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Long-term Survival"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Long-term Survival to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Long-term Trading Consistency"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Long-term Trading Consistency to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Low Win Rate Strategy"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Low Win Rate Strategy to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Lower Timeframe"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Lower Timeframe to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Manipulation"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Manipulation to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Market Manipulation"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Market Manipulation to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Multiple Trade Execution"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Multiple Trade Execution to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Risk Reward (RR)"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Risk Reward (RR) to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "jne2J1hmeRA"
+        ]
+      },
+      {
+        "concepts": [
+          "Risk to Reward (RR)"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Risk to Reward (RR) to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "jne2J1hmeRA"
+        ]
+      },
+      {
+        "concepts": [
+          "Shock Retest"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Shock Retest to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Trade Setup"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Trade Setup to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Win Rate vs Profit Factor"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Win Rate vs Profit Factor to define profit-taking, partial exit, or final target logic before opening the trade.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      }
+    ],
+    "filter": [
+      {
+        "concepts": [
+          "Swing Analysis"
+        ],
+        "frequency": 5,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Swing Analysis as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "yG-dbuiUHDA",
+          "jne2J1hmeRA"
+        ]
+      },
+      {
+        "concepts": [
+          "Entry Confirmation"
+        ],
+        "frequency": 3,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Entry Confirmation as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "jne2J1hmeRA",
+          "tDWy82eU1lA",
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Swing Structure"
+        ],
+        "frequency": 3,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Swing Structure as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "yG-dbuiUHDA",
+          "jne2J1hmeRA",
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "Asia Session Filter"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Asia Session Filter as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Checklist Trading System"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Checklist Trading System as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Checklist Trading"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Checklist Trading as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Checklist-based Trading"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Checklist-based Trading as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Confirmation Signals"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Confirmation Signals as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "DVD (Displacement, Velocity, Direction)"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use DVD (Displacement, Velocity, Direction) as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Discipline"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Discipline as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Discipline in Trading"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Discipline in Trading as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "EUR/USD Trading"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use EUR/USD Trading as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "a1imqoMSNno"
+        ]
+      },
+      {
+        "concepts": [
+          "EURUSD"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use EURUSD as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "77e0f78ec5d3"
+        ]
+      },
+      {
+        "concepts": [
+          "Emotional Trading"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Emotional Trading as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Fibonacci Retracement"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Fibonacci Retracement as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Fund Challenge Rules Compliance"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Fund Challenge Rules Compliance as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "HTF Confirmation"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use HTF Confirmation as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "High Time Frame Analysis"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use High Time Frame Analysis as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "High Time Frame Direction"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use High Time Frame Direction as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "High Time Frame Zones"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use High Time Frame Zones as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "High Time Frame"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use High Time Frame as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "High Time Frame vs Low Time Frame"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use High Time Frame vs Low Time Frame as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "High-Low Swing Analysis"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use High-Low Swing Analysis as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Higher Time Frame (HTF)"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Higher Time Frame (HTF) as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Higher Timeframe Analysis"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Higher Timeframe Analysis as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Hybrid System"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Hybrid System as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "a1imqoMSNno"
+        ]
+      },
+      {
+        "concepts": [
+          "Long-term Trading Psychology"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Long-term Trading Psychology as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Low Low (LL)"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Low Low (LL) as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Low Time Frame Confirmation"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Low Time Frame Confirmation as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "Low Time Frame Trading"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Low Time Frame Trading as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Lower Time Frame (LTF)"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Lower Time Frame (LTF) as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Lower Timeframe with Higher Timeframe Direction"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Lower Timeframe with Higher Timeframe Direction as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Market Structure Confirmation"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Market Structure Confirmation as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Mindset and Psychology"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Mindset and Psychology as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Mindset/Psychology"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Mindset/Psychology as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Momentum"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Momentum as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "POI (Point of Interest)"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use POI (Point of Interest) as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Portfolio Protection"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Portfolio Protection as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Portfolio Survival"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Portfolio Survival as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Price Action Confirmation"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Price Action Confirmation as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Psychology in Trading"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Psychology in Trading as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Repeated Execution"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Repeated Execution as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Statistical Analysis"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Statistical Analysis as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Statistics and Win Rate"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Statistics and Win Rate as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Statistics"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Statistics as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Time Frame Analysis"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Time Frame Analysis as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Trade Confirmation"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Trade Confirmation as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Trade Statistics"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Trade Statistics as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Trading Discipline"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Trading Discipline as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Win Rate"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Win Rate as a pre-trade filter; skip trades when this condition does not support the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      }
+    ],
+    "regime": [
+      {
+        "concepts": [
+          "SMC (Smart Money Concepts)"
+        ],
+        "frequency": 11,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use SMC (Smart Money Concepts) to classify market context before enabling entry logic.",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "JowGLzR6eHg",
+          "yG-dbuiUHDA",
+          "jne2J1hmeRA",
+          "a1imqoMSNno",
+          "Q-KcGues0KQ",
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Market Structure"
+        ],
+        "frequency": 6,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Market Structure to classify market context before enabling entry logic.",
+        "sources": [
+          "Q-KcGues0KQ",
+          "QWfwB72z158",
+          "tDWy82eU1lA",
+          "u2XKVpSZvFo",
+          "AHQ81XCZ_uo",
+          "7661a5b75eb5"
+        ]
+      },
+      {
+        "concepts": [
+          "Expansion and Retracement"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Expansion and Retracement to classify market context before enabling entry logic.",
+        "sources": [
+          "tDWy82eU1lA",
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Expansion"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Expansion to classify market context before enabling entry logic.",
+        "sources": [
+          "QWfwB72z158",
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Imbalance"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Imbalance to classify market context before enabling entry logic.",
+        "sources": [
+          "JowGLzR6eHg",
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "Market Regime"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Market Regime to classify market context before enabling entry logic.",
+        "sources": [
+          "u2XKVpSZvFo",
+          "jne2J1hmeRA"
+        ]
+      },
+      {
+        "concepts": [
+          "Trend Analysis"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Trend Analysis to classify market context before enabling entry logic.",
+        "sources": [
+          "jne2J1hmeRA",
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Back to Basic Trading System"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Back to Basic Trading System to classify market context before enabling entry logic.",
+        "sources": [
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Character of Price Action"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Character of Price Action to classify market context before enabling entry logic.",
+        "sources": [
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Cycle Analysis"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Cycle Analysis to classify market context before enabling entry logic.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Down Trend"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Down Trend to classify market context before enabling entry logic.",
+        "sources": [
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Downtrend"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Downtrend to classify market context before enabling entry logic.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Edge Building"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Edge Building to classify market context before enabling entry logic.",
+        "sources": [
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Fear and Hesitation"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Fear and Hesitation to classify market context before enabling entry logic.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Long-term Probability"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Long-term Probability to classify market context before enabling entry logic.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Low Leverage Strategy"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Low Leverage Strategy to classify market context before enabling entry logic.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Low Win Percentage Trading"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Low Win Percentage Trading to classify market context before enabling entry logic.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Lower Timeframe Risk"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Lower Timeframe Risk to classify market context before enabling entry logic.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Market Structure Analysis"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Market Structure Analysis to classify market context before enabling entry logic.",
+        "sources": [
+          "a1imqoMSNno"
+        ]
+      },
+      {
+        "concepts": [
+          "Mindset"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Mindset to classify market context before enabling entry logic.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Multi-timeframe Analysis"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Multi-timeframe Analysis to classify market context before enabling entry logic.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "Price Action"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Price Action to classify market context before enabling entry logic.",
+        "sources": [
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Reaccumulation Phase"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Reaccumulation Phase to classify market context before enabling entry logic.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Reaccumulation"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Reaccumulation to classify market context before enabling entry logic.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "SMC Model"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use SMC Model to classify market context before enabling entry logic.",
+        "sources": [
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Structure Analysis"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Structure Analysis to classify market context before enabling entry logic.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "Swing High/Swing Low"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Swing High/Swing Low to classify market context before enabling entry logic.",
+        "sources": [
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "System Consistency"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use System Consistency to classify market context before enabling entry logic.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Trade Repetition"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Trade Repetition to classify market context before enabling entry logic.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Trend Direction"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Trend Direction to classify market context before enabling entry logic.",
+        "sources": [
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Trend Identification"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Trend Identification to classify market context before enabling entry logic.",
+        "sources": [
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Up Trend"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Up Trend to classify market context before enabling entry logic.",
+        "sources": [
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Uptrend"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Uptrend to classify market context before enabling entry logic.",
+        "sources": [
+          "QWfwB72z158"
+        ]
+      }
+    ],
+    "stop_loss": [
+      {
+        "concepts": [
+          "Supply Zone",
+          "BOS",
+          "SMC (Smart Money Concepts)",
+          "Order Block",
+          "Demand Zone",
+          "Market Structure",
+          "Retracement"
+        ],
+        "frequency": 21,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Place stop loss above the retracement high (above the low-high structure)",
+        "sources": [
+          "u2XKVpSZvFo",
+          "tDWy82eU1lA",
+          "JowGLzR6eHg",
+          "Q-KcGues0KQ",
+          "jne2J1hmeRA",
+          "yG-dbuiUHDA",
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Order Block",
+          "Pattern W",
+          "BSL (Buy Side Liquidity)",
+          "SMC (Smart Money Concepts)",
+          "Pattern M",
+          "SSL (Sell Side Liquidity)",
+          "Price Structure",
+          "Swing Structure"
+        ],
+        "frequency": 20,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Stop loss placement below demand zones in buy trades",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "jne2J1hmeRA",
+          "yG-dbuiUHDA",
+          "tDWy82eU1lA",
+          "JowGLzR6eHg",
+          "u2XKVpSZvFo",
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "Pattern W",
+          "BSL (Buy Side Liquidity)",
+          "Order Block",
+          "SMC (Smart Money Concepts)",
+          "Pattern M",
+          "SSL (Sell Side Liquidity)",
+          "Swing Structure",
+          "Price Structure"
+        ],
+        "frequency": 10,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Stop Loss below Order Block structure",
+        "sources": [
+          "yG-dbuiUHDA",
+          "jne2J1hmeRA",
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "BOS",
+          "Supply Zone",
+          "Pattern M",
+          "Pattern W",
+          "Demand Zone",
+          "Market Structure",
+          "Order Block"
+        ],
+        "frequency": 9,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Place stop loss below the low created during liquidity sweep",
+        "sources": [
+          "Q-KcGues0KQ",
+          "tDWy82eU1lA",
+          "jne2J1hmeRA"
+        ]
+      },
+      {
+        "concepts": [
+          "Supply Zone",
+          "BOS",
+          "Pattern W",
+          "Order Block",
+          "Retracement",
+          "Price Structure"
+        ],
+        "frequency": 8,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Stop loss placed below the lowest point of the W3 pattern structure",
+        "sources": [
+          "u2XKVpSZvFo",
+          "tDWy82eU1lA",
+          "jne2J1hmeRA"
+        ]
+      },
+      {
+        "concepts": [
+          "BOS",
+          "SMC (Smart Money Concepts)",
+          "Order Block"
+        ],
+        "frequency": 6,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Place SL below the low of the W/M pattern structure",
+        "sources": [
+          "JowGLzR6eHg",
+          "tDWy82eU1lA",
+          "jne2J1hmeRA"
+        ]
+      },
+      {
+        "concepts": [
+          "Order Block",
+          "Liquidity Sweep",
+          "Supply Zone"
+        ],
+        "frequency": 4,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Place stop loss above the supply zone that defined the Pattern W",
+        "sources": [
+          "JowGLzR6eHg",
+          "u2XKVpSZvFo",
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Order Block",
+          "Liquidity Sweep",
+          "BOS (Break of Structure)"
+        ],
+        "frequency": 4,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Stop loss placement below the pattern structure if zone confidence is insufficient",
+        "sources": [
+          "tDWy82eU1lA",
+          "JowGLzR6eHg",
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "Order Block",
+          "Market Structure",
+          "Price Structure"
+        ],
+        "frequency": 4,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Stop loss placement not explicitly detailed in transcript - implied below structural low or pattern invalidation point",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "jne2J1hmeRA",
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Order Block",
+          "BOS (Break of Structure)"
+        ],
+        "frequency": 2,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Place stop loss above the recent high formed during retracement phase",
+        "sources": [
+          "tDWy82eU1lA",
+          "JowGLzR6eHg"
+        ]
+      },
+      {
+        "concepts": [
+          "Pattern W",
+          "Liquidity Sweep"
+        ],
+        "frequency": 2,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Place stop loss below the Order Block that failed to hold price",
+        "sources": [
+          "u2XKVpSZvFo",
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "Pattern W",
+          "Liquidity Sweep"
+        ],
+        "frequency": 2,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Stop loss placement above the supply zone that is being tested",
+        "sources": [
+          "u2XKVpSZvFo",
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "Supply Zone",
+          "Liquidity Sweep"
+        ],
+        "frequency": 2,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Stop loss placement should be below the structure to protect against reversal",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "u2XKVpSZvFo"
+        ]
+      },
+      {
+        "concepts": [
+          "BSL (Buy Side Liquidity)"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use BSL (Buy Side Liquidity) to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "jne2J1hmeRA",
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Back to Basics"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Back to Basics to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "yG-dbuiUHDA",
+          "jne2J1hmeRA"
+        ]
+      },
+      {
+        "concepts": [
+          "High-Low Structure"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use High-Low Structure to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "Higher Timeframe"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Higher Timeframe to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "Q-KcGues0KQ",
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "Position Sizing"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Position Sizing to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "Ul2eM2IFlu8",
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "SSL (Sell Side Liquidity)"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use SSL (Sell Side Liquidity) to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "jne2J1hmeRA",
+          "yG-dbuiUHDA"
+        ]
+      },
+      {
+        "concepts": [
+          "Stop Loss Placement"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Stop Loss Placement to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "Ul2eM2IFlu8",
+          "58db7c3d4de1"
+        ]
+      },
+      {
+        "concepts": [
+          "Structure"
+        ],
+        "frequency": 2,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Structure to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "JowGLzR6eHg",
+          "QWfwB72z158"
+        ]
+      },
+      {
+        "concepts": [
+          "High-Low Structure"
+        ],
+        "frequency": 1,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "SL positioned below the retracement low that forms the entry signal",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "High-Low Structure"
+        ],
+        "frequency": 1,
+        "recovery_source": "conflict_queue_preserved_rule_text",
+        "rule": "Stop loss below the support level created by demand zone",
+        "sources": [
+          "AHQ81XCZ_uo",
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "Consecutive Losses"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Consecutive Losses to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Drawdown Management"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Drawdown Management to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "EUR/USD"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use EUR/USD to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "a1imqoMSNno"
+        ]
+      },
+      {
+        "concepts": [
+          "High Timeframe Direction"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use High Timeframe Direction to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "High-Low Analysis"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use High-Low Analysis to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "London Open"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use London Open to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "77e0f78ec5d3"
+        ]
+      },
+      {
+        "concepts": [
+          "Low High"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Low High to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "tDWy82eU1lA"
+        ]
+      },
+      {
+        "concepts": [
+          "Maximum Drawdown Control"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Maximum Drawdown Control to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Maximum Drawdown Management"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Maximum Drawdown Management to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Pending Order Placement"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Pending Order Placement to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "AHQ81XCZ_uo"
+        ]
+      },
+      {
+        "concepts": [
+          "Stop Loss (SL)"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Stop Loss (SL) to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "Stop Loss Management"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Stop Loss Management to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "Ul2eM2IFlu8"
+        ]
+      },
+      {
+        "concepts": [
+          "Structure within Structure"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use Structure within Structure to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "Q-KcGues0KQ"
+        ]
+      },
+      {
+        "concepts": [
+          "System Integrity"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use System Integrity to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      },
+      {
+        "concepts": [
+          "System Repetition"
+        ],
+        "frequency": 1,
+        "recovery_source": "knowledge_index_metadata_recovery",
+        "rule": "Use System Repetition to define the invalidation area and place stop loss beyond the structure that would disprove the setup.",
+        "sources": [
+          "VUgVkHqNLog"
+        ]
+      }
+    ]
+  },
+  "generated_at": "2026-05-27T22:09:28+07:00",
+  "recovery": {
+    "concept_rules_recovered": 197,
+    "method": "knowledge_index_metadata_plus_conflict_queue_rule_text",
+    "note": "Best-effort recovery because ANTHROPIC_API_KEY and original LLM artifact backup were unavailable. Generic metadata-derived rules are not exact original LLM rule text."
+  },
+  "summary": {
+    "components_complete": [
+      "entry",
+      "stop_loss",
+      "exit",
+      "filter",
+      "regime"
+    ],
+    "components_missing": [],
+    "ea_readiness": "high",
+    "total_rules": 215
+  },
+  "version": 1
+}

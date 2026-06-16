@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Budget Meter Preview</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050914;
+      --panel: #0e1728;
+      --panel-2: #111d32;
+      --line: rgba(148, 163, 184, 0.18);
+      --muted: #95a3b8;
+      --text: #f7fbff;
+      --cyan: #22d3ee;
+      --green: #22c55e;
+      --yellow: #facc15;
+      --red: #fb7185;
+      --purple: #a78bfa;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at 80% 10%, rgba(34, 211, 238, 0.12), transparent 28%),
+                  linear-gradient(180deg, #060b17 0%, var(--bg) 100%);
+      color: var(--text);
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      padding: 32px;
+    }
+
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .topline {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 0 0 6px;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(17, 29, 50, 0.94), rgba(9, 15, 29, 0.94));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.36);
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      padding: 16px 18px;
+    }
+
+    .card-title {
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .badge {
+      border: 1px solid rgba(34, 197, 94, 0.38);
+      color: #86efac;
+      background: rgba(34, 197, 94, 0.1);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .body { padding: 18px; }
+
+    .meter {
+      position: relative;
+      width: 190px;
+      aspect-ratio: 1;
+      margin: 4px auto 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle closest-side, #0d1628 72%, transparent 73%),
+        conic-gradient(var(--green) 0 43%, rgba(148, 163, 184, 0.18) 43% 100%);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    .meter strong {
+      display: block;
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .meter span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 6px;
+      text-align: center;
+    }
+
+    .decision {
+      display: grid;
+      gap: 8px;
+      padding: 12px;
+      border: 1px solid rgba(34, 197, 94, 0.26);
+      background: rgba(34, 197, 94, 0.08);
+      border-radius: 8px;
+      margin-bottom: 14px;
+    }
+
+    .decision b {
+      color: #86efac;
+      font-size: 14px;
+    }
+
+    .decision small {
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .provider {
+      display: grid;
+      grid-template-columns: 92px 1fr 48px;
+      gap: 10px;
+      align-items: center;
+      padding: 11px 0;
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .provider:first-child { border-top: 0; }
+    .provider-name {
+      font-weight: 750;
+      font-size: 13px;
+    }
+
+    .bar {
+      height: 8px;
+      background: rgba(148, 163, 184, 0.17);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      border-radius: inherit;
+    }
+
+    .p-green { background: linear-gradient(90deg, var(--green), var(--cyan)); }
+    .p-yellow { background: linear-gradient(90deg, var(--yellow), #fb923c); }
+    .p-purple { background: linear-gradient(90deg, var(--purple), var(--cyan)); }
+    .percent {
+      color: var(--muted);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .preview-stack {
+      display: grid;
+      gap: 20px;
+    }
+
+    .wide-panel {
+      min-height: 210px;
+    }
+
+    .status-row {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .cell {
+      padding: 14px 16px;
+      border-left: 1px solid var(--line);
+      min-height: 78px;
+    }
+
+    .cell:first-child { border-left: 0; }
+    .cell small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .cell b {
+      font-size: 22px;
+    }
+
+    .hint {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .mini-sidebar {
+      width: 235px;
+      background: #071024;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .mini-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .mini-row:first-of-type { border-top: 0; }
+    .ok { color: #4ade80; font-weight: 800; }
+    .warn { color: #facc15; font-weight: 800; }
+
+    .layout-sample {
+      display: flex;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .dashboard-placement {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .mock-column {
+      display: grid;
+      gap: 16px;
+    }
+
+    .mock-card {
+      background: #111827;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .mock-card .body {
+      padding: 16px;
+    }
+
+    .placeholder-card {
+      min-height: 130px;
+      display: grid;
+      align-content: center;
+      color: var(--muted);
+      border-style: dashed;
+    }
+
+    .ai-right-card {
+      border-color: rgba(34, 211, 238, 0.28);
+      box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.06), 0 20px 45px rgba(0, 0, 0, 0.24);
+    }
+
+    .compact-budget-head {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .mini-meter {
+      width: 92px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle closest-side, #111827 68%, transparent 70%),
+        conic-gradient(var(--green) 0 43%, rgba(148, 163, 184, 0.16) 43% 100%);
+      border: 1px solid rgba(34, 211, 238, 0.18);
+    }
+
+    .mini-meter strong {
+      font-size: 22px;
+    }
+
+    .budget-verdict {
+      display: grid;
+      gap: 6px;
+    }
+
+    .budget-verdict b {
+      font-size: 18px;
+      color: #86efac;
+    }
+
+    .budget-verdict span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .thresholds {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .threshold {
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 8px;
+      padding: 9px 8px;
+      background: rgba(6, 10, 20, 0.36);
+    }
+
+    .threshold small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .threshold b {
+      font-size: 13px;
+    }
+
+    .actions-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .ghost-button,
+    .solid-button {
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid rgba(34, 211, 238, 0.24);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .solid-button {
+      background: rgba(34, 211, 238, 0.14);
+      color: #67e8f9;
+    }
+
+    .ghost-button {
+      color: var(--muted);
+      background: rgba(148, 163, 184, 0.06);
+    }
+
+    .bottom-strip-preview {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      background: rgba(6, 10, 20, 0.72);
+      border-radius: 8px;
+      padding: 13px 18px;
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 7px;
+      background: var(--green);
+      box-shadow: 0 0 13px rgba(34, 197, 94, 0.8);
+    }
+
+    @media (max-width: 880px) {
+      body { padding: 18px; }
+      .grid { grid-template-columns: 1fr; }
+      .status-row { grid-template-columns: 1fr 1fr; }
+      .layout-sample { flex-direction: column; }
+      .mini-sidebar { width: 100%; }
+      .dashboard-placement { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="topline">
+      <div>
+        <h1>AI Budget Meter Preview</h1>
+        <p class="subtitle">Mockup only. This is not connected to the real dashboard yet.</p>
+      </div>
+      <span class="badge">Recommended: Continue</span>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="card-header">
+          <div class="card-title">AI Budget</div>
+          <span class="badge">57% left</span>
+        </div>
+        <div class="body">
+          <div class="meter">
+            <div>
+              <strong>43%</strong>
+              <span>used today</span>
+            </div>
+          </div>
+
+          <div class="decision">
+            <b>Safe to continue</b>
+            <small>Heavy pipeline work is still allowed. Save soon when usage passes 70%.</small>
+          </div>
+
+          <div class="provider">
+            <div class="provider-name">Claude</div>
+            <div class="bar"><div class="fill p-green" style="width:62%"></div></div>
+            <div class="percent">62%</div>
+          </div>
+          <div class="provider">
+            <div class="provider-name">Gemini</div>
+            <div class="bar"><div class="fill p-purple" style="width:15%"></div></div>
+            <div class="percent">15%</div>
+          </div>
+          <div class="provider">
+            <div class="provider-name">OpenRouter</div>
+            <div class="bar"><div class="fill p-yellow" style="width:40%"></div></div>
+            <div class="percent">40%</div>
+          </div>
+        </div>
+      </article>
+
+      <div class="preview-stack">
+        <article class="card wide-panel">
+          <div class="card-header">
+            <div class="card-title">Option A: Dashboard KPI Card</div>
+            <span class="badge">Best first version</span>
+          </div>
+          <div class="body">
+            <div class="status-row">
+              <div class="cell">
+                <small>System mode</small>
+                <b>Cloud LLM Ready</b>
+              </div>
+              <div class="cell">
+                <small>Used</small>
+                <b>43%</b>
+              </div>
+              <div class="cell">
+                <small>Left</small>
+                <b>57%</b>
+              </div>
+              <div class="cell">
+                <small>Warning</small>
+                <b>70%</b>
+              </div>
+              <div class="cell">
+                <small>Hard stop</small>
+                <b>90%</b>
+              </div>
+            </div>
+            <p class="hint">วางเป็นการ์ดบน dashboard ด้านบนหรือแถว System Status เห็นทันทีว่า AI ยังพอทำงานหนักต่อได้ไหม</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">Option B: Sidebar Status</div>
+            <span class="badge">Compact</span>
+          </div>
+          <div class="body layout-sample">
+            <div class="mini-sidebar">
+              <div class="card-title" style="margin-bottom:10px">System Status</div>
+              <div class="mini-row"><span>Flask API</span><span class="ok">Online</span></div>
+              <div class="mini-row"><span>Knowledge Index</span><span class="ok">Ready</span></div>
+              <div class="mini-row"><span>AI Budget</span><span class="ok">57% left</span></div>
+              <div class="mini-row"><span>LLM Mode</span><span class="ok">Ready</span></div>
+              <div class="mini-row"><span>Save Warning</span><span class="warn">70%</span></div>
+            </div>
+            <p class="hint" style="margin:0">แบบนี้เล็กและไม่รก เหมาะถ้าอยากให้เป็นไฟสถานะข้างซ้าย แต่รายละเอียด provider ต้องไปดูหน้า Settings</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:22px">
+      <div class="card-header">
+        <div class="card-title">Option C: ใช้พื้นที่ว่างจริงใน Dashboard</div>
+        <span class="badge">Right column placement</span>
+      </div>
+      <div class="body">
+        <div class="dashboard-placement">
+          <div class="mock-column">
+            <div class="mock-card placeholder-card">
+              <div class="body">
+                <div class="card-title">YouTube Sources</div>
+                <p class="hint">พื้นที่เดิมฝั่งซ้าย ใช้ต่อเหมือนเดิม ไม่แทรก AI budget ตรงนี้</p>
+              </div>
+            </div>
+            <div class="mock-card placeholder-card">
+              <div class="body">
+                <div class="card-title">Learning Progress</div>
+                <p class="hint">เก็บ focus ของ intake/progress ไว้ ไม่ให้ปนกับ cost/budget</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mock-column">
+            <div class="mock-card placeholder-card">
+              <div class="body">
+                <div class="card-title">Knowledge Index</div>
+                <p class="hint">ตัวเลข concept/conflict ยังอยู่กลางจอ เหมาะกับการดูผล pipeline</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mock-column">
+            <div class="mock-card placeholder-card">
+              <div class="body">
+                <div class="card-title">Pipeline Controls</div>
+                <p class="hint">การ์ดเดิมอยู่บนสุดของคอลัมน์ขวา</p>
+              </div>
+            </div>
+
+            <div class="mock-card ai-right-card">
+              <div class="card-header">
+                <div class="card-title">AI Budget</div>
+                <span class="badge">57% left</span>
+              </div>
+              <div class="body">
+                <div class="compact-budget-head">
+                  <div class="mini-meter"><strong>43%</strong></div>
+                  <div class="budget-verdict">
+                    <b>Continue</b>
+                    <span>ทำงานต่อได้ ยังไม่ควรรัน batch ใหญ่มากถ้าใกล้ 70%</span>
+                  </div>
+                </div>
+
+                <div class="provider">
+                  <div class="provider-name">Claude</div>
+                  <div class="bar"><div class="fill p-green" style="width:62%"></div></div>
+                  <div class="percent">62%</div>
+                </div>
+                <div class="provider">
+                  <div class="provider-name">Gemini</div>
+                  <div class="bar"><div class="fill p-purple" style="width:15%"></div></div>
+                  <div class="percent">15%</div>
+                </div>
+                <div class="provider">
+                  <div class="provider-name">OpenRouter</div>
+                  <div class="bar"><div class="fill p-yellow" style="width:40%"></div></div>
+                  <div class="percent">40%</div>
+                </div>
+
+                <div class="thresholds">
+                  <div class="threshold">
+                    <small>0-70</small>
+                    <b style="color:#86efac">Continue</b>
+                  </div>
+                  <div class="threshold">
+                    <small>70-90</small>
+                    <b style="color:#fde047">Save soon</b>
+                  </div>
+                  <div class="threshold">
+                    <small>90+</small>
+                    <b style="color:#fda4af">Stop heavy</b>
+                  </div>
+                </div>
+
+                <div class="actions-row">
+                  <div class="solid-button">Save checkpoint</div>
+                  <div class="ghost-button">Usage details</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-strip-preview">
+          <span><span class="dot"></span>AI Budget: 57% left</span>
+          <span>Mode: Cloud LLM Ready</span>
+          <span>Guard: No-LLM overwrite protected</span>
+          <span>Recommendation: Continue</span>
+        </div>
+
+        <p class="hint">แนวนี้ใช้ช่องว่างด้านขวาที่คุณชี้ไว้พอดี และเพิ่มแถบล่างเป็นสถานะย่อ เห็นทันทีว่าควรทำงานต่อหรือ save checkpoint</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

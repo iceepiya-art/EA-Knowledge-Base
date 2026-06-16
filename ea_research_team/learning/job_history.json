@@ -1,0 +1,1496 @@
+[
+  {
+    "ts": "2026-05-04 08:42:06",
+    "type": "approve_write",
+    "detail": "Gold declines to near $4,600 amid escalating Middle East tensions",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 08:42:14",
+    "type": "approve_write",
+    "detail": "Prime Quantum AI —  TRADE WITH AI (Anthropic Claude, OpenAI GPT, Google Gemini, ",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 08:50:15",
+    "type": "job_queued",
+    "detail": "[24a57575] Check+Learn 2f92ad20",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 08:54:05",
+    "type": "job_done",
+    "detail": "[24a57575] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 08:54:40",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] SMC Mastery: The NinjaThai High RR W&M Strategy",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 08:55:54",
+    "type": "job_queued",
+    "detail": "[74616fbc] Check+Learn 6ef48f89",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 09:01:41",
+    "type": "job_done",
+    "detail": "[74616fbc] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 09:31:51",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] SMC Trading Mastery: Structure Liquidity and Confirmations Ch",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 09:32:47",
+    "type": "job_queued",
+    "detail": "[d30b680d] Check+Learn f6bf0c7b",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 09:37:31",
+    "type": "job_done",
+    "detail": "[d30b680d] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 09:38:52",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Ninjathai Multi-Timeframe SMC and Price Cycle Strategy",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 09:43:27",
+    "type": "job_queued",
+    "detail": "[ae25bad4] Check+Learn 48c3ebcc",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 09:49:47",
+    "type": "job_done",
+    "detail": "[ae25bad4] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 10:05:37",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Ninja Market Structure: Mastering Trends and Price Cycles",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 10:07:39",
+    "type": "job_queued",
+    "detail": "[5bedee71] Check+Learn 2f88be78",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 10:13:25",
+    "type": "job_done",
+    "detail": "[5bedee71] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 10:16:51",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] The Order Block Strategy: Mastering Market Structure and Conf",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 10:17:34",
+    "type": "job_queued",
+    "detail": "[7cdf8dd3] Check+Learn 6bda7f6f",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 10:22:17",
+    "type": "job_done",
+    "detail": "[7cdf8dd3] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 10:25:48",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Decoding BSL: Institutional Liquidity and Sell Side Models",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 10:26:39",
+    "type": "job_queued",
+    "detail": "[a09c44f6] Check+Learn 2047b0c3",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 10:31:37",
+    "type": "job_done",
+    "detail": "[a09c44f6] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 10:31:54",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] NinjaThai Trading Strategies: Mastering BSL Liquidity and Sel",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 10:37:52",
+    "type": "job_queued",
+    "detail": "[4f66400f] Check+Learn 843e3509",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 10:43:41",
+    "type": "job_done",
+    "detail": "[4f66400f] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 10:44:10",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Price Cycle and SMC Follow Trend Trading Strategy",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 10:45:03",
+    "type": "job_queued",
+    "detail": "[1237f6df] Check+Learn f9fb7b80",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 10:49:57",
+    "type": "job_error",
+    "detail": "[1237f6df] RPC rLM1Ne returned null result data (possible server error or parameter mismatc",
+    "level": "error"
+  },
+  {
+    "ts": "2026-05-04 10:52:16",
+    "type": "job_queued",
+    "detail": "[19135b95] Check+Learn f9fb7b80",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 10:57:05",
+    "type": "job_done",
+    "detail": "[19135b95] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 10:58:42",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Advanced Market Structure and SMC Confirmation Models",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 11:00:32",
+    "type": "job_queued",
+    "detail": "[13fb0c66] Check+Learn 2b3c54b7",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 11:05:54",
+    "type": "job_done",
+    "detail": "[13fb0c66] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 11:06:10",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Market Structure and SMC Confirmation Model Summary",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 11:08:35",
+    "type": "job_queued",
+    "detail": "[c20f99bd] Check+Learn 056d2c04",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 11:13:41",
+    "type": "job_done",
+    "detail": "[c20f99bd] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 11:34:29",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] W2 Double Bottom Hybrid Trading Setup Instruction",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 11:38:30",
+    "type": "job_queued",
+    "detail": "[13662d7a] Check+Learn 5ff09f24",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 11:43:56",
+    "type": "job_done",
+    "detail": "[13662d7a] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 11:46:30",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Ninjathai Trading Strategies: W2 Models and Liquidity Reactiv",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 11:47:36",
+    "type": "job_queued",
+    "detail": "[a144cf15] Check+Learn 5d03c163",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 11:52:41",
+    "type": "job_done",
+    "detail": "[a144cf15] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 11:53:23",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] The NinjaThai M3 Model and Break of Structure Strategy",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 11:58:32",
+    "type": "job_queued",
+    "detail": "[fe63f6cf] Check+Learn 9bdae9cc",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 12:03:06",
+    "type": "job_done",
+    "detail": "[fe63f6cf] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 12:09:33",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] SMC Hybrid Trading: Master Reversal Patterns and Liquidity Ta",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 12:19:03",
+    "type": "job_queued",
+    "detail": "[bca9dd1a] Check+Learn 7205f587",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 12:29:04",
+    "type": "job_done",
+    "detail": "[bca9dd1a] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 12:29:58",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] The Ninja Thai Order Block Confirmation Strategy",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 12:30:59",
+    "type": "job_queued",
+    "detail": "[4b43854a] Check+Learn 7470ec59",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 12:36:28",
+    "type": "job_done",
+    "detail": "[4b43854a] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 12:43:46",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] NinjaThai SMC Hybrid: XAUUSD Gold Redistribution Strategy",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 12:57:46",
+    "type": "job_queued",
+    "detail": "[56d19636] Check+Learn f8e9bf6c",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 12:57:47",
+    "type": "job_error",
+    "detail": "[56d19636] Authentication expired or invalid. Redirected to: https://accounts.google.com/v3",
+    "level": "error"
+  },
+  {
+    "ts": "2026-05-04 13:02:02",
+    "type": "job_queued",
+    "detail": "[6847d65a] Check+Learn f8e9bf6c",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 13:07:34",
+    "type": "job_done",
+    "detail": "[6847d65a] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 13:08:00",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] SMC Hybrid Strategy: Pattern Reversal and Redistribution Trad",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 13:58:00",
+    "type": "job_queued",
+    "detail": "[58b6c03c] Check+Learn 8483934d",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 13:58:46",
+    "type": "job_queued",
+    "detail": "[004509ac] Check+Learn 8483934d",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 14:03:33",
+    "type": "job_done",
+    "detail": "[004509ac] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 14:03:57",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Market Structure and SMC Confirmation Trading Models",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 14:07:04",
+    "type": "job_queued",
+    "detail": "[e363ecab] Check+Learn 1c4a56a6",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 14:12:57",
+    "type": "job_done",
+    "detail": "[e363ecab] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 14:15:03",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Mastering Trading Systems and Goal Setting for Fund Success",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 14:19:30",
+    "type": "job_queued",
+    "detail": "[a16fb0b0] Check+Learn 229bc8f8",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 14:24:34",
+    "type": "job_done",
+    "detail": "[a16fb0b0] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 14:25:46",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] NinjaThai: Mastering Hidden Supply and Price Cycle Models",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 14:27:16",
+    "type": "job_queued",
+    "detail": "[8d738bab] Check+Learn a7a9bbc7",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 14:33:03",
+    "type": "job_done",
+    "detail": "[8d738bab] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 14:35:30",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] NinjaThai: Hidden Supply and Price Cycle Trading Models",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 14:38:49",
+    "type": "job_queued",
+    "detail": "[d6cca035] Check+Learn 56c9a1a3",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 14:45:37",
+    "type": "job_done",
+    "detail": "[d6cca035] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 14:50:40",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Hybrid SMC Trading Strategy: AUD Box and Market Cycles",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 15:06:33",
+    "type": "job_queued",
+    "detail": "[c82d7f72] Check+Learn 9c570fbc",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 15:11:58",
+    "type": "job_done",
+    "detail": "[c82d7f72] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 15:12:34",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Price Cycle and Swing Trading Analysis Strategy",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 15:15:11",
+    "type": "job_queued",
+    "detail": "[8fe1a883] Check+Learn 66768344",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 15:21:18",
+    "type": "job_done",
+    "detail": "[8fe1a883] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 15:21:54",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Market Cycle Mechanics and Swing Trading Strategies",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 16:47:58",
+    "type": "job_queued",
+    "detail": "[64b7b8fb] Check+Learn d8d3dda4",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 16:47:59",
+    "type": "job_error",
+    "detail": "[64b7b8fb] Authentication expired or invalid. Redirected to: https://accounts.google.com/v3",
+    "level": "error"
+  },
+  {
+    "ts": "2026-05-04 16:48:44",
+    "type": "job_queued",
+    "detail": "[6bd50f35] Check+Learn d8d3dda4",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 16:51:43",
+    "type": "job_done",
+    "detail": "[6bd50f35] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 16:52:17",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] The Mission Control Agent Dashboard",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 17:40:30",
+    "type": "job_queued",
+    "detail": "[6c29f28f] Check+Learn eb082f11",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-04 17:46:02",
+    "type": "job_done",
+    "detail": "[6c29f28f] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-04 17:46:19",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Installing OpenClaw on VPS: Security, Docker, and AI Integrat",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 08:58:18",
+    "type": "approve_write",
+    "detail": "Anthropic and OpenAI now agree on one thing: selling AI requires a lot more than",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 08:58:23",
+    "type": "approve_write",
+    "detail": "April 2026 newsletter",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 08:58:31",
+    "type": "approve_write",
+    "detail": "Gold slides below $4,550 as Iran tensions lift Dollar, yields now",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 08:58:39",
+    "type": "approve_write",
+    "detail": "Forex Today: US Dollar holds firm on Middle East flare-up ahead of RBA, US data",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 08:58:46",
+    "type": "approve_write",
+    "detail": "Recent Quant Links from Quantocracy as of 05/03/2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 08:58:51",
+    "type": "approve_write",
+    "detail": "Financial & Forex Market Recap – May 4, 2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 08:58:57",
+    "type": "approve_write",
+    "detail": "5 Exit Strategies To Consider in Each Trading Setup",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 14:56:13",
+    "type": "ea_add",
+    "detail": "TEST Registry EA",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 14:56:13",
+    "type": "ea_update",
+    "detail": "TEST Registry EA Updated",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 15:10:52",
+    "type": "ea_backtest_import",
+    "detail": "CME / AlphaEdge SMC Pro: tmp_backtest_report.html",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 15:26:21",
+    "type": "ea_checklist",
+    "detail": "CME / AlphaEdge SMC Pro: 3/8",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 15:38:37",
+    "type": "ea_notes",
+    "detail": "CME / AlphaEdge SMC Pro",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 16:06:08",
+    "type": "ea_customer",
+    "detail": "CME / AlphaEdge SMC Pro -> Test Buyer",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 16:30:48",
+    "type": "ea_customer",
+    "detail": "CME / AlphaEdge SMC Pro -> Test Buyer",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 16:30:48",
+    "type": "ea_customer_update",
+    "detail": "CME / AlphaEdge SMC Pro -> Test Buyer 2 (update)",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 16:30:48",
+    "type": "ea_customer_update",
+    "detail": "CME / AlphaEdge SMC Pro -> Test Buyer 2 (archive)",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 16:39:26",
+    "type": "ea_open",
+    "detail": "Gold Breakout 100Bar Survivor",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 16:55:40",
+    "type": "ea_customer",
+    "detail": "CME / AlphaEdge SMC Pro -> Package Test",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 16:55:40",
+    "type": "ea_package",
+    "detail": "CME / AlphaEdge SMC Pro -> Package Test",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 17:15:56",
+    "type": "ea_customer",
+    "detail": "CME / AlphaEdge SMC Pro -> Zip Test",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 17:15:56",
+    "type": "ea_zip",
+    "detail": "CME / AlphaEdge SMC Pro -> 20260505_171556_zip_test.zip",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 17:15:56",
+    "type": "ea_delivery",
+    "detail": "CME / AlphaEdge SMC Pro -> Zip Test 2/2",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 21:02:26",
+    "type": "ea_archive",
+    "detail": "CME / AlphaEdge SMC Pro",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-05 21:10:05",
+    "type": "import",
+    "detail": "Imported 1 records into cme",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-06 07:50:26",
+    "type": "ea_backtest_import",
+    "detail": "SMC Universal EA: SMC_Universal_EA_v3-trading-journal.csv",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-06 08:23:59",
+    "type": "ea_backtest_import",
+    "detail": "HedgeGrid Manual V23: HedgeGrid_V23-ReportHistory-49564671.html",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-06 08:23:59",
+    "type": "ea_backtest_import",
+    "detail": "Gold Breakout 100Bar Survivor: Gold_Breakout_100Bar_Survivor-ReportHistory-415455974.html",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-06 08:23:59",
+    "type": "ea_backtest_import",
+    "detail": "Gold Breakout 100Bar Survivor: Gold_Breakout_100Bar_Survivor-ReportHistory-49569084.html",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-06 08:34:28",
+    "type": "job_queued",
+    "detail": "[45e66401] Check+Learn 1b46f91a",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-06 08:40:52",
+    "type": "job_done",
+    "detail": "[45e66401] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-06 08:54:43",
+    "type": "approve_write",
+    "detail": "ChatGPT update rolls out GPT-5.5 Instant with fewer hallucinations and more pers",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-06 08:54:51",
+    "type": "approve_write",
+    "detail": "White House briefed Anthropic, Google, and OpenAI on plans for a government AI r",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-06 08:54:58",
+    "type": "approve_write",
+    "detail": "Forex Today: DXY steadies as resilient US data keep FX markets on edge",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-06 08:55:04",
+    "type": "approve_write",
+    "detail": "Algorithmic Trading Without the Routine: Quick Trade Analysis in MetaTrader 5 wi",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-06 08:55:11",
+    "type": "approve_write",
+    "detail": "Recent Quant Links from Quantocracy as of 05/04/2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-06 08:55:19",
+    "type": "approve_write",
+    "detail": "Financial & Forex Market Recap – May 5, 2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-06 08:55:26",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] OpenClaw: The Complete 24/7 AI Agent Mastery Guide",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 09:50:02",
+    "type": "job_queued",
+    "detail": "[0b8304d1] Check+Learn 1de053ad",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 09:55:47",
+    "type": "job_done",
+    "detail": "[0b8304d1] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 09:56:46",
+    "type": "approve_write",
+    "detail": "Gold edges higher to near $4,700 on US‑Iran peace hopes",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 09:56:54",
+    "type": "approve_write",
+    "detail": "Bitcoin (BTC/USD) Analysis for May 6, 2026: Breakout or Bull Trap? NFP Next",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 09:57:02",
+    "type": "approve_write",
+    "detail": "Financial & Forex Market Recap – May 6, 2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 09:57:09",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Doraemon AI: Building an Autonomous Self-Learning Forex Trade",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 10:43:35",
+    "type": "job_queued",
+    "detail": "[671d8071] Check+Learn 11f6790c",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 10:49:06",
+    "type": "job_done",
+    "detail": "[671d8071] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 10:49:42",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Ten Lessons for the Successful Part-Time Trader",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 10:54:30",
+    "type": "job_queued",
+    "detail": "[32c62906] Check+Learn 4ce3bd30",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 11:00:45",
+    "type": "job_done",
+    "detail": "[32c62906] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 11:01:04",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Trading Mastery: 17 Years of Market Wisdom from Navin Pritani",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 11:03:10",
+    "type": "job_queued",
+    "detail": "[afdba9cd] Check+Learn fe3d2d3d",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 11:09:52",
+    "type": "job_done",
+    "detail": "[afdba9cd] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 11:10:14",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Unveiling the Hidden Truths of Gold Trading and Market Traps",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 11:10:24",
+    "type": "job_queued",
+    "detail": "[e8b546ff] Check+Learn 69d8d92f",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 11:16:43",
+    "type": "job_done",
+    "detail": "[e8b546ff] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 11:18:55",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Trading as a Second Job: Opportunities and Risks",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 11:20:32",
+    "type": "job_queued",
+    "detail": "[886eaf7c] Check+Learn fec38480",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 11:29:09",
+    "type": "job_done",
+    "detail": "[886eaf7c] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 11:31:30",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Trading as a Second Job: Opportunities vs. Risks",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 11:50:08",
+    "type": "job_queued",
+    "detail": "[d6c5d3b9] Check+Learn 1e7e83c7",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 11:56:11",
+    "type": "job_done",
+    "detail": "[d6c5d3b9] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 12:28:11",
+    "type": "job_queued",
+    "detail": "[fb850262] Check+Learn 40528fa3",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 12:32:00",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] The Turtle Traders: Richard Dennis and the Art of Discipline",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 12:37:09",
+    "type": "job_queued",
+    "detail": "[9ef7ad13] Check+Learn 1cb2bd15",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 12:43:22",
+    "type": "job_done",
+    "detail": "[9ef7ad13] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 12:43:39",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Trading Success: The Power of Self-Comparison and Discipline",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 12:45:47",
+    "type": "job_queued",
+    "detail": "[8ab0a9df] Check+Learn 5050ce6b",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 12:45:48",
+    "type": "job_error",
+    "detail": "[8ab0a9df] Authentication expired or invalid. Redirected to: https://accounts.google.com/v3",
+    "level": "error"
+  },
+  {
+    "ts": "2026-05-07 12:49:08",
+    "type": "job_queued",
+    "detail": "[f3ab48ad] Check+Learn 9a5ee172",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 12:49:09",
+    "type": "job_error",
+    "detail": "[f3ab48ad] Authentication expired or invalid. Redirected to: https://accounts.google.com/v3",
+    "level": "error"
+  },
+  {
+    "ts": "2026-05-07 12:49:37",
+    "type": "job_queued",
+    "detail": "[f8e6ffd2] Check+Learn 9a5ee172",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 12:56:18",
+    "type": "job_done",
+    "detail": "[f8e6ffd2] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 12:56:32",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Secrets of Success from 100 Millionaire Traders",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 13:13:24",
+    "type": "job_queued",
+    "detail": "[33d9cf2a] Check+Learn 27cd2023",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 13:20:20",
+    "type": "job_done",
+    "detail": "[33d9cf2a] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 13:47:43",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] Trading Psychology: Building Character Beyond Results",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 13:57:17",
+    "type": "job_queued",
+    "detail": "[b82cebf8] Check+Learn 973692eb",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-07 14:03:08",
+    "type": "job_done",
+    "detail": "[b82cebf8] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-07 14:04:14",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] The Refugee’s Blueprint to an Eight-Figure Trading Empire",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-08 11:03:12",
+    "type": "approve_write",
+    "detail": "OpenAI's new voice model brings GPT-5-level reasoning to real-time conversations",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-08 11:03:19",
+    "type": "approve_write",
+    "detail": "Claude's new \"Dreaming\" feature is designed to let AI agents learn from their mi",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-08 11:03:25",
+    "type": "approve_write",
+    "detail": "llm-gemini 0.31",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-08 11:03:32",
+    "type": "approve_write",
+    "detail": "Gold holds steady below $4,700 as traders eye US jobs report, potential US-Iran ",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-08 11:03:40",
+    "type": "approve_write",
+    "detail": "Forex Today: US Dollar holds firm amid fragile US-Iran peace talks",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-08 11:03:47",
+    "type": "approve_write",
+    "detail": "Recent Quant Links from Quantocracy as of 05/06/2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-08 11:03:55",
+    "type": "approve_write",
+    "detail": "Financial & Forex Market Recap – May 7, 2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-08 11:04:03",
+    "type": "approve_write",
+    "detail": "4 Questions to Ask When Planning Trade Exits",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-10 09:03:49",
+    "type": "job_queued",
+    "detail": "[2d847209] Check+Learn 9c32df21",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-10 09:08:40",
+    "type": "job_done",
+    "detail": "[2d847209] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-10 09:09:04",
+    "type": "approve_write",
+    "detail": "AI safety tests have a new problem: Models are now faking their own reasoning tr",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-10 09:09:11",
+    "type": "approve_write",
+    "detail": "Mozilla's agentic AI pipeline turns Claude Mythos Preview loose and finds 271 un",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-10 09:09:18",
+    "type": "approve_write",
+    "detail": "Gold swells as Middle East peace hopes hit the US Dollar",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-10 09:09:24",
+    "type": "approve_write",
+    "detail": "Why Momentum Investing Has Been Struggling—And What Volatility Has to Do With It",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-10 09:09:31",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] NinjaThai W3 SMC Model Installation and Setup Guide",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:16:03",
+    "type": "approve_write",
+    "detail": "GPT-5.5 costs 49 to 92 percent more than its predecessor, depending on the input",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:16:11",
+    "type": "approve_write",
+    "detail": "Gold slumps below $4,700 on Trump rejection of Iran peace proposal",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:16:20",
+    "type": "approve_write",
+    "detail": "How Do Forex Brokers Work?",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:16:25",
+    "type": "approve_write",
+    "detail": "Gold drifts higher to near $4,750 ahead of US CPI inflation release",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:16:31",
+    "type": "approve_write",
+    "detail": "Forex Today: US Dollar steadies ahead of key US CPI data as markets monitor Iran",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:16:40",
+    "type": "approve_write",
+    "detail": "Chart Art: NZD/CAD Fresh Uptrend Channel Forming",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:16:47",
+    "type": "approve_write",
+    "detail": "TA Alert of the Day: GBP/USD Flashes a Golden Cross!",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:16:54",
+    "type": "approve_write",
+    "detail": "Financial & Forex Market Recap – May 11, 2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:17:02",
+    "type": "approve_write",
+    "detail": "4 Questions to Ask When Picking Technical Indicators",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:20:42",
+    "type": "approve_write",
+    "detail": "Anthropic expands legal AI offerings with new Claude Cowork plugins",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:20:49",
+    "type": "approve_write",
+    "detail": "llm 0.32a2",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:20:57",
+    "type": "approve_write",
+    "detail": "Gold edges higher above $4,700 despite hotter US inflation, Trump–Xi summit in f",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:21:05",
+    "type": "approve_write",
+    "detail": "US: AI impact to labor market stays limited – TD Securities",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:21:13",
+    "type": "approve_write",
+    "detail": "Recent Quant Links from Quantocracy as of 05/11/2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:21:22",
+    "type": "approve_write",
+    "detail": "Chart Art: AUD/USD’s Potential Trend Extension Above .7300",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:21:33",
+    "type": "approve_write",
+    "detail": "TA Alert of the Day: Silver’s Trend Signal Turns Bullish",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-13 08:21:41",
+    "type": "approve_write",
+    "detail": "Financial & Forex Market Recap – May 12, 2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-14 08:53:20",
+    "type": "approve_write",
+    "detail": "Anthropic launches Claude for Small Business to embed AI into the tools you forg",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-14 08:53:26",
+    "type": "approve_write",
+    "detail": "Gold edges higher to near $4,700 as Trump-Xi summit looms",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-14 08:53:35",
+    "type": "approve_write",
+    "detail": "Silver Price Forecast: Six-day rally puts $90 in bulls’ sights",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-14 08:53:42",
+    "type": "approve_write",
+    "detail": "Forex Today: Hot US inflation data lifts US Dollar as markets brace for Retail S",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-14 08:53:49",
+    "type": "approve_write",
+    "detail": "TA Alert of the Day: EUR/USD Momentum Fades as Bearish MACD Crossover Appears",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-14 08:53:53",
+    "type": "approve_write",
+    "detail": "Financial & Forex Market Recap – May 13, 2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-15 08:32:06",
+    "type": "approve_write",
+    "detail": "Pound Sterling breaks down as Labour turmoil overshadows stronger UK GDP data",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-15 08:32:12",
+    "type": "approve_write",
+    "detail": "Fed Williams: Job market stabilizes as inflation uncertainty looms",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-15 08:32:20",
+    "type": "approve_write",
+    "detail": "Chart Art: GBP/CAD’s Uptrend Support Above 1.8500",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-15 08:32:28",
+    "type": "approve_write",
+    "detail": "Financial & Forex Market Recap – May 14, 2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-18 09:32:03",
+    "type": "approve_write",
+    "detail": "Forecasting the upcoming week: Markets shift focus to PMIs and central bank even",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-18 09:32:11",
+    "type": "approve_write",
+    "detail": "Manual Backtesting with On-Chart Buttons in the MetaTrader 5 Strategy Tester",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-18 09:32:19",
+    "type": "approve_write",
+    "detail": "The Data Infrastructure Behind Algorithmic Trading: Understanding Financial Data",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-18 09:32:25",
+    "type": "approve_write",
+    "detail": "Chart Art: GBP/JPY to Extend Its Uptrend Above 212.00?",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-18 09:32:30",
+    "type": "approve_write",
+    "detail": "New benchmark shows Claude Mythos and GPT-5.5 can develop real browser exploits ",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-18 09:32:38",
+    "type": "approve_write",
+    "detail": "What is Forex?",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-18 09:32:45",
+    "type": "approve_write",
+    "detail": "Gold declines below $4,550 on rising Fed hike expectations",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 08:53:07",
+    "type": "job_queued",
+    "detail": "[7b8c2c39] Check+Learn 51f4692e",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-22 08:53:09",
+    "type": "job_error",
+    "detail": "[7b8c2c39] Authentication expired or invalid. Redirected to: https://accounts.google.com/v3",
+    "level": "error"
+  },
+  {
+    "ts": "2026-05-22 08:53:38",
+    "type": "job_queued",
+    "detail": "[2995712d] Check+Learn 51f4692e",
+    "level": "info"
+  },
+  {
+    "ts": "2026-05-22 08:58:30",
+    "type": "job_done",
+    "detail": "[2995712d] Check+Learn done. Pending +1",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 08:58:49",
+    "type": "approve_write",
+    "detail": "Anthropic to brief global financial regulators on cyber flaws found by Claude My",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 08:58:57",
+    "type": "approve_write",
+    "detail": "Building AI-Powered Trading Systems in MQL5 (Part 9): Creating an AI Signal Disp",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 08:59:05",
+    "type": "approve_write",
+    "detail": "Recent Quant Links from Quantocracy as of 05/17/2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 08:59:14",
+    "type": "approve_write",
+    "detail": "Financial & Forex Market Recap – May 18, 2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 08:59:20",
+    "type": "approve_write",
+    "detail": "Google's I/O announcements: new models, a cloud agent that never sleeps, and a r",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 08:59:28",
+    "type": "approve_write",
+    "detail": "Anthropic adds self-hosted sandboxes and MCP tunnels to Claude Managed Agents",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 08:59:33",
+    "type": "approve_write",
+    "detail": "llm-gemini 0.32",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 08:59:39",
+    "type": "approve_write",
+    "detail": "Fed's Paulson: Rate cuts require progress on inflation",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 08:59:46",
+    "type": "approve_write",
+    "detail": "Gold falls below $4,500 on rising global rate hike bets",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 08:59:54",
+    "type": "approve_write",
+    "detail": "China: Mixed April data signals challenges – HSBC",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:00:02",
+    "type": "approve_write",
+    "detail": "15 Points Don’t Matter Anymore: It’s Just a Random Walk",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:00:10",
+    "type": "approve_write",
+    "detail": "Chart Art: Is CAD/JPY Ready to Extend Its Uptrend?",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:00:18",
+    "type": "approve_write",
+    "detail": "Financial & Forex Market Recap – May 19, 2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:00:26",
+    "type": "approve_write",
+    "detail": "Deepseek wants to take on Claude Code and OpenAI's Codex with \"Deepseek Code\"",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:00:34",
+    "type": "approve_write",
+    "detail": "Google's Gemini 3.5 Flash follows Anthropic and OpenAI in making newer AI models",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:00:42",
+    "type": "approve_write",
+    "detail": "Optimizing AI Agent Planning with Operations Research and Data Science",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:00:48",
+    "type": "approve_write",
+    "detail": "Gold holds steady near $4,550 as market eyes Middle East developments",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:00:56",
+    "type": "approve_write",
+    "detail": "Forex Today: US Dollar softens as Fed caution meets improving US-Iran optimism",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:01:05",
+    "type": "approve_write",
+    "detail": "Gold rallies as Fed minutes flag hikes, US Dollar slides",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:01:14",
+    "type": "approve_write",
+    "detail": "Breaking: Fed minutes reinforce higher-for-longer narrative",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:01:22",
+    "type": "approve_write",
+    "detail": "5 Reasons Why Newbies Give Up Forex Trading",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:01:30",
+    "type": "approve_write",
+    "detail": "Financial & Forex Market Recap – May 20, 2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:01:37",
+    "type": "approve_write",
+    "detail": "SpaceX IPO filing shows billions in AI losses, a $2 trillion valuation target, a",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:01:44",
+    "type": "approve_write",
+    "detail": "Gold flatlines below $4,550 as markets await US-Iran ceasefire progress",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:01:51",
+    "type": "approve_write",
+    "detail": "NZD/USD muted despite stronger risk appetite, softer US Dollar",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:02:00",
+    "type": "approve_write",
+    "detail": "Forex Today: US Dollar steadies as strong PMI data supports cautious Fed outlook",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:02:08",
+    "type": "approve_write",
+    "detail": "Recent Quant Links from Quantocracy as of 05/20/2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:02:16",
+    "type": "approve_write",
+    "detail": "Leader-Follower Dynamics in Shareholder Activism",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:02:23",
+    "type": "approve_write",
+    "detail": "Chart Art: New Trend Channel Forming on Gold (XAU/USD)!",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:02:32",
+    "type": "approve_write",
+    "detail": "Financial & Forex Market Recap – May 21, 2026",
+    "level": "ok"
+  },
+  {
+    "ts": "2026-05-22 09:02:40",
+    "type": "approve_write",
+    "detail": "[NotebookLM Video] SMC Ninja: Mastering the W Pattern Trading Strategy",
+    "level": "ok"
+  }
+]

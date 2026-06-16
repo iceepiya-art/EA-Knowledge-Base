@@ -1,0 +1,13 @@
+.env
+.env.secret
+logs/
+scratch/
+__pycache__/
+*.pyc
+.gemini/
+*.md
+!AUTOSAVE_TO_GitHub.md
+!NEXT_TASK.md
+ea_research_team/learning/telegram_token.txt
+ea_research_team/learning/telegram_chat_id.txt
+ea_research_team/learning/youtube_cookies.txt

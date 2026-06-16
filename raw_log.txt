@@ -1,0 +1,72 @@
+Created At: 2026-06-05T08:58:04Z
+Completed At: 2026-06-05T08:58:05Z
+File Path: `file:///g:/My%20Drive/save%20log-blueprint-skill/EA-Knowledge-Base/00_Dashboard/EA_Knowledge_Brain_Dashboard.html`
+Total Lines: 3571
+Total Bytes: 184240
+Showing lines 378 to 1177
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+378:     .ai-provider-name { font-size: 12px; font-weight: 700; color: #e5eefb; }
+379:     .ai-provider-track {
+380:       height: 7px;
+381:       border-radius: 999px;
+382:       overflow: hidden;
+383:       background: rgba(148,163,184,0.16);
+384:     }
+385:     .ai-provider-fill {
+386:       height: 100%;
+387:       border-radius: inherit;
+388:       width: 0%;
+389:       background: linear-gradient(90deg, var(--green), var(--cyan));
+390:     }
+391:     .ai-provider-fill.gemini { background: linear-gradient(90deg, var(--purple), var(--cyan)); }
+392:     .ai-provider-fill.openrouter { background: linear-gradient(90deg, var(--yellow), #fb923c); }
+393:     .ai-provider-percent { color: var(--text-muted); font-size: 11px; text-align: right; font-variant-numeric: tabular-nums; }
+394:     .ai-thresholds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0; }
+395:     .ai-threshold {
+396:       border: 1px solid rgba(255,255,255,0.08);
+397:       border-radius: 10px;
+398:       background: rgba(0,0,0,0.15);
+399:       padding: 8px;
+400:     }
+401:     .ai-threshold small { display: block; color: var(--text-muted); font-size: 9px; font-weight: 700; text-transform: uppercase; margin-bottom: 3px; }
+402:     .ai-threshold b { font-size: 12px; }
+403:     .ai-budget-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+404:     .ai-budget-actions .action-btn { height: 34px; font-size: 12px; border-radius: 9px; }
+405:     .ai-budget-footer-dot {
+406:       width: 10px;
+407
+<truncated 42336 bytes>
+      <tr style="border-top:1px solid rgba(255,255,255,.08)">
+1146:                     <td><b>Full Pipeline (8 steps)</b></td>
+1147:                     <td><a class="link" href="#" onclick="runPipeline(); return false;" style="color:var(--yellow)">Run All →</a></td>
+1148:                     <td id="step-pipeline" class="online">Ready</td>
+1149:                   </tr>
+1150:                 </tbody>
+1151:               </table>
+1152:             </div>
+1153:           </section>
+1154: 
+1155:           <section class="panel research-panel" id="research-assistant-panel">
+1156:             <div class="panel-head">
+1157:               <div class="panel-title">Research Assistant</div>
+1158:               <span id="research-quality" class="badge b-yellow">Checking</span>
+1159:             </div>
+1160:             <div class="panel-body">
+1161:               <div class="research-summary">
+1162:                 <div class="research-meter" id="research-meter">
+1163:                   <strong id="research-readiness">--%</strong>
+1164:                 </div>
+1165:                 <div class="research-stage">
+1166:                   <b id="research-stage">Checking</b>
+1167:                   <span id="research-next-action">Reading learning state...</span>
+1168:                 </div>
+1169:               </div>
+1170: 
+1171:               <div class="research-grid">
+1172:                 <div class="research-stat"><small>Evidence</small><b id="research-evidence">--</b></div>
+1173:                 <div class="research-stat"><small>Concepts</small><b id="research-concepts">--</b></div>
+1174:                 <div class="research-stat"><small>Conflicts</small><b id="research-conflicts">--</b></div>
+1175:                 <div class="research-stat"><small>EA Rules</small><b id="research-rules">--</b></div>
+1176:               </div>
+1177: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

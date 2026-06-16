@@ -1,0 +1,13 @@
+{
+  "agent": "Risco",
+  "data": {
+    "conflicts_pending": 48,
+    "conflicts_total": 7261,
+    "ea_rules": 1869
+  },
+  "job": "risco_rule_risk_audit",
+  "recommendation": "Review pending conflicts before expanding EA blueprint rules.",
+  "status": "warning",
+  "summary": "EA rules=1869, conflicts_total=7261, conflicts_pending=48.",
+  "updated_at": "2026-06-12T08:36:22+07:00"
+}

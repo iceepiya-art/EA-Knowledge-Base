@@ -1,0 +1,43 @@
+/goal รัน Batch ดึง MQL ไปเรื่อยๆ จนกว่าไฟล์จะหมดผมก็เพิ่งรู้นะ แต่พออ่านแล้ว บ่ะ )ไม่รู้เรื่อง) 5555 555555
+จากโค้ดจริงแล้ว นี่คือระบบความจำ persistent ของ ClaudeClaw:
+เก็บที่ไหน
+ทั้งหมดอยู่ใน SQLite store/claudeclaw.db (บนดิสก์ คงอยู่ข้าม restart + ถูก backup รายวัน). store/memories.db ว่าง ไม่ได้ใช้ — รวมอยู่ใน claudeclaw.db หมด
+เวลาคุณสั่งงาน 1 ครั้ง มีอะไรถูกบันทึก
+ตาราง
+เก็บอะไร
+conversation_log
+ทุก turn (คุณพูด + agent ตอบ) แบบ verbatim ต่อ chat + agent
+token_usage
+โทเคน/ค่าใช้จ่ายต่อครั้ง
+audit_log
+การตัดสินใจ route, kill-switch, scheduled run
+inter_agent_tasks
+งานที่ delegate 😊 ข้อมูลที่โชว์ใน kanban/office)
+hive_mind
+log กิจกรรมข้าม agent (agent ไหนทำอะไร)
+memories
+fact ระยะยาว ที่สกัดออกมา (ดูข้างล่าง)
+"ความจำระยะยาว" เกิดขึ้นยังไง (memory-ingest.ts)
+หลังแต่ละ turn → ส่งบทสนทนาให้ Gemini สกัดเป็น memory ที่มีโครงสร้าง: summary, entities, topics, importance (0-1), salience (0-5)
+เก็บเฉพาะที่ importance ≥ 0.5 (กรองเรื่องไม่สำคัญทิ้ง)
+สร้าง embedding (เวกเตอร์ ผ่าน gemini-embedding-001) ของ summary เก็บเป็น BLOB
+เช็คซ้ำ (dedupe) ถ้าใกล้ของเดิมมากก็ไม่เก็บซ้ำ
+เวลาคุณสั่งงานครั้งต่อไป มันดึงความจำมายังไง (buildMemoryContext — เรียกทุกข้อความ ก่อน agent ทำงาน)
+ดึงเป็น ชั้นๆ แล้วยัดเข้า context ของ agent:
+Layer 0 — pinned: memory ที่ปักหมุดไว้ เห็นเสมอ
+Layer 1 — embedding similarity: embed ข้อความคุณ แล้วหา memory ที่คล้ายเชิงความหมาย (cosine, top 5)
+Layer 2 — keyword (FTS5): ค้นคำตรงตัวใน memories_fts
+Layer 3 — recent high-importance: memory สำคัญล่าสุด
+Layer 4 — hive mind: agent อื่นเพิ่งทำอะไร (ข้าม agent)
+Layer 5 — consolidations: insight ที่ถูกรวบยอดแล้ว
++ verbatim 30 นาทีล่าสุด: บทสนทนาดิบ (กันรายละเอียดหายตอนสลับ agent)
+ทุกชั้น dedupe + เรียงตาม importance → ได้บล็อก [Memory context] แปะให้ agent
+ดูแลความจำ (ลืม/รวบยอด)
+memory-consolidate.ts — รวม memory ที่เกี่ยวกันเป็น insight เดียว
+runDecaySweep — ลืม: ลบ memory เก่า + importance ต่ำ + ไม่ pinned (importance ≤ 0.05 ลบทิ้ง)
+ถูกดึงมาใช้ → อัปเดต accessed_at (ใช้บ่อย = อยู่นาน), มี superseded_by ให้ของใหม่ทับของเก่า
+สรุป 2 ระดับ
+Session continuity (สั้น) — agent run เป็น Claude Code session, จำ sessionId ต่อ chat → ต่อบทสนทนาได้ในช่วงนั้น
+Persistent memory (ยาว) — ตาราง memories + embedding ทำให้ "จำ" preference, งานที่เคยทำ, ข้อเท็จจริง ข้าม session/restart ได้
+keying: memory แยกตาม chat_id + agent_id (แต่ละ agent มีความจำของตัวเอง) ส่วน hive_mind แชร์ข้าม agent
+อยากให้เจาะลงไหนเพิ่ม (เช่น เกณฑ์ decay, การ consolidate, หรือดูใน dashboard ว่าตอนนี้มี memory อะไรบ้าง) บอกได้

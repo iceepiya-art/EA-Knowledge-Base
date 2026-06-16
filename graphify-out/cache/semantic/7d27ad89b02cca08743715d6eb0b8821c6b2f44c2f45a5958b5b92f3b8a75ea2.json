@@ -1,0 +1,1 @@
+{"nodes": [{"id": "qr_jpeg", "label": "DeepSeek Official Group QR Code", "file_type": "image", "source_file": "DeepSeek-LLM/images/qr.jpeg"}], "edges": [{"source": "qr_jpeg", "target": "badge_svg", "relation": "semantically_similar_to", "confidence": "INFERRED", "confidence_score": 0.9, "source_file": "DeepSeek-LLM/images/qr.jpeg"}], "hyperedges": []}

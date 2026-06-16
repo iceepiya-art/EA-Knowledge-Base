@@ -1,0 +1,14 @@
+{
+  "agent": "Nova",
+  "data": {
+    "candidate_count": 0,
+    "command": "mql5_code_intake.py --root \"G:\\My Drive\\jobot\" --limit 10 --workers 1",
+    "next_batch": [],
+    "preview": []
+  },
+  "job": "nova_source_audit",
+  "recommendation": "Queue a controlled source-first MQL batch when pipeline and download are idle.",
+  "status": "ok",
+  "summary": "Found 0 unprocessed MQL/source candidates for the next controlled batch.",
+  "updated_at": "2026-06-12T08:36:19+07:00"
+}

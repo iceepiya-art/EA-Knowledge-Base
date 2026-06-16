@@ -1,0 +1,36 @@
+{
+  "models": [
+    {
+      "title": "Qwen Coder Free",
+      "provider": "openrouter",
+      "model": "qwen/qwen2.5-coder:free",
+      "apiKey": "\u0e43\u0e2a\u0e48_OPENROUTER_API_KEY"
+    },
+    {
+      "title": "DeepSeek Free",
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-r1:free",
+      "apiKey": "\u0e43\u0e2a\u0e48_OPENROUTER_API_KEY"
+    }
+  ],
+  "contextProviders": [
+    {
+      "name": "code"
+    },
+    {
+      "name": "docs"
+    },
+    {
+      "name": "diff"
+    },
+    {
+      "name": "terminal"
+    },
+    {
+      "name": "problems"
+    },
+    {
+      "name": "folder"
+    }
+  ]
+}

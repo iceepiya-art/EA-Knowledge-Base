@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "total_sources_analyzed": 23,
+    "discovered_families": 6
+  },
+  "strategy_families": [
+    {
+      "strategy_family": "Entry(Pattern W) | Filter(Pattern W) | Risk(Pattern W) | Exit(Pattern W)",
+      "evidence_count": 5,
+      "confidence": 1.0,
+      "sources": [
+        "0410462ef4c8",
+        "1OABJD4RIt0",
+        "6r14hHOX3OA",
+        "KUBQs8_3ois",
+        "d1dd26aec700"
+      ]
+    },
+    {
+      "strategy_family": "Entry(Pattern M) | Filter(Pattern M) | Risk(Pattern M) | Exit(Pattern M)",
+      "evidence_count": 5,
+      "confidence": 1.0,
+      "sources": [
+        "14e0822870b3",
+        "1ee8c01b4ae5",
+        "407eafecf2d2",
+        "QpWkeAunU0w",
+        "ac901de28a1e"
+      ]
+    },
+    {
+      "strategy_family": "Entry(Liquidity Sweep) | Filter(Liquidity Sweep) | Risk(Liquidity Sweep) | Exit(Liquidity Sweep)",
+      "evidence_count": 4,
+      "confidence": 0.8,
+      "sources": [
+        "02162f2aef2e",
+        "58db7c3d4de1",
+        "6513fd40cd85",
+        "77e0f78ec5d3"
+      ]
+    },
+    {
+      "strategy_family": "Entry(Pattern M+Pattern W) | Filter(Pattern M+Pattern W) | Risk(Pattern M+Pattern W) | Exit(Pattern M+Pattern W)",
+      "evidence_count": 4,
+      "confidence": 0.8,
+      "sources": [
+        "1b4aab555546",
+        "937dbb473c46",
+        "a1imqoMSNno",
+        "tDWy82eU1lA"
+      ]
+    },
+    {
+      "strategy_family": "Entry(Liquidity Sweep+Pattern M) | Filter(Liquidity Sweep+Pattern M) | Risk(Liquidity Sweep+Pattern M) | Exit(Liquidity Sweep+Pattern M)",
+      "evidence_count": 3,
+      "confidence": 0.6,
+      "sources": [
+        "d227b61458c4",
+        "jne2J1hmeRA",
+        "yG-dbuiUHDA"
+      ]
+    },
+    {
+      "strategy_family": "Entry(Liquidity Sweep+Pattern W) | Filter(Liquidity Sweep+Pattern W) | Risk(Liquidity Sweep+Pattern W) | Exit(Liquidity Sweep+Pattern W)",
+      "evidence_count": 2,
+      "confidence": 0.4,
+      "sources": [
+        "7661a5b75eb5",
+        "QWfwB72z158"
+      ]
+    }
+  ]
+}

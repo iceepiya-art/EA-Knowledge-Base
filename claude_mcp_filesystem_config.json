@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "ea-knowledge-base": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\ADMIN\\Desktop\\save log-blueprint-skill\\EA-Knowledge-Base"
+      ]
+    }
+  }
+}

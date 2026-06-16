@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "video_id": "e6eb03770e40",
+  "nodes": [
+    {
+      "id": "clip:e6eb03770e40",
+      "label": "RECAP XAUUSD ประจำสัปดาห์ 4_6_69 (NINJA THAI)",
+      "file_type": "youtube_clip",
+      "title": "RECAP XAUUSD ประจำสัปดาห์ 4_6_69 (NINJA THAI)",
+      "metadata": {
+        "url": "G:\\My Drive\\YT_Downloads\\RECAP XAUUSD ประจำสัปดาห์ 4_6_69 (NINJA THAI).mp4",
+        "extraction_method": "keyword",
+        "ea_readiness": 21
+      }
+    }
+  ],
+  "edges": []
+}

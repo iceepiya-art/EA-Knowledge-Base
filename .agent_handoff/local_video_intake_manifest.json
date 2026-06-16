@@ -1,0 +1,40 @@
+{
+  "files": {
+    "9f35c943ea64f0aa": {
+      "filename": "วิดีโอของ Payกับผม.mp4",
+      "import_status": "raw_evidence_written",
+      "local_evidence_id": "7137ca6273fb",
+      "mtime": 1780891365.952,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\7137ca6273fb.md",
+      "path": "G:\\My Drive\\YT_Downloads\\วิดีโอของ Payกับผม.mp4",
+      "processed_at": "2026-06-08T14:46:38+07:00",
+      "reason": "local evidence imported",
+      "sha256": "6aa173cf6a5a9592006a0e955552f8e2df16f3028a8c8d631a1a7391f37956e5",
+      "size": 6782929,
+      "started_at": "2026-06-08T14:44:52+07:00",
+      "status": "learned",
+      "text_captured": true,
+      "transcription_error": null,
+      "updated_at": "2026-06-16T11:12:51+07:00"
+    },
+    "d2d25a6d284aacb0": {
+      "filename": "RECAP XAUUSD ประจำสัปดาห์ 4_6_69 (NINJA THAI).mp4",
+      "import_status": "raw_evidence_written",
+      "local_evidence_id": "e6eb03770e40",
+      "mtime": 1780807201.204,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\e6eb03770e40.md",
+      "path": "G:\\My Drive\\YT_Downloads\\RECAP XAUUSD ประจำสัปดาห์ 4_6_69 (NINJA THAI).mp4",
+      "processed_at": "2026-06-07T12:04:21+07:00",
+      "reason": "local evidence imported",
+      "sha256": "4b0704e2300bc2167dbf46a8840a21b42a6824d4d2f3bfb7f2e0c51041efd194",
+      "size": 22413028,
+      "started_at": "2026-06-07T11:56:21+07:00",
+      "status": "learned",
+      "text_captured": true,
+      "transcription_error": null,
+      "updated_at": "2026-06-16T11:12:51+07:00"
+    }
+  },
+  "updated_at": "2026-06-16T11:12:51+07:00",
+  "version": 1
+}

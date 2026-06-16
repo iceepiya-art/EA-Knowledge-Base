@@ -1,0 +1,20 @@
+OSError: [Errno 22] Invalid argument
+File "G:\My Drive\save log-blueprint-skill\EA-Knowledge-Base\ea_research_team\learning\auto_learning_worker.py", line 244, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "G:\My Drive\save log-blueprint-skill\EA-Knowledge-Base\ea_research_team\learning\auto_learning_worker.py", line 239, in main
+    AutoLearningWorker(config).run_forever()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "G:\My Drive\save log-blueprint-skill\EA-Knowledge-Base\ea_research_team\learning\auto_learning_worker.py", line 196, in run_forever
+    self.tick()
+    ~~~~~~~~~^^
+  File "G:\My Drive\save log-blueprint-skill\EA-Knowledge-Base\ea_research_team\learning\auto_learning_worker.py", line 110, in tick
+    self._write_status(result)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "G:\My Drive\save log-blueprint-skill\EA-Knowledge-Base\ea_research_team\learning\auto_learning_worker.py", line 219, in _write_status
+    tmp.replace(self.status_path)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 780, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\learning\\.server_manager\\auto_learning_worker_status.tmp' -> 'G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\learning\\.server_manager\\auto_learning_worker_status.json'

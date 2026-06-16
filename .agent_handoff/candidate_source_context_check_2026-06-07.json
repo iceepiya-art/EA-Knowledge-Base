@@ -1,0 +1,154 @@
+{
+  "generated_at": "2026-06-07T11:17:05+07:00",
+  "mode": "local_only_source_context_check_no_backtest_no_mutation",
+  "sources": [
+    {
+      "source_id": "58db7c3d4de1",
+      "title": "drive_smoke_2026-05-27",
+      "url": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\text\\drive_smoke_2026-05-27.txt",
+      "path_exists": false,
+      "quality": {
+        "conflict_risk": "unknown",
+        "ea_readiness": 56,
+        "rule_completeness": 65,
+        "transcript_quality": 32,
+        "visual_dependency": "high"
+      },
+      "concepts": [
+        "FVG",
+        "CHoCH",
+        "Liquidity Sweep"
+      ],
+      "facts": [
+        "Drive smoke test: enter after CHoCH confirmation and FVG retest.",
+        "Stop loss below liquidity sweep wick."
+      ],
+      "ea_rule_candidates": {
+        "entry": [
+          "Drive smoke test: enter after CHoCH confirmation and FVG retest."
+        ],
+        "exit": [],
+        "filter": [],
+        "regime": [],
+        "stop_loss": [
+          "Stop loss below liquidity sweep wick."
+        ]
+      },
+      "readiness": "usable_for_hypothesis_only",
+      "constraint": "Raw text path missing and visual dependency high; recover/open source context before implementation."
+    },
+    {
+      "source_id": "c87b0e657d98",
+      "title": "VIP RTM MFF GROUP by KL",
+      "url": "G:\\My Drive\\jobot\\RTM-20220226T034955Z-001\\VIP RTM MFF GROUP by KL.pdf",
+      "path_exists": true,
+      "quality": {
+        "conflict_risk": "unknown",
+        "ea_readiness": 55,
+        "rule_completeness": 40,
+        "transcript_quality": 100,
+        "visual_dependency": "low"
+      },
+      "concepts": [
+        "FVG"
+      ],
+      "facts": [
+        "VIP RTM MFF GROUP",
+        "KL Setup",
+        "ตอนนี้เราจะย่อระบบ ให ้ เหลือแค่แนวเส้นนะครับ",
+        "⇒ SDE เก็บเอาไว ้/ Flippy ก็ไม่ใช ้แล ้ ว/ PA นานๆ มองที",
+        "⇒ เราจะมองให ้ เป็น KEY LEVEL = KL คือ Setup ของที่สุด",
+        "⇒ มอง KL ออก กด 10 -20 ลอทได ้ เลย",
+        "Sell setup with SRF",
+        "Buy setup with SRF",
+        "Sell setup without SRF Sell setup without SRF",
+        "KL : KEY LEVEL",
+        "FL : Flag limit",
+        "SRF : Support & Resistance Flip"
+      ],
+      "ea_rule_candidates": {
+        "entry": [
+          "Sell setup with SRF",
+          "Buy setup with SRF",
+          "Sell setup without SRF Sell setup without SRF",
+          "N3 : Entry",
+          "Flag limit of Key level = SDE+Flippy => Entry",
+          "17:15 เตชิต sell ชนล่าง ชนบน engulf",
+          "17:16 เตชิต buy ชนบน ชนล่าง engulf",
+          "16:01 Whacharapon Rajahodi up trend รอ buy ที่ dz",
+          "16:02 Whacharapon Rajahodi down trend รอ sell ที่ supply"
+        ],
+        "exit": [],
+        "filter": [],
+        "regime": [
+          "15:58 Whacharapon Rajahodi จริงๆ trend line + dnz พอละ",
+          "16:01 Whacharapon Rajahodi up trend รอ buy ที่ dz",
+          "16:02 Whacharapon Rajahodi down trend รอ sell ที่ supply"
+        ],
+        "stop_loss": [
+          "SL : Stop loss",
+          "01:32 MYEDYY465 sl200งามหยดย ้ อยครับ",
+          "16:00 Whacharapon Rajahodi ดังนั้นเราสามารถใช ้ sl กว ้ าฃขึ้นได ้"
+        ]
+      },
+      "readiness": "source_available_for_context_review",
+      "constraint": "PDF exists; review exact pages/context before implementation."
+    },
+    {
+      "source_id": "8d3bf6d0eb24",
+      "title": "Jobot OIL Slide",
+      "url": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\เอกสาร Jobot Invest Documents\\Jobot OIL Slide.pdf",
+      "path_exists": true,
+      "quality": {
+        "conflict_risk": "unknown",
+        "ea_readiness": 51,
+        "rule_completeness": 35,
+        "transcript_quality": 100,
+        "visual_dependency": "medium"
+      },
+      "concepts": [
+        "Session Filter"
+      ],
+      "facts": [
+        "OIL Arbitrage",
+        "BRENT and WTI",
+        "High correlation between Brent and WTI",
+        "• Benchmarks and Trading Markets",
+        "• WTI is the benchmark crude for North America.",
+        "WTI is a better grade of  crude oil",
+        "for the production of  gasoline while Brent oil favors the production of  diesel fuels.",
+        "• The NYMEX (New York Mercantile Exchange) division of  the CME (Chicago",
+        "Mercantile Exchange) lists futures contracts of  WTI crude oil.",
+        "Delivery for WTI",
+        "crude futures occurs in Cushing, Oklahoma.",
+        "• Brent crude oil futures trade on the Intercontinental Exchange (ICE)."
+      ],
+      "ea_rule_candidates": {
+        "entry": [
+          "• SET A (SELL Spread)",
+          "• SELL BRENT = BUY WTI",
+          "• SET B (BUY Spread)",
+          "• BUY BRENT = SELL WTI"
+        ],
+        "exit": [],
+        "filter": [
+          "“Oil Spread”",
+          "Spread = Brent – WTI  = 5",
+          "• SET A (SELL Spread)",
+          "• SET B (BUY Spread)"
+        ],
+        "regime": [
+          "Take benefit from the SIDEWAY graph"
+        ],
+        "stop_loss": []
+      },
+      "readiness": "source_available_for_context_review",
+      "constraint": "PDF exists; review exact pages/context before implementation."
+    }
+  ],
+  "decision": {
+    "candidate_set_status": "hypothesis_selected_but_not_ready_for_implementation",
+    "reason": "The core CHoCH/FVG entry and liquidity-sweep SL source has missing raw text and low transcript quality/high visual dependency; SRF source PDF exists but rules are terse and need page context.",
+    "next_required_step": "Recover or inspect exact source context for 58db7c3d4de1 and c87b0e657d98 before coding or running MT5 backtest."
+  }
+}

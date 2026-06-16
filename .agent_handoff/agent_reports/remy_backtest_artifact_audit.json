@@ -1,0 +1,18 @@
+{
+  "agent": "Remy",
+  "data": {
+    "artifact_count": 9,
+    "preview": [
+      "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\artifacts\\backtest_trades.csv",
+      "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_fix20_trades.csv",
+      "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ftmo_trades.csv",
+      "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\trades_H1.csv",
+      "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\trades_log.csv"
+    ]
+  },
+  "job": "remy_backtest_artifact_audit",
+  "recommendation": "Use local backtest artifacts before launching new backtest loops.",
+  "status": "ok",
+  "summary": "Found 9 local backtest/trade report artifacts.",
+  "updated_at": "2026-06-12T08:28:24+07:00"
+}

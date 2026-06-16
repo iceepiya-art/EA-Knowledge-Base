@@ -1,0 +1,12 @@
+{
+  "agent": "Penny",
+  "data": {
+    "currency_data_count": 0,
+    "preview": []
+  },
+  "job": "penny_currency_data_audit",
+  "recommendation": "Prefer local/free currency data before paid market APIs.",
+  "status": "warning",
+  "summary": "Found 0 local currency-strength/MMF data files.",
+  "updated_at": "2026-06-12T08:27:37+07:00"
+}

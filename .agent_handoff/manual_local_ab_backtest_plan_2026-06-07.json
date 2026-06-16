@@ -1,0 +1,77 @@
+{
+  "generated_at": "2026-06-07T11:19:37+07:00",
+  "mode": "local_manual_backtest_plan_no_execution_no_paid_api",
+  "candidate_set": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent_handoff\\first_ab_backtest_candidate_set_2026-06-07.json",
+  "source_context": {
+    "drive_smoke_recovered_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\text\\drive_smoke_2026-05-27.txt",
+    "drive_smoke_recovered_text": "Drive smoke test: enter after CHoCH confirmation and FVG retest. Stop loss below liquidity sweep wick.",
+    "vip_rtm_pdf": "G:\\My Drive\\jobot\\RTM-20220226T034955Z-001\\VIP RTM MFF GROUP by KL.pdf",
+    "vip_rtm_context_pages": [
+      2,
+      3,
+      4,
+      5,
+      11,
+      12,
+      13
+    ],
+    "vip_rtm_key_context": [
+      "Page 2 defines KL/FL/SRF/N3/SL and lists Sell setup with SRF, Buy setup with SRF, Sell setup without SRF.",
+      "Pages 3-5 define good KL as touch lower, touch upper, and close with base/engulf; page 4 gives sell/buy examples.",
+      "Page 11/13 contain SL-related remarks but not a complete numeric SL formula.",
+      "Page 12 references SRF XAUUSD Setup H1 @ 1910."
+    ]
+  },
+  "baseline_candidates": [
+    "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\artifacts\\generated_ea\\MasterEA_v1.mq5",
+    "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\learning\\EA_KnowledgeBrain_v1.mq5",
+    "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\raw\\SMC_Universal_EA_v3_0_fix16\\MQL5\\Experts\\SMC_Universal_EA_v3.0.mq5"
+  ],
+  "recommended_baseline": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\learning\\EA_KnowledgeBrain_v1.mq5",
+  "why_baseline": "Small knowledge-brain EA scaffold already contains the CHoCH/FVG smoke rules as comments and is less entangled than large grid/jobbot EAs.",
+  "test_matrix": [
+    {
+      "name": "baseline_control",
+      "logic": "Existing EA_KnowledgeBrain_v1 behavior or manual scaffold before adding new executable CHoCH/FVG/SRF conditions."
+    },
+    {
+      "name": "variant_a_choch_fvg_liquidity_sweep_sl",
+      "logic": "Entry only after CHoCH confirmation and FVG retest; SL below liquidity sweep wick; no grid/martingale/no-SL behavior."
+    },
+    {
+      "name": "variant_b_optional_srf_kl",
+      "logic": "After source-page review, add KL/SRF gate: KL has lower touch + upper touch + base/engulf; compare with/without SRF."
+    }
+  ],
+  "default_market_plan": {
+    "symbol": "XAUUSD",
+    "timeframe": "H1 for SRF/KL context; M15 optional only after H1 signal logic is stable",
+    "date_range": "Use same local data range as existing baseline artifact first; otherwise 2024-01-01 to 2024-12-31 for first manual MT5 pass.",
+    "deposit": "Use the account/deposit from the existing baseline report when available; otherwise record before run.",
+    "lot_model": "Fixed 0.01 first; no dynamic grid/averaging.",
+    "max_positions": 1
+  },
+  "metrics": [
+    "net_profit",
+    "profit_factor",
+    "max_balance_drawdown_percent",
+    "recovery_factor",
+    "total_trades",
+    "win_rate",
+    "average_win_loss_ratio",
+    "max_open_positions"
+  ],
+  "must_not_run": [
+    "ea_research_team/learning/auto_backtest_resolver.py",
+    "paid LLM/API conflict resolver",
+    "unattended backtest loop",
+    "YouTube/VDO intake"
+  ],
+  "next_local_steps": [
+    "Open EA_KnowledgeBrain_v1.mq5 and confirm it compiles before any behavior edits.",
+    "Create or manually code a tiny variant module only after user approval of this plan.",
+    "Run MT5 manual/local backtest for baseline_control, then variant_a, then optional variant_b.",
+    "Visualize resulting report with visualize_backtest.py and compare metrics."
+  ],
+  "status": "ready_for_user_or_manual_operator_approval_before_code_or_backtest"
+}

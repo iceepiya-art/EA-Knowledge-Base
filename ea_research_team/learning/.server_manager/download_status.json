@@ -1,0 +1,12 @@
+{
+  "running": false,
+  "total": 57,
+  "current_index": 57,
+  "success": 0,
+  "failed": 57,
+  "current_video_id": null,
+  "current_title": null,
+  "current_channel": null,
+  "status": "Completed",
+  "percent": 100
+}

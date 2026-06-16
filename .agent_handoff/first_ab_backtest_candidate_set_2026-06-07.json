@@ -1,0 +1,321 @@
+{
+  "generated_at": "2026-06-07T11:15:05+07:00",
+  "mode": "local_only_planning_no_backtest_no_queue_mutation",
+  "source_audit": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent_handoff\\rule_usefulness_audit_2026-06-07.json",
+  "candidate_set_name": "CHoCH_FVG_LiquiditySweep_plus_SRF_small_set",
+  "selected": [
+    {
+      "rule": "Drive smoke test: enter after CHoCH confirmation and FVG retest.",
+      "decision": "selected_variant_core_entry",
+      "rationale": "Clear entry condition with CHoCH + FVG retest + liquidity sweep context; pairs naturally with the selected SL rule from the same source.",
+      "score": 90,
+      "category": "Entry Components",
+      "concern": "entry_logic",
+      "canonical_concepts": [
+        "FVG",
+        "CHoCH",
+        "Liquidity Sweep"
+      ],
+      "sources": [
+        "58db7c3d4de1"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "Stop loss below liquidity sweep wick.",
+      "decision": "selected_variant_core_stop",
+      "rationale": "Clear stop placement tied to liquidity sweep wick; needed to make the entry variant testable with bounded risk.",
+      "score": 90,
+      "category": "Risk Components",
+      "concern": "risk_management",
+      "canonical_concepts": [
+        "FVG",
+        "CHoCH",
+        "Liquidity Sweep"
+      ],
+      "sources": [
+        "58db7c3d4de1"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "Sell setup with SRF",
+      "decision": "selected_variant_srf_ablation",
+      "rationale": "Simple SRF-enabled sell setup; use only as an ablation against the no-SRF/SRF pair after source context check.",
+      "score": 75,
+      "category": "Entry Components",
+      "concern": "entry_logic",
+      "canonical_concepts": [
+        "FVG"
+      ],
+      "sources": [
+        "c87b0e657d98"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "Buy setup with SRF",
+      "decision": "selected_variant_srf_ablation",
+      "rationale": "Simple SRF-enabled buy setup; use only as an ablation against the no-SRF/SRF pair after source context check.",
+      "score": 75,
+      "category": "Entry Components",
+      "concern": "entry_logic",
+      "canonical_concepts": [
+        "FVG"
+      ],
+      "sources": [
+        "c87b0e657d98"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    }
+  ],
+  "watchlist": [
+    {
+      "rule": "Sell setup without SRF Sell setup without SRF",
+      "decision": "watchlist_needs_source_context",
+      "rationale": "Potentially useful but too terse or time/chat-specific; inspect source context before implementation.",
+      "score": 90,
+      "category": "Entry Components",
+      "concern": "entry_logic",
+      "canonical_concepts": [
+        "FVG"
+      ],
+      "sources": [
+        "c87b0e657d98"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "17:15 เตชิต sell ชนล่าง ชนบน engulf",
+      "decision": "watchlist_needs_source_context",
+      "rationale": "Potentially useful but too terse or time/chat-specific; inspect source context before implementation.",
+      "score": 90,
+      "category": "Entry Components",
+      "concern": "entry_logic",
+      "canonical_concepts": [
+        "FVG"
+      ],
+      "sources": [
+        "c87b0e657d98"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "17:16 เตชิต buy ชนบน ชนล่าง engulf",
+      "decision": "watchlist_needs_source_context",
+      "rationale": "Potentially useful but too terse or time/chat-specific; inspect source context before implementation.",
+      "score": 90,
+      "category": "Entry Components",
+      "concern": "entry_logic",
+      "canonical_concepts": [
+        "FVG"
+      ],
+      "sources": [
+        "c87b0e657d98"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "16:01 Whacharapon Rajahodi up trend รอ buy ที่ dz",
+      "decision": "watchlist_needs_source_context",
+      "rationale": "Potentially useful but too terse or time/chat-specific; inspect source context before implementation.",
+      "score": 90,
+      "category": "Filter Components",
+      "concern": "entry_logic",
+      "canonical_concepts": [
+        "FVG"
+      ],
+      "sources": [
+        "c87b0e657d98"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "16:02 Whacharapon Rajahodi down trend รอ sell ที่ supply",
+      "decision": "watchlist_needs_source_context",
+      "rationale": "Potentially useful but too terse or time/chat-specific; inspect source context before implementation.",
+      "score": 90,
+      "category": "Filter Components",
+      "concern": "entry_logic",
+      "canonical_concepts": [
+        "FVG"
+      ],
+      "sources": [
+        "c87b0e657d98"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "SL : Stop loss",
+      "decision": "watchlist_needs_source_context",
+      "rationale": "Potentially useful but too terse or time/chat-specific; inspect source context before implementation.",
+      "score": 75,
+      "category": "Risk Components",
+      "concern": "risk_management",
+      "canonical_concepts": [
+        "FVG"
+      ],
+      "sources": [
+        "c87b0e657d98"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    }
+  ],
+  "excluded_first_pass": [
+    {
+      "rule": "Session continuity (สั้น) — agent run เป็น Claude Code session, จำ sessionId ต่อ chat → ต่อบทสนทนาได้ในช่วงนั้น",
+      "decision": "excluded_first_pass",
+      "rationale": "Excluded because it is agent/session memory text, not EA trading logic.",
+      "score": 90,
+      "category": "Filter Components",
+      "concern": "filter_logic",
+      "canonical_concepts": [
+        "Liquidity Sweep",
+        "Session Filter"
+      ],
+      "sources": [
+        "02162f2aef2e"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "Persistent memory (ยาว) — ตาราง memories + embedding ทำให้ \"จำ\" preference, งานที่เคยทำ, ข้อเท็จจริง ข้าม session/restart ได้",
+      "decision": "excluded_first_pass",
+      "rationale": "Excluded because it is agent/session memory text, not EA trading logic.",
+      "score": 90,
+      "category": "Filter Components",
+      "concern": "filter_logic",
+      "canonical_concepts": [
+        "Liquidity Sweep",
+        "Session Filter"
+      ],
+      "sources": [
+        "02162f2aef2e"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "above.",
+      "decision": "excluded_first_pass",
+      "rationale": "Excluded because it is fragmentary text without executable context.",
+      "score": 82,
+      "category": "Risk Components",
+      "concern": "evidence_quality",
+      "canonical_concepts": [],
+      "sources": [
+        "265bcc0ee5e7",
+        "479af3d6827c"
+      ],
+      "source_count": 2,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "• SELL BRENT = BUY WTI",
+      "decision": "excluded_first_pass",
+      "rationale": "Excluded from first A/B set because it is a separate intermarket spread/OIL strategy and should be tested in its own baseline.",
+      "score": 90,
+      "category": "Entry Components",
+      "concern": "entry_logic",
+      "canonical_concepts": [
+        "Session Filter"
+      ],
+      "sources": [
+        "8d3bf6d0eb24"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "• BUY BRENT = SELL WTI",
+      "decision": "excluded_first_pass",
+      "rationale": "Excluded from first A/B set because it is a separate intermarket spread/OIL strategy and should be tested in its own baseline.",
+      "score": 90,
+      "category": "Entry Components",
+      "concern": "entry_logic",
+      "canonical_concepts": [
+        "Session Filter"
+      ],
+      "sources": [
+        "8d3bf6d0eb24"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "• SET A (SELL Spread)",
+      "decision": "excluded_first_pass",
+      "rationale": "Excluded from first A/B set because it is a separate intermarket spread/OIL strategy and should be tested in its own baseline.",
+      "score": 75,
+      "category": "Filter Components",
+      "concern": "entry_logic",
+      "canonical_concepts": [
+        "Session Filter"
+      ],
+      "sources": [
+        "8d3bf6d0eb24"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    },
+    {
+      "rule": "• SET B (BUY Spread)",
+      "decision": "excluded_first_pass",
+      "rationale": "Excluded from first A/B set because it is a separate intermarket spread/OIL strategy and should be tested in its own baseline.",
+      "score": 75,
+      "category": "Filter Components",
+      "concern": "entry_logic",
+      "canonical_concepts": [
+        "Session Filter"
+      ],
+      "sources": [
+        "8d3bf6d0eb24"
+      ],
+      "source_count": 1,
+      "blocked_by_conflicts": []
+    }
+  ],
+  "ab_test_plan": {
+    "baseline": "Existing/manual EA behavior with the same symbol, timeframe, date range, spread, lot model, and risk settings, before adding selected candidate rules.",
+    "variant_a": "Add only CHoCH confirmation + FVG retest entry and stop loss below liquidity sweep wick.",
+    "variant_b_optional_after_a": "SRF ablation: compare Sell/Buy setup with SRF vs corresponding no-SRF setup after source-context review.",
+    "do_not_mix": [
+      "BRENT/WTI spread rules",
+      "Jobot OIL grid/dynamic rules",
+      "agent memory/session rules",
+      "fragmentary risk text such as above."
+    ],
+    "required_before_backtest": [
+      "Open source notes for 58db7c3d4de1 and c87b0e657d98 to confirm exact entry/SL definitions.",
+      "Record symbol, timeframe, date range, initial deposit, lot sizing, max orders, spread, and pass/fail metrics.",
+      "Confirm no selected rule is blocked by pending high conflicts."
+    ],
+    "metrics": [
+      "net_profit",
+      "profit_factor",
+      "max_balance_drawdown_percent",
+      "recovery_factor",
+      "total_trades",
+      "win_rate",
+      "average_rr_or_avg_win_loss",
+      "exposure/max_open_positions"
+    ],
+    "pass_fail_guardrails": [
+      "Reject if drawdown increases materially without profit factor improvement.",
+      "Reject if total trades collapse below a meaningful sample for the chosen date range.",
+      "Reject any variant that requires no-SL/no-TP, grid, martingale, or unbounded averaging to work."
+    ]
+  },
+  "mutation_allowed": false
+}

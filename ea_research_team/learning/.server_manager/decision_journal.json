@@ -1,0 +1,72 @@
+{
+  "decisions": [
+    {
+      "action": "buy",
+      "blade": {
+        "mode": "dry_run",
+        "order_send": false,
+        "status": "ready"
+      },
+      "confidence": 76,
+      "created_at": "2026-06-08T12:59:43+07:00",
+      "decision_id": "DJ-d40f9e1aa26b",
+      "ea_id": "DEMO_XAUUSD_AGENT_01",
+      "hawk": {
+        "confidence": 76,
+        "note": "momentum continuation",
+        "signal": "buy"
+      },
+      "reason": "Dry-run smoke: HAWK sees bullish continuation, SAGE allows, Risk Gate approves small test lot.",
+      "risk_gate": {
+        "approved": true,
+        "max_lot": 0.01,
+        "mode": "dry_run"
+      },
+      "sage": {
+        "comment": "acceptable demo risk",
+        "veto": false
+      },
+      "sl": 2310.5,
+      "symbol": "XAUUSD",
+      "timeframe": "M15",
+      "tp": 2324.0
+    },
+    {
+      "action": "hold",
+      "blade": {
+        "mode": "dry_run",
+        "order_send": false,
+        "status": "blocked"
+      },
+      "confidence": 30,
+      "created_at": "2026-06-08T13:27:32+07:00",
+      "decision_id": "DJ-5d074c3ef264",
+      "ea_id": "DEMO_XAUUSD_AGENT_01",
+      "hawk": {
+        "confidence": 68,
+        "note": "entry idea blocked by hard risk rule",
+        "signal": "buy"
+      },
+      "reason": "Dry-run smoke: Risk Gate rejected oversized lot request.",
+      "risk_gate": {
+        "approved": false,
+        "decision": "reject",
+        "max_lot": 0.01,
+        "reasons": [
+          "lot_cap"
+        ],
+        "requested_lot": 0.02
+      },
+      "sage": {
+        "comment": "risk gate hard rule decides",
+        "veto": false
+      },
+      "sl": null,
+      "symbol": "XAUUSD",
+      "timeframe": "M15",
+      "tp": null
+    }
+  ],
+  "updated_at": "2026-06-08T13:27:32+07:00",
+  "version": 1
+}

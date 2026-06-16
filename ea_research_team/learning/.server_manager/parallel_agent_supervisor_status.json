@@ -1,0 +1,253 @@
+{
+  "action": "agent_reports",
+  "reports": [
+    {
+      "agent": "Diag",
+      "data": {
+        "download": {
+          "current_index": 0,
+          "failed": 0,
+          "running": false,
+          "status": "Completed",
+          "success": 0,
+          "total": 0
+        },
+        "learning_status": {
+          "blueprint_ready": true,
+          "concepts_total": 2398,
+          "conflicts_pending": 48,
+          "ea_rules": 1869,
+          "videos": {
+            "discovered": 0,
+            "failed": 0,
+            "learned": 99,
+            "needs_check": 57,
+            "total": 156
+          }
+        },
+        "pipeline": {
+          "error": null,
+          "running": false
+        },
+        "watchdog": {
+          "api_latency_ms": 13,
+          "paid_api_guard": {
+            "configured_provider_env_count": 2,
+            "configured_provider_env_names": [
+              "ANTHROPIC_API_KEY",
+              "GEMINI_API_KEY"
+            ],
+            "paid_loop_allowed": false,
+            "unknown_billing_treated_as_paid": true
+          },
+          "report_freshness": {
+            "newest_age_seconds": 5,
+            "stale_after_minutes": 15,
+            "stale_count": 1,
+            "total": 13,
+            "unreadable_count": 0
+          },
+          "runtime_files": {
+            "download_status.json": {
+              "exists": true,
+              "readable": true
+            },
+            "parallel_agent_supervisor_status.json": {
+              "exists": true,
+              "readable": true
+            }
+          },
+          "server_manager": {
+            "api_online": true,
+            "auto_worker_managed": true,
+            "latency_ms": 4956,
+            "managed": true,
+            "manager_online": true,
+            "ok": true,
+            "parallel_supervisor_managed": true,
+            "pid": 17416,
+            "telegram_managed": true
+          },
+          "warnings": [
+            "stale_agent_reports"
+          ]
+        }
+      },
+      "job": "diag_runtime_health",
+      "recommendation": "Write-heavy jobs may be considered after a fresh status check.",
+      "status": "warning",
+      "summary": "pipeline_running=False, download_running=False, learned=99, needs_check=57, watchdog_warnings=1.",
+      "updated_at": "2026-06-12T08:15:37+07:00"
+    },
+    {
+      "agent": "Hermes",
+      "data": {
+        "auto_resolve_enabled": false,
+        "conflicts_pending": 48
+      },
+      "job": "hermes_conflict_triage_audit",
+      "recommendation": "Build local evidence packets first; use Gemini Pro only one high-impact conflict at a time after approval.",
+      "status": "warning",
+      "summary": "Pending conflicts=48; auto paid judging remains disabled.",
+      "updated_at": "2026-06-12T08:19:57+07:00"
+    },
+    {
+      "agent": "Iris",
+      "data": {
+        "image_count": 1,
+        "preview": [
+          "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\files\\1bf258_image_2026-06-03_18-01-42.png"
+        ]
+      },
+      "job": "iris_chart_inbox_audit",
+      "recommendation": "Do not run vision analysis automatically; wait for explicit chart task.",
+      "status": "ok",
+      "summary": "Found 1 chart/image inbox files for manual or approved vision analysis.",
+      "updated_at": "2026-06-12T08:15:30+07:00"
+    },
+    {
+      "agent": "Kira",
+      "data": {
+        "macro_file_count": 1,
+        "preview": [
+          "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent_handoff\\agent_reports\\kira_macro_calendar_audit.json"
+        ]
+      },
+      "job": "kira_macro_calendar_audit",
+      "recommendation": "Use local or verified-free macro sources before paid APIs.",
+      "status": "ok",
+      "summary": "Found 1 local macro/calendar/COT files.",
+      "updated_at": "2026-06-12T08:28:51+07:00"
+    },
+    {
+      "agent": "Momo",
+      "data": {
+        "csv_count": 96,
+        "preview": [
+          "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent\\skills\\ui-ux-pro-max\\data\\charts.csv",
+          "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent\\skills\\ui-ux-pro-max\\data\\colors.csv",
+          "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent\\skills\\ui-ux-pro-max\\data\\icons.csv",
+          "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent\\skills\\ui-ux-pro-max\\data\\landing.csv",
+          "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent\\skills\\ui-ux-pro-max\\data\\products.csv"
+        ]
+      },
+      "job": "momo_regime_data_audit",
+      "recommendation": "Use local CSV regime checks before requesting external market data.",
+      "status": "ok",
+      "summary": "Found 96 local CSV files for possible regime analysis.",
+      "updated_at": "2026-06-12T08:19:55+07:00"
+    },
+    {
+      "agent": "Nara",
+      "data": {
+        "active_sessions": [
+          "asia"
+        ],
+        "th_hour": 8
+      },
+      "job": "nara_session_gate_audit",
+      "recommendation": "Use session gate as advisory only until EA rules explicitly consume it.",
+      "status": "ok",
+      "summary": "Current TH hour=8; active session gates=asia.",
+      "updated_at": "2026-06-12T08:17:57+07:00"
+    },
+    {
+      "agent": "Nova",
+      "data": {
+        "candidate_count": 0,
+        "command": "mql5_code_intake.py --root \"G:\\My Drive\\jobot\" --limit 10 --workers 1",
+        "next_batch": [],
+        "preview": []
+      },
+      "job": "nova_source_audit",
+      "recommendation": "Queue a controlled source-first MQL batch when pipeline and download are idle.",
+      "status": "ok",
+      "summary": "Found 0 unprocessed MQL/source candidates for the next controlled batch.",
+      "updated_at": "2026-06-12T08:17:54+07:00"
+    },
+    {
+      "agent": "Penny",
+      "data": {
+        "currency_data_count": 0,
+        "preview": []
+      },
+      "job": "penny_currency_data_audit",
+      "recommendation": "Prefer local/free currency data before paid market APIs.",
+      "status": "warning",
+      "summary": "Found 0 local currency-strength/MMF data files.",
+      "updated_at": "2026-06-12T08:27:37+07:00"
+    },
+    {
+      "agent": "Remy",
+      "data": {
+        "artifact_count": 9,
+        "preview": [
+          "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\artifacts\\backtest_trades.csv",
+          "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_fix20_trades.csv",
+          "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ftmo_trades.csv",
+          "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\trades_H1.csv",
+          "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\trades_log.csv"
+        ]
+      },
+      "job": "remy_backtest_artifact_audit",
+      "recommendation": "Use local backtest artifacts before launching new backtest loops.",
+      "status": "ok",
+      "summary": "Found 9 local backtest/trade report artifacts.",
+      "updated_at": "2026-06-12T08:28:24+07:00"
+    },
+    {
+      "agent": "Risco",
+      "data": {
+        "conflicts_pending": 48,
+        "conflicts_total": 7261,
+        "ea_rules": 1869
+      },
+      "job": "risco_rule_risk_audit",
+      "recommendation": "Review pending conflicts before expanding EA blueprint rules.",
+      "status": "warning",
+      "summary": "EA rules=1869, conflicts_total=7261, conflicts_pending=48.",
+      "updated_at": "2026-06-12T08:17:57+07:00"
+    },
+    {
+      "agent": "Scribe",
+      "data": {
+        "current_step": "Pre-live safety checklist gate implemented, dashboard-wired, verified with tests, and live-smoked. Live trading remains disabled and BLADE order_send remains false.",
+        "last_updated": "2026-06-10T08:17:21+07:00",
+        "next_action_count": 2
+      },
+      "job": "scribe_handoff_audit",
+      "recommendation": "Keep ACTIVE_PLAN.json current after each verified task.",
+      "status": "ok",
+      "summary": "Active plan status=completed with 2 next actions.",
+      "updated_at": "2026-06-12T08:17:55+07:00"
+    },
+    {
+      "agent": "Vera",
+      "data": {
+        "avg_confidence": 88,
+        "blueprint_ready": true,
+        "concepts_total": 2398
+      },
+      "job": "vera_knowledge_audit",
+      "recommendation": "Use knowledge gaps from local reports before adding paid learning sources.",
+      "status": "ok",
+      "summary": "Knowledge base has 2398 concepts and blueprint_ready=True.",
+      "updated_at": "2026-06-12T08:15:29+07:00"
+    },
+    {
+      "agent": "YouTube",
+      "data": {
+        "auto_intake_enabled": false,
+        "needs_check": 57
+      },
+      "job": "youtube_queue_audit",
+      "recommendation": "Do not start VDO/YouTube intake without explicit one-item local-only approval.",
+      "status": "warning",
+      "summary": "YouTube/VDO queue has 57 needs_check items; intake remains paused.",
+      "updated_at": "2026-06-12T08:20:01+07:00"
+    }
+  ],
+  "running": true,
+  "total": 13,
+  "updated_at": "2026-06-12T08:28:51+07:00"
+}

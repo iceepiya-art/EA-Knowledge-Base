@@ -1,0 +1,10 @@
+logs
+backtest
+tick_data
+datasets
+obsidian
+*.csv
+*.zip
+*.parquet
+*.onnx
+*.pt

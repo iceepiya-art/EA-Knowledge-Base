@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>EA AI Agent — BPMN Process Flow</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f1117; color: #e0e0e0; padding: 20px; }
+  h1 { text-align: center; color: #7eb8f7; font-size: 22px; margin-bottom: 6px; }
+  .subtitle { text-align: center; color: #888; font-size: 13px; margin-bottom: 24px; }
+
+  .bpmn-container { display: flex; flex-direction: column; gap: 4px; max-width: 1200px; margin: 0 auto; }
+
+  .lane { display: flex; border-radius: 10px; overflow: hidden; min-height: 110px; }
+  .lane-label {
+    width: 120px; min-width: 120px;
+    display: flex; align-items: center; justify-content: center;
+    writing-mode: vertical-rl; text-orientation: mixed;
+    transform: rotate(180deg);
+    font-size: 12px; font-weight: 700; letter-spacing: 1px;
+    padding: 10px 6px;
+  }
+  .lane-content {
+    flex: 1; display: flex; align-items: center; gap: 8px;
+    padding: 14px 16px; flex-wrap: wrap;
+  }
+
+  /* Lane colors */
+  .lane-data   .lane-label { background: #1a3a5c; color: #7eb8f7; }
+  .lane-data   .lane-content { background: #0d2035; }
+  .lane-agent  .lane-label { background: #1a3a2a; color: #5de89e; }
+  .lane-agent  .lane-content { background: #0d2018; }
+  .lane-risk   .lane-label { background: #3a2a10; color: #f0a842; }
+  .lane-risk   .lane-content { background: #1e1508; }
+  .lane-exec   .lane-label { background: #3a1a2a; color: #e87ab0; }
+  .lane-exec   .lane-content { background: #200d18; }
+
+  /* Nodes */
+  .node {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; text-align: center;
+    font-size: 11px; line-height: 1.4; cursor: default;
+    position: relative;
+  }
+  .node-label { font-size: 10px; color: #aaa; margin-top: 4px; max-width: 90px; }
+
+  .circle { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .start { background: #2d6a2d; border: 2px solid #5de89e; }
+  .end   { background: #6a1a1a; border: 3px solid #e05050; }
+
+  .task {
+    width: 100px; min-height: 52px; border-radius: 8px;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; text-align: center;
+    font-size: 11px; padding: 6px 8px; line-height: 1.4;
+  }
+  .task-blue   { background: #1a3a5c; border: 1px solid #7eb8f7; color: #c9e4ff; }
+  .task-green  { background: #1a3a2a; border: 1px solid #5de89e; color: #b8f0d0; }
+  .task-orange { background: #3a2a10; border: 1px solid #f0a842; color: #ffe0a0; }
+  .task-red    { background: #3a1a1a; border: 1px solid #e05050; color: #ffc0c0; }
+  .task-pink   { background: #3a1a2a; border: 1px solid #e87ab0; color: #ffc8e0; }
+  .task-gray   { background: #2a2a2a; border: 1px solid #666; color: #ccc; }
+
+  .gateway {
+    width: 52px; height: 52px;
+    transform: rotate(45deg);
+    display: flex; align-items: center; justify-content: center;
+    background: #2a2a10; border: 2px solid #f0a842;
+  }
+  .gateway-inner { transform: rotate(-45deg); font-size: 10px; text-align: center; color: #f0a842; line-height: 1.2; }
+
+  .arrow { color: #555; font-size: 18px; display: flex; align-items: center; }
+  .arrow-label { font-size: 9px; color: #888; text-align: center; max-width: 60px; }
+
+  .badge {
+    display: inline-block; padding: 2px 6px; border-radius: 10px;
+    font-size: 9px; font-weight: 700; margin-top: 2px;
+  }
+  .badge-green  { background: #1a4a2a; color: #5de89e; }
+  .badge-red    { background: #4a1a1a; color: #e05050; }
+  .badge-orange { background: #4a3010; color: #f0a842; }
+  .badge-blue   { background: #1a2a4a; color: #7eb8f7; }
+
+  /* Regime boxes */
+  .regime-box {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 6px; padding: 8px;
+    background: #111; border-radius: 8px; border: 1px solid #333;
+  }
+  .regime-item {
+    padding: 6px 8px; border-radius: 6px; font-size: 10px; line-height: 1.5;
+  }
+  .regime-crash   { background: #3a1010; border-left: 3px solid #e05050; }
+  .regime-trend   { background: #1a3010; border-left: 3px solid #5de89e; }
+  .regime-weak    { background: #2a2a10; border-left: 3px solid #f0a842; }
+  .regime-revert  { background: #10203a; border-left: 3px solid #7eb8f7; }
+
+  /* Log section */
+  .log-section {
+    max-width: 1200px; margin: 16px auto 0;
+    background: #0d1a0d; border: 1px solid #2a4a2a;
+    border-radius: 10px; padding: 16px;
+  }
+  .log-title { color: #5de89e; font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+  .log-entry { font-family: 'Consolas', monospace; font-size: 11px; line-height: 1.8; }
+  .log-trade  { color: #5de89e; }
+  .log-hold   { color: #f0a842; }
+  .log-crash  { color: #e05050; }
+
+  .section-title {
+    max-width: 1200px; margin: 16px auto 6px;
+    font-size: 13px; color: #888; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .flow-simple {
+    max-width: 1200px; margin: 0 auto;
+    background: #111; border-radius: 10px; padding: 16px;
+    display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+  }
+  .step {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 4px;
+  }
+  .step-box {
+    padding: 8px 12px; border-radius: 8px; font-size: 11px;
+    text-align: center; min-width: 90px;
+  }
+</style>
+</head>
+<body>
+
+<h1>🤖 EA AI Agent — BPMN Process Flow</h1>
+<p class="subtitle">ORCA Multi System · QField Framework · April 2026</p>
+
+<!-- PHASE OVERVIEW -->
+<div class="section-title">📋 Process Overview</div>
+<div class="flow-simple">
+  <div class="step">
+    <div class="step-box task-blue">📡 Market Data<br>SC₁₀₀ + β₁<br>Tickvol</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="step">
+    <div class="step-box task-green">🤖 Regime<br>Detection<br>BPMN Gate</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="step">
+    <div class="step-box task-green">📊 Strategy<br>Selection<br>+ Signal</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="step">
+    <div class="step-box task-orange">🛡️ Risk<br>Guard<br>Lot Calc</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="step">
+    <div class="step-box task-pink">⚡ Execute<br>Place Order<br>Log</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="step">
+    <div class="step-box task-pink">⏱️ Monitor<br>5-bar hold<br>Exit check</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="step">
+    <div class="step-box" style="background:#1a1a3a;border:1px solid #7eb8f7;color:#c9e4ff;">📝 Log<br>Decision<br>+ Result</div>
+  </div>
+</div>
+
+<!-- SWIM LANES -->
+<div class="section-title">🏊 Swim Lane Detail</div>
+<div class="bpmn-container">
+
+  <!-- Lane 1: Market Data -->
+  <div class="lane lane-data">
+    <div class="lane-label">📡 MARKET DATA</div>
+    <div class="lane-content">
+      <div class="node">
+        <div class="circle start">🟢</div>
+        <div class="node-label">Tick Arrives</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="task task-blue">CalcSC100<br>100 M1 bars<br><span class="badge badge-blue">r=−0.95 vs β₁</span></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="task task-blue">EstimateBeta1<br>AR(1) 50 bars<br><span class="badge badge-orange">β₁&gt;0=Trend</span></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="task task-blue">Tickvol Rank<br>Q1–Q4<br><span class="badge badge-green">Magnitude</span></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="task task-blue">Read RSI(20)<br>SMA(50)<br>ATR_D1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lane 2: AI Agent Core -->
+  <div class="lane lane-agent">
+    <div class="lane-label">🤖 AI AGENT CORE</div>
+    <div class="lane-content">
+      <div class="node">
+        <div class="gateway"><div class="gateway-inner">SC₁₀₀<br>?</div></div>
+        <div class="node-label">Regime Gate</div>
+      </div>
+      <div class="arrow" style="font-size:12px;">↓</div>
+      <div class="regime-box">
+        <div class="regime-item regime-crash">
+          💥 <strong>CRASH</strong><br>SC &lt; 0.22<br>tickvol &gt;5×<br>β₁ &gt; 0.30<br>→ Momentum Only
+        </div>
+        <div class="regime-item regime-trend">
+          📈 <strong>TRENDING</strong><br>SC &lt; 0.25<br>β₁ &gt; 0<br>→ EMA + Momentum<br>tickvol Q3-Q4
+        </div>
+        <div class="regime-item regime-weak">
+          😐 <strong>WEAK</strong><br>SC 0.25–0.35<br>→ RSI only<br>หรือ HOLD
+        </div>
+        <div class="regime-item regime-revert">
+          🔄 <strong>REVERTING</strong><br>SC &gt; 0.35<br>→ RSI(20)+SMA(50)<br>72.5% WR ✅
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lane 3: Risk Guard -->
+  <div class="lane lane-risk">
+    <div class="lane-label">🛡️ RISK GUARD</div>
+    <div class="lane-content">
+      <div class="node">
+        <div class="task task-orange">Check Spread<br>&gt;3× avg?<br><span class="badge badge-red">→ Skip</span></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="task task-orange">News Event?<br>NFP/FOMC<br><span class="badge badge-orange">→ −30% lot</span></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="task task-orange">Drawdown<br>&lt; Max Limit?<br><span class="badge badge-red">→ EmergStop</span></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="task task-orange">Calc Lot<br>ATR-based<br><span class="badge badge-green">max 0.10</span></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="task task-orange">Calc SL/TP<br>SL=ATR×0.3<br>TP=ATR×0.5</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lane 4: Execution -->
+  <div class="lane lane-exec">
+    <div class="lane-label">⚡ EXECUTION</div>
+    <div class="lane-content">
+      <div class="node">
+        <div class="task task-pink">Validate<br>Trade</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="task task-pink">Place Order<br>+ log_decision<br><span class="badge badge-blue">SC₁₀₀+Regime</span></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="task task-gray">⏱️ Wait<br>≥ 5 bars<br><span class="badge badge-red">&lt;5 = 10%WR!</span></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="gateway"><div class="gateway-inner">Exit<br>Signal?</div></div>
+      </div>
+      <div class="arrow">→</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div class="task task-green" style="width:100px;font-size:10px;">RSI Exit<br><span class="badge badge-green">100% WR ✅</span></div>
+        <div class="task task-green" style="width:100px;font-size:10px;">TP Hit<br><span class="badge badge-green">100% WR ✅</span></div>
+        <div class="task task-red"   style="width:100px;font-size:10px;">SL Hit<br><span class="badge badge-orange">61.5% WR</span></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="circle end">🔴</div>
+        <div class="node-label">Log Result</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- LOG FORMAT -->
+<div class="log-section">
+  <div class="log-title">📝 Log Format — ทุก Decision</div>
+  <div class="log-entry">
+    <div class="log-trade">✅ TRADE: "Strategy: RSI+SMA — SC₁₀₀=0.38 (REVERTING), β₁=−0.119, RSI(20)=28, above SMA(50), tickvol Q4 → BUY 0.05 lot, SL=2970.0, TP=2998.5"</div>
+    <div class="log-hold">⏸️ HOLD:  "Strategy: HOLD — SC₁₀₀=0.31 (WEAK/MIXED), signals unclear, spread=3.2 pips &gt; 3× avg"</div>
+    <div class="log-crash">💥 CRASH: "Strategy: CRASH MODE — SC₁₀₀=0.19, β₁=+0.40, tickvol 8× avg → Momentum only, RSI disabled"</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<p style="text-align:center;color:#444;font-size:11px;margin-top:20px;">
+  EA AI Agent BPMN v1.0 · ORCA Multi System (Thailand) · QField Framework · April 2026
+</p>
+
+</body>
+</html>

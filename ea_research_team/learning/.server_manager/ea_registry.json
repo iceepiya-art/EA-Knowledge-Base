@@ -1,0 +1,48 @@
+{
+  "eas": {
+    "DEMO_BTCUSD_AGENT_02": {
+      "account_id": "DEMO-ACCOUNT-01",
+      "created_at": "2026-06-08T12:46:31+07:00",
+      "ea_id": "DEMO_BTCUSD_AGENT_02",
+      "ea_name": "Demo BTCUSD Agent 02",
+      "ea_version": "0.1.0",
+      "magic_number": 26060802,
+      "status": "testing",
+      "strategy_family": "agentic-test",
+      "symbol": "BTCUSD",
+      "terminal_id": "MT5-DEMO-01",
+      "timeframe": "M5",
+      "updated_at": "2026-06-08T12:46:31+07:00"
+    },
+    "DEMO_XAUUSD_AGENT_01": {
+      "account_id": "DEMO-ACCOUNT-01",
+      "created_at": "2026-06-08T12:40:29+07:00",
+      "ea_id": "DEMO_XAUUSD_AGENT_01",
+      "ea_name": "Demo XAUUSD Agent 01",
+      "ea_version": "0.1.0",
+      "magic_number": 26060801,
+      "status": "testing",
+      "strategy_family": "agentic-test",
+      "symbol": "XAUUSD",
+      "terminal_id": "MT5-DEMO-01",
+      "timeframe": "M15",
+      "updated_at": "2026-06-08T12:40:29+07:00"
+    },
+    "DEMO_XAUUSD_SWING_03": {
+      "account_id": "DEMO-ACCOUNT-02",
+      "created_at": "2026-06-08T12:46:31+07:00",
+      "ea_id": "DEMO_XAUUSD_SWING_03",
+      "ea_name": "Demo XAUUSD Swing 03",
+      "ea_version": "0.1.0",
+      "magic_number": 26060801,
+      "status": "testing",
+      "strategy_family": "swing-test",
+      "symbol": "XAUUSD",
+      "terminal_id": "MT5-DEMO-01",
+      "timeframe": "H1",
+      "updated_at": "2026-06-08T12:46:31+07:00"
+    }
+  },
+  "updated_at": "2026-06-08T12:46:31+07:00",
+  "version": 1
+}

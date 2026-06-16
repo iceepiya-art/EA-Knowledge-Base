@@ -1,0 +1,12 @@
+{
+  "agent": "YouTube",
+  "data": {
+    "auto_intake_enabled": false,
+    "needs_check": 57
+  },
+  "job": "youtube_queue_audit",
+  "recommendation": "Do not start VDO/YouTube intake without explicit one-item local-only approval.",
+  "status": "warning",
+  "summary": "YouTube/VDO queue has 57 needs_check items; intake remains paused.",
+  "updated_at": "2026-06-12T08:20:01+07:00"
+}

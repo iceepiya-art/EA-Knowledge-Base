@@ -1,0 +1,17 @@
+{
+  "source_root": "G:\\My Drive\\jobot",
+  "policy": "Process jobot videos one at a time. Before selecting the next video, skip entries already listed here unless status is explicitly retryable.",
+  "updated_at": "2026-06-03T18:35:00+07:00",
+  "videos": [
+    {
+      "source_path": "G:\\My Drive\\jobot\\YT\\EP5 EA Parabolic Sar +Bill Williams\\2022-04-19 14-40-19.mp4",
+      "local_evidence_id": "413a9ff518d0",
+      "raw_note": "ea_research_team/raw/local/413a9ff518d0.md",
+      "duration_seconds": 43.4,
+      "size_bytes": 13644867,
+      "text_source": "auto_transcription",
+      "status": "completed_synced",
+      "notes": "Imported from jobot. faster-whisper tiny captured only 'You You'. Keyframes were extracted and the raw note was corrected as visual MT4 XAUUSD H1 Parabolic SAR/Bill Williams backtest evidence. Extraction, merge, concept notes, conflicts, EA components, blueprint, and DB sync completed. Do not process this source path again unless explicitly retrying with a better transcript model."
+    }
+  ]
+}

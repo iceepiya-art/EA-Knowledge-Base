@@ -1,0 +1,456 @@
+{
+  "processed_hashes": {
+    "G:\\My Drive\\jobot\\EA Week10\\คู่มือ Dashboard .docx": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\09f9ff1c8ea6.md"
+    },
+    "G:\\My Drive\\jobot\\Trade story EP1 Base.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\0352e056c172.md"
+    },
+    "G:\\My Drive\\jobot\\QM.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\a1bfe7ec0a10.md"
+    },
+    "G:\\My Drive\\jobot\\VIP RTM MFF GROUP by KL.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\578a98825674.md"
+    },
+    "G:\\My Drive\\jobot\\NEW-BASIC-TO-ADVANCE-FULL-SYS+900.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\81c90cf7e794.md"
+    },
+    "G:\\My Drive\\jobot\\WMT Trading Agreement_May 12, 2025 (1).pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c45290bc72c8.md"
+    },
+    "G:\\My Drive\\jobot\\พื้นฐานบริหารการออกออเดอร์ 101.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\ac901de28a1e.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\วิธีเรียน Welcome to Jobot Invest.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\281670492fc8.md"
+    },
+    "G:\\My Drive\\jobot\\SALE EA\\MFF-INDEPENDENT-CONTRACTOR-AGREEMENT-Accelerated.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\479af3d6827c.md"
+    },
+    "G:\\My Drive\\jobot\\SALE EA\\MFF-INDEPENDENT-CONTRACTOR-AGREEMENT-Accelerated - 2.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\b0bd22062adf.md"
+    },
+    "G:\\My Drive\\jobot\\SALE EA\\Statement1.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c94c35d69bc3.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\GBPJPY.csv": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\cc25768918ea.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\XAUUSD.csv": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\2601c191d073.md"
+    },
+    "G:\\My Drive\\jobot\\FXDreema Login.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\0f6b22fa14c2.md"
+    },
+    "G:\\My Drive\\jobot\\MACDV DASHBOARD by KP_House.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\e166081ad28f.md"
+    },
+    "G:\\My Drive\\jobot\\MACD-V Volatility Normalisation by Riliza.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c83a056ba1be.md"
+    },
+    "G:\\My Drive\\jobot\\SALE EA\\MFF-INDEPENDENT-CONTRACTOR-AGREEMENT-Accelerated-2.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\265bcc0ee5e7.md"
+    },
+    "G:\\My Drive\\jobot\\RTM-20220226T034955Z-001\\RTM MFF GROUP TECHIT 6feb2020.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\570889b22ccf.md"
+    },
+    "G:\\My Drive\\jobot\\RTM-20220226T034955Z-001\\RTM MFF GROUP v2 9feb2020.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\1ee8c01b4ae5.md"
+    },
+    "G:\\My Drive\\jobot\\RTM-20220226T034955Z-001\\qml 1.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\6513fd40cd85.md"
+    },
+    "G:\\My Drive\\jobot\\RTM-20220226T034955Z-001\\VIP RTM MFF GROUP by KL.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c87b0e657d98.md"
+    },
+    "G:\\My Drive\\jobot\\ATR Range Probability by KP_House.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\407eafecf2d2.md"
+    },
+    "G:\\My Drive\\jobot\\symblos.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\4e0b8ec8856d.md"
+    },
+    "G:\\My Drive\\jobot\\SALE EA\\rise_recovery_code.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\9eaa34556b94.md"
+    },
+    "G:\\My Drive\\jobot\\adx-wilder-indicator\\Our Tips.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\ddde6cabb0c7.md"
+    },
+    "G:\\My Drive\\jobot\\AI GEN\\ninjathai_ea.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\ff9bbed028c7.md"
+    },
+    "G:\\My Drive\\jobot\\YT\\ep2 MACD main cross signal EA\\รายละเอียดEA เป็นการทดสอบรัน backtest สกุลเงิน XAUUSD.docx": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\37ed6d676814.md"
+    },
+    "G:\\My Drive\\jobot\\RTM-20220226T034955Z-001\\shha HLZ -unlocked.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\11a1cd4dc21a.md"
+    },
+    "G:\\My Drive\\jobot\\RTM-20220226T034955Z-001\\LQ.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\b1b06f35b2c4.md"
+    },
+    "G:\\My Drive\\jobot\\Myth Buster _ Loser Journey\\Myth Buster - ความเชื่อผิดๆ ที่อาจทำให้ชีวิตบัดซบ.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\d227b61458c4.md"
+    },
+    "G:\\My Drive\\jobot\\Myth Buster _ Loser Journey\\Loser Journey.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\5909bf2fa676.md"
+    },
+    "G:\\My Drive\\jobot\\AI GEN\\ninjathai_complete.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\dd03828c4a9c.md"
+    },
+    "G:\\My Drive\\jobot\\AI GEN\\ninjathai_improved_ea.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\66451a21dd0e.md"
+    },
+    "G:\\My Drive\\jobot\\AI GEN\\ninjathai_volume_profile.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\8094980d9315.md"
+    },
+    "G:\\My Drive\\jobot\\AI GEN\\ninjathai_complete_fixed.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\048bce16384c.md"
+    },
+    "G:\\My Drive\\jobot\\AI GEN\\Gold_OI_Manual_SR_EA.mq5.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\17143eb65fc6.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\ebook.pdf.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\937dbb473c46.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\CapitalRoyal\\CapitalRoyal.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\fd16404555e1.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\MAzonebuyonly   GRIDรวบโซน\\MAzonebuyonly  MT4 GRIDรวบโซน (1).pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\d8302328afc0.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\MAzonebuyonly   GRIDรวบโซน\\MAzonebuyonlyรวบเปิดMT5 รวบเปิด (1).pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c5e17f4b4b42.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\CapitalMAGL-GRIDMAZONE\\GRIDMAZONE GOLD SETUP1.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\aa4b6529cf65.md"
+    },
+    "G:\\My Drive\\jobot\\YT\\ep3 BB+STO EA\\1.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\cba3c1328eeb.md"
+    },
+    "G:\\My Drive\\jobot\\YT\\ep2 MACD main cross signal EA\\1.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\8f88d9e26798.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Wacthlist กัปตัน\\สินค้าทั้งหมด.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\d69231425cd4.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Wacthlist กัปตัน\\FOREX.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c435dbdd4a70.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Wacthlist กัปตัน\\Crypto.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\6ac998e3a2ee.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\CapitalMAGL-GRIDMAZONE\\GRIDMAZONE GOLD SETUP2.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\3787ff588dd4.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\CapitalMAGL-GRIDMAZONE\\GRIDMAZONE GOLD SETUP3.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\ada6cd536f40.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\CapitalMAGL-GRIDMAZONE\\GRID MA ZONE  OIL SETUP 1  (1) (1).pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\f2ba27fc90f5.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\CapitalMAGL-GRIDMAZONE\\CapitalMAGL_GRIDMAZONE.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\3b72aa04eaca.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\CapitalGrid-GRIDZONE\\GRIDZONE GOLD SETUP1.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\193a578fa51f.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Wacthlist กัปตัน\\หุ้นต่างประเทศ.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\3a5127c26da3.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Wacthlist กัปตัน\\หุ้นไทย.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\07fecd2b515b.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Wacthlist กัปตัน\\ตลาดฟิวเจอร์.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\e0693375e794.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\TakePropipsDonchianTrendPro\\Read me.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\28a878dfc7aa.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\adx-wilder-indicator\\Our Tips.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\06fb76dbf9c2.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\XAUUSD\\XAUUSD.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\11810bc069aa.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\adxw-indicator\\Our Tips.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\0dacd7c9d269.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\support-and-resistance-with-ribbon\\Our Tips.txt": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\2f82199528ab.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\CapitalGrid-GRIDZONE\\GRID ZONE  OIL SETUP 1  (1) (1).pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\cf1c3996f6de.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\CapitalGrid-GRIDZONE\\CapitalGrid_GRIDBASICZONE .pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\cf87f92f5f40.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\CapitalGrid-GRIDZONE\\GRID BASIC ZONE-OIL setup.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\d418e6775f16.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\RISK PER TRADE OI ZONE (RPTOIzone)\\RISK PER TRADE OI ZONE (RPTOIzone).pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\d9d5a6472fc0.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\RISK PER TRADE OI ZONE (RPTOIzone)\\RPT-OIZONE  MT5.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\1223fe43d747.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\DCA MA\\DCA MA.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c6e283f4c847.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\AUTO TRENDLINE\\AUTO TRENDLINE.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\dc434fc2de25.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\griddynamic\\GRID DYNAMIC buy only.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\1ad1cb8d2cbb.md"
+    },
+    "G:\\My Drive\\jobot\\EA BOTTRADE MT5\\griddynamic\\GRID DYNAMIC hedge.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\bcdd5c21927e.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\01 Market Structure_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\f84d2e83d583.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\02 Price Structure_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\03aa9e005baf.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\03 Demand Supply_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\24afe40c12ed.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\04 Chart Pattern_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\929e3db2d479.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\05 Harmonic_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\295aa2719c4d.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\06 Divergence_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\bb5752903fd5.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\07 Rejection_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\b5e60488ee82.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\08 QM Basic_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\570031103f5d.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\09 Trade Setup_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\d73eda9e21ff.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\10 Backtesting.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\35167a5697a3.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\01 Market Structure_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\2baf9c22c510.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\01 Market Structure_watermark-2.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\caf11bf325e3.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\02 Price Structure_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\f0bb0c9f6634.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\02 Price Structure_watermark-2.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\36219a61f816.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\03 Demand Supply_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\7aa0099b739f.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\03 Demand Supply_watermark-2.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\d9909304f457.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\04 Chart Pattern_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\e139115643fb.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\04 Chart Pattern_watermark-2.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\163a098dda10.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\05 Harmonic_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\545ad0fbf01b.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\05 Harmonic_watermark-2.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\2be5fea09537.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\06 Divergence_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\b4e520f20e2f.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\06 Divergence_watermark-2.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\ec4a3f0e0b35.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\07 Rejection_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c141d965f9dc.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\07 Rejection_watermark-2.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\a06b1420e783.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\08 QM Basic_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\b4ec8d9bc98d.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\08 QM Basic_watermark-2.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\36e5f98491dd.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\09 Trade Setup_watermark.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c5e26199d301.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\09 Trade Setup_watermark-2.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\1cacbfe3ebc0.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\10 Backtesting.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\33bc6822620a.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\10 Backtesting-2.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\0dff51e1e6cf.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\10 Backtesting-3.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\0c977fedb5a2.md"
+    },
+    "G:\\My Drive\\jobot\\กัปตัน เทรดดิ้ง\\Work Shop\\New folder\\10 Backtesting-4.pdf": {
+      "status": "needs_text",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\1ee8e67bc012.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\เอกสาร Jobot Invest Documents\\Fxdreema Detail.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\10c89f629aa4.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\เอกสาร Jobot Invest Documents\\การฝากเงินเข้า Swissquote.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\f1ff7da887fe.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\เอกสาร Jobot Invest Documents\\Jobot SwissQBot Manual.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\3278b10e8692.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\เอกสาร Jobot Invest Documents\\Jobot OIL Slide.pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\8d3bf6d0eb24.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\เอกสาร Jobot Invest Documents\\1. คู่มือ FXdreema (Jobot Invest).pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\d25daffaee8e.md"
+    },
+    "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\เอกสาร Jobot Invest Documents\\0. Mind Set and Steps (Jobot).pdf": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\566884bd824a.md"
+    },
+    "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\raw\\AI_Driven_Investing_Tools_Strategies.md": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\585499842983.md"
+    },
+    "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\raw\\Alchemist_Trading_Order_Books_Sentiment.md": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\f7a85c62c4cb.md"
+    },
+    "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\raw\\Captain_Trading_SMC_NotebookLM.md": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\4772e565a777.md"
+    },
+    "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\raw\\MTraders_OpenInterest_OI_NotebookLM.md": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\035dec7196de.md"
+    },
+    "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\raw\\MTraders_RSI_Strategy_NotebookLM.md": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\7e2255c6ece6.md"
+    },
+    "G:\\My Drive\\jobot\\graphify-out\\GRAPH_REPORT.md": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\2e2e4145a5ff.md"
+    },
+    "G:\\My Drive\\jobot\\graphify-out\\2026-06-07\\GRAPH_REPORT.md": {
+      "status": "raw_evidence_written",
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\58e3ef57903b.md"
+    }
+  }
+}

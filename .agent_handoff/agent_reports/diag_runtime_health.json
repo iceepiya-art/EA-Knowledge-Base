@@ -1,0 +1,78 @@
+{
+  "agent": "Diag",
+  "data": {
+    "download": {
+      "current_index": 0,
+      "failed": 0,
+      "running": false,
+      "status": "Completed",
+      "success": 0,
+      "total": 0
+    },
+    "learning_status": {
+      "blueprint_ready": true,
+      "concepts_total": 2398,
+      "conflicts_pending": 48,
+      "ea_rules": 1869,
+      "videos": {
+        "discovered": 0,
+        "failed": 0,
+        "learned": 99,
+        "needs_check": 57,
+        "total": 156
+      }
+    },
+    "pipeline": {
+      "error": null,
+      "running": false
+    },
+    "watchdog": {
+      "api_latency_ms": 21,
+      "paid_api_guard": {
+        "configured_provider_env_count": 2,
+        "configured_provider_env_names": [
+          "ANTHROPIC_API_KEY",
+          "GEMINI_API_KEY"
+        ],
+        "paid_loop_allowed": false,
+        "unknown_billing_treated_as_paid": true
+      },
+      "report_freshness": {
+        "newest_age_seconds": 4,
+        "stale_after_minutes": 15,
+        "stale_count": 5,
+        "total": 13,
+        "unreadable_count": 0
+      },
+      "runtime_files": {
+        "download_status.json": {
+          "exists": true,
+          "readable": true
+        },
+        "parallel_agent_supervisor_status.json": {
+          "exists": true,
+          "readable": true
+        }
+      },
+      "server_manager": {
+        "api_online": true,
+        "auto_worker_managed": true,
+        "latency_ms": 4758,
+        "managed": true,
+        "manager_online": true,
+        "ok": true,
+        "parallel_supervisor_managed": true,
+        "pid": 17416,
+        "telegram_managed": true
+      },
+      "warnings": [
+        "stale_agent_reports"
+      ]
+    }
+  },
+  "job": "diag_runtime_health",
+  "recommendation": "Write-heavy jobs may be considered after a fresh status check.",
+  "status": "warning",
+  "summary": "pipeline_running=False, download_running=False, learned=99, needs_check=57, watchdog_warnings=1.",
+  "updated_at": "2026-06-12T08:34:01+07:00"
+}

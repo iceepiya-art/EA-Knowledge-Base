@@ -1,0 +1,1025 @@
+{
+  "items": {
+    "00755c2c296af3d45a7ca433b98714cb5ec485dae48312ef6318436d4f6a0aa9": {
+      "category": "text",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\text\\diagnosis_20260605_103049.txt",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\ddcd72f79a4b.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\text\\diagnosis_20260605_103049.txt",
+      "status": "imported",
+      "text_captured": true,
+      "updated_at": "2026-06-06T09:21:00+07:00"
+    },
+    "00dda84efa9951bffee105fe1177321b35d267f45a8c53f362f1905da0098e2c": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_f13495ca.jpg.txt",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\0980de4e29dd.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_f13495ca.jpg.txt",
+      "status": "imported",
+      "text_captured": true,
+      "updated_at": "2026-06-04T11:00:49+07:00"
+    },
+    "010821b5081547d43983b6169e759f1e690191d9282a446496b0d6d7882573e2": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_f948509d.jpg.txt",
+      "error": null,
+      "note_path": null,
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_f948509d.jpg.txt",
+      "status": "skipped",
+      "text_captured": false,
+      "updated_at": "2026-06-06T21:38:39+07:00"
+    },
+    "03e18529645f2455c2e42906fc43e9407b1907b78deb342a99e043a9fabd7ac4": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_f2978f79.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c0117ef00973.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_f2978f79.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "04e5f27453ade174aa73346671754821bc7925bbfd7bf84dc97c1cd9fceef361": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_49ba8c0a.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\13b68c019001.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_49ba8c0a.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:39:00+07:00"
+    },
+    "0738c3cba67642b7bae2ec7ea18166ac96f524cd324e753b8765835b31cced6b": {
+      "category": "videos",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\videos\\สีฟ้า สีม่วง น่ารัก สัตว์ทะเล สัตว์โลกใต้น.mp4",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\2026-05-29_สีฟ้า_สีม่วง_น่ารัก_สัตว์ทะเล_สัตว์โลกใต้น_d0a8bc38d86d.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\videos\\สีฟ้า สีม่วง น่ารัก สัตว์ทะเล สัตว์โลกใต้น.mp4",
+      "status": "imported",
+      "text_captured": true,
+      "updated_at": "2026-05-29T12:20:00+07:00"
+    },
+    "08a1fd05551fb8f56e26696b012136ba0d14d7cff4a907d50a5cbad94279b17e": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_3a0ec94b.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\7ed7b91579fb.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_3a0ec94b.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:38:40+07:00"
+    },
+    "0b84034a26bdb055d2f28a87711c3c3e1b963827d0fb9bf16d684c0b9bd44acf": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_913a0e52.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\d90f0f693f09.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_913a0e52.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "0dbe4ca6a8afaeeb380abb154cb41433140a5dcddc689764998922c8671789d2": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_1c523214.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\ff72e05aba37.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_1c523214.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:27:33+07:00"
+    },
+    "0df291885554e9d9002ce382207d02fa884d827f768ba55d67e6b661b55b36ef": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_2a03a28a.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\fae3ad3f6023.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_2a03a28a.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:02+07:00"
+    },
+    "0e6b29322216b5de3a905b8858ec5de9fd39fc1b1a24964d9dd5d0a438bfb450": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_e700c56d.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\57fa4d9528b1.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_e700c56d.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:04+07:00"
+    },
+    "111b7297108e9c30751282213ac8b4b0c022c7c0c8b6f9c7c30d6535bf68a631": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_ebb98b1e.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\87ed812f4036.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_ebb98b1e.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:04+07:00"
+    },
+    "1255b758fddb5814d21af3a24f584159d13f7282848598e843db905773139f05": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_60f47700.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\cd90eda59293.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_60f47700.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:01+07:00"
+    },
+    "1425981d9ee58da00674481e2f8d22196e1cb7d0b77331aa85531ef3f16797c1": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_92d084bb.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\6d95abc93441.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_92d084bb.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "1dff90477e7823bdd702fd2dac736e11557f1f08d4e541a2c8f3451f577f0ef4": {
+      "category": "text",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\text\\drive_smoke_2026-05-27.txt",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\2026-05-27_drive_smoke_2026-05-27_58db7c3d4de1.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\text\\drive_smoke_2026-05-27.txt",
+      "status": "imported",
+      "text_captured": true,
+      "updated_at": "2026-05-27T16:16:59+07:00"
+    },
+    "1ebf4dd251c8236b93dd2114d058ebba31d75b7808efed4ba0e62d72ef1b3e92": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_6ab626c7.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\eed538d96860.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_6ab626c7.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:39:17+07:00"
+    },
+    "251e33a4c060e45d2384e05d9e0b0d61f37615711cc80148968ef52b03dfd284": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_94f49f4b.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\65c676b41dab.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_94f49f4b.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:39:30+07:00"
+    },
+    "2583a331b7a38b68ae04130da1731780c694efe05984f97226c787f7360811cf": {
+      "category": "videos",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\videos\\สีฟ้า และ สีส้ม น่ารัก สนุกสนาน เปิดเทอม โร.mp4",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\2026-05-29_สีฟ้า_และ_สีส้ม_น่ารัก_สนุกสนาน_เปิดเทอม_โร_78f6c7146761.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\videos\\สีฟ้า และ สีส้ม น่ารัก สนุกสนาน เปิดเทอม โร.mp4",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-29T12:20:01+07:00"
+    },
+    "28478f3c319191a814d4b9aa56ec730ec362c11576decfd800c595c107c062d8": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_b0b3e816.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c4c6ed893d70.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_b0b3e816.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "2e7696f8be189f971f722cf37a87583ddd606d49ca467070a20a76993289f753": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_8250cb96.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\5ca86cf842fb.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_8250cb96.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "2ed8fb3193c6c4859e5096ed625fb0399c00683964b967604a98c0a8e21c26f8": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_e498242f.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\abb3d7455222.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_e498242f.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:27:30+07:00"
+    },
+    "375d12a872f6189a3e1f0537f8bfeaa7e62eeb86c37d4198e334e7dc688777d1": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_5f0259ec.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\51c98abee0f3.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_5f0259ec.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:01+07:00"
+    },
+    "3bfe20dd13711e907f3648466cdbb010e9591e6468b8e126bbdea077d205cf29": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_bd40ccbe.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\597195670922.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_bd40ccbe.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "3cb7ae33be043b452642879ae63a8c57dda3735fa3319c623f27ad028a41dd06": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_4f808ac5.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\9adab85f0c81.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_4f808ac5.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:39:14+07:00"
+    },
+    "3d966cc4bb357d6833a132ccb22a34964510bf11c7589d8697bbc2c5052b8e40": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_363252b4.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\1f1d5254becb.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_363252b4.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:02+07:00"
+    },
+    "41526971af05082c617eb02376d7ed29aded6305e203315b6b58988f55a41617": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_ccead195.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\45d12213a2cd.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_ccead195.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-05T09:39:26+07:00"
+    },
+    "41982d6e52e7440eb63b0e6737c83a8702a6a9c92b928c45f69f080d62ea5375": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_ea0d3536.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\4d861dde522a.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_ea0d3536.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "429eef8453cb8f13d43756dbaf6e15256cbd8e37c4866ed120e5058222f1c90c": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_d3d728c7.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\a7a446a9654b.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_d3d728c7.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:38:21+07:00"
+    },
+    "4759fc9710409498b0e79d7ecbe9c28a4173e1d39b04edbf3d357a539ce575e5": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_8bdd63f6.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\1c52b046ee2d.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_8bdd63f6.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "489adc2f8c90de4c299c6058bb88ff6e9d7c10414e8e65f612d9f558b94a8f9d": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_1f756beb.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\8a76ace7fc2c.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_1f756beb.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:01+07:00"
+    },
+    "4a0f8cf2896f39b9ae8ab5c9ec6f3c7967ff7a57cefac882861cce20ad5e326e": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_75a7b901.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\57fefa1065f6.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_75a7b901.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:02+07:00"
+    },
+    "4a384991c103f4747e2aeae5bf0ef739c4e0b392169c3851a90b9e17d844dc2f": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_7e545321.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c2970dca2f57.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_7e545321.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "4c62b630d75eb82f3edb4a02b6b2d18f7a3c37b960ca5ecb739123b4134a3c28": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_5f59d0b2.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\44fe04ad88cf.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_5f59d0b2.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:02+07:00"
+    },
+    "4c650cb57ca8feaa9577e1cfae9faac3bc6e367414e3efad9d238a624c78974d": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_24ea71d6.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\615228e8aa37.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_24ea71d6.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:02+07:00"
+    },
+    "4db5ef387320e58b571c797bb76fff5aed48fe0e60fb503e3734f39902fc4a1a": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_1db1cb8c.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\8566bb0180e2.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_1db1cb8c.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-05T09:06:01+07:00"
+    },
+    "511f57d91834b2991be09609c7783ed7905ba1ca0ef8fe8a6f277eba0a72c477": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_f40a39bc.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\84b3129d5718.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_f40a39bc.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "543a9a5ed29a8e484c4fd0e76a1762b4c2325bdecfd585d128bd81d1ce153b03": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_b8d8b5aa.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\f4600111601d.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_b8d8b5aa.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "557b729a2a9186778ef4c12b0faace6cc0df4db6c85a795d1680452f74949259": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_96f39d70.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\a01931a38818.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_96f39d70.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "570cff3ce64b484fffc7a6ba9fe795954f39cd2f4dd4ff9676c708fdf1e5a54e": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_bf7f58d2.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\4c8c5ab86e11.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_bf7f58d2.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "58f93e53135d3ca5678e90ccac14423edd04444750b69e4b98c469c41665e6df": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_fde40f6e.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\ad2a79320f5a.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_fde40f6e.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:04+07:00"
+    },
+    "60ca8f0bd171dac0f594c7ba3df345e8647796f4339c19d0d211d0945bdc048c": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_5915f4fe.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\125e808f4b77.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_5915f4fe.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:01+07:00"
+    },
+    "6be8ceac883a8f55726edfd5213c2afa4f3794efe0f0a9dba4a0235f7dea93bc": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_69c4be3c.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\4e242074d1a4.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_69c4be3c.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:01+07:00"
+    },
+    "6d4b28f33777fc7d90fa5486053e50b07b2f9c66c6d36caad9f24cc2c7bc2e19": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_f8b66f15.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\861c996b26b3.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_f8b66f15.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:38:15+07:00"
+    },
+    "6f2ddd699ddab3aacefd7b25b47f7906d566df9da1a73bec88d153ff051d9b11": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_fa669459.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\c2d392530760.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_fa669459.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "71f422dce48f51408ceccc0c7b6cf29922a54207a4bef670d88b11504219d1a7": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_065345a1.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\0558f6d71a7b.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_065345a1.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:01+07:00"
+    },
+    "76ebe790ee31aa93f3166156d983eded78f683de57ca3cb2472015b942bb2734": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_f669b173.jpg.txt",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\ab5fdaece2f3.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_f669b173.jpg.txt",
+      "status": "imported",
+      "text_captured": true,
+      "updated_at": "2026-06-05T08:46:04+07:00"
+    },
+    "7ad797345f8ed6c426202f5525626cec6613c1c8266f5935b373f3080639ddef": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_1e940937.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\76bb7e618d94.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_1e940937.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-05T09:04:13+07:00"
+    },
+    "7b7a748adf35f09a6d77066966fbc1e7a76ba2eed26ead1a39a9710adac708bf": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_bc968f8f.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\1cdfb187a7d9.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_bc968f8f.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "7e28c83ece6d1d603ae8e38ce915ee3e47fcdafa472fc0dd1a262860527d2dd1": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_ed759aed.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\73b67f234712.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_ed759aed.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:04+07:00"
+    },
+    "7ed6110882208e71628b965d6819e3bcf0944c016bec8425756ae7fdf44ec0dd": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_7f084ca0.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\fa736128749c.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_7f084ca0.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "807903134f646b57548ea77146758f02a885d9adf2ebfb76d2f126babc513b59": {
+      "category": "videos",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\videos\\whisper_smoke_2026-05-27.mp4",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\2026-05-29_whisper_smoke_2026-05-27_6b9a7b718f35.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\videos\\whisper_smoke_2026-05-27.mp4",
+      "status": "imported",
+      "text_captured": true,
+      "updated_at": "2026-05-29T12:19:50+07:00"
+    },
+    "883535878032ecd28a322f61977deccf63bb49a9021a09fa2f5199e0ad2d23bf": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_24760cc9.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\e29822e67994.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_24760cc9.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:02+07:00"
+    },
+    "889e413993637117313689c3b9e53b23292152c5188130a3d08f40eb60ec8569": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_f13495ca.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\d05c14f50006.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_f13495ca.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-04T11:00:49+07:00"
+    },
+    "8d5a552daaac261718ae27e025ae29b5a303382134eae2a011da8c4948389e51": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_940ba3f4.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\db32b3ce7b0a.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_940ba3f4.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "8e14945854b9d2b9a4c7af646e0a8eeb1bb42e2e1c5755905a5e80f299f44b0c": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_70fdb0a4.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\6f6bfa56afd2.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_70fdb0a4.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:02+07:00"
+    },
+    "8e7362d427e22f1a24a7eb3d7d7cc8aa99c9e93acdc22d47386ee5bc06550dc1": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_bf7549b6.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\11786f8fc14f.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_bf7549b6.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-05T08:46:04+07:00"
+    },
+    "8ed1729a0490227762e17b9d9cd7c8bd173b9dba3685e52d8ec35a63cfac6446": {
+      "category": "videos",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\videos\\whisper_smoke_2026-05-27.wav",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\2026-05-29_whisper_smoke_2026-05-27_6006cb3bc2cb.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\videos\\whisper_smoke_2026-05-27.wav",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-29T12:19:50+07:00"
+    },
+    "906b2cb8e01de40d30c3a7a0d5095a02a584b9fcc772421cb7c90ef624388307": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_a274818d.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\a07cc1db9d9c.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_a274818d.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:38:47+07:00"
+    },
+    "95fb04bc8006bf96133d4e36f7afad69cb2a3b8ca9417be9ac6218f670f3c642": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_dfbf4b74.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\dbbc5e29f938.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_dfbf4b74.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:39:18+07:00"
+    },
+    "9686a5ccd9c1d300bb1ccc71661656b15e5557a22517388e0b6cdd7bd520e47a": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_ca21467e.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\88504e5b9f82.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_ca21467e.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "98e0562067f7cbaa923a221c8dad20dac034400e9bfc0cbc3b3e7260798fa42b": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_903f6800.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\80427af6b5ce.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_903f6800.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "9ca71679bf736ec1adec61a8b0ead51ad33c0b5d031ef24ec99f0fd453922043": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_60330062.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\b0f51c9fea1c.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_60330062.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:01+07:00"
+    },
+    "a4234ea27d9e69ac18f67a488e9f784424d9c9c935fbc7f7cb5f0f84d3ae5527": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_199bf7bb.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\bf123bc32abe.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_199bf7bb.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:02+07:00"
+    },
+    "a5a3de5837ee75aaee13a36cab8f16a238509dd3cdbf2eb10b1233924d881584": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_06904d56.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\63b050fdb347.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_06904d56.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:02+07:00"
+    },
+    "a60dda50789d536756bc2018d255ece273239b87c58fac8c67fd25c52ba21c9e": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\failed\\images\\telegram_img_1fb9d029.jpg",
+      "error": "[Errno 22] Invalid argument",
+      "note_path": null,
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_1fb9d029.jpg",
+      "status": "failed",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:27:49+07:00"
+    },
+    "ab558c2d55cc5c93476afe4f6ee528460e68226ef33e768a136dd14401bc5ecf": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_8d5c96b9.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\77154101fe62.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_8d5c96b9.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "ad59145169f0a1d31162098015594461eef0eaa005df526b8d09d7a9c662b5c4": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\failed\\images\\telegram_img_383f99e3.jpg",
+      "error": "[Errno 22] Invalid argument",
+      "note_path": null,
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_383f99e3.jpg",
+      "status": "failed",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:38:59+07:00"
+    },
+    "b084eda86136110b3dab191a838489f4b7753b0567f4fa14daf6514482d40df1": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_a555df66.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\f9e523e5d945.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_a555df66.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "b1ff3a592a464d391e8d7b32fa9fc625b3c59fbb22ba703853e332b6365fc6f2": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_3913609b.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\e4a92c6c34c6.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_3913609b.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:39:10+07:00"
+    },
+    "b46bb6c822ff40a29cc886543b7eabaafa2c867f0f0e7589f2c3b1f88d5cb14c": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_0743a5b2.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\951052b44b9b.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_0743a5b2.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:44:25+07:00"
+    },
+    "b678b1f62b666ffe7055709810adec59a766a673964d2ab7cf377714640cc181": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_c20185fe.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\fe8bfce1062c.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_c20185fe.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:04+07:00"
+    },
+    "b7d1854c0e4ab7ea16bd6e06ab8918fa48ba8145a2c019974bac22d76f2a1075": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_a62f208a.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\4cbcc104db5e.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_a62f208a.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:27:34+07:00"
+    },
+    "ba0df88664ce25a5efddf2b4f7870a6f3e9c57b162a4feee2322eb623d369d21": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_638d3d3f.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\45981aeb786b.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_638d3d3f.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:38:15+07:00"
+    },
+    "bac3017fa107c379c0f21b274cf186718fd7d8c051fd98d580cd9f5fdcbbb346": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_4252a355.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\b9e627ab9193.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_4252a355.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:27:49+07:00"
+    },
+    "bc5900185e52ccffd198c72a09d3843b4f18345eaa2776e24f6e855a7ba2d22d": {
+      "category": "videos",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\videos\\สีฟ้า สีขาว น่ารัก ขอบคุณ วิดิโอ (1).mp4",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\2026-05-29_สีฟ้า_สีขาว_น่ารัก_ขอบคุณ_วิดิโอ_1_5c57a6a043d6.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\videos\\สีฟ้า สีขาว น่ารัก ขอบคุณ วิดิโอ (1).mp4",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-29T12:19:51+07:00"
+    },
+    "bde489e3dcab1842f81b08172496877ab1cef9868f477eff5fb9f535ab8d20b7": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_ce068762.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\43f311ab51ed.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_ce068762.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:04+07:00"
+    },
+    "c096b85b8217f500bd3b310d0d013d33e2fcc3a8282cee8376a2413ee1201527": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_2d96d59d.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\6b6929a98003.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_2d96d59d.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:01+07:00"
+    },
+    "c109c68a387d99db923903d43318615f5fcaf59030b4b75869f124ed2782f71e": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_84f8cd30.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\e6579ecfcb70.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_84f8cd30.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "c2e26e318ff0c2beb8d29d271af37b5618469e7a42cff6c73ca049a6a4ae86e3": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_3345ce3c.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\dd51d878511a.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_3345ce3c.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:38:46+07:00"
+    },
+    "c8b7a98ed7c721ede41e850f05c6a6e8b983ed0a5a2c80d8f163741ddfebd231": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_8bf70f45.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\fd5da7e49421.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_8bf70f45.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:38:21+07:00"
+    },
+    "d08a138ca66325b37e0832edad61f293297e088da64ee026ec9900a61b77d567": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_f948509d.jpg",
+      "error": null,
+      "note_path": null,
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_f948509d.jpg",
+      "status": "skipped",
+      "text_captured": false,
+      "updated_at": "2026-06-06T21:38:39+07:00"
+    },
+    "d73ae16e5342964b66dca6234e6b91287a3544f7acfb00a1b8b89ca0ef68c372": {
+      "category": "text",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\text\\diagnosis_20260531_123150.txt",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\39745dc8f457.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\text\\diagnosis_20260531_123150.txt",
+      "status": "imported",
+      "text_captured": true,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "dd6e5c634ba91d216ac414b7bcab34dec3f8ce3311b71658482b693d1b6da182": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_9a474461.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\b7a047efeb8e.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_9a474461.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "de54d966891facf9b5b379df3e3047828f36cd6da1197d4d07941ea331fa523f": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_7a1b7f0f.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\0a7ade8b66fe.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_7a1b7f0f.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:01+07:00"
+    },
+    "e042b59f0721e9368351baeaa45b1d1fb2cc7d3309d8deb76eb46ffdfa6bc8c9": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_22302126.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\9fbf8e8fdfd8.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_22302126.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-06T14:27:44+07:00"
+    },
+    "e0ab1a4a89e7e1a82e2f5f1fc7ce30d24d5f8046a3b2659fc3472eb241c5bf93": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_f704200e.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\348880598600.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_f704200e.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:04+07:00"
+    },
+    "e198b15309fd22077182db8e724710d0f7f5000cd7a0f714f7d715cd5227d302": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_b4192b88.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\18920ea94eb0.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_b4192b88.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "e1aadff08697e6f911913e0fefe6009a2c85ab97feb6a98d1be3b22f5e0d43a2": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_b10df160.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\9cdca80ffd91.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_b10df160.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "ea7a6264eadec31fe301d62824cdd3a8beb3f81318e55c3ab8a177957bd14793": {
+      "category": "text",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\text\\diagnosis_20260531_123343.txt",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\f4226d433d1a.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\text\\diagnosis_20260531_123343.txt",
+      "status": "imported",
+      "text_captured": true,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "ed15a33ae56f3cfac748353320174577b4c5f97d8ffcd33a341b3aa2317921ec": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_f084fb4e.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\8fe8d2a78d4a.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_f084fb4e.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "ef44fb3edf00844b4277f1151c4d17c74ce471fb195e9db270fce5e4f08ce197": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_7a14a61e.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\5afec1d6fd0e.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_7a14a61e.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-05T09:04:17+07:00"
+    },
+    "ef75e6b5571a83f2b482a14a5d2e137e93310d6f836cf65b8235dce0e062204d": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_0d005143.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\2610d88bdee9.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_0d005143.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:02+07:00"
+    },
+    "efdbcf58f2848a8b3a22159279561510438ae3b09738091bf48081ded76a4391": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_91f96cd4.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\a2fed8551018.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_91f96cd4.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:39:36+07:00"
+    },
+    "f0c993f9cd9ddd72bcad0cf212e311c8f7e5cfc99146ca24a9cdfb8e408f21c8": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_37de23af.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\148f701767a6.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_37de23af.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:02+07:00"
+    },
+    "f0c9bf8b6234f8d70761cc392f3185518187d2c6b640cb6ae1112a5f113f889b": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_bab7915e.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\10fb83dbdac1.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_bab7915e.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:38:42+07:00"
+    },
+    "f0fdd403f003067eb6110cffa3455ea9c2301af99b8156b49843f13a8af57f0d": {
+      "category": "images",
+      "destination": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_8103b97f.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\5e064a1cde31.md",
+      "source_path": "g:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_8103b97f.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T10:36:03+07:00"
+    },
+    "f331fa3e4b0d80dae6b78d657233e7a0bf1a839871faccff347ee25a04bc5335": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_f7168dfa.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\974de7a23618.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_f7168dfa.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-06T09:21:00+07:00"
+    },
+    "f7224534cfb259b373322cdee6cba6cb30d09603352d2522c9734fffccfe5674": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_6b6dc968.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\439ada3b0338.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_6b6dc968.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-03T11:39:29+07:00"
+    },
+    "fb934a226aa3ee010039b64d20976d15ea9ac2946308a38a76fbd6be1865f7b6": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_f669b173.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\9871426c0060.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_f669b173.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-05T08:46:04+07:00"
+    },
+    "fbf75a87eb7bce04faae71e4f2452931957c398244c1b2353ddaea3585edfee5": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_4bc3778c.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\502eddffd6f4.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_4bc3778c.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-06-05T09:04:17+07:00"
+    },
+    "fc58bcceead3b2699027dcb0329f3afdd1f2e1c1913107c6daa6fedd35c1ab1e": {
+      "category": "text",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\text\\diagnosis_20260531_123430.txt",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\84c65e40f063.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\text\\diagnosis_20260531_123430.txt",
+      "status": "imported",
+      "text_captured": true,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    },
+    "fc7d9bc71459acc98630d61f675447048b56d9c6b50c23847dee18787118fcd9": {
+      "category": "images",
+      "destination": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\processed\\images\\telegram_img_9e2b6961.jpg",
+      "error": null,
+      "note_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\ea_research_team\\raw\\local\\7e4d103bd50c.md",
+      "source_path": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\images\\telegram_img_9e2b6961.jpg",
+      "status": "imported",
+      "text_captured": false,
+      "updated_at": "2026-05-31T12:54:02+07:00"
+    }
+  },
+  "version": 1
+}

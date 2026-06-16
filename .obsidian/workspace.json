@@ -1,0 +1,241 @@
+{
+  "main": {
+    "id": "4be2a30388d3cb24",
+    "type": "split",
+    "children": [
+      {
+        "id": "b450534b437af207",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f857762fc99a4d41",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "42d09befd78d2625",
+    "type": "split",
+    "children": [
+      {
+        "id": "9288791614e04bd5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0da907985ca37d16",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "bf569fa48b5cfa37",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "dbe0b5329cf58e78",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "right": {
+    "id": "3298a753211e79ed",
+    "type": "split",
+    "children": [
+      {
+        "id": "f0c1c039500228c4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c3040905b40f61da",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "06_EA_AI_Agent_BPMN.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 06_EA_AI_Agent_BPMN"
+            }
+          },
+          {
+            "id": "bcdfc131f6b31231",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "06_EA_AI_Agent_BPMN.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 06_EA_AI_Agent_BPMN"
+            }
+          },
+          {
+            "id": "d16854b4167dd6a1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "45249d6077640f76",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "a6b98fd7b69634ff",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "06_EA_AI_Agent_BPMN.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 06_EA_AI_Agent_BPMN"
+            }
+          },
+          {
+            "id": "6c73f6ab4dd7fae7",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "f857762fc99a4d41",
+  "lastOpenFiles": [
+    "ea_research_team/learning/structured_extractor.py.tmp.24000.10697a5eeaff",
+    "ea_research_team/learning/structured_extractor.py.tmp.24000.f4a1ebed23fd",
+    "concepts/Retracement.md",
+    "concepts/Reaccumulation.md",
+    "concepts/Price_Structure_(Expansion_and_Retracement).md",
+    "concepts/Price_Structure.md",
+    "concepts/Price_Action.md",
+    "concepts/Position_Sizing.md",
+    "concepts/Pattern_W3.md",
+    "concepts/Pattern_W_(W&M_reversal_pattern).md",
+    "concepts/Pattern_W_(Double_Bottom).md",
+    "concepts/Pattern_M_(W&M_reversal_pattern).md",
+    "concepts/Pattern_M_(Double_Top).md",
+    "concepts/POI_(Point_of_Interest).md",
+    "concepts/Order_Block_(OB).md",
+    "concepts/Order_Block_(BSL_SSL_-_Buy_Side_Liquidity_Sell_Side_Liquidity).md",
+    "concepts/Order_Block_(BOS_-_Break_of_Structure).md",
+    "concepts/Multi-timeframe_Trading.md",
+    "concepts/Momentum.md",
+    "concepts/Mindset_and_Psychology.md",
+    "concepts/Market_Structure_Analysis.md",
+    "concepts/Market_Structure.md",
+    "concepts/Market_Manipulation.md",
+    "concepts/Lower_Timeframe_with_Higher_Timeframe_Direction.md",
+    "concepts/Lower_Timeframe_Risk.md",
+    "concepts/Low_Time_Frame_Confirmation.md",
+    "concepts/Low_Low_(LL).md",
+    "ea_research_team/learning/channel_intake.py.tmp.24000.f99773b50098",
+    "ea_research_team/learning/channel_intake.py.tmp.24000.33ec884e1c8a",
+    "ea_research_team/learning/structured_extractions.tmp-20260524154657675856.json",
+    "ea_research_team/learning/structured_extractions.tmp-20260524154657631029.json",
+    "ea_research_team/learning/structured_extractions.tmp-20260524154657584334.json",
+    "ea_research_team/learning/structured_extractions.tmp-20260524154657526577.json",
+    "ea_research_team/learning/structured_extractions.tmp-20260524154657465056.json",
+    "ea_research_team/learning/structured_extractions.tmp-20260524154657417950.json",
+    "ea_research_team/learning/structured_extractor.py.tmp.24000.4b359f9625a8",
+    "ea_fix20_result.png",
+    "ftmo_configs.png",
+    "ftmo_simulation.png",
+    "analysis_1yr.png",
+    "analysis_multitf.png",
+    "analysis_result.png",
+    "EAs/Ninja/NotebookLM Mind Map.png",
+    "EAs/Ninja/NotebookLM Mind Map (1).png"
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "by_concern": {
+    "risk_management": 48
+  },
+  "by_severity": {
+    "high": 48
+  },
+  "by_type": {
+    "contradiction": 48
+  },
+  "examples": [
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "0368dcbba273",
+      "rule_a": "Q: SRF เห็นภาพแลว วาแตแนวที่วาง sell limit ตรงนั้นประเมินจากอะไรครับพี่",
+      "rule_b": "94.50 Buy 0.01 Lot",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "07d637653f08",
+      "rule_a": "94.50 Buy 0.01 Lot",
+      "rule_b": "Q: SRF เห็นภาพแลว วาแตแนวที่วาง sell limit ตรงนั้นประเมินจากอะไรครับพี่",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "088a1f178b98",
+      "rule_a": "Q: SRF เห็นภาพแลว วาแตแนวที่วาง sell limit ตรงนั้นประเมินจากอะไรครับพี่",
+      "rule_b": "The length of the line is very high There are a lot of lines that are still there So there will be a pattern of the reversal The line that will be the same I want to make a little bit of the length If you don't want to confirm in the game, you can buy it for me.",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "BOS",
+      "concern": "risk_management",
+      "conflict_id": "0b083f720e9b",
+      "rule_a": "Explanation: การใช้ค าสั่ง Sell limit ที่ SUPPLY (NINJATHAISTYLE)",
+      "rule_b": "The length of the line is very high There are a lot of lines that are still there So there will be a pattern of the reversal The line that will be the same I want to make a little bit of the length If you don't want to confirm in the game, you can buy it for me.",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for BOS across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "111bdc870619",
+      "rule_a": "94.50 Buy 0.01 Lot",
+      "rule_b": "input bool     UseSupplyZones = true;            // Use Supply zones for Sell",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "1d4aac000549",
+      "rule_a": "94.50 Buy 0.01 Lot",
+      "rule_b": "TakeProfit for Sell trades( จุดทํากําไรสําหรับการขาย ):○ ระดับราคาในการปิดคําสั\u0000งขายเพื\u0000อทํากําไร9.",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "1f3e819ea291",
+      "rule_a": "94.50 Buy 0.01 Lot",
+      "rule_b": "input bool     UseSupplyZones = true;            // Use Supply zones for Sell",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "370cc89e8364",
+      "rule_a": "สัญญาณ  Buy",
+      "rule_b": "Sell Grid",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "37231b0e08a5",
+      "rule_a": "The length of the line is very high There are a lot of lines that are still there So there will be a pattern of the reversal The line that will be the same I want to make a little bit of the length If you don't want to confirm in the game, you can buy it for me.",
+      "rule_b": "input bool     UseSupplyZones = true;            // Use Supply zones for Sell",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "3b52a6aaac3c",
+      "rule_a": "Order Sell",
+      "rule_b": "94.50 Buy 0.01 Lot",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "3d07f8b87f85",
+      "rule_a": "The length of the line is very high There are a lot of lines that are still there So there will be a pattern of the reversal The line that will be the same I want to make a little bit of the length If you don't want to confirm in the game, you can buy it for me.",
+      "rule_b": "input bool     UseSupplyZones = true;            // Use Supply zones for Sell",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "41d1aff67e13",
+      "rule_a": "SELL",
+      "rule_b": "The length of the line is very high There are a lot of lines that are still there So there will be a pattern of the reversal The line that will be the same I want to make a little bit of the length If you don't want to confirm in the game, you can buy it for me.",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "4eb0da6cecf1",
+      "rule_a": "Sell Grid",
+      "rule_b": "The length of the line is very high There are a lot of lines that are still there So there will be a pattern of the reversal The line that will be the same I want to make a little bit of the length If you don't want to confirm in the game, you can buy it for me.",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "53cb69b2856e",
+      "rule_a": "94.50 Buy 0.01 Lot",
+      "rule_b": "ค่อยๆวิ่ง เฉื่อยๆ ให้ทำใจไว้เลยว่า คุณอาจถูกโกงแล้ว โดยส่วนตัวเคยตั้ง Sell Limit",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    },
+    {
+      "concept": "Risk Management",
+      "concern": "risk_management",
+      "conflict_id": "5401a30c4881",
+      "rule_a": "input bool     UseSupplyZones = true;            // Use Supply zones for Sell",
+      "rule_b": "The length of the line is very high There are a lot of lines that are still there So there will be a pattern of the reversal The line that will be the same I want to make a little bit of the length If you don't want to confirm in the game, you can buy it for me.",
+      "severity": "high",
+      "summary": "Conflicting entry rules found for Risk Management across sources",
+      "type": "contradiction"
+    }
+  ],
+  "generated_at": "2026-06-07T10:27:56+07:00",
+  "pending_total": 48
+}

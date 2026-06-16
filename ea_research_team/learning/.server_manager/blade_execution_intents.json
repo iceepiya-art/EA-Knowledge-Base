@@ -1,0 +1,58 @@
+{
+  "intents": [
+    {
+      "action": "buy",
+      "command_state": {
+        "allowed": true,
+        "decision": "allow",
+        "ea_id": "DEMO_XAUUSD_AGENT_01",
+        "evaluated_at": "2026-06-09T09:44:34+07:00",
+        "group_id": "agentic-test",
+        "reasons": []
+      },
+      "created_at": "2026-06-09T09:44:34+07:00",
+      "decision_id": "DJ-live-smoke-blade",
+      "ea_id": "DEMO_XAUUSD_AGENT_01",
+      "execution_note": "Dry-run intent only. No MT5 order_send was called.",
+      "intent_id": "BLADE-e49a5dae5342",
+      "lot": 0.01,
+      "mode": "dry_run",
+      "order_send": false,
+      "risk_gate": {
+        "approved": true,
+        "decision": "approve",
+        "max_lot": 0.01
+      },
+      "sl": 2310.5,
+      "status": "intent_logged",
+      "symbol": "XAUUSD",
+      "timeframe": "M15",
+      "tp": 2324.0
+    },
+    {
+      "action": "buy",
+      "command_state": null,
+      "created_at": "2026-06-09T12:36:27+07:00",
+      "decision_id": "LIVE-SMOKE-REJECTED-20260609",
+      "ea_id": "DEMO_XAUUSD_AGENT_01",
+      "execution_note": "Dry-run intent only. No MT5 order_send was called.",
+      "intent_id": "BLADE-e8547f8d139f",
+      "lot": 0.01,
+      "mode": "dry_run",
+      "order_send": false,
+      "rejection_reason": "risk_gate_not_approved",
+      "risk_gate": {
+        "approved": false,
+        "decision": "reject",
+        "reason": "live smoke rejected ledger check"
+      },
+      "sl": null,
+      "status": "rejected",
+      "symbol": "XAUUSD",
+      "timeframe": "M15",
+      "tp": null
+    }
+  ],
+  "updated_at": "2026-06-09T12:36:27+07:00",
+  "version": 1
+}

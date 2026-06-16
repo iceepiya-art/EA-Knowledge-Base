@@ -1,0 +1,93 @@
+{
+  "commands": [
+    {
+      "command": "resume",
+      "command_id": "CMD-f7d4ce4fd2f8",
+      "created_at": "2026-06-09T09:45:22+07:00",
+      "execution": "state_only",
+      "reason": "blade smoke complete",
+      "scope": "global",
+      "target": {
+        "scope": "global"
+      }
+    },
+    {
+      "command": "kill",
+      "command_id": "CMD-e06f2f5eb906",
+      "created_at": "2026-06-09T09:45:07+07:00",
+      "execution": "state_only",
+      "reason": "blade reject smoke",
+      "scope": "global",
+      "target": {
+        "scope": "global"
+      }
+    },
+    {
+      "command": "start",
+      "command_id": "CMD-9ac68f2489d7",
+      "created_at": "2026-06-09T09:44:12+07:00",
+      "execution": "state_only",
+      "reason": "blade smoke",
+      "scope": "ea",
+      "target": {
+        "ea_id": "DEMO_XAUUSD_AGENT_01",
+        "scope": "ea"
+      }
+    },
+    {
+      "command": "resume",
+      "command_id": "CMD-f68618903131",
+      "created_at": "2026-06-09T08:59:42+07:00",
+      "execution": "state_only",
+      "reason": "live smoke complete",
+      "scope": "global",
+      "target": {
+        "scope": "global"
+      }
+    },
+    {
+      "command": "kill",
+      "command_id": "CMD-9f196f6fcefb",
+      "created_at": "2026-06-09T08:59:28+07:00",
+      "execution": "state_only",
+      "reason": "live smoke test",
+      "scope": "global",
+      "target": {
+        "scope": "global"
+      }
+    },
+    {
+      "command": "start",
+      "command_id": "CMD-fd979ff12977",
+      "created_at": "2026-06-09T08:59:28+07:00",
+      "execution": "state_only",
+      "reason": "",
+      "scope": "ea",
+      "target": {
+        "ea_id": "DEMO_XAUUSD_AGENT_01",
+        "scope": "ea"
+      }
+    }
+  ],
+  "eas": {
+    "DEMO_XAUUSD_AGENT_01": {
+      "close_requested": false,
+      "kill": false,
+      "last_command": "start",
+      "mode": "running",
+      "reason": "blade smoke",
+      "updated_at": "2026-06-09T09:44:12+07:00"
+    }
+  },
+  "global": {
+    "close_requested": false,
+    "kill": false,
+    "last_command": "resume",
+    "mode": "running",
+    "reason": "blade smoke complete",
+    "updated_at": "2026-06-09T09:45:22+07:00"
+  },
+  "groups": {},
+  "updated_at": "2026-06-09T09:45:22+07:00",
+  "version": 1
+}

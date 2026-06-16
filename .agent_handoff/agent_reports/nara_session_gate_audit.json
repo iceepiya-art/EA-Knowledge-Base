@@ -1,0 +1,14 @@
+{
+  "agent": "Nara",
+  "data": {
+    "active_sessions": [
+      "asia"
+    ],
+    "th_hour": 8
+  },
+  "job": "nara_session_gate_audit",
+  "recommendation": "Use session gate as advisory only until EA rules explicitly consume it.",
+  "status": "ok",
+  "summary": "Current TH hour=8; active session gates=asia.",
+  "updated_at": "2026-06-12T08:36:22+07:00"
+}

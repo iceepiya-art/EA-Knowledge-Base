@@ -1,0 +1,2994 @@
+{
+  "version": 1,
+  "processed_hashes": {
+    "0828ffdb50f33440a1e16df671611e0e": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\9.1 HedgeGrid_Manual_V16_Final_AUTO_DEMO\\HedgeGrid_V23_fix12\\HedgeGrid_V23_ATR_DynLot.mq5",
+      "concept_count": 12,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052145+00:00"
+    },
+    "ef9bb36a5291fd12333ec3734b6db60f": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17\\MQL5\\Experts\\SMC_Universal_EA_v3.0.mq5",
+      "concept_count": 8,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052168+00:00"
+    },
+    "9fe7654a70cc2d7fc6e964c713e9f97c": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17\\MQL5\\Experts\\SMC_Universal_EA_v3.0_60265693.mq5",
+      "concept_count": 8,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052175+00:00"
+    },
+    "d1ba877ce86620113f1a16d5bf18f13b": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17\\MQL5\\Include\\SMC_Universal\\SMC_CircuitBreaker.mqh",
+      "concept_count": 5,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052180+00:00"
+    },
+    "68a5aceb940034c5c086e73b281393bd": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17\\MQL5\\Include\\SMC_Universal\\SMC_Dashboard.mqh",
+      "concept_count": 6,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052185+00:00"
+    },
+    "5dc7721fc5870d4921c00a740cc16ede": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17\\MQL5\\Include\\SMC_Universal\\SMC_Defines.mqh",
+      "concept_count": 10,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052189+00:00"
+    },
+    "85c40fb203413813d86c3e55da38b391": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17\\MQL5\\Include\\SMC_Universal\\SMC_Journal.mqh",
+      "concept_count": 6,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052193+00:00"
+    },
+    "f91f0dff556756627b321bca84c83fdb": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17\\MQL5\\Include\\SMC_Universal\\SMC_MoneyManager.mqh",
+      "concept_count": 5,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052198+00:00"
+    },
+    "bb5bd1157e2bf838db64ae17c3ef5a09": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17\\MQL5\\Include\\SMC_Universal\\SMC_MTFManager.mqh",
+      "concept_count": 5,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052202+00:00"
+    },
+    "c1c8bcb57505abb3bd014455d73e790c": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17\\MQL5\\Include\\SMC_Universal\\SMC_NewsFilter.mqh",
+      "concept_count": 5,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052206+00:00"
+    },
+    "63f6f9a115f93fc9eb12275c311705d5": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17\\MQL5\\Include\\SMC_Universal\\SMC_SymbolManager.mqh",
+      "concept_count": 6,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052210+00:00"
+    },
+    "cc3b79a1865db73787faf6dfa4b79dec": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17\\MQL5\\Include\\SMC_Universal\\SMC_TimeFilter.mqh",
+      "concept_count": 6,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052215+00:00"
+    },
+    "e51d09043852d652d1d5dc091a14cac2": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17\\MQL5\\Include\\SMC_Universal\\SMC_TradeManager.mqh",
+      "concept_count": 9,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052218+00:00"
+    },
+    "992f8c458ada1482319faf8f9777c334": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\HELIX_EA_V1\\HELIX_EA_V1.mq5",
+      "concept_count": 6,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052222+00:00"
+    },
+    "7b3ad8a0e2e35787522b21d1a81888d7": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\Pullback_1Billion_EA\\Pullback_1Billion_EA.mq5",
+      "concept_count": 9,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052226+00:00"
+    },
+    "a5a9bb0529bf5b645f6131e2da86404e": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\Pullback_1Billion_EA\\Pullback_1Billion_EA_0509.mq5",
+      "concept_count": 3,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052230+00:00"
+    },
+    "80724a7e85206b5dacdbfe87de7ab290": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\Pullback_1Billion_EA\\Pullback_1Billion_EA_multi.mq5",
+      "concept_count": 4,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052234+00:00"
+    },
+    "692cbe7fe52ba3d4319e395246ecada3": {
+      "source_file": "C:\\Users\\ADMIN\\Desktop\\telegram-signal-trading-ea\\mt5\\TelegramSignalExecutorEA.mq5",
+      "concept_count": 6,
+      "status": "processed_existing",
+      "error": null,
+      "processed_at": "2026-06-01T07:08:16.052238+00:00"
+    },
+    "6e1572fb67c88c2482857d5041b13401": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\adxw-indicator\\adxw-indicator.mq5",
+      "concept_count": 0,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:14:47.334243+00:00"
+    },
+    "756edac9e0335253f30112370ce533d3": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\ADXW.mq4",
+      "concept_count": 0,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:14:51.095542+00:00"
+    },
+    "d247b98c07468124ac602ef1ef981cbd": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\adxw.mq5",
+      "concept_count": 0,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:14:54.817022+00:00"
+    },
+    "637827eee1014c6447fa9dc62e2c92c4": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\autotrendlines.mq5",
+      "concept_count": 7,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:10:35.461994+00:00"
+    },
+    "cbaccf83f0e753247af749f706c3a273": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\Correlation.mq5",
+      "concept_count": 0,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:14:58.566525+00:00"
+    },
+    "f9c082ec472a8e9580e19f230c562dba": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\Cumulative momentum.mq4",
+      "concept_count": 4,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:10:44.641782+00:00"
+    },
+    "6f3b52452d0e276d9ecdc1f34df37aa8": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\MACD_Histogram.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:10:56.273740+00:00"
+    },
+    "d5b6dba82568805e0a7e4a6582ae2d6f": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\NRTR_ATR_STOP.mq4",
+      "concept_count": 5,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:11:04.162011+00:00"
+    },
+    "7d687d4e85b034aa51f164371466602c": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\supply-and-demand-zones.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:26:42.264752+00:00"
+    },
+    "8c1dca88e556c76365420c6b435c18d3": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\support-and-resistance-with-ribbon\\MQL4\\Indicators\\DIBSv1.0.mq4",
+      "concept_count": 4,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:11:32.524196+00:00"
+    },
+    "1dd2aee2259c1317d8b48e673f66ddd7": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\support-and-resistance-with-ribbon\\MQL4\\Indicators\\MA ribbon filled.89.21.mq4",
+      "concept_count": 4,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:15:23.867877+00:00"
+    },
+    "84515ac46bae9e0c731cc967455ee0eb": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\swing-man-trading-system\\MQL4\\Indicators\\Trix4Kids.mq4",
+      "concept_count": 6,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:15:35.554552+00:00"
+    },
+    "628af6883162ebe682322bdc869504c4": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\TMA Bands nk.mq4",
+      "concept_count": 5,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:15:45.102419+00:00"
+    },
+    "537f5e3eba5454d93c1a1783c82273cc": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Indicators\\WATL-Open Source.mq4",
+      "concept_count": 10,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:19:14.192597+00:00"
+    },
+    "258f3a0d42480c2f4f8ad1b647e83aa3": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\final-trading-machine-system\\MQL4\\Indicators\\123PatternsV6.mq4",
+      "concept_count": 10,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:16:19.648089+00:00"
+    },
+    "8765f714e1a28d8d6ee06cd857d26ab8": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\final-trading-machine-system\\MQL4\\Indicators\\FerruFx_Multi_info+_v1.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:19:25.535575+00:00"
+    },
+    "06a01652d3c403792d777d2253cab01e": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\final-trading-machine-system\\MQL4\\Indicators\\Moving Averages.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:16:44.254735+00:00"
+    },
+    "d870043eddd8ea59ec5d00ad07be5dfa": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\final-trading-machine-system\\MQL4\\Indicators\\NonLagZigZag_v4.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:16:59.707454+00:00"
+    },
+    "b4555cc21413b8e62b62d703e9d8176e": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\intraday-profit-machine\\MQL4\\Indicators\\i-GentorLSMA_EMA.mq4",
+      "concept_count": 4,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:17:06.295769+00:00"
+    },
+    "3f1decbe3aa77db567e30c1ddcc05f1d": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\paint-bar-forex-system\\MQL4\\Indicators\\Kaufman3.mq4",
+      "concept_count": 5,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:17:13.396295+00:00"
+    },
+    "747eafc4a295faa23a6e442e7e8ea766": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\paint-bar-forex-system\\MQL4\\Indicators\\PBF_2EMA_Color.mq4",
+      "concept_count": 4,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:17:21.332236+00:00"
+    },
+    "e86b38aead7f294938482e420935590c": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\paint-bar-forex-system\\MQL4\\Indicators\\PBF_Fast_3MAs.mq4",
+      "concept_count": 6,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:17:32.055290+00:00"
+    },
+    "42d88fb6b23a458cabcc96a9ec219fe8": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\paint-bar-forex-system\\MQL4\\Indicators\\PBF_iTunnel.mq4",
+      "concept_count": 4,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:17:39.422135+00:00"
+    },
+    "6d15c36f2416ce572085c546a1c11293": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\paint-bar-forex-system\\MQL4\\Indicators\\PBF_OSOB.mq4",
+      "concept_count": 7,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:17:52.289317+00:00"
+    },
+    "1e14f436c61243fd0d96b2ffd1e8813e": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\paint-bar-forex-system\\MQL4\\Indicators\\PBF_PB_Direction.mq4",
+      "concept_count": 5,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:18:03.646176+00:00"
+    },
+    "5ecdbaa63910c52555fe530f7332d819": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\paint-bar-forex-system\\MQL4\\Indicators\\PBF_Scalper_Show_Me.mq4",
+      "concept_count": 5,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:19:32.550050+00:00"
+    },
+    "ecac447d0cbf6e1a51b39de79ec67dfd": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\paint-bar-forex-system\\MQL4\\Indicators\\PBF_Squeeze.mq4",
+      "concept_count": 6,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:19:42.553369+00:00"
+    },
+    "2e89b9763e1cf68c48c9fbdfbdc0f9d7": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\paint-bar-forex-system\\MQL4\\Indicators\\PBF_Trend_Bars_v2.mq4",
+      "concept_count": 5,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:19:51.413962+00:00"
+    },
+    "ae5280032b1e63fc2e48e4d959f26b17": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\rainbow-similarity-system\\MQL4\\Indicators\\Cycle identifier.mq4",
+      "concept_count": 9,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:20:03.652802+00:00"
+    },
+    "b454f9207122eb7975202791b60e2d2c": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\ultra-profit-scalping-system\\MQL4\\Indicators\\Bands.mq4",
+      "concept_count": 5,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:20:08.634328+00:00"
+    },
+    "73e9df16e2e1c7c53519b93c9aad3ac9": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\ultra-profit-scalping-system\\MQL4\\Indicators\\EMA_Cross__SES__BDv8_12_31.mq4",
+      "concept_count": 4,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:20:14.386740+00:00"
+    },
+    "7e3f1bd42007849782bcc43eb9f11b0f": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\ultra-profit-scalping-system\\MQL4\\Indicators\\Flat Pulse.mq4",
+      "concept_count": 5,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:20:21.910304+00:00"
+    },
+    "8b54ad98c9dd411a61b9e2130f4a1dd9": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\ultra-profit-scalping-system\\MQL4\\Indicators\\STC_COLOR.mq4",
+      "concept_count": 6,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:20:29.321843+00:00"
+    },
+    "e86f63036ea68211b977118aa33ef0be": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\ultra-profit-scalping-system\\MQL4\\Indicators\\VS_ChannelTrend_V1.0.mq4",
+      "concept_count": 9,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:20:41.707120+00:00"
+    },
+    "ed933c2c6755ea0f4e4010082294dbef": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\x-scalper-system\\MQL4\\Indicators\\#MTF Stochastic v2.0.mq4",
+      "concept_count": 7,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:20:49.852685+00:00"
+    },
+    "c7817df366146ab79f9890d4b3ee560b": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\x-scalper-system\\MQL4\\Indicators\\SixtySecondTrades_Alert.mq4",
+      "concept_count": 4,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:20:55.664254+00:00"
+    },
+    "644d1ee7f48adc97447e040c2e0dde1e": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\x-scalper-system\\MQL4\\Indicators\\Super Signal v3d.mq4",
+      "concept_count": 5,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:21:03.572422+00:00"
+    },
+    "e3ad6fd9df1e4a2fd575347f90db0154": {
+      "source_file": "G:\\My Drive\\jobot\\! JOBOT INVEST Files\\Template and Indicators (Jobot)\\x-scalper-system\\MQL4\\Indicators\\Trend Arrows.mq4",
+      "concept_count": 5,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:21:11.071561+00:00"
+    },
+    "9f4b530ae612b06c8de7742e27c33c46": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\ComprehensiveEA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:26:56.360933+00:00"
+    },
+    "37b1ef67baf6060866ffd3d5e5faf980": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\Gold_OI_Manual_SR_EA.mq5",
+      "concept_count": 15,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:21:45.787712+00:00"
+    },
+    "c886b19b148e0b70b08ae3eb1b1e2a73": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\GoldPro Compounding EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:21:56.622136+00:00"
+    },
+    "81907fef1dc43c47138274460d67d81b": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\Hedge Martingale EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:22:08.219791+00:00"
+    },
+    "48ba01f2099025bdd2c844bb84fde2f5": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\Liquidity Master Pro Complete Edition.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:27:10.152481+00:00"
+    },
+    "966957c498aaa2b5a744fd95b5899ad4": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\NinjaThaiStyle_EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:27:46.976375+00:00"
+    },
+    "07258a0bd55b0544a715c38350efe921": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\NinjaThaiStyleEA_Complete.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:28:03.683240+00:00"
+    },
+    "e84925bd43fe5ba88cd1f4c15ec9cc9b": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\POI_BreakBlock_SMC_EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:28:16.771349+00:00"
+    },
+    "8ffe24d45782fcd6c659e24b29e19cba": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\RepeatSameLotEA.mq5",
+      "concept_count": 10,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:23:33.265420+00:00"
+    },
+    "c2b5de82b33a3e2391b654cde24c6d78": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\Smart Money Breakouts EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:29:08.446475+00:00"
+    },
+    "c8eea30f06038b60ea095da9d72e2400": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\SmartMoney_Advanced_EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:29:22.627843+00:00"
+    },
+    "2c4ea6c01b08fee43ed76b36d9e5b75d": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\SSL_BSL_ContinuousRecovery_EA.mq5",
+      "concept_count": 10,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:24:38.335786+00:00"
+    },
+    "73120ca54c53d4bdb070102f2bb16872": {
+      "source_file": "G:\\My Drive\\jobot\\AI GEN\\xRVI_Grid_AI_Strategy.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:30:29.671599+00:00"
+    },
+    "9d2e1d318aa7072fe1ad154908c8c756": {
+      "source_file": "G:\\My Drive\\jobot\\cm manual grid V_2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:31:10.050502+00:00"
+    },
+    "d6d9ab2e6852a32cdc96abb5a4fbd184": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week1\\(Jobot) Homework 1.1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:31:52.855399+00:00"
+    },
+    "bee8a8ccc29943f8a5e65a09874c5d57": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week1\\(Jobot) Homework 1.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:32:29.778785+00:00"
+    },
+    "130861d69993e4552a89806f5041275c": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week1\\(Jobot) Homework 1.3.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:33:05.651202+00:00"
+    },
+    "209e056ced93ababa5a0447b86ed1d9a": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week2\\(Jobot) Homework 2.1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:33:48.032395+00:00"
+    },
+    "58548fad67efae4bc206bdb3be7136f7": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week2\\(Jobot) Homework 2.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:34:17.305735+00:00"
+    },
+    "4106d6fe77093db1504fe39398300ad2": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week2\\(Jobot) Homework 2.3.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:34:55.010692+00:00"
+    },
+    "e5d986ed5c1319eb545d3454557fae41": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week3\\(Jobot) Homework 3.1(1).mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:35:35.389867+00:00"
+    },
+    "8f3f630e31bcdab6708266dcd16eb12e": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week3\\(Jobot) Homework 3.1(2).mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:36:10.381242+00:00"
+    },
+    "335f4347055c886e655b46c1b69bbcaf": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week3\\(Jobot) Homework 3.1(2).mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:36:50.374760+00:00"
+    },
+    "7774eddf2cc156a3566c1c6ea08c833d": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week3\\(Jobot) Homework 3.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:37:30.076174+00:00"
+    },
+    "7a1c4a1f4d94d2703cbe5cbe1eab7276": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week3\\(Jobot) Homework 3.2.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:38:07.212054+00:00"
+    },
+    "445cd6af0aec2bd54361e7bc5a64c982": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week3\\(Jobot) Homework 3.3.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:38:49.456676+00:00"
+    },
+    "9548a8e230b56bf2d8054e599c563233": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week3\\(Jobot) Homework 3.3.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:39:24.939391+00:00"
+    },
+    "d61a42f2f820166cca2b6440613cbf35": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week4\\(Jobot) CCI Scalping.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:39:58.223438+00:00"
+    },
+    "708f37cbc50541235758a08dff2ef9ef": {
+      "source_file": "G:\\My Drive\\jobot\\EA Homeworks\\Homework Week4\\(Jobot) STO Custom Divergence Trading.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:40:34.921063+00:00"
+    },
+    "ef0387a07ddccbe7e00f83629631a90b": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) CCI Scalping.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:41:14.070917+00:00"
+    },
+    "6a49db3a71c4358610a46f641737ca49": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) Close All Button.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:41:50.172354+00:00"
+    },
+    "c4492a738145c67cab1abb23ad418756": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) Close All Script.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:42:21.595219+00:00"
+    },
+    "aa435fa111b72742a6c2c71f7fbf3791": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) Lot Repeat.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:42:52.137237+00:00"
+    },
+    "733bbd0aee696055b4871623b364105a": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) Martingale Basic.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:43:31.305110+00:00"
+    },
+    "e96f6727690460931b4a471c8e02fa72": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) Moving Average on RSI.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:47:50.905742+00:00"
+    },
+    "c1987e8d6857b3cf657e30eebc141deb": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) Normal Grid EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:48:27.417196+00:00"
+    },
+    "642e37fe335951bc808e22a43965204f": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) QM Pattern.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:49:05.763797+00:00"
+    },
+    "b47e0cc1042744ebb457e81e572cbc16": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) Stop level - Spread - digit - Print - TF.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:49:39.670401+00:00"
+    },
+    "e0bdd19c3c5b5833200177ae4b15ac0c": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) Surefire Hedging 2 Trades on Time v3.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:50:19.879794+00:00"
+    },
+    "b7fac86342debf9d739f1a1c85fc3728": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) Techinal Show Signal on graph.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:50:57.814953+00:00"
+    },
+    "d58cbcafdc290ed0f28ad94e7d74c9f1": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) TP Revenge buysell.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:51:53.695486+00:00"
+    },
+    "a1493bcd5dd5af756ba68504ed38da3e": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) TP Revenge.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:52:29.051412+00:00"
+    },
+    "d67c9f79744dfa314218de4b9b7bc5d9": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) Trailing Parabolic Sar Instant.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:53:11.330887+00:00"
+    },
+    "e4dafb2c2b3b5bc32c78e1120df02192": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\(Jobot) Print Symbol Informations .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:53:46.088767+00:00"
+    },
+    "244a55434710da08d2f83128193e350b": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\Jobot MA Opt.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:54:39.331184+00:00"
+    },
+    "cca5083fa803d1c3e0abec6e8893bed2": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q&A\\www-Jobotinvest-com.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:55:17.773407+00:00"
+    },
+    "27f9a378fe4b5adcda51cdc4e7f723ab": {
+      "source_file": "G:\\My Drive\\jobot\\EA Q_A\\Volume Candle Support Resistance Demand Supply Line.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:55:57.135851+00:00"
+    },
+    "ce94269b711855efb85d44a4e0fc6182": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\((JOBOT)) BUTTON SYSTEM.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:56:35.402281+00:00"
+    },
+    "e4faf19fba1f8d7b6102add596a669b5": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(Jobot) Across Terminal (trade) code.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:57:11.959267+00:00"
+    },
+    "9ced6b56807df73b749e7d4deaaa2e6a": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(Jobot) Across Terminal.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:57:44.569732+00:00"
+    },
+    "7d0859badab8f648a22146b3e86ebc89": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(Jobot) Carry Trade Open Order .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:58:42.383141+00:00"
+    },
+    "fde0e126bee983907900ee281a10c34c": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(Jobot) Carry Trade Swap Calculation.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T07:59:21.099353+00:00"
+    },
+    "faf23f69d0afef175b20c6d83a27cdee": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(Jobot) Each Symbol Drawdown.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:00:15.404958+00:00"
+    },
+    "19f62a4a9a930e7a210ac7fb424c2d6e": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(Jobot) Panel Buttons TP System .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:00:53.466666+00:00"
+    },
+    "c9c8cf47653d128cd412be2a6ed7f9cb": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(Jobot) Terminal Variable.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:20:23.950795+00:00"
+    },
+    "83e6f68f2d64f421ca1b406f5dfd3392": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(Jobot) Trace and Trace Activity.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:20:36.056938+00:00"
+    },
+    "9b4df86f943ce8c6a10f021a2f0390bc": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(Jobot) Carry Trade Swap Calculation.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:20:47.455685+00:00"
+    },
+    "01df1148fa0effea3305f2eed18ef2ff": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(Jobot) Line Notification .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:21:50.788185+00:00"
+    },
+    "6da423b3b2e68bd25b4aa51a312e8a69": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(Jobot) Line Notification .mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:22:22.724914+00:00"
+    },
+    "c9b6a40302bcc26f7b8b55ed7c8c9cf0": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(Jobot) Trend Line by Zigzag Martingale Record CSV.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:23:02.851907+00:00"
+    },
+    "11e294ce9e1a36f0162fd9699e45e4f2": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\(JobotX) G Scalping.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:23:38.989948+00:00"
+    },
+    "6432793a2f6ae2194b63d89b10cfc31f": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\[[Line Notify Updated]].mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:24:13.786514+00:00"
+    },
+    "1584e33ef780b789d874978b01ee6c70": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\Advance Telegram Signal .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:25:00.341169+00:00"
+    },
+    "72f4524f2c9479f46c82e867cd8eb552": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\Closing01+127544059+0630.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:25:46.156667+00:00"
+    },
+    "3896b812483876286789d32d007e2f07": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\Closing01.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:32:27.499060+00:00"
+    },
+    "07f8b81225bfb360f85b39c16f6f4daa": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\Closing02.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:32:42.970768+00:00"
+    },
+    "028c0a8e7acc5fe939958920bd2b8a78": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\Line Notification +.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:32:55.784878+00:00"
+    },
+    "221c72bb2a379aa388e998c691fd183b": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\Line Notification .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:33:35.436107+00:00"
+    },
+    "e2d4a9cddac6129f3c55464689d4e162": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week10\\Line Notification .mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:34:10.131890+00:00"
+    },
+    "9bb27751bcf38f506052fcca666dee6f": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\(Jobot) Bolinger Band Basic EA reverse.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:34:46.708894+00:00"
+    },
+    "8f90f519bef731e75bdfecf98d338693": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\(Jobot) Bolinger Band Basic EA v2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:35:26.762967+00:00"
+    },
+    "cc296a73188393c412aac09f1df669d2": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\(Jobot) Bolinger Band Basic EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:36:01.214801+00:00"
+    },
+    "b9169f2847ac13a7b13086afac007888": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\(Jobot) MACD basic EA main cross signal.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:36:38.856333+00:00"
+    },
+    "cff3f2fae95eea2c337ea627c89efc30": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\(Jobot) MACD basic EA main cross signal.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:37:15.926930+00:00"
+    },
+    "16ef5413b68fe7e7d31241ac95cf82bc": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\(Jobot) My First EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:40:04.406721+00:00"
+    },
+    "e41409c4f0a5ee2addfe2d7d422043dc": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\(Jobot) RSI EA Basic.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:40:16.565974+00:00"
+    },
+    "24953631c75372e4b2391490bd678afe": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\(Jobot) STO EA Basic.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:40:29.883104+00:00"
+    },
+    "5425882f7a29bb2394060dc4533fb129": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\(Jobot) Close All Script .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:41:06.525524+00:00"
+    },
+    "8678051f690397c80df15a1b0a804e53": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\(Jobot) EA Parabolic Sar .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:42:03.852096+00:00"
+    },
+    "78646eae8f9b1b5e53e2d1269f54ed94": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\022-Reverse Martingale-v0.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:42:39.812057+00:00"
+    },
+    "a4172447550340c80d985769fe0883ea": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\025-Trend Follower-v2x.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:43:18.682318+00:00"
+    },
+    "240bbcfa43b3aa557bfb73b1ef4c1b13": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\123.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:43:58.925382+00:00"
+    },
+    "ac379215730e39169d844faa554161a8": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\AI Gen Hedge.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:44:33.878977+00:00"
+    },
+    "5b900c99d2dab081e62c96bc65b2627a": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\BB+EMA+3.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:45:09.730454+00:00"
+    },
+    "6cfff5e2e84daccdfb596f1f1a26883d": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\BB+EMA3.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:49:18.139388+00:00"
+    },
+    "b2ae2fea1068210fa08c19b7721c09fe": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\BB+STO EA V.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:49:35.989414+00:00"
+    },
+    "a262cd442ad2b1061b097df9b69a60ec": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\BB+STO EA V.2.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:49:52.568666+00:00"
+    },
+    "b1cdc2152a3669e2c1d843d346f138b3": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\BB+STO EA V.3.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:50:31.008577+00:00"
+    },
+    "8f997229b722d0df5539cc4fe485ac02": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\BB+STO EA V.3.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:51:11.947622+00:00"
+    },
+    "e7b6a72494441b1f4ab2f1f43a2490db": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\BB+STO EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:51:45.924801+00:00"
+    },
+    "7a18e0181e641ff3d1a03014cb447a77": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\Better VIII.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:52:27.541111+00:00"
+    },
+    "406078423266ef37868ca8eed4f6dbe7": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\Bill Williams + STO .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:53:04.761125+00:00"
+    },
+    "4e5d5bebb480b74555ebede2d761e70f": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\Bolinger Band Basic EA reverse.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:53:45.715676+00:00"
+    },
+    "2e2a8d35685891d1d12c733c9097a3bf": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\Bolinger Band Basic EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:54:22.498004+00:00"
+    },
+    "ec488c0cd22e5647c7cf6af2d491727c": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\demo.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:57:18.860021+00:00"
+    },
+    "8da4bd84041ee58312b0aab3debb14a3": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\EA Bill Williams .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:57:33.470979+00:00"
+    },
+    "07b15b3d272c8f0353a1bff692ffa04a": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\EA Bill Williams .mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:57:46.634643+00:00"
+    },
+    "863dfdb12094da1c702840af06688030": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\EA Parabolic Sar +Bill Williams V.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:58:25.231721+00:00"
+    },
+    "e013021e5a1e239329927ebd9570a75f": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\EA Parabolic Sar +Bill Williams.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:59:03.967908+00:00"
+    },
+    "c9a0897ee7e7008066db0d0f33591816": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\EA_Super_Hybrid.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T08:59:45.509779+00:00"
+    },
+    "79e6516aba86c5b1f141be6316c75131": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\Grid Lot Hedging EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:00:24.416341+00:00"
+    },
+    "f05bd0f40b660a2d7ce49abadf8df5d2": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\KZM Grid EA v.3.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:01:00.918753+00:00"
+    },
+    "b69dfe54cf6557d310ce4ba7e1630c02": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\MA Hedging by Pending Order.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:01:36.575154+00:00"
+    },
+    "2c431c54ad89dbd06c0922aadc868896": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\MACD basic EA main cross signal.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:02:16.763845+00:00"
+    },
+    "698d91904df31cfba53d06bf27bf3acb": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\Optimization 3EMA Cross +Var.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:07:15.529152+00:00"
+    },
+    "d0884652f096ab6c894f3fe3965c017c": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\Optimization 3EMA Cross .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:07:30.801460+00:00"
+    },
+    "f522bdcbb716f2be03f3f4a21881f2c6": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\Optimization EMA Cross .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:07:43.806931+00:00"
+    },
+    "bf75798af10756c080195a754429da64": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\PA+DAY.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:08:25.604450+00:00"
+    },
+    "9a39f30e05361512d81c468d927a7bb6": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\STO EA Basic.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:09:04.151441+00:00"
+    },
+    "95cc5a0b9f235560f584f6c97ff6277b": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\STO EA Basic.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:09:42.750657+00:00"
+    },
+    "15ede8a91d933bef04659adfa868c70e": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\TF01+Near.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:10:21.948745+00:00"
+    },
+    "3dd3d557e953c647abd99be0810414d4": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\TF01.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:10:59.613589+00:00"
+    },
+    "0826c10a904dd5137f1d9c73dbee31c2": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week1\\X06-BrainDead-v3.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:11:36.680689+00:00"
+    },
+    "bea07f823e57882bf9e2679f3aed0672": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\((Jobot)) Panel Edit Field .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:12:17.207704+00:00"
+    },
+    "da90a92f8dc90b7db0fdc108d43c6692": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\((Jobot)) Panel Edit Field .mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:18:27.661604+00:00"
+    },
+    "b0b9fc5794d104b6dea843b739f1ee53": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\((JOBOT)) CLOSING SYSTEM .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:18:42.273171+00:00"
+    },
+    "3de7843e9fdb4f797478658f6a9a8b20": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\(Jobot) Bucket of Trades.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:18:56.993464+00:00"
+    },
+    "5b26e280b0c36e9941fbb5fd91fd53be": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\(Jobot) Loop for Closed trade.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:19:36.285105+00:00"
+    },
+    "e44abe6311a4fbb00f47208221629abb": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\(Jobot) Pending in Grid from Candle.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:20:09.642490+00:00"
+    },
+    "fbe199ad27aca3137feedcbb13fda6d4": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\(Jobot) Pending in Grid from Candle.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:20:47.336461+00:00"
+    },
+    "b9253178ecdf9d818705a207b469503f": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\(Jobot) Terminal Variable.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:21:24.182075+00:00"
+    },
+    "a4a461e946fdecffd77c81e4ce0d6823": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\(Jobot) Lock EA .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:22:24.838022+00:00"
+    },
+    "77d0ba18bc064023c793420a8d5f4ad8": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\(Jobot) NEWs Pending .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:23:13.030061+00:00"
+    },
+    "5a884b6323bb54907a7342563487b817": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\EA Loop for Closed trade (BB+STO ) V.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:23:50.924448+00:00"
+    },
+    "e2c21b6b740fa5f3766f391ff214daad": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\EA Loop for Closed trade (BB+STO ).mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:28:21.906282+00:00"
+    },
+    "c1f7e1cc1a389566204f2991bcc85be5": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\Grid from Candle.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:28:36.326798+00:00"
+    },
+    "3b9fc39fa08e2834203e0486d9f86198": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\Loop for Closed trade.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:28:48.680606+00:00"
+    },
+    "6b27ccf79369d3d9088576eaff62076b": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\Loop for Closed trade.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:29:36.855475+00:00"
+    },
+    "071d21fe2b9a738761a2894b69052fb2": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\MACD Divergence Martingale.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:30:12.012613+00:00"
+    },
+    "1b6fa3ca399b830d7ab606a2c0d863fa": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week2\\Pending in Grid from Candle.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:30:51.029158+00:00"
+    },
+    "819ec405f1e0b1ab3f3a0bd4cef3bb67": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Calculate Lot from Drawdown+MACD.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:31:25.955159+00:00"
+    },
+    "a45fb5e634fa3e9f5096b0ac0a775dfb": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Calculate Lot from Drawdown.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:32:05.951706+00:00"
+    },
+    "cefe647d7dde09066d66622bf946280f": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Calculate Lot from Drawdown.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:32:41.569568+00:00"
+    },
+    "307d4f42c34a57b312a9c71b943dacf2": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Calculate Lot from MACD.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-01T09:33:18.320633+00:00"
+    },
+    "b28707da9177821eb353c0168143ab57": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Calculate Lot from RSI.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T10:14:16.519574+00:00"
+    },
+    "912ab77a423ae01f4c4e7f21ddaa9c07": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Calculate Lot from SD.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T10:14:31.114791+00:00"
+    },
+    "0b3ed0b464bfb833460fd1b6f078e374": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Calculate Lot from SD.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T10:14:45.303710+00:00"
+    },
+    "3eb83f0905ab2bf1b394c985d668bd8c": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Fixed Volume Lot EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T10:15:26.106957+00:00"
+    },
+    "36cda8f377c063be2102ab95ece11370": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Fixed Volume Lot EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T10:16:01.434961+00:00"
+    },
+    "1ea4e606a684b519f003c96f61d10eb6": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Flippy.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T10:16:37.960669+00:00"
+    },
+    "e5731c6b4695942ef8c6cb4de2e1e41b": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Flippy.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T10:17:14.726772+00:00"
+    },
+    "fc8011deeaff5e96bac89e97be12f8bf": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Freez Percent of Balance Lot EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T10:17:55.954926+00:00"
+    },
+    "4e26fde41f59996457f23cb2105b8dcc": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Freez Percent of Equity Lot EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T10:18:34.740116+00:00"
+    },
+    "905be2390fdee142dd1bd0bbea319c49": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Freez Percent of FreeMargin Lot EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T10:19:07.694798+00:00"
+    },
+    "d36908fe0b2c84e168bba4744797d2b8": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Martingale With Manual Trades.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T11:35:36.677927+00:00"
+    },
+    "7ebe2ba8519d6d2e6dad3a3b7d4ce75a": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Martingale with Maximum Lot V.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T11:35:52.488271+00:00"
+    },
+    "0c852fdf0d5ce3f72271d978f5d45f10": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Martingale with Maximum Lot.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T11:36:07.705792+00:00"
+    },
+    "c944ccec39acf3f2d53389f7ce34823c": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) MM Beting 1326.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T11:36:46.923757+00:00"
+    },
+    "3ce0508b43749b14b73cacbf6e118235": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) MM Flip Coin Beting Multiply (2).mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T11:37:24.411251+00:00"
+    },
+    "939c383a9fd73150a672ab319dfd7c80": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) MM Flip Coin Beting Multiply.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T11:38:00.380395+00:00"
+    },
+    "557cb0b14748f2a48b8b105918eb75c9": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Percent of Balance Lot EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T11:38:36.958616+00:00"
+    },
+    "0daa75431428446ffd999a8f625b0f73": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Percent of Equity Lot EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T11:39:13.837085+00:00"
+    },
+    "c455c4f4b79b1948ab85c9a5b3cb2a54": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Percent of Equity Lot EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T11:39:51.832973+00:00"
+    },
+    "bb8e74dd45496909bba1a9ae2a2e0a4e": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Percent of FreeMargin Lot EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-03T11:40:30.335641+00:00"
+    },
+    "6a54736626aed788dc424bf2525ba103": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Percent of FreeMargin Lot EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T05:51:59.304755+00:00"
+    },
+    "3f0a8197a6e66b6310699ba448525a99": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Risk fixed amount of Money.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T05:52:15.584520+00:00"
+    },
+    "539cbfc1f943e2b7ced2e35b554c3b3d": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Risk fixed amount of Money.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T05:52:29.251734+00:00"
+    },
+    "8a423d12a496eaceb3f916a2362b9e2c": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Risk Percent of Balance Lot EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T05:53:09.531887+00:00"
+    },
+    "acfedb0bde2fdb8876615475d5b7161a": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Risk Percent of Balance Lot EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T05:53:47.126164+00:00"
+    },
+    "4c6f7afcd126112c8ebd3d7dff1345a3": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Risk Percent of Equity Lot EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T05:54:23.058352+00:00"
+    },
+    "88258c54146cf959d551fc8867ad6c4e": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Risk Percent of Equity Lot EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T05:55:01.889878+00:00"
+    },
+    "61de2ecda0d5974b963fe7aa7349bb54": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Risk Percent of FreeMargin Lot EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T05:55:38.288651+00:00"
+    },
+    "50ba3d5a55f5dad893e4befffe4c2e76": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Risk Percent of FreeMargin Lot EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T05:56:14.595779+00:00"
+    },
+    "d9c97909b7df9673db790a8bae0ced5a": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) RSI Martingale.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T05:56:49.021060+00:00"
+    },
+    "4ccb9558366854b3b305ad5c6bae9c95": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) RSI Martingale.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T06:11:55.803957+00:00"
+    },
+    "96ffa0416e2cd46d11abe96970f90679": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) Calculation Arbitrage .mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T06:12:06.233827+00:00"
+    },
+    "001e2502d3d2dabfcadca22f050a3410": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) MM Betting 1326.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T06:12:50.961851+00:00"
+    },
+    "015adeb36d62549bde8bb954ffd58976": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) MM Betting 1326.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T06:13:27.869908+00:00"
+    },
+    "01919db86dd3cb717501716c7d6b2ffd": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) MM Betting D Alembert.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T06:14:02.607646+00:00"
+    },
+    "fbb606c0cb5132229a79f1e9cf2c9fd9": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) MM Betting D Alembert.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T06:14:37.640750+00:00"
+    },
+    "388b64f1c9ee18d69696908b9ff9ea43": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) MM Flip Coin Betting Plus.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T06:15:15.706904+00:00"
+    },
+    "def484ee9fa62412dab6432a326c8e1d": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Jobot) MM Flip Coin Betting Plus.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T06:15:51.152487+00:00"
+    },
+    "58ba3871632ac7cef9d9ba3e6d73ebcf": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\(Noom) RSI Hedge Grid.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T06:16:28.430263+00:00"
+    },
+    "04609b694586f66ddeed1c285bbf07d1": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\Basic STF.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T06:17:09.020985+00:00"
+    },
+    "76274afba1eeeb336536653de7668a89": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\BB+EMA+Flippy.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T09:09:13.568879+00:00"
+    },
+    "d2445de84148ebf4c91ef71ff0612677": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\BB+EMA+Flippy.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T09:09:26.525208+00:00"
+    },
+    "f6059c8e2d9f31e27f23afbcace3400b": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\Calculate Lot from Drawdown.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T09:09:40.470352+00:00"
+    },
+    "16ad6095eef0e3ae1e45af674ca5bdbc": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\Flippy + TL+Lot V.1 .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T09:10:27.017608+00:00"
+    },
+    "42d72b3c35b36b33a75a43ff3e29645c": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\Flippy + TLV.1 .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T09:11:03.290726+00:00"
+    },
+    "7003859e8aae1a141051c288eb28d968": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\Flippy + ZZV.1 .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T09:11:42.682876+00:00"
+    },
+    "a8faf5e3321ea5a463ac2c0c01967347": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\Flippy V.1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T09:12:17.583463+00:00"
+    },
+    "3df9d34050c48f1ba11e321e8f772a1c": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\Flippy.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T09:12:58.887671+00:00"
+    },
+    "aa3d8533839a9401199df08c4dd25f0b": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\Flippy.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T09:13:37.285370+00:00"
+    },
+    "d4b7e7df458a2f5d4dac769ff7fd8368": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\Grid Lot Hedging EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-04T09:14:14.760742+00:00"
+    },
+    "e9a0383a59d5b189b5cbbd4fbf27e772": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\MM Flip Coin Betting Plus.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:30:32.429976+00:00"
+    },
+    "a91ff18a2706977e532dbcef0d405f6f": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week3\\Secretary_Kim_Gold_v1.0.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:30:44.972193+00:00"
+    },
+    "dad3c640669852b5b4fee06957b1ba7c": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Basic Scalping and Trailing by Fractal.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:30:59.035607+00:00"
+    },
+    "3a0289214c664b67a3546c4c09e87bdd": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Basic Scalping and Trailing by Fractal.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:31:39.344973+00:00"
+    },
+    "47c87767bb49d8a792ccad82b74c11e0": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Basic Scalping and Trailing.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:32:18.755763+00:00"
+    },
+    "3e4500c6a692f9c35dd7d0ba2e006b41": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Sniper Trading System.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:32:58.676275+00:00"
+    },
+    "1c14e4b82b6c0ab97f766adbe9909d37": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Supply Demand Zone.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:33:31.778537+00:00"
+    },
+    "965c7632eaca7d9d610a3b2a4536e644": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Swing Trading.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:34:13.861320+00:00"
+    },
+    "cf86b92957fc3928ee4087f1c044fb98": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Dow Theory Trailing Stock tomorrow.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:34:52.989855+00:00"
+    },
+    "1b9a9ccc52558210bbfe0024187c56c3": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Dow Theory Trailing Stock tomorrow.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:35:32.920775+00:00"
+    },
+    "f91e6c03f1ff6daededc787e6827a4da": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Dow Theory Trailing  (3).mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:36:23.116249+00:00"
+    },
+    "a49fc5f31de69cf24f5d5d03f0048834": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Zig Zag Custom Divergence Trading.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:36:34.255694+00:00"
+    },
+    "6c7786723d215fcc9430d31748b9fa9b": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Zig Zag RSIDivergence Trading.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:37:32.096780+00:00"
+    },
+    "cd0b712b76f26759ae0aa2d48a22af73": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Zig Zag RSIDivergence  V.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:38:10.003200+00:00"
+    },
+    "a7b7b135a485c013332e583453bc9097": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week4\\(Jobot) Zig Zag RSIDivergence .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:38:44.107673+00:00"
+    },
+    "9cabed5a04230dbbe36dbaf8d4edb33f": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) Gold Trailing Pending.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:39:46.218418+00:00"
+    },
+    "e4ef0e53679d8bd5a5d2893a9918cbad": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) Grid Horizontal Line Once per Bar v.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:40:19.766220+00:00"
+    },
+    "76e6fd0d6a557748f940fb79b7697dcf": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) Grid Horizontal Line Trailing TP SL v.5.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:40:59.209153+00:00"
+    },
+    "19974d879805afb2649cc7f948aa6e35": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) Grid Horizontal Line Trailing TP SL v.5.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:41:39.294264+00:00"
+    },
+    "10be37955ff184f8a17b2f64be3ce368": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) Grid Horizontal Line.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:42:18.075389+00:00"
+    },
+    "06b87c1cb8889bf6509eb688408422ef": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) GRID Simple plus v.1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:43:07.363066+00:00"
+    },
+    "8a6ee0aca949a4440eaf4526f48bd4ef": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) Grid Lot Dif Hedging EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:43:24.725371+00:00"
+    },
+    "97c0de160b0046671fe163119c5c8742": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) Grid Lot Dif Hedging EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:44:16.272579+00:00"
+    },
+    "94674f4108c1156760d8c66f85de1305": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) Grid Lot Hedging EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:44:53.399461+00:00"
+    },
+    "c6365dc183f1ba93a75b11fbad0af759": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) Grid Lot Hedging EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:45:29.895851+00:00"
+    },
+    "847052f8ccccabdd0b4c0abb8247bc51": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) KZM Grid EA v.1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:46:07.436353+00:00"
+    },
+    "e182bed66f6f77e34193a77d9d5429d7": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) KZM Grid EA v.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:46:48.387764+00:00"
+    },
+    "a3b73c5b90cf049983099d33a57db630": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) KZM Grid EA v.3.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:47:29.156129+00:00"
+    },
+    "547351be7c3e5260b39f8e24107d111a": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) KZM Grid EA v.3.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:48:07.929148+00:00"
+    },
+    "9e2ed32c111575e9eee423710b6e58d3": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) KZM Grid EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:48:20.801343+00:00"
+    },
+    "76a90d253fde049a9863039852a3af89": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) Sar Recovery Hedging System Plus v1.1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:49:15.706630+00:00"
+    },
+    "37e60fd4b48e8d1e4989c9d055fab4a4": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot)  MACD Recovery Hedging System Plus v2.1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:49:52.320322+00:00"
+    },
+    "12355dcbcd5affed1d8ab4c41d403c7e": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) EA Inside Bar Break Out .mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:50:28.261700+00:00"
+    },
+    "f374c1ba617626b4b8a92df1fd7a21c6": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) Recovery Hedging System Multiply.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:51:06.550956+00:00"
+    },
+    "a1050280a3e6365191ff451afcd68482": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\(Jobot) Recovery Hedging System Plus.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:51:44.550547+00:00"
+    },
+    "424af66bd547f880f4589341d150e268": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\AcGIntelligence.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:52:24.296301+00:00"
+    },
+    "454c3533f8a0539684925bccc3558fa7": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\Engulf Master GRID ATR Accumulative Deduction -B (1).mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:53:00.846691+00:00"
+    },
+    "65d5f55674fc336677b1a51e0a73d50e": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\Grid Lot Hedging EA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:53:39.405816+00:00"
+    },
+    "5f7f40551abd9ac96dcdc7dd37e1f8b1": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\KMG.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:54:18.529155+00:00"
+    },
+    "b853c3a869ee93d5f962f6960443fcc6": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\KMGII.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:54:55.350480+00:00"
+    },
+    "6fc18ebd62f52dcd064f6e0d57c3cb61": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\KZM Grid EA v.3.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:55:42.859105+00:00"
+    },
+    "d98cd31bf306cab06f481093009423e9": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week5\\Master GRID ATR Accumulative Deduction -B (1).mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:55:56.526604+00:00"
+    },
+    "967781368a6a992e84571a31f6e25db2": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot) Arbitage 3 Pairs Partial Imbalance.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:56:50.864445+00:00"
+    },
+    "53fa20bd288e01142ca6b15714d836a9": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot) Arbitage 3 Pairs SumLot.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:57:21.555209+00:00"
+    },
+    "0927f209347d547c5f23442a4ba2396a": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot) Arbitage 3 Pairs.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:58:01.372120+00:00"
+    },
+    "ca3a0b29cadf6793c2bcbccf9fb6aa30": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot) Arbitage 4 Pairs.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:58:37.883154+00:00"
+    },
+    "8b450a1607da84c380572d6875ab5aa4": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot) Arbitage 5 Pairs.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:59:13.065234+00:00"
+    },
+    "4f283d0273dbd39b1833769df141bf7b": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot) Arbitage 6 Pairs.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T01:59:51.427343+00:00"
+    },
+    "7acd074b30c613bf737d7b550143452f": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot) Arbitrage Super Profit.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:00:25.235191+00:00"
+    },
+    "e00ee5e3e7b5cc03923ed12a5c48250d": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot) Arbitrage TP SL v1.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:01:02.027418+00:00"
+    },
+    "062006a164f3d7b35289bc7e63cb1894": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot) Arbitrage TP SL v2.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:01:47.811677+00:00"
+    },
+    "ce8a420f0dbcfd011978c29997fa4fb9": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot) Plot Arbitrage.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:02:21.234397+00:00"
+    },
+    "d3943a5cd6f33e1152c156052b4a5bf7": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot)  Partial Arbitage 3 Pairs STO.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:02:58.502538+00:00"
+    },
+    "8eb698d1455247386dab4e3c9cb2deb3": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot)  Partial Arbitage add on lossing.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:03:38.126072+00:00"
+    },
+    "e6f53d2c38bfa9314c88d778f5ac0097": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week6\\(Jobot)  Partial Arbitage add on winning.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:04:11.231585+00:00"
+    },
+    "c987432763f35fc2a677382a0624a1fc": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week7\\(Jobot) Basic Correlation Indicators EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:04:46.935551+00:00"
+    },
+    "4e0df064aa803e047fd87de0fba8b5c7": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week7\\(Jobot) Correlation with CCI Martingale.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:05:34.640230+00:00"
+    },
+    "533206996b75f79a0286e19fce25332b": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week7\\(Jobot) Correlation with CCI Plus Series.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:06:12.963231+00:00"
+    },
+    "5332b24ba497414ece34cfa61a7a3b83": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week7\\(Jobot) Correlation with MACD and ATR Martingale.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:06:47.153725+00:00"
+    },
+    "60a64fabca8ee6f8eee1c5727d9eae06": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week7\\(Jobot) Correlation with MACD and ATR Plus Series.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:07:27.967620+00:00"
+    },
+    "d83ef3cf0d328723d0f82e5828230497": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week7\\(Jobot) FX Correlation RSI  Grid EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:08:24.541680+00:00"
+    },
+    "1446316c88f8f52c0dcba9b37477f2e7": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week7\\(Jobot) OIL Correlation STO + RSI.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:08:35.279997+00:00"
+    },
+    "8a835ca876dbe992bb99d7020788a69f": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week7\\(Jobot) Plot Correlation CCI DIF.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:09:20.978205+00:00"
+    },
+    "f6c03066240ad0e06abb060673f2c290": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week7\\(Jobot) Plot Correlation DIF.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:09:59.451220+00:00"
+    },
+    "8b5716b883948a05aadc4f3b793380b0": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week8\\(Jobot) Fibo Basic V1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:10:33.241877+00:00"
+    },
+    "14e0cab92315f583174aebd12ba025f4": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week8\\(Jobot) Fibo Basic V2 Daily.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:11:14.851131+00:00"
+    },
+    "7cfe0358249bcaf76fae4d81a63ae905": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week8\\(Jobot) Fibo Basic v2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:11:55.587501+00:00"
+    },
+    "fc5668cb2dc710c2ecaad26c4671161e": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week8\\(Jobot) Fibo Expansion Dow Theory.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:12:31.873856+00:00"
+    },
+    "6ef0d22537865558c6ae882f06a6b6f6": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week8\\(Jobot) Fibo QM Advance.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:13:12.046131+00:00"
+    },
+    "b5d9299cfb42fc190065141a0235dc6a": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week8\\(Jobot) Fibo QM Advance.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:13:51.320294+00:00"
+    },
+    "b57282938f1831081795a50e21015d42": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week8\\(Jobot) Auto Trend Line Break and retrace.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:14:41.530199+00:00"
+    },
+    "3d5f6fb7f69af29196b92345bd6fc1c2": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week8\\(Jobot) Self Trend Line Break .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:14:53.605910+00:00"
+    },
+    "efae8e6eb569c446c3b68e8b8d2028ca": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week8\\(Jobot) Trend Line by Zigzag Martingale.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:15:50.958354+00:00"
+    },
+    "25ec16e49a77b87433bbf38d7cac6dbe": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week8\\(Jobot) Trend Line by Zigzag.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:16:23.637546+00:00"
+    },
+    "91ca6855a92fb248b3136ee8a7b76e79": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week9\\(Jobot) 50-100 Pullback.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:17:07.167583+00:00"
+    },
+    "14d640bd0a3b2ca85cc612563896b60a": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week9\\(Jobot) Elliott Wave Hidden and Divergence v.1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:17:32.523321+00:00"
+    },
+    "950bbdd54f3f9377c60a1d957191a862": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week9\\(Rhyme) RSI Doji -2.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:18:04.210613+00:00"
+    },
+    "5b88ec793ad650b01eda461f43801429": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week9\\50-100 Pullbacktoto404.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:18:45.390670+00:00"
+    },
+    "ce3e3004fff20fccc52828b7863c4f14": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week9\\ENF.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:19:21.165003+00:00"
+    },
+    "5b889a82970819277b384351a13358b0": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week9\\Grid Lot Hedging EA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:19:57.587473+00:00"
+    },
+    "829e622def026a5ce4393b38d08aea7c": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week9\\PA.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:20:40.639150+00:00"
+    },
+    "e2be8ea673566232caaaa2fb2e641c8f": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week9\\PA1OR.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:21:27.327607+00:00"
+    },
+    "1dfb6e8c2996d5eb269eb471615bd7c9": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week9\\PAEMA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:21:44.721648+00:00"
+    },
+    "e735a33a9f615b8c02be2fde28e73114": {
+      "source_file": "G:\\My Drive\\jobot\\EA Week9\\PAEMA888.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:22:33.937542+00:00"
+    },
+    "d1b9cdf8617af00d64137f5deec69217": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\!!PK  KZM Grid EA v.3 Fixlot+Upper+Lowwer+XTP.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:23:09.483792+00:00"
+    },
+    "d56f299eb2416507acac8319ffb70cad": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\!!PK  KZM Grid EA v.3.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:23:52.736726+00:00"
+    },
+    "5678f99d6be77e1da4b3d478c7d4c638": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\(Jobot) Gold Trailing Pending.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:24:22.741663+00:00"
+    },
+    "b9c3bf473fb2f24bcf787f8931ba00d6": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\(Jobot) Martingale Basic V1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:25:03.486628+00:00"
+    },
+    "9e6800bcc6fa1b36ca44fb542ee8fd37": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\(Jobot) Supply Demand Zone V1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:25:42.938909+00:00"
+    },
+    "b5abeb7d7c8ae598598ece1eae0b72ee": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\(Jobot) Supply Demand Zone V2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:26:19.246242+00:00"
+    },
+    "97810cf4be4d0c9ac5b20c202337d740": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\(Jobot) Zig Zag Custom Divergence Trading Plus+ V1+TP.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:27:05.056072+00:00"
+    },
+    "b9c1bf94dbe2cd3b9e6323d782100cf7": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\(Jobot) Zig Zag Custom Divergence Trading Plus+ V1+Trailing+TP.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:27:37.914405+00:00"
+    },
+    "27402fac56a0c0ca8b8b111dd39d50aa": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\(Jobot) Zig Zag Custom Divergence Trading Plus+ V1+Trailing.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:28:16.774315+00:00"
+    },
+    "965e44bc72de9d29189b243153419b91": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\(Jobot) Zig Zag Custom Divergence Trading Plus+ V1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:28:56.151729+00:00"
+    },
+    "6ecc9a0b4191f74ce95d447a69955212": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\(Jobot) Zig Zag Custom Divergence Trading Plus+ V1.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:29:34.298906+00:00"
+    },
+    "afe1faa75bfba9d0b95956d3bd1aa8d0": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\(Jobot) Zig Zag Custom Divergence Trading Plus+ V2+TP.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:30:12.933924+00:00"
+    },
+    "8f4197d622612a3085d07c0b7f8d7059": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\(Jobot) Zig Zag Custom Divergence Trading Plus+ V2+TP.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:30:53.700380+00:00"
+    },
+    "771c2527f01eb13ca654c5770a0fcfd8": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\(ST)Candle lot martingale.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:31:31.034365+00:00"
+    },
+    "dfd549fea8d3df4d4589ac2bb08d9278": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\001.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:32:07.885948+00:00"
+    },
+    "cd153bac91536f0cfba99150b8dba75a": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\[52Hz] Bxc-Bsc093.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:32:43.585539+00:00"
+    },
+    "5989334d1fb65ef9067e8a24eab2132c": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Advance Indicators Line Notification.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:33:34.087060+00:00"
+    },
+    "d19e1b3199e5c8d14db76d41b0cef101": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Advance Indicators Line Notification.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:33:45.650235+00:00"
+    },
+    "36553bad332db9d3110afc14e9751506": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Advance Telegram Signal  V.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:34:37.395611+00:00"
+    },
+    "66a0f7aa331e12b181a6555242dd29dc": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Advance Telegram Signal  V.2.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:35:17.219965+00:00"
+    },
+    "8ee6f7ce9d498f01d31945e0219fe2c1": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\ATR DAY V.2.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:35:56.548986+00:00"
+    },
+    "6639de5eb56ec810b40801ea47587bf1": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\ATR DAY.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:36:33.930304+00:00"
+    },
+    "810e6aae9cc8f29bba6e1381cad9b1f6": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\ATT.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:37:15.533092+00:00"
+    },
+    "c1635c3b3aa2e8e2f91f034a4bd6d1d4": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Basic Scalping V.1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:37:52.639102+00:00"
+    },
+    "a713cf4cf040b446653bf17b96d41bef": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Basic Scalping V.1.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:38:31.901762+00:00"
+    },
+    "8a1051efe707d37f6575b1b55657ff8c": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\bbnm5 (sniper).mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:39:10.496807+00:00"
+    },
+    "cc95f61bfc802cddc70834ad647749ff": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\BC V.1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:40:51.768334+00:00"
+    },
+    "b8e88f8175b6e3c1047fb632d17fe293": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Bolliger Martigle MA 8 20 cross + sto V4.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:41:03.926415+00:00"
+    },
+    "c2feb9e67efe30ce75b913e25725ed6f": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Buy.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:41:18.587809+00:00"
+    },
+    "704ec88da8e62fe29d1396c6697a5902": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\CompleteTradingEA.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:41:54.927305+00:00"
+    },
+    "0619d72a2b0fd111ae211563a4006c69": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\EA12-ADX Grid pending V.1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:42:22.057345+00:00"
+    },
+    "e9866a5e1141d68e8896568e964234da": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\EA12-ADX Grid pending V.1.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:43:01.925707+00:00"
+    },
+    "b1e55988cdfc221551fa616d9ea000b4": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\EA12-ADX Grid pending.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:43:40.163229+00:00"
+    },
+    "ae75ebe3718586e1694e8475570439d1": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\EASYSTEP.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:44:17.989600+00:00"
+    },
+    "dd50fbe5e889e9384321a72c96ee6885": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\EMA  v.1.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:44:57.108691+00:00"
+    },
+    "3d9c2259f2d3c59b9d5984e1a7548b31": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\EX85 - Gold Robot Scalping V2 [Time Bomb Up_Down and Trailing Stop]99.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:45:36.105221+00:00"
+    },
+    "9aca7c56363bcdc0f5f5c3d7fe0b1231": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Flippy V.1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:46:46.987548+00:00"
+    },
+    "d1c2bc23110c736d2a2cfc15ad31d48f": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Flippy+.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:47:02.109578+00:00"
+    },
+    "a2733e25b61e8233053566018a1fb831": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\gold robot scalping pending order strategy .mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:47:14.400146+00:00"
+    },
+    "9dfe79b63b630004f6fc431fbec46661": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Grid Horizontal Line Once per Bar v.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:48:06.534107+00:00"
+    },
+    "272b752a4bd56e67f5938b2c03d2c4d5": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\High Speed Volume Velocity Trailing Money Marrtingale V2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:48:44.784386+00:00"
+    },
+    "9d7e87f5b69c915557c6a3fc61d7f6be": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\High Speed Volume Velocity Trailing Money Marrtingale V2.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:49:20.836041+00:00"
+    },
+    "b3bcd2c34190f49cb926024971d4a64b": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\KZgBS.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:49:59.863145+00:00"
+    },
+    "083e2df3eb89e6d04a98a9168daa8a43": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Line DX V.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:50:37.724170+00:00"
+    },
+    "a4f2cfce7fee2a5d858daeb752c5606f": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Line DX V.2.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:51:14.281802+00:00"
+    },
+    "d700ea12435127e446f1ef508bfd0f59": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Line Notification V.2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:51:53.500107+00:00"
+    },
+    "560b5eca7014ec7ec0b07e934f5d5d93": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Line Notification V.2.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:52:49.228809+00:00"
+    },
+    "52ec47763369f8986cca262d02c70cc6": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\MACD-V.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:53:01.025288+00:00"
+    },
+    "91a9f0e608a398b300001d1f0d40b925": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\macd-v.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:53:40.479520+00:00"
+    },
+    "b9e0c4f5ec21004a5971de569e2ef5f2": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Max Daily Drawdown.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:54:19.710357+00:00"
+    },
+    "fb18a5a8c516362b6fa524cc95c2f6c3": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\MIX DCA10.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:54:57.980329+00:00"
+    },
+    "71e84a08abef89438f151872ab0d5843": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Multiples Time Frame Trading V2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:55:31.400945+00:00"
+    },
+    "7375e2d4dbe7e144d2fb62e4ff6c2923": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Multiples Time Frame Trading.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:56:12.618848+00:00"
+    },
+    "68b9afab3159407308078c57b323c7d3": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Pete 008-13 (Surefire ).mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:56:49.464859+00:00"
+    },
+    "b861d0a5c07d8b8f8fc30a55f9619fdf": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Pete 008-13 (Surefire ).mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:57:27.413837+00:00"
+    },
+    "e4a000fec177a1dca6744852a97ff7c5": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\PIP.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:58:05.495998+00:00"
+    },
+    "fc82c29000b9fa79cc145186a2a6e1e6": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\price action &  Liquidity zone (MM).mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:59:04.762813+00:00"
+    },
+    "ff9e5c5625ead1f47dc3aa47b08d1165": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Price Action - Trend Line -Fibo -Retracement Pending.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T02:59:19.497948+00:00"
+    },
+    "06e64df80bda5811c09f3d5da4239286": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\qm alert (1) (3).mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T03:00:02.196930+00:00"
+    },
+    "9f7b6c5cc7fe63346902ede1162c5e2b": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\QM Var.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T03:00:37.505437+00:00"
+    },
+    "e3513628af4c2b0e5d482b1cfd7114a4": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Richie Richie I.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T03:01:15.305220+00:00"
+    },
+    "e1dcddd63110d21c610ef7c44852d341": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\RSI 1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T03:01:55.928277+00:00"
+    },
+    "64e63809299750b1729dcf370f0db7a9": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\RSI+SDZ+LN V3.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T03:02:33.439126+00:00"
+    },
+    "b5a30145fa7fe8aa5dbe072eec00c597": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\RSI-Fibo-DI.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T03:03:15.023254+00:00"
+    },
+    "dbf1a9a56cee1793daa5b6c76dc9f4f8": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Scalping and Trailing ATR  .mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T03:03:51.457118+00:00"
+    },
+    "52cf0ba207ae24cd1f56286b28033b20": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\SDZ V2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T03:04:33.041209+00:00"
+    },
+    "4d90a318aefbec71e225e250deff9f16": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\SDZ V3.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:30:02.788628+00:00"
+    },
+    "2502243fc37cd38b58616a448e2a1eb0": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\SDZ Line Notification V1.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:30:00.132890+00:00"
+    },
+    "5c19146cd953d877cbfd5d884b58a664": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\SDZ Line Notification V2.mq4",
+      "concept_count": 7,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:30:38.309352+00:00"
+    },
+    "26a7f46bb537fbe962202de9555c0e99": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\SniperX - Edit.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:30:23.706781+00:00"
+    },
+    "902b43b541dff3c03bdf72fdb0f60ebe": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\template.mq5",
+      "concept_count": 7,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:30:19.273844+00:00"
+    },
+    "61d769ff19ce10570244c386f22bc9b2": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\TOP DCA XAGUSDc Lot SEQUENCE XXX Spread pip 2GROUP.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:30:26.697447+00:00"
+    },
+    "977f651c677f6944504b49b5b0327326": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\unnamed (1).mq5",
+      "concept_count": 6,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:30:40.742344+00:00"
+    },
+    "beb6027fb93a4229bf986b0f394ae04a": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Zay.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:30:34.666009+00:00"
+    },
+    "8d56b44eedf238d5316911b5e837be4e": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Zig Zag+ATR.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:30:58.886808+00:00"
+    },
+    "9addaa89ab05b441843e72bbbf944784": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Zig Zag+ATR.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:31:01.764333+00:00"
+    },
+    "02d6afab076417e6faf8f1964009c3d2": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Zone Recovery Entry  Custom 2.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:30:56.347103+00:00"
+    },
+    "1666cdbbfcda5384b942d651e2e9bbe2": {
+      "source_file": "G:\\My Drive\\jobot\\Indicator Forex of War\\Auto Fibo.mq4",
+      "concept_count": 6,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:31:09.940186+00:00"
+    },
+    "b32c1b7e3d73f38eaa02af8603a267c0": {
+      "source_file": "G:\\My Drive\\jobot\\Indicator Forex of War\\SL&TP Values.mq4",
+      "concept_count": 6,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:31:18.571673+00:00"
+    },
+    "d6441536a051f29bcab2cc15bac5b137": {
+      "source_file": "G:\\My Drive\\jobot\\ICEE PROFIT\\Zone Recovery Entry  Custom 2.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:31:21.788410+00:00"
+    },
+    "b7e842ebea15102a8c89379ee9c2ded6": {
+      "source_file": "G:\\My Drive\\jobot\\Position Sizer\\errordescription.mqh",
+      "concept_count": 0,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:31:23.447719+00:00"
+    },
+    "2ad5074b489f016813d28d1c1b80138d": {
+      "source_file": "G:\\My Drive\\jobot\\Position Sizer\\Defines.mqh",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:31:26.428879+00:00"
+    },
+    "31a67b5438cea334ea73086c7b1ccf57": {
+      "source_file": "G:\\My Drive\\jobot\\Position Sizer\\Translations\\Arabic.mqh",
+      "concept_count": 0,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:31:28.417536+00:00"
+    },
+    "493a46183ff44f726ceacdc82062d45c": {
+      "source_file": "G:\\My Drive\\jobot\\Position Sizer\\Position Sizer.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:31:39.588660+00:00"
+    },
+    "fee812c823eea4ad73bff9cb67cf74db": {
+      "source_file": "G:\\My Drive\\jobot\\Position Sizer\\Position Sizer Trading.mqh",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:31:41.360745+00:00"
+    },
+    "046093c5c78ff93f97e9f4d69fcc5edb": {
+      "source_file": "G:\\My Drive\\jobot\\Position Sizer\\Translations\\English.mqh",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:33:57.171576+00:00"
+    },
+    "3433cfcef423941ed3abd2776f74f30e": {
+      "source_file": "G:\\My Drive\\jobot\\Position Sizer\\Translations\\Chinese.mqh",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:31:48.545242+00:00"
+    },
+    "a9aeae45be9dbb0e30776b3d1edd1890": {
+      "source_file": "G:\\My Drive\\jobot\\Position Sizer\\Translations\\Russian.mqh",
+      "concept_count": 0,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:01.050232+00:00"
+    },
+    "a1f34d02ec6e73196926c21b08011611": {
+      "source_file": "G:\\My Drive\\jobot\\Position Sizer\\Translations\\Portuguese.mqh",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:02.378745+00:00"
+    },
+    "06e0763a5919ba4d4fe6af05df200c67": {
+      "source_file": "G:\\My Drive\\jobot\\Position Sizer\\Translations\\Spanish.mqh",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:11.781332+00:00"
+    },
+    "58e5d286e698bff038505d5ffc30680b": {
+      "source_file": "G:\\My Drive\\jobot\\PositionSizeCalculator-5\\PositionSizeCalculator\\Defines.mqh",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:16.086382+00:00"
+    },
+    "7f2acf8904d82cd32cf88d81ecf030cd": {
+      "source_file": "G:\\My Drive\\jobot\\Position Sizer\\Translations\\Ukrainian.mqh",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:18.082126+00:00"
+    },
+    "2c9eb2ce62507207c374f2888d02ceb3": {
+      "source_file": "G:\\My Drive\\jobot\\PositionSizeCalculator-5\\PositionSizeCalculator\\PositionSizeCalculator.mq5",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:30.581398+00:00"
+    },
+    "bcf52e4267718c2c699486c0b47e9249": {
+      "source_file": "G:\\My Drive\\jobot\\PositionSizeCalculator\\Defines.mqh",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:30.690960+00:00"
+    },
+    "f3cbe21448a7b728e9facd26e77ed54d": {
+      "source_file": "G:\\My Drive\\jobot\\PositionSizeCalculator.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:35.450917+00:00"
+    },
+    "4ac105fdd80c3302149da73b1ea3a85c": {
+      "source_file": "G:\\My Drive\\jobot\\Programs\\308\\expert_abe_be_rsi.mq5",
+      "concept_count": 5,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:40.870615+00:00"
+    },
+    "db36cd99f17103ef91d265a89037e54a": {
+      "source_file": "G:\\My Drive\\jobot\\PositionSizeCalculator\\PositionSizeCalculator.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:42.311654+00:00"
+    },
+    "edf4c1ba76488459e5a2b8adae7b0c43": {
+      "source_file": "G:\\My Drive\\jobot\\PositionSizeCalculator\\PositionSizeCalculator.mqh",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:46.626226+00:00"
+    },
+    "516d801278b78d63369b27108089e5dd": {
+      "source_file": "G:\\My Drive\\jobot\\Programs\\308\\mql5\\Include\\Expert\\Signal\\MySignals\\acandlepatterns.mqh",
+      "concept_count": 4,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:52.711292+00:00"
+    },
+    "5fd7b905f01e6a8acee0c5d3bb94c04a": {
+      "source_file": "G:\\My Drive\\jobot\\Programs\\308\\mql5\\Include\\Expert\\Signal\\MySignals\\acbe_be_rsi.mqh",
+      "concept_count": 6,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:52.822803+00:00"
+    },
+    "4d5b82b3bbe9fcb278c8bba76bb92cb8": {
+      "source_file": "G:\\My Drive\\jobot\\SALE EA\\RSI color candle1 (9).mq4",
+      "concept_count": 0,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:32:55.706537+00:00"
+    },
+    "538282b01892239bab08677f160db5c2": {
+      "source_file": "G:\\My Drive\\jobot\\Programs\\PositionSizeCalculator\\Defines.mqh",
+      "concept_count": 5,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:33:00.021524+00:00"
+    },
+    "0724925a27ef73d45da571c33516f580": {
+      "source_file": "G:\\My Drive\\jobot\\TriAngle Runtrend 1 shot V1.01.mq4",
+      "concept_count": 8,
+      "status": "processed",
+      "error": null,
+      "processed_at": "2026-06-05T04:33:01.898018+00:00"
+    }
+  }
+}

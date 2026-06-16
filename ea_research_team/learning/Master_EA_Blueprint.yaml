@@ -1,0 +1,35 @@
+# Master EA Blueprint
+# Generated: 2026-06-14T13:35:06+07:00
+# Version: 2.0 (Phase 4)
+
+entry:
+  - ATR Filter
+  - Session Filter
+  - Risk Management
+  - FVG
+  - Order Block
+
+filter:
+  - FVG
+  - Order Block
+  - BOS
+  - Pattern M
+  - Session Filter
+  - Risk Management
+
+risk:
+  - Risk Management
+  - FVG
+  - Order Block
+  - ATR Filter
+  - Pattern W
+  - Pattern M
+
+exit:
+  - ATR Filter
+  - Risk Management
+  - FVG
+  - Order Block
+  - BOS
+  - Pattern M
+  - Session Filter

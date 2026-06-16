@@ -1,0 +1,11 @@
+# CSV Diagnosis Report: tmpe1tmq1r_.xlsx
+
+## Summary
+The provided sample of 50 trades exclusively shows short-duration, profitable buy trades on XAUUSDm with a fixed 0.01 lot size and no explicit Stop Loss or Take Profit. This indicates a highly specialized scalping strategy adept at capturing minor upward price movements, likely employing dynamic exit logic. However, the absence of losing trades in this sample prevents a comprehensive analysis of risk management effectiveness or patterns differentiating winning from losing trades.
+
+## Extracted Rules (To be integrated into EA)
+- Implement Mandatory Stop Loss: Given the absence of explicit Stop Loss in the sample, it is crucial to integrate a robust, predefined Stop Loss for every trade. This is essential for managing downside risk and preventing catastrophic losses, especially if the full trade history includes losing trades.
+- Analyze Optimal Entry Conditions for Buy Scalps: Deeply analyze the specific market conditions (e.g., volatility, price action, underlying indicators) that precede these rapid, profitable buy entries. Refine the EA's entry logic to capitalize on these high-probability setups more consistently.
+- Evaluate Dynamic Profit-Taking Strategy: The strategy consistently captures small profits. Investigate whether the current dynamic profit-taking mechanism is optimal. Consider if slightly larger profit targets could be achieved without significantly increasing risk, or if the current tight targets are critical for maintaining the observed high win frequency.
+- Consider Directional Expansion or Filtering: As the sample only contains buy trades, assess if the EA is intentionally unidirectional. If not, analyze market conditions during downtrends to develop or refine sell trade logic, or implement filters to ensure trades are only taken in alignment with the prevailing trend.
+- Optimize Trading Hours/Sessions: Analyze the time of day and specific market sessions when these profitable trades occur most frequently and with the highest average profit. Implement time-based filters to restrict trading to these optimal periods, potentially avoiding less favorable market conditions.

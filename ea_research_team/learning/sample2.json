@@ -1,0 +1,179 @@
+{
+  "concept": "BOS",
+  "confidence": 44,
+  "evidence_count": 6,
+  "last_updated": "2026-05-30T14:05:15+07:00",
+  "related_rule_types": [
+    "entry",
+    "exit",
+    "filter",
+    "regime",
+    "stop_loss"
+  ],
+  "rule_variants": {
+    "entry": [
+      {
+        "score": 1,
+        "sources": [
+          "7661a5b75eb5"
+        ],
+        "text": "Enter on Pattern W setup confirmation",
+        "variant_id": "82a9ccef"
+      },
+      {
+        "score": 1,
+        "sources": [
+          "7661a5b75eb5"
+        ],
+        "text": "Enter after Liquidity Sweep completion",
+        "variant_id": "a21a2144"
+      },
+      {
+        "score": 1,
+        "sources": [
+          "7661a5b75eb5"
+        ],
+        "text": "Enter at Order Block with CHoCH confirmation",
+        "variant_id": "61106240"
+      }
+    ],
+    "exit": [
+      {
+        "score": 1,
+        "sources": [
+          "7661a5b75eb5"
+        ],
+        "text": "Exit at Fair Value Gap target",
+        "variant_id": "b67ed48a"
+      },
+      {
+        "score": 1,
+        "sources": [
+          "7661a5b75eb5"
+        ],
+        "text": "Exit at resistance established by BOS",
+        "variant_id": "b50837c5"
+      }
+    ],
+    "filter": [
+      {
+        "score": 1,
+        "sources": [
+          "7661a5b75eb5"
+        ],
+        "text": "Confirm Market Structure alignment",
+        "variant_id": "9bc14383"
+      },
+      {
+        "score": 1,
+        "sources": [
+          "7661a5b75eb5"
+        ],
+        "text": "Filter trades using CHoCH for trend confirmation",
+        "variant_id": "3c02b5b2"
+      },
+      {
+        "score": 1,
+        "sources": [
+          "7661a5b75eb5"
+        ],
+        "text": "Validate BOS for directional bias",
+        "variant_id": "f28b9c98"
+      }
+    ],
+    "regime": [
+      {
+        "score": 1,
+        "sources": [
+          "7661a5b75eb5"
+        ],
+        "text": "Trade in market structure continuation",
+        "variant_id": "c4d64c6e"
+      },
+      {
+        "score": 1,
+        "sources": [
+          "7661a5b75eb5"
+        ],
+        "text": "Identify trending vs ranging market conditions via BOS/CHoCH",
+        "variant_id": "f4fd9915"
+      }
+    ],
+    "stop_loss": [
+      {
+        "score": 1,
+        "sources": [
+          "7661a5b75eb5"
+        ],
+        "text": "Place stop loss beyond Liquidity Sweep level",
+        "variant_id": "0fc7d7a2"
+      },
+      {
+        "score": 1,
+        "sources": [
+          "7661a5b75eb5"
+        ],
+        "text": "Place stop loss beyond Order Block extreme",
+        "variant_id": "ccf7dd8e"
+      }
+    ]
+  },
+  "source_details": [
+    {
+      "ea_readiness": 94,
+      "merged_at": "2026-05-30T14:05:15+07:00",
+      "rule_completeness": 105,
+      "title": "SMC",
+      "url": "C:\\Users\\ADMIN\\Desktop\\SMC.mp4",
+      "video_id": "7661a5b75eb5"
+    },
+    {
+      "ea_readiness": 34,
+      "merged_at": "2026-05-30T14:05:15+07:00",
+      "rule_completeness": 12,
+      "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+      "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+      "video_id": "JowGLzR6eHg"
+    },
+    {
+      "ea_readiness": 34,
+      "merged_at": "2026-05-30T14:05:15+07:00",
+      "rule_completeness": 12,
+      "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+      "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+      "video_id": "QWfwB72z158"
+    },
+    {
+      "ea_readiness": 36,
+      "merged_at": "2026-05-30T14:05:15+07:00",
+      "rule_completeness": 15,
+      "title": "Consistency  Explosion ด้วย SMC",
+      "url": "https://www.youtube.com/watch?v=a1imqoMSNno",
+      "video_id": "a1imqoMSNno"
+    },
+    {
+      "ea_readiness": 36,
+      "merged_at": "2026-05-30T14:05:15+07:00",
+      "rule_completeness": 15,
+      "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+      "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+      "video_id": "tDWy82eU1lA"
+    },
+    {
+      "ea_readiness": 31,
+      "merged_at": "2026-05-30T14:05:15+07:00",
+      "rule_completeness": 9,
+      "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+      "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+      "video_id": "u2XKVpSZvFo"
+    }
+  ],
+  "sources": [
+    "7661a5b75eb5",
+    "JowGLzR6eHg",
+    "QWfwB72z158",
+    "a1imqoMSNno",
+    "tDWy82eU1lA",
+    "u2XKVpSZvFo"
+  ]
+}

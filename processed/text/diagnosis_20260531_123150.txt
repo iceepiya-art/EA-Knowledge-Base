@@ -1,0 +1,10 @@
+# CSV Diagnosis Report: tmplwv4wqcz.xlsx
+
+## Summary
+The EA demonstrates a high frequency of small to medium profitable trades, indicative of a short-term or scalping strategy. However, the critical absence of explicit stop-loss management leads to catastrophic losses when trades are held for extended durations (hours to days), severely eroding overall account equity. The risk-reward profile is highly skewed, with individual losses often significantly outweighing multiple accumulated wins.
+
+## Extracted Rules (To be integrated into EA)
+- Implement a mandatory, predefined stop-loss for every trade. This is the most critical rule to cap potential losses and prevent single trades from wiping out accumulated profits. The stop-loss should be set at a level that respects a predefined risk percentage per trade.
+- Introduce a maximum holding time for trades. Trades that have not reached their take-profit or stop-loss within a specified duration (e.g., 2-4 hours for short-term strategies, or end-of-day) should be automatically closed to prevent excessive drawdowns from prolonged exposure.
+- Implement a filter to close all open positions before the market closes for the weekend (Friday evening) and ideally before the end of the trading day. This mitigates the risk of significant price gaps and uncontrolled movements during off-market hours.
+- Re-evaluate and enforce a healthier risk-reward ratio. While the EA generates many small wins, the large losses indicate an imbalance. Aim for a minimum 1:1 risk-reward ratio, or ensure an exceptionally high win rate if targeting smaller profits, to ensure long-term profitability.

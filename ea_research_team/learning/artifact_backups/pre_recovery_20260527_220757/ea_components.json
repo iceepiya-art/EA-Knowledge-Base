@@ -1,0 +1,66 @@
+{
+  "components": {
+    "entry": [
+      {
+        "concepts": [
+          "FVG",
+          "CHoCH",
+          "Liquidity Sweep"
+        ],
+        "frequency": 1,
+        "rule": "Drive smoke test: enter after CHoCH confirmation and FVG retest.",
+        "sources": [
+          "58db7c3d4de1"
+        ]
+      }
+    ],
+    "exit": [],
+    "filter": [],
+    "regime": [
+      {
+        "concepts": [
+          "FVG",
+          "Order Block",
+          "CHoCH",
+          "BOS",
+          "Liquidity Sweep",
+          "Pattern W"
+        ],
+        "frequency": 1,
+        "rule": "SMC local video evidence: covers Market Structure, Liquidity Sweep, Order Block, Fair Value Gap, CHoCH, BOS, and Pattern W setup.",
+        "sources": [
+          "7661a5b75eb5"
+        ]
+      }
+    ],
+    "stop_loss": [
+      {
+        "concepts": [
+          "FVG",
+          "CHoCH",
+          "Liquidity Sweep"
+        ],
+        "frequency": 1,
+        "rule": "Stop loss below liquidity sweep wick.",
+        "sources": [
+          "58db7c3d4de1"
+        ]
+      }
+    ]
+  },
+  "generated_at": "2026-05-27T21:26:26+07:00",
+  "summary": {
+    "components_complete": [
+      "entry",
+      "stop_loss",
+      "regime"
+    ],
+    "components_missing": [
+      "exit",
+      "filter"
+    ],
+    "ea_readiness": "medium",
+    "total_rules": 3
+  },
+  "version": 1
+}

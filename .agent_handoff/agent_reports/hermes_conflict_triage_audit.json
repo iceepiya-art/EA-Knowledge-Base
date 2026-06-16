@@ -1,0 +1,12 @@
+{
+  "agent": "Hermes",
+  "data": {
+    "auto_resolve_enabled": false,
+    "conflicts_pending": 48
+  },
+  "job": "hermes_conflict_triage_audit",
+  "recommendation": "Build local evidence packets first; use Gemini Pro only one high-impact conflict at a time after approval.",
+  "status": "warning",
+  "summary": "Pending conflicts=48; auto paid judging remains disabled.",
+  "updated_at": "2026-06-12T08:19:57+07:00"
+}

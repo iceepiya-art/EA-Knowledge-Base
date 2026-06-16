@@ -1,0 +1,16 @@
+{
+  "ea_kills": {},
+  "global_kill": {
+    "enabled": false,
+    "reason": "",
+    "updated_at": "2026-06-08T13:27:01+07:00"
+  },
+  "limits": {
+    "daily_loss_limit": 100.0,
+    "max_lot": 0.01,
+    "max_positions_per_ea": 3,
+    "max_total_exposure": 0.1
+  },
+  "updated_at": "2026-06-08T13:27:01+07:00",
+  "version": 1
+}

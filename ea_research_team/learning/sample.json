@@ -1,0 +1,26 @@
+{
+  "concept": "Asia Session Filter",
+  "confidence": 100,
+  "evidence_count": 1,
+  "last_updated": "2026-05-24T15:52:13+07:00",
+  "related_rule_types": [
+    "entry",
+    "exit",
+    "filter",
+    "regime",
+    "stop_loss"
+  ],
+  "source_details": [
+    {
+      "ea_readiness": 100,
+      "merged_at": "2026-05-24T15:52:13+07:00",
+      "rule_completeness": 105,
+      "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+      "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+      "video_id": "AHQ81XCZ_uo"
+    }
+  ],
+  "sources": [
+    "AHQ81XCZ_uo"
+  ]
+}

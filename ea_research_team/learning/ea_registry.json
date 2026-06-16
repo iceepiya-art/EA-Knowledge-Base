@@ -1,0 +1,86 @@
+[
+  {
+    "id": "gold_breakout",
+    "name": "Gold Breakout 100Bar Survivor",
+    "icon": "XAU",
+    "kind": "MT5 EA",
+    "market": "XAUUSD",
+    "stage": "Forward / product candidate",
+    "path": "C:\\Users\\ADMIN\\Desktop\\11.Gold_Breakout_100Bar_Survivor\\Gold_Breakout_100Bar_Survivor_fix5",
+    "focus": "Breakout logic for gold, survivor/risk-control style.",
+    "next": "Check backtest, forward results, risk rules, and customer readiness.",
+    "accent": "#f7c948"
+  },
+  {
+    "id": "hedgegrid",
+    "name": "HedgeGrid Manual V23",
+    "icon": "GRID",
+    "kind": "MT5 EA",
+    "market": "Manual / grid hedge",
+    "stage": "Research / risk review",
+    "path": "C:\\Users\\ADMIN\\Desktop\\9.1 HedgeGrid_Manual_V16_Final_AUTO_DEMO\\HedgeGrid_V23_fix12",
+    "focus": "Manual hedge/grid workflow, needs strict drawdown and exposure controls.",
+    "next": "Document safe use cases, max exposure, and no-go market conditions.",
+    "accent": "#8b5cf6"
+  },
+  {
+    "id": "smc_universal",
+    "name": "SMC Universal EA",
+    "icon": "SMC",
+    "kind": "MT5 EA",
+    "market": "Multi-symbol SMC",
+    "stage": "Strategy development",
+    "path": "C:\\Users\\ADMIN\\Desktop\\12.SMC_System\\SMC_Universal_EA_v3_0_fix17",
+    "focus": "Smart Money Concepts logic, structure/FVG/OB candidate.",
+    "next": "Compare with backend SMC analyzer and Ninja/CME confluence.",
+    "accent": "#22d3ee"
+  },
+  {
+    "id": "mmf",
+    "name": "MakeMoneyFarmed MMF v316",
+    "icon": "MMF",
+    "kind": "MT5 EA",
+    "market": "Portfolio / farming",
+    "stage": "Ready-to-run review",
+    "path": "C:\\Users\\ADMIN\\Desktop\\13.MakeMoneyFarmed_v3\\MMF_v316_fix18_ReadyToRun",
+    "focus": "Ready-to-run EA package, needs product QA and user safety limits.",
+    "next": "Verify defaults, account protection, installer/package notes.",
+    "accent": "#7bffb2"
+  },
+  {
+    "id": "fibo_engulfing",
+    "name": "Fibo Engulfing EA",
+    "icon": "FIB",
+    "kind": "MT5 EA",
+    "market": "Pattern strategy",
+    "stage": "Research / backtest",
+    "path": "C:\\Users\\ADMIN\\Desktop\\Fibo_Engulfing_EA",
+    "focus": "Fibonacci + engulfing setup engine.",
+    "next": "Run structured backtest and classify best sessions/regimes.",
+    "accent": "#fb7185"
+  },
+  {
+    "id": "pullback_1billion",
+    "name": "Pullback 1Billion EA",
+    "icon": "PB",
+    "kind": "MT5 EA",
+    "market": "XAUUSD",
+    "stage": "Backtest + early forward test",
+    "path": "C:\\Users\\ADMIN\\Desktop",
+    "focus": "Pullback-style XAUUSD EA with backtest evidence and very early forward-test results.",
+    "next": "Move source/build into a dedicated product folder, extend forward test, and document safe settings.",
+    "accent": "#f59e0b"
+  },
+  {
+    "id": "cme_alphaedge",
+    "name": "CME / AlphaEdge SMC Pro",
+    "icon": "CME",
+    "kind": "TradingView Indicator",
+    "market": "GC / NQ / Prop futures",
+    "stage": "Customer package ready",
+    "path": "C:\\Users\\ADMIN\\Desktop\\CME",
+    "focus": "CME option levels + SMC + risk panel + customer package.",
+    "next": "Compile Pine in TradingView, then test customer delivery flow.",
+    "accent": "#4dd0ff"
+  }
+]

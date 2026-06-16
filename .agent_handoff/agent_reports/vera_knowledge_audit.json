@@ -1,0 +1,13 @@
+{
+  "agent": "Vera",
+  "data": {
+    "avg_confidence": 88,
+    "blueprint_ready": true,
+    "concepts_total": 2398
+  },
+  "job": "vera_knowledge_audit",
+  "recommendation": "Use knowledge gaps from local reports before adding paid learning sources.",
+  "status": "ok",
+  "summary": "Knowledge base has 2398 concepts and blueprint_ready=True.",
+  "updated_at": "2026-06-12T08:33:54+07:00"
+}

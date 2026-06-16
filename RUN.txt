@@ -1,0 +1,26 @@
+[SYSTEM HANDOFF CONTEXT]
+Project: EA Knowledge Brain (Automated Trading Rule Extraction System)
+Core Stack: Python (Flask), HTML/JS (Glassmorphism Dashboard), Obsidian (Knowledge Graph)
+Path: g:\My Drive\save log-blueprint-skill\EA-Knowledge-Base
+
+[RECENT UPGRADES COMPLETED]
+1. YouTube Bottleneck Resolved: Replaced the rate-limited `youtube-transcript-api` with a robust local pipeline using `yt-dlp` (with authenticated cookies) + `faster-whisper` for local audio-to-text transcription. This is handled inside `ea_research_team/learning/download_pending_videos.py`.
+2. UI/UX Dashboard Redesign: Upgraded `00_Dashboard/EA_Knowledge_Brain_Dashboard.html` to a Premium Glassmorphism aesthetic with animated glows and deep dark HSL backgrounds. All JavaScript API integrations remain intact.
+3. Universal Knowledge Intake System: Upgraded the frontend intake box and created a new backend route `POST /api/learning/universal-intake` in `server.py`. The system can now intelligently route:
+   - YouTube URLs -> Channel Scanner
+   - Web URLs -> Scrapes text via new `web_scraper.py`
+   - Local Images -> OCR via Tesseract (`import_local_evidence`)
+   - Local Videos -> Whisper Transcription
+   - Raw Text -> Temp file creation
+   All routes automatically feed into the `--auto-pipeline` to extract trading concepts into Obsidian.
+
+[CURRENT SYSTEM STATE]
+- The Flask API is fully functional (`python ea_research_team/learning/server.py`).
+- There are currently 41 videos queued in `channel_manifest.json` waiting to be processed by the new local whisper pipeline.
+
+[YOUR IMMEDIATE NEXT TASKS]
+1. Run `python ea_research_team/learning/download_pending_videos.py --auto-pipeline` to initiate the bulk video processing for the 41 pending videos and monitor for any errors.
+2. Test and refine the new "Universal Knowledge Intake" system (e.g., verifying if the web scraper effectively cleans text from trading blogs, or if OCR is reading chart setups correctly).
+3. Review the extracted concepts in Obsidian and continue improving the "Conflict Detector" and "EA Blueprint" AI prompts.
+
+Please acknowledge this context and let me know if you are ready to execute Task 1!

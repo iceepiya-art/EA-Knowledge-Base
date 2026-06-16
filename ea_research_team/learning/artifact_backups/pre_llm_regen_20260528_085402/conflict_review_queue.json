@@ -1,0 +1,5084 @@
+{
+  "generated_at": "2026-05-27T21:26:26+07:00",
+  "items": {
+    "01f083d9e06f": {
+      "affected_sources": [
+        "u2XKVpSZvFo",
+        "tDWy82eU1lA"
+      ],
+      "concept": "Supply Zone",
+      "conflict_id": "01f083d9e06f",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placed below the lowest point of the W3 pattern structure",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง u2XKVpSZvFo และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "0285bfa4a55a": {
+      "affected_sources": [
+        "AHQ81XCZ_uo",
+        "jne2J1hmeRA"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "0285bfa4a55a",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placement not explicitly detailed in transcript - implied below structural low or pattern invalidation point",
+      "rule_b": "Stop loss placement below demand zones in buy trades",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง AHQ81XCZ_uo และ jne2J1hmeRA",
+      "type": "contradiction"
+    },
+    "04fe160debb5": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Liquidity Sweep",
+      "conflict_id": "04fe160debb5",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Stale conflict — detected before LLM extraction (11:42). Knowledge index was updated at 15:51 via LLM extraction: Liquidity Sweep now has conf>=79 and all rule types present.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "medium",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "EA rule ยังไม่ครบ — ขาด entry และ stop_loss rule",
+      "type": "incomplete_rule"
+    },
+    "053385f67108": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Checklist Trading System",
+      "conflict_id": "053385f67108",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "0758ed5e34ef": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "HTF Confirmation",
+      "conflict_id": "0758ed5e34ef",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "07e350b62b49": {
+      "affected_sources": [
+        "tDWy82eU1lA",
+        "yG-dbuiUHDA"
+      ],
+      "concept": "SMC (Smart Money Concepts)",
+      "conflict_id": "07e350b62b49",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "merge_as_condition",
+      "resolution_note": "Entry contradictions are different trade setups (trend/reversal/liquidity) — all valid under different conditions. SL contradictions are direction-dependent (above for SELL, below for BUY). Auto-resolved as merge_as_condition.",
+      "rule_a": "Enter SELL when BOS (Break of Structure) DOWN occurs, indicating downtrend momentum",
+      "rule_b": "Entry at Buy Side Liquidity (BSL) or Sell Side Liquidity (SSL) levels",
+      "severity": "high",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ entry ที่อาจขัดแย้งกัน ระหว่าง tDWy82eU1lA และ yG-dbuiUHDA",
+      "type": "contradiction"
+    },
+    "087d48d1bf60": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Entry & Exit Strategy",
+      "conflict_id": "087d48d1bf60",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "088d670107f3": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Reaccumulation Phase",
+      "conflict_id": "088d670107f3",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "08cde10d4867": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Cycle Analysis",
+      "conflict_id": "08cde10d4867",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "09bd41b393f6": {
+      "affected_sources": [
+        "JowGLzR6eHg",
+        "tDWy82eU1lA"
+      ],
+      "concept": "BOS",
+      "conflict_id": "09bd41b393f6",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place SL below the low of the W/M pattern structure",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง JowGLzR6eHg และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "0b135ce720d8": {
+      "affected_sources": [
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA"
+      ],
+      "concept": "BOS",
+      "conflict_id": "0b135ce720d8",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place stop loss below the low created during liquidity sweep",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง Q-KcGues0KQ และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "0c75ae9d6598": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "SSL (Sell Side Liquidity)",
+      "conflict_id": "0c75ae9d6598",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "0d30207b9939": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Long-term Consistency",
+      "conflict_id": "0d30207b9939",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "0e85742b02a7": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Lower Timeframe Entry with Higher Timeframe Direction",
+      "conflict_id": "0e85742b02a7",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "0f99343f0773": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Back to Basics",
+      "conflict_id": "0f99343f0773",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "111dd150b23c": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Reaccumulation",
+      "conflict_id": "111dd150b23c",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "14229da415ab": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "FVG (Fair Value Gap/Imbalance)",
+      "conflict_id": "14229da415ab",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "15ad14888fd3": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "High Low Formation",
+      "conflict_id": "15ad14888fd3",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "15c33376eef6": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Lower Timeframe with Higher Timeframe Direction",
+      "conflict_id": "15c33376eef6",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "162e83922c85": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "BOS",
+      "conflict_id": "162e83922c85",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Stale conflict — detected before LLM extraction (11:42). Knowledge index was updated at 15:51 via LLM extraction: BOS now has conf>=79 and all rule types present.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "medium",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "Confidence ต่ำ (56/100) — ยังต้องการหลักฐานจาก source เพิ่มเติม",
+      "type": "low_confidence"
+    },
+    "16fe96646069": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "Expansion and Retracement",
+      "conflict_id": "16fe96646069",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "172d9b301d29": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Uptrend",
+      "conflict_id": "172d9b301d29",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "18113020b8cf": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Repeated Execution",
+      "conflict_id": "18113020b8cf",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "1b9cb8e9f5a1": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Statistics",
+      "conflict_id": "1b9cb8e9f5a1",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "1c1561d9b8c4": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Order Block (BOS - Break of Structure)",
+      "conflict_id": "1c1561d9b8c4",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "1d8489184089": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Maximum Drawdown Control",
+      "conflict_id": "1d8489184089",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "2003dfbcbe23": {
+      "affected_sources": [
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA"
+      ],
+      "concept": "Supply Zone",
+      "conflict_id": "2003dfbcbe23",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place stop loss below the low created during liquidity sweep",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง Q-KcGues0KQ และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "20312d0b7dd1": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "Down Trend",
+      "conflict_id": "20312d0b7dd1",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "206a405f349e": {
+      "affected_sources": [
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA"
+      ],
+      "concept": "Pattern W",
+      "conflict_id": "206a405f349e",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop Loss below Order Block structure",
+      "rule_b": "Stop loss placement below demand zones in buy trades",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง yG-dbuiUHDA และ jne2J1hmeRA",
+      "type": "contradiction"
+    },
+    "208d1af0bbed": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Pattern W3",
+      "conflict_id": "208d1af0bbed",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "20bcbffeddc5": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Higher High/Higher Low",
+      "conflict_id": "20bcbffeddc5",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "21a203978fba": {
+      "affected_sources": [
+        "jne2J1hmeRA",
+        "yG-dbuiUHDA"
+      ],
+      "concept": "BSL (Buy Side Liquidity)",
+      "conflict_id": "21a203978fba",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placement below demand zones in buy trades",
+      "rule_b": "Stop Loss below Order Block structure",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง jne2J1hmeRA และ yG-dbuiUHDA",
+      "type": "contradiction"
+    },
+    "21de734a1c69": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Pattern W",
+      "conflict_id": "21de734a1c69",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Stale conflict — detected before LLM extraction (11:42). Knowledge index was updated at 15:51 via LLM extraction: Pattern W now has conf>=79 and all rule types present.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "medium",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "EA rule ยังไม่ครบ — ขาด entry และ stop_loss rule",
+      "type": "incomplete_rule"
+    },
+    "22d4e348ee54": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Entry Point Identification",
+      "conflict_id": "22d4e348ee54",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "23f0b98a1154": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Risk/Reward Ratio",
+      "conflict_id": "23f0b98a1154",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "251d2b7b6e97": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Swing Analysis (1-2-3-4-5 Entry Model)",
+      "conflict_id": "251d2b7b6e97",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "2541f7fe9685": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "System Repetition",
+      "conflict_id": "2541f7fe9685",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "2584f8eeea7f": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Pending Order Placement",
+      "conflict_id": "2584f8eeea7f",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "28ee234c93b1": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Expansion Percentage (100%, 200%, 400%, 500%, 600%)",
+      "conflict_id": "28ee234c93b1",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "292c1fc39c5f": {
+      "affected_sources": [
+        "u2XKVpSZvFo",
+        "tDWy82eU1lA"
+      ],
+      "concept": "BOS",
+      "conflict_id": "292c1fc39c5f",
+      "detected_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": "Stop loss placed below the lowest point of the W3 pattern structure",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง u2XKVpSZvFo และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "2958a7b1432e": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Fund Management Rules",
+      "conflict_id": "2958a7b1432e",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "2b3278b00bab": {
+      "affected_sources": [
+        "jne2J1hmeRA"
+      ],
+      "concept": "Order Block (BSL/SSL - Buy Side Liquidity/Sell Side Liquidity)",
+      "conflict_id": "2b3278b00bab",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "2ccf6dbfb018": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Pattern W",
+      "conflict_id": "2ccf6dbfb018",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "2cf288a717e2": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Market Manipulation",
+      "conflict_id": "2cf288a717e2",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "2d2bd3de8774": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Lower Timeframe Risk",
+      "conflict_id": "2d2bd3de8774",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "2d7537b732d7": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Win Rate",
+      "conflict_id": "2d7537b732d7",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "2e711dd55939": {
+      "affected_sources": [
+        "jne2J1hmeRA",
+        "tDWy82eU1lA"
+      ],
+      "concept": "SMC (Smart Money Concepts)",
+      "conflict_id": "2e711dd55939",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placement below demand zones in buy trades",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง jne2J1hmeRA และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "2fb2f08a9318": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Lower Timeframe Entry",
+      "conflict_id": "2fb2f08a9318",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "3069ddf85cd8": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Risk-Reward Ratio",
+      "conflict_id": "3069ddf85cd8",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "30709700ff80": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Multi-timeframe Trading",
+      "conflict_id": "30709700ff80",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "32918825611c": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "High-Low Analysis",
+      "conflict_id": "32918825611c",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "33b24e62d2c5": {
+      "affected_sources": [
+        "JowGLzR6eHg",
+        "jne2J1hmeRA"
+      ],
+      "concept": "SMC (Smart Money Concepts)",
+      "conflict_id": "33b24e62d2c5",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place SL below the low of the W/M pattern structure",
+      "rule_b": "Stop loss placement below demand zones in buy trades",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง JowGLzR6eHg และ jne2J1hmeRA",
+      "type": "contradiction"
+    },
+    "3558d120e5da": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Swing High/Swing Low",
+      "conflict_id": "3558d120e5da",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "35f95329e571": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Hidden Demand",
+      "conflict_id": "35f95329e571",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "36e5576a7ee1": {
+      "affected_sources": [
+        "QWfwB72z158",
+        "tDWy82eU1lA"
+      ],
+      "concept": "Market Structure",
+      "conflict_id": "36e5576a7ee1",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "merge_as_condition",
+      "resolution_note": "Entry contradictions are different trade setups (trend/reversal/liquidity) — all valid under different conditions. SL contradictions are direction-dependent (above for SELL, below for BUY). Auto-resolved as merge_as_condition.",
+      "rule_a": "Entry confirmed when Pattern W or Pattern M forms with BOS break above next line",
+      "rule_b": "Enter SELL when BOS (Break of Structure) DOWN occurs, indicating downtrend momentum",
+      "severity": "high",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ entry ที่อาจขัดแย้งกัน ระหว่าง QWfwB72z158 และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "38b659c9c0aa": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Pattern W (Double Bottom)",
+      "conflict_id": "38b659c9c0aa",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "39bb2e6b0908": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Pattern W (W&M reversal pattern)",
+      "conflict_id": "39bb2e6b0908",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "39c02fc81b8e": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Swing and Liquidity",
+      "conflict_id": "39c02fc81b8e",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "3a53ea776037": {
+      "affected_sources": [
+        "tDWy82eU1lA",
+        "JowGLzR6eHg"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "3a53ea776037",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "merge_as_condition",
+      "resolution_note": "Entry contradictions are different trade setups (trend/reversal/liquidity) — all valid under different conditions. SL contradictions are direction-dependent (above for SELL, below for BUY). Auto-resolved as merge_as_condition.",
+      "rule_a": "Place stop loss above the recent high formed during retracement phase",
+      "rule_b": "Stop loss placement below the pattern structure if zone confidence is insufficient",
+      "severity": "high",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง tDWy82eU1lA และ JowGLzR6eHg",
+      "type": "contradiction"
+    },
+    "3baa43091ac0": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Stop Loss Management",
+      "conflict_id": "3baa43091ac0",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "3bd1241c6bae": {
+      "affected_sources": [
+        "jne2J1hmeRA"
+      ],
+      "concept": "Buy Side Liquidity (BSL)",
+      "conflict_id": "3bd1241c6bae",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "3c2c75727b1a": {
+      "affected_sources": [
+        "JowGLzR6eHg",
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "3c2c75727b1a",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "merge_as_condition",
+      "resolution_note": "Entry contradictions are different trade setups (trend/reversal/liquidity) — all valid under different conditions. SL contradictions are direction-dependent (above for SELL, below for BUY). Auto-resolved as merge_as_condition.",
+      "rule_a": "Stop loss placement below the pattern structure if zone confidence is insufficient",
+      "rule_b": "Place stop loss above the supply zone that defined the Pattern W",
+      "severity": "high",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง JowGLzR6eHg และ u2XKVpSZvFo",
+      "type": "contradiction"
+    },
+    "3d6d4b8118cf": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Trade Confirmation",
+      "conflict_id": "3d6d4b8118cf",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "3d8f466455f8": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Low Time Frame Trading",
+      "conflict_id": "3d8f466455f8",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "3d91d7bebd52": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Manipulation",
+      "conflict_id": "3d91d7bebd52",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "3e45db705672": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "SMC (Smart Money Concept)",
+      "conflict_id": "3e45db705672",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "3f17632d90e5": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Portfolio Protection",
+      "conflict_id": "3f17632d90e5",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "40015955f26f": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Low Win Percentage Trading",
+      "conflict_id": "40015955f26f",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "400857cb8706": {
+      "affected_sources": [
+        "yG-dbuiUHDA",
+        "tDWy82eU1lA"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "400857cb8706",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop Loss below Order Block structure",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง yG-dbuiUHDA และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "410017472677": {
+      "affected_sources": [
+        "QWfwB72z158",
+        "AHQ81XCZ_uo",
+        "JowGLzR6eHg",
+        "jne2J1hmeRA",
+        "a1imqoMSNno",
+        "Q-KcGues0KQ",
+        "yG-dbuiUHDA",
+        "u2XKVpSZvFo",
+        "7661a5b75eb5",
+        "77e0f78ec5d3",
+        "58db7c3d4de1"
+      ],
+      "concept": "Liquidity Sweep",
+      "conflict_id": "410017472677",
+      "detected_at": "2026-05-27T16:20:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "high",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "Confidence ต่ำ (36/100) — ยังต้องการหลักฐานจาก source เพิ่มเติม",
+      "type": "low_confidence"
+    },
+    "415e0797b570": {
+      "affected_sources": [
+        "yG-dbuiUHDA",
+        "tDWy82eU1lA"
+      ],
+      "concept": "SMC (Smart Money Concepts)",
+      "conflict_id": "415e0797b570",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop Loss below Order Block structure",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง yG-dbuiUHDA และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "41f40959528a": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Pattern M (W&M reversal pattern)",
+      "conflict_id": "41f40959528a",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "4286c593092b": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "BOS",
+      "conflict_id": "4286c593092b",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "42a0377a745f": {
+      "affected_sources": [
+        "JowGLzR6eHg",
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA",
+        "a1imqoMSNno",
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo",
+        "7661a5b75eb5"
+      ],
+      "concept": "FVG",
+      "conflict_id": "42a0377a745f",
+      "detected_at": "2026-05-26T14:31:16+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "high",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "Confidence ต่ำ (38/100) — ยังต้องการหลักฐานจาก source เพิ่มเติม",
+      "type": "low_confidence"
+    },
+    "43277db29218": {
+      "affected_sources": [
+        "JowGLzR6eHg",
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Liquidity Sweep",
+      "conflict_id": "43277db29218",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "merge_as_condition",
+      "resolution_note": "Entry contradictions are different trade setups (trend/reversal/liquidity) — all valid under different conditions. SL contradictions are direction-dependent (above for SELL, below for BUY). Auto-resolved as merge_as_condition.",
+      "rule_a": "Stop loss placement below the pattern structure if zone confidence is insufficient",
+      "rule_b": "Place stop loss above the supply zone that defined the Pattern W",
+      "severity": "high",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง JowGLzR6eHg และ u2XKVpSZvFo",
+      "type": "contradiction"
+    },
+    "434b50a1c61e": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Liquidity Sweep",
+      "conflict_id": "434b50a1c61e",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Stale conflict — detected before LLM extraction (11:42). Knowledge index was updated at 15:51 via LLM extraction: Liquidity Sweep now has conf>=79 and all rule types present.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "medium",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "Confidence ต่ำ (56/100) — ยังต้องการหลักฐานจาก source เพิ่มเติม",
+      "type": "low_confidence"
+    },
+    "448316aa7d91": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "Higher High",
+      "conflict_id": "448316aa7d91",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "469f331ed5d6": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "Demand/Control",
+      "conflict_id": "469f331ed5d6",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "46eb25151ff8": {
+      "affected_sources": [
+        "jne2J1hmeRA"
+      ],
+      "concept": "Risk Management (RR - Risk Reward)",
+      "conflict_id": "46eb25151ff8",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "484fc0fa244e": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Fear and Doubt",
+      "conflict_id": "484fc0fa244e",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "49136d9a0358": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Low Leverage Strategy",
+      "conflict_id": "49136d9a0358",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "491a10a73120": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Long-term Trading Psychology",
+      "conflict_id": "491a10a73120",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "4924776a8c08": {
+      "affected_sources": [
+        "QWfwB72z158",
+        "JowGLzR6eHg",
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA",
+        "a1imqoMSNno",
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo",
+        "7661a5b75eb5"
+      ],
+      "concept": "CHoCH",
+      "conflict_id": "4924776a8c08",
+      "detected_at": "2026-05-26T14:31:16+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "high",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "Confidence ต่ำ (38/100) — ยังต้องการหลักฐานจาก source เพิ่มเติม",
+      "type": "low_confidence"
+    },
+    "4940c9f1851d": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Market Regime",
+      "conflict_id": "4940c9f1851d",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "4a571489a56a": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Swing Structure",
+      "conflict_id": "4a571489a56a",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "4d19c176d5cd": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Character of Price Action",
+      "conflict_id": "4d19c176d5cd",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "4ff949b5e6a9": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "Price Action",
+      "conflict_id": "4ff949b5e6a9",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "50ca1b5d3010": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "BSL (Buy Side Liquidity)",
+      "conflict_id": "50ca1b5d3010",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "512109ae11a7": {
+      "affected_sources": [
+        "u2XKVpSZvFo",
+        "jne2J1hmeRA"
+      ],
+      "concept": "Pattern W",
+      "conflict_id": "512109ae11a7",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placed below the lowest point of the W3 pattern structure",
+      "rule_b": "Stop loss placement below demand zones in buy trades",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง u2XKVpSZvFo และ jne2J1hmeRA",
+      "type": "contradiction"
+    },
+    "51e71355c262": {
+      "affected_sources": [
+        "QWfwB72z158",
+        "AHQ81XCZ_uo",
+        "JowGLzR6eHg",
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA",
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo",
+        "7661a5b75eb5"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "51e71355c262",
+      "detected_at": "2026-05-26T14:31:16+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "high",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "Confidence ต่ำ (38/100) — ยังต้องการหลักฐานจาก source เพิ่มเติม",
+      "type": "low_confidence"
+    },
+    "524c74e14aa6": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Drawdown Management",
+      "conflict_id": "524c74e14aa6",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "52cb14fb4742": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Trading Discipline",
+      "conflict_id": "52cb14fb4742",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "5348b695d1a0": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Liquidity Sweep + BOS Signal",
+      "conflict_id": "5348b695d1a0",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "539a99862512": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Demand and Supply Zones",
+      "conflict_id": "539a99862512",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "5449fdb8d514": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "FVG",
+      "conflict_id": "5449fdb8d514",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Stale conflict — detected before LLM extraction (11:42). Knowledge index was updated at 15:51 via LLM extraction: FVG now has conf>=79 and all rule types present.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "medium",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "EA rule ยังไม่ครบ — ขาด entry และ stop_loss rule",
+      "type": "incomplete_rule"
+    },
+    "56cb9b1713c3": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "Low High",
+      "conflict_id": "56cb9b1713c3",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "5796942cf2a1": {
+      "affected_sources": [
+        "jne2J1hmeRA",
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Pattern M",
+      "conflict_id": "5796942cf2a1",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placement below demand zones in buy trades",
+      "rule_b": "Place stop loss below the low created during liquidity sweep",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง jne2J1hmeRA และ Q-KcGues0KQ",
+      "type": "contradiction"
+    },
+    "57c7329d7952": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Swing High/Low",
+      "conflict_id": "57c7329d7952",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "57ddefa22ba0": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Discipline",
+      "conflict_id": "57ddefa22ba0",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "5942c09ae8df": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Demand/Supply Zone",
+      "conflict_id": "5942c09ae8df",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "59bd550edad7": {
+      "affected_sources": [
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA"
+      ],
+      "concept": "Pattern M",
+      "conflict_id": "59bd550edad7",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop Loss below Order Block structure",
+      "rule_b": "Stop loss placement below demand zones in buy trades",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง yG-dbuiUHDA และ jne2J1hmeRA",
+      "type": "contradiction"
+    },
+    "59d64e91def3": {
+      "affected_sources": [
+        "jne2J1hmeRA",
+        "yG-dbuiUHDA"
+      ],
+      "concept": "SSL (Sell Side Liquidity)",
+      "conflict_id": "59d64e91def3",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placement below demand zones in buy trades",
+      "rule_b": "Stop Loss below Order Block structure",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง jne2J1hmeRA และ yG-dbuiUHDA",
+      "type": "contradiction"
+    },
+    "5c4f390b9ab2": {
+      "affected_sources": [
+        "a1imqoMSNno"
+      ],
+      "concept": "EUR/USD",
+      "conflict_id": "5c4f390b9ab2",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "5d303a00ddb2": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Order Block (BSL - Buy Side Liquidity, SSL - Sell Side Liquidity)",
+      "conflict_id": "5d303a00ddb2",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "5db7da4ac977": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Market Structure Confirmation",
+      "conflict_id": "5db7da4ac977",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "5e66728880d2": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Take Profit Levels",
+      "conflict_id": "5e66728880d2",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "5fe7f6b098f3": {
+      "affected_sources": [
+        "jne2J1hmeRA",
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Pattern W",
+      "conflict_id": "5fe7f6b098f3",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placement below demand zones in buy trades",
+      "rule_b": "Place stop loss below the low created during liquidity sweep",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง jne2J1hmeRA และ Q-KcGues0KQ",
+      "type": "contradiction"
+    },
+    "62ea6b82a3db": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Supply and Demand Zones",
+      "conflict_id": "62ea6b82a3db",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "6343d1cb05b5": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Order Block (BOS)",
+      "conflict_id": "6343d1cb05b5",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "64b0df3c0173": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Pattern M (Double Top)",
+      "conflict_id": "64b0df3c0173",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "64d77e6b7f3d": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Lower Time Frame (LTF)",
+      "conflict_id": "64d77e6b7f3d",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "653f4cd86fca": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Pending Order Entry",
+      "conflict_id": "653f4cd86fca",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "65c33267d245": {
+      "affected_sources": [
+        "QWfwB72z158",
+        "AHQ81XCZ_uo",
+        "JowGLzR6eHg",
+        "jne2J1hmeRA",
+        "a1imqoMSNno",
+        "Q-KcGues0KQ",
+        "yG-dbuiUHDA",
+        "u2XKVpSZvFo",
+        "7661a5b75eb5",
+        "77e0f78ec5d3"
+      ],
+      "concept": "Liquidity Sweep",
+      "conflict_id": "65c33267d245",
+      "detected_at": "2026-05-26T14:31:16+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "high",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "Confidence ต่ำ (24/100) — ยังต้องการหลักฐานจาก source เพิ่มเติม",
+      "type": "low_confidence"
+    },
+    "67d65f828a37": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "High Time Frame vs Low Time Frame",
+      "conflict_id": "67d65f828a37",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "68dba29bccf3": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Demand Supply",
+      "conflict_id": "68dba29bccf3",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "6a2d6475f378": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Entry Point Sequencing (1-2-3-4-5)",
+      "conflict_id": "6a2d6475f378",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "6b510b79e320": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Impulse Move",
+      "conflict_id": "6b510b79e320",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "6c0b4a85746c": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "High Time Frame",
+      "conflict_id": "6c0b4a85746c",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "6cb1dcb23887": {
+      "affected_sources": [
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo"
+      ],
+      "concept": "BOS",
+      "conflict_id": "6cb1dcb23887",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place stop loss above the retracement high (above the low-high structure)",
+      "rule_b": "Stop loss placed below the lowest point of the W3 pattern structure",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง tDWy82eU1lA และ u2XKVpSZvFo",
+      "type": "contradiction"
+    },
+    "6e20be097be0": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Risk-Reward Ratio (RR)",
+      "conflict_id": "6e20be097be0",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "6e2af22272ad": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Fear and Hesitation",
+      "conflict_id": "6e2af22272ad",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "6e80733fab24": {
+      "affected_sources": [
+        "77e0f78ec5d3"
+      ],
+      "concept": "Session Filter",
+      "conflict_id": "6e80733fab24",
+      "detected_at": "2026-05-26T14:31:16+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "high",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "Confidence ต่ำ (9/100) — ยังต้องการหลักฐานจาก source เพิ่มเติม",
+      "type": "low_confidence"
+    },
+    "6fc8793cbf47": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "High Time Frame Zones",
+      "conflict_id": "6fc8793cbf47",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "74149a98857e": {
+      "affected_sources": [
+        "QWfwB72z158",
+        "AHQ81XCZ_uo",
+        "JowGLzR6eHg",
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA",
+        "a1imqoMSNno",
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo",
+        "7661a5b75eb5"
+      ],
+      "concept": "BOS",
+      "conflict_id": "74149a98857e",
+      "detected_at": "2026-05-26T14:31:16+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "high",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "Confidence ต่ำ (38/100) — ยังต้องการหลักฐานจาก source เพิ่มเติม",
+      "type": "low_confidence"
+    },
+    "7446fcfc587f": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Price Structure (Expansion & Retracement)",
+      "conflict_id": "7446fcfc587f",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "750eb4f54559": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Impulse Movement",
+      "conflict_id": "750eb4f54559",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "75978586c9de": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "FVG (Fair Value Gap)",
+      "conflict_id": "75978586c9de",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "7801ced545e7": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Back to Basic Trading System",
+      "conflict_id": "7801ced545e7",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "78b7d3693426": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Structure (Swing High/Swing Low)",
+      "conflict_id": "78b7d3693426",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "7caeed2803bd": {
+      "affected_sources": [
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "7caeed2803bd",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place stop loss above the retracement high (above the low-high structure)",
+      "rule_b": "Stop loss placed below the lowest point of the W3 pattern structure",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง tDWy82eU1lA และ u2XKVpSZvFo",
+      "type": "contradiction"
+    },
+    "7cb6b25f09ca": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Higher Time Frame (HTF)",
+      "conflict_id": "7cb6b25f09ca",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "7ccc2d1815d1": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "7ccc2d1815d1",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "7d54acdd0e1a": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Stop Loss Placement",
+      "conflict_id": "7d54acdd0e1a",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "7fbb2a0bec1e": {
+      "affected_sources": [
+        "tDWy82eU1lA",
+        "Q-KcGues0KQ"
+      ],
+      "concept": "BOS",
+      "conflict_id": "7fbb2a0bec1e",
+      "detected_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": "Place stop loss above the retracement high (above the low-high structure)",
+      "rule_b": "Place stop loss below the low created during liquidity sweep",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง tDWy82eU1lA และ Q-KcGues0KQ",
+      "type": "contradiction"
+    },
+    "8050ded322e2": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Supply & Demand Zones",
+      "conflict_id": "8050ded322e2",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "8081d78cae66": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "FVG",
+      "conflict_id": "8081d78cae66",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "8273b9b0709e": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Long-term Probability",
+      "conflict_id": "8273b9b0709e",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "84850f1699d0": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Low Win Rate Strategy",
+      "conflict_id": "84850f1699d0",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "8505bd96b3a1": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "High Risk-Reward Ratio (High RR)",
+      "conflict_id": "8505bd96b3a1",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "86b8d6546be5": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Impulse and Retracement",
+      "conflict_id": "86b8d6546be5",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "882748517bf0": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "Demand and Control (Supply/Demand zones)",
+      "conflict_id": "882748517bf0",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "885ff23960da": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Order Block (OB)",
+      "conflict_id": "885ff23960da",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "89e93ebb6798": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Shock Retest",
+      "conflict_id": "89e93ebb6798",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "8bbfd02f010e": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Lower Timeframe",
+      "conflict_id": "8bbfd02f010e",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "8bd03d9f3ca9": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Multi-timeframe Trading (5min and 15min)",
+      "conflict_id": "8bd03d9f3ca9",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "902c5b45bdd1": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Stop Loss (SL)",
+      "conflict_id": "902c5b45bdd1",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "90da7fefcdc7": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Fund Challenge Rules Compliance",
+      "conflict_id": "90da7fefcdc7",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "928a1242e8c3": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Edge Development",
+      "conflict_id": "928a1242e8c3",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "92cb6790212d": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Higher Timeframe Analysis",
+      "conflict_id": "92cb6790212d",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "92d468176d12": {
+      "affected_sources": [
+        "QWfwB72z158",
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Pattern W",
+      "conflict_id": "92d468176d12",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "merge_as_condition",
+      "resolution_note": "Entry contradictions are different trade setups (trend/reversal/liquidity) — all valid under different conditions. SL contradictions are direction-dependent (above for SELL, below for BUY). Auto-resolved as merge_as_condition.",
+      "rule_a": "Entry confirmed when Pattern W or Pattern M forms with BOS break above next line",
+      "rule_b": "Entry at Buy Side Liquidity (BSL) or Sell Side Liquidity (SSL) levels",
+      "severity": "high",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ entry ที่อาจขัดแย้งกัน ระหว่าง QWfwB72z158 และ yG-dbuiUHDA",
+      "type": "contradiction"
+    },
+    "93626ed63480": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Fair Value Gap (FVG)",
+      "conflict_id": "93626ed63480",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "94a50dea124f": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Entry Setup",
+      "conflict_id": "94a50dea124f",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "94e03c2addf9": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Checklist Trading",
+      "conflict_id": "94e03c2addf9",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "95b1bc4a98c2": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Swing Liquidity",
+      "conflict_id": "95b1bc4a98c2",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "95ecf2a72a00": {
+      "affected_sources": [
+        "tDWy82eU1lA",
+        "JowGLzR6eHg"
+      ],
+      "concept": "BOS",
+      "conflict_id": "95ecf2a72a00",
+      "detected_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": "Place stop loss above the retracement high (above the low-high structure)",
+      "rule_b": "Place SL below the low of the W/M pattern structure",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง tDWy82eU1lA และ JowGLzR6eHg",
+      "type": "contradiction"
+    },
+    "960e59e7195c": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Edge Building",
+      "conflict_id": "960e59e7195c",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "965d06234f25": {
+      "affected_sources": [
+        "jne2J1hmeRA",
+        "tDWy82eU1lA"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "965d06234f25",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placement below demand zones in buy trades",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง jne2J1hmeRA และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "971b6c11e483": {
+      "affected_sources": [
+        "JowGLzR6eHg",
+        "tDWy82eU1lA"
+      ],
+      "concept": "BOS (Break of Structure)",
+      "conflict_id": "971b6c11e483",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "merge_as_condition",
+      "resolution_note": "Entry contradictions are different trade setups (trend/reversal/liquidity) — all valid under different conditions. SL contradictions are direction-dependent (above for SELL, below for BUY). Auto-resolved as merge_as_condition.",
+      "rule_a": "Stop loss placement below the pattern structure if zone confidence is insufficient",
+      "rule_b": "Place stop loss above the recent high formed during retracement phase",
+      "severity": "high",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง JowGLzR6eHg และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "98f55001e24a": {
+      "affected_sources": [
+        "jne2J1hmeRA"
+      ],
+      "concept": "Demand Zone",
+      "conflict_id": "98f55001e24a",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "9924ceb8dea1": {
+      "affected_sources": [
+        "77e0f78ec5d3"
+      ],
+      "concept": "Session Filter",
+      "conflict_id": "9924ceb8dea1",
+      "detected_at": "2026-05-26T14:31:16+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "99452205066d": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Impulse",
+      "conflict_id": "99452205066d",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "998fdb0e0572": {
+      "affected_sources": [
+        "jne2J1hmeRA"
+      ],
+      "concept": "Risk to Reward (RR)",
+      "conflict_id": "998fdb0e0572",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "9a545bcca8e2": {
+      "affected_sources": [
+        "tDWy82eU1lA",
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "9a545bcca8e2",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "merge_as_condition",
+      "resolution_note": "Entry contradictions are different trade setups (trend/reversal/liquidity) — all valid under different conditions. SL contradictions are direction-dependent (above for SELL, below for BUY). Auto-resolved as merge_as_condition.",
+      "rule_a": "Enter SELL when BOS (Break of Structure) DOWN occurs, indicating downtrend momentum",
+      "rule_b": "Entry at Buy Side Liquidity (BSL) or Sell Side Liquidity (SSL) levels",
+      "severity": "high",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ entry ที่อาจขัดแย้งกัน ระหว่าง tDWy82eU1lA และ yG-dbuiUHDA",
+      "type": "contradiction"
+    },
+    "9b0a3e34acab": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Discipline in Trading",
+      "conflict_id": "9b0a3e34acab",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "9bd78cba8486": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Price Structure (Expansion and Retracement)",
+      "conflict_id": "9bd78cba8486",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "9c9f297a08bd": {
+      "affected_sources": [
+        "77e0f78ec5d3"
+      ],
+      "concept": "EURUSD",
+      "conflict_id": "9c9f297a08bd",
+      "detected_at": "2026-05-27T16:20:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "9cbd35eb8421": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Trade Setup",
+      "conflict_id": "9cbd35eb8421",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "9db50194f6f9": {
+      "affected_sources": [
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA"
+      ],
+      "concept": "Demand Zone",
+      "conflict_id": "9db50194f6f9",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place stop loss below the low created during liquidity sweep",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง Q-KcGues0KQ และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "9efb4bd44419": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "W&M Pattern (Pattern W and Pattern M)",
+      "conflict_id": "9efb4bd44419",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "9f6e75caf2b3": {
+      "affected_sources": [
+        "AHQ81XCZ_uo",
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Supply Zone",
+      "conflict_id": "9f6e75caf2b3",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "merge_as_condition",
+      "resolution_note": "Entry contradictions are different trade setups (trend/reversal/liquidity) — all valid under different conditions. SL contradictions are direction-dependent (above for SELL, below for BUY). Auto-resolved as merge_as_condition.",
+      "rule_a": "Stop loss placement should be below the structure to protect against reversal",
+      "rule_b": "Place stop loss above the supply zone that defined the Pattern W",
+      "severity": "high",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง AHQ81XCZ_uo และ u2XKVpSZvFo",
+      "type": "contradiction"
+    },
+    "a0569d2df78f": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Liquidity Testing",
+      "conflict_id": "a0569d2df78f",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "a1ff03096486": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Liquidity Sweep (LQ Sweet)",
+      "conflict_id": "a1ff03096486",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "a355d7d54b99": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Trade Statistics",
+      "conflict_id": "a355d7d54b99",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "a427d357f924": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Momentum",
+      "conflict_id": "a427d357f924",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "a53a26122764": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Statistics and Win Rate",
+      "conflict_id": "a53a26122764",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "a586968dd3b4": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Downtrend",
+      "conflict_id": "a586968dd3b4",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "a5975cb33437": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Final Swing",
+      "conflict_id": "a5975cb33437",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "a6c454324d02": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "Trend Identification",
+      "conflict_id": "a6c454324d02",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "a725daa4f490": {
+      "affected_sources": [
+        "jne2J1hmeRA"
+      ],
+      "concept": "Risk Reward (RR)",
+      "conflict_id": "a725daa4f490",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "a7a7f35b3e97": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Low Time Frame Confirmation",
+      "conflict_id": "a7a7f35b3e97",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "a7df3d063dba": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "System Consistency",
+      "conflict_id": "a7df3d063dba",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "aa5954803fe7": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Multi-timeframe Analysis",
+      "conflict_id": "aa5954803fe7",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "ab7f94028792": {
+      "affected_sources": [
+        "a1imqoMSNno"
+      ],
+      "concept": "Market Structure Analysis",
+      "conflict_id": "ab7f94028792",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "ac37b4914937": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "High Time Frame Direction",
+      "conflict_id": "ac37b4914937",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "accb92dd15dd": {
+      "affected_sources": [
+        "a1imqoMSNno"
+      ],
+      "concept": "Hybrid System",
+      "conflict_id": "accb92dd15dd",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "ace0ec1e8293": {
+      "affected_sources": [
+        "a1imqoMSNno"
+      ],
+      "concept": "ICT Section Q Zone",
+      "conflict_id": "ace0ec1e8293",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "add7561cb3fb": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Long-term Profitability",
+      "conflict_id": "add7561cb3fb",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b00a13ab5d1e": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "CHoCH (Change of Character)",
+      "conflict_id": "b00a13ab5d1e",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b0152e480fec": {
+      "affected_sources": [
+        "u2XKVpSZvFo",
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Pattern W",
+      "conflict_id": "b0152e480fec",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: rules apply to different trade directions (buy/sell), not a true contradiction.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": "Stop loss placement above the supply zone that is being tested",
+      "rule_b": "Place stop loss below the Order Block that failed to hold price",
+      "severity": "high",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง u2XKVpSZvFo และ Q-KcGues0KQ",
+      "type": "contradiction"
+    },
+    "b0f9ebabaf9a": {
+      "affected_sources": [
+        "jne2J1hmeRA"
+      ],
+      "concept": "Pattern W (Double Bottom)",
+      "conflict_id": "b0f9ebabaf9a",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b1125244005d": {
+      "affected_sources": [
+        "jne2J1hmeRA"
+      ],
+      "concept": "Structure (Swing Structure)",
+      "conflict_id": "b1125244005d",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b1422189f94b": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Final Swing Supply",
+      "conflict_id": "b1422189f94b",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b15c6abee83f": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Support/Supply Testing",
+      "conflict_id": "b15c6abee83f",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b1999208e691": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Time Frame Analysis",
+      "conflict_id": "b1999208e691",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b2b14296213e": {
+      "affected_sources": [
+        "a1imqoMSNno"
+      ],
+      "concept": "EUR/USD Trading",
+      "conflict_id": "b2b14296213e",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b42b134e1687": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "W&M Pattern (Pattern W and Pattern M)",
+      "conflict_id": "b42b134e1687",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b44086fb99d4": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "SMC (Smart Money Concept)",
+      "conflict_id": "b44086fb99d4",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b5b7fa9948c0": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Liquidity Hunting",
+      "conflict_id": "b5b7fa9948c0",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b5ed2091f912": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Statistical Analysis",
+      "conflict_id": "b5ed2091f912",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b61c246218bc": {
+      "affected_sources": [
+        "tDWy82eU1lA",
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Market Structure",
+      "conflict_id": "b61c246218bc",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place stop loss above the retracement high (above the low-high structure)",
+      "rule_b": "Stop loss placement not explicitly detailed in transcript - implied below structural low or pattern invalidation point",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง tDWy82eU1lA และ AHQ81XCZ_uo",
+      "type": "contradiction"
+    },
+    "b627e7a01538": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Structure within Structure",
+      "conflict_id": "b627e7a01538",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b65fb4eca79c": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Emotional Trading",
+      "conflict_id": "b65fb4eca79c",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b6ff8fa0fa81": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Mindset/Psychology",
+      "conflict_id": "b6ff8fa0fa81",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "b976e23156da": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Higher Timeframe",
+      "conflict_id": "b976e23156da",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "bc0ea3ea8c1b": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Confirmation Signals",
+      "conflict_id": "bc0ea3ea8c1b",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "bc215a6d1af7": {
+      "affected_sources": [
+        "AHQ81XCZ_uo",
+        "Q-KcGues0KQ"
+      ],
+      "concept": "High-Low Structure",
+      "conflict_id": "bc215a6d1af7",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: rules apply to different trade directions (buy/sell), not a true contradiction.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": "SL positioned below the retracement low that forms the entry signal",
+      "rule_b": "Stop loss below the support level created by demand zone",
+      "severity": "high",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง AHQ81XCZ_uo และ Q-KcGues0KQ",
+      "type": "contradiction"
+    },
+    "bd1848e728c9": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Take Profit (Point 5)",
+      "conflict_id": "bd1848e728c9",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "be92e1411837": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Swing Analysis (1-2-3-4-5 swings)",
+      "conflict_id": "be92e1411837",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "bf696895ae43": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Expansion",
+      "conflict_id": "bf696895ae43",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "bf88ca2c30b1": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Psychology in Trading",
+      "conflict_id": "bf88ca2c30b1",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "c05f336eb7de": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Statistical Edge",
+      "conflict_id": "c05f336eb7de",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "c0923c161806": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Structure Analysis",
+      "conflict_id": "c0923c161806",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "c11607074cfc": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Mindset and Psychology",
+      "conflict_id": "c11607074cfc",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "c136bba99192": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Risk Reward Ratio (RR)",
+      "conflict_id": "c136bba99192",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "c3969ebe5cc6": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Reversal Pattern",
+      "conflict_id": "c3969ebe5cc6",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "c45245f26775": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Internal Structure",
+      "conflict_id": "c45245f26775",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "c544b0851c0b": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Order Block (BOS - Break of Structure)",
+      "conflict_id": "c544b0851c0b",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "c5ba19ae9d6b": {
+      "affected_sources": [
+        "jne2J1hmeRA"
+      ],
+      "concept": "Sell Side Liquidity (SSL)",
+      "conflict_id": "c5ba19ae9d6b",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "c66074b6d4b2": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Asia Session Filter",
+      "conflict_id": "c66074b6d4b2",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "c8002f79095d": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Change of Character (CHoCH)",
+      "conflict_id": "c8002f79095d",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "c848ab7d8d98": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Mindset",
+      "conflict_id": "c848ab7d8d98",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "ca7a336eeb1a": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Momentum Analysis",
+      "conflict_id": "ca7a336eeb1a",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "caa45fbf4f60": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Portfolio Survival",
+      "conflict_id": "caa45fbf4f60",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "cae2bce59f24": {
+      "affected_sources": [
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Retracement",
+      "conflict_id": "cae2bce59f24",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place stop loss above the retracement high (above the low-high structure)",
+      "rule_b": "Stop loss placed below the lowest point of the W3 pattern structure",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง tDWy82eU1lA และ u2XKVpSZvFo",
+      "type": "contradiction"
+    },
+    "cb0f90efdf05": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Trade Repetition",
+      "conflict_id": "cb0f90efdf05",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "cc1aa83bbab0": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "Fibonacci Retracement",
+      "conflict_id": "cc1aa83bbab0",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "cd3c50714b12": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Key Level",
+      "conflict_id": "cd3c50714b12",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "cdf00f8d55f4": {
+      "affected_sources": [
+        "u2XKVpSZvFo",
+        "jne2J1hmeRA"
+      ],
+      "concept": "Price Structure",
+      "conflict_id": "cdf00f8d55f4",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placed below the lowest point of the W3 pattern structure",
+      "rule_b": "Stop loss placement below demand zones in buy trades",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง u2XKVpSZvFo และ jne2J1hmeRA",
+      "type": "contradiction"
+    },
+    "ceb743c64ef5": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "DVD (Displacement, Velocity, Direction)",
+      "conflict_id": "ceb743c64ef5",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "cefa89a80a16": {
+      "affected_sources": [
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA"
+      ],
+      "concept": "Swing Structure",
+      "conflict_id": "cefa89a80a16",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop Loss below Order Block structure",
+      "rule_b": "Stop loss placement below demand zones in buy trades",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง yG-dbuiUHDA และ jne2J1hmeRA",
+      "type": "contradiction"
+    },
+    "cfc39df8fc62": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "Consecutive Losses",
+      "conflict_id": "cfc39df8fc62",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "d1f49b9ec66a": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Long-term Survival",
+      "conflict_id": "d1f49b9ec66a",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "d22dc867998b": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "W&M Pattern (Reversal Model)",
+      "conflict_id": "d22dc867998b",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "d24f34e08bfb": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Liquidity Pool",
+      "conflict_id": "d24f34e08bfb",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "d2723b073fed": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "BOS",
+      "conflict_id": "d2723b073fed",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Stale conflict — detected before LLM extraction (11:42). Knowledge index was updated at 15:51 via LLM extraction: BOS now has conf>=79 and all rule types present.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "medium",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "EA rule ยังไม่ครบ — ขาด entry และ stop_loss rule",
+      "type": "incomplete_rule"
+    },
+    "d30a5e2ad46d": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Retracement",
+      "conflict_id": "d30a5e2ad46d",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "d47ab25d3ba3": {
+      "affected_sources": [
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Supply and Demand",
+      "conflict_id": "d47ab25d3ba3",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "d50b5a6e9b97": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "Trend Direction",
+      "conflict_id": "d50b5a6e9b97",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "d696f7cf2a7d": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Maximum Drawdown Management",
+      "conflict_id": "d696f7cf2a7d",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "d6d94049c666": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Liquidity Switch",
+      "conflict_id": "d6d94049c666",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "d957936da0f8": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Multiple Trade Execution",
+      "conflict_id": "d957936da0f8",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "db1e2bb62b3c": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "POI (Point of Interest)",
+      "conflict_id": "db1e2bb62b3c",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "db8bc54c25c0": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Hidden Supply",
+      "conflict_id": "db8bc54c25c0",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "dc90dea0241c": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "W&M Pattern (SMC Reversal Pattern)",
+      "conflict_id": "dc90dea0241c",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "dd93888fe092": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "High Time Frame Analysis",
+      "conflict_id": "dd93888fe092",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "de9a73c01668": {
+      "affected_sources": [
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA"
+      ],
+      "concept": "Market Structure",
+      "conflict_id": "de9a73c01668",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place stop loss below the low created during liquidity sweep",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง Q-KcGues0KQ และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "dea4c5913e25": {
+      "affected_sources": [
+        "JowGLzR6eHg",
+        "jne2J1hmeRA"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "dea4c5913e25",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place SL below the low of the W/M pattern structure",
+      "rule_b": "Stop loss placement below demand zones in buy trades",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง JowGLzR6eHg และ jne2J1hmeRA",
+      "type": "contradiction"
+    },
+    "e0d26cee541f": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Demand & Supply",
+      "conflict_id": "e0d26cee541f",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "e0f5b41adfc0": {
+      "affected_sources": [
+        "77e0f78ec5d3"
+      ],
+      "concept": "London Open",
+      "conflict_id": "e0f5b41adfc0",
+      "detected_at": "2026-05-27T16:20:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "e1632cfbd5dc": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Structure",
+      "conflict_id": "e1632cfbd5dc",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "e1854ecbd6b9": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Supply Level",
+      "conflict_id": "e1854ecbd6b9",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "e1be3382580d": {
+      "affected_sources": [
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "e1be3382580d",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop Loss below Order Block structure",
+      "rule_b": "Stop loss placement below demand zones in buy trades",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง yG-dbuiUHDA และ jne2J1hmeRA",
+      "type": "contradiction"
+    },
+    "e227149bb7aa": {
+      "affected_sources": [
+        "tDWy82eU1lA"
+      ],
+      "concept": "Up Trend",
+      "conflict_id": "e227149bb7aa",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "e367e7863dbf": {
+      "affected_sources": [
+        "JowGLzR6eHg",
+        "tDWy82eU1lA"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "e367e7863dbf",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place SL below the low of the W/M pattern structure",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง JowGLzR6eHg และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "e39fc073677c": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Pattern W",
+      "conflict_id": "e39fc073677c",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Stale conflict — detected before LLM extraction (11:42). Knowledge index was updated at 15:51 via LLM extraction: Pattern W now has conf>=79 and all rule types present.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "medium",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "Confidence ต่ำ (56/100) — ยังต้องการหลักฐานจาก source เพิ่มเติม",
+      "type": "low_confidence"
+    },
+    "e3b0a2a07828": {
+      "affected_sources": [
+        "jne2J1hmeRA"
+      ],
+      "concept": "Pattern M (Double Top)",
+      "conflict_id": "e3b0a2a07828",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "e4bb0ae926da": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Statistical Consistency",
+      "conflict_id": "e4bb0ae926da",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "e5287e65645b": {
+      "affected_sources": [
+        "77e0f78ec5d3"
+      ],
+      "concept": "Session Filter",
+      "conflict_id": "e5287e65645b",
+      "detected_at": "2026-05-26T14:31:16+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "medium",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "EA rule ยังไม่ครบ — ขาด entry และ stop_loss rule",
+      "type": "incomplete_rule"
+    },
+    "e61bde961874": {
+      "affected_sources": [
+        "QWfwB72z158"
+      ],
+      "concept": "Demand/Supply Zones",
+      "conflict_id": "e61bde961874",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "e706c1da8a6c": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Liquidity Sweep",
+      "conflict_id": "e706c1da8a6c",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "e73ad0dd53bc": {
+      "affected_sources": [
+        "AHQ81XCZ_uo",
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Liquidity Sweep",
+      "conflict_id": "e73ad0dd53bc",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "merge_as_condition",
+      "resolution_note": "Entry contradictions are different trade setups (trend/reversal/liquidity) — all valid under different conditions. SL contradictions are direction-dependent (above for SELL, below for BUY). Auto-resolved as merge_as_condition.",
+      "rule_a": "Stop loss placement should be below the structure to protect against reversal",
+      "rule_b": "Place stop loss above the supply zone that defined the Pattern W",
+      "severity": "high",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง AHQ81XCZ_uo และ u2XKVpSZvFo",
+      "type": "contradiction"
+    },
+    "e8cfe2967132": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Price Action Confirmation",
+      "conflict_id": "e8cfe2967132",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "e8f59424c154": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Entry Point (Point 4)",
+      "conflict_id": "e8f59424c154",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "e99cd62a8c36": {
+      "affected_sources": [
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA"
+      ],
+      "concept": "Price Structure",
+      "conflict_id": "e99cd62a8c36",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop Loss below Order Block structure",
+      "rule_b": "Stop loss placement below demand zones in buy trades",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง yG-dbuiUHDA และ jne2J1hmeRA",
+      "type": "contradiction"
+    },
+    "eaa9f3b8ac0a": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "High-Low Swing Analysis",
+      "conflict_id": "eaa9f3b8ac0a",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "eb4e73a8a8a2": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "SMC Model",
+      "conflict_id": "eb4e73a8a8a2",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "ed4f48d25e6c": {
+      "affected_sources": [
+        "yG-dbuiUHDA",
+        "QWfwB72z158"
+      ],
+      "concept": "Pattern M",
+      "conflict_id": "ed4f48d25e6c",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "merge_as_condition",
+      "resolution_note": "Entry contradictions are different trade setups (trend/reversal/liquidity) — all valid under different conditions. SL contradictions are direction-dependent (above for SELL, below for BUY). Auto-resolved as merge_as_condition.",
+      "rule_a": "Entry at Buy Side Liquidity (BSL) or Sell Side Liquidity (SSL) levels",
+      "rule_b": "Entry confirmed when Pattern W or Pattern M forms with BOS break above next line",
+      "severity": "high",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ entry ที่อาจขัดแย้งกัน ระหว่าง yG-dbuiUHDA และ QWfwB72z158",
+      "type": "contradiction"
+    },
+    "ef2485ee797d": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "FVG",
+      "conflict_id": "ef2485ee797d",
+      "detected_at": "2026-05-24T11:42:24+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Stale conflict — detected before LLM extraction (11:42). Knowledge index was updated at 15:51 via LLM extraction: FVG now has conf>=79 and all rule types present.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "medium",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "Confidence ต่ำ (56/100) — ยังต้องการหลักฐานจาก source เพิ่มเติม",
+      "type": "low_confidence"
+    },
+    "f058b82535ef": {
+      "affected_sources": [
+        "AHQ81XCZ_uo",
+        "tDWy82eU1lA"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "f058b82535ef",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placement not explicitly detailed in transcript - implied below structural low or pattern invalidation point",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง AHQ81XCZ_uo และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "f06fbfd90df6": {
+      "affected_sources": [
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Low Low (LL)",
+      "conflict_id": "f06fbfd90df6",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "f30ed64f9f4e": {
+      "affected_sources": [
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Pattern W & M (Reversal Patterns)",
+      "conflict_id": "f30ed64f9f4e",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "f3b50c617585": {
+      "affected_sources": [
+        "jne2J1hmeRA",
+        "AHQ81XCZ_uo"
+      ],
+      "concept": "Price Structure",
+      "conflict_id": "f3b50c617585",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placement below demand zones in buy trades",
+      "rule_b": "Stop loss placement not explicitly detailed in transcript - implied below structural low or pattern invalidation point",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง jne2J1hmeRA และ AHQ81XCZ_uo",
+      "type": "contradiction"
+    },
+    "f41f079404ca": {
+      "affected_sources": [
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "f41f079404ca",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place stop loss below the low created during liquidity sweep",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง Q-KcGues0KQ และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "f48690e1622e": {
+      "affected_sources": [
+        "u2XKVpSZvFo",
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Liquidity Sweep",
+      "conflict_id": "f48690e1622e",
+      "detected_at": "2026-05-24T16:15:25+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: rules apply to different trade directions (buy/sell), not a true contradiction.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": "Stop loss placement above the supply zone that is being tested",
+      "rule_b": "Place stop loss below the Order Block that failed to hold price",
+      "severity": "high",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง u2XKVpSZvFo และ Q-KcGues0KQ",
+      "type": "contradiction"
+    },
+    "f4c11b8f844b": {
+      "affected_sources": [
+        "QWfwB72z158",
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Break of Structure (BOS)",
+      "conflict_id": "f4c11b8f844b",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "merge_as_condition",
+      "resolution_note": "Entry contradictions are different trade setups (trend/reversal/liquidity) — all valid under different conditions. SL contradictions are direction-dependent (above for SELL, below for BUY). Auto-resolved as merge_as_condition.",
+      "rule_a": "Entry confirmed when Pattern W or Pattern M forms with BOS break above next line",
+      "rule_b": "Entry at Buy Side Liquidity (BSL) or Sell Side Liquidity (SSL) levels",
+      "severity": "high",
+      "status": "resolved",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ entry ที่อาจขัดแย้งกัน ระหว่าง QWfwB72z158 และ yG-dbuiUHDA",
+      "type": "contradiction"
+    },
+    "f4e57f4b17fc": {
+      "affected_sources": [
+        "yG-dbuiUHDA"
+      ],
+      "concept": "Checklist-based Trading",
+      "conflict_id": "f4e57f4b17fc",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "f589c29f3a6c": {
+      "affected_sources": [
+        "JowGLzR6eHg",
+        "tDWy82eU1lA"
+      ],
+      "concept": "SMC (Smart Money Concepts)",
+      "conflict_id": "f589c29f3a6c",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Place SL below the low of the W/M pattern structure",
+      "rule_b": "Place stop loss above the retracement high (above the low-high structure)",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง JowGLzR6eHg และ tDWy82eU1lA",
+      "type": "contradiction"
+    },
+    "f79a5701a6f7": {
+      "affected_sources": [
+        "jne2J1hmeRA"
+      ],
+      "concept": "Risk/Reward (RR)",
+      "conflict_id": "f79a5701a6f7",
+      "detected_at": "2026-05-24T16:23:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved: low_evidence (1 source) — needs more data, not a real conflict.",
+      "resolved_at": "2026-05-24T16:32:29+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "f7d348af06d0": {
+      "affected_sources": [
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA"
+      ],
+      "concept": "SMC (Smart Money Concepts)",
+      "conflict_id": "f7d348af06d0",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop Loss below Order Block structure",
+      "rule_b": "Stop loss placement below demand zones in buy trades",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง yG-dbuiUHDA และ jne2J1hmeRA",
+      "type": "contradiction"
+    },
+    "f84637f56b66": {
+      "affected_sources": [
+        "jne2J1hmeRA"
+      ],
+      "concept": "Swing Analysis",
+      "conflict_id": "f84637f56b66",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "f98ba33724d1": {
+      "affected_sources": [
+        "a1imqoMSNno",
+        "yG-dbuiUHDA",
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo",
+        "jne2J1hmeRA",
+        "QWfwB72z158",
+        "JowGLzR6eHg",
+        "Q-KcGues0KQ",
+        "7661a5b75eb5"
+      ],
+      "concept": "Pattern W",
+      "conflict_id": "f98ba33724d1",
+      "detected_at": "2026-05-26T14:31:16+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-27T16:20:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "high",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "Confidence ต่ำ (38/100) — ยังต้องการหลักฐานจาก source เพิ่มเติม",
+      "type": "low_confidence"
+    },
+    "fb0abd58bd30": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Long-term Trading Consistency",
+      "conflict_id": "fb0abd58bd30",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "fba96cb14126": {
+      "affected_sources": [
+        "VUgVkHqNLog"
+      ],
+      "concept": "System Integrity",
+      "conflict_id": "fba96cb14126",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "fc0e7bae1a30": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "Win Rate vs Profit Factor",
+      "conflict_id": "fc0e7bae1a30",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "fd04a04ffc66": {
+      "affected_sources": [
+        "jne2J1hmeRA",
+        "u2XKVpSZvFo"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "fd04a04ffc66",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placement below demand zones in buy trades",
+      "rule_b": "Stop loss placed below the lowest point of the W3 pattern structure",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง jne2J1hmeRA และ u2XKVpSZvFo",
+      "type": "contradiction"
+    },
+    "fd338d3acedf": {
+      "affected_sources": [
+        "Ul2eM2IFlu8"
+      ],
+      "concept": "High Timeframe Direction",
+      "conflict_id": "fd338d3acedf",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Auto-resolved by pipeline: not a structural conflict.",
+      "resolved_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    },
+    "fd59ff2dd301": {
+      "affected_sources": [
+        "jne2J1hmeRA",
+        "Q-KcGues0KQ"
+      ],
+      "concept": "Order Block",
+      "conflict_id": "fd59ff2dd301",
+      "detected_at": "2026-05-24T17:21:30+07:00",
+      "rule_a": "Stop loss placement below demand zones in buy trades",
+      "rule_b": "Place stop loss below the low created during liquidity sweep",
+      "severity": "high",
+      "status": "pending",
+      "suggested_action": "manual_review",
+      "summary": "พบกฎ stop_loss ที่อาจขัดแย้งกัน ระหว่าง jne2J1hmeRA และ Q-KcGues0KQ",
+      "type": "contradiction"
+    },
+    "fe096b21b39c": {
+      "affected_sources": [
+        "JowGLzR6eHg"
+      ],
+      "concept": "Supply and Demand Zone",
+      "conflict_id": "fe096b21b39c",
+      "detected_at": "2026-05-24T15:52:28+07:00",
+      "resolution": "accepted",
+      "resolution_note": "Single-source concept — acceptable at this stage. Will reinforce automatically when more videos are learned.",
+      "rule_a": null,
+      "rule_b": null,
+      "severity": "low",
+      "status": "accepted",
+      "suggested_action": "manual_review",
+      "summary": "มีแหล่งข้อมูลเพียง 1 คลิป — ควรหาแหล่งยืนยันเพิ่มก่อนนำไปใช้ใน EA",
+      "type": "low_evidence"
+    }
+  },
+  "version": 1
+}

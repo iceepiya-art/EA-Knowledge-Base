@@ -1,0 +1,5384 @@
+{
+  "concepts": {
+    "Asia Session Filter": {
+      "concept": "Asia Session Filter",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "BOS": {
+      "concept": "BOS",
+      "confidence": 94,
+      "evidence_count": 11,
+      "last_updated": "2026-05-27T16:20:25+07:00",
+      "related_rule_types": [
+        "stop_loss",
+        "regime",
+        "filter",
+        "exit",
+        "entry"
+      ],
+      "source_details": [],
+      "sources": [
+        "7661a5b75eb5",
+        "a1imqoMSNno",
+        "u2XKVpSZvFo",
+        "AHQ81XCZ_uo",
+        "QWfwB72z158",
+        "yG-dbuiUHDA",
+        "tDWy82eU1lA",
+        "JowGLzR6eHg",
+        "jne2J1hmeRA",
+        "Q-KcGues0KQ"
+      ]
+    },
+    "BSL (Buy Side Liquidity)": {
+      "concept": "BSL (Buy Side Liquidity)",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:15:28+07:00",
+      "related_rule_types": [
+        "regime",
+        "filter",
+        "exit",
+        "entry",
+        "stop_loss"
+      ],
+      "source_details": [],
+      "sources": [
+        "jne2J1hmeRA",
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Back to Basic Trading System": {
+      "concept": "Back to Basic Trading System",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Back to Basics": {
+      "concept": "Back to Basics",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "SMC Ninja Full System 🔥",
+          "url": "https://www.youtube.com/watch?v=jne2J1hmeRA",
+          "video_id": "jne2J1hmeRA"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA"
+      ]
+    },
+    "CHoCH": {
+      "concept": "CHoCH",
+      "confidence": 78,
+      "evidence_count": 11,
+      "last_updated": "2026-05-27T16:20:25+07:00",
+      "related_rule_types": [
+        "stop_loss",
+        "regime",
+        "filter",
+        "exit",
+        "entry"
+      ],
+      "source_details": [],
+      "sources": [
+        "7661a5b75eb5",
+        "a1imqoMSNno",
+        "u2XKVpSZvFo",
+        "QWfwB72z158",
+        "yG-dbuiUHDA",
+        "tDWy82eU1lA",
+        "JowGLzR6eHg",
+        "jne2J1hmeRA",
+        "Q-KcGues0KQ",
+        "58db7c3d4de1"
+      ]
+    },
+    "Character of Price Action": {
+      "concept": "Character of Price Action",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo"
+      ]
+    },
+    "Checklist Trading": {
+      "concept": "Checklist Trading",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Checklist Trading System": {
+      "concept": "Checklist Trading System",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Checklist-based Trading": {
+      "concept": "Checklist-based Trading",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Confirmation Signals": {
+      "concept": "Confirmation Signals",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "Consecutive Losses": {
+      "concept": "Consecutive Losses",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Cycle Analysis": {
+      "concept": "Cycle Analysis",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "DVD (Displacement, Velocity, Direction)": {
+      "concept": "DVD (Displacement, Velocity, Direction)",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo"
+      ]
+    },
+    "Demand & Supply": {
+      "concept": "Demand & Supply",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Demand Supply": {
+      "concept": "Demand Supply",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Demand Zone": {
+      "concept": "Demand Zone",
+      "confidence": 100,
+      "evidence_count": 3,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "SMC Ninja Full System 🔥",
+          "url": "https://www.youtube.com/watch?v=jne2J1hmeRA",
+          "video_id": "jne2J1hmeRA"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "jne2J1hmeRA",
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA"
+      ]
+    },
+    "Demand and Control (Supply/Demand zones)": {
+      "concept": "Demand and Control (Supply/Demand zones)",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "tDWy82eU1lA"
+      ]
+    },
+    "Demand and Supply": {
+      "concept": "Demand and Supply",
+      "confidence": 100,
+      "evidence_count": 3,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "SMC Ninja Full System 🔥",
+          "url": "https://www.youtube.com/watch?v=jne2J1hmeRA",
+          "video_id": "jne2J1hmeRA"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "jne2J1hmeRA",
+        "yG-dbuiUHDA",
+        "QWfwB72z158"
+      ]
+    },
+    "Demand and Supply Zones": {
+      "concept": "Demand and Supply Zones",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        }
+      ],
+      "sources": [
+        "Q-KcGues0KQ"
+      ]
+    },
+    "Demand/Control": {
+      "concept": "Demand/Control",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:56:12+07:00",
+      "related_rule_types": [
+        "entry",
+        "filter",
+        "regime",
+        "stop_loss",
+        "exit"
+      ],
+      "source_details": [],
+      "sources": [
+        "tDWy82eU1lA"
+      ]
+    },
+    "Demand/Supply Zone": {
+      "concept": "Demand/Supply Zone",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158",
+        "tDWy82eU1lA"
+      ]
+    },
+    "Demand/Supply Zones": {
+      "concept": "Demand/Supply Zones",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Discipline": {
+      "concept": "Discipline",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Discipline in Trading": {
+      "concept": "Discipline in Trading",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Down Trend": {
+      "concept": "Down Trend",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "tDWy82eU1lA"
+      ]
+    },
+    "Downtrend": {
+      "concept": "Downtrend",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Drawdown Management": {
+      "concept": "Drawdown Management",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "EUR/USD": {
+      "concept": "EUR/USD",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "Consistency  Explosion ด้วย SMC",
+          "url": "https://www.youtube.com/watch?v=a1imqoMSNno",
+          "video_id": "a1imqoMSNno"
+        }
+      ],
+      "sources": [
+        "a1imqoMSNno"
+      ]
+    },
+    "EUR/USD Trading": {
+      "concept": "EUR/USD Trading",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Consistency  Explosion ด้วย SMC",
+          "url": "https://www.youtube.com/watch?v=a1imqoMSNno",
+          "video_id": "a1imqoMSNno"
+        }
+      ],
+      "sources": [
+        "a1imqoMSNno"
+      ]
+    },
+    "EURUSD": {
+      "concept": "EURUSD",
+      "confidence": 81,
+      "evidence_count": 1,
+      "last_updated": "2026-05-27T16:20:24+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 81,
+          "merged_at": "2026-05-27T16:20:24+07:00",
+          "rule_completeness": 102,
+          "title": "ex",
+          "url": "C:\\Users\\ADMIN\\Desktop\\EA-Knowledge-Brain\\inbox\\text\\ex.txt",
+          "video_id": "77e0f78ec5d3"
+        }
+      ],
+      "sources": [
+        "77e0f78ec5d3"
+      ]
+    },
+    "Edge Building": {
+      "concept": "Edge Building",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Edge Development": {
+      "concept": "Edge Development",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Emotional Trading": {
+      "concept": "Emotional Trading",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Entry & Exit Strategy": {
+      "concept": "Entry & Exit Strategy",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Entry Confirmation": {
+      "concept": "Entry Confirmation",
+      "confidence": 100,
+      "evidence_count": 3,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "SMC Ninja Full System 🔥",
+          "url": "https://www.youtube.com/watch?v=jne2J1hmeRA",
+          "video_id": "jne2J1hmeRA"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "jne2J1hmeRA",
+        "tDWy82eU1lA",
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Entry Point (Point 4)": {
+      "concept": "Entry Point (Point 4)",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Entry Point Identification": {
+      "concept": "Entry Point Identification",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Entry Point Sequencing (1-2-3-4-5)": {
+      "concept": "Entry Point Sequencing (1-2-3-4-5)",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Entry Setup": {
+      "concept": "Entry Setup",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo"
+      ]
+    },
+    "Entry Signal": {
+      "concept": "Entry Signal",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo",
+        "u2XKVpSZvFo"
+      ]
+    },
+    "Expansion": {
+      "concept": "Expansion",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158",
+        "tDWy82eU1lA"
+      ]
+    },
+    "Expansion Percentage (100%, 200%, 400%, 500%, 600%)": {
+      "concept": "Expansion Percentage (100%, 200%, 400%, 500%, 600%)",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Expansion and Retracement": {
+      "concept": "Expansion and Retracement",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "tDWy82eU1lA",
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "FVG": {
+      "concept": "FVG",
+      "confidence": 94,
+      "evidence_count": 10,
+      "last_updated": "2026-05-27T16:20:25+07:00",
+      "related_rule_types": [
+        "stop_loss",
+        "regime",
+        "filter",
+        "exit",
+        "entry"
+      ],
+      "source_details": [],
+      "sources": [
+        "7661a5b75eb5",
+        "a1imqoMSNno",
+        "u2XKVpSZvFo",
+        "yG-dbuiUHDA",
+        "tDWy82eU1lA",
+        "JowGLzR6eHg",
+        "jne2J1hmeRA",
+        "Q-KcGues0KQ",
+        "58db7c3d4de1"
+      ]
+    },
+    "Fear and Doubt": {
+      "concept": "Fear and Doubt",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Fear and Hesitation": {
+      "concept": "Fear and Hesitation",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Fibonacci Retracement": {
+      "concept": "Fibonacci Retracement",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "tDWy82eU1lA"
+      ]
+    },
+    "Final Swing": {
+      "concept": "Final Swing",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Final Swing Supply": {
+      "concept": "Final Swing Supply",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Fund Challenge Rules Compliance": {
+      "concept": "Fund Challenge Rules Compliance",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Fund Management Rules": {
+      "concept": "Fund Management Rules",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "HTF Confirmation": {
+      "concept": "HTF Confirmation",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "Hidden Demand": {
+      "concept": "Hidden Demand",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Hidden Supply": {
+      "concept": "Hidden Supply",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo",
+        "JowGLzR6eHg"
+      ]
+    },
+    "High Low Formation": {
+      "concept": "High Low Formation",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        }
+      ],
+      "sources": [
+        "Q-KcGues0KQ"
+      ]
+    },
+    "High Risk-Reward Ratio": {
+      "concept": "High Risk-Reward Ratio",
+      "confidence": 100,
+      "evidence_count": 3,
+      "last_updated": "2026-05-24T16:51:45+07:00",
+      "related_rule_types": [
+        "stop_loss",
+        "regime",
+        "exit",
+        "entry",
+        "filter"
+      ],
+      "source_details": [],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "High Time Frame": {
+      "concept": "High Time Frame",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "High Time Frame Analysis": {
+      "concept": "High Time Frame Analysis",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "High Time Frame Direction": {
+      "concept": "High Time Frame Direction",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "High Time Frame Zones": {
+      "concept": "High Time Frame Zones",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "High Time Frame vs Low Time Frame": {
+      "concept": "High Time Frame vs Low Time Frame",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "High Timeframe Direction": {
+      "concept": "High Timeframe Direction",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "High-Low Analysis": {
+      "concept": "High-Low Analysis",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "High-Low Structure": {
+      "concept": "High-Low Structure",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo",
+        "Q-KcGues0KQ"
+      ]
+    },
+    "High-Low Swing Analysis": {
+      "concept": "High-Low Swing Analysis",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Higher High": {
+      "concept": "Higher High",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "tDWy82eU1lA"
+      ]
+    },
+    "Higher High/Higher Low": {
+      "concept": "Higher High/Higher Low",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        }
+      ],
+      "sources": [
+        "Q-KcGues0KQ"
+      ]
+    },
+    "Higher Time Frame (HTF)": {
+      "concept": "Higher Time Frame (HTF)",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Higher Timeframe": {
+      "concept": "Higher Timeframe",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:21:21+07:00",
+      "related_rule_types": [
+        "regime",
+        "entry",
+        "exit",
+        "stop_loss",
+        "filter"
+      ],
+      "source_details": [],
+      "sources": [
+        "Q-KcGues0KQ",
+        "QWfwB72z158"
+      ]
+    },
+    "Higher Timeframe Analysis": {
+      "concept": "Higher Timeframe Analysis",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Hybrid System": {
+      "concept": "Hybrid System",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Consistency  Explosion ด้วย SMC",
+          "url": "https://www.youtube.com/watch?v=a1imqoMSNno",
+          "video_id": "a1imqoMSNno"
+        }
+      ],
+      "sources": [
+        "a1imqoMSNno"
+      ]
+    },
+    "ICT Section Q Zone": {
+      "concept": "ICT Section Q Zone",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Consistency  Explosion ด้วย SMC",
+          "url": "https://www.youtube.com/watch?v=a1imqoMSNno",
+          "video_id": "a1imqoMSNno"
+        }
+      ],
+      "sources": [
+        "a1imqoMSNno"
+      ]
+    },
+    "Imbalance": {
+      "concept": "Imbalance",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg",
+        "Q-KcGues0KQ"
+      ]
+    },
+    "Impulse": {
+      "concept": "Impulse",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Impulse Move": {
+      "concept": "Impulse Move",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Impulse Movement": {
+      "concept": "Impulse Movement",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Impulse and Retracement": {
+      "concept": "Impulse and Retracement",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Internal Structure": {
+      "concept": "Internal Structure",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        }
+      ],
+      "sources": [
+        "Q-KcGues0KQ"
+      ]
+    },
+    "Key Level": {
+      "concept": "Key Level",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Liquidity Hunting": {
+      "concept": "Liquidity Hunting",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Liquidity Pool": {
+      "concept": "Liquidity Pool",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Liquidity Sweep": {
+      "concept": "Liquidity Sweep",
+      "confidence": 36,
+      "evidence_count": 11,
+      "last_updated": "2026-05-27T16:20:24+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 38,
+          "merged_at": "2026-05-26T14:31:08+07:00",
+          "rule_completeness": 30,
+          "title": "SMC",
+          "url": "C:\\Users\\ADMIN\\Desktop\\SMC.mp4",
+          "video_id": "7661a5b75eb5"
+        },
+        {
+          "ea_readiness": 9,
+          "merged_at": "2026-05-26T14:31:08+07:00",
+          "rule_completeness": 6,
+          "title": "ex",
+          "url": "C:\\Users\\ADMIN\\Desktop\\EA-Knowledge-Brain\\inbox\\text\\ex.txt",
+          "video_id": "77e0f78ec5d3"
+        },
+        {
+          "ea_readiness": 62,
+          "merged_at": "2026-05-27T16:20:24+07:00",
+          "rule_completeness": 72,
+          "title": "drive_smoke_2026-05-27",
+          "url": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\text\\drive_smoke_2026-05-27.txt",
+          "video_id": "58db7c3d4de1"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158",
+        "AHQ81XCZ_uo",
+        "JowGLzR6eHg",
+        "jne2J1hmeRA",
+        "a1imqoMSNno",
+        "Q-KcGues0KQ",
+        "yG-dbuiUHDA",
+        "u2XKVpSZvFo",
+        "7661a5b75eb5",
+        "77e0f78ec5d3",
+        "58db7c3d4de1"
+      ]
+    },
+    "Liquidity Sweep + BOS Signal": {
+      "concept": "Liquidity Sweep + BOS Signal",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Liquidity Switch": {
+      "concept": "Liquidity Switch",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Liquidity Testing": {
+      "concept": "Liquidity Testing",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "London Open": {
+      "concept": "London Open",
+      "confidence": 81,
+      "evidence_count": 1,
+      "last_updated": "2026-05-27T16:20:24+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 81,
+          "merged_at": "2026-05-27T16:20:24+07:00",
+          "rule_completeness": 102,
+          "title": "ex",
+          "url": "C:\\Users\\ADMIN\\Desktop\\EA-Knowledge-Brain\\inbox\\text\\ex.txt",
+          "video_id": "77e0f78ec5d3"
+        }
+      ],
+      "sources": [
+        "77e0f78ec5d3"
+      ]
+    },
+    "Long-term Consistency": {
+      "concept": "Long-term Consistency",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Long-term Probability": {
+      "concept": "Long-term Probability",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Long-term Profitability": {
+      "concept": "Long-term Profitability",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Long-term Survival": {
+      "concept": "Long-term Survival",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Long-term Trading Consistency": {
+      "concept": "Long-term Trading Consistency",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Long-term Trading Psychology": {
+      "concept": "Long-term Trading Psychology",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Low High": {
+      "concept": "Low High",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "tDWy82eU1lA"
+      ]
+    },
+    "Low Leverage Strategy": {
+      "concept": "Low Leverage Strategy",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Low Low (LL)": {
+      "concept": "Low Low (LL)",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo"
+      ]
+    },
+    "Low Time Frame Confirmation": {
+      "concept": "Low Time Frame Confirmation",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "Low Time Frame Trading": {
+      "concept": "Low Time Frame Trading",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Low Win Percentage Trading": {
+      "concept": "Low Win Percentage Trading",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Low Win Rate Strategy": {
+      "concept": "Low Win Rate Strategy",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Lower Time Frame (LTF)": {
+      "concept": "Lower Time Frame (LTF)",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Lower Timeframe": {
+      "concept": "Lower Timeframe",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Lower Timeframe Entry": {
+      "concept": "Lower Timeframe Entry",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Lower Timeframe Entry with Higher Timeframe Direction": {
+      "concept": "Lower Timeframe Entry with Higher Timeframe Direction",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Lower Timeframe Risk": {
+      "concept": "Lower Timeframe Risk",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Lower Timeframe with Higher Timeframe Direction": {
+      "concept": "Lower Timeframe with Higher Timeframe Direction",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Manipulation": {
+      "concept": "Manipulation",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo"
+      ]
+    },
+    "Market Manipulation": {
+      "concept": "Market Manipulation",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo"
+      ]
+    },
+    "Market Regime": {
+      "concept": "Market Regime",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "SMC Ninja Full System 🔥",
+          "url": "https://www.youtube.com/watch?v=jne2J1hmeRA",
+          "video_id": "jne2J1hmeRA"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo",
+        "jne2J1hmeRA"
+      ]
+    },
+    "Market Structure": {
+      "concept": "Market Structure",
+      "confidence": 99,
+      "evidence_count": 6,
+      "last_updated": "2026-05-27T16:20:24+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        },
+        {
+          "ea_readiness": 94,
+          "merged_at": "2026-05-27T16:20:24+07:00",
+          "rule_completeness": 105,
+          "title": "SMC",
+          "url": "C:\\Users\\ADMIN\\Desktop\\SMC.mp4",
+          "video_id": "7661a5b75eb5"
+        }
+      ],
+      "sources": [
+        "Q-KcGues0KQ",
+        "QWfwB72z158",
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo",
+        "AHQ81XCZ_uo",
+        "7661a5b75eb5"
+      ]
+    },
+    "Market Structure Analysis": {
+      "concept": "Market Structure Analysis",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Consistency  Explosion ด้วย SMC",
+          "url": "https://www.youtube.com/watch?v=a1imqoMSNno",
+          "video_id": "a1imqoMSNno"
+        }
+      ],
+      "sources": [
+        "a1imqoMSNno"
+      ]
+    },
+    "Market Structure Confirmation": {
+      "concept": "Market Structure Confirmation",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Maximum Drawdown Control": {
+      "concept": "Maximum Drawdown Control",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Maximum Drawdown Management": {
+      "concept": "Maximum Drawdown Management",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Mindset": {
+      "concept": "Mindset",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Mindset and Psychology": {
+      "concept": "Mindset and Psychology",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Mindset/Psychology": {
+      "concept": "Mindset/Psychology",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Momentum": {
+      "concept": "Momentum",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        }
+      ],
+      "sources": [
+        "Q-KcGues0KQ"
+      ]
+    },
+    "Momentum Analysis": {
+      "concept": "Momentum Analysis",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        }
+      ],
+      "sources": [
+        "Q-KcGues0KQ"
+      ]
+    },
+    "Multi-timeframe Analysis": {
+      "concept": "Multi-timeframe Analysis",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "Multi-timeframe Trading": {
+      "concept": "Multi-timeframe Trading",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:15:28+07:00",
+      "related_rule_types": [
+        "regime",
+        "filter",
+        "exit",
+        "entry",
+        "stop_loss"
+      ],
+      "source_details": [],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "Multiple Trade Execution": {
+      "concept": "Multiple Trade Execution",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Order Block": {
+      "concept": "Order Block",
+      "confidence": 38,
+      "evidence_count": 9,
+      "last_updated": "2026-05-26T14:31:08+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 38,
+          "merged_at": "2026-05-26T14:31:08+07:00",
+          "rule_completeness": 30,
+          "title": "SMC",
+          "url": "C:\\Users\\ADMIN\\Desktop\\SMC.mp4",
+          "video_id": "7661a5b75eb5"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158",
+        "AHQ81XCZ_uo",
+        "JowGLzR6eHg",
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA",
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo",
+        "7661a5b75eb5"
+      ]
+    },
+    "POI (Point of Interest)": {
+      "concept": "POI (Point of Interest)",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "tDWy82eU1lA"
+      ]
+    },
+    "Pattern M": {
+      "concept": "Pattern M",
+      "confidence": 100,
+      "evidence_count": 9,
+      "last_updated": "2026-05-24T16:21:21+07:00",
+      "related_rule_types": [
+        "regime",
+        "entry",
+        "exit",
+        "stop_loss",
+        "filter"
+      ],
+      "source_details": [],
+      "sources": [
+        "a1imqoMSNno",
+        "yG-dbuiUHDA",
+        "tDWy82eU1lA",
+        "jne2J1hmeRA",
+        "QWfwB72z158",
+        "Q-KcGues0KQ"
+      ]
+    },
+    "Pattern W": {
+      "concept": "Pattern W",
+      "confidence": 38,
+      "evidence_count": 9,
+      "last_updated": "2026-05-26T14:31:08+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 38,
+          "merged_at": "2026-05-26T14:31:08+07:00",
+          "rule_completeness": 30,
+          "title": "SMC",
+          "url": "C:\\Users\\ADMIN\\Desktop\\SMC.mp4",
+          "video_id": "7661a5b75eb5"
+        }
+      ],
+      "sources": [
+        "a1imqoMSNno",
+        "yG-dbuiUHDA",
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo",
+        "jne2J1hmeRA",
+        "QWfwB72z158",
+        "JowGLzR6eHg",
+        "Q-KcGues0KQ",
+        "7661a5b75eb5"
+      ]
+    },
+    "Pattern W & M (Reversal Patterns)": {
+      "concept": "Pattern W & M (Reversal Patterns)",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:51:45+07:00",
+      "related_rule_types": [
+        "stop_loss",
+        "regime",
+        "exit",
+        "entry",
+        "filter"
+      ],
+      "source_details": [],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Pattern W3": {
+      "concept": "Pattern W3",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo"
+      ]
+    },
+    "Pending Order Entry": {
+      "concept": "Pending Order Entry",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Pending Order Placement": {
+      "concept": "Pending Order Placement",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Portfolio Protection": {
+      "concept": "Portfolio Protection",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Portfolio Survival": {
+      "concept": "Portfolio Survival",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Position Sizing": {
+      "concept": "Position Sizing",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8",
+        "VUgVkHqNLog"
+      ]
+    },
+    "Price Action": {
+      "concept": "Price Action",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "tDWy82eU1lA"
+      ]
+    },
+    "Price Action Confirmation": {
+      "concept": "Price Action Confirmation",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Price Structure": {
+      "concept": "Price Structure",
+      "confidence": 100,
+      "evidence_count": 8,
+      "last_updated": "2026-05-24T16:21:21+07:00",
+      "related_rule_types": [
+        "regime",
+        "entry",
+        "exit",
+        "stop_loss",
+        "filter"
+      ],
+      "source_details": [],
+      "sources": [
+        "a1imqoMSNno",
+        "yG-dbuiUHDA",
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo",
+        "jne2J1hmeRA",
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Psychology in Trading": {
+      "concept": "Psychology in Trading",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Reaccumulation": {
+      "concept": "Reaccumulation",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Reaccumulation Phase": {
+      "concept": "Reaccumulation Phase",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Repeated Execution": {
+      "concept": "Repeated Execution",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Retracement": {
+      "concept": "Retracement",
+      "confidence": 100,
+      "evidence_count": 3,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158",
+        "tDWy82eU1lA",
+        "u2XKVpSZvFo"
+      ]
+    },
+    "Reversal Pattern": {
+      "concept": "Reversal Pattern",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        }
+      ],
+      "sources": [
+        "Q-KcGues0KQ"
+      ]
+    },
+    "Risk Management": {
+      "concept": "Risk Management",
+      "confidence": 100,
+      "evidence_count": 7,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "Consistency  Explosion ด้วย SMC",
+          "url": "https://www.youtube.com/watch?v=a1imqoMSNno",
+          "video_id": "a1imqoMSNno"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA",
+        "Ul2eM2IFlu8",
+        "jne2J1hmeRA",
+        "JowGLzR6eHg",
+        "a1imqoMSNno",
+        "u2XKVpSZvFo",
+        "QWfwB72z158"
+      ]
+    },
+    "Risk Reward (RR)": {
+      "concept": "Risk Reward (RR)",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T17:21:29+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T17:21:29+07:00",
+          "rule_completeness": 105,
+          "title": "SMC Ninja Full System 🔥",
+          "url": "https://www.youtube.com/watch?v=jne2J1hmeRA",
+          "video_id": "jne2J1hmeRA"
+        }
+      ],
+      "sources": [
+        "jne2J1hmeRA"
+      ]
+    },
+    "Risk Reward Ratio": {
+      "concept": "Risk Reward Ratio",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:51:45+07:00",
+      "related_rule_types": [
+        "stop_loss",
+        "regime",
+        "exit",
+        "entry",
+        "filter"
+      ],
+      "source_details": [],
+      "sources": [
+        "VUgVkHqNLog",
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Risk to Reward (RR)": {
+      "concept": "Risk to Reward (RR)",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "SMC Ninja Full System 🔥",
+          "url": "https://www.youtube.com/watch?v=jne2J1hmeRA",
+          "video_id": "jne2J1hmeRA"
+        }
+      ],
+      "sources": [
+        "jne2J1hmeRA"
+      ]
+    },
+    "Risk-Reward Ratio": {
+      "concept": "Risk-Reward Ratio",
+      "confidence": 100,
+      "evidence_count": 3,
+      "last_updated": "2026-05-24T16:55:22+07:00",
+      "related_rule_types": [
+        "filter",
+        "exit",
+        "regime",
+        "entry",
+        "stop_loss"
+      ],
+      "source_details": [],
+      "sources": [
+        "AHQ81XCZ_uo",
+        "Ul2eM2IFlu8",
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Risk/Reward (RR)": {
+      "concept": "Risk/Reward (RR)",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:56:12+07:00",
+      "related_rule_types": [
+        "entry",
+        "filter",
+        "regime",
+        "stop_loss",
+        "exit"
+      ],
+      "source_details": [],
+      "sources": [
+        "jne2J1hmeRA"
+      ]
+    },
+    "Risk/Reward Ratio (RR)": {
+      "concept": "Risk/Reward Ratio (RR)",
+      "confidence": 100,
+      "evidence_count": 4,
+      "last_updated": "2026-05-24T16:49:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "filter",
+        "exit",
+        "stop_loss",
+        "regime"
+      ],
+      "source_details": [],
+      "sources": [
+        "VUgVkHqNLog",
+        "AHQ81XCZ_uo",
+        "jne2J1hmeRA",
+        "yG-dbuiUHDA"
+      ]
+    },
+    "SMC (Smart Money Concepts)": {
+      "concept": "SMC (Smart Money Concepts)",
+      "confidence": 100,
+      "evidence_count": 11,
+      "last_updated": "2026-05-24T16:55:22+07:00",
+      "related_rule_types": [
+        "filter",
+        "regime",
+        "exit",
+        "entry",
+        "stop_loss"
+      ],
+      "source_details": [],
+      "sources": [
+        "AHQ81XCZ_uo",
+        "JowGLzR6eHg",
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA",
+        "a1imqoMSNno",
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA"
+      ]
+    },
+    "SMC Model": {
+      "concept": "SMC Model",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo"
+      ]
+    },
+    "SSL (Sell Side Liquidity)": {
+      "concept": "SSL (Sell Side Liquidity)",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:15:28+07:00",
+      "related_rule_types": [
+        "regime",
+        "filter",
+        "exit",
+        "entry",
+        "stop_loss"
+      ],
+      "source_details": [],
+      "sources": [
+        "jne2J1hmeRA",
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Session Filter": {
+      "concept": "Session Filter",
+      "confidence": 9,
+      "evidence_count": 1,
+      "last_updated": "2026-05-26T14:31:08+07:00",
+      "related_rule_types": [],
+      "source_details": [
+        {
+          "ea_readiness": 9,
+          "merged_at": "2026-05-26T14:31:08+07:00",
+          "rule_completeness": 6,
+          "title": "ex",
+          "url": "C:\\Users\\ADMIN\\Desktop\\EA-Knowledge-Brain\\inbox\\text\\ex.txt",
+          "video_id": "77e0f78ec5d3"
+        }
+      ],
+      "sources": [
+        "77e0f78ec5d3"
+      ]
+    },
+    "Shock Retest": {
+      "concept": "Shock Retest",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "Statistical Analysis": {
+      "concept": "Statistical Analysis",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Statistical Consistency": {
+      "concept": "Statistical Consistency",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Statistical Edge": {
+      "concept": "Statistical Edge",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Statistics": {
+      "concept": "Statistics",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Statistics and Win Rate": {
+      "concept": "Statistics and Win Rate",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Stop Loss (SL)": {
+      "concept": "Stop Loss (SL)",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Stop Loss Management": {
+      "concept": "Stop Loss Management",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Stop Loss Placement": {
+      "concept": "Stop Loss Placement",
+      "confidence": 81,
+      "evidence_count": 2,
+      "last_updated": "2026-05-27T16:20:24+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        },
+        {
+          "ea_readiness": 62,
+          "merged_at": "2026-05-27T16:20:24+07:00",
+          "rule_completeness": 72,
+          "title": "drive_smoke_2026-05-27",
+          "url": "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\text\\drive_smoke_2026-05-27.txt",
+          "video_id": "58db7c3d4de1"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8",
+        "58db7c3d4de1"
+      ]
+    },
+    "Strength of Character": {
+      "concept": "Strength of Character",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo",
+        "JowGLzR6eHg"
+      ]
+    },
+    "Structure": {
+      "concept": "Structure",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg",
+        "QWfwB72z158"
+      ]
+    },
+    "Structure Analysis": {
+      "concept": "Structure Analysis",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "Structure within Structure": {
+      "concept": "Structure within Structure",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        }
+      ],
+      "sources": [
+        "Q-KcGues0KQ"
+      ]
+    },
+    "Supply & Demand Zones": {
+      "concept": "Supply & Demand Zones",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Supply Level": {
+      "concept": "Supply Level",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Supply Zone": {
+      "concept": "Supply Zone",
+      "confidence": 100,
+      "evidence_count": 5,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "SMC Ninja Full System 🔥",
+          "url": "https://www.youtube.com/watch?v=jne2J1hmeRA",
+          "video_id": "jne2J1hmeRA"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "AHQ81XCZ_uo",
+        "u2XKVpSZvFo",
+        "jne2J1hmeRA",
+        "Q-KcGues0KQ",
+        "tDWy82eU1lA"
+      ]
+    },
+    "Supply and Demand": {
+      "concept": "Supply and Demand",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "XAUUSD Weekly RECAP (W&M) | Ninja Analysis",
+          "url": "https://www.youtube.com/watch?v=Q-KcGues0KQ",
+          "video_id": "Q-KcGues0KQ"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "SMC Ninja Full System 🔥",
+          "url": "https://www.youtube.com/watch?v=jne2J1hmeRA",
+          "video_id": "jne2J1hmeRA"
+        }
+      ],
+      "sources": [
+        "Q-KcGues0KQ",
+        "jne2J1hmeRA"
+      ]
+    },
+    "Supply and Demand Zone": {
+      "concept": "Supply and Demand Zone",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "Supply and Demand Zones": {
+      "concept": "Supply and Demand Zones",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "Support/Supply Testing": {
+      "concept": "Support/Supply Testing",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo"
+      ]
+    },
+    "Swing Analysis": {
+      "concept": "Swing Analysis",
+      "confidence": 100,
+      "evidence_count": 5,
+      "last_updated": "2026-05-24T16:55:22+07:00",
+      "related_rule_types": [
+        "filter",
+        "exit",
+        "regime",
+        "entry",
+        "stop_loss"
+      ],
+      "source_details": [],
+      "sources": [
+        "AHQ81XCZ_uo",
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA"
+      ]
+    },
+    "Swing High/Low": {
+      "concept": "Swing High/Low",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "Swing High/Swing Low": {
+      "concept": "Swing High/Swing Low",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "7 Minutes to SMC Mastery 🥷 High RR Strategy (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=JowGLzR6eHg",
+          "video_id": "JowGLzR6eHg"
+        }
+      ],
+      "sources": [
+        "JowGLzR6eHg"
+      ]
+    },
+    "Swing Liquidity": {
+      "concept": "Swing Liquidity",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Swing Structure": {
+      "concept": "Swing Structure",
+      "confidence": 100,
+      "evidence_count": 3,
+      "last_updated": "2026-05-24T16:11:03+07:00",
+      "related_rule_types": [
+        "stop_loss",
+        "regime",
+        "filter",
+        "entry",
+        "exit"
+      ],
+      "source_details": [],
+      "sources": [
+        "yG-dbuiUHDA",
+        "jne2J1hmeRA",
+        "JowGLzR6eHg"
+      ]
+    },
+    "Swing and Liquidity": {
+      "concept": "Swing and Liquidity",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "yG-dbuiUHDA"
+      ]
+    },
+    "System Consistency": {
+      "concept": "System Consistency",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "System Integrity": {
+      "concept": "System Integrity",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:55:10+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:55:10+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "System Repetition": {
+      "concept": "System Repetition",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Take Profit (TP)": {
+      "concept": "Take Profit (TP)",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:21:21+07:00",
+      "related_rule_types": [
+        "regime",
+        "entry",
+        "exit",
+        "stop_loss",
+        "filter"
+      ],
+      "source_details": [],
+      "sources": [
+        "AHQ81XCZ_uo",
+        "VUgVkHqNLog"
+      ]
+    },
+    "Take Profit Levels": {
+      "concept": "Take Profit Levels",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "RECAP XAUUSD 16/4/69  อ่านเกมทองคำด้วย W&M — จุดเข้าเดียวจบ",
+          "url": "https://www.youtube.com/watch?v=AHQ81XCZ_uo",
+          "video_id": "AHQ81XCZ_uo"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8",
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Time Frame Analysis": {
+      "concept": "Time Frame Analysis",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Trade Confirmation": {
+      "concept": "Trade Confirmation",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo"
+      ]
+    },
+    "Trade Repetition": {
+      "concept": "Trade Repetition",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Trade Setup": {
+      "concept": "Trade Setup",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "🔥 HOW TO INSTALL SMC MODEL [W3] NinjaThai Full Setup in 7 Minutes",
+          "url": "https://www.youtube.com/watch?v=u2XKVpSZvFo",
+          "video_id": "u2XKVpSZvFo"
+        }
+      ],
+      "sources": [
+        "u2XKVpSZvFo"
+      ]
+    },
+    "Trade Statistics": {
+      "concept": "Trade Statistics",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    },
+    "Trading Discipline": {
+      "concept": "Trading Discipline",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Trend Analysis": {
+      "concept": "Trend Analysis",
+      "confidence": 100,
+      "evidence_count": 2,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "SMC Ninja Full System 🔥",
+          "url": "https://www.youtube.com/watch?v=jne2J1hmeRA",
+          "video_id": "jne2J1hmeRA"
+        },
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "Ninja System 🔥 สร้าง Edge ในตลาดด้วย SMC (Live)",
+          "url": "https://www.youtube.com/watch?v=yG-dbuiUHDA",
+          "video_id": "yG-dbuiUHDA"
+        }
+      ],
+      "sources": [
+        "jne2J1hmeRA",
+        "yG-dbuiUHDA"
+      ]
+    },
+    "Trend Direction": {
+      "concept": "Trend Direction",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "tDWy82eU1lA"
+      ]
+    },
+    "Trend Identification": {
+      "concept": "Trend Identification",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:21:14+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:21:14+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "tDWy82eU1lA"
+      ]
+    },
+    "Up Trend": {
+      "concept": "Up Trend",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:51:40+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:51:40+07:00",
+          "rule_completeness": 105,
+          "title": "Smart Money Concepts (SMC) เข้าใจใน 10 นาที | แนวคิดที่ทำให้เทรดเดอร์อยู่รอด (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=tDWy82eU1lA",
+          "video_id": "tDWy82eU1lA"
+        }
+      ],
+      "sources": [
+        "tDWy82eU1lA"
+      ]
+    },
+    "Uptrend": {
+      "concept": "Uptrend",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "BOS หลัง Sweep = จุดเข้าโคตรคม (SMC Strategy) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=QWfwB72z158",
+          "video_id": "QWfwB72z158"
+        }
+      ],
+      "sources": [
+        "QWfwB72z158"
+      ]
+    },
+    "W&M Pattern (Reversal Model)": {
+      "concept": "W&M Pattern (Reversal Model)",
+      "confidence": 100,
+      "evidence_count": 6,
+      "last_updated": "2026-05-24T16:55:22+07:00",
+      "related_rule_types": [
+        "filter",
+        "regime",
+        "exit",
+        "entry",
+        "stop_loss"
+      ],
+      "source_details": [],
+      "sources": [
+        "JowGLzR6eHg",
+        "AHQ81XCZ_uo"
+      ]
+    },
+    "Win Rate": {
+      "concept": "Win Rate",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T16:15:19+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T16:15:19+07:00",
+          "rule_completeness": 105,
+          "title": "สิ่งที่ฆ่า Trader ไม่ใช่ระบบ (คือจิตวิทยา) , NinjaThai",
+          "url": "https://www.youtube.com/watch?v=VUgVkHqNLog",
+          "video_id": "VUgVkHqNLog"
+        }
+      ],
+      "sources": [
+        "VUgVkHqNLog"
+      ]
+    },
+    "Win Rate vs Profit Factor": {
+      "concept": "Win Rate vs Profit Factor",
+      "confidence": 100,
+      "evidence_count": 1,
+      "last_updated": "2026-05-24T15:52:13+07:00",
+      "related_rule_types": [
+        "entry",
+        "exit",
+        "filter",
+        "regime",
+        "stop_loss"
+      ],
+      "source_details": [
+        {
+          "ea_readiness": 100,
+          "merged_at": "2026-05-24T15:52:13+07:00",
+          "rule_completeness": 105,
+          "title": "แพ้ 90% ยังรวยได้? ความจริงที่คนเทรดไม่รู้ (NinjaThai)",
+          "url": "https://www.youtube.com/watch?v=Ul2eM2IFlu8",
+          "video_id": "Ul2eM2IFlu8"
+        }
+      ],
+      "sources": [
+        "Ul2eM2IFlu8"
+      ]
+    }
+  },
+  "version": 1
+}

@@ -1,0 +1,42 @@
+{
+  "_comment": "QTrade OS System Config — set all paths for your machine here",
+  "base_path": "C:/Users/ADMIN/Desktop/save log-blueprint-skill/EA-Knowledge-Base",
+
+  "db": {
+    "trades_db":  "DATA/processed/trades.sqlite",
+    "journal_db": "DATA/processed/trades.sqlite"
+  },
+
+  "paths": {
+    "mt5_export_folder":   "DATA/raw/mt5_exports",
+    "cme_cache_folder":    "DATA/raw/cme_cache",
+    "price_data_folder":   "DATA/raw/price_data",
+    "screenshot_inbox":    "C:/Users/ADMIN/Desktop/screenshots_inbox",
+    "screenshot_dest":     "JOURNAL/screenshots",
+    "journal_entries":     "JOURNAL/entries",
+    "reports_weekly":      "REPORTS/weekly",
+    "reports_monthly":     "REPORTS/monthly",
+    "reports_strategy":    "REPORTS/strategy",
+    "automation_logs":     "AUTOMATION/logs",
+    "backup_dest":         "ARCHIVE",
+    "ai_output":           "10_Research/AI_Output"
+  },
+
+  "account": {
+    "is_cent_account": false,
+    "broker": "",
+    "mt5_login": ""
+  },
+
+  "dashboard": {
+    "port": 5055,
+    "refresh_seconds": 30
+  },
+
+  "reporting": {
+    "weekly_day": "Sunday",
+    "weekly_hour": 18,
+    "monthly_day": 1,
+    "monthly_hour": 8
+  }
+}

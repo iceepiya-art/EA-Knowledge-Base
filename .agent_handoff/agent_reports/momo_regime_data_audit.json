@@ -1,0 +1,18 @@
+{
+  "agent": "Momo",
+  "data": {
+    "csv_count": 96,
+    "preview": [
+      "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent\\skills\\ui-ux-pro-max\\data\\charts.csv",
+      "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent\\skills\\ui-ux-pro-max\\data\\colors.csv",
+      "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent\\skills\\ui-ux-pro-max\\data\\icons.csv",
+      "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent\\skills\\ui-ux-pro-max\\data\\landing.csv",
+      "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent\\skills\\ui-ux-pro-max\\data\\products.csv"
+    ]
+  },
+  "job": "momo_regime_data_audit",
+  "recommendation": "Use local CSV regime checks before requesting external market data.",
+  "status": "ok",
+  "summary": "Found 96 local CSV files for possible regime analysis.",
+  "updated_at": "2026-06-12T08:37:58+07:00"
+}

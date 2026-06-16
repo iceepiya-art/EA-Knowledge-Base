@@ -1,0 +1,14 @@
+Recap : XAUUSD
+Date : 2/6/69
+Session : Out Asian 
+Timeframe : 1m (Entry)
+Simple Concept. Powerful Execution.
+1.รอราคาเข้า Demand (HTF 15m)
+2.Confirm Model W+BOS (LTF 1M)
+━━━━━━━━━━━━━━━
+อย่าเชื่อแค่ภาพที่ผมเอามาแชร์
+แต่คุณต้องไป Backtest
+และเก็บสถิติให้เห็นด้วยตาตัวเอง
+เพราะ “ความมั่นใจ”
+ไม่ได้เกิดจากคำพูด
+แต่มาจากการเห็นซ้ำๆ ด้วยสถิติจริง

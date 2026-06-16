@@ -1,0 +1,14 @@
+{
+  "agent": "Iris",
+  "data": {
+    "image_count": 1,
+    "preview": [
+      "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\inbox\\files\\1bf258_image_2026-06-03_18-01-42.png"
+    ]
+  },
+  "job": "iris_chart_inbox_audit",
+  "recommendation": "Do not run vision analysis automatically; wait for explicit chart task.",
+  "status": "ok",
+  "summary": "Found 1 chart/image inbox files for manual or approved vision analysis.",
+  "updated_at": "2026-06-12T08:33:55+07:00"
+}

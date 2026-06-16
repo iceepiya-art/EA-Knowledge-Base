@@ -1,0 +1,5 @@
+{
+  "refreshed_at": "2026-05-10T18:35:03",
+  "trades": 1548,
+  "note": "Streamlit load_trades uses a 5-minute cache. This marker records pipeline refresh time."
+}

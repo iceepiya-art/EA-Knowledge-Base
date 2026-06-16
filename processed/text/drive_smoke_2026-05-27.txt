@@ -1,0 +1,1 @@
+﻿Drive smoke test: enter after CHoCH confirmation and FVG retest. Stop loss below liquidity sweep wick.

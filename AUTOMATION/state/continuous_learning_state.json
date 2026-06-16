@@ -1,0 +1,11 @@
+{
+  "alerts": {
+    "consecutive_losses::Consecutive loss warning: 5 losses. Do not increase lots or override risk.": "2026-05-10T18:35:09",
+    "missing_csv::No CSV files found in MT5 watch folder.": "2026-05-10T18:35:09"
+  },
+  "reports": {
+    "daily": "2026-05-10",
+    "weekly": "2026-W19"
+  },
+  "last_run": "2026-05-10T18:35:09"
+}

@@ -1,0 +1,21747 @@
+//+------------------------------------------------------------------------------+//
+//)   ____  _  _  ____  ____  ____  ____  __  __    __      ___  _____  __  __   (//
+//)  ( ___)( \/ )(  _ \(  _ \( ___)( ___)(  \/  )  /__\    / __)(  _  )(  \/  )  (//
+//)   )__)  )  (  )(_) ))   / )__)  )__)  )    (  /(__)\  ( (__  )(_)(  )    (   (//
+//)  (__)  (_/\_)(____/(_)\_)(____)(____)(_/\/\_)(__)(__)()\___)(_____)(_/\/\_)  (//
+//)   https://fxdreema.com                             Copyright 2025, fxDreema  (//
+//+------------------------------------------------------------------------------+//
+#property copyright   ""
+#property link        "https://fxdreema.com"
+#property description ""
+#property version     "1.0"
+#property strict
+
+/************************************************************************************************************************/
+// +------------------------------------------------------------------------------------------------------------------+ //
+// |                       INPUT PARAMETERS, GLOBAL VARIABLES, CONSTANTS, IMPORTS and INCLUDES                        | //
+// |                      System and Custom variables and other definitions used in the project                       | //
+// +------------------------------------------------------------------------------------------------------------------+ //
+/************************************************************************************************************************/
+
+//VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//
+// System constants (project settings) //
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
+//--
+#define PROJECT_ID "mt5-7513"
+//--
+// Point Format Rules
+#define POINT_FORMAT_RULES "0.001=0.01,0.00001=0.0001,0.000001=0.0001" // this is deserialized in a special function later
+#define ENABLE_SPREAD_METER true
+#define ENABLE_STATUS true
+#define ENABLE_TEST_INDICATORS false
+//--
+// Events On/Off
+#define ENABLE_EVENT_TICK 1 // enable "Tick" event
+#define ENABLE_EVENT_TRADE 1 // enable "Trade" event
+#define ENABLE_EVENT_TIMER 0 // enable "Timer" event
+//--
+// Virtual Stops
+#define VIRTUAL_STOPS_ENABLED 0 // enable virtual stops
+#define VIRTUAL_STOPS_TIMEOUT 0 // virtual stops timeout
+#define USE_EMERGENCY_STOPS "no" // "yes" to use emergency (hard stops) when virtual stops are in use. "always" to use EMERGENCY_STOPS_ADD as emergency stops when there is no virtual stop.
+#define EMERGENCY_STOPS_REL 0 // use 0 to disable hard stops when virtual stops are enabled. Use a value >=0 to automatically set hard stops with virtual. Example: if 2 is used, then hard stops will be 2 times bigger than virtual ones.
+#define EMERGENCY_STOPS_ADD 0 // add pips to relative size of emergency stops (hard stops)
+//--
+// Settings for events
+#define ON_TIMER_PERIOD 60 // Timer event period (in seconds)
+
+//VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//
+// System constants (predefined constants) //
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
+//--
+#define TLOBJPROP_TIME1 801
+#define OBJPROP_TL_PRICE_BY_SHIFT 802
+#define OBJPROP_TL_SHIFT_BY_PRICE 803
+#define OBJPROP_FIBOVALUE 804
+#define OBJPROP_FIBOPRICEVALUE 805
+#define OBJPROP_FIRSTLEVEL 806
+#define OBJPROP_TIME1 807
+#define OBJPROP_TIME2 808
+#define OBJPROP_TIME3 809
+#define OBJPROP_PRICE1 810
+#define OBJPROP_PRICE2 811
+#define OBJPROP_PRICE3 812
+#define OBJPROP_BARSHIFT1 813
+#define OBJPROP_BARSHIFT2 814
+#define OBJPROP_BARSHIFT3 815
+#define SEL_CURRENT 0
+#define SEL_INITIAL 1
+
+//VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//
+// Enumerations, Imports, Constants, Variables //
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
+
+
+
+
+
+
+//--
+// Constants (Input Parameters)
+input bool Auto_ON_OFF = false;
+input string Server_Start = "00:00";
+input string Server_End = "00:00";
+input string Fibo_Level = ""; // 0,23.6,38.2,50,61.8,1000
+input double EMA_Fast = 0.0;
+input double EMA_Slow = 0.0;
+input double MAX_Order = 0.0;
+input double Risk_Percent = 0.0;
+input double PA_Ratio = 0.0;
+input double Cut_Loss_Percent = 0.0;
+input double Candle_ZZ = 0.0;
+input bool Trailing_ON_OFF = false;
+input double Profit_Percent = 0.0;
+input double Trailing_Profit_Percent = 0.0;
+input double TSP_Start = 0.0;
+input double TSP_Step = 0.0;
+input double TSM_Stop = 0.0;
+input bool Keep_Last_ON_OFF = false;
+input double BE_Pip = 0.0;
+input double BE_Offset = 0.0;
+input bool Trailing_Balance_ON_OFF = false;
+input double Balance_Trailing_Percent = 0.0;
+input int MagicStart = 7871; // Magic Number, kind of...
+class c
+{
+		public:
+	static bool Auto_ON_OFF;
+	static string Server_Start;
+	static string Server_End;
+	static string Fibo_Level;
+	static double EMA_Fast;
+	static double EMA_Slow;
+	static double MAX_Order;
+	static double Risk_Percent;
+	static double PA_Ratio;
+	static double Cut_Loss_Percent;
+	static double Candle_ZZ;
+	static bool Trailing_ON_OFF;
+	static double Profit_Percent;
+	static double Trailing_Profit_Percent;
+	static double TSP_Start;
+	static double TSP_Step;
+	static double TSM_Stop;
+	static bool Keep_Last_ON_OFF;
+	static double BE_Pip;
+	static double BE_Offset;
+	static bool Trailing_Balance_ON_OFF;
+	static double Balance_Trailing_Percent;
+	static int MagicStart;
+};
+bool c::Auto_ON_OFF;
+string c::Server_Start;
+string c::Server_End;
+string c::Fibo_Level;
+double c::EMA_Fast;
+double c::EMA_Slow;
+double c::MAX_Order;
+double c::Risk_Percent;
+double c::PA_Ratio;
+double c::Cut_Loss_Percent;
+double c::Candle_ZZ;
+bool c::Trailing_ON_OFF;
+double c::Profit_Percent;
+double c::Trailing_Profit_Percent;
+double c::TSP_Start;
+double c::TSP_Step;
+double c::TSM_Stop;
+bool c::Keep_Last_ON_OFF;
+double c::BE_Pip;
+double c::BE_Offset;
+bool c::Trailing_Balance_ON_OFF;
+double c::Balance_Trailing_Percent;
+int c::MagicStart;
+
+
+//--
+// Variables (Global Variables)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class v
+{
+		public:
+	static double B0;
+	static double B1;
+	static double B2;
+	static double B3;
+	static double B4;
+	static double B5;
+	static double S0;
+	static double S1;
+	static double S2;
+	static double S3;
+	static double S4;
+	static double S5;
+	static double Profit;
+	static double Cut_lossx;
+	static double Engulf;
+	static double Price_Close_Day;
+	static double ATR_DAY;
+	static double Moneypertick;
+	static double PointSize;
+	static double Lots_Percent;
+	static double Lots_BS;
+	static double ATR_PointSize;
+	static double ATR_Near;
+	static double Profit_Percent;
+	static double Trailing_Profit_Percent;
+	static double TSP_Start;
+	static double TSP_Step;
+	static double TSM_Stop;
+	static double Buy_count_no_last;
+	static double Sell_count_no_last;
+	static double Buy_Profit_no_Last;
+	static double Sell_Profit_no_Last;
+	static double LotsBX;
+	static double LotsSX;
+	static double SumLots_Buy;
+	static double SumLots_Sell;
+	static double Profit_Buy;
+	static double Profit_Sell;
+	static double New_Balance;
+	static double Trailing_Balance;
+};
+double v::B0;
+double v::B1;
+double v::B2;
+double v::B3;
+double v::B4;
+double v::B5;
+double v::S0;
+double v::S1;
+double v::S2;
+double v::S3;
+double v::S4;
+double v::S5;
+double v::Profit;
+double v::Cut_lossx;
+double v::Engulf;
+double v::Price_Close_Day;
+double v::ATR_DAY;
+double v::Moneypertick;
+double v::PointSize;
+double v::Lots_Percent;
+double v::Lots_BS;
+double v::ATR_PointSize;
+double v::ATR_Near;
+double v::Profit_Percent;
+double v::Trailing_Profit_Percent;
+double v::TSP_Start;
+double v::TSP_Step;
+double v::TSM_Stop;
+double v::Buy_count_no_last;
+double v::Sell_count_no_last;
+double v::Buy_Profit_no_Last;
+double v::Sell_Profit_no_Last;
+double v::LotsBX;
+double v::LotsSX;
+double v::SumLots_Buy;
+double v::SumLots_Sell;
+double v::Profit_Buy;
+double v::Profit_Sell;
+double v::New_Balance;
+double v::Trailing_Balance;
+
+
+
+
+//VVVVVVVVVVVVVVVVVVVVVVVVV//
+// System global variables //
+//^^^^^^^^^^^^^^^^^^^^^^^^^//
+//--
+// Blocks Lookup Functions
+string fxdBlocksLookupTable[];
+
+int FXD_CURRENT_FUNCTION_ID = 0;
+double FXD_MILS_INIT_END    = 0;
+int FXD_TICKS_FROM_START    = 0;
+int FXD_MORE_SHIFT          = 0;
+bool FXD_DRAW_SPREAD_INFO   = false;
+bool FXD_FIRST_TICK_PASSED  = false;
+bool FXD_BREAK              = false;
+bool FXD_CONTINUE           = false;
+bool USE_VIRTUAL_STOPS = VIRTUAL_STOPS_ENABLED;
+string FXD_CURRENT_SYMBOL   = "";
+int FXD_BLOCKS_COUNT        = 155;
+datetime FXD_TICKSKIP_UNTIL = 0;
+
+int FXD_ICUSTOM_HANDLES_IDS[]; // only used in MQL5
+string FXD_ICUSTOM_HANDLES_KEYS[]; // only used in MQL5
+
+//- for use in OnChart() event
+struct fxd_onchart
+{
+	int id;
+	long lparam;
+	double dparam;
+	string sparam;
+};
+fxd_onchart FXD_ONCHART;
+
+/************************************************************************************************************************/
+// +------------------------------------------------------------------------------------------------------------------+ //
+// |                                                 EVENT FUNCTIONS                                                  | //
+// |                           These are the main functions that controls the whole project                           | //
+// +------------------------------------------------------------------------------------------------------------------+ //
+/************************************************************************************************************************/
+
+//VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//
+// This function is executed once when the program starts //
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
+int OnInit()
+{
+
+	// Initiate Constants
+	c::Auto_ON_OFF = Auto_ON_OFF;
+	c::Server_Start = Server_Start;
+	c::Server_End = Server_End;
+	c::Fibo_Level = Fibo_Level;
+	c::EMA_Fast = EMA_Fast;
+	c::EMA_Slow = EMA_Slow;
+	c::MAX_Order = MAX_Order;
+	c::Risk_Percent = Risk_Percent;
+	c::PA_Ratio = PA_Ratio;
+	c::Cut_Loss_Percent = Cut_Loss_Percent;
+	c::Candle_ZZ = Candle_ZZ;
+	c::Trailing_ON_OFF = Trailing_ON_OFF;
+	c::Profit_Percent = Profit_Percent;
+	c::Trailing_Profit_Percent = Trailing_Profit_Percent;
+	c::TSP_Start = TSP_Start;
+	c::TSP_Step = TSP_Step;
+	c::TSM_Stop = TSM_Stop;
+	c::Keep_Last_ON_OFF = Keep_Last_ON_OFF;
+	c::BE_Pip = BE_Pip;
+	c::BE_Offset = BE_Offset;
+	c::Trailing_Balance_ON_OFF = Trailing_Balance_ON_OFF;
+	c::Balance_Trailing_Percent = Balance_Trailing_Percent;
+	c::MagicStart = MagicStart;
+
+
+
+
+	// do or do not not initilialize on reload
+	if (UninitializeReason() != 0)
+	{
+		if (UninitializeReason() == REASON_CHARTCHANGE)
+		{
+			// if the symbol is the same, do not reload, otherwise continue below
+			if (FXD_CURRENT_SYMBOL == Symbol()) {return INIT_SUCCEEDED;}
+		}
+		else
+		{
+			return INIT_SUCCEEDED;
+		}
+	}
+	FXD_CURRENT_SYMBOL = Symbol();
+
+	CurrentSymbol(FXD_CURRENT_SYMBOL); // CurrentSymbol() has internal memory that should be set from here when the symboll is changed
+	CurrentTimeframe(PERIOD_CURRENT);
+
+	v::B0 = 0.0;
+	v::B1 = 0.0;
+	v::B2 = 0.0;
+	v::B3 = 0.0;
+	v::B4 = 0.0;
+	v::B5 = 0.0;
+	v::S0 = 0.0;
+	v::S1 = 0.0;
+	v::S2 = 0.0;
+	v::S3 = 0.0;
+	v::S4 = 0.0;
+	v::S5 = 0.0;
+	v::Profit = 0.0;
+	v::Cut_lossx = 0.0;
+	v::Engulf = 0.0;
+	v::Price_Close_Day = 0.0;
+	v::ATR_DAY = 0.0;
+	v::Moneypertick = 0.0;
+	v::PointSize = 0.0;
+	v::Lots_Percent = 0.0;
+	v::Lots_BS = 0.0;
+	v::ATR_PointSize = 0.0;
+	v::ATR_Near = 0.0;
+	v::Profit_Percent = 0.0;
+	v::Trailing_Profit_Percent = 0.0;
+	v::TSP_Start = 0.0;
+	v::TSP_Step = 0.0;
+	v::TSM_Stop = 0.0;
+	v::Buy_count_no_last = 0.0;
+	v::Sell_count_no_last = 0.0;
+	v::Buy_Profit_no_Last = 0.0;
+	v::Sell_Profit_no_Last = 0.0;
+	v::LotsBX = 0.0;
+	v::LotsSX = 0.0;
+	v::SumLots_Buy = 0.0;
+	v::SumLots_Sell = 0.0;
+	v::Profit_Buy = 0.0;
+	v::Profit_Sell = 0.0;
+	v::New_Balance = 0.0;
+	v::Trailing_Balance = 0.0;
+
+
+
+
+	Comment("");
+	for (int i=ObjectsTotal(ChartID()); i>=0; i--)
+	{
+		string name = ObjectName(ChartID(), i);
+		if (StringSubstr(name,0,8) == "fxd_cmnt") {ObjectDelete(ChartID(), name);}
+	}
+	ChartRedraw();
+
+
+
+	//-- disable virtual stops in optimization, because graphical objects does not work
+	// http://docs.mql4.com/runtime/testing
+	if (MQLInfoInteger(MQL_OPTIMIZATION)) {
+		USE_VIRTUAL_STOPS = false;
+	}
+
+	//-- set initial local and server time
+	TimeAtStart("set");
+
+	//-- set initial balance
+	AccountBalanceAtStart();
+
+	//-- draw the initial spread info meter
+	if (ENABLE_SPREAD_METER == false) {
+		FXD_DRAW_SPREAD_INFO = false;
+	}
+	else {
+		FXD_DRAW_SPREAD_INFO = !(MQLInfoInteger(MQL_TESTER) && !MQLInfoInteger(MQL_VISUAL_MODE));
+	}
+	if (FXD_DRAW_SPREAD_INFO) DrawSpreadInfo();
+
+	//-- draw initial status
+	if (ENABLE_STATUS) DrawStatus("waiting for tick...");
+
+	//-- draw indicators after test
+	TesterHideIndicators(!ENABLE_TEST_INDICATORS);
+
+	if (ENABLE_EVENT_TIMER) {
+		OnTimerSet(ON_TIMER_PERIOD);
+	}
+
+
+	//-- Initialize blocks classes
+	ArrayResize(_blocks_, 155);
+
+	_blocks_[0] = new Block0();
+	_blocks_[1] = new Block1();
+	_blocks_[2] = new Block2();
+	_blocks_[3] = new Block3();
+	_blocks_[4] = new Block4();
+	_blocks_[5] = new Block5();
+	_blocks_[6] = new Block6();
+	_blocks_[7] = new Block7();
+	_blocks_[8] = new Block8();
+	_blocks_[9] = new Block9();
+	_blocks_[10] = new Block10();
+	_blocks_[11] = new Block11();
+	_blocks_[12] = new Block12();
+	_blocks_[13] = new Block13();
+	_blocks_[14] = new Block14();
+	_blocks_[15] = new Block15();
+	_blocks_[16] = new Block16();
+	_blocks_[17] = new Block17();
+	_blocks_[18] = new Block18();
+	_blocks_[19] = new Block19();
+	_blocks_[20] = new Block20();
+	_blocks_[21] = new Block21();
+	_blocks_[22] = new Block22();
+	_blocks_[23] = new Block23();
+	_blocks_[24] = new Block24();
+	_blocks_[25] = new Block25();
+	_blocks_[26] = new Block26();
+	_blocks_[27] = new Block27();
+	_blocks_[28] = new Block28();
+	_blocks_[29] = new Block29();
+	_blocks_[30] = new Block30();
+	_blocks_[31] = new Block31();
+	_blocks_[32] = new Block32();
+	_blocks_[33] = new Block33();
+	_blocks_[34] = new Block34();
+	_blocks_[35] = new Block35();
+	_blocks_[36] = new Block36();
+	_blocks_[37] = new Block37();
+	_blocks_[38] = new Block38();
+	_blocks_[39] = new Block39();
+	_blocks_[40] = new Block40();
+	_blocks_[41] = new Block41();
+	_blocks_[42] = new Block42();
+	_blocks_[43] = new Block43();
+	_blocks_[44] = new Block44();
+	_blocks_[45] = new Block45();
+	_blocks_[46] = new Block46();
+	_blocks_[47] = new Block47();
+	_blocks_[48] = new Block48();
+	_blocks_[49] = new Block49();
+	_blocks_[50] = new Block50();
+	_blocks_[51] = new Block51();
+	_blocks_[52] = new Block52();
+	_blocks_[53] = new Block53();
+	_blocks_[54] = new Block54();
+	_blocks_[55] = new Block55();
+	_blocks_[56] = new Block56();
+	_blocks_[57] = new Block57();
+	_blocks_[58] = new Block58();
+	_blocks_[59] = new Block59();
+	_blocks_[60] = new Block60();
+	_blocks_[61] = new Block61();
+	_blocks_[62] = new Block62();
+	_blocks_[63] = new Block63();
+	_blocks_[64] = new Block64();
+	_blocks_[65] = new Block65();
+	_blocks_[66] = new Block66();
+	_blocks_[67] = new Block67();
+	_blocks_[68] = new Block68();
+	_blocks_[69] = new Block69();
+	_blocks_[70] = new Block70();
+	_blocks_[71] = new Block71();
+	_blocks_[72] = new Block72();
+	_blocks_[73] = new Block73();
+	_blocks_[74] = new Block74();
+	_blocks_[75] = new Block75();
+	_blocks_[76] = new Block76();
+	_blocks_[77] = new Block77();
+	_blocks_[78] = new Block78();
+	_blocks_[79] = new Block79();
+	_blocks_[80] = new Block80();
+	_blocks_[81] = new Block81();
+	_blocks_[82] = new Block82();
+	_blocks_[83] = new Block83();
+	_blocks_[84] = new Block84();
+	_blocks_[85] = new Block85();
+	_blocks_[86] = new Block86();
+	_blocks_[87] = new Block87();
+	_blocks_[88] = new Block88();
+	_blocks_[89] = new Block89();
+	_blocks_[90] = new Block90();
+	_blocks_[91] = new Block91();
+	_blocks_[92] = new Block92();
+	_blocks_[93] = new Block93();
+	_blocks_[94] = new Block94();
+	_blocks_[95] = new Block95();
+	_blocks_[96] = new Block96();
+	_blocks_[97] = new Block97();
+	_blocks_[98] = new Block98();
+	_blocks_[99] = new Block99();
+	_blocks_[100] = new Block100();
+	_blocks_[101] = new Block101();
+	_blocks_[102] = new Block102();
+	_blocks_[103] = new Block103();
+	_blocks_[104] = new Block104();
+	_blocks_[105] = new Block105();
+	_blocks_[106] = new Block106();
+	_blocks_[107] = new Block107();
+	_blocks_[108] = new Block108();
+	_blocks_[109] = new Block109();
+	_blocks_[110] = new Block110();
+	_blocks_[111] = new Block111();
+	_blocks_[112] = new Block112();
+	_blocks_[113] = new Block113();
+	_blocks_[114] = new Block114();
+	_blocks_[115] = new Block115();
+	_blocks_[116] = new Block116();
+	_blocks_[117] = new Block117();
+	_blocks_[118] = new Block118();
+	_blocks_[119] = new Block119();
+	_blocks_[120] = new Block120();
+	_blocks_[121] = new Block121();
+	_blocks_[122] = new Block122();
+	_blocks_[123] = new Block123();
+	_blocks_[124] = new Block124();
+	_blocks_[125] = new Block125();
+	_blocks_[126] = new Block126();
+	_blocks_[127] = new Block127();
+	_blocks_[128] = new Block128();
+	_blocks_[129] = new Block129();
+	_blocks_[130] = new Block130();
+	_blocks_[131] = new Block131();
+	_blocks_[132] = new Block132();
+	_blocks_[133] = new Block133();
+	_blocks_[134] = new Block134();
+	_blocks_[135] = new Block135();
+	_blocks_[136] = new Block136();
+	_blocks_[137] = new Block137();
+	_blocks_[138] = new Block138();
+	_blocks_[139] = new Block139();
+	_blocks_[140] = new Block140();
+	_blocks_[141] = new Block141();
+	_blocks_[142] = new Block142();
+	_blocks_[143] = new Block143();
+	_blocks_[144] = new Block144();
+	_blocks_[145] = new Block145();
+	_blocks_[146] = new Block146();
+	_blocks_[147] = new Block147();
+	_blocks_[148] = new Block148();
+	_blocks_[149] = new Block149();
+	_blocks_[150] = new Block150();
+	_blocks_[151] = new Block151();
+	_blocks_[152] = new Block152();
+	_blocks_[153] = new Block153();
+	_blocks_[154] = new Block154();
+
+	// fill the lookup table
+	ArrayResize(fxdBlocksLookupTable, ArraySize(_blocks_));
+	for (int i=0; i<ArraySize(_blocks_); i++)
+	{
+		fxdBlocksLookupTable[i] = _blocks_[i].__block_user_number;
+	}
+
+	// fill the list of inbound blocks for each BlockCalls instance
+	for (int i=0; i<ArraySize(_blocks_); i++)
+	{
+		_blocks_[i].__announceThisBlock();
+	}
+
+	// List of initially disabled blocks
+	int disabled_blocks_list[] = {150,151};
+	for (int l = 0; l < ArraySize(disabled_blocks_list); l++) {
+		_blocks_[disabled_blocks_list[l]].__disabled = true;
+	}
+
+	//-- run blocks
+	int blocks_to_run[] = {14,18,151};
+	for (int i=0; i<ArraySize(blocks_to_run); i++) {
+		_blocks_[blocks_to_run[i]].run();
+	}
+
+
+	FXD_MILS_INIT_END     = (double)GetTickCount();
+	FXD_FIRST_TICK_PASSED = false; // reset is needed when changing inputs
+
+	return(INIT_SUCCEEDED);
+}
+
+//VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//
+// This function is executed on every incoming tick //
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
+void OnTick()
+{
+	FXD_TICKS_FROM_START++;
+
+	if (ENABLE_STATUS && FXD_TICKS_FROM_START == 1) DrawStatus("working");
+
+	//-- special system actions
+	if (FXD_DRAW_SPREAD_INFO) DrawSpreadInfo();
+	TicksData(""); // Collect ticks (if needed)
+	TicksPerSecond(false, true); // Collect ticks per second
+	if (USE_VIRTUAL_STOPS) {VirtualStopsDriver();}
+
+	if (false) ExpirationWorker * expirationDummy = new ExpirationWorker();
+	expirationWorker.Run();
+
+	OCODriver(); // Check and close OCO orders
+
+	// skip ticks
+	if (TimeLocal() < FXD_TICKSKIP_UNTIL) {return;}
+
+	//-- run blocks
+	int blocks_to_run[] = {20,24,73,76,88,96,101,102,106,107,110,111,149};
+	for (int i=0; i<ArraySize(blocks_to_run); i++) {
+		_blocks_[blocks_to_run[i]].run();
+	}
+
+
+	return;
+}
+
+//VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//
+// This function is executed on trade events - open, close, modify //
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
+void OnTrade()
+{
+	// This is needed so that the OnTradeEventDetector class is added into the code
+	if (false) OnTradeEventDetector * dummy = new OnTradeEventDetector();
+
+	while (onTradeEventDetector.Start() == true)
+	{
+	//-- run blocks
+	int blocks_to_run[] = {114,115};
+	for (int i=0; i<ArraySize(blocks_to_run); i++) {
+		_blocks_[blocks_to_run[i]].run();
+	}
+
+	}
+
+	onTradeEventDetector.End();
+
+}
+
+
+//VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//
+// This function is executed on a period basis //
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
+void OnTimer()
+{
+
+}
+
+
+//VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//
+// This function is executed when chart event happens //
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
+void OnChartEvent(
+	const int id,         // Event ID
+	const long& lparam,   // Parameter of type long event
+	const double& dparam, // Parameter of type double event
+	const string& sparam  // Parameter of type string events
+)
+{
+	//-- write parameter to the system global variables
+	FXD_ONCHART.id     = id;
+	FXD_ONCHART.lparam = lparam;
+	FXD_ONCHART.dparam = dparam;
+	FXD_ONCHART.sparam = sparam;
+
+
+	return;
+}
+
+//VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//
+// This function is executed once when the program ends //
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
+void OnDeinit(const int reason)
+{
+	int reson = UninitializeReason();
+
+	if (reson == REASON_CHARTCHANGE || reson == REASON_PARAMETERS || reason == REASON_TEMPLATE) {
+		return;
+	}
+
+	if (reason == REASON_ACCOUNT ) {
+		// delete dynamic pointers
+		for (int i=0; i<ArraySize(_blocks_); i++)
+		{
+			delete _blocks_[i];
+			_blocks_[i] = NULL;
+		}
+		ArrayResize(_blocks_, 0);
+
+		return;
+	}
+
+	//-- if Timer was set, kill it here
+	EventKillTimer();
+
+	if (ENABLE_STATUS) DrawStatus("stopped");
+	if (ENABLE_SPREAD_METER) DrawSpreadInfo();
+	ChartSetString(0, CHART_COMMENT, "");
+
+
+
+	if (MQLInfoInteger(MQL_TESTER)) {
+		Print("Backtested in "+DoubleToString((GetTickCount()-FXD_MILS_INIT_END)/1000, 2)+" seconds");
+		double tc = GetTickCount()-FXD_MILS_INIT_END;
+		if (tc > 0)
+		{
+			Print("Average ticks per second: "+DoubleToString(FXD_TICKS_FROM_START/tc, 0));
+		}
+	}
+
+	if (MQLInfoInteger(MQL_PROGRAM_TYPE) == PROGRAM_EXPERT)
+	{
+		switch(UninitializeReason())
+		{
+			case REASON_PROGRAM		: Print("Expert Advisor self terminated"); break;
+			case REASON_REMOVE		: Print("Expert Advisor removed from the chart"); break;
+			case REASON_RECOMPILE	: Print("Expert Advisor has been recompiled"); break;
+			case REASON_CHARTCHANGE	: Print("Symbol or chart period has been changed"); break;
+			case REASON_CHARTCLOSE	: Print("Chart has been closed"); break;
+			case REASON_PARAMETERS	: Print("Input parameters have been changed by a user"); break;
+			case REASON_ACCOUNT		: Print("Another account has been activated or reconnection to the trade server has occurred due to changes in the account settings"); break;
+			case REASON_TEMPLATE		: Print("A new template has been applied"); break;
+			case REASON_INITFAILED	: Print("OnInit() handler has returned a nonzero value"); break;
+			case REASON_CLOSE			: Print("Terminal has been closed"); break;
+		}
+	}
+
+	// delete dynamic pointers
+	for (int i=0; i<ArraySize(_blocks_); i++)
+	{
+		delete _blocks_[i];
+		_blocks_[i] = NULL;
+	}
+	ArrayResize(_blocks_, 0);
+
+	return;
+}
+
+/************************************************************************************************************************/
+// +------------------------------------------------------------------------------------------------------------------+ //
+// |                                             Classes of blocks                                                    | //
+// |              Classes that contain the actual code of the blocks and their input parameters as well               | //
+// +------------------------------------------------------------------------------------------------------------------+ //
+/************************************************************************************************************************/
+
+/**
+	The base class for all block calls
+   */
+class BlockCalls
+{
+	public:
+		bool __disabled; // whether or not the block is disabled
+
+		string __block_user_number;
+        int __block_number;
+		int __block_waiting;
+		int __parent_number;
+		int __inbound_blocks[];
+		int __outbound_blocks[];
+
+		void __addInboundBlock(int id = 0) {
+			int size = ArraySize(__inbound_blocks);
+			for (int i = 0; i < size; i++) {
+				if (__inbound_blocks[i] == id) {
+					return;
+				}
+			}
+			ArrayResize(__inbound_blocks, size + 1);
+			__inbound_blocks[size] = id;
+		}
+
+		void BlockCalls() {
+			__disabled          = false;
+			__block_user_number = "";
+			__block_number      = 0;
+			__block_waiting     = 0;
+			__parent_number     = 0;
+		}
+
+		/**
+		   Announce this block to the list of inbound connections of all the blocks to which this block is connected to
+		   */
+		void __announceThisBlock()
+		{
+		   // add the current block number to the list of inbound blocks
+		   // for each outbound block that is provided
+			for (int i = 0; i < ArraySize(__outbound_blocks); i++)
+			{
+				int block = __outbound_blocks[i]; // outbound block number
+				int size  = ArraySize(_blocks_[block].__inbound_blocks); // the size of its inbound list
+
+				// skip if the current block was already added
+				for (int j = 0; j < size; j++) {
+					if (_blocks_[block].__inbound_blocks[j] == __block_number)
+					{
+						return;
+					}
+				}
+
+				// add the current block number to the list of inbound blocks of the other block
+				ArrayResize(_blocks_[block].__inbound_blocks, size + 1);
+				_blocks_[block].__inbound_blocks[size] = __block_number;
+			}
+		}
+
+		// this is here, because it is used in the "run" function
+		virtual void _execute_() = 0;
+
+		/**
+			In the derived class this method should be used to set dynamic parameters or other stuff before the main execute.
+			This method is automatically called within the main "run" method below, before the execution of the main class.
+			*/
+		virtual void _beforeExecute_() {return;};
+		bool _beforeExecuteEnabled; // for speed
+
+		/**
+			Same as _beforeExecute_, but to work after the execute method.
+			*/
+		virtual void _afterExecute_() {return;};
+		bool _afterExecuteEnabled; // for speed
+
+		/**
+			This is the method that is used to run the block
+			*/
+		virtual void run(int _parent_=0) {
+			__parent_number = _parent_;
+			if (__disabled || FXD_BREAK) {return;}
+			FXD_CURRENT_FUNCTION_ID = __block_number;
+
+			if (_beforeExecuteEnabled) {_beforeExecute_();}
+			_execute_();
+			if (_afterExecuteEnabled) {_afterExecute_();}
+
+			if (__block_waiting && FXD_CURRENT_FUNCTION_ID == __block_number) {fxdWait.Accumulate(FXD_CURRENT_FUNCTION_ID);}
+		}
+};
+
+BlockCalls *_blocks_[];
+
+
+// "Draw Fibonacci" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename _T5_,typename T6,typename _T6_,typename T7,typename _T7_,typename T8,typename _T8_,typename T9,typename _T9_,typename T10,typename _T10_,typename T11,typename T12,typename T13,typename T14,typename T15,typename T16,typename T17,typename T18,typename T19,typename T20,typename T21,typename T22,typename T23,typename T24,typename T25,typename T26,typename T27>
+class MDL_ChartDrawFibonacci: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 ObjectPerBar;
+	T2 ObjectUpdate;
+	T3 ObjName;
+	T4 ObjectType;
+	T5 ObjTime1; virtual _T5_ _ObjTime1_(){return(_T5_)0;}
+	T6 ObjPrice1; virtual _T6_ _ObjPrice1_(){return(_T6_)0;}
+	T7 ObjTime2; virtual _T7_ _ObjTime2_(){return(_T7_)0;}
+	T8 ObjPrice2; virtual _T8_ _ObjPrice2_(){return(_T8_)0;}
+	T9 ObjTime3; virtual _T9_ _ObjTime3_(){return(_T9_)0;}
+	T10 ObjPrice3; virtual _T10_ _ObjPrice3_(){return(_T10_)0;}
+	T11 ObjRayLeft;
+	T12 ObjRayRight;
+	T13 ObjFullElipse;
+	T14 ObjScale;
+	T15 ObjLevels;
+	T16 ObjLevelColor;
+	T17 ObjLevelStyle;
+	T18 ObjLevelWidth;
+	T19 ObjColor;
+	T20 ObjStyle;
+	T21 ObjWidth;
+	T22 ObjBack;
+	T23 ObjSelectable;
+	T24 ObjSelected;
+	T25 ObjHidden;
+	T26 ObjZorder;
+	T27 ObjChartSubWindow;
+	/* Static Parameters */
+	int count;
+	datetime time0;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_ChartDrawFibonacci()
+	{
+		ObjectPerBar = (bool)true;
+		ObjectUpdate = (bool)true;
+		ObjName = (string)"";
+		ObjectType = (ENUM_OBJECT)OBJ_FIBO;
+		ObjRayLeft = (bool)false;
+		ObjRayRight = (bool)false;
+		ObjFullElipse = (bool)false;
+		ObjScale = (double)1.0;
+		ObjLevels = (string)"";
+		ObjLevelColor = (color)clrYellow;
+		ObjLevelStyle = (ENUM_LINE_STYLE)STYLE_SOLID;
+		ObjLevelWidth = (int)1;
+		ObjColor = (color)clrGray;
+		ObjStyle = (ENUM_LINE_STYLE)STYLE_SOLID;
+		ObjWidth = (int)1;
+		ObjBack = (bool)false;
+		ObjSelectable = (bool)true;
+		ObjSelected = (bool)false;
+		ObjHidden = (bool)false;
+		ObjZorder = (int)0;
+		ObjChartSubWindow = (string)"";
+		/* Static Parameters (initial value) */
+		count =  0;
+		time0 =  0;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		string ObjNamePrefix = "fxd_fibo_";
+		long ObjChartID      = 0;
+		int subwindow_id     = WindowFindVisible(ObjChartID, ObjChartSubWindow);
+		
+		if (subwindow_id >= 0)
+		{
+			string name       = "";
+			string name_base  = "";
+			bool get_new_name = false;
+			bool do_update    = true;
+		
+			if (ObjectPerBar == true)
+			{
+				datetime time = iTime(Symbol(),0,1);
+		
+				if (time0 < time)
+				{
+					time0        = time;
+					get_new_name = true;
+				}
+				else
+				{
+					if (ObjectUpdate == false) {do_update = false;}
+				}
+			}
+			else
+			{
+				if (ObjectUpdate == false) {get_new_name = true;}
+			}
+		
+			if (do_update)
+			{
+				if (ObjName != "") {name_base = ObjName;} else {name_base = ObjNamePrefix + __block_user_number + "_";}
+		
+				if (get_new_name == false)
+				{
+					name = name_base + IntegerToString(count);
+				}
+				else
+				{
+					while (true)
+					{
+						count++;
+						name = name_base + IntegerToString(count);
+		
+						if (ObjectFind(ObjChartID,name) < 0) {break;}
+					}
+				}
+		
+				if (ObjName != "" && count == 0) {name = ObjName;}
+				
+				if (ObjectFind(ObjChartID,name) < 0 && !ObjectCreate(ObjChartID,name,(ENUM_OBJECT)ObjectType,subwindow_id,0,0))
+				{
+					Print(__FUNCTION__,": failed to create fibonacci object! Error code = ",GetLastError());
+				}
+		
+				double p1=0, p2=0, p3=0;
+				datetime t1=0, t2=0, t3=0;
+		
+				switch(ObjectType)
+				{
+					case OBJ_FIBO        : {t1=1; p1=1; t2=1; p2=1; break;}
+					case OBJ_FIBOTIMES   : {t1=1; p1=1; t2=1; p2=1; break;}
+					case OBJ_FIBOFAN     : {t1=1; p1=1; t2=1; p2=1; break;}
+					case OBJ_FIBOARC     : {t1=1; p1=1; t2=1; p2=1; break;}
+					case OBJ_FIBOCHANNEL : {t1=1; p1=1; t2=1; p2=1; t3=1; p3=1; break;}
+					case OBJ_EXPANSION   : {t1=1; p1=1; t2=1; p2=1; t3=1; p3=1; break;}
+				}
+		
+				if (t1 == 1) {t1 = _ObjTime1_(); ObjectSetInteger(ObjChartID,name,OBJPROP_TIME,0,t1);}
+				if (t2 == 1) {t2 = _ObjTime2_(); ObjectSetInteger(ObjChartID,name,OBJPROP_TIME,1,t2);}
+				if (t3 == 1) {t3 = _ObjTime3_(); ObjectSetInteger(ObjChartID,name,OBJPROP_TIME,2,t3);}
+				if (p1 == 1) {p1 = _ObjPrice1_(); ObjectSetDouble(ObjChartID,name,OBJPROP_PRICE,0,p1);}
+				if (p2 == 1) {p2 = _ObjPrice2_(); ObjectSetDouble(ObjChartID,name,OBJPROP_PRICE,1,p2);}
+				if (p3 == 1) {p3 = _ObjPrice3_(); ObjectSetDouble(ObjChartID,name,OBJPROP_PRICE,2,p3);}
+		
+				ObjectSetInteger(ObjChartID,name,OBJPROP_STYLE,ObjStyle);
+				ObjectSetInteger(ObjChartID,name,OBJPROP_COLOR,ObjColor);
+				ObjectSetInteger(ObjChartID,name,OBJPROP_BACK,ObjBack);
+				ObjectSetInteger(ObjChartID,name,OBJPROP_WIDTH,ObjWidth);
+				ObjectSetInteger(ObjChartID,name,OBJPROP_SELECTABLE,ObjSelectable);
+				ObjectSetInteger(ObjChartID,name,OBJPROP_SELECTED,ObjSelected);
+				ObjectSetInteger(ObjChartID,name,OBJPROP_HIDDEN,ObjHidden);
+				ObjectSetInteger(ObjChartID,name,OBJPROP_ZORDER,ObjZorder);
+		
+				ObjectSetInteger(ObjChartID,name,OBJPROP_RAY_LEFT,ObjRayLeft);
+				ObjectSetInteger(ObjChartID,name,OBJPROP_RAY_RIGHT,ObjRayRight);
+				ObjectSetDouble(ObjChartID,name,OBJPROP_SCALE,ObjScale);
+				ObjectSetInteger(ObjChartID,name,OBJPROP_ELLIPSE,ObjFullElipse);
+		
+				ObjLevels = StringTrim(ObjLevels);
+		
+				if (ObjLevels != "")
+				{
+					int i, levels;
+					double levl;
+					string values[];
+		
+					StringExplode(",", ObjLevels, values);
+					levels = ArraySize(values);
+		
+					ObjectSetInteger(ObjChartID, name, OBJPROP_LEVELS, levels);
+		
+					for (i=0; i<levels; i++)
+					{
+						levl = StrToDouble(StringTrim(values[i]));
+						
+						ObjectSetDouble(ObjChartID,name,OBJPROP_LEVELVALUE,i,(double)levl/100);
+						ObjectSetString(ObjChartID,name,OBJPROP_LEVELTEXT,i,DoubleToString(levl,1));
+					}
+		
+					//-- these parameters does not work per-level anyway, so it's enough to set them for the last level only
+					ObjectSetInteger(ObjChartID,name,OBJPROP_LEVELCOLOR,i,ObjLevelColor);
+					ObjectSetInteger(ObjChartID,name,OBJPROP_LEVELSTYLE,i,ObjLevelStyle);
+					ObjectSetInteger(ObjChartID,name,OBJPROP_LEVELWIDTH,i,ObjLevelWidth);
+				}
+				else
+				{
+					ObjectSetInteger(ObjChartID,name,OBJPROP_LEVELCOLOR,1,ObjLevelColor);
+					ObjectSetInteger(ObjChartID,name,OBJPROP_LEVELSTYLE,1,ObjLevelStyle);
+					ObjectSetInteger(ObjChartID,name,OBJPROP_LEVELWIDTH,1,ObjLevelWidth);
+				}
+		
+				ChartRedraw();
+			}
+		}
+		
+		_callback_(1);
+	}
+};
+
+// "Delete pending orders" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7>
+class MDL_DeletePendingOrders: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 GroupMode;
+	T2 Group;
+	T3 SymbolMode;
+	T4 Symbol;
+	T5 BuysOrSells;
+	T6 LimitsOrStops;
+	T7 ArrowColor;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_DeletePendingOrders()
+	{
+		GroupMode = (string)"group";
+		Group = (string)"";
+		SymbolMode = (string)"symbol";
+		Symbol = (string)CurrentSymbol();
+		BuysOrSells = (string)"both";
+		LimitsOrStops = (string)"both";
+		ArrowColor = (color)clrDeepPink;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		for (int index = OrdersTotal()-1; index >= 0; index--)
+		{
+			if (PendingOrderSelectByIndex(index, GroupMode, Group, SymbolMode, Symbol, BuysOrSells, LimitsOrStops))
+			{
+				DeleteOrder(OrderTicket(), ArrowColor);
+			}
+		}
+		
+		_callback_(1);
+	}
+};
+
+// "Modify Variables" model
+template<typename T1,typename T2,typename _T2_,typename T3,typename T4,typename _T4_,typename T5,typename T6,typename _T6_,typename T7,typename T8,typename _T8_,typename T9,typename T10,typename _T10_>
+class MDL_ModifyVariables: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Variable1;
+	T2 Value1; virtual _T2_ _Value1_(){return(_T2_)0;}
+	T3 Variable2;
+	T4 Value2; virtual _T4_ _Value2_(){return(_T4_)0;}
+	T5 Variable3;
+	T6 Value3; virtual _T6_ _Value3_(){return(_T6_)0;}
+	T7 Variable4;
+	T8 Value4; virtual _T8_ _Value4_(){return(_T8_)0;}
+	T9 Variable5;
+	T10 Value5; virtual _T10_ _Value5_(){return(_T10_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_ModifyVariables()
+	{
+		Variable1 = (int)0;
+		Variable2 = (int)0;
+		Variable3 = (int)0;
+		Variable4 = (int)0;
+		Variable5 = (int)0;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		// nothing here, because the actual code is generated in the generator
+		// _Value1_()
+		// _Value2_()
+		// _Value3_()
+		// _Value4_()
+		// _Value5_()
+		_callback_(1);
+	}
+};
+
+// "Buy pending order" model
+template<typename T1,typename T2,typename T3,typename T4,typename _T4_,typename T5,typename T6,typename T7,typename T8,typename T9,typename T10,typename T11,typename T12,typename _T12_,typename T13,typename T14,typename T15,typename T16,typename T17,typename T18,typename T19,typename T20,typename T21,typename T22,typename T23,typename T24,typename T25,typename T26,typename T27,typename _T27_,typename T28,typename _T28_,typename T29,typename _T29_,typename T30,typename T31,typename T32,typename T33,typename T34,typename _T34_,typename T35,typename _T35_,typename T36,typename _T36_,typename T37,typename T38,typename T39,typename T40,typename T41,typename _T41_,typename T42,typename T43,typename T44,typename T45>
+class MDL_BuyPending: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Group;
+	T2 Symbol;
+	T3 Price;
+	T4 dPrice; virtual _T4_ _dPrice_(){return(_T4_)0;}
+	T5 PriceOffset;
+	T6 VolumeMode;
+	T7 VolumeSize;
+	T8 VolumeSizeRisk;
+	T9 VolumeRisk;
+	T10 VolumePercent;
+	T11 VolumeBlockPercent;
+	T12 dVolumeSize; virtual _T12_ _dVolumeSize_(){return(_T12_)0;}
+	T13 FixedRatioUnitSize;
+	T14 FixedRatioDelta;
+	T15 mmMgInitialLots;
+	T16 mmMgMultiplyOnLoss;
+	T17 mmMgMultiplyOnProfit;
+	T18 mmMgAddLotsOnLoss;
+	T19 mmMgAddLotsOnProfit;
+	T20 mmMgResetOnLoss;
+	T21 mmMgResetOnProfit;
+	T22 VolumeUpperLimit;
+	T23 StopLossMode;
+	T24 StopLossPips;
+	T25 StopLossPercentPrice;
+	T26 StopLossPercentTP;
+	T27 dlStopLoss; virtual _T27_ _dlStopLoss_(){return(_T27_)0;}
+	T28 dpStopLoss; virtual _T28_ _dpStopLoss_(){return(_T28_)0;}
+	T29 ddStopLoss; virtual _T29_ _ddStopLoss_(){return(_T29_)0;}
+	T30 TakeProfitMode;
+	T31 TakeProfitPips;
+	T32 TakeProfitPercentPrice;
+	T33 TakeProfitPercentSL;
+	T34 dlTakeProfit; virtual _T34_ _dlTakeProfit_(){return(_T34_)0;}
+	T35 ddTakeProfit; virtual _T35_ _ddTakeProfit_(){return(_T35_)0;}
+	T36 dpTakeProfit; virtual _T36_ _dpTakeProfit_(){return(_T36_)0;}
+	T37 ExpMode;
+	T38 ExpDays;
+	T39 ExpHours;
+	T40 ExpMinutes;
+	T41 dExp; virtual _T41_ _dExp_(){return(_T41_)0;}
+	T42 CreateOCO;
+	T43 Slippage;
+	T44 MyComment;
+	T45 ArrowColorBuy;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_BuyPending()
+	{
+		Group = (string)"";
+		Symbol = (string)CurrentSymbol();
+		Price = (string)"ask";
+		PriceOffset = (double)20.0;
+		VolumeMode = (string)"fixed";
+		VolumeSize = (double)0.1;
+		VolumeSizeRisk = (double)50.0;
+		VolumeRisk = (double)2.5;
+		VolumePercent = (double)100.0;
+		VolumeBlockPercent = (double)3.0;
+		FixedRatioUnitSize = (double)0.01;
+		FixedRatioDelta = (double)20.0;
+		mmMgInitialLots = (double)0.1;
+		mmMgMultiplyOnLoss = (double)2.0;
+		mmMgMultiplyOnProfit = (double)1.0;
+		mmMgAddLotsOnLoss = (double)0.0;
+		mmMgAddLotsOnProfit = (double)0.0;
+		mmMgResetOnLoss = (int)0;
+		mmMgResetOnProfit = (int)1;
+		VolumeUpperLimit = (double)0.0;
+		StopLossMode = (string)"fixed";
+		StopLossPips = (double)50.0;
+		StopLossPercentPrice = (double)0.55;
+		StopLossPercentTP = (double)100.0;
+		TakeProfitMode = (string)"fixed";
+		TakeProfitPips = (double)50.0;
+		TakeProfitPercentPrice = (double)0.55;
+		TakeProfitPercentSL = (double)100.0;
+		ExpMode = (string)"GTC";
+		ExpDays = (int)0;
+		ExpHours = (int)1;
+		ExpMinutes = (int)0;
+		CreateOCO = (int)0;
+		Slippage = (ulong)4;
+		MyComment = (string)"";
+		ArrowColorBuy = (color)clrBlue;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		//-- open price -------------------------------------------------------------
+		double op = 0;
+		
+		     if (Price == "ask")     {op = SymbolAsk(Symbol);}
+		else if (Price == "bid")     {op = SymbolBid(Symbol);}
+		else if (Price == "mid")     {op = (SymbolAsk(Symbol)+SymbolBid(Symbol))/2;}
+		else if (Price == "dynamic") {op = _dPrice_();}
+		
+		op = op + toDigits(PriceOffset, Symbol);
+		
+		//-- stops ------------------------------------------------------------------
+		double sll = 0, slp = 0, tpl = 0, tpp = 0;
+		
+		     if (StopLossMode == "fixed")         {slp = StopLossPips;}
+		else if (StopLossMode == "dynamicPips")   {slp = _dpStopLoss_();}
+		else if (StopLossMode == "dynamicDigits") {slp = toPips(_ddStopLoss_(),Symbol);}
+		else if (StopLossMode == "dynamicLevel")  {sll = _dlStopLoss_();}
+		else if (StopLossMode == "percentPrice")  {sll = op - (op * StopLossPercentPrice / 100);}
+		
+		     if (TakeProfitMode == "fixed")         {tpp = TakeProfitPips;}
+		else if (TakeProfitMode == "dynamicPips")   {tpp = _dpTakeProfit_();}
+		else if (TakeProfitMode == "dynamicDigits") {tpp = toPips(_ddTakeProfit_(),Symbol);}
+		else if (TakeProfitMode == "dynamicLevel")  {tpl = _dlTakeProfit_();}
+		else if (TakeProfitMode == "percentPrice")  {tpl = op + (op * TakeProfitPercentPrice / 100);}
+		
+		if (StopLossMode == "percentTP")
+		{
+			if (tpp > 0) {slp = tpp*StopLossPercentTP/100;}
+			if (tpl > 0) {slp = toPips(MathAbs(op - tpl), Symbol)*StopLossPercentTP/100;}
+		}
+		
+		if (TakeProfitMode == "percentSL")
+		{
+			if (slp > 0) {tpp = slp*TakeProfitPercentSL/100;}
+			if (sll > 0) {tpp = toPips(MathAbs(op - sll), Symbol)*TakeProfitPercentSL/100;}
+		}
+		
+		//-- lots -------------------------------------------------------------------
+		double lots    = 0;
+		double pre_sll = sll;
+		
+		if (pre_sll == 0) {pre_sll = op;}
+		
+		double pre_sl_pips = toPips(op-(pre_sll-toDigits(slp,Symbol)), Symbol);
+		
+		     if (VolumeMode == "fixed")            {lots = DynamicLots(Symbol, VolumeMode, VolumeSize);}
+		else if (VolumeMode == "block-equity")     {lots = DynamicLots(Symbol, VolumeMode, VolumeBlockPercent);}
+		else if (VolumeMode == "block-balance")    {lots = DynamicLots(Symbol, VolumeMode, VolumeBlockPercent);}
+		else if (VolumeMode == "block-freemargin") {lots = DynamicLots(Symbol, VolumeMode, VolumeBlockPercent);}
+		else if (VolumeMode == "equity")           {lots = DynamicLots(Symbol, VolumeMode, VolumePercent);}
+		else if (VolumeMode == "balance")          {lots = DynamicLots(Symbol, VolumeMode, VolumePercent);}
+		else if (VolumeMode == "freemargin")       {lots = DynamicLots(Symbol, VolumeMode, VolumePercent);}
+		else if (VolumeMode == "equityRisk")       {lots = DynamicLots(Symbol, VolumeMode, VolumeRisk, pre_sl_pips);}
+		else if (VolumeMode == "balanceRisk")      {lots = DynamicLots(Symbol, VolumeMode, VolumeRisk, pre_sl_pips);}
+		else if (VolumeMode == "freemarginRisk")   {lots = DynamicLots(Symbol, VolumeMode, VolumeRisk, pre_sl_pips);}
+		else if (VolumeMode == "fixedRisk")        {lots = DynamicLots(Symbol, VolumeMode, VolumeSizeRisk, pre_sl_pips);}
+		else if (VolumeMode == "fixedRatio")       {lots = DynamicLots(Symbol, VolumeMode, FixedRatioUnitSize, FixedRatioDelta);}
+		else if (VolumeMode == "martingale")       {lots = BetMartingale(Group, Symbol, 0, mmMgInitialLots, mmMgMultiplyOnLoss, mmMgMultiplyOnProfit, mmMgAddLotsOnLoss, mmMgAddLotsOnProfit, mmMgResetOnLoss, mmMgResetOnProfit);}
+		else if (VolumeMode == "dynamic")          {lots = _dVolumeSize_();}
+		
+		lots = AlignLots(Symbol, lots, 0, VolumeUpperLimit);
+		
+		//-- expiration -------------------------------------------------------------
+		datetime exp = ExpirationTime(ExpMode,ExpDays,ExpHours,ExpMinutes,_dExp_());
+		
+		//-- send -------------------------------------------------------------------
+		long ticket = BuyLater(Symbol,lots,op,sll,tpl,slp,tpp,Slippage,exp,(MagicStart+(int)Group),MyComment,ArrowColorBuy,CreateOCO);
+		
+		if (ticket > 0) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Sell pending order" model
+template<typename T1,typename T2,typename T3,typename T4,typename _T4_,typename T5,typename T6,typename T7,typename T8,typename T9,typename T10,typename T11,typename T12,typename _T12_,typename T13,typename T14,typename T15,typename T16,typename T17,typename T18,typename T19,typename T20,typename T21,typename T22,typename T23,typename T24,typename T25,typename T26,typename T27,typename _T27_,typename T28,typename _T28_,typename T29,typename _T29_,typename T30,typename T31,typename T32,typename T33,typename T34,typename _T34_,typename T35,typename _T35_,typename T36,typename _T36_,typename T37,typename T38,typename T39,typename T40,typename T41,typename _T41_,typename T42,typename T43,typename T44,typename T45>
+class MDL_SellPending: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Group;
+	T2 Symbol;
+	T3 Price;
+	T4 dPrice; virtual _T4_ _dPrice_(){return(_T4_)0;}
+	T5 PriceOffset;
+	T6 VolumeMode;
+	T7 VolumeSize;
+	T8 VolumeSizeRisk;
+	T9 VolumeRisk;
+	T10 VolumePercent;
+	T11 VolumeBlockPercent;
+	T12 dVolumeSize; virtual _T12_ _dVolumeSize_(){return(_T12_)0;}
+	T13 FixedRatioUnitSize;
+	T14 FixedRatioDelta;
+	T15 mmMgInitialLots;
+	T16 mmMgMultiplyOnLoss;
+	T17 mmMgMultiplyOnProfit;
+	T18 mmMgAddLotsOnLoss;
+	T19 mmMgAddLotsOnProfit;
+	T20 mmMgResetOnLoss;
+	T21 mmMgResetOnProfit;
+	T22 VolumeUpperLimit;
+	T23 StopLossMode;
+	T24 StopLossPips;
+	T25 StopLossPercentPrice;
+	T26 StopLossPercentTP;
+	T27 dlStopLoss; virtual _T27_ _dlStopLoss_(){return(_T27_)0;}
+	T28 dpStopLoss; virtual _T28_ _dpStopLoss_(){return(_T28_)0;}
+	T29 ddStopLoss; virtual _T29_ _ddStopLoss_(){return(_T29_)0;}
+	T30 TakeProfitMode;
+	T31 TakeProfitPips;
+	T32 TakeProfitPercentPrice;
+	T33 TakeProfitPercentSL;
+	T34 dlTakeProfit; virtual _T34_ _dlTakeProfit_(){return(_T34_)0;}
+	T35 ddTakeProfit; virtual _T35_ _ddTakeProfit_(){return(_T35_)0;}
+	T36 dpTakeProfit; virtual _T36_ _dpTakeProfit_(){return(_T36_)0;}
+	T37 ExpMode;
+	T38 ExpDays;
+	T39 ExpHours;
+	T40 ExpMinutes;
+	T41 dExp; virtual _T41_ _dExp_(){return(_T41_)0;}
+	T42 CreateOCO;
+	T43 Slippage;
+	T44 MyComment;
+	T45 ArrowColorSell;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_SellPending()
+	{
+		Group = (string)"";
+		Symbol = (string)CurrentSymbol();
+		Price = (string)"bid";
+		PriceOffset = (double)20.0;
+		VolumeMode = (string)"fixed";
+		VolumeSize = (double)0.1;
+		VolumeSizeRisk = (double)50.0;
+		VolumeRisk = (double)2.5;
+		VolumePercent = (double)100.0;
+		VolumeBlockPercent = (double)3.0;
+		FixedRatioUnitSize = (double)0.01;
+		FixedRatioDelta = (double)20.0;
+		mmMgInitialLots = (double)0.1;
+		mmMgMultiplyOnLoss = (double)2.0;
+		mmMgMultiplyOnProfit = (double)1.0;
+		mmMgAddLotsOnLoss = (double)0.0;
+		mmMgAddLotsOnProfit = (double)0.0;
+		mmMgResetOnLoss = (int)0;
+		mmMgResetOnProfit = (int)1;
+		VolumeUpperLimit = (double)0.0;
+		StopLossMode = (string)"fixed";
+		StopLossPips = (double)50.0;
+		StopLossPercentPrice = (double)0.55;
+		StopLossPercentTP = (double)100.0;
+		TakeProfitMode = (string)"fixed";
+		TakeProfitPips = (double)50.0;
+		TakeProfitPercentPrice = (double)0.55;
+		TakeProfitPercentSL = (double)100.0;
+		ExpMode = (string)"GTC";
+		ExpDays = (int)0;
+		ExpHours = (int)1;
+		ExpMinutes = (int)0;
+		CreateOCO = (int)0;
+		Slippage = (ulong)4;
+		MyComment = (string)"";
+		ArrowColorSell = (color)clrRed;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		//-- open price -------------------------------------------------------------
+		double op = 0;
+		
+		     if (Price == "ask")     {op = SymbolAsk(Symbol);}
+		else if (Price == "bid")     {op = SymbolBid(Symbol);}
+		else if (Price == "mid")     {op = (SymbolAsk(Symbol)+SymbolBid(Symbol))/2;}
+		else if (Price == "dynamic") {op = _dPrice_();}
+		
+		op = op - toDigits(PriceOffset, Symbol);
+		
+		//-- stops ------------------------------------------------------------------
+		double sll = 0, slp = 0, tpl = 0, tpp = 0;
+		
+		     if (StopLossMode == "fixed")         {slp = StopLossPips;}
+		else if (StopLossMode == "dynamicPips")   {slp = _dpStopLoss_();}
+		else if (StopLossMode == "dynamicDigits") {slp = toPips(_ddStopLoss_(),Symbol);}
+		else if (StopLossMode == "dynamicLevel")  {sll = _dlStopLoss_();}
+		else if (StopLossMode == "percentPrice")  {sll = op + (op * StopLossPercentPrice / 100);}
+		
+		     if (TakeProfitMode == "fixed")         {tpp = TakeProfitPips;}
+		else if (TakeProfitMode == "dynamicPips")   {tpp = _dpTakeProfit_();}
+		else if (TakeProfitMode == "dynamicDigits") {tpp = toPips(_ddTakeProfit_(),Symbol);}
+		else if (TakeProfitMode == "dynamicLevel")  {tpl = _dlTakeProfit_();}
+		else if (TakeProfitMode == "percentPrice")  {tpl = op - (op * TakeProfitPercentPrice / 100);}
+		
+		if (StopLossMode == "percentTP")
+		{
+			if (tpp > 0) {slp = tpp*StopLossPercentTP/100;}
+			if (tpl > 0) {slp = toPips(MathAbs(op - tpl), Symbol)*StopLossPercentTP/100;}
+		}
+		
+		if (TakeProfitMode == "percentSL")
+		{
+			if (slp > 0) {tpp = slp*TakeProfitPercentSL/100;}
+			if (sll > 0) {tpp = toPips(MathAbs(op - sll), Symbol)*TakeProfitPercentSL/100;}
+		}
+		
+		//-- lots -------------------------------------------------------------------
+		double lots    = 0;
+		double pre_sll = sll;
+		
+		if (pre_sll == 0) {pre_sll = op;}
+		
+		double pre_sl_pips = toPips((pre_sll+toDigits(slp,Symbol))-op, Symbol);
+		
+		     if (VolumeMode == "fixed")            {lots = DynamicLots(Symbol, VolumeMode, VolumeSize);}
+		else if (VolumeMode == "block-equity")     {lots = DynamicLots(Symbol, VolumeMode, VolumeBlockPercent);}
+		else if (VolumeMode == "block-balance")    {lots = DynamicLots(Symbol, VolumeMode, VolumeBlockPercent);}
+		else if (VolumeMode == "block-freemargin") {lots = DynamicLots(Symbol, VolumeMode, VolumeBlockPercent);}
+		else if (VolumeMode == "equity")           {lots = DynamicLots(Symbol, VolumeMode, VolumePercent);}
+		else if (VolumeMode == "balance")          {lots = DynamicLots(Symbol, VolumeMode, VolumePercent);}
+		else if (VolumeMode == "freemargin")       {lots = DynamicLots(Symbol, VolumeMode, VolumePercent);}
+		else if (VolumeMode == "equityRisk")       {lots = DynamicLots(Symbol, VolumeMode, VolumeRisk, pre_sl_pips);}
+		else if (VolumeMode == "balanceRisk")      {lots = DynamicLots(Symbol, VolumeMode, VolumeRisk, pre_sl_pips);}
+		else if (VolumeMode == "freemarginRisk")   {lots = DynamicLots(Symbol, VolumeMode, VolumeRisk, pre_sl_pips);}
+		else if (VolumeMode == "fixedRisk")        {lots = DynamicLots(Symbol, VolumeMode, VolumeSizeRisk, pre_sl_pips);}
+		else if (VolumeMode == "fixedRatio")       {lots = DynamicLots(Symbol, VolumeMode, FixedRatioUnitSize, FixedRatioDelta);}
+		else if (VolumeMode == "martingale")       {lots = BetMartingale(Group, Symbol, 0, mmMgInitialLots, mmMgMultiplyOnLoss, mmMgMultiplyOnProfit, mmMgAddLotsOnLoss, mmMgAddLotsOnProfit, mmMgResetOnLoss, mmMgResetOnProfit);}
+		else if (VolumeMode == "dynamic")          {lots = _dVolumeSize_();}
+		
+		lots = AlignLots(Symbol, lots, 0, VolumeUpperLimit);
+		
+		//-- expiration -------------------------------------------------------------
+		datetime exp = ExpirationTime(ExpMode,ExpDays,ExpHours,ExpMinutes,_dExp_());
+		
+		//-- send -------------------------------------------------------------------
+		long ticket = SellLater(Symbol,lots,op,sll,tpl,slp,tpp,Slippage,exp,(MagicStart+(int)Group),MyComment,ArrowColorSell,CreateOCO);
+		
+		if (ticket > 0) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Condition" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_,typename T4>
+class MDL_Condition: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	T4 crosswidth;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Condition()
+	{
+		compare = (string)">";
+		crosswidth = (int)1;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		bool output1 = false, output2 = false; // output 1 and output 2
+		int crossover = 0;
+		
+		if (compare == "x>" || compare == "x<") {crossover = 1;}
+		
+		for (int i = 0; i <= crossover; i++)
+		{
+			// i=0 - normal pass, i=1 - crossover pass
+		
+			// Left operand of the condition
+			FXD_MORE_SHIFT = i * crosswidth;
+			_T1_ lo = _Lo_();
+			if (MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+			// Right operand of the condition
+			FXD_MORE_SHIFT = i * crosswidth;
+			_T3_ ro = _Ro_();
+			if (MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+			// Conditions
+			if (CompareValues(compare, lo, ro))
+			{
+				if (i == 0)
+				{
+					output1 = true;
+				}
+			}
+			else
+			{
+				if (i == 0)
+				{
+					output2 = true;
+				}
+				else
+				{
+					output2 = false;
+				}
+			}
+		
+			if (crossover == 1)
+			{
+				if (CompareValues(compare, ro, lo))
+				{
+					if (i == 0)
+					{
+						output2 = true;
+					}
+				}
+				else
+				{
+					if (i == 1)
+					{
+						output1 = false;
+					}
+				}
+			}
+		}
+		
+		FXD_MORE_SHIFT = 0; // reset
+		
+			  if (output1 == true) {_callback_(1);}
+		else if (output2 == true) {_callback_(0);}
+	}
+};
+
+// "delete" model
+class MDL_ObjLoopDelete: public BlockCalls
+{
+	virtual void _callback_(int r) {return;}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		if (ObjectDelete(LoadedObjectChartID(), LoadedObjectName())) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Select Object by Name" model
+template<typename T1>
+class MDL_ObjLoopSelectByName: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 ObjName;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_ObjLoopSelectByName()
+	{
+		ObjName = (string)"";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		if (ObjName != "" && ObjectFind(0, ObjName) >= 0)
+		{
+		   LoadedObjectChartID(0);
+			LoadedObjectName(ObjName);
+			LoadedObjectSubwindow(-1);
+			LoadedObjectType((int)ObjectGetInteger(0,ObjName,OBJPROP_TYPE));
+		   
+		   _callback_(1);
+		}
+		else
+		{
+		   _callback_(0);  
+		}
+	}
+};
+
+// "Pass" model
+class MDL_Pass: public BlockCalls
+{
+	virtual void _callback_(int r) {return;}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_callback_(1);
+	}
+};
+
+// "Modify chart colors" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7,typename T8,typename T9,typename T10,typename T11,typename T12,typename T13>
+class MDL_ChartSetColors: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 ChartColorBackground;
+	T2 ChartColorForeground;
+	T3 ChartColorGrid;
+	T4 ChartColorBarUp;
+	T5 ChartColorBarDown;
+	T6 ChartColorBullCandle;
+	T7 ChartColorBearCandle;
+	T8 ChartColorDojiCandle;
+	T9 ChartColorVolumes;
+	T10 ChartColorBid;
+	T11 ChartColorAsk;
+	T12 ChartColorLast;
+	T13 ChartColorStopLevels;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_ChartSetColors()
+	{
+		ChartColorBackground = (color)clrBlack;
+		ChartColorForeground = (color)clrWhite;
+		ChartColorGrid = (color)clrLightSlateGray;
+		ChartColorBarUp = (color)clrLime;
+		ChartColorBarDown = (color)clrLime;
+		ChartColorBullCandle = (color)clrBlack;
+		ChartColorBearCandle = (color)clrWhite;
+		ChartColorDojiCandle = (color)clrLime;
+		ChartColorVolumes = (color)clrLimeGreen;
+		ChartColorBid = (color)clrLightSlateGray;
+		ChartColorAsk = (color)clrRed;
+		ChartColorLast = (color)clrLimeGreen;
+		ChartColorStopLevels = (color)clrRed;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		ResetLastError();
+		
+		if (ChartColorBackground!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_BACKGROUND,ChartColorBackground)) {Print("Unable to set chart background color. Error code: ",GetLastError());}
+		}
+		if (ChartColorForeground!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_FOREGROUND,ChartColorForeground)) {Print("Unable to set chart foreground color. Error code: ",GetLastError());}
+		}
+		if (ChartColorGrid!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_GRID,ChartColorGrid)) {Print("Unable to set chart grid color. Error code: ",GetLastError());}
+		}
+		if (ChartColorBarUp!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_CHART_UP,ChartColorBarUp)) {Print("Unable to set chart bar up color. Error code: ",GetLastError());}
+		}
+		if (ChartColorBarDown!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_CHART_DOWN,ChartColorBarDown)) {Print("Unable to set chart bar down color. Error code: ",GetLastError());}
+		}
+		if (ChartColorBullCandle!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_CANDLE_BULL,ChartColorBullCandle)) {Print("Unable to set chart bull candle color. Error code: ",GetLastError());}
+		}
+		if (ChartColorBearCandle!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_CANDLE_BEAR,ChartColorBearCandle)) {Print("Unable to set chart bear candle color. Error code: ",GetLastError());}
+		}
+		if (ChartColorDojiCandle!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_CHART_LINE,ChartColorDojiCandle)) {Print("Unable to set chart doji candle color. Error code: ",GetLastError());}
+		}
+		if (ChartColorVolumes!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_VOLUME,ChartColorVolumes)) {Print("Unable to set chart volumes color. Error code: ",GetLastError());}
+		}
+		if (ChartColorBid!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_BID,ChartColorBid)) {Print("Unable to set chart Bid line color. Error code: ",GetLastError());}
+		}
+		if (ChartColorAsk!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_ASK,ChartColorAsk)) {Print("Unable to set chart Ask line color. Error code: ",GetLastError());}
+		}
+		if (ChartColorLast!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_LAST,ChartColorLast)) {Print("Unable to set chart last price line color. Error code: ",GetLastError());}
+		}
+		if (ChartColorStopLevels!=clrNONE) {
+		   if(!ChartSetInteger(0,CHART_COLOR_STOP_LEVEL,ChartColorStopLevels)) {Print("Unable to set chart stop levels color. Error code: ",GetLastError());}
+		}
+		
+		ChartRedraw();
+		
+		_callback_(1);
+	}
+};
+
+// "Modify chart properties" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7,typename T8,typename T9,typename T10,typename T11,typename T12,typename T13,typename T14,typename T15,typename T16,typename T17,typename T18>
+class MDL_ChartSetProperties: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 ChartMode;
+	T2 ChartOnForeground;
+	T3 ChartShift;
+	T4 ChartAutoScroll;
+	T5 ChartScale;
+	T6 ChartShowOHLC;
+	T7 ChartShowBidLine;
+	T8 ChartShowAskLine;
+	T9 ChartShowLastLine;
+	T10 ChartShowPeriodSeparators;
+	T11 ChartShowGrid;
+	T12 ChartShowVolumes;
+	T13 ChartShowDescriptions;
+	T14 ChartShowTradeLevels;
+	T15 ChartShowDateScale;
+	T16 ChartShowPriceScale;
+	T17 ChartScaleFix11;
+	T18 ChartScaleFix;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_ChartSetProperties()
+	{
+		ChartMode = (int)-1;
+		ChartOnForeground = (int)-1;
+		ChartShift = (int)-1;
+		ChartAutoScroll = (int)-1;
+		ChartScale = (int)-1;
+		ChartShowOHLC = (int)-1;
+		ChartShowBidLine = (int)-1;
+		ChartShowAskLine = (int)-1;
+		ChartShowLastLine = (int)-1;
+		ChartShowPeriodSeparators = (int)-1;
+		ChartShowGrid = (int)-1;
+		ChartShowVolumes = (int)-1;
+		ChartShowDescriptions = (int)-1;
+		ChartShowTradeLevels = (int)-1;
+		ChartShowDateScale = (int)-1;
+		ChartShowPriceScale = (int)-1;
+		ChartScaleFix11 = (int)-1;
+		ChartScaleFix = (int)-1;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		ResetLastError();
+		
+		if (ChartMode!=-1) {
+		   if(!ChartSetInteger(0,CHART_MODE,ChartMode)) {Print("Unable to set chart mode. Error code: ",GetLastError());}
+		}
+		
+		//-- chart positioning
+		if (ChartOnForeground!=-1) {
+		   if(!ChartSetInteger(0,CHART_FOREGROUND,ChartOnForeground)) {Print("Unable to set chart foreground mode. Error code: ",GetLastError());}
+		}
+		if (ChartShift!=-1) {
+		   if(!ChartSetInteger(0,CHART_SHIFT,ChartShift)) {Print("Unable to set chart shift mode. Error code: ",GetLastError());}
+		}
+		if (ChartAutoScroll!=-1) {
+		   if(!ChartSetInteger(0,CHART_AUTOSCROLL,ChartAutoScroll)) {Print("Unable to set chart autoscroll mode. Error code: ",GetLastError());}
+		}
+		
+		//-- chart scale
+		if (ChartScale!=-1) {
+		   if(!ChartSetInteger(0,CHART_SCALE,ChartScale)) {Print("Unable to set chart scale mode. Error code: ",GetLastError());}
+		}
+		
+		//-- chart elements
+		if (ChartShowOHLC!=-1) {
+		   if(!ChartSetInteger(0,CHART_SHOW_OHLC,ChartShowOHLC)) {Print("Unable to set chart OHLC mode. Error code: ",GetLastError());}
+		}
+		if (ChartShowBidLine!=-1) {
+		   if(!ChartSetInteger(0,CHART_SHOW_BID_LINE,ChartShowBidLine)) {Print("Unable to set chart Bid price line mode. Error code: ",GetLastError());}
+		}
+		if (ChartShowAskLine!=-1) {
+		   if(!ChartSetInteger(0,CHART_SHOW_ASK_LINE,ChartShowAskLine)) {Print("Unable to set chart Ask price line mode. Error code: ",GetLastError());}
+		}
+		if (ChartShowLastLine!=-1) {
+		   if(!ChartSetInteger(0,CHART_SHOW_LAST_LINE,ChartShowLastLine)) {Print("Unable to set chart last price line mode. Error code: ",GetLastError());}
+		}
+		if (ChartShowPeriodSeparators!=-1) {
+		   if(!ChartSetInteger(0,CHART_SHOW_PERIOD_SEP,ChartShowPeriodSeparators)) {Print("Unable to set chart period separators mode. Error code: ",GetLastError());}
+		}
+		if (ChartShowGrid!=-1) {
+		   if(!ChartSetInteger(0,CHART_SHOW_GRID,ChartShowGrid)) {Print("Unable to set chart grid mode. Error code: ",GetLastError());}
+		}
+		if (ChartShowVolumes!=-1) {
+		   if(!ChartSetInteger(0,CHART_SHOW_VOLUMES,ChartShowVolumes)) {Print("Unable to set chart volumes mode. Error code: ",GetLastError());}
+		}
+		if (ChartShowDescriptions!=-1) {
+		   if(!ChartSetInteger(0,CHART_SHOW_OBJECT_DESCR,ChartShowDescriptions)) {Print("Unable to set chart object descriptions mode. Error code: ",GetLastError());}
+		}
+		if (ChartShowTradeLevels!=-1) {
+		   if(!ChartSetInteger(0,CHART_SHOW_TRADE_LEVELS,ChartShowTradeLevels)) {Print("Unable to set chart trade levels mode. Error code: ",GetLastError());}
+		}
+		if (ChartShowDateScale!=-1) {
+		   if(!ChartSetInteger(0,CHART_SHOW_DATE_SCALE,ChartShowDateScale)) {Print("Unable to set chart date scale mode. Error code: ",GetLastError());}
+		}
+		if (ChartShowPriceScale!=-1) {
+		   if(!ChartSetInteger(0,CHART_SHOW_PRICE_SCALE,ChartShowPriceScale)) {Print("Unable to set chart price scale mode. Error code: ",GetLastError());}
+		}
+		
+		// scale fix
+		if (ChartScaleFix!=-1) {
+		   if(!ChartSetInteger(0,CHART_SCALEFIX,ChartScaleFix)) {Print("Unable to set scale fix One to One. Error code: ",GetLastError());}
+		}
+		else {
+			if (ChartScaleFix11!=-1) {
+		   	if(!ChartSetInteger(0,CHART_SCALEFIX_11,ChartScaleFix11)) {Print("Unable to set scale fix One to One. Error code: ",GetLastError());}
+			}
+		}
+		
+		ChartRedraw();
+		
+		_callback_(1);
+	}
+};
+
+// "If Demo account" model
+class MDL_IfDemo: public BlockCalls
+{
+	virtual void _callback_(int r) {return;}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		if (AccountInfoInteger(ACCOUNT_TRADE_MODE) == ACCOUNT_TRADE_MODE_DEMO) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "If Real account" model
+class MDL_IfReal: public BlockCalls
+{
+	virtual void _callback_(int r) {return;}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		if (AccountInfoInteger(ACCOUNT_TRADE_MODE) == ACCOUNT_TRADE_MODE_REAL) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Terminate" model
+template<typename T1>
+class MDL_Terminate: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Message;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Terminate()
+	{
+		Message = (string)"Program Terminated Itself";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		if (Message != "")
+		{
+		   MessageBox(Message, "Self-Terminate", MB_OK);
+		}
+		
+		ExpertRemove();
+		ChartRedraw(); // to remove the smile face
+	}
+};
+
+// "If position" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5>
+class MDL_IfOpenedOrders: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 GroupMode;
+	T2 Group;
+	T3 SymbolMode;
+	T4 Symbol;
+	T5 BuysOrSells;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_IfOpenedOrders()
+	{
+		GroupMode = (string)"group";
+		Group = (string)"";
+		SymbolMode = (string)"symbol";
+		Symbol = (string)CurrentSymbol();
+		BuysOrSells = (string)"both";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		bool exist = false;
+		
+		for (int index = TradesTotal()-1; index >= 0; index--)
+		{
+			if (TradeSelectByIndex(index, GroupMode, Group, SymbolMode, Symbol, BuysOrSells))
+			{
+				exist = true;
+				break;
+			}
+		}
+		
+		if (exist == true) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_1: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_1()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Cut_lossx = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Check profit (unrealized)" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7,typename T8,typename T9,typename T10,typename T11,typename T12,typename T13>
+class MDL_CheckUProfit: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 GroupMode;
+	T2 Group;
+	T3 SymbolMode;
+	T4 Symbol;
+	T5 BuysOrSells;
+	T6 EachProfitMode;
+	T7 EachCompare;
+	T8 EachProfitAmount;
+	T9 EachProfitAmountPips;
+	T10 ProfitMode;
+	T11 Compare;
+	T12 ProfitAmount;
+	T13 ProfitAmountPips;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_CheckUProfit()
+	{
+		GroupMode = (string)"group";
+		Group = (string)"";
+		SymbolMode = (string)"symbol";
+		Symbol = (string)CurrentSymbol();
+		BuysOrSells = (string)"both";
+		EachProfitMode = (string)"";
+		EachCompare = (string)">";
+		EachProfitAmount = (double)0.0;
+		EachProfitAmountPips = (double)10.0;
+		ProfitMode = (string)"money";
+		Compare = (string)">";
+		ProfitAmount = (double)0.0;
+		ProfitAmountPips = (double)10.0;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		double avgPrice    = 0;
+		double avgLoad     = 0;
+		double avgLots     = 0;
+		double profitMoney = 0;
+		double profitPips  = 0;
+		double pipsSum     = 0;
+		int tradesCount    = 0;
+		
+		for (int index = TradesTotal()-1; index >= 0; index--) {
+			if (TradeSelectByIndex(index, GroupMode, Group, SymbolMode, Symbol, BuysOrSells)) {
+				double OrderOpenPrice = OrderChildOpenPrice();
+				double tradeProfit    = NormalizeDouble(OrderProfit() + OrderSwap() + OrderCommission(), 2);
+		
+				// Filter out individual trades
+				if (EachProfitMode == "money") {
+					if (compare(EachCompare, tradeProfit, EachProfitAmount)) {/* do nothing */} else {continue;}
+				}
+				else if (EachProfitMode == "pips") {
+					double individual_profit = toPips(OrderClosePrice() - OrderOpenPrice, OrderSymbol());
+		
+					if (OrderType() == 1) {individual_profit = -1 * individual_profit;}
+		
+					if (compare(EachCompare, individual_profit, EachProfitAmountPips)) {/* do nothing*/} else {continue;}
+				}
+		
+				profitMoney += tradeProfit;
+		
+				if (ProfitMode == "pips" || ProfitMode == "pips-sum") {
+					if (IsOrderTypeBuy()) {
+						pipsSum += toPips(OrderClosePrice() - OrderOpenPrice, OrderSymbol());
+						avgLoad += OrderOpenPrice * OrderLots();
+						avgLots += OrderLots();
+					}
+					else {
+						pipsSum += toPips(OrderOpenPrice - OrderClosePrice(), OrderSymbol());
+						avgLoad -= OrderOpenPrice * OrderLots();
+						avgLots -= OrderLots();
+					}
+				}
+		
+				tradesCount += 1;
+			}
+		}
+		
+		if (ProfitMode == "pips") {
+			avgPrice = 0;
+		
+			if (avgLots != 0) {
+				avgPrice = (avgLoad / avgLots);
+			}
+		
+			if (avgPrice != 0) {
+				if (avgLots > 0) {
+					profitPips = SymbolInfoDouble(Symbol, SYMBOL_BID) - avgPrice;
+				}
+				else {
+					profitPips = avgPrice - SymbolInfoDouble(Symbol, SYMBOL_ASK);
+				}
+		
+				profitPips = toPips(profitPips, Symbol);
+			}
+		}
+		
+		if (
+			   (ProfitMode == "money"    && (CompareValues(Compare, profitMoney, ProfitAmount)))
+			|| (ProfitMode == "pips"     && (CompareValues(Compare, profitPips, ProfitAmountPips)))
+			|| (ProfitMode == "pips-sum" && (CompareValues(Compare, pipsSum, ProfitAmountPips)))
+		) {
+			_callback_(1);
+		}
+		else {
+			_callback_(0);
+		}
+	}
+};
+
+// "Close positions" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7,typename T8>
+class MDL_CloseOpened: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 GroupMode;
+	T2 Group;
+	T3 SymbolMode;
+	T4 Symbol;
+	T5 BuysOrSells;
+	T6 OrderMinutes;
+	T7 Slippage;
+	T8 ArrowColor;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_CloseOpened()
+	{
+		GroupMode = (string)"group";
+		Group = (string)"";
+		SymbolMode = (string)"symbol";
+		Symbol = (string)CurrentSymbol();
+		BuysOrSells = (string)"both";
+		OrderMinutes = (int)0;
+		Slippage = (ulong)4;
+		ArrowColor = (color)clrDeepPink;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		int closed_count = 0;
+		bool finished    = false;
+		
+		while (finished == false)
+		{
+			int count = 0;
+		
+			for (int index = TradesTotal()-1; index >= 0; index--)
+			{
+				if (TradeSelectByIndex(index, GroupMode, Group, SymbolMode, Symbol, BuysOrSells))
+				{
+					datetime time_diff = TimeCurrent() - OrderOpenTime();
+		
+					if (time_diff < 0) {time_diff = 0;} // this actually happens sometimes
+		
+					if (time_diff >= 60 * OrderMinutes)
+					{
+						if (CloseTrade(OrderTicket(), Slippage, ArrowColor))
+						{
+							closed_count++;
+						}
+		
+						count++;
+					}
+				}
+			}
+		
+			if (count == 0) {finished = true;}
+		}
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_2: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_2()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Cut_lossx = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_3: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_3()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Engulf = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_4: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_4()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Engulf = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_5: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_5()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Engulf = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "OR" model
+class MDL_LogicalOR: public BlockCalls
+{
+	/* Static Parameters */
+	int old_tick;
+	virtual void _callback_(int r) {return;}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		int tickID = FXD_TICKS_FROM_START;
+		
+		if (old_tick != tickID)
+		{
+			old_tick = tickID;
+		
+		   _callback_(1);
+		}
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_6: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_6()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Engulf = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_7: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_7()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Profit_Percent = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_8: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_8()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::TSP_Start = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_9: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_9()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::TSP_Step = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_10: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_10()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::TSM_Stop = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Trailing money loss (group of trades)" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7,typename T8,typename T9,typename _T9_,typename T10,typename T11,typename T12,typename T13,typename T14,typename T15,typename T16,typename _T16_,typename T17,typename T18>
+class MDL_TrailingMoneyLoss: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 GroupMode;
+	T2 Group;
+	T3 SymbolMode;
+	T4 Symbol;
+	T5 BuysOrSells;
+	T6 TrailingMoneyMode;
+	T7 tmFixedMoney;
+	T8 tmProfitPercent;
+	T9 dtmMoneyAmount; virtual _T9_ _dtmMoneyAmount_(){return(_T9_)0;}
+	T10 TrailingStepMode;
+	T11 tmStepFixedMoney;
+	T12 tmStepPercentTM;
+	T13 TrailingStartMode;
+	T14 tStartFixedMoney;
+	T15 tStartPercentTM;
+	T16 ftStart; virtual _T16_ _ftStart_(){return(_T16_)0;}
+	T17 Slippage;
+	T18 ArrowColor;
+	/* Static Parameters */
+	double max_profit;
+	double money_loss_amount;
+	double money_loss_amount0;
+	bool money_loss_amount_calculated;
+	datetime time0;
+	int trades_count0;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_TrailingMoneyLoss()
+	{
+		GroupMode = (string)"group";
+		Group = (string)"";
+		SymbolMode = (string)"symbol";
+		Symbol = (string)CurrentSymbol();
+		BuysOrSells = (string)"both";
+		TrailingMoneyMode = (string)"money";
+		tmFixedMoney = (double)10.0;
+		tmProfitPercent = (double)10.0;
+		TrailingStepMode = (string)"money";
+		tmStepFixedMoney = (double)1.0;
+		tmStepPercentTM = (double)10.0;
+		TrailingStartMode = (string)"none";
+		tStartFixedMoney = (double)1.0;
+		tStartPercentTM = (double)100.0;
+		Slippage = (ulong)4;
+		ArrowColor = (color)clrDeepPink;
+		/* Static Parameters (initial value) */
+		max_profit =  0;
+		money_loss_amount =  0;
+		money_loss_amount0 =  0;
+		money_loss_amount_calculated =  false;
+		time0 =  0;
+		trades_count0 =  0;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		double avg_load     = 0;
+		double avg_lots     = 0; // Average sum of lots - it can be negative
+		double group_profit = 0;
+		int trades_count    = 0;
+		
+		double openprices[]; ArrayResize(openprices, 0);
+		datetime opentimes[]; ArrayResize(opentimes, 0);
+		ulong tickets[]; ArrayResize(tickets, 0);
+		int size  = 0;
+		int i     = 0;
+		int index = 0;
+		
+		string name_general = "fxd_tml_" + (string)(__block_user_number) + "_";
+		string name         = "";
+		string text         = "";
+		bool trades_count_changed = false;
+		bool draw_objects         = true;
+		
+		//-- collect data from the currently running trades
+		for (index = TradesTotal()-1; index >= 0; index--)
+		{
+			if (TradeSelectByIndex(index, GroupMode, Group, SymbolMode, Symbol, BuysOrSells))
+			{
+				if (OrderType() == 0)
+				{
+					avg_lots = avg_lots + OrderLots();
+				}
+				else
+				{
+					avg_lots = avg_lots - OrderLots();
+				}
+		
+				avg_lots = NormalizeDouble(avg_lots, 2);
+		
+				if (OrderSymbol() == _Symbol)
+				{
+					size = ArraySize(openprices);
+					ArrayResize(openprices, size+1);
+					ArrayResize(opentimes, size+1);
+					ArrayResize(tickets, size+1);
+		
+					openprices[size] = OrderOpenPrice();
+					opentimes[size]  = OrderOpenTime();
+					tickets[size]    = OrderTicket();
+				}
+				else
+				{
+					draw_objects = false;  
+				}
+		
+				group_profit += NormalizeDouble(OrderProfit() + OrderSwap() + OrderCommission(), 2);
+				trades_count++;
+			}
+		}
+		
+		//-- process existing trades
+		if (trades_count0 != trades_count)
+		{
+			trades_count0        = trades_count;
+			trades_count_changed = true;
+		}
+		
+		if (group_profit > max_profit)
+		{
+			max_profit = group_profit;
+		}
+		
+		if (trades_count == 0)
+		{
+			//-- reset
+			max_profit                   = 0;
+			money_loss_amount            = 0;
+			money_loss_amount_calculated = false;
+		}
+		else
+		{
+			//- calculate trailing money loss
+			double tm_amount = 0;
+		
+				  if (TrailingMoneyMode == "money")				    {tm_amount = tmFixedMoney;}
+			else if (TrailingMoneyMode == "percentGroupProfit") {tm_amount = max_profit * tmProfitPercent / 100;}
+			else if (TrailingMoneyMode == "dynamic")				 {tm_amount = _dtmMoneyAmount_();}
+		
+			//-- calculate trailing money step
+			double tm_step=0;
+		
+				  if (TrailingStepMode == "money")	   {tm_step = tmStepFixedMoney;}
+			else if (TrailingStepMode == "percentTM") {tm_step = tm_amount * tmStepPercentTM / 100;}
+		
+			//-- calculate trailing start level
+			double tm_start=0;
+		
+				  if (TrailingStartMode == "none")		 {tm_start = -EMPTY_VALUE;}
+			else if (TrailingStartMode == "zero")		 {tm_start = 0;}
+			else if (TrailingStartMode == "percentTM") {tm_start = tm_amount * tStartPercentTM / 100;}
+			else if (TrailingStartMode == "money")	    {tm_start = tStartFixedMoney;}
+			else if (TrailingStartMode == "dynamic")	 {tm_start = _ftStart_();}
+		
+			//-- Do Trailing Money Loss
+			if (money_loss_amount_calculated == false && max_profit > tm_start)
+			{
+				money_loss_amount            = max_profit - tm_amount;
+				money_loss_amount_calculated = true;
+			}
+		
+			if (money_loss_amount_calculated == true)
+			{
+				//-- attempt to move the "line"
+				if (group_profit >= money_loss_amount + tm_amount + tm_step)
+				{
+					money_loss_amount = max_profit - tm_amount;
+				}
+				else if (group_profit <= money_loss_amount)
+				{
+					for (index = TradesTotal()-1; index >= 0; index--)
+					{
+						if (TradeSelectByIndex(index, GroupMode, Group, SymbolMode, Symbol, BuysOrSells))
+						{
+							CloseTrade(OrderTicket(), Slippage, ArrowColor);
+						}
+					}
+		
+					max_profit                   = 0;
+					money_loss_amount            = 0;
+					money_loss_amount_calculated = false;
+		
+					//-- clear old lines
+					if (!MQLInfoInteger(MQL_TESTER) || MQLInfoInteger(MQL_VISUAL_MODE))
+					{
+						int total       = ObjectsTotal(0, -1, -1);
+						int name_length = StringLen(name_general);
+		
+						for (i = 0; i < total; i++)
+						{
+							if (StringSubstr(ObjectName(0, i), 0, name_length) == name_general)
+							{
+								ObjectDelete(0, ObjectName(0, i));  
+							}
+						}
+		
+						ChartRedraw();
+					}
+				}
+				
+				//-- draw/repaint objects
+				if (draw_objects == true && (!MQLInfoInteger(MQL_TESTER) || MQLInfoInteger(MQL_VISUAL_MODE)))
+				{
+					if (avg_lots == 0)
+					{
+						name = name_general + "lbl";
+						ObjectSetString(0, name, OBJPROP_TEXT, DoubleToString(group_profit, 2) + " => " + DoubleToString(money_loss_amount, 2));
+					}
+					else
+					{
+						double bid           = SymbolInfoDouble(_Symbol, SYMBOL_BID);
+						double lot_size      = SymbolInfoDouble(_Symbol, SYMBOL_TRADE_CONTRACT_SIZE);
+						double tm_line_price = bid - ((group_profit - money_loss_amount) / (avg_lots * lot_size));
+						
+						//-- paint text, along with the mini stop line
+						name = name_general + "lbl";
+		
+						if (ObjectFind(0, name) == -1)
+						{
+							ObjectCreate(0, name, OBJ_TEXT, 0, TimeCurrent(), 0);
+							ObjectSetDouble(0, name, OBJPROP_ANGLE, 0);
+							ObjectSetInteger(0, name, OBJPROP_BACK, false);
+							ObjectSetInteger(0, name, OBJPROP_COLOR, clrDarkOrange);
+						}
+		
+						ObjectSetString(0, name, OBJPROP_TEXT, DoubleToString(group_profit, 2) + " => " + DoubleToString(money_loss_amount, 2));
+				
+						if (money_loss_amount != money_loss_amount0 || time0 != iTime(_Symbol, 0, 0) || trades_count_changed == true)
+						{
+							time0              = iTime(_Symbol, 0, 0);
+							money_loss_amount0 = money_loss_amount;
+		
+							//-- update position of the text label
+							ObjectSetDouble(0, name, OBJPROP_PRICE, 0, tm_line_price);
+							ObjectSetInteger(0, name, OBJPROP_TIME, 0, TimeCurrent());
+		
+							//-- paint arrow - mini stop line
+							name = name_general + "sl";
+		
+							if (ObjectFind(0, name) == -1)
+							{
+								ObjectCreate(0, name, OBJ_ARROW, 0, TimeCurrent(), 0);
+								ObjectSetInteger(0, name, OBJPROP_ARROWCODE, 4);
+								ObjectSetInteger(0, name, OBJPROP_BACK, false);
+								ObjectSetInteger(0, name, OBJPROP_COLOR, clrRoyalBlue);
+								ObjectSetInteger(0, name, OBJPROP_STYLE, STYLE_DOT);
+							}
+		
+							ObjectSetDouble(0, name, OBJPROP_PRICE, 0, tm_line_price);
+							ObjectSetInteger(0, name, OBJPROP_TIME, 0, TimeCurrent());
+		
+							//-- paint trend lines connecting trades with the mini stop line
+							size = ArraySize(openprices);
+		
+							for (i = 0; i < size; i++)
+							{
+								name = name_general + "" + (string)tickets[i];
+		
+								if (ObjectFind(0, name) == -1)
+								{
+									ObjectCreate (0, name, OBJ_TREND, 0, opentimes[i], openprices[i], TimeCurrent(), openprices[i]);
+									ObjectSetInteger(0, name, OBJPROP_RAY_RIGHT, false);
+									ObjectSetInteger(0, name, OBJPROP_COLOR, clrRoyalBlue);
+									ObjectSetInteger(0, name, OBJPROP_STYLE, STYLE_DOT);
+								}
+		
+								ObjectSetInteger(0, name, OBJPROP_TIME, 1, TimeCurrent());
+								ObjectSetDouble(0, name, OBJPROP_PRICE, 1, tm_line_price);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_11: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_11()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Profit_Percent = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_12: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_12()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::TSP_Start = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_13: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_13()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::TSP_Step = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_14: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_14()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::TSM_Stop = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Time filter" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7,typename T8,typename T9,typename T10,typename T11,typename T12,typename T13,typename T14,typename T15,typename T16,typename T17,typename T18,typename T19,typename T20,typename T21,typename T22,typename T23>
+class MDL_TimeFilter: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 ServerOrLocalTime;
+	T2 TimeStartMode;
+	T3 TimeStart;
+	T4 TimeStartYear;
+	T5 TimeStartMonth;
+	T6 TimeStartDay;
+	T7 TimeStartHour;
+	T8 TimeStartMinute;
+	T9 TimeStartSecond;
+	T10 TimeEndMode;
+	T11 TimeEnd;
+	T12 TimeEndYear;
+	T13 TimeEndMonth;
+	T14 TimeEndDay;
+	T15 TimeEndHour;
+	T16 TimeEndMinute;
+	T17 TimeEndSecond;
+	T18 TimeEndRelYears;
+	T19 TimeEndRelMonths;
+	T20 TimeEndRelDays;
+	T21 TimeEndRelHours;
+	T22 TimeEndRelMinutes;
+	T23 TimeEndRelSeconds;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_TimeFilter()
+	{
+		ServerOrLocalTime = (string)"server";
+		TimeStartMode = (string)"text";
+		TimeStart = (string)"00:00";
+		TimeStartYear = (int)0;
+		TimeStartMonth = (int)0;
+		TimeStartDay = (double)0.0;
+		TimeStartHour = (double)1.0;
+		TimeStartMinute = (double)0.0;
+		TimeStartSecond = (int)0;
+		TimeEndMode = (string)"text";
+		TimeEnd = (string)"00:01";
+		TimeEndYear = (int)0;
+		TimeEndMonth = (int)0;
+		TimeEndDay = (double)0.0;
+		TimeEndHour = (double)1.0;
+		TimeEndMinute = (double)1.0;
+		TimeEndSecond = (int)0;
+		TimeEndRelYears = (int)0;
+		TimeEndRelMonths = (int)0;
+		TimeEndRelDays = (double)0.0;
+		TimeEndRelHours = (double)0.0;
+		TimeEndRelMinutes = (double)1.0;
+		TimeEndRelSeconds = (int)0;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		datetime t0 = 0, t1 = 0, tx = 0, now = 0;
+		int mode_time = 0;
+		
+		     if (ServerOrLocalTime == "server") {mode_time = 0; now = TimeCurrent();}
+		else if (ServerOrLocalTime == "local")  {mode_time = 1; now = TimeLocal();}
+		else if (ServerOrLocalTime == "gmt")    {mode_time = 2; now = TimeGMT();}
+		
+		//-- start time
+		if (TimeStartMode == "text")
+		{
+			t0 = TimeFromString(mode_time, TimeStart);
+		}
+		else if (TimeStartMode == "component")
+		{
+			t0 = TimeFromComponents(mode_time, TimeStartYear, TimeStartMonth, TimeStartDay, TimeStartHour, TimeStartMinute, TimeStartSecond);
+		}
+		
+		//-- end time
+		if (TimeEndMode == "text")
+		{
+			t1 = TimeFromString(mode_time, TimeEnd);
+		}
+		else if (TimeEndMode == "component")
+		{
+			t1 = TimeFromComponents(mode_time, TimeEndYear, TimeEndMonth, TimeEndDay, TimeEndHour, TimeEndMinute, TimeEndSecond);
+		}
+		else if (TimeEndMode == "relative")
+		{
+			MqlDateTime tm;
+			TimeToStruct(t0, tm);
+		
+			tm.year += TimeEndRelYears;
+			tm.mon  += TimeEndRelMonths;
+			tm.day  += (int)MathFloor(TimeEndRelDays);
+			tm.hour += (int)(MathFloor(TimeEndRelHours) + (24 * (TimeEndRelDays - MathFloor(TimeEndRelDays))));
+			tm.min  += (int)(MathFloor(TimeEndRelMinutes) + (60 * (TimeEndRelHours - MathFloor(TimeEndRelHours))));
+			tm.sec  += (int)((double)TimeEndRelSeconds + (60 * (TimeEndRelMinutes - MathFloor(TimeEndRelMinutes))));
+		
+			t1 = StructToTime(tm);
+		
+			if (t1 < t0) {t1 = t1 + 86400;}
+		}
+		
+		if ((now >= t0 && now < t1) || (t0 > t1 && (now >= t0 || now < t1))) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Once an hour" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5>
+class MDL_OnceAnHour: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 ServerOrLocalTime;
+	T2 MinutesFilter;
+	T3 CertainMinute;
+	T4 StartMinute;
+	T5 EndMinute;
+	/* Static Parameters */
+	int CurrentHour;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_OnceAnHour()
+	{
+		ServerOrLocalTime = (string)"server";
+		MinutesFilter = (string)"disabled";
+		CertainMinute = (int)30;
+		StartMinute = (int)15;
+		EndMinute = (int)30;
+		/* Static Parameters (initial value) */
+		CurrentHour =  -1;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		int hour, minute;
+		bool next = false;
+		
+		MqlDateTime time;
+		
+		     if (ServerOrLocalTime == "server") TimeCurrent(time);
+		else if (ServerOrLocalTime == "local")  TimeLocal(time);
+		else if (ServerOrLocalTime == "gmt")    TimeGMT(time);
+		else                                    TimeCurrent(time);
+		
+		hour   = time.hour;
+		minute = time.min;
+		
+		if (hour != CurrentHour)
+		{
+			if (
+				   (MinutesFilter == "disabled")
+				|| (MinutesFilter == "minute" && minute == CertainMinute)
+				|| (MinutesFilter == "period" && minute >= StartMinute && minute < EndMinute) 
+				)
+			{
+				CurrentHour = hour;
+				next        = true;
+			}
+		}
+		
+		if (next == true) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_15: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_15()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Profit_Percent = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "For each Position" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7,typename T8,typename T9,typename T10>
+class MDL_LoopStartTrades: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 GroupMode;
+	T2 Group;
+	T3 SymbolMode;
+	T4 Symbol;
+	T5 BuysOrSells;
+	T6 LoopDirection;
+	T7 LoopSkip;
+	T8 LoopEvery;
+	T9 LoopLimit;
+	T10 PassEnd;
+	/* Static Parameters */
+	double trades[][2];
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_LoopStartTrades()
+	{
+		GroupMode = (string)"group";
+		Group = (string)"";
+		SymbolMode = (string)"symbol";
+		Symbol = (string)CurrentSymbol();
+		BuysOrSells = (string)"both";
+		LoopDirection = (string)"newest-to-oldest";
+		LoopSkip = (int)0;
+		LoopEvery = (int)0;
+		LoopLimit = (int)0;
+		PassEnd = (int)0;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		// used when sorting by profit
+		
+		int saved_type     = attrTypeInLoop();
+		ulong saved_ticket = attrTicketInLoop(); // This ticket number will be reloaded at the end of this loop, so if we are in another overlapping loop - it will continue using it's last used ticket number
+		
+		int total = TradesTotal();
+		int count = 0;
+		int skip  = -1;
+		int every = 0;
+		
+		bool get_from_array = false;
+		
+		int i_start = 0, i_stop = 0, i_inc = 0, i = 0;
+		
+		if (LoopDirection == "newest-to-oldest")
+		{
+			i_start = total-1;
+			i_stop  = 0;
+			i_inc   = -1;
+		}
+		else if (LoopDirection == "oldest-to-newest")
+		{
+		  	i_start = 0;
+			i_stop  = total-1;
+			i_inc   = 1;
+		}
+		else if (LoopDirection == "profitable-first" || LoopDirection == "profitable-last")
+		{
+			int last_index = -1;
+			get_from_array = true;
+			
+			// Collect data
+			ArrayResize(trades,0);
+			int size = 0;
+		
+			for (int pos=0; pos < total; pos++)
+			{
+				if (!TradeSelectByIndex(pos, GroupMode, Group, SymbolMode, Symbol, BuysOrSells)) continue;
+		
+				size++;
+				ArrayResize(trades,size);
+		
+				trades[size-1][0] = OrderProfit();
+				trades[size-1][1] = (double)OrderTicket();
+			}
+		
+			// Sort
+			if (size > 0)
+			{
+				ArraySort(trades);
+				last_index = size - 1;
+			}
+		
+			// At this moment the array is sorted starting from the least profitable trade
+		
+			i_start = last_index;
+			i_stop  = 0;
+			i_inc   = -1;
+			
+			if (LoopDirection == "profitable-last")
+			{
+				i_start = 0;
+				i_stop  = last_index;
+				i_inc   = 1;
+			}
+		}
+		
+		i = i_start - i_inc;
+		
+		while (true)
+		{
+		  	if (i == i_stop) break;
+		  	i = i + i_inc;
+			
+			// simulate break and continue functionality in loop blocks
+			if (FXD_CONTINUE == true)
+			{
+				FXD_BREAK    = false;
+				FXD_CONTINUE = false;
+			}
+			else if (FXD_BREAK == true)
+			{
+				FXD_BREAK    = false;
+				FXD_CONTINUE = false;
+				break;
+			}
+			
+			if (get_from_array)
+			{
+				if (!TradeSelectByTicket((ulong)trades[i][1])) continue;
+			}
+			else
+			{
+				if (!TradeSelectByIndex(i, GroupMode, Group, SymbolMode, Symbol, BuysOrSells)) continue;
+			}
+		
+			skip++;
+		
+			if (LoopSkip <= skip && (count < LoopLimit || LoopLimit == 0))
+			{
+				if (LoopEvery > 0)
+				{
+					every++;
+		
+					if (every < LoopEvery) {continue;} else {every = 0;}
+				}
+				
+				count++;
+				attrTypeInLoop(1);
+				attrTicketInLoop(OrderTicket());
+		
+				_callback_(1);
+				
+				if (count == LoopLimit) break;
+			}
+			
+			if (LoopDirection == "oldest-to-newest")
+			{
+				// if trade was closed meanwhile
+				if (i_stop > TradesTotal()-1)
+				{
+					i_stop = TradesTotal()-1;
+					i--;
+				}
+			}
+		}
+		
+		attrTypeInLoop(saved_type);
+		attrTicketInLoop(saved_ticket); // Reloading Ticket number from the overlapping loop (if any)
+		
+		FXD_BREAK    = false;
+		FXD_CONTINUE = false;
+		
+		if (
+			   (PassEnd == 0)
+			|| (PassEnd == 1 && count > 0)
+			|| (PassEnd == 2 && count == 0)
+		) {
+			_callback_(0);
+		}
+	}
+};
+
+// "Bucket of Positions" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6>
+class MDL_BucketSelectOpened: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 BucketID;
+	T2 GroupMode;
+	T3 Group;
+	T4 SymbolMode;
+	T5 Symbol;
+	T6 BuysOrSells;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_BucketSelectOpened()
+	{
+		BucketID = (color)clrGray;
+		GroupMode = (string)"group";
+		Group = (string)"";
+		SymbolMode = (string)"symbol";
+		Symbol = (string)CurrentSymbol();
+		BuysOrSells = (string)"both";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		int list[];
+		double sortexp[];
+		int s = 0;
+		
+		int i_start = TradesTotal()-1;
+		int i_stop  = 0;
+		int i_inc   = -1;
+		
+		int pool = 0;
+		int i    = i_start - i_inc;
+		
+		while (true)
+		{
+			if (i == i_stop) {break;}
+			i = i + i_inc;	
+		
+			if (TradeSelectByIndex(i, GroupMode, Group, SymbolMode, Symbol, BuysOrSells))
+			{
+				ArrayResize(list, s+1);
+		
+				list[s] = (int)OrderTicket();
+				s++;
+			}
+		}
+		
+		BucketsOfOrders(BucketID, list, pool, true);
+		
+		if (s > 0) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_16: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_16()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Buy_Profit_no_Last = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "once per position/order" model
+template<typename T1>
+class MDL_LoopOncePer: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 AllowOldOrders;
+	/* Static Parameters */
+	int memory[];
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_LoopOncePer()
+	{
+		AllowOldOrders = (bool)false;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		if (FXD_BREAK==true) {return;}
+		
+		LoopedResume();
+		
+		
+		
+		bool next = false;
+		
+		if (AllowOldOrders || OrderOpenTime() >= TimeAtStart())
+		{
+		   int ticket = (int)attrTicketParent(OrderTicket());
+		
+		   if (InArray(memory, ticket) == false)
+			{
+		      ArrayEnsureValue(memory, ticket);
+		      next = true;
+		   }
+		}
+		
+		if (next == true) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_17: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_17()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Profit_Percent = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_18: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_18()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Sell_Profit_no_Last = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "close" model
+template<typename T1,typename T2>
+class MDL_LoopClose: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Slippage;
+	T2 ArrowColor;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_LoopClose()
+	{
+		Slippage = (ulong)4;
+		ArrowColor = (color)clrDeepPink;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		if (FXD_BREAK == true) {return;}
+		
+		LoopedResume();
+		
+		bool success = false;
+		
+		if (OrderType() < 2) {
+		   success = CloseTrade(OrderTicket(), Slippage, ArrowColor);
+		}
+		else {
+		   success = DeleteOrder(OrderTicket(), ArrowColor);
+		}
+		
+		if (success == true) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "No position nearby" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename _T6_,typename T7,typename _T7_,typename T8,typename T9,typename _T9_,typename T10,typename T11,typename T12,typename T13>
+class MDL_NoNearbyRunning: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 GroupMode;
+	T2 Group;
+	T3 SymbolMode;
+	T4 Symbol;
+	T5 BuysOrSells;
+	T6 Time1; virtual _T6_ _Time1_(){return(_T6_)0;}
+	T7 Time2; virtual _T7_ _Time2_(){return(_T7_)0;}
+	T8 ModeBasePrice;
+	T9 BasePrice; virtual _T9_ _BasePrice_(){return(_T9_)0;}
+	T10 ModeRange;
+	T11 RangePips;
+	T12 RangeFraction;
+	T13 RangePosition;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_NoNearbyRunning()
+	{
+		GroupMode = (string)"group";
+		Group = (string)"";
+		SymbolMode = (string)"symbol";
+		Symbol = (string)CurrentSymbol();
+		BuysOrSells = (string)"both";
+		ModeBasePrice = (string)"current";
+		ModeRange = (string)"pips";
+		RangePips = (double)10.0;
+		RangeFraction = (double)0.0010;
+		RangePosition = (int)0;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		int next               = true;
+		double price           = 0;
+		bool use_current_price = (ModeBasePrice == "current");
+		
+		// prepare the time filters
+		datetime t1 = _Time1_();
+		datetime t2 = _Time2_();
+		
+		if (t1 >= TimeCurrent()) t1 = 0;
+		
+		if (!use_current_price)
+		{
+			price = _BasePrice_();
+		}
+		
+		for (int index = TradesTotal()-1; index >= 0; index--)
+		{
+			if (TradeSelectByIndex(index, GroupMode, Group, SymbolMode, Symbol, BuysOrSells))
+			{
+				// filter by time
+				if ((t1 < t2 && OrderOpenTime() < t1) || OrderOpenTime() > t2)
+				{
+					continue;
+				}
+		
+				// what is the distance?
+				double distance = RangeFraction;
+		
+				if (ModeRange == "pips") {distance = toDigits(RangePips, Symbol);}
+		
+				// checking the position
+				if (OrderType() == 0) // buy?
+				{
+					if (use_current_price) {price = SymbolInfoDouble(Symbol, SYMBOL_ASK);}
+		
+					switch (RangePosition)
+					{
+						case 0: if (price <= (OrderOpenPrice() + distance/2) && price >= (OrderOpenPrice() - distance/2)) {next = false;} break;
+						case 1: if (price <= OrderOpenPrice() + distance && price >= OrderOpenPrice()) {next = false;} break;
+						case 2: if (price <= OrderOpenPrice() && price >= OrderOpenPrice() - distance) {next = false;} break;
+					}
+				}
+				else
+				{
+					if (use_current_price) {price = SymbolInfoDouble(Symbol, SYMBOL_BID);}
+		
+					switch (RangePosition)
+					{
+						case 0: if (price <= (OrderOpenPrice() + distance/2) && price >= (OrderOpenPrice() - distance/2)) {next = false;} break;
+						case 1: if (price <= OrderOpenPrice() && price >= OrderOpenPrice() - distance) {next = false;} break;
+						case 2: if (price <= OrderOpenPrice() + distance && price >= OrderOpenPrice()) {next = false;} break;
+					}
+				}
+		
+				if (next == false) {break;}
+			}
+		}
+		
+		if (next == true) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Buy now" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7,typename T8,typename T9,typename _T9_,typename T10,typename T11,typename T12,typename T13,typename T14,typename T15,typename T16,typename T17,typename T18,typename T19,typename T20,typename T21,typename T22,typename T23,typename T24,typename T25,typename T26,typename T27,typename T28,typename T29,typename T30,typename T31,typename T32,typename T33,typename T34,typename T35,typename T36,typename T37,typename _T37_,typename T38,typename _T38_,typename T39,typename _T39_,typename T40,typename T41,typename T42,typename T43,typename T44,typename _T44_,typename T45,typename _T45_,typename T46,typename _T46_,typename T47,typename T48,typename T49,typename T50,typename T51,typename _T51_,typename T52,typename T53,typename T54>
+class MDL_BuyNow: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Group;
+	T2 Symbol;
+	T3 VolumeMode;
+	T4 VolumeSize;
+	T5 VolumeSizeRisk;
+	T6 VolumeRisk;
+	T7 VolumePercent;
+	T8 VolumeBlockPercent;
+	T9 dVolumeSize; virtual _T9_ _dVolumeSize_(){return(_T9_)0;}
+	T10 FixedRatioUnitSize;
+	T11 FixedRatioDelta;
+	T12 mmTradesPool;
+	T13 mmMgInitialLots;
+	T14 mmMgMultiplyOnLoss;
+	T15 mmMgMultiplyOnProfit;
+	T16 mmMgAddLotsOnLoss;
+	T17 mmMgAddLotsOnProfit;
+	T18 mmMgResetOnLoss;
+	T19 mmMgResetOnProfit;
+	T20 mm1326InitialLots;
+	T21 mm1326Reverse;
+	T22 mmFiboInitialLots;
+	T23 mmDalembertInitialLots;
+	T24 mmDalembertReverse;
+	T25 mmLabouchereInitialLots;
+	T26 mmLabouchereList;
+	T27 mmLabouchereReverse;
+	T28 mmSeqBaseLots;
+	T29 mmSeqOnLoss;
+	T30 mmSeqOnProfit;
+	T31 mmSeqReverse;
+	T32 VolumeUpperLimit;
+	T33 StopLossMode;
+	T34 StopLossPips;
+	T35 StopLossPercentPrice;
+	T36 StopLossPercentTP;
+	T37 dlStopLoss; virtual _T37_ _dlStopLoss_(){return(_T37_)0;}
+	T38 dpStopLoss; virtual _T38_ _dpStopLoss_(){return(_T38_)0;}
+	T39 ddStopLoss; virtual _T39_ _ddStopLoss_(){return(_T39_)0;}
+	T40 TakeProfitMode;
+	T41 TakeProfitPips;
+	T42 TakeProfitPercentPrice;
+	T43 TakeProfitPercentSL;
+	T44 dlTakeProfit; virtual _T44_ _dlTakeProfit_(){return(_T44_)0;}
+	T45 dpTakeProfit; virtual _T45_ _dpTakeProfit_(){return(_T45_)0;}
+	T46 ddTakeProfit; virtual _T46_ _ddTakeProfit_(){return(_T46_)0;}
+	T47 ExpMode;
+	T48 ExpDays;
+	T49 ExpHours;
+	T50 ExpMinutes;
+	T51 dExp; virtual _T51_ _dExp_(){return(_T51_)0;}
+	T52 Slippage;
+	T53 MyComment;
+	T54 ArrowColorBuy;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_BuyNow()
+	{
+		Group = (string)"";
+		Symbol = (string)CurrentSymbol();
+		VolumeMode = (string)"fixed";
+		VolumeSize = (double)0.1;
+		VolumeSizeRisk = (double)50.0;
+		VolumeRisk = (double)2.5;
+		VolumePercent = (double)100.0;
+		VolumeBlockPercent = (double)3.0;
+		FixedRatioUnitSize = (double)0.01;
+		FixedRatioDelta = (double)20.0;
+		mmTradesPool = (int)0;
+		mmMgInitialLots = (double)0.1;
+		mmMgMultiplyOnLoss = (double)2.0;
+		mmMgMultiplyOnProfit = (double)1.0;
+		mmMgAddLotsOnLoss = (double)0.0;
+		mmMgAddLotsOnProfit = (double)0.0;
+		mmMgResetOnLoss = (int)0;
+		mmMgResetOnProfit = (int)1;
+		mm1326InitialLots = (double)0.1;
+		mm1326Reverse = (bool)false;
+		mmFiboInitialLots = (double)0.1;
+		mmDalembertInitialLots = (double)0.1;
+		mmDalembertReverse = (bool)false;
+		mmLabouchereInitialLots = (double)0.1;
+		mmLabouchereList = (string)"1,2,3,4,5,6";
+		mmLabouchereReverse = (bool)false;
+		mmSeqBaseLots = (double)0.1;
+		mmSeqOnLoss = (string)"3,2,6";
+		mmSeqOnProfit = (string)"1";
+		mmSeqReverse = (bool)false;
+		VolumeUpperLimit = (double)0.0;
+		StopLossMode = (string)"fixed";
+		StopLossPips = (double)50.0;
+		StopLossPercentPrice = (double)0.55;
+		StopLossPercentTP = (double)100.0;
+		TakeProfitMode = (string)"fixed";
+		TakeProfitPips = (double)50.0;
+		TakeProfitPercentPrice = (double)0.55;
+		TakeProfitPercentSL = (double)100.0;
+		ExpMode = (string)"GTC";
+		ExpDays = (int)0;
+		ExpHours = (int)1;
+		ExpMinutes = (int)0;
+		Slippage = (ulong)4;
+		MyComment = (string)"";
+		ArrowColorBuy = (color)clrBlue;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		//-- stops ------------------------------------------------------------------
+		double sll = 0, slp = 0, tpl = 0, tpp = 0;
+		
+		     if (StopLossMode == "fixed")         {slp = StopLossPips;}
+		else if (StopLossMode == "dynamicPips")   {slp = _dpStopLoss_();}
+		else if (StopLossMode == "dynamicDigits") {slp = toPips(_ddStopLoss_(),Symbol);}
+		else if (StopLossMode == "dynamicLevel")  {sll = _dlStopLoss_();}
+		else if (StopLossMode == "percentPrice")  {sll = SymbolAsk(Symbol) - (SymbolAsk(Symbol) * StopLossPercentPrice / 100);}
+		
+		     if (TakeProfitMode == "fixed")         {tpp = TakeProfitPips;}
+		else if (TakeProfitMode == "dynamicPips")   {tpp = _dpTakeProfit_();}
+		else if (TakeProfitMode == "dynamicDigits") {tpp = toPips(_ddTakeProfit_(),Symbol);}
+		else if (TakeProfitMode == "dynamicLevel")  {tpl = _dlTakeProfit_();}
+		else if (TakeProfitMode == "percentPrice")  {tpl = SymbolAsk(Symbol) + (SymbolAsk(Symbol) * TakeProfitPercentPrice / 100);}
+		
+		if (StopLossMode == "percentTP") {
+		   if (tpp > 0) {slp = tpp*StopLossPercentTP/100;}
+		   if (tpl > 0) {slp = toPips(MathAbs(SymbolAsk(Symbol) - tpl), Symbol)*StopLossPercentTP/100;}
+		}
+		if (TakeProfitMode == "percentSL") {
+		   if (slp > 0) {tpp = slp*TakeProfitPercentSL/100;}
+		   if (sll > 0) {tpp = toPips(MathAbs(SymbolAsk(Symbol) - sll), Symbol)*TakeProfitPercentSL/100;}
+		}
+		
+		//-- lots -------------------------------------------------------------------
+		double lots = 0;
+		double pre_sll = sll;
+		
+		if (pre_sll == 0) {
+			pre_sll = SymbolAsk(Symbol);
+		}
+		
+		double pre_sl_pips = toPips(SymbolAsk(Symbol)-(pre_sll-toDigits(slp,Symbol)), Symbol);
+		
+		     if (VolumeMode == "fixed")            {lots = DynamicLots(Symbol, VolumeMode, VolumeSize);}
+		else if (VolumeMode == "block-equity")     {lots = DynamicLots(Symbol, VolumeMode, VolumeBlockPercent);}
+		else if (VolumeMode == "block-balance")    {lots = DynamicLots(Symbol, VolumeMode, VolumeBlockPercent);}
+		else if (VolumeMode == "block-freemargin") {lots = DynamicLots(Symbol, VolumeMode, VolumeBlockPercent);}
+		else if (VolumeMode == "equity")           {lots = DynamicLots(Symbol, VolumeMode, VolumePercent);}
+		else if (VolumeMode == "balance")          {lots = DynamicLots(Symbol, VolumeMode, VolumePercent);}
+		else if (VolumeMode == "freemargin")       {lots = DynamicLots(Symbol, VolumeMode, VolumePercent);}
+		else if (VolumeMode == "equityRisk")       {lots = DynamicLots(Symbol, VolumeMode, VolumeRisk, pre_sl_pips);}
+		else if (VolumeMode == "balanceRisk")      {lots = DynamicLots(Symbol, VolumeMode, VolumeRisk, pre_sl_pips);}
+		else if (VolumeMode == "freemarginRisk")   {lots = DynamicLots(Symbol, VolumeMode, VolumeRisk, pre_sl_pips);}
+		else if (VolumeMode == "fixedRisk")        {lots = DynamicLots(Symbol, VolumeMode, VolumeSizeRisk, pre_sl_pips);}
+		else if (VolumeMode == "fixedRatio")       {lots = DynamicLots(Symbol, VolumeMode, FixedRatioUnitSize, FixedRatioDelta);}
+		else if (VolumeMode == "dynamic")          {lots = _dVolumeSize_();}
+		else if (VolumeMode == "1326")             {lots = Bet1326(Group, Symbol, mmTradesPool, mm1326InitialLots, mm1326Reverse);}
+		else if (VolumeMode == "fibonacci")        {lots = BetFibonacci(Group, Symbol, mmTradesPool, mmFiboInitialLots);}
+		else if (VolumeMode == "dalembert")        {lots = BetDalembert(Group, Symbol, mmTradesPool, mmDalembertInitialLots, mmDalembertReverse);}
+		else if (VolumeMode == "labouchere")       {lots = BetLabouchere(Group, Symbol, mmTradesPool, mmLabouchereInitialLots, mmLabouchereList, mmLabouchereReverse);}
+		else if (VolumeMode == "martingale")       {lots = BetMartingale(Group, Symbol, mmTradesPool, mmMgInitialLots, mmMgMultiplyOnLoss, mmMgMultiplyOnProfit, mmMgAddLotsOnLoss, mmMgAddLotsOnProfit, mmMgResetOnLoss, mmMgResetOnProfit);}
+		else if (VolumeMode == "sequence")         {lots = BetSequence(Group, Symbol, mmTradesPool, mmSeqBaseLots, mmSeqOnLoss, mmSeqOnProfit, mmSeqReverse);}
+		
+		lots = AlignLots(Symbol, lots, 0, VolumeUpperLimit);
+		
+		datetime exp = ExpirationTime(ExpMode,ExpDays,ExpHours,ExpMinutes,_dExp_());
+		
+		//-- send -------------------------------------------------------------------
+		long ticket = BuyNow(Symbol, lots, sll, tpl, slp, tpp, Slippage, (MagicStart+(int)Group), MyComment, ArrowColorBuy, exp);
+		
+		if (ticket > 0) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Sell now" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7,typename T8,typename T9,typename _T9_,typename T10,typename T11,typename T12,typename T13,typename T14,typename T15,typename T16,typename T17,typename T18,typename T19,typename T20,typename T21,typename T22,typename T23,typename T24,typename T25,typename T26,typename T27,typename T28,typename T29,typename T30,typename T31,typename T32,typename T33,typename T34,typename T35,typename T36,typename T37,typename _T37_,typename T38,typename _T38_,typename T39,typename _T39_,typename T40,typename T41,typename T42,typename T43,typename T44,typename _T44_,typename T45,typename _T45_,typename T46,typename _T46_,typename T47,typename T48,typename T49,typename T50,typename T51,typename _T51_,typename T52,typename T53,typename T54>
+class MDL_SellNow: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Group;
+	T2 Symbol;
+	T3 VolumeMode;
+	T4 VolumeSize;
+	T5 VolumeSizeRisk;
+	T6 VolumeRisk;
+	T7 VolumePercent;
+	T8 VolumeBlockPercent;
+	T9 dVolumeSize; virtual _T9_ _dVolumeSize_(){return(_T9_)0;}
+	T10 FixedRatioUnitSize;
+	T11 FixedRatioDelta;
+	T12 mmTradesPool;
+	T13 mmMgInitialLots;
+	T14 mmMgMultiplyOnLoss;
+	T15 mmMgMultiplyOnProfit;
+	T16 mmMgAddLotsOnLoss;
+	T17 mmMgAddLotsOnProfit;
+	T18 mmMgResetOnLoss;
+	T19 mmMgResetOnProfit;
+	T20 mm1326InitialLots;
+	T21 mm1326Reverse;
+	T22 mmFiboInitialLots;
+	T23 mmDalembertInitialLots;
+	T24 mmDalembertReverse;
+	T25 mmLabouchereInitialLots;
+	T26 mmLabouchereList;
+	T27 mmLabouchereReverse;
+	T28 mmSeqBaseLots;
+	T29 mmSeqOnLoss;
+	T30 mmSeqOnProfit;
+	T31 mmSeqReverse;
+	T32 VolumeUpperLimit;
+	T33 StopLossMode;
+	T34 StopLossPips;
+	T35 StopLossPercentPrice;
+	T36 StopLossPercentTP;
+	T37 dlStopLoss; virtual _T37_ _dlStopLoss_(){return(_T37_)0;}
+	T38 dpStopLoss; virtual _T38_ _dpStopLoss_(){return(_T38_)0;}
+	T39 ddStopLoss; virtual _T39_ _ddStopLoss_(){return(_T39_)0;}
+	T40 TakeProfitMode;
+	T41 TakeProfitPips;
+	T42 TakeProfitPercentPrice;
+	T43 TakeProfitPercentSL;
+	T44 dlTakeProfit; virtual _T44_ _dlTakeProfit_(){return(_T44_)0;}
+	T45 dpTakeProfit; virtual _T45_ _dpTakeProfit_(){return(_T45_)0;}
+	T46 ddTakeProfit; virtual _T46_ _ddTakeProfit_(){return(_T46_)0;}
+	T47 ExpMode;
+	T48 ExpDays;
+	T49 ExpHours;
+	T50 ExpMinutes;
+	T51 dExp; virtual _T51_ _dExp_(){return(_T51_)0;}
+	T52 Slippage;
+	T53 MyComment;
+	T54 ArrowColorSell;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_SellNow()
+	{
+		Group = (string)"";
+		Symbol = (string)CurrentSymbol();
+		VolumeMode = (string)"fixed";
+		VolumeSize = (double)0.1;
+		VolumeSizeRisk = (double)50.0;
+		VolumeRisk = (double)2.5;
+		VolumePercent = (double)100.0;
+		VolumeBlockPercent = (double)3.0;
+		FixedRatioUnitSize = (double)0.01;
+		FixedRatioDelta = (double)20.0;
+		mmTradesPool = (int)0;
+		mmMgInitialLots = (double)0.1;
+		mmMgMultiplyOnLoss = (double)2.0;
+		mmMgMultiplyOnProfit = (double)1.0;
+		mmMgAddLotsOnLoss = (double)0.0;
+		mmMgAddLotsOnProfit = (double)0.0;
+		mmMgResetOnLoss = (int)0;
+		mmMgResetOnProfit = (int)1;
+		mm1326InitialLots = (double)0.1;
+		mm1326Reverse = (bool)false;
+		mmFiboInitialLots = (double)0.1;
+		mmDalembertInitialLots = (double)0.1;
+		mmDalembertReverse = (bool)false;
+		mmLabouchereInitialLots = (double)0.1;
+		mmLabouchereList = (string)"1,2,3,4,5,6";
+		mmLabouchereReverse = (bool)false;
+		mmSeqBaseLots = (double)0.1;
+		mmSeqOnLoss = (string)"3,2,6";
+		mmSeqOnProfit = (string)"1";
+		mmSeqReverse = (bool)false;
+		VolumeUpperLimit = (double)0.0;
+		StopLossMode = (string)"fixed";
+		StopLossPips = (double)50.0;
+		StopLossPercentPrice = (double)0.55;
+		StopLossPercentTP = (double)100.0;
+		TakeProfitMode = (string)"fixed";
+		TakeProfitPips = (double)50.0;
+		TakeProfitPercentPrice = (double)0.55;
+		TakeProfitPercentSL = (double)100.0;
+		ExpMode = (string)"GTC";
+		ExpDays = (int)0;
+		ExpHours = (int)1;
+		ExpMinutes = (int)0;
+		Slippage = (ulong)4;
+		MyComment = (string)"";
+		ArrowColorSell = (color)clrRed;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		//-- stops ------------------------------------------------------------------
+		double sll = 0, slp = 0, tpl = 0, tpp = 0;
+		
+		     if (StopLossMode == "fixed")         {slp = StopLossPips;}
+		else if (StopLossMode == "dynamicPips")   {slp = _dpStopLoss_();}
+		else if (StopLossMode == "dynamicDigits") {slp = toPips(_ddStopLoss_(),Symbol);}
+		else if (StopLossMode == "dynamicLevel")  {sll = _dlStopLoss_();}
+		else if (StopLossMode == "percentPrice")  {sll = SymbolBid(Symbol) + (SymbolBid(Symbol) * StopLossPercentPrice / 100);}
+		
+		     if (TakeProfitMode == "fixed")         {tpp = TakeProfitPips;}
+		else if (TakeProfitMode == "dynamicPips")   {tpp = _dpTakeProfit_();}
+		else if (TakeProfitMode == "dynamicDigits") {tpp = toPips(_ddTakeProfit_(),Symbol);}
+		else if (TakeProfitMode == "dynamicLevel")  {tpl = _dlTakeProfit_();}
+		else if (TakeProfitMode == "percentPrice")  {tpl = SymbolBid(Symbol) - (SymbolBid(Symbol) * TakeProfitPercentPrice / 100);}
+		
+		if (StopLossMode == "percentTP") {
+		   if (tpp > 0) {slp = tpp*StopLossPercentTP/100;}
+		   if (tpl > 0) {slp = toPips(MathAbs(SymbolBid(Symbol) - tpl), Symbol)*StopLossPercentTP/100;}
+		}
+		if (TakeProfitMode == "percentSL") {
+		   if (slp > 0) {tpp = slp*TakeProfitPercentSL/100;}
+		   if (sll > 0) {tpp = toPips(MathAbs(SymbolBid(Symbol) - sll), Symbol)*TakeProfitPercentSL/100;}
+		}
+		
+		//-- lots -------------------------------------------------------------------
+		double lots = 0;
+		double pre_sll = sll;
+		
+		if (pre_sll == 0) {
+			pre_sll = SymbolBid(Symbol);
+		}
+		
+		double pre_sl_pips = toPips((pre_sll+toDigits(slp,Symbol))-SymbolBid(Symbol), Symbol);
+		
+		     if (VolumeMode == "fixed")            {lots = DynamicLots(Symbol, VolumeMode, VolumeSize);}
+		else if (VolumeMode == "block-equity")     {lots = DynamicLots(Symbol, VolumeMode, VolumeBlockPercent);}
+		else if (VolumeMode == "block-balance")    {lots = DynamicLots(Symbol, VolumeMode, VolumeBlockPercent);}
+		else if (VolumeMode == "block-freemargin") {lots = DynamicLots(Symbol, VolumeMode, VolumeBlockPercent);}
+		else if (VolumeMode == "equity")           {lots = DynamicLots(Symbol, VolumeMode, VolumePercent);}
+		else if (VolumeMode == "balance")          {lots = DynamicLots(Symbol, VolumeMode, VolumePercent);}
+		else if (VolumeMode == "freemargin")       {lots = DynamicLots(Symbol, VolumeMode, VolumePercent);}
+		else if (VolumeMode == "equityRisk")       {lots = DynamicLots(Symbol, VolumeMode, VolumeRisk, pre_sl_pips);}
+		else if (VolumeMode == "balanceRisk")      {lots = DynamicLots(Symbol, VolumeMode, VolumeRisk, pre_sl_pips);}
+		else if (VolumeMode == "freemarginRisk")   {lots = DynamicLots(Symbol, VolumeMode, VolumeRisk, pre_sl_pips);}
+		else if (VolumeMode == "fixedRisk")        {lots = DynamicLots(Symbol, VolumeMode, VolumeSizeRisk, pre_sl_pips);}
+		else if (VolumeMode == "fixedRatio")       {lots = DynamicLots(Symbol, VolumeMode, FixedRatioUnitSize, FixedRatioDelta);}
+		else if (VolumeMode == "dynamic")          {lots = _dVolumeSize_();}
+		else if (VolumeMode == "1326")             {lots = Bet1326(Group, Symbol, mmTradesPool, mm1326InitialLots, mm1326Reverse);}
+		else if (VolumeMode == "fibonacci")        {lots = BetFibonacci(Group, Symbol, mmTradesPool, mmFiboInitialLots);}
+		else if (VolumeMode == "dalembert")        {lots = BetDalembert(Group, Symbol, mmTradesPool, mmDalembertInitialLots, mmDalembertReverse);}
+		else if (VolumeMode == "labouchere")       {lots = BetLabouchere(Group, Symbol, mmTradesPool, mmLabouchereInitialLots, mmLabouchereList, mmLabouchereReverse);}
+		else if (VolumeMode == "martingale")       {lots = BetMartingale(Group, Symbol, mmTradesPool, mmMgInitialLots, mmMgMultiplyOnLoss, mmMgMultiplyOnProfit, mmMgAddLotsOnLoss, mmMgAddLotsOnProfit, mmMgResetOnLoss, mmMgResetOnProfit);}
+		else if (VolumeMode == "sequence")         {lots = BetSequence(Group, Symbol, mmTradesPool, mmSeqBaseLots, mmSeqOnLoss, mmSeqOnProfit, mmSeqReverse);}
+		
+		lots = AlignLots(Symbol, lots, 0, VolumeUpperLimit);
+		
+		datetime exp = ExpirationTime(ExpMode,ExpDays,ExpHours,ExpMinutes,_dExp_());
+		
+		//-- send -------------------------------------------------------------------
+		long ticket = SellNow(Symbol, lots, sll, tpl, slp, tpp, Slippage, (MagicStart+(int)Group), MyComment, ArrowColorSell, exp);
+		
+		if (ticket > 0) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_19: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_19()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::LotsBX = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "Once per bar" model
+template<typename T1,typename T2,typename T3>
+class MDL_OncePerBar: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Symbol;
+	T2 Period;
+	T3 PassMaxTimes;
+	/* Static Parameters */
+	string tokens[];
+	int passes[];
+	datetime old_values[];
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_OncePerBar()
+	{
+		Symbol = (string)CurrentSymbol();
+		Period = (ENUM_TIMEFRAMES)CurrentTimeframe();
+		PassMaxTimes = (int)1;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		bool next    = false;
+		string token = Symbol + IntegerToString(Period);
+		int index    = ArraySearch(tokens, token);
+		
+		if (index == -1)
+		{
+			index = ArraySize(tokens);
+			
+			ArrayResize(tokens, index + 1);
+			ArrayResize(old_values, index + 1);
+			ArrayResize(passes, index + 1);
+			
+			tokens[index] = token;
+			passes[index] = 0;
+			old_values[index] = 0;
+		}
+		
+		if (PassMaxTimes > 0)
+		{
+			// Sometimes CopyTime doesn't work properly. It happens when the history data is broken or something.
+			// Then, CopyTime can't read any candles. It happens withing few candles only, but it's a problem that
+			// I don't know how to fix. However, iTime() seems to work fine.
+			datetime new_value = iTime(Symbol, Period, 1);
+			
+			if (new_value == 0) {
+				Print("Failed to get the time from candle 1 on symbol ", Symbol, " and timeframe ", EnumToString((ENUM_TIMEFRAMES)Period), ". The history data needs to be fixed.");
+			}
+		
+			if (new_value > old_values[index])
+			{
+				passes[index]++;
+		
+				if (passes[index] >= PassMaxTimes)
+				{
+					old_values[index]  = new_value;
+					passes[index] = 0;
+				}
+		
+				next = true;
+			}
+		}
+		
+		if (next) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Check positions count" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7>
+class MDL_CheckTradesCount: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Compare;
+	T2 CompareCount;
+	T3 GroupMode;
+	T4 Group;
+	T5 SymbolMode;
+	T6 Symbol;
+	T7 BuysOrSells;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_CheckTradesCount()
+	{
+		Compare = (string)">";
+		CompareCount = (int)3;
+		GroupMode = (string)"group";
+		Group = (string)"";
+		SymbolMode = (string)"symbol";
+		Symbol = (string)CurrentSymbol();
+		BuysOrSells = (string)"both";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		int count = 0;
+		
+		for (int index = TradesTotal()-1; index >= 0; index--)
+		{
+			if (TradeSelectByIndex(index, GroupMode, Group, SymbolMode, Symbol, BuysOrSells))
+			{
+				count++;
+			}
+		}
+		
+		if (compare(Compare, count, CompareCount)) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_20: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_20()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::LotsSX = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "Comment" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7,typename T8,typename T9,typename T10,typename T11,typename T12,typename T13,typename T14,typename T15,typename T16,typename _T16_,typename T17,typename T18,typename T19,typename T20,typename _T20_,typename T21,typename T22,typename T23,typename T24,typename _T24_,typename T25,typename T26,typename T27,typename T28,typename _T28_,typename T29,typename T30,typename T31,typename T32,typename _T32_,typename T33,typename T34,typename T35,typename T36,typename _T36_,typename T37,typename T38,typename T39,typename T40,typename _T40_,typename T41,typename T42,typename T43,typename T44,typename _T44_,typename T45,typename T46>
+class MDL_CommentEx: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Title;
+	T2 ObjChartSubWindow;
+	T3 ObjCorner;
+	T4 ObjX;
+	T5 ObjY;
+	T6 ObjTitleFont;
+	T7 ObjTitleFontColor;
+	T8 ObjTitleFontSize;
+	T9 ObjLabelsFont;
+	T10 ObjLabelsFontColor;
+	T11 ObjLabelsFontSize;
+	T12 ObjFont;
+	T13 ObjFontColor;
+	T14 ObjFontSize;
+	T15 Label1;
+	T16 Value1; virtual _T16_ _Value1_(){return(_T16_)0;}
+	T17 FormatNumber1;
+	T18 FormatTime1;
+	T19 Label2;
+	T20 Value2; virtual _T20_ _Value2_(){return(_T20_)0;}
+	T21 FormatNumber2;
+	T22 FormatTime2;
+	T23 Label3;
+	T24 Value3; virtual _T24_ _Value3_(){return(_T24_)0;}
+	T25 FormatNumber3;
+	T26 FormatTime3;
+	T27 Label4;
+	T28 Value4; virtual _T28_ _Value4_(){return(_T28_)0;}
+	T29 FormatNumber4;
+	T30 FormatTime4;
+	T31 Label5;
+	T32 Value5; virtual _T32_ _Value5_(){return(_T32_)0;}
+	T33 FormatNumber5;
+	T34 FormatTime5;
+	T35 Label6;
+	T36 Value6; virtual _T36_ _Value6_(){return(_T36_)0;}
+	T37 FormatNumber6;
+	T38 FormatTime6;
+	T39 Label7;
+	T40 Value7; virtual _T40_ _Value7_(){return(_T40_)0;}
+	T41 FormatNumber7;
+	T42 FormatTime7;
+	T43 Label8;
+	T44 Value8; virtual _T44_ _Value8_(){return(_T44_)0;}
+	T45 FormatNumber8;
+	T46 FormatTime8;
+	/* Static Parameters */
+	bool initialized;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_CommentEx()
+	{
+		Title = (string)"Comment Message";
+		ObjChartSubWindow = (string)"";
+		ObjCorner = (int)CORNER_LEFT_UPPER;
+		ObjX = (int)5;
+		ObjY = (int)24;
+		ObjTitleFont = (string)"Georgia";
+		ObjTitleFontColor = (color)clrGold;
+		ObjTitleFontSize = (int)13;
+		ObjLabelsFont = (string)"Verdana";
+		ObjLabelsFontColor = (color)clrDarkGray;
+		ObjLabelsFontSize = (int)10;
+		ObjFont = (string)"Verdana";
+		ObjFontColor = (color)clrWhite;
+		ObjFontSize = (int)10;
+		Label1 = (string)"";
+		FormatNumber1 = (int)EMPTY_VALUE;
+		FormatTime1 = (int)EMPTY_VALUE;
+		Label2 = (string)"";
+		FormatNumber2 = (int)EMPTY_VALUE;
+		FormatTime2 = (int)EMPTY_VALUE;
+		Label3 = (string)"";
+		FormatNumber3 = (int)EMPTY_VALUE;
+		FormatTime3 = (int)EMPTY_VALUE;
+		Label4 = (string)"";
+		FormatNumber4 = (int)EMPTY_VALUE;
+		FormatTime4 = (int)EMPTY_VALUE;
+		Label5 = (string)"";
+		FormatNumber5 = (int)EMPTY_VALUE;
+		FormatTime5 = (int)EMPTY_VALUE;
+		Label6 = (string)"";
+		FormatNumber6 = (int)EMPTY_VALUE;
+		FormatTime6 = (int)EMPTY_VALUE;
+		Label7 = (string)"";
+		FormatNumber7 = (int)EMPTY_VALUE;
+		FormatTime7 = (int)EMPTY_VALUE;
+		Label8 = (string)"";
+		FormatNumber8 = (int)EMPTY_VALUE;
+		FormatTime8 = (int)EMPTY_VALUE;
+		/* Static Parameters (initial value) */
+		initialized =  false;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		if (!MQLInfoInteger(MQL_TESTER) || MQLInfoInteger(MQL_VISUAL_MODE))
+		{
+			
+		
+			long ObjChartID = 0;
+			int ObjAnchor   = ANCHOR_LEFT;
+		
+			if (ObjCorner == CORNER_RIGHT_UPPER || ObjCorner == CORNER_RIGHT_LOWER)
+			{
+				ObjAnchor = ANCHOR_RIGHT;
+			}
+		
+			string namebase = "fxd_cmnt_" + __block_user_number;
+		
+			int subwindow = WindowFindVisible(ObjChartID, ObjChartSubWindow);
+		
+			if (subwindow >= 0)
+			{
+				//-- draw comment title
+				if ((string)Title != "")
+				{
+					string nametitle = namebase;
+		
+					if(ObjectFind(ObjChartID, nametitle) < 0)
+					{
+						if (!ObjectCreate(ObjChartID, nametitle, OBJ_LABEL, subwindow, 0, 0, 0, 0))
+						{
+							Print(__FUNCTION__, ": failed to create text object! Error code = ", GetLastError());
+						}
+						else
+						{
+							ObjectSetInteger(ObjChartID, nametitle, OBJPROP_FONTSIZE, (int)(ObjTitleFontSize));
+							ObjectSetInteger(ObjChartID, nametitle, OBJPROP_COLOR, ObjTitleFontColor);
+							ObjectSetInteger(ObjChartID, nametitle, OBJPROP_BACK, 0);
+							ObjectSetInteger(ObjChartID, nametitle, OBJPROP_SELECTABLE, 1);
+							ObjectSetInteger(ObjChartID, nametitle, OBJPROP_SELECTED, 0);
+							ObjectSetInteger(ObjChartID, nametitle, OBJPROP_HIDDEN, 1);
+							ObjectSetInteger(ObjChartID, nametitle, OBJPROP_CORNER, ObjCorner);
+							ObjectSetInteger(ObjChartID, nametitle, OBJPROP_ANCHOR, ObjAnchor);
+		
+							ObjectSetString(ObjChartID, nametitle, OBJPROP_FONT, ObjTitleFont);
+		
+							ObjectSetInteger(ObjChartID, nametitle, OBJPROP_XDISTANCE, ObjX);
+							ObjectSetInteger(ObjChartID, nametitle, OBJPROP_YDISTANCE, ObjY);
+						}
+					}
+					else
+					{
+						ObjX = (int)ObjectGetInteger(ObjChartID, nametitle, OBJPROP_XDISTANCE);
+						ObjY = (int)ObjectGetInteger(ObjChartID, nametitle, OBJPROP_YDISTANCE);
+					}
+		
+					ObjectSetString(ObjChartID, nametitle, OBJPROP_TEXT, (string)Title);
+		
+					ObjY = (int)(ObjY + ObjTitleFontSize / 3);
+				}
+		
+				//-- draw comment rows
+				for (int i = 1; i <= 8; i++)
+				{
+					string text    = "";
+					string textlbl = "";
+		
+					switch(i)
+					{
+						case 1:
+						{
+							if (Label1 != "")
+							{
+								textlbl = Label1;
+								text    = FormatValueForPrinting(_Value1_(), FormatNumber1, FormatTime1);
+							}
+		
+							break;
+						}
+						case 2:
+						{
+							if (Label2 != "")
+							{
+								textlbl = Label2;
+								text    = FormatValueForPrinting(_Value2_(), FormatNumber2, FormatTime2);
+							}
+		
+							break;
+						}
+						case 3:
+						{
+							if (Label3 != "")
+							{
+								textlbl = Label3;
+								text    = FormatValueForPrinting(_Value3_(), FormatNumber3, FormatTime3);
+							}
+		
+							break;
+						}
+						case 4:
+						{
+							if (Label4 != "")
+							{
+								textlbl = Label4;
+								text    = FormatValueForPrinting(_Value4_(), FormatNumber4, FormatTime4);
+							}
+		
+							break;
+						}
+						case 5:
+						{
+							if (Label5 != "")
+							{
+								textlbl = Label5;
+								text    = FormatValueForPrinting(_Value5_(), FormatNumber5, FormatTime5);
+							}
+		
+							break;
+						}
+						case 6:
+						{
+							if (Label6 != "")
+							{
+								textlbl = Label6;
+								text    = FormatValueForPrinting(_Value6_(), FormatNumber6, FormatTime6);
+							}
+		
+							break;
+						}
+						case 7:
+						{
+							if (Label7 != "")
+							{
+								textlbl = Label7;
+								text    = FormatValueForPrinting(_Value7_(), FormatNumber7, FormatTime7);
+							}
+		
+							break;
+						}
+						case 8:
+						{
+							if (Label8 != "")
+							{
+								textlbl = Label8;
+								text    = FormatValueForPrinting(_Value8_(), FormatNumber8, FormatTime8);
+							}
+		
+							break;
+						}
+				   }
+		
+					string name    = namebase + "_" + (string)i;
+					string namelbl = name + "_l";
+		
+					if (textlbl == "")
+					{
+						if (!initialized)
+						{
+							//-- pre-delete
+							ObjectDelete(ObjChartID, namelbl);
+							ObjectDelete(ObjChartID, name);
+						}
+		
+						continue;
+					}
+		
+					//-- draw initial objects
+					if (ObjectFind(ObjChartID, name) < 0)
+					{
+						if (textlbl == "")
+						{
+							continue;
+						}
+		
+						if (ObjectCreate(ObjChartID, namelbl, OBJ_LABEL, subwindow, 0, 0, 0, 0))
+						{
+							ObjectSetInteger(ObjChartID, namelbl, OBJPROP_CORNER, ObjCorner);
+							ObjectSetInteger(ObjChartID, namelbl, OBJPROP_ANCHOR, ObjAnchor);
+							ObjectSetInteger(ObjChartID, namelbl, OBJPROP_BACK, 0);
+							ObjectSetInteger(ObjChartID, namelbl, OBJPROP_SELECTABLE, 0);
+							ObjectSetInteger(ObjChartID, namelbl, OBJPROP_SELECTED, 0);
+							ObjectSetInteger(ObjChartID, namelbl, OBJPROP_HIDDEN, 1);
+							ObjectSetInteger(ObjChartID, namelbl, OBJPROP_FONTSIZE, ObjLabelsFontSize);
+							ObjectSetInteger(ObjChartID, namelbl, OBJPROP_COLOR, ObjLabelsFontColor);
+							ObjectSetString(ObjChartID, namelbl, OBJPROP_FONT, ObjLabelsFont);
+						}
+						else
+						{
+							Print(__FUNCTION__, ": failed to create text object! Error code = ", GetLastError());
+						}
+		
+						if (ObjectCreate(ObjChartID, name, OBJ_LABEL, subwindow, 0, 0, 0, 0))
+						{
+							ObjectSetInteger(ObjChartID, name, OBJPROP_CORNER, ObjCorner);
+							ObjectSetInteger(ObjChartID, name, OBJPROP_ANCHOR, ObjAnchor);
+							ObjectSetInteger(ObjChartID, name, OBJPROP_BACK, 0);
+							ObjectSetInteger(ObjChartID, name, OBJPROP_SELECTABLE, 0);
+							ObjectSetInteger(ObjChartID, name, OBJPROP_SELECTED, 0);
+							ObjectSetInteger(ObjChartID, name, OBJPROP_HIDDEN, 1);
+							ObjectSetInteger(ObjChartID, name, OBJPROP_FONTSIZE, ObjFontSize);
+							ObjectSetInteger(ObjChartID, name, OBJPROP_COLOR, ObjFontColor);
+							ObjectSetString(ObjChartID, name, OBJPROP_FONT, ObjFont);
+						}
+						else
+						{
+							Print(__FUNCTION__, ": failed to create text object! Error code = ", GetLastError());
+						}
+					}
+					else
+					{
+						if (textlbl == "")
+						{
+							ObjectDelete(ObjChartID, namelbl);
+							ObjectDelete(ObjChartID, name);
+							continue;
+						}
+					}
+		
+					ObjY  = (int)(ObjY + ObjFontSize + ObjFontSize/2);
+		
+					//-- update label objects
+					ObjectSetInteger(ObjChartID, namelbl, OBJPROP_XDISTANCE, ObjX);
+					ObjectSetInteger(ObjChartID, namelbl, OBJPROP_YDISTANCE, ObjY);
+					ObjectSetString(ObjChartID, namelbl, OBJPROP_TEXT, (string)textlbl);
+		
+					//-- update value objects
+					int x        = 0;
+					int xsizelbl = (int)ObjectGetInteger(ObjChartID, namelbl, OBJPROP_XSIZE);
+		
+					if (xsizelbl == 0) {
+						//-- when the object is newly created, it returns 0 for XSIZE and YSIZE, so here we will trick it somehow
+						xsizelbl = (int)(StringLen((string)textlbl) * ObjFontSize / 1.5 + ObjFontSize / 2);
+					}
+		
+					x = ObjX + (xsizelbl + ObjFontSize/2);
+		
+					ObjectSetInteger(ObjChartID, name, OBJPROP_XDISTANCE, x);
+					ObjectSetInteger(ObjChartID, name, OBJPROP_YDISTANCE, ObjY);
+					ObjectSetString(ObjChartID, name, OBJPROP_TEXT, (string)text);
+				}
+				
+				ChartRedraw();
+			}
+		
+			initialized = true;
+		}
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_21: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_21()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::ATR_PointSize = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_22: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_22()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Lots_Percent = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_23: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_23()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Lots_BS = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_24: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_24()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::ATR_Near = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "Position closed" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7>
+class MDL_eTrade_TradeClosed: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 GroupMode;
+	T2 Group;
+	T3 SymbolMode;
+	T4 Symbol;
+	T5 BuysOrSells;
+	T6 CloseMode;
+	T7 ClosePartialMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_eTrade_TradeClosed()
+	{
+		GroupMode = (string)"group";
+		Group = (string)"";
+		SymbolMode = (string)"symbol";
+		Symbol = (string)CurrentSymbol();
+		BuysOrSells = (string)"both";
+		CloseMode = (string)"";
+		ClosePartialMode = (int)0;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		bool next = false;
+		
+		if (
+			   (e_Reason() == "close" || e_Reason() == "decrement")
+			&& e_attrType() < 2
+			&& FilterEventTrade(GroupMode, Group, SymbolMode, Symbol, BuysOrSells)
+		)
+		{
+			string closedBy = e_ReasonDetail();
+		
+			if (
+				(
+						(CloseMode == "")
+					|| (CloseMode == closedBy)
+					|| (CloseMode == "sltp" && (closedBy == "sl" || closedBy == "tp"))
+					|| (CloseMode == "nosltp" && (closedBy != "sl" && closedBy != "tp"))
+					|| (CloseMode == "exp" && closedBy == "expiration")
+				)
+				&& (
+					   (ClosePartialMode == 0)
+					|| (ClosePartialMode == 1 && e_Reason() == "close") // fully closed
+					|| (ClosePartialMode == 2 && e_Reason() == "decrement") // partially closed
+				)
+			)
+			{next = true;}
+		}
+		
+		if (next) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_25: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_25()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Trailing_Profit_Percent = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "modify stops" model
+template<typename T1,typename T2,typename _T2_,typename T3,typename T4,typename T5,typename T6,typename T7,typename T8,typename _T8_,typename T9,typename _T9_,typename T10,typename _T10_,typename T11,typename T12,typename T13,typename T14,typename T15,typename T16,typename _T16_,typename T17,typename _T17_,typename T18,typename _T18_,typename T19>
+class MDL_LoopModifySLTP: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 RelativeTo;
+	T2 dPrice; virtual _T2_ _dPrice_(){return(_T2_)0;}
+	T3 NewSLmode;
+	T4 NewStopLoss;
+	T5 NewStopLossPercentPrice;
+	T6 NewStopLossPercent;
+	T7 NewStopLossPercentTP;
+	T8 fNewStopLoss; virtual _T8_ _fNewStopLoss_(){return(_T8_)0;}
+	T9 dpNewStopLoss; virtual _T9_ _dpNewStopLoss_(){return(_T9_)0;}
+	T10 ddNewStopLoss; virtual _T10_ _ddNewStopLoss_(){return(_T10_)0;}
+	T11 NewTPmode;
+	T12 NewTakeProfit;
+	T13 NewTakeProfitPercentPrice;
+	T14 NewTakeProfitPercent;
+	T15 NewTakeProfitPercentSL;
+	T16 fNewTakeProfit; virtual _T16_ _fNewTakeProfit_(){return(_T16_)0;}
+	T17 dpNewTakeProfit; virtual _T17_ _dpNewTakeProfit_(){return(_T17_)0;}
+	T18 ddNewTakeProfit; virtual _T18_ _ddNewTakeProfit_(){return(_T18_)0;}
+	T19 LevelColor;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_LoopModifySLTP()
+	{
+		RelativeTo = (string)"openprice";
+		NewSLmode = (string)"fixed";
+		NewStopLoss = (double)50.0;
+		NewStopLossPercentPrice = (double)0.55;
+		NewStopLossPercent = (double)50.0;
+		NewStopLossPercentTP = (double)50.0;
+		NewTPmode = (string)"fixed";
+		NewTakeProfit = (double)50.0;
+		NewTakeProfitPercentPrice = (double)0.55;
+		NewTakeProfitPercent = (double)50.0;
+		NewTakeProfitPercentSL = (double)50.0;
+		LevelColor = (color)clrDeepPink;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		if (FXD_BREAK == true) {return;}
+		
+		LoopedResume();
+		
+		string symbol = OrderSymbol();
+		int digits    = (int)SymbolInfoInteger(symbol, SYMBOL_DIGITS);
+		int polarity  = (IsOrderTypeBuy()) ? 1 : -1;
+		double price  = (IsOrderTypeBuy()) ? SymbolAsk(symbol) : SymbolBid(symbol);
+		
+		//-- New Price level ------------------------------------------------------------------------------------------------------------------------     
+		     if (RelativeTo == "openprice") {price = OrderOpenPrice();}
+		else if (RelativeTo == "dynamic")   {price = _dPrice_();}
+		else if (RelativeTo == "current-reverse")
+		{
+			price = (IsOrderTypeBuy()) ? SymbolBid(symbol) : SymbolAsk(symbol);
+		}
+		
+		//-- Stop Loss and Take Profit --------------------------------------------------------------------------------------------------------------
+		double oldSL = NormalizeDouble(attrStopLoss(), digits);
+		double oldTP = NormalizeDouble(attrTakeProfit(), digits);
+		double SL = oldSL;
+		double TP = oldTP;
+		
+		     if (NewSLmode == "fixed")        {SL = (NewStopLoss == 0.0) ? 0.0 : price - (polarity * toDigits(NewStopLoss, symbol));}
+		else if (NewSLmode == "percentPrice") {SL = (NewStopLossPercentPrice == 0.0) ? 0.0 : price - (polarity * price * NewStopLossPercentPrice / 100);}
+		else if (NewSLmode == "percent")      {SL = (NewStopLossPercent == 0.0) ? 0.0 : price - (polarity * MathAbs(price-oldSL)*NewStopLossPercent/100);}
+		else if (NewSLmode == "percentTP")    {SL = (NewStopLossPercentTP == 0.0) ? 0.0 : price - (polarity * MathAbs(price-oldTP)*NewStopLossPercentTP/100);}
+		else if (NewSLmode == "function")     {SL = _fNewStopLoss_();}
+		else if (NewSLmode == "dynamicPips")
+		{
+		   SL = toDigits(_dpNewStopLoss_(), symbol);
+			SL = (SL == 0.0) ? 0.0 : price - (polarity * SL);
+		}
+		else if (NewSLmode == "dynamicDigits")
+		{
+			SL = _ddNewStopLoss_();
+			SL = (SL == 0.0) ? 0.0 : price - (polarity * SL);
+		}
+		
+		     if (NewTPmode == "fixed")        {TP = (NewTakeProfit == 0.0) ? 0.0 : price + (polarity * toDigits(NewTakeProfit, symbol));}
+		else if (NewSLmode == "percentPrice") {TP = (NewTakeProfitPercentPrice == 0.0) ? 0.0 : price + (polarity * price * NewTakeProfitPercentPrice / 100);}
+		else if (NewTPmode == "percent")      {TP = (NewTakeProfitPercent == 0.0) ? 0.0 : price + (polarity * MathAbs(price-oldTP)*NewTakeProfitPercent/100);}
+		else if (NewTPmode == "percentSL")    {TP = (NewTakeProfitPercentSL == 0.0) ? 0.0 : price + (polarity * MathAbs(price-oldSL)*NewTakeProfitPercentSL/100);}
+		else if (NewTPmode == "function")     {TP = _fNewTakeProfit_();}
+		else if (NewTPmode == "dynamicPips")
+		{
+			TP = toDigits(_dpNewTakeProfit_(), symbol);
+			TP = (TP == 0.0) ? 0.0 : price + (polarity * TP);
+		}
+		else if (NewTPmode == "dynamicDigits")
+		{
+			TP = _ddNewTakeProfit_();
+			TP = (TP == 0.0) ? 0.0 : price + (polarity * TP);
+		}
+		
+		//-- Send -----------------------------------------------------------------------------------------------------------------------------------
+		bool success = false;
+		
+		if (SL != oldSL || TP != oldTP)
+		{
+		   success = ModifyOrder(OrderTicket(), OrderOpenPrice(), SL, TP, 0, 0, OrderExpirationTime(), LevelColor);
+		}
+		
+		if (success == true) {_callback_(1);} else {_callback_(0);}
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_26: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_26()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Trailing_Profit_Percent = formula(compare, lo, ro);
+		
+		_callback_(1);
+	}
+};
+
+// "Break even point" model
+template<typename T1,typename T2,typename T3,typename T4,typename T5,typename T6,typename T7,typename T8,typename T9,typename T10,typename T11>
+class MDL_BreakEvenPoint: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 GroupMode;
+	T2 Group;
+	T3 SymbolMode;
+	T4 Symbol;
+	T5 BuysOrSells;
+	T6 OnProfitMode;
+	T7 OnProfitPips;
+	T8 OnProfitPercentSL;
+	T9 OnProfitPercentTP;
+	T10 BEoffsetMode;
+	T11 BEPoffsetPips;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_BreakEvenPoint()
+	{
+		GroupMode = (string)"group";
+		Group = (string)"";
+		SymbolMode = (string)"symbol";
+		Symbol = (string)CurrentSymbol();
+		BuysOrSells = (string)"both";
+		OnProfitMode = (string)"fixed";
+		OnProfitPips = (double)15.0;
+		OnProfitPercentSL = (double)50.0;
+		OnProfitPercentTP = (double)50.0;
+		BEoffsetMode = (string)"none";
+		BEPoffsetPips = (double)0.0;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		for (int index = TradesTotal()-1; index >= 0; index--)
+		{
+			if (!TradeSelectByIndex(index,GroupMode,Group, SymbolMode,Symbol, BuysOrSells)) {continue;}
+			
+			string symbol   = OrderSymbol();
+			double distance = 0;
+		
+			     if (OnProfitMode == "fixed")     {distance = toDigits(OnProfitPips,symbol);}
+			else if (OnProfitMode == "percentSL") {distance = MathAbs(OrderOpenPrice()-attrStopLoss())*OnProfitPercentSL/100;}
+			else if (OnProfitMode == "percentTP") {distance = MathAbs(OrderOpenPrice()-attrTakeProfit())*OnProfitPercentTP/100;}
+		
+			if (
+				   (OrderType() == 0 && (SymbolInfoDouble(symbol,SYMBOL_ASK)-OrderOpenPrice() > distance) && (attrStopLoss() < OrderOpenPrice()))
+				|| (OrderType() == 1 && (OrderOpenPrice()-SymbolInfoDouble(symbol,SYMBOL_BID) > distance) && ((attrStopLoss() > OrderOpenPrice()) || attrStopLoss() == 0))
+			)
+			{
+				double be_offset = 0;
+		
+				if (BEoffsetMode == "pips")
+				{
+					be_offset = toDigits(BEPoffsetPips,symbol);
+		
+					if (OrderType() == 1) {be_offset = be_offset*(-1);}
+				}
+		
+				ModifyStops(OrderTicket(), OrderOpenPrice()+be_offset, attrTakeProfit());
+			}
+		}
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_27: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_27()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Trailing_Balance = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Formula" model
+template<typename T1,typename _T1_,typename T2,typename T3,typename _T3_>
+class MDL_Formula_28: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 Lo; virtual _T1_ _Lo_(){return(_T1_)0;}
+	T2 compare;
+	T3 Ro; virtual _T3_ _Ro_(){return(_T3_)0;}
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_Formula_28()
+	{
+		compare = (string)"+";
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		_T1_ lo = _Lo_();
+		if (typename(_T1_) != "string" && MathAbs(lo) == EMPTY_VALUE) {return;}
+		
+		_T3_ ro = _Ro_();
+		if (typename(_T3_) != "string" && MathAbs(ro) == EMPTY_VALUE) {return;}
+		
+		v::Trailing_Balance = formula(compare, lo, ro)/100;
+		
+		_callback_(1);
+	}
+};
+
+// "Alert message" model
+template<typename T1,typename T2,typename T3,typename _T3_,typename T4,typename T5,typename _T5_,typename T6,typename T7,typename _T7_,typename T8,typename T9,typename _T9_,typename T10,typename T11,typename _T11_,typename T12,typename T13,typename _T13_,typename T14,typename T15,typename _T15_,typename T16,typename T17,typename _T17_,typename T18,typename T19,typename _T19_,typename T20,typename T21,typename _T21_,typename T22>
+class MDL_AlertMessageAdvanced: public BlockCalls
+{
+	public: /* Input Parameters */
+	T1 AlertTitle;
+	T2 AlertLabel1;
+	T3 AlertValue1; virtual _T3_ _AlertValue1_(){return(_T3_)0;}
+	T4 AlertLabel2;
+	T5 AlertValue2; virtual _T5_ _AlertValue2_(){return(_T5_)0;}
+	T6 AlertLabel3;
+	T7 AlertValue3; virtual _T7_ _AlertValue3_(){return(_T7_)0;}
+	T8 AlertLabel4;
+	T9 AlertValue4; virtual _T9_ _AlertValue4_(){return(_T9_)0;}
+	T10 AlertLabel5;
+	T11 AlertValue5; virtual _T11_ _AlertValue5_(){return(_T11_)0;}
+	T12 AlertLabel6;
+	T13 AlertValue6; virtual _T13_ _AlertValue6_(){return(_T13_)0;}
+	T14 AlertLabel7;
+	T15 AlertValue7; virtual _T15_ _AlertValue7_(){return(_T15_)0;}
+	T16 AlertLabel8;
+	T17 AlertValue8; virtual _T17_ _AlertValue8_(){return(_T17_)0;}
+	T18 AlertLabel9;
+	T19 AlertValue9; virtual _T19_ _AlertValue9_(){return(_T19_)0;}
+	T20 AlertLabel10;
+	T21 AlertValue10; virtual _T21_ _AlertValue10_(){return(_T21_)0;}
+	T22 AlsoSendNotification;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDL_AlertMessageAdvanced()
+	{
+		AlertTitle = (string)"Alert Message";
+		AlertLabel1 = (string)"";
+		AlertLabel2 = (string)"";
+		AlertLabel3 = (string)"";
+		AlertLabel4 = (string)"";
+		AlertLabel5 = (string)"";
+		AlertLabel6 = (string)"";
+		AlertLabel7 = (string)"";
+		AlertLabel8 = (string)"";
+		AlertLabel9 = (string)"";
+		AlertLabel10 = (string)"";
+		AlsoSendNotification = (bool)false;
+	}
+
+	public: /* The main method */
+	virtual void _execute_()
+	{
+		string text = "";
+		
+		if (AlertLabel1 != "") {text += "\n" + AlertLabel1 + ": " + (string)(_AlertValue1_());}
+		if (AlertLabel2 != "") {text += "\n" + AlertLabel2 + ": " + (string)(_AlertValue2_());}
+		if (AlertLabel3 != "") {text += "\n" + AlertLabel3 + ": " + (string)(_AlertValue3_());}
+		if (AlertLabel4 != "") {text += "\n" + AlertLabel4 + ": " + (string)(_AlertValue4_());}
+		if (AlertLabel5 != "") {text += "\n" + AlertLabel5 + ": " + (string)(_AlertValue5_());}
+		if (AlertLabel6 != "") {text += "\n" + AlertLabel6 + ": " + (string)(_AlertValue6_());}
+		if (AlertLabel7 != "") {text += "\n" + AlertLabel7 + ": " + (string)(_AlertValue7_());}
+		if (AlertLabel8 != "") {text += "\n" + AlertLabel8 + ": " + (string)(_AlertValue8_());}
+		if (AlertLabel9 != "") {text += "\n" + AlertLabel9 + ": " + (string)(_AlertValue9_());}
+		if (AlertLabel10 != "") {text += "\n" + AlertLabel10 + ": " + (string)(_AlertValue10_());}
+		
+		text = AlertTitle + "\n" + text;
+		
+		Alert(text);
+		
+		if (AlsoSendNotification==true) SendNotification(text);
+		
+		_callback_(1);
+	}
+};
+
+
+//------------------------------------------------------------------------------------------------------------------------
+
+// "Time" model
+class MDLIC_value_time
+{
+	public: /* Input Parameters */
+	int ModeTime;
+	int TimeSource;
+	string TimeStamp;
+	int TimeCandleID;
+	string TimeMarket;
+	ENUM_TIMEFRAMES TimeCandleTimeframe;
+	int TimeComponentYear;
+	int TimeComponentMonth;
+	double TimeComponentDay;
+	double TimeComponentHour;
+	double TimeComponentMinute;
+	int TimeComponentSecond;
+	datetime TimeValue;
+	int ModeTimeShift;
+	int TimeShiftYears;
+	int TimeShiftMonths;
+	int TimeShiftWeeks;
+	double TimeShiftDays;
+	double TimeShiftHours;
+	double TimeShiftMinutes;
+	int TimeShiftSeconds;
+	bool TimeSkipWeekdays;
+	/* Static Parameters */
+	datetime retval;
+	datetime retval0;
+	datetime Time[];
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_value_time()
+	{
+		ModeTime = (int)0;
+		TimeSource = (int)0;
+		TimeStamp = (string)"00:00";
+		TimeCandleID = (int)1;
+		TimeMarket = (string)"";
+		TimeCandleTimeframe = (ENUM_TIMEFRAMES)0;
+		TimeComponentYear = (int)0;
+		TimeComponentMonth = (int)0;
+		TimeComponentDay = (double)0.0;
+		TimeComponentHour = (double)12.0;
+		TimeComponentMinute = (double)0.0;
+		TimeComponentSecond = (int)0;
+		TimeValue = (datetime)0;
+		ModeTimeShift = (int)0;
+		TimeShiftYears = (int)0;
+		TimeShiftMonths = (int)0;
+		TimeShiftWeeks = (int)0;
+		TimeShiftDays = (double)0.0;
+		TimeShiftHours = (double)0.0;
+		TimeShiftMinutes = (double)0.0;
+		TimeShiftSeconds = (int)0;
+		TimeSkipWeekdays = (bool)false;
+		/* Static Parameters (initial value) */
+		retval =  0;
+		retval0 =  0;
+	}
+
+	public: /* The main method */
+	datetime _execute_()
+	{
+		// this is static for speed reasons
+		
+		if (TimeMarket == "") TimeMarket = Symbol();
+		
+		if (ModeTime == 0)
+		{
+			     if (TimeSource == 0) {retval = TimeCurrent();}
+			else if (TimeSource == 1) {retval = TimeLocal() + (TimeCurrent() - TimeLocal());}
+			else if (TimeSource == 2) {retval = TimeGMT() + (TimeCurrent() - TimeGMT());}
+		}
+		else if (ModeTime == 1)
+		{
+			retval  = StringToTime(TimeStamp);
+			retval0 = retval;
+		}
+		else if (ModeTime==2)
+		{
+			retval = TimeFromComponents(TimeSource, TimeComponentYear, TimeComponentMonth, TimeComponentDay, TimeComponentHour, TimeComponentMinute, TimeComponentSecond);
+		}
+		else if (ModeTime == 3)
+		{
+			ArraySetAsSeries(Time,true);
+			CopyTime(TimeMarket,TimeCandleTimeframe,TimeCandleID,1,Time);
+			retval = Time[0];
+		}
+		else if (ModeTime == 4)
+		{
+			retval = TimeValue;
+		}
+		
+		if (ModeTimeShift > 0)
+		{
+			int sh = 1;
+		
+			if (ModeTimeShift == 1) {sh = -1;}
+		
+			if (TimeShiftYears > 0 || TimeShiftMonths > 0)
+			{
+				int year = 0, month = 0, week = 0, day = 0, hour = 0, minute = 0, second = 0;
+		
+				if (ModeTime == 3)
+				{
+					year   = TimeComponentYear;
+					month  = TimeComponentYear;
+					day    = (int)MathFloor(TimeComponentDay);
+					hour   = (int)(MathFloor(TimeComponentHour) + (24 * (TimeComponentDay - MathFloor(TimeComponentDay))));
+					minute = (int)(MathFloor(TimeComponentMinute) + (60 * (TimeComponentHour - MathFloor(TimeComponentHour))));
+					second = (int)(TimeComponentSecond + (60 * (TimeComponentMinute - MathFloor(TimeComponentMinute))));
+				}
+				else {
+					year   = TimeYear(retval);
+					month  = TimeMonth(retval);
+					day    = TimeDay(retval);
+					hour   = TimeHour(retval);
+					minute = TimeMinute(retval);
+					second = TimeSeconds(retval);
+				}
+		
+				year  = year + TimeShiftYears * sh;
+				month = month + TimeShiftMonths * sh;
+		
+				if (month < 0) {month = 12 - month;}
+				else if (month > 12) {month = month - 12;}
+		
+				retval = StringToTime(IntegerToString(year)+"."+IntegerToString(month)+"."+IntegerToString(day)+" "+IntegerToString(hour)+":"+IntegerToString(minute)+":"+IntegerToString(second));
+			}
+		
+			retval = retval + (sh * ((604800 * TimeShiftWeeks) + SecondsFromComponents(TimeShiftDays, TimeShiftHours, TimeShiftMinutes, TimeShiftSeconds)));
+		
+			if (TimeSkipWeekdays == true)
+			{
+				int weekday = TimeDayOfWeek(retval);
+		
+				if (sh > 0) { // forward
+					     if (weekday == 0) {retval = retval + 86400;}
+					else if (weekday == 6) {retval = retval + 172800;}
+				}
+				else if (sh < 0) { // back
+					     if (weekday == 0) {retval = retval - 172800;}
+					else if (weekday == 6) {retval = retval - 86400;}
+				}
+			}
+		}
+		
+		
+		return (datetime)retval;
+	}
+};
+
+// "Candle" model
+class MDLIC_candles_candles
+{
+	public: /* Input Parameters */
+	string iOHLC;
+	string ModeCandleFindBy;
+	int CandleID;
+	string TimeStamp;
+	string Symbol;
+	ENUM_TIMEFRAMES Period;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_candles_candles()
+	{
+		iOHLC = (string)"iClose";
+		ModeCandleFindBy = (string)"id";
+		CandleID = (int)0;
+		TimeStamp = (string)"00:00";
+		Symbol = (string)CurrentSymbol();
+		Period = (ENUM_TIMEFRAMES)CurrentTimeframe();
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		int digits = (int)SymbolInfoInteger(Symbol, SYMBOL_DIGITS);
+		
+		double O[];
+		double H[];
+		double L[];
+		double C[]; 
+		long cTickVolume[];
+		long cRealVolume[];
+		datetime T[];
+		
+		double retval = EMPTY_VALUE;
+		
+		// candle's id will change, so we don't want to mess with the variable CandleID;
+		int cID = CandleID;
+		
+		if (ModeCandleFindBy == "time")
+		{
+			cID = iCandleID(Symbol, Period, StringToTimeEx(TimeStamp, "server"));
+		}
+		
+		cID = cID + FXD_MORE_SHIFT;
+		
+		//-- the common levels ----------------------------------------------------
+		if (iOHLC == "iOpen")
+		{
+			if (CopyOpen(Symbol,Period,cID,1,O) > -1) retval = O[0];
+		}
+		else if (iOHLC == "iHigh")
+		{
+			if (CopyHigh(Symbol,Period,cID,1,H) > -1) retval = H[0];
+		}
+		else if (iOHLC == "iLow")
+		{
+			if (CopyLow(Symbol,Period,cID,1,L) > -1) retval = L[0];
+		}
+		else if (iOHLC == "iClose")
+		{
+			if (CopyClose(Symbol,Period,cID,1,C) > -1) retval = C[0];
+		}
+		
+		//-- non-price values  ----------------------------------------------------
+		else if (iOHLC == "iVolume" || iOHLC == "iTickVolume")
+		{
+			if (CopyTickVolume(Symbol,Period,cID,1,cTickVolume) > -1) retval = (double)cTickVolume[0];
+			
+			return retval;
+		}
+		else if (iOHLC == "iRealVolume")
+		{
+			if (CopyRealVolume(Symbol,Period,cID,1,cRealVolume) > -1) retval = (double)cRealVolume[0];
+			
+			return retval;
+		}
+		else if (iOHLC == "iTime")
+		{
+			if (CopyTime(Symbol,Period,cID,1,T) > -1) retval = (double)T[0];
+			
+			return retval;
+		}
+		
+		//-- simple calculations --------------------------------------------------
+		else if (iOHLC == "iMedian")
+		{
+			if (
+				   CopyLow(Symbol,Period,cID,1,L) > -1
+				&& CopyHigh(Symbol,Period,cID,1,H) > -1
+			)
+			{
+				retval = ((L[0]+H[0])/2);
+			}
+		}
+		else if (iOHLC == "iTypical")
+		{
+			if (
+				   CopyLow(Symbol,Period,cID,1,L) > -1
+				&& CopyHigh(Symbol,Period,cID,1,H) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+			)
+			{
+				retval = ((L[0]+H[0]+C[0])/3);
+			}
+		}
+		else if (iOHLC == "iAverage")
+		{
+			if (
+				   CopyLow(Symbol,Period,cID,1,L) > -1
+				&& CopyHigh(Symbol,Period,cID,1,H) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+			)
+			{
+				retval = ((L[0]+H[0]+C[0]+C[0])/4);
+			}
+		}
+		
+		//-- more complex levels --------------------------------------------------
+		else if (iOHLC=="iTotal")
+		{
+			if (
+				   CopyHigh(Symbol,Period,cID,1,H) > -1
+				&& CopyLow(Symbol,Period,cID,1,L) > -1
+			)
+			{
+				retval = toPips(MathAbs(H[0]-L[0]),Symbol);
+			}
+		}
+		else if (iOHLC == "iBody")
+		{
+			if (
+				   CopyOpen(Symbol,Period,cID,1,O) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+			)
+			{
+				retval = toPips(MathAbs(C[0]-O[0]),Symbol);
+			}
+		}
+		else if (iOHLC == "iUpperWick")
+		{
+			if (
+				   CopyHigh(Symbol,Period,cID,1,H) > -1
+				&& CopyOpen(Symbol,Period,cID,1,O) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+				&& CopyLow(Symbol,Period,cID,1,L) > -1
+			)
+			{
+				retval = (C[0] > O[0]) ? toPips(MathAbs(H[0]-C[0]),Symbol) : toPips(MathAbs(H[0]-O[0]),Symbol);
+			}
+		}
+		else if (iOHLC == "iBottomWick")
+		{
+			if (
+				   CopyHigh(Symbol,Period,cID,1,H) > -1
+				&& CopyOpen(Symbol,Period,cID,1,O) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+				&& CopyLow(Symbol,Period,cID,1,L) > -1
+			)
+			{
+				retval = (C[0] > O[0]) ? toPips(MathAbs(O[0]-L[0]),Symbol) : toPips(MathAbs(C[0]-L[0]),Symbol);
+			}
+		}
+		else if (iOHLC == "iGap")
+		{
+			if (
+				   CopyOpen(Symbol,Period,cID,1,O) > -1
+				&& CopyClose(Symbol,Period,cID+1,1,C) > -1
+			)
+			{
+				retval = toPips(MathAbs(O[0]-C[0]),Symbol);
+			}
+		}
+		else if (iOHLC == "iBullTotal")
+		{
+			if (
+				   CopyOpen(Symbol,Period,cID,1,O) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+				&& CopyHigh(Symbol,Period,cID,1,H) > -1
+				&& CopyLow(Symbol,Period,cID,1,L) > -1
+				&& C[0] > O[0]
+			)
+			{
+				retval = toPips((H[0]-L[0]),Symbol);
+			}
+		}
+		else if (iOHLC == "iBullBody")
+		{
+			if (
+				   CopyOpen(Symbol,Period,cID,1,O) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+				&& C[0] > O[0]
+			)
+			{
+				retval = toPips((C[0]-O[0]),Symbol);
+			}
+		}
+		else if (iOHLC == "iBullUpperWick")
+		{
+			if (
+				   CopyHigh(Symbol,Period,cID,1,H) > -1
+				&& CopyOpen(Symbol,Period,cID,1,O) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+				&& C[0] > O[0]
+			)
+			{
+				retval = toPips((H[0]-C[0]),Symbol);
+			}
+		}
+		else if (iOHLC == "iBullBottomWick")
+		{
+			if (
+				   CopyLow(Symbol,Period,cID,1,L) > -1
+				&& CopyOpen(Symbol,Period,cID,1,O) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+				&& C[0] > O[0]
+			)
+			{
+				retval = toPips((O[0]-L[0]),Symbol);
+			}
+		}
+		else if (iOHLC == "iBearTotal")
+		{
+			if (
+				   CopyOpen(Symbol,Period,cID,1,O) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+				&& CopyHigh(Symbol,Period,cID,1,H) > -1
+				&& CopyLow(Symbol,Period,cID,1,L) > -1
+				&& C[0] < O[0]
+			)
+			{
+				retval = toPips((H[0]-L[0]),Symbol);
+			}
+		}
+		else if (iOHLC == "iBearBody")
+		{
+			if (
+				   CopyOpen(Symbol,Period,cID,1,O) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+				&& C[0] < O[0]
+			)
+			{
+				retval = toPips((O[0]-C[0]),Symbol);
+			}
+		}
+		else if (iOHLC == "iBearUpperWick")
+		{
+			if (
+				   CopyHigh(Symbol,Period,cID,1,H) > -1
+				&& CopyOpen(Symbol,Period,cID,1,O) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+				&& C[0] < O[0]
+			)
+			{
+				retval = toPips((H[0]-O[0]),Symbol);
+			}
+		}
+		else if (iOHLC == "iBearBottomWick")
+		{
+			if (
+				   CopyLow(Symbol,Period,cID,1,L) > -1
+				&& CopyOpen(Symbol,Period,cID,1,O) > -1
+				&& CopyClose(Symbol,Period,cID,1,C) > -1
+				&& C[0] < O[0]
+			)
+			{
+				retval = toPips((C[0]-L[0]),Symbol);
+			}
+		}
+		
+		return NormalizeDouble(retval, digits);
+	}
+};
+
+// "Attributes set 1 (numeric)" model
+class MDLIC_objectattributes_OBJECT
+{
+	public: /* Input Parameters */
+	string ObjSource;
+	string Name;
+	int Property;
+	int FiboLevelID;
+	double TLpriceLevel;
+	int Shift;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_objectattributes_OBJECT()
+	{
+		ObjSource = (string)"name";
+		Name = (string)"my_object_name";
+		Property = (int)OBJPROP_PRICE1;
+		FiboLevelID = (int)0;
+		TLpriceLevel = (double)1.2;
+		Shift = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		string name = Name;
+		
+		if (ObjSource == "objloop") {name = LoadedObjectName();}
+		if (ObjectFind(0,name)<0) {return EMPTY_VALUE;}
+		
+		double retval = 0;
+		int modifier  = 0;
+		
+		double Fibo100  = 0;
+		double Fibo0    = 0;
+		double FiboDiff = 0;
+		
+		     if (Property == OBJPROP_TIME1)   {retval = (int)ObjectGetInteger(0,name,OBJPROP_TIME,0);}
+		else if (Property == OBJPROP_TIME2)   {retval = (int)ObjectGetInteger(0,name,OBJPROP_TIME,1);}
+		else if (Property == OBJPROP_TIME3)   {retval = (int)ObjectGetInteger(0,name,OBJPROP_TIME,2);}
+		
+		else if (Property == OBJPROP_PRICE1)  {retval = ObjectGetDouble(0,name,OBJPROP_PRICE,0);}
+		else if (Property == OBJPROP_PRICE2)  {retval = ObjectGetDouble(0,name,OBJPROP_PRICE,1);}
+		else if (Property == OBJPROP_PRICE3)  {retval = ObjectGetDouble(0,name,OBJPROP_PRICE,2);}
+		
+		else if (Property == OBJPROP_BARSHIFT1) {retval = iBarShift(Symbol(), Period(), (int)ObjectGetInteger(0,name,OBJPROP_TIME,0), true); if (retval==-1) {SkipThePass(true);}}
+		else if (Property == OBJPROP_BARSHIFT2) {retval = iBarShift(Symbol(), Period(), (int)ObjectGetInteger(0,name,OBJPROP_TIME,1), true); if (retval==-1) {SkipThePass(true);}}
+		else if (Property == OBJPROP_BARSHIFT3) {retval = iBarShift(Symbol(), Period(), (int)ObjectGetInteger(0,name,OBJPROP_TIME,2), true); if (retval==-1) {SkipThePass(true);}}
+		
+		else if (Property == OBJPROP_COLOR)      {retval = (int)ObjectGetInteger(0,name,OBJPROP_COLOR);}
+		else if (Property == OBJPROP_STYLE)      {retval = (int)ObjectGetInteger(0,name,OBJPROP_STYLE);}
+		else if (Property == OBJPROP_WIDTH)      {retval = (int)ObjectGetInteger(0,name,OBJPROP_WIDTH);}
+		else if (Property == OBJPROP_BACK)       {retval = (int)ObjectGetInteger(0,name,OBJPROP_BACK);}
+		else if (Property == OBJPROP_RAY_LEFT)   {retval = (int)ObjectGetInteger(0,name,OBJPROP_RAY_LEFT);}
+		else if (Property == OBJPROP_RAY_RIGHT)  {retval = (int)ObjectGetInteger(0,name,OBJPROP_RAY_RIGHT);}
+		else if (Property == OBJPROP_RAY)        {retval = (int)ObjectGetInteger(0,name,OBJPROP_RAY);}
+		else if (Property == OBJPROP_ELLIPSE)    {retval = (int)ObjectGetInteger(0,name,OBJPROP_ELLIPSE);}
+		else if (Property == OBJPROP_ARROWCODE)  {retval = (int)ObjectGetInteger(0,name,OBJPROP_ARROWCODE);}
+		else if (Property == OBJPROP_FONTSIZE)   {retval = (int)ObjectGetInteger(0,name,OBJPROP_FONTSIZE);}
+		else if (Property == OBJPROP_CORNER)     {retval = (int)ObjectGetInteger(0,name,OBJPROP_CORNER);}
+		else if (Property == OBJPROP_XDISTANCE)  {retval = (int)ObjectGetInteger(0,name,OBJPROP_XDISTANCE);}
+		else if (Property == OBJPROP_YDISTANCE)  {retval = (int)ObjectGetInteger(0,name,OBJPROP_YDISTANCE);}
+		else if (Property == OBJPROP_LEVELCOLOR) {retval = (int)ObjectGetInteger(0,name,OBJPROP_LEVELCOLOR);}
+		else if (Property == OBJPROP_LEVELSTYLE) {retval = (int)ObjectGetInteger(0,name,OBJPROP_LEVELSTYLE);}
+		else if (Property == OBJPROP_LEVELWIDTH) {retval = (int)ObjectGetInteger(0,name,OBJPROP_LEVELWIDTH);}
+		else if (Property == OBJPROP_ANCHOR)     {retval = (int)ObjectGetInteger(0,name,OBJPROP_ANCHOR);}
+		else if (Property == OBJPROP_DIRECTION)  {retval = (int)ObjectGetInteger(0,name,OBJPROP_DIRECTION);}
+		else if (Property == OBJPROP_DEGREE)     {retval = (int)ObjectGetInteger(0,name,OBJPROP_DEGREE);}
+		else if (Property == OBJPROP_DRAWLINES)  {retval = (int)ObjectGetInteger(0,name,OBJPROP_DRAWLINES);}
+		else if (Property == OBJPROP_STATE)      {retval = (int)ObjectGetInteger(0,name,OBJPROP_STATE);}
+		else if (Property == OBJPROP_XSIZE)      {retval = (int)ObjectGetInteger(0,name,OBJPROP_XSIZE);}
+		else if (Property == OBJPROP_YSIZE)      {retval = (int)ObjectGetInteger(0,name,OBJPROP_YSIZE);}
+		else if (Property == OBJPROP_PERIOD)     {retval = (int)ObjectGetInteger(0,name,OBJPROP_PERIOD);}
+		else if (Property == OBJPROP_LEVELS)     {retval = (int)ObjectGetInteger(0,name,OBJPROP_LEVELS);}
+		
+		else if (Property == OBJPROP_ANGLE)      {retval = ObjectGetDouble(0,name,OBJPROP_ANGLE);}
+		else if (Property == OBJPROP_SCALE)      {retval = ObjectGetDouble(0,name,OBJPROP_SCALE);}
+		else if (Property == OBJPROP_DEVIATION)  {retval = ObjectGetDouble(0,name,OBJPROP_DEVIATION);}
+		
+		else if (Property == OBJPROP_FIRSTLEVEL)        {retval = ObjectGetDouble(0,name,OBJPROP_LEVELVALUE,FiboLevelID);}
+		else if (Property == OBJPROP_TL_PRICE_BY_SHIFT) {retval = ObjectGetValueByShift(name, Shift+FXD_MORE_SHIFT);}
+		else if (Property == OBJPROP_TL_SHIFT_BY_PRICE) {retval = ObjectGetShiftByValue(name,TLpriceLevel);}
+		
+		else if (Property == OBJPROP_FIBOVALUE) {
+			Fibo100  = ObjectGetDouble(0,name,OBJPROP_PRICE,0);
+			Fibo0    = ObjectGetDouble(0,name,OBJPROP_PRICE,1);
+			FiboDiff = Fibo100 - Fibo0;
+			retval=0;
+			if (FiboDiff != 0) {retval = (SymbolInfoDouble(Symbol(),SYMBOL_BID)-Fibo0)/FiboDiff;}
+		}
+		else if (Property == OBJPROP_FIBOPRICEVALUE) {
+			Fibo100  = ObjectGetDouble(0,name,OBJPROP_PRICE,0);
+			Fibo0    = ObjectGetDouble(0,name,OBJPROP_PRICE,1);
+			FiboDiff = Fibo100 - Fibo0;
+			retval=(ObjectGetDouble(0,name,OBJPROP_LEVELVALUE,FiboLevelID)*(FiboDiff))+Fibo0;
+		}
+		
+		return retval;
+	}
+};
+
+// "Numeric" model
+class MDLIC_value_value
+{
+	public: /* Input Parameters */
+	double Value;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_value_value()
+	{
+		Value = (double)1.0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		return Value;
+	}
+};
+
+// "Balance" model
+class MDLIC_account_AccountBalance
+{
+	public: /* Input Parameters */
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_account_AccountBalance()
+	{
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		return NormalizeDouble(AccountInfoDouble(ACCOUNT_BALANCE), 2);
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_1
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_1()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_2
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_2()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_3
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_3()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_4
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_4()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_5
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_5()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_6
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_6()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Moving Average" model
+class MDLIC_indicators_iMA
+{
+	public: /* Input Parameters */
+	int MAperiod;
+	int MAshift;
+	ENUM_MA_METHOD MAmethod;
+	ENUM_APPLIED_PRICE AppliedPrice;
+	string Symbol;
+	ENUM_TIMEFRAMES Period;
+	int Shift;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_indicators_iMA()
+	{
+		MAperiod = (int)14;
+		MAshift = (int)0;
+		MAmethod = (ENUM_MA_METHOD)MODE_SMA;
+		AppliedPrice = (ENUM_APPLIED_PRICE)PRICE_CLOSE;
+		Symbol = (string)CurrentSymbol();
+		Period = (ENUM_TIMEFRAMES)CurrentTimeframe();
+		Shift = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		return iMA(Symbol, Period, MAperiod, MAshift, MAmethod, AppliedPrice, Shift + FXD_MORE_SHIFT);
+	}
+};
+
+// "Open Price" model
+class MDLIC_inloop_OrderOpenPrice
+{
+	public: /* Input Parameters */
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_inloop_OrderOpenPrice()
+	{
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		return OrderOpenPrice();
+	}
+};
+
+// "Ask, Bid, Mid" model
+class MDLIC_prices_prices
+{
+	public: /* Input Parameters */
+	string Price;
+	int TickID;
+	string Symbol;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_prices_prices()
+	{
+		Price = (string)"ASK";
+		TickID = (int)0;
+		Symbol = (string)CurrentSymbol();
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		int digits = (int)SymbolInfoInteger(Symbol, SYMBOL_DIGITS);
+		
+		double retval = 0;
+		int tID       = TickID + FXD_MORE_SHIFT;
+		
+		     if (Price == "ASK")      {retval = TicksData(Symbol,SYMBOL_ASK,tID);}
+		else if (Price == "BID")      {retval = TicksData(Symbol,SYMBOL_BID,tID);}
+		else if (Price == "MID")      {retval = ((TicksData(Symbol,SYMBOL_ASK,tID)+TicksData(Symbol,SYMBOL_BID,tID))/2);}
+		else if (Price == "BIDHIGH")  {retval = SymbolInfoDouble(Symbol,SYMBOL_BIDHIGH);}
+		else if (Price == "BIDLOW")   {retval = SymbolInfoDouble(Symbol,SYMBOL_BIDLOW);}
+		else if (Price == "ASKHIGH")  {retval = SymbolInfoDouble(Symbol,SYMBOL_ASKHIGH);}
+		else if (Price == "ASKLOW")   {retval = SymbolInfoDouble(Symbol,SYMBOL_ASKLOW);}
+		else if (Price == "LAST")     {retval = SymbolInfoDouble(Symbol,SYMBOL_LAST);}
+		else if (Price == "LASTHIGH") {retval = SymbolInfoDouble(Symbol,SYMBOL_LASTHIGH);}
+		else if (Price == "LASTLOW")  {retval = SymbolInfoDouble(Symbol,SYMBOL_LASTLOW);}
+		
+		return NormalizeDouble(retval, digits);
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_7
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_7()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_8
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_8()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_9
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_9()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_10
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_10()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Average True Range" model
+class MDLIC_indicators_iATR
+{
+	public: /* Input Parameters */
+	int ATRperiod;
+	string Symbol;
+	ENUM_TIMEFRAMES Period;
+	int Shift;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_indicators_iATR()
+	{
+		ATRperiod = (int)14;
+		Symbol = (string)CurrentSymbol();
+		Period = (ENUM_TIMEFRAMES)CurrentTimeframe();
+		Shift = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		return iATR(Symbol, Period, ATRperiod, Shift + FXD_MORE_SHIFT);
+	}
+};
+
+// "Money per tick" model
+class MDLIC_market_tickvalue
+{
+	public: /* Input Parameters */
+	string Symbol;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_market_tickvalue()
+	{
+		Symbol = (string)CurrentSymbol();
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		return NormalizeDouble(SymbolInfoDouble(Symbol, SYMBOL_TRADE_TICK_VALUE), 8);
+	}
+};
+
+// "Point size" model
+class MDLIC_market_point
+{
+	public: /* Input Parameters */
+	int ModePoint;
+	string Symbol;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_market_point()
+	{
+		ModePoint = (int)0;
+		Symbol = (string)CurrentSymbol();
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		switch (ModePoint)
+		{
+		   case 0: return SymbolInfoDouble(Symbol, SYMBOL_POINT);
+		   case 1: return CustomPoint(Symbol);
+		}
+		
+		return 0;
+	}
+};
+
+// "Name: Broker" model
+class MDLIC_account_AccountCompany
+{
+	public: /* Input Parameters */
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_account_AccountCompany()
+	{
+	}
+
+	public: /* The main method */
+	string _execute_()
+	{
+		return AccountInfoString(ACCOUNT_COMPANY);
+	}
+};
+
+// "Leverage" model
+class MDLIC_account_AccountLeverage
+{
+	public: /* Input Parameters */
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_account_AccountLeverage()
+	{
+	}
+
+	public: /* The main method */
+	long _execute_()
+	{
+		return (long)AccountInfoInteger(ACCOUNT_LEVERAGE);
+	}
+};
+
+// "Profit (Equity - Balance)" model
+class MDLIC_account_AccountProfit
+{
+	public: /* Input Parameters */
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_account_AccountProfit()
+	{
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		return NormalizeDouble(AccountInfoDouble(ACCOUNT_PROFIT), 2);
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_11
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_11()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_12
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_12()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_13
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_13()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Bucket" model
+class MDLIC_bucket_bucket_14
+{
+	public: /* Input Parameters */
+	color BucketID;
+	int Attribute;
+	int PriceMode;
+	int ReturnMode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_bucket_bucket_14()
+	{
+		BucketID = (color)clrNONE;
+		Attribute = (int)1;
+		PriceMode = (int)0;
+		ReturnMode = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		//-- various local variables
+		double retval = 0;
+		int normalize = -1;
+		int i, size;
+		double values[];
+		
+		//-- get collected tickets into an array
+		int tickets[];
+		int pool;
+		size = BucketsOfOrders(BucketID, tickets, pool);
+		
+		//-- but if the bucket is empty -> quit
+		if (size == 0) {
+			if (Attribute == 0) {return 0;}
+			return EMPTY_VALUE;
+		}
+		
+		ArrayResize(values, ArraySize(tickets));
+		
+		for (i=0; i<size; i++)
+		{
+			int ticket = tickets[i];
+			
+			if (pool == 0) {
+				if (!LoadPosition(ticket)) {continue;}
+			}
+			else if (pool == 1) {
+				if (!LoadPendingOrder(ticket)) {continue;}
+			}
+			else if (pool == 2) {
+				if (!LoadHistoryTrade(ticket,"select_by_ticket")) {continue;}
+				if (LoadedType()!=3) {continue;}
+			}
+		
+			if (pool == 0 && OrderCloseTime() > 0) {continue;}
+		  	
+			int z=1;
+		  	if (!(z*++z-1)) {continue;}
+		   
+		   switch (Attribute)
+		  	{
+			 	case 0: // COUNT
+			  	{
+				  	values[i] = 1;
+				  	break;
+			  	}
+		   	case 1: // PROFIT
+		   	{
+					normalize = 2;
+		   	   values[i] = OrderProfit()+OrderCommission()+OrderSwap();
+				  	break;
+		   	}
+		   	case 2: // VOLUME_CURRENT
+			   {
+		   	   values[i] = OrderLots();
+				  	break;
+		   	}
+		   	case 3: // VOLUME_INITIAL
+		   	{
+		   	   values[i] = attrLotsInitial();
+				  	break;
+		   	}
+		   	case 4: // SL
+			   {
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrStopLoss();
+		   	   }
+		      	if (PriceMode == 1)
+		      	{
+		      	   values[i] = toPips(MathAbs(OrderOpenPrice()-attrStopLoss()), OrderSymbol());
+		      	}
+		      	else if (PriceMode == 2)
+		      	{
+		      	   values[i] = MathAbs(OrderOpenPrice()-attrStopLoss());
+		      	}
+				  	break;
+		   	}
+		   	case 5: // TP
+		   	{
+		   	   if (PriceMode == 0)
+		   	   {
+		   	      values[i] = attrTakeProfit();
+		   	   }
+		   	   if (PriceMode == 1)
+		   	   {
+		   	      values[i] = toPips(MathAbs(OrderOpenPrice()-attrTakeProfit()), OrderSymbol());
+		   	   }
+		   	   else if (PriceMode == 2)
+		   	   {
+		   	      values[i] = MathAbs(OrderOpenPrice()-attrTakeProfit());
+		   	   }
+				  	break;
+		   	}
+		   	case 6: // PRICE_OPEN
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderOpenPrice(), normalize);
+				  	break;
+		   	}
+		   	case 7: // PRICE_CURRENT
+		   	{
+					normalize = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		   	   values[i] = NormalizeDouble(OrderClosePrice(), normalize);
+				  	break;
+		   	}
+			 	default :
+			  	{
+				  	break;
+				}
+			}
+		}
+		
+		//-- Sum, Average, Min, Max
+		
+		double tmp = 0;
+		
+		switch(ReturnMode)
+		{
+		  //.. sum
+		   case 0:
+		   {
+		      for (i=0; i<size; i++)
+		      {
+		         retval += values[i];
+		      }
+		      break;
+		   }
+			//.. average
+		   case 1:
+		   {
+				double total = 0;
+		      for (i=0; i<size; i++)
+		      {
+		         total += values[i];
+		      }
+		      retval = total/size;
+		      break;
+		   }
+		  	//.. max
+		   case 2:
+		   {
+		      retval = -EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp > retval) {retval = tmp;}
+		      }
+		      break;
+			}
+		  	//.. min
+		   case 3:
+		   {
+		      retval = EMPTY_VALUE;
+		      for (i=0; i<size; i++)
+		      {
+		         tmp = values[i];
+		         if (tmp < retval) {retval = tmp;}
+		      }
+		      break;
+		   }
+		}
+		
+		if (normalize != -1) {retval = NormalizeDouble(retval, normalize);}
+		
+		return retval;
+	}
+};
+
+// "Stop-Loss" model
+class MDLIC_inloop_OrderStopLoss
+{
+	public: /* Input Parameters */
+	string Mode;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_inloop_OrderStopLoss()
+	{
+		Mode = (string)"level";
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		double retval = 0;
+		int digits    = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+		
+		if (Mode == "level")
+		{
+		   retval = attrStopLoss();
+		}
+		else if (Mode == "fraction")
+		{
+		   if (attrStopLoss() > 0)
+			{
+		      retval = MathAbs(OrderOpenPrice()-attrStopLoss());
+		   }
+		}
+		else if (Mode == "pips")
+		{
+			if (attrStopLoss() > 0)
+			{
+				double point = SymbolInfoDouble(OrderSymbol(), SYMBOL_POINT);
+		
+			   retval = MathAbs(OrderOpenPrice()-attrStopLoss())/(PipValue(OrderSymbol())*point);
+			}
+		}
+		
+		return NormalizeDouble(retval, digits);
+	}
+};
+
+// "ZigZag" model
+class MDLIC_iCustom_ZigZag
+{
+	public: /* Input Parameters */
+	int ZigZagDepth;
+	int ZigZagDeviation;
+	int ZigZagBackstep;
+	int ModeZigZag;
+	int ZigZagReverseID;
+	string Symbol;
+	ENUM_TIMEFRAMES Period;
+	int Shift;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_iCustom_ZigZag()
+	{
+		ZigZagDepth = (int)12;
+		ZigZagDeviation = (int)5;
+		ZigZagBackstep = (int)3;
+		ModeZigZag = (int)0;
+		ZigZagReverseID = (int)0;
+		Symbol = (string)CurrentSymbol();
+		Period = (ENUM_TIMEFRAMES)CurrentTimeframe();
+		Shift = (int)0;
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		int sh        = Shift + FXD_MORE_SHIFT;
+		int reverseID = (ZigZagReverseID >= 0) ? ZigZagReverseID : 0;
+		
+		double HH[]; ArrayResize(HH,0);
+		double LL[]; ArrayResize(LL,0);
+		
+		double retval = 0;
+		int size = 0;
+		int revH = 0; // reverse id when detecting High
+		int revL = 0; // reverse id when detecting Low
+		
+		int hhll     = 0; // 1 - High was set last; 2 - Low was set last
+		double hh    = -EMPTY_VALUE;
+		double ll    = EMPTY_VALUE;
+		double last  = 0;
+		double value = 0;
+		
+		
+		
+		while (true)
+		{
+			if (sh >= iBars(_Symbol,_Period))
+			{
+				     if (ModeZigZag == 0) {retval = value;}
+				else if (ModeZigZag == 1 || ModeZigZag == 3) {retval = HH[ArraySize(HH)-1];}
+				else if (ModeZigZag == 2 || ModeZigZag == 4) {retval = LL[ArraySize(LL)-1];}
+		
+				break;
+			}
+		
+			value = iZigZag(Symbol, Period, ZigZagDepth, ZigZagDeviation, ZigZagBackstep, 0, sh);
+		
+			if (ModeZigZag == 0)
+			{
+				retval = value;
+		
+				break;
+			}
+		
+			sh++;
+		
+			if (value > 0)
+			{
+				if (last > 0)
+				{
+					if (value > last)
+					{
+						if (hhll == 1 || hhll == 0)
+						{
+							size = ArraySize(LL);
+							hhll = 2;
+		
+							if (
+								   (ModeZigZag < 3) // High or Low
+								|| (size == 0 || last<LL[size-1]) // HH or LL
+								)
+							{
+								ArrayResize(LL,size+1);
+								LL[size] = last;
+								revL++;
+		
+								if ((ModeZigZag == 2 || ModeZigZag == 4) && revL > reverseID)
+								{
+									retval = last;
+									break;
+								}
+							}
+						}
+						else
+						{
+							size = ArraySize(HH);
+							ArrayResize(HH,size+1);
+							HH[size] = last;
+							hhll     = 1;
+						}
+					}
+					else if (value < last)
+					{
+						if (hhll == 2 || hhll == 0)
+						{
+							size = ArraySize(HH);
+							hhll = 1;
+		
+							if (
+								   (ModeZigZag < 3) // High or Low
+								|| (size == 0 || last > HH[size-1]) // HH or LL
+								)
+							{
+								ArrayResize(HH,size+1);
+								HH[size] = last;
+								revH++;
+		
+								if ((ModeZigZag == 1 || ModeZigZag == 3) && revH > reverseID)
+								{
+									retval = last;
+		
+									break;
+								}
+							}
+						}
+						else
+						{
+							size = ArraySize(LL);
+							ArrayResize(LL,size+1);
+							LL[size] = last;
+							hhll     = 2;  
+						}
+					}
+				}
+		
+				last = value;
+			}
+		}
+		
+		return retval;
+	}
+};
+
+// "Highest Price (Candles period)" model
+class MDLIC_prices_HighestFromToCandles
+{
+	public: /* Input Parameters */
+	int StartBar;
+	int EndBar;
+	int WhatToGet;
+	string Symbol;
+	ENUM_TIMEFRAMES Period;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_prices_HighestFromToCandles()
+	{
+		StartBar = (int)0;
+		EndBar = (int)10;
+		WhatToGet = (int)1;
+		Symbol = (string)CurrentSymbol();
+		Period = (ENUM_TIMEFRAMES)CurrentTimeframe();
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		return HighestFromTo(Symbol,Period,StartBar,EndBar,WhatToGet);
+	}
+};
+
+// "Lowest Price (Candles period)" model
+class MDLIC_prices_LowestFromToCandles
+{
+	public: /* Input Parameters */
+	int StartBar;
+	int EndBar;
+	int WhatToGet;
+	string Symbol;
+	ENUM_TIMEFRAMES Period;
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_prices_LowestFromToCandles()
+	{
+		StartBar = (int)0;
+		EndBar = (int)10;
+		WhatToGet = (int)1;
+		Symbol = (string)CurrentSymbol();
+		Period = (ENUM_TIMEFRAMES)CurrentTimeframe();
+	}
+
+	public: /* The main method */
+	double _execute_()
+	{
+		return LowestFromTo(Symbol,Period,StartBar,EndBar,WhatToGet);
+	}
+};
+
+// "Login number" model
+class MDLIC_account_AccountNumber
+{
+	public: /* Input Parameters */
+	virtual void _callback_(int r) {return;}
+
+	public: /* Constructor */
+	MDLIC_account_AccountNumber()
+	{
+	}
+
+	public: /* The main method */
+	long _execute_()
+	{
+		return (long)AccountInfoInteger(ACCOUNT_LOGIN);
+	}
+};
+
+
+//------------------------------------------------------------------------------------------------------------------------
+
+// Block 3 (Draw Fibonacci)
+class Block0: public MDL_ChartDrawFibonacci<bool,bool,string,ENUM_OBJECT,MDLIC_value_time,datetime,MDLIC_candles_candles,double,MDLIC_value_time,datetime,MDLIC_candles_candles,double,MDLIC_value_time,datetime,MDLIC_candles_candles,double,bool,bool,bool,double,string,color,ENUM_LINE_STYLE,int,color,ENUM_LINE_STYLE,int,bool,bool,bool,bool,int,string>
+{
+
+	public: /* Constructor */
+	Block0() {
+		__block_number = 0;
+		__block_user_number = "3";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {136};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		ObjTime1.ModeTime = 3;
+		ObjTime1.TimeCandleID = 0;
+		ObjPrice1.iOHLC = "iHigh";
+		ObjPrice1.CandleID = 1;
+		ObjTime2.ModeTime = 3;
+		ObjTime2.TimeCandleID = 10;
+		ObjPrice2.iOHLC = "iLow";
+		ObjPrice2.CandleID = 2;
+		ObjTime3.ModeTime = 3;
+		ObjTime3.TimeCandleID = 20;
+		ObjPrice3.CandleID = 20;
+		ObjPrice3.TimeStamp = "";
+		// Block input parameters
+		ObjectPerBar = false;
+		ObjName = "B";
+	}
+
+	public: /* Custom methods */
+	virtual datetime _ObjTime1_() {return ObjTime1._execute_();}
+	virtual double _ObjPrice1_() {
+		ObjPrice1.Symbol = CurrentSymbol();
+		ObjPrice1.Period = CurrentTimeframe();
+
+		return ObjPrice1._execute_();
+	}
+	virtual datetime _ObjTime2_() {return ObjTime2._execute_();}
+	virtual double _ObjPrice2_() {
+		ObjPrice2.Symbol = CurrentSymbol();
+		ObjPrice2.Period = CurrentTimeframe();
+
+		return ObjPrice2._execute_();
+	}
+	virtual datetime _ObjTime3_() {return ObjTime3._execute_();}
+	virtual double _ObjPrice3_() {
+		ObjPrice3.Symbol = CurrentSymbol();
+		ObjPrice3.Period = CurrentTimeframe();
+
+		return ObjPrice3._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[136].run(0);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		ObjectType = (ENUM_OBJECT)OBJ_FIBO;
+		ObjLevels = (string)c::Fibo_Level;
+		ObjLevelColor = (color)clrBlue;
+		ObjLevelStyle = (ENUM_LINE_STYLE)STYLE_SOLID;
+		ObjColor = (color)clrGray;
+		ObjStyle = (ENUM_LINE_STYLE)STYLE_SOLID;
+	}
+};
+
+// Block 11 (Draw Fibonacci)
+class Block1: public MDL_ChartDrawFibonacci<bool,bool,string,ENUM_OBJECT,MDLIC_value_time,datetime,MDLIC_candles_candles,double,MDLIC_value_time,datetime,MDLIC_candles_candles,double,MDLIC_value_time,datetime,MDLIC_candles_candles,double,bool,bool,bool,double,string,color,ENUM_LINE_STYLE,int,color,ENUM_LINE_STYLE,int,bool,bool,bool,bool,int,string>
+{
+
+	public: /* Constructor */
+	Block1() {
+		__block_number = 1;
+		__block_user_number = "11";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {137};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		ObjTime1.ModeTime = 3;
+		ObjTime1.TimeCandleID = 0;
+		ObjPrice1.iOHLC = "iLow";
+		ObjPrice1.CandleID = 1;
+		ObjTime2.ModeTime = 3;
+		ObjTime2.TimeCandleID = 10;
+		ObjPrice2.iOHLC = "iHigh";
+		ObjPrice2.CandleID = 2;
+		ObjTime3.ModeTime = 3;
+		ObjTime3.TimeCandleID = 20;
+		ObjPrice3.CandleID = 20;
+		ObjPrice3.TimeStamp = "";
+		// Block input parameters
+		ObjectPerBar = false;
+		ObjName = "S";
+	}
+
+	public: /* Custom methods */
+	virtual datetime _ObjTime1_() {return ObjTime1._execute_();}
+	virtual double _ObjPrice1_() {
+		ObjPrice1.Symbol = CurrentSymbol();
+		ObjPrice1.Period = CurrentTimeframe();
+
+		return ObjPrice1._execute_();
+	}
+	virtual datetime _ObjTime2_() {return ObjTime2._execute_();}
+	virtual double _ObjPrice2_() {
+		ObjPrice2.Symbol = CurrentSymbol();
+		ObjPrice2.Period = CurrentTimeframe();
+
+		return ObjPrice2._execute_();
+	}
+	virtual datetime _ObjTime3_() {return ObjTime3._execute_();}
+	virtual double _ObjPrice3_() {
+		ObjPrice3.Symbol = CurrentSymbol();
+		ObjPrice3.Period = CurrentTimeframe();
+
+		return ObjPrice3._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[137].run(1);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		ObjectType = (ENUM_OBJECT)OBJ_FIBO;
+		ObjLevels = (string)c::Fibo_Level;
+		ObjLevelColor = (color)clrSalmon;
+		ObjLevelStyle = (ENUM_LINE_STYLE)STYLE_SOLID;
+		ObjColor = (color)clrGray;
+		ObjStyle = (ENUM_LINE_STYLE)STYLE_SOLID;
+	}
+};
+
+// Block 13 (Delete pending orders)
+class Block2: public MDL_DeletePendingOrders<string,string,string,string,string,string,color>
+{
+
+	public: /* Constructor */
+	Block2() {
+		__block_number = 2;
+		__block_user_number = "13";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2,3,4";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 15 (Delete pending orders)
+class Block3: public MDL_DeletePendingOrders<string,string,string,string,string,string,color>
+{
+
+	public: /* Constructor */
+	Block3() {
+		__block_number = 3;
+		__block_user_number = "15";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2,3,4";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 20 (Modify Variables)
+class Block4: public MDL_ModifyVariables<int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block4() {
+		__block_number = 4;
+		__block_user_number = "20";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {10};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Value1.Name = "B";
+		Value1.FiboLevelID = 5;
+		Value2.Name = "B";
+		Value2.FiboLevelID = 1;
+		Value3.Name = "B";
+		Value3.FiboLevelID = 5;
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {
+		Value1.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value1._execute_();
+	}
+	virtual double _Value2_() {
+		Value2.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value2._execute_();
+	}
+	virtual double _Value3_() {
+		Value3.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value3._execute_();
+	}
+	virtual double _Value4_() {return Value4._execute_();}
+	virtual double _Value5_() {return Value5._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[10].run(4);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::B5 = _Value1_();
+	}
+};
+
+// Block 38 (Modify Variables)
+class Block5: public MDL_ModifyVariables<int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_objectattributes_OBJECT,double>
+{
+
+	public: /* Constructor */
+	Block5() {
+		__block_number = 5;
+		__block_user_number = "38";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {4};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Value1.Name = "B";
+		Value2.Name = "B";
+		Value2.FiboLevelID = 1;
+		Value3.Name = "B";
+		Value3.FiboLevelID = 2;
+		Value4.Name = "B";
+		Value4.FiboLevelID = 3;
+		Value5.Name = "B";
+		Value5.FiboLevelID = 4;
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {
+		Value1.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value1._execute_();
+	}
+	virtual double _Value2_() {
+		Value2.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value2._execute_();
+	}
+	virtual double _Value3_() {
+		Value3.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value3._execute_();
+	}
+	virtual double _Value4_() {
+		Value4.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value4._execute_();
+	}
+	virtual double _Value5_() {
+		Value5.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value5._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[4].run(5);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::B0 = _Value1_();
+		v::B1 = _Value2_();
+		v::B2 = _Value3_();
+		v::B3 = _Value4_();
+		v::B4 = _Value5_();
+	}
+};
+
+// Block 39 (Modify Variables)
+class Block6: public MDL_ModifyVariables<int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block6() {
+		__block_number = 6;
+		__block_user_number = "39";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {11};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Value1.Name = "S";
+		Value1.FiboLevelID = 5;
+		Value2.Name = "B";
+		Value2.FiboLevelID = 1;
+		Value3.Name = "B";
+		Value3.FiboLevelID = 5;
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {
+		Value1.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value1._execute_();
+	}
+	virtual double _Value2_() {
+		Value2.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value2._execute_();
+	}
+	virtual double _Value3_() {
+		Value3.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value3._execute_();
+	}
+	virtual double _Value4_() {return Value4._execute_();}
+	virtual double _Value5_() {return Value5._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[11].run(6);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::S5 = _Value1_();
+	}
+};
+
+// Block 40 (Modify Variables)
+class Block7: public MDL_ModifyVariables<int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_objectattributes_OBJECT,double,int,MDLIC_objectattributes_OBJECT,double>
+{
+
+	public: /* Constructor */
+	Block7() {
+		__block_number = 7;
+		__block_user_number = "40";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {6};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Value1.Name = "S";
+		Value2.Name = "S";
+		Value2.FiboLevelID = 1;
+		Value3.Name = "S";
+		Value3.FiboLevelID = 2;
+		Value4.Name = "S";
+		Value4.FiboLevelID = 3;
+		Value5.Name = "S";
+		Value5.FiboLevelID = 4;
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {
+		Value1.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value1._execute_();
+	}
+	virtual double _Value2_() {
+		Value2.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value2._execute_();
+	}
+	virtual double _Value3_() {
+		Value3.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value3._execute_();
+	}
+	virtual double _Value4_() {
+		Value4.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value4._execute_();
+	}
+	virtual double _Value5_() {
+		Value5.Property = OBJPROP_FIBOPRICEVALUE;
+
+		return Value5._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[6].run(7);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::S0 = _Value1_();
+		v::S1 = _Value2_();
+		v::S2 = _Value3_();
+		v::S3 = _Value4_();
+		v::S4 = _Value5_();
+	}
+};
+
+// Block 41 (Buy pending order)
+class Block8: public MDL_BuyPending<string,string,string,MDLIC_value_value,double,double,string,double,double,double,double,double,MDLIC_value_value,double,double,double,double,double,double,double,double,int,int,double,string,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,string,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,string,int,int,int,MDLIC_value_time,datetime,int,ulong,string,color>
+{
+
+	public: /* Constructor */
+	Block8() {
+		__block_number = 8;
+		__block_user_number = "41";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {36};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		dVolumeSize.Value = 0.1;
+		dpStopLoss.Value = 100.0;
+		ddStopLoss.Value = 0.01;
+		ddTakeProfit.Value = 0.01;
+		dpTakeProfit.Value = 100.0;
+		dExp.ModeTime = 2;
+		dExp.TimeComponentHour = 2.0;
+		dExp.ModeTimeShift = 2;
+		dExp.TimeShiftDays = 1.0;
+		dExp.TimeSkipWeekdays = true;
+		// Block input parameters
+		Price = "dynamic";
+		PriceOffset = 0.0;
+		StopLossMode = "none";
+		TakeProfitMode = "none";
+		ExpHours = 2;
+	}
+
+	public: /* Custom methods */
+	virtual double _dPrice_() {
+		dPrice.Value = v::B2;
+
+		return dPrice._execute_();
+	}
+	virtual double _dVolumeSize_() {return dVolumeSize._execute_();}
+	virtual double _dlStopLoss_() {
+		dlStopLoss.Value = v::B0;
+
+		return dlStopLoss._execute_();
+	}
+	virtual double _dpStopLoss_() {return dpStopLoss._execute_();}
+	virtual double _ddStopLoss_() {return ddStopLoss._execute_();}
+	virtual double _dlTakeProfit_() {
+		dlTakeProfit.Value = v::B5;
+
+		return dlTakeProfit._execute_();
+	}
+	virtual double _ddTakeProfit_() {return ddTakeProfit._execute_();}
+	virtual double _dpTakeProfit_() {return dpTakeProfit._execute_();}
+	virtual datetime _dExp_() {return dExp._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[36].run(8);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		VolumeSize = (double)v::Lots_BS;
+		VolumeRisk = (double)c::Risk_Percent;
+		ArrowColorBuy = (color)clrBlue;
+	}
+};
+
+// Block 44 (Sell pending order)
+class Block9: public MDL_SellPending<string,string,string,MDLIC_value_value,double,double,string,double,double,double,double,double,MDLIC_value_value,double,double,double,double,double,double,double,double,int,int,double,string,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,string,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,string,int,int,int,MDLIC_value_time,datetime,int,ulong,string,color>
+{
+
+	public: /* Constructor */
+	Block9() {
+		__block_number = 9;
+		__block_user_number = "44";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {13};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		dVolumeSize.Value = 0.1;
+		dpStopLoss.Value = 100.0;
+		ddStopLoss.Value = 0.01;
+		ddTakeProfit.Value = 0.01;
+		dpTakeProfit.Value = 100.0;
+		dExp.ModeTimeShift = 2;
+		dExp.TimeShiftDays = 1.0;
+		dExp.TimeSkipWeekdays = true;
+		// Block input parameters
+		Price = "dynamic";
+		PriceOffset = 0.0;
+		StopLossMode = "none";
+		TakeProfitMode = "none";
+		ExpHours = 2;
+	}
+
+	public: /* Custom methods */
+	virtual double _dPrice_() {
+		dPrice.Value = v::S2;
+
+		return dPrice._execute_();
+	}
+	virtual double _dVolumeSize_() {return dVolumeSize._execute_();}
+	virtual double _dlStopLoss_() {
+		dlStopLoss.Value = v::S0;
+
+		return dlStopLoss._execute_();
+	}
+	virtual double _dpStopLoss_() {return dpStopLoss._execute_();}
+	virtual double _ddStopLoss_() {return ddStopLoss._execute_();}
+	virtual double _dlTakeProfit_() {
+		dlTakeProfit.Value = v::S5;
+
+		return dlTakeProfit._execute_();
+	}
+	virtual double _ddTakeProfit_() {return ddTakeProfit._execute_();}
+	virtual double _dpTakeProfit_() {return dpTakeProfit._execute_();}
+	virtual datetime _dExp_() {return dExp._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[13].run(9);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		VolumeSize = (double)v::Lots_BS;
+		VolumeRisk = (double)c::Risk_Percent;
+		ArrowColorSell = (color)clrRed;
+	}
+};
+
+// Block 61 (Condition)
+class Block10: public MDL_Condition<MDLIC_value_value,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block10() {
+		__block_number = 10;
+		__block_user_number = "61";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {99};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Ro.Value = 0.0;
+		// Block input parameters
+		compare = "!=";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = v::B0;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {return Ro._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[99].run(10);
+		}
+	}
+};
+
+// Block 62 (Condition)
+class Block11: public MDL_Condition<MDLIC_value_value,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block11() {
+		__block_number = 11;
+		__block_user_number = "62";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {100};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Ro.Value = 0.0;
+		// Block input parameters
+		compare = "!=";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = v::S0;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {return Ro._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[100].run(11);
+		}
+	}
+};
+
+// Block 71 (delete)
+class Block12: public MDL_ObjLoopDelete
+{
+
+	public: /* Constructor */
+	Block12() {
+		__block_number = 12;
+		__block_user_number = "71";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {55};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[55].run(12);
+		}
+	}
+};
+
+// Block 72 (Select Object by Name)
+class Block13: public MDL_ObjLoopSelectByName<string>
+{
+
+	public: /* Constructor */
+	Block13() {
+		__block_number = 13;
+		__block_user_number = "72";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {12};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		ObjName = "S";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[12].run(13);
+		}
+	}
+};
+
+// Block 73 (Pass)
+class Block14: public MDL_Pass
+{
+
+	public: /* Constructor */
+	Block14() {
+		__block_number = 14;
+		__block_user_number = "73";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[3] = {15,16,17};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[15].run(14);
+			_blocks_[16].run(14);
+			_blocks_[17].run(14);
+		}
+	}
+};
+
+// Block 74 (Modify chart colors)
+class Block15: public MDL_ChartSetColors<color,color,color,color,color,color,color,color,color,color,color,color,color>
+{
+
+	public: /* Constructor */
+	Block15() {
+		__block_number = 15;
+		__block_user_number = "74";
+		_beforeExecuteEnabled = true;
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		ChartColorBackground = (color)clrWhite;
+		ChartColorForeground = (color)clrBlack;
+		ChartColorGrid = (color)clrLightSlateGray;
+		ChartColorBarUp = (color)clrDodgerBlue;
+		ChartColorBarDown = (color)clrOrangeRed;
+		ChartColorBullCandle = (color)clrDodgerBlue;
+		ChartColorBearCandle = (color)clrOrangeRed;
+		ChartColorDojiCandle = (color)clrLime;
+		ChartColorVolumes = (color)clrLimeGreen;
+		ChartColorBid = (color)clrLightSlateGray;
+		ChartColorAsk = (color)clrRed;
+		ChartColorLast = (color)clrLimeGreen;
+		ChartColorStopLevels = (color)clrRed;
+	}
+};
+
+// Block 75 (Modify chart properties)
+class Block16: public MDL_ChartSetProperties<int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int>
+{
+
+	public: /* Constructor */
+	Block16() {
+		__block_number = 16;
+		__block_user_number = "75";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		ChartShift = 1;
+		ChartShowOHLC = 1;
+		ChartShowBidLine = 1;
+		ChartShowAskLine = 1;
+		ChartShowLastLine = 1;
+		ChartShowPeriodSeparators = 1;
+		ChartShowGrid = 0;
+		ChartShowDescriptions = 0;
+		ChartShowTradeLevels = 1;
+		ChartShowDateScale = 1;
+		ChartShowPriceScale = 1;
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		ChartMode = (int)CHART_CANDLES;
+		ChartShowVolumes = (int)CHART_VOLUME_HIDE;
+	}
+};
+
+// Block 1292101 (If Demo account)
+class Block17: public MDL_IfDemo
+{
+
+	public: /* Constructor */
+	Block17() {
+		__block_number = 17;
+		__block_user_number = "1292101";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {152};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[152].run(17);
+		}
+	}
+};
+
+// Block 1292102 (If Real account)
+class Block18: public MDL_IfReal
+{
+
+	public: /* Constructor */
+	Block18() {
+		__block_number = 18;
+		__block_user_number = "1292102";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {19};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[19].run(18);
+		}
+	}
+};
+
+// Block 1292105 (Terminate)
+class Block19: public MDL_Terminate<string>
+{
+
+	public: /* Constructor */
+	Block19() {
+		__block_number = 19;
+		__block_user_number = "1292105";
+
+		// Block input parameters
+		Message = "please contact admin.";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+};
+
+// Block 1292106 (If position)
+class Block20: public MDL_IfOpenedOrders<string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block20() {
+		__block_number = 20;
+		__block_user_number = "1292106";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {21};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[21].run(20);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1292107 (Formula)
+class Block21: public MDL_Formula_1<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block21() {
+		__block_number = 21;
+		__block_user_number = "1292107";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {22};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::Cut_Loss_Percent;
+
+		double value = (double)Ro._execute_();
+		value = value*-1; // Adjust the value
+		return value;
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[22].run(21);
+		}
+	}
+};
+
+// Block 1292108 (Check profit (unrealized))
+class Block22: public MDL_CheckUProfit<string,string,string,string,string,string,string,double,double,string,string,double,double>
+{
+
+	public: /* Constructor */
+	Block22() {
+		__block_number = 22;
+		__block_user_number = "1292108";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {23};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+		Compare = "<=";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[23].run(22);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ProfitAmount = (double)v::Cut_lossx;
+	}
+};
+
+// Block 1292109 (Cut_Loss_Percent)
+class Block23: public MDL_CloseOpened<string,string,string,string,string,int,ulong,color>
+{
+
+	public: /* Constructor */
+	Block23() {
+		__block_number = 23;
+		__block_user_number = "1292109";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 1542499 (If position)
+class Block24: public MDL_IfOpenedOrders<string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block24() {
+		__block_number = 24;
+		__block_user_number = "1542499";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {25};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[25].run(24);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1542500 (Formula)
+class Block25: public MDL_Formula_2<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block25() {
+		__block_number = 25;
+		__block_user_number = "1542500";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {26};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::Cut_Loss_Percent;
+
+		double value = (double)Ro._execute_();
+		value = value*-1; // Adjust the value
+		return value;
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[26].run(25);
+		}
+	}
+};
+
+// Block 1542501 (Check profit (unrealized))
+class Block26: public MDL_CheckUProfit<string,string,string,string,string,string,string,double,double,string,string,double,double>
+{
+
+	public: /* Constructor */
+	Block26() {
+		__block_number = 26;
+		__block_user_number = "1542501";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {27};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+		Compare = "<=";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[27].run(26);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ProfitAmount = (double)v::Cut_lossx;
+	}
+};
+
+// Block 1542502 (Cut_Loss_Percent)
+class Block27: public MDL_CloseOpened<string,string,string,string,string,int,ulong,color>
+{
+
+	public: /* Constructor */
+	Block27() {
+		__block_number = 27;
+		__block_user_number = "1542502";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 1542503 (Condition)
+class Block28: public MDL_Condition<MDLIC_candles_candles,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block28() {
+		__block_number = 28;
+		__block_user_number = "1542503";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {34};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Lo.iOHLC = "iBullBody";
+		Lo.CandleID = 1;
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Symbol = CurrentSymbol();
+		Lo.Period = CurrentTimeframe();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = v::Engulf;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[34].run(28);
+		}
+	}
+};
+
+// Block 1542504 (Engulfing Up)
+class Block29: public MDL_Formula_3<MDLIC_candles_candles,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block29() {
+		__block_number = 29;
+		__block_user_number = "1542504";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {28};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Lo.iOHLC = "iBearBody";
+		Lo.CandleID = 2;
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Symbol = CurrentSymbol();
+		Lo.Period = CurrentTimeframe();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = c::PA_Ratio;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[28].run(29);
+		}
+	}
+};
+
+// Block 1542519 (Condition)
+class Block30: public MDL_Condition<MDLIC_candles_candles,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block30() {
+		__block_number = 30;
+		__block_user_number = "1542519";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {39};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Lo.iOHLC = "iBearBody";
+		Lo.CandleID = 1;
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Symbol = CurrentSymbol();
+		Lo.Period = CurrentTimeframe();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = v::Engulf;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[39].run(30);
+		}
+	}
+};
+
+// Block 1542520 (Engulfing Down)
+class Block31: public MDL_Formula_4<MDLIC_candles_candles,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block31() {
+		__block_number = 31;
+		__block_user_number = "1542520";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {30};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Lo.iOHLC = "iBullBody";
+		Lo.CandleID = 2;
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Symbol = CurrentSymbol();
+		Lo.Period = CurrentTimeframe();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = c::PA_Ratio;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[30].run(31);
+		}
+	}
+};
+
+// Block 1542521 (Engulfing Up)
+class Block32: public MDL_Formula_5<MDLIC_candles_candles,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block32() {
+		__block_number = 32;
+		__block_user_number = "1542521";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {33};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Lo.iOHLC = "iBullBody";
+		Lo.CandleID = 2;
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Symbol = CurrentSymbol();
+		Lo.Period = CurrentTimeframe();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = c::PA_Ratio;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[33].run(32);
+		}
+	}
+};
+
+// Block 1542522 (Condition)
+class Block33: public MDL_Condition<MDLIC_candles_candles,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block33() {
+		__block_number = 33;
+		__block_user_number = "1542522";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {34};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Lo.iOHLC = "iBullBody";
+		Lo.CandleID = 1;
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Symbol = CurrentSymbol();
+		Lo.Period = CurrentTimeframe();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = v::Engulf;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[34].run(33);
+		}
+	}
+};
+
+// Block 1542523 (OR)
+class Block34: public MDL_LogicalOR
+{
+
+	public: /* Constructor */
+	Block34() {
+		__block_number = 34;
+		__block_user_number = "1542523";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {0};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[0].run(34);
+		}
+	}
+};
+
+// Block 1584268 (delete)
+class Block35: public MDL_ObjLoopDelete
+{
+
+	public: /* Constructor */
+	Block35() {
+		__block_number = 35;
+		__block_user_number = "1584268";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {56};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[56].run(35);
+		}
+	}
+};
+
+// Block 1584269 (Select Object by Name)
+class Block36: public MDL_ObjLoopSelectByName<string>
+{
+
+	public: /* Constructor */
+	Block36() {
+		__block_number = 36;
+		__block_user_number = "1584269";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {35};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		ObjName = "B";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[35].run(36);
+		}
+	}
+};
+
+// Block 1584272 (Condition)
+class Block37: public MDL_Condition<MDLIC_candles_candles,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block37() {
+		__block_number = 37;
+		__block_user_number = "1584272";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {39};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Lo.iOHLC = "iBearBody";
+		Lo.CandleID = 1;
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Symbol = CurrentSymbol();
+		Lo.Period = CurrentTimeframe();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = v::Engulf;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[39].run(37);
+		}
+	}
+};
+
+// Block 1584273 (Engulfing Down)
+class Block38: public MDL_Formula_6<MDLIC_candles_candles,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block38() {
+		__block_number = 38;
+		__block_user_number = "1584273";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {37};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Lo.iOHLC = "iBearBody";
+		Lo.CandleID = 2;
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Symbol = CurrentSymbol();
+		Lo.Period = CurrentTimeframe();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = c::PA_Ratio;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[37].run(38);
+		}
+	}
+};
+
+// Block 1584274 (OR)
+class Block39: public MDL_LogicalOR
+{
+
+	public: /* Constructor */
+	Block39() {
+		__block_number = 39;
+		__block_user_number = "1584274";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {1};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[1].run(39);
+		}
+	}
+};
+
+// Block 1584281 (If trade)
+class Block40: public MDL_IfOpenedOrders<string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block40() {
+		__block_number = 40;
+		__block_user_number = "1584281";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {42};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2,3";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[42].run(40);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1585699 (Check profit (unrealized))
+class Block41: public MDL_CheckUProfit<string,string,string,string,string,string,string,double,double,string,string,double,double>
+{
+
+	public: /* Constructor */
+	Block41() {
+		__block_number = 41;
+		__block_user_number = "1585699";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {43};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[43].run(41);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ProfitAmount = (double)v::Profit_Percent;
+	}
+};
+
+// Block 1585701 (Formula)
+class Block42: public MDL_Formula_7<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block42() {
+		__block_number = 42;
+		__block_user_number = "1585701";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {41};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::Profit_Percent;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[41].run(42);
+		}
+	}
+};
+
+// Block 1585707 (Formula)
+class Block43: public MDL_Formula_8<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block43() {
+		__block_number = 43;
+		__block_user_number = "1585707";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {44};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::TSP_Start;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[44].run(43);
+		}
+	}
+};
+
+// Block 1585708 (Formula)
+class Block44: public MDL_Formula_9<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block44() {
+		__block_number = 44;
+		__block_user_number = "1585708";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {45};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::TSP_Step;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[45].run(44);
+		}
+	}
+};
+
+// Block 1585709 (Formula)
+class Block45: public MDL_Formula_10<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block45() {
+		__block_number = 45;
+		__block_user_number = "1585709";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {46};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::TSM_Stop;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[46].run(45);
+		}
+	}
+};
+
+// Block 1585710 (Trailing money loss (group of trades))
+class Block46: public MDL_TrailingMoneyLoss<string,string,string,string,string,string,double,double,MDLIC_value_value,double,string,double,double,string,double,double,MDLIC_value_value,double,ulong,color>
+{
+
+	public: /* Constructor */
+	Block46() {
+		__block_number = 46;
+		__block_user_number = "1585710";
+		_beforeExecuteEnabled = true;
+
+		// IC input parameters
+		dtmMoneyAmount.Value = 20.0;
+		ftStart.Value = 0.0;
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+		TrailingStartMode = "money";
+	}
+
+	public: /* Custom methods */
+	virtual double _dtmMoneyAmount_() {return dtmMoneyAmount._execute_();}
+	virtual double _ftStart_() {return ftStart._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		tmFixedMoney = (double)v::TSM_Stop;
+		tmStepFixedMoney = (double)v::TSP_Step;
+		tStartFixedMoney = (double)v::TSP_Start;
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 1585711 (If trade)
+class Block47: public MDL_IfOpenedOrders<string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block47() {
+		__block_number = 47;
+		__block_user_number = "1585711";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {49};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2,3";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[49].run(47);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1587129 (Check profit (unrealized))
+class Block48: public MDL_CheckUProfit<string,string,string,string,string,string,string,double,double,string,string,double,double>
+{
+
+	public: /* Constructor */
+	Block48() {
+		__block_number = 48;
+		__block_user_number = "1587129";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {50};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[50].run(48);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ProfitAmount = (double)v::Profit_Percent;
+	}
+};
+
+// Block 1587131 (Formula)
+class Block49: public MDL_Formula_11<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block49() {
+		__block_number = 49;
+		__block_user_number = "1587131";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {48};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::Profit_Percent;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[48].run(49);
+		}
+	}
+};
+
+// Block 1587137 (Formula)
+class Block50: public MDL_Formula_12<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block50() {
+		__block_number = 50;
+		__block_user_number = "1587137";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {51};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::TSP_Start;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[51].run(50);
+		}
+	}
+};
+
+// Block 1587138 (Formula)
+class Block51: public MDL_Formula_13<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block51() {
+		__block_number = 51;
+		__block_user_number = "1587138";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {52};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::TSP_Step;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[52].run(51);
+		}
+	}
+};
+
+// Block 1587139 (Formula)
+class Block52: public MDL_Formula_14<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block52() {
+		__block_number = 52;
+		__block_user_number = "1587139";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {53};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::TSM_Stop;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[53].run(52);
+		}
+	}
+};
+
+// Block 1587140 (Trailing money loss (group of trades))
+class Block53: public MDL_TrailingMoneyLoss<string,string,string,string,string,string,double,double,MDLIC_value_value,double,string,double,double,string,double,double,MDLIC_value_value,double,ulong,color>
+{
+
+	public: /* Constructor */
+	Block53() {
+		__block_number = 53;
+		__block_user_number = "1587140";
+		_beforeExecuteEnabled = true;
+
+		// IC input parameters
+		dtmMoneyAmount.Value = 20.0;
+		ftStart.Value = 0.0;
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+		TrailingStartMode = "money";
+	}
+
+	public: /* Custom methods */
+	virtual double _dtmMoneyAmount_() {return dtmMoneyAmount._execute_();}
+	virtual double _ftStart_() {return ftStart._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		tmFixedMoney = (double)v::TSM_Stop;
+		tmStepFixedMoney = (double)v::TSP_Step;
+		tStartFixedMoney = (double)v::TSP_Start;
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 1587149 (Time filter)
+class Block54: public MDL_TimeFilter<string,string,string,int,int,double,double,double,int,string,string,int,int,double,double,double,int,int,int,double,double,double,int>
+{
+
+	public: /* Constructor */
+	Block54() {
+		__block_number = 54;
+		__block_user_number = "1587149";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[4] = {5,7,77,78};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[5].run(54);
+			_blocks_[7].run(54);
+			_blocks_[77].run(54);
+			_blocks_[78].run(54);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		TimeStart = (string)c::Server_Start;
+		TimeEnd = (string)c::Server_End;
+	}
+};
+
+// Block 1587150 (Delete pending orders)
+class Block55: public MDL_DeletePendingOrders<string,string,string,string,string,string,color>
+{
+
+	public: /* Constructor */
+	Block55() {
+		__block_number = 55;
+		__block_user_number = "1587150";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2,3,4";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 1587152 (Delete pending orders)
+class Block56: public MDL_DeletePendingOrders<string,string,string,string,string,string,color>
+{
+
+	public: /* Constructor */
+	Block56() {
+		__block_number = 56;
+		__block_user_number = "1587152";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2,3,4";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 1587153 (Once an hour)
+class Block57: public MDL_OnceAnHour<string,string,int,int,int>
+{
+
+	public: /* Constructor */
+	Block57() {
+		__block_number = 57;
+		__block_user_number = "1587153";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {8};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[8].run(57);
+		}
+	}
+};
+
+// Block 1587154 (Once an hour)
+class Block58: public MDL_OnceAnHour<string,string,int,int,int>
+{
+
+	public: /* Constructor */
+	Block58() {
+		__block_number = 58;
+		__block_user_number = "1587154";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {9};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[9].run(58);
+		}
+	}
+};
+
+// Block 1587155 (Formula)
+class Block59: public MDL_Formula_15<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block59() {
+		__block_number = 59;
+		__block_user_number = "1587155";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {61};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::Profit_Percent;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[61].run(59);
+		}
+	}
+};
+
+// Block 1587157 (For each Trade)
+class Block60: public MDL_LoopStartTrades<string,string,string,string,string,string,int,int,int,int>
+{
+
+	public: /* Constructor */
+	Block60() {
+		__block_number = 60;
+		__block_user_number = "1587157";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {64};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1";
+		BuysOrSells = "buys";
+		LoopDirection = "profitable-last";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[64].run(60);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		LoopLimit = (int)v::Buy_count_no_last;
+	}
+};
+
+// Block 1587159 (Bucket of Trades)
+class Block61: public MDL_BucketSelectOpened<color,string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block61() {
+		__block_number = 61;
+		__block_user_number = "1587159";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {71};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[71].run(61);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		BucketID = (color)clrGray;
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1587160 (Formula)
+class Block62: public MDL_Formula_16<MDLIC_bucket_bucket_1,double,string,MDLIC_bucket_bucket_2,double>
+{
+
+	public: /* Constructor */
+	Block62() {
+		__block_number = 62;
+		__block_user_number = "1587160";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {63};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Ro.ReturnMode = 2;
+		// Block input parameters
+		compare = "-";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.BucketID = clrGray;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.BucketID = clrGray;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[63].run(62);
+		}
+	}
+};
+
+// Block 1587161 (Condition)
+class Block63: public MDL_Condition<MDLIC_value_value,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block63() {
+		__block_number = 63;
+		__block_user_number = "1587161";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {60};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = v::Buy_Profit_no_Last;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = v::Profit_Percent;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[60].run(63);
+		}
+	}
+};
+
+// Block 1587162 (once per trade/order)
+class Block64: public MDL_LoopOncePer<bool>
+{
+
+	public: /* Constructor */
+	Block64() {
+		__block_number = 64;
+		__block_user_number = "1587162";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {74};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		AllowOldOrders = true;
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[74].run(64);
+		}
+	}
+};
+
+// Block 1587164 (Formula)
+class Block65: public MDL_Formula_17<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block65() {
+		__block_number = 65;
+		__block_user_number = "1587164";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {67};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::Profit_Percent;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[67].run(65);
+		}
+	}
+};
+
+// Block 1587166 (For each Trade)
+class Block66: public MDL_LoopStartTrades<string,string,string,string,string,string,int,int,int,int>
+{
+
+	public: /* Constructor */
+	Block66() {
+		__block_number = 66;
+		__block_user_number = "1587166";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {70};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1";
+		BuysOrSells = "sells";
+		LoopDirection = "profitable-last";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[70].run(66);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		LoopLimit = (int)v::Sell_count_no_last;
+	}
+};
+
+// Block 1587168 (Bucket of Trades)
+class Block67: public MDL_BucketSelectOpened<color,string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block67() {
+		__block_number = 67;
+		__block_user_number = "1587168";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {72};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[72].run(67);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		BucketID = (color)clrMagenta;
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1587169 (Formula)
+class Block68: public MDL_Formula_18<MDLIC_bucket_bucket_3,double,string,MDLIC_bucket_bucket_4,double>
+{
+
+	public: /* Constructor */
+	Block68() {
+		__block_number = 68;
+		__block_user_number = "1587169";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {69};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Ro.ReturnMode = 2;
+		// Block input parameters
+		compare = "-";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.BucketID = clrMagenta;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.BucketID = clrMagenta;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[69].run(68);
+		}
+	}
+};
+
+// Block 1587170 (Condition)
+class Block69: public MDL_Condition<MDLIC_value_value,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block69() {
+		__block_number = 69;
+		__block_user_number = "1587170";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {66};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = v::Sell_Profit_no_Last;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = v::Profit_Percent;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[66].run(69);
+		}
+	}
+};
+
+// Block 1587171 (once per trade/order)
+class Block70: public MDL_LoopOncePer<bool>
+{
+
+	public: /* Constructor */
+	Block70() {
+		__block_number = 70;
+		__block_user_number = "1587171";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {75};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		AllowOldOrders = true;
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[75].run(70);
+		}
+	}
+};
+
+// Block 1587173 (Modify Variables)
+class Block71: public MDL_ModifyVariables<int,MDLIC_bucket_bucket_5,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block71() {
+		__block_number = 71;
+		__block_user_number = "1587173";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {62};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Value1.Attribute = 0;
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {
+		Value1.BucketID = clrGray;
+
+		double value = (double)Value1._execute_();
+		value = value-1; // Adjust the value
+		return value;
+	}
+	virtual double _Value2_() {return Value2._execute_();}
+	virtual double _Value3_() {return Value3._execute_();}
+	virtual double _Value4_() {return Value4._execute_();}
+	virtual double _Value5_() {return Value5._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[62].run(71);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::Buy_count_no_last = _Value1_();
+	}
+};
+
+// Block 1587174 (Modify Variables)
+class Block72: public MDL_ModifyVariables<int,MDLIC_bucket_bucket_6,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block72() {
+		__block_number = 72;
+		__block_user_number = "1587174";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {68};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Value1.Attribute = 0;
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {
+		Value1.BucketID = clrMagenta;
+
+		double value = (double)Value1._execute_();
+		value = value-1; // Adjust the value
+		return value;
+	}
+	virtual double _Value2_() {return Value2._execute_();}
+	virtual double _Value3_() {return Value3._execute_();}
+	virtual double _Value4_() {return Value4._execute_();}
+	virtual double _Value5_() {return Value5._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[68].run(72);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::Sell_count_no_last = _Value1_();
+	}
+};
+
+// Block 1829945 (Keep_Last_ON_OFF)
+class Block73: public MDL_Condition<MDLIC_value_value,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block73() {
+		__block_number = 73;
+		__block_user_number = "1829945";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[2] = {59,65};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "==";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = c::Keep_Last_ON_OFF;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {return Ro._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[59].run(73);
+			_blocks_[65].run(73);
+		}
+	}
+};
+
+// Block 1836320 (close)
+class Block74: public MDL_LoopClose<ulong,color>
+{
+
+	public: /* Constructor */
+	Block74() {
+		__block_number = 74;
+		__block_user_number = "1836320";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {97};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[97].run(74);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 1836322 (close)
+class Block75: public MDL_LoopClose<ulong,color>
+{
+
+	public: /* Constructor */
+	Block75() {
+		__block_number = 75;
+		__block_user_number = "1836322";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {98};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[98].run(75);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 1839180 (Trailing_ON_OFF)
+class Block76: public MDL_Condition<MDLIC_value_value,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block76() {
+		__block_number = 76;
+		__block_user_number = "1839180";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[2] = {40,47};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "==";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = c::Trailing_ON_OFF;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {return Ro._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[40].run(76);
+			_blocks_[47].run(76);
+		}
+	}
+};
+
+// Block 1839183 (Fast &gt; Mid)
+class Block77: public MDL_Condition<MDLIC_indicators_iMA,double,string,MDLIC_indicators_iMA,double,int>
+{
+
+	public: /* Constructor */
+	Block77() {
+		__block_number = 77;
+		__block_user_number = "1839183";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[2] = {29,32};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.MAperiod = c::EMA_Fast;
+		Lo.MAmethod = MODE_EMA;
+		Lo.AppliedPrice = PRICE_CLOSE;
+		Lo.Symbol = CurrentSymbol();
+		Lo.Period = CurrentTimeframe();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.MAperiod = c::EMA_Slow;
+		Ro.MAmethod = MODE_EMA;
+		Ro.AppliedPrice = PRICE_CLOSE;
+		Ro.Symbol = CurrentSymbol();
+		Ro.Period = CurrentTimeframe();
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[29].run(77);
+			_blocks_[32].run(77);
+		}
+	}
+};
+
+// Block 1839190 (Fast &lt; Mid)
+class Block78: public MDL_Condition<MDLIC_indicators_iMA,double,string,MDLIC_indicators_iMA,double,int>
+{
+
+	public: /* Constructor */
+	Block78() {
+		__block_number = 78;
+		__block_user_number = "1839190";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[2] = {31,38};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "<";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.MAperiod = c::EMA_Fast;
+		Lo.MAmethod = MODE_EMA;
+		Lo.AppliedPrice = PRICE_CLOSE;
+		Lo.Symbol = CurrentSymbol();
+		Lo.Period = CurrentTimeframe();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.MAperiod = c::EMA_Slow;
+		Ro.MAmethod = MODE_EMA;
+		Ro.AppliedPrice = PRICE_CLOSE;
+		Ro.Symbol = CurrentSymbol();
+		Ro.Period = CurrentTimeframe();
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[31].run(78);
+			_blocks_[38].run(78);
+		}
+	}
+};
+
+// Block 1839193 (If trade)
+class Block79: public MDL_IfOpenedOrders<string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block79() {
+		__block_number = 79;
+		__block_user_number = "1839193";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {80};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[80].run(79);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1839194 (For each Trade)
+class Block80: public MDL_LoopStartTrades<string,string,string,string,string,string,int,int,int,int>
+{
+
+	public: /* Constructor */
+	Block80() {
+		__block_number = 80;
+		__block_user_number = "1839194";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {81};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+		LoopLimit = 1;
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[81].run(80);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1839195 (Condition)
+class Block81: public MDL_Condition<MDLIC_candles_candles,double,string,MDLIC_inloop_OrderOpenPrice,double,int>
+{
+
+	public: /* Constructor */
+	Block81() {
+		__block_number = 81;
+		__block_user_number = "1839195";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {82};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "<";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Symbol = CurrentSymbol();
+		Lo.Period = CurrentTimeframe();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {return Ro._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[82].run(81);
+		}
+	}
+};
+
+// Block 1839196 (No trade nearby)
+class Block82: public MDL_NoNearbyRunning<string,string,string,string,string,MDLIC_value_time,datetime,MDLIC_value_time,datetime,string,MDLIC_prices_prices,double,string,double,double,int>
+{
+
+	public: /* Constructor */
+	Block82() {
+		__block_number = 82;
+		__block_user_number = "1839196";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {85};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+		ModeRange = "fraction";
+	}
+
+	public: /* Custom methods */
+	virtual datetime _Time1_() {return Time1._execute_();}
+	virtual datetime _Time2_() {return Time2._execute_();}
+	virtual double _BasePrice_() {
+		BasePrice.Symbol = CurrentSymbol();
+
+		return BasePrice._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[85].run(82);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		RangeFraction = (double)v::ATR_Near;
+	}
+};
+
+// Block 1839203 (Buy now)
+class Block83: public MDL_BuyNow<string,string,string,double,double,double,double,double,MDLIC_value_value,double,double,double,int,double,double,double,double,double,int,int,double,bool,double,double,bool,double,string,bool,double,string,string,bool,double,string,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,string,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,string,int,int,int,MDLIC_value_time,datetime,ulong,string,color>
+{
+
+	public: /* Constructor */
+	Block83() {
+		__block_number = 83;
+		__block_user_number = "1839203";
+		_beforeExecuteEnabled = true;
+
+		// IC input parameters
+		dVolumeSize.Value = 0.1;
+		dpStopLoss.Value = 100.0;
+		ddStopLoss.Value = 0.01;
+		dpTakeProfit.Value = 100.0;
+		ddTakeProfit.Value = 0.01;
+		dExp.ModeTimeShift = 2;
+		dExp.TimeShiftDays = 1.0;
+		dExp.TimeSkipWeekdays = true;
+		// Block input parameters
+		mmMgMultiplyOnLoss = 1.5;
+		StopLossMode = "none";
+		TakeProfitMode = "none";
+	}
+
+	public: /* Custom methods */
+	virtual double _dVolumeSize_() {return dVolumeSize._execute_();}
+	virtual double _dlStopLoss_() {return dlStopLoss._execute_();}
+	virtual double _dpStopLoss_() {return dpStopLoss._execute_();}
+	virtual double _ddStopLoss_() {return ddStopLoss._execute_();}
+	virtual double _dlTakeProfit_() {return dlTakeProfit._execute_();}
+	virtual double _dpTakeProfit_() {return dpTakeProfit._execute_();}
+	virtual double _ddTakeProfit_() {return ddTakeProfit._execute_();}
+	virtual datetime _dExp_() {return dExp._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		VolumeSize = (double)v::LotsBX;
+		ArrowColorBuy = (color)clrBlue;
+	}
+};
+
+// Block 1839204 (Sell now)
+class Block84: public MDL_SellNow<string,string,string,double,double,double,double,double,MDLIC_value_value,double,double,double,int,double,double,double,double,double,int,int,double,bool,double,double,bool,double,string,bool,double,string,string,bool,double,string,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,string,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,string,int,int,int,MDLIC_value_time,datetime,ulong,string,color>
+{
+
+	public: /* Constructor */
+	Block84() {
+		__block_number = 84;
+		__block_user_number = "1839204";
+		_beforeExecuteEnabled = true;
+
+		// IC input parameters
+		dVolumeSize.Value = 0.1;
+		dpStopLoss.Value = 100.0;
+		ddStopLoss.Value = 0.01;
+		dpTakeProfit.Value = 100.0;
+		ddTakeProfit.Value = 0.01;
+		dExp.ModeTimeShift = 2;
+		dExp.TimeShiftDays = 1.0;
+		dExp.TimeSkipWeekdays = true;
+		// Block input parameters
+		mmMgMultiplyOnLoss = 1.5;
+		StopLossMode = "none";
+		TakeProfitMode = "none";
+		TakeProfitPips = 28.0;
+	}
+
+	public: /* Custom methods */
+	virtual double _dVolumeSize_() {return dVolumeSize._execute_();}
+	virtual double _dlStopLoss_() {return dlStopLoss._execute_();}
+	virtual double _dpStopLoss_() {return dpStopLoss._execute_();}
+	virtual double _ddStopLoss_() {return ddStopLoss._execute_();}
+	virtual double _dlTakeProfit_() {return dlTakeProfit._execute_();}
+	virtual double _dpTakeProfit_() {return dpTakeProfit._execute_();}
+	virtual double _ddTakeProfit_() {return ddTakeProfit._execute_();}
+	virtual datetime _dExp_() {return dExp._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		VolumeSize = (double)v::LotsSX;
+		ArrowColorSell = (color)clrRed;
+	}
+};
+
+// Block 1839238 (Bucket of Trades)
+class Block85: public MDL_BucketSelectOpened<color,string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block85() {
+		__block_number = 85;
+		__block_user_number = "1839238";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {86};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[86].run(85);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		BucketID = (color)clrGray;
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1839241 (Formula)
+class Block86: public MDL_Formula_19<MDLIC_bucket_bucket_7,double,string,MDLIC_bucket_bucket_8,double>
+{
+
+	public: /* Constructor */
+	Block86() {
+		__block_number = 86;
+		__block_user_number = "1839241";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {87};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Lo.Attribute = 2;
+		Lo.ReturnMode = 3;
+		Ro.Attribute = 2;
+		Ro.ReturnMode = 2;
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.BucketID = clrGray;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.BucketID = clrGray;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[87].run(86);
+		}
+	}
+};
+
+// Block 1839249 (Once per bar)
+class Block87: public MDL_OncePerBar<string,ENUM_TIMEFRAMES,int>
+{
+
+	public: /* Constructor */
+	Block87() {
+		__block_number = 87;
+		__block_user_number = "1839249";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {83};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[83].run(87);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		Period = (ENUM_TIMEFRAMES)CurrentTimeframe();
+	}
+};
+
+// Block 1839281 (Check positions count)
+class Block88: public MDL_CheckTradesCount<string,int,string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block88() {
+		__block_number = 88;
+		__block_user_number = "1839281";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {79};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		Compare = ">=";
+		CompareCount = 1;
+		GroupMode = "all";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[79].run(88);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1839286 (If trade)
+class Block89: public MDL_IfOpenedOrders<string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block89() {
+		__block_number = 89;
+		__block_user_number = "1839286";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {90};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[90].run(89);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1839287 (For each Trade)
+class Block90: public MDL_LoopStartTrades<string,string,string,string,string,string,int,int,int,int>
+{
+
+	public: /* Constructor */
+	Block90() {
+		__block_number = 90;
+		__block_user_number = "1839287";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {91};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+		LoopLimit = 1;
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[91].run(90);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1839288 (Condition)
+class Block91: public MDL_Condition<MDLIC_candles_candles,double,string,MDLIC_inloop_OrderOpenPrice,double,int>
+{
+
+	public: /* Constructor */
+	Block91() {
+		__block_number = 91;
+		__block_user_number = "1839288";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {92};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Symbol = CurrentSymbol();
+		Lo.Period = CurrentTimeframe();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {return Ro._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[92].run(91);
+		}
+	}
+};
+
+// Block 1839289 (No trade nearby)
+class Block92: public MDL_NoNearbyRunning<string,string,string,string,string,MDLIC_value_time,datetime,MDLIC_value_time,datetime,string,MDLIC_prices_prices,double,string,double,double,int>
+{
+
+	public: /* Constructor */
+	Block92() {
+		__block_number = 92;
+		__block_user_number = "1839289";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {93};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+		ModeRange = "fraction";
+	}
+
+	public: /* Custom methods */
+	virtual datetime _Time1_() {return Time1._execute_();}
+	virtual datetime _Time2_() {return Time2._execute_();}
+	virtual double _BasePrice_() {
+		BasePrice.Symbol = CurrentSymbol();
+
+		return BasePrice._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[93].run(92);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		RangeFraction = (double)v::ATR_Near;
+	}
+};
+
+// Block 1839331 (Bucket of Trades)
+class Block93: public MDL_BucketSelectOpened<color,string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block93() {
+		__block_number = 93;
+		__block_user_number = "1839331";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {94};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[94].run(93);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		BucketID = (color)clrMagenta;
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1839334 (Formula)
+class Block94: public MDL_Formula_20<MDLIC_bucket_bucket_9,double,string,MDLIC_bucket_bucket_10,double>
+{
+
+	public: /* Constructor */
+	Block94() {
+		__block_number = 94;
+		__block_user_number = "1839334";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {95};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Lo.Attribute = 2;
+		Lo.ReturnMode = 3;
+		Ro.Attribute = 2;
+		Ro.ReturnMode = 2;
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.BucketID = clrMagenta;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.BucketID = clrMagenta;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[95].run(94);
+		}
+	}
+};
+
+// Block 1839342 (Once per bar)
+class Block95: public MDL_OncePerBar<string,ENUM_TIMEFRAMES,int>
+{
+
+	public: /* Constructor */
+	Block95() {
+		__block_number = 95;
+		__block_user_number = "1839342";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {84};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[84].run(95);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		Period = (ENUM_TIMEFRAMES)CurrentTimeframe();
+	}
+};
+
+// Block 1839374 (Check positions count)
+class Block96: public MDL_CheckTradesCount<string,int,string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block96() {
+		__block_number = 96;
+		__block_user_number = "1839374";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {89};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		Compare = ">=";
+		CompareCount = 1;
+		GroupMode = "all";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[89].run(96);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 1839375 (Modify Variables)
+class Block97: public MDL_ModifyVariables<int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block97() {
+		__block_number = 97;
+		__block_user_number = "1839375";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {140};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Value1.Value = 0.0;
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {return Value1._execute_();}
+	virtual double _Value2_() {return Value2._execute_();}
+	virtual double _Value3_() {return Value3._execute_();}
+	virtual double _Value4_() {return Value4._execute_();}
+	virtual double _Value5_() {return Value5._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[140].run(97);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::LotsBX = _Value1_();
+	}
+};
+
+// Block 1839376 (Modify Variables)
+class Block98: public MDL_ModifyVariables<int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block98() {
+		__block_number = 98;
+		__block_user_number = "1839376";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {141};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Value1.Value = 0.0;
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {return Value1._execute_();}
+	virtual double _Value2_() {return Value2._execute_();}
+	virtual double _Value3_() {return Value3._execute_();}
+	virtual double _Value4_() {return Value4._execute_();}
+	virtual double _Value5_() {return Value5._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[141].run(98);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::LotsSX = _Value1_();
+	}
+};
+
+// Block 1839377 (No trade nearby)
+class Block99: public MDL_NoNearbyRunning<string,string,string,string,string,MDLIC_value_time,datetime,MDLIC_value_time,datetime,string,MDLIC_prices_prices,double,string,double,double,int>
+{
+
+	public: /* Constructor */
+	Block99() {
+		__block_number = 99;
+		__block_user_number = "1839377";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {57};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+		ModeRange = "fraction";
+	}
+
+	public: /* Custom methods */
+	virtual datetime _Time1_() {return Time1._execute_();}
+	virtual datetime _Time2_() {return Time2._execute_();}
+	virtual double _BasePrice_() {
+		BasePrice.Symbol = CurrentSymbol();
+
+		return BasePrice._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[57].run(99);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		RangeFraction = (double)v::ATR_Near;
+	}
+};
+
+// Block 1839470 (No trade nearby)
+class Block100: public MDL_NoNearbyRunning<string,string,string,string,string,MDLIC_value_time,datetime,MDLIC_value_time,datetime,string,MDLIC_prices_prices,double,string,double,double,int>
+{
+
+	public: /* Constructor */
+	Block100() {
+		__block_number = 100;
+		__block_user_number = "1839470";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {58};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+		ModeRange = "fraction";
+	}
+
+	public: /* Custom methods */
+	virtual datetime _Time1_() {return Time1._execute_();}
+	virtual datetime _Time2_() {return Time2._execute_();}
+	virtual double _BasePrice_() {
+		BasePrice.Symbol = CurrentSymbol();
+
+		return BasePrice._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[58].run(100);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		RangeFraction = (double)v::ATR_Near;
+	}
+};
+
+// Block 1839475 (Auto_ON_OFF)
+class Block101: public MDL_Condition<MDLIC_value_value,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block101() {
+		__block_number = 101;
+		__block_user_number = "1839475";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {54};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "==";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = c::Keep_Last_ON_OFF;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {return Ro._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[54].run(101);
+		}
+	}
+};
+
+// Block 1839476 (Pass)
+class Block102: public MDL_Pass
+{
+
+	public: /* Constructor */
+	Block102() {
+		__block_number = 102;
+		__block_user_number = "1839476";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {104};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[104].run(102);
+		}
+	}
+};
+
+// Block 1858918 (ATR&nbsp;)
+class Block103: public MDL_CommentEx<string,string,int,int,int,string,color,int,string,color,int,string,color,int,string,MDLIC_candles_candles,double,int,int,string,MDLIC_indicators_iATR,double,int,int,string,MDLIC_market_tickvalue,double,int,int,string,MDLIC_market_point,double,int,int,string,MDLIC_value_value,double,int,int,string,MDLIC_value_value,double,int,int,string,MDLIC_value_value,double,int,int,string,MDLIC_value_value,double,int,int>
+{
+
+	public: /* Constructor */
+	Block103() {
+		__block_number = 103;
+		__block_user_number = "1858918";
+		_beforeExecuteEnabled = true;
+
+		// IC input parameters
+		Value1.CandleID = 1;
+		// Block input parameters
+		Title = "";
+		ObjY = 150;
+		ObjTitleFontSize = 9;
+		ObjLabelsFontSize = 8;
+		ObjFontSize = 8;
+		Label1 = "Price Close Day";
+		Label2 = "ATR_Daily";
+		FormatNumber2 = 2;
+		Label3 = "Moneypertick";
+		FormatNumber3 = 2;
+		Label4 = "Point Size";
+		Label5 = "NEAR";
+		FormatNumber5 = 2;
+		Label7 = "Profit_Percent";
+		Label8 = "Trailing_Balance";
+		FormatNumber8 = 2;
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {
+		Value1.Symbol = CurrentSymbol();
+		Value1.Period = PERIOD_D1;
+
+		return Value1._execute_();
+	}
+	virtual double _Value2_() {
+		Value2.Symbol = CurrentSymbol();
+		Value2.Period = PERIOD_D1;
+
+		return Value2._execute_();
+	}
+	virtual double _Value3_() {
+		Value3.Symbol = CurrentSymbol();
+
+		return Value3._execute_();
+	}
+	virtual double _Value4_() {
+		Value4.Symbol = CurrentSymbol();
+
+		return Value4._execute_();
+	}
+	virtual double _Value5_() {
+		Value5.Value = v::ATR_Near;
+
+		return Value5._execute_();
+	}
+	virtual double _Value6_() {return Value6._execute_();}
+	virtual double _Value7_() {
+		Value7.Value = v::Profit_Percent;
+
+		return Value7._execute_();
+	}
+	virtual double _Value8_() {
+		Value8.Value = v::Trailing_Balance;
+
+		return Value8._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		/* Inputs, modified into the code must be set here every time */
+		ObjY = 150;
+		ObjCorner = (int)CORNER_RIGHT_UPPER;
+		ObjTitleFontColor = (color)clrBlack;
+		ObjLabelsFontColor = (color)clrNavy;
+		ObjFontColor = (color)clrGreen;
+		FormatNumber1 = (int)EMPTY_VALUE;
+		FormatTime1 = (int)EMPTY_VALUE;
+		FormatTime2 = (int)EMPTY_VALUE;
+		FormatTime3 = (int)EMPTY_VALUE;
+		FormatNumber4 = (int)EMPTY_VALUE;
+		FormatTime4 = (int)EMPTY_VALUE;
+		FormatTime5 = (int)EMPTY_VALUE;
+		FormatNumber6 = (int)EMPTY_VALUE;
+		FormatTime6 = (int)EMPTY_VALUE;
+		FormatNumber7 = (int)EMPTY_VALUE;
+		FormatTime7 = (int)EMPTY_VALUE;
+		FormatTime8 = (int)EMPTY_VALUE;
+	}
+};
+
+// Block 1881210 (Acc)
+class Block104: public MDL_CommentEx<string,string,int,int,int,string,color,int,string,color,int,string,color,int,string,MDLIC_account_AccountCompany,string,int,int,string,MDLIC_account_AccountLeverage,long,int,int,string,MDLIC_account_AccountBalance,double,int,int,string,MDLIC_account_AccountProfit,double,int,int,string,MDLIC_value_value,double,int,int,string,MDLIC_value_value,double,int,int,string,MDLIC_value_value,double,int,int,string,MDLIC_value_value,double,int,int>
+{
+
+	public: /* Constructor */
+	Block104() {
+		__block_number = 104;
+		__block_user_number = "1881210";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {103};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		Title = "ACCOUNT.";
+		ObjY = 23;
+		ObjTitleFontSize = 9;
+		ObjLabelsFontSize = 8;
+		ObjFontSize = 8;
+		Label1 = "Broker";
+		Label2 = "Leverage";
+		Label3 = "Balance";
+		FormatNumber3 = 2;
+		Label4 = "Profit";
+		FormatNumber4 = 2;
+		Label5 = "Profit_Buy";
+		FormatNumber5 = 2;
+		Label6 = "Profit_Sell";
+		FormatNumber6 = 2;
+		Label7 = "SumLots_Buy";
+		FormatNumber7 = 2;
+		Label8 = "SumLots_Sell";
+		FormatNumber8 = 2;
+	}
+
+	public: /* Custom methods */
+	virtual string _Value1_() {return Value1._execute_();}
+	virtual long _Value2_() {return Value2._execute_();}
+	virtual double _Value3_() {return Value3._execute_();}
+	virtual double _Value4_() {return Value4._execute_();}
+	virtual double _Value5_() {
+		Value5.Value = v::Profit_Buy;
+
+		return Value5._execute_();
+	}
+	virtual double _Value6_() {
+		Value6.Value = v::Profit_Sell;
+
+		return Value6._execute_();
+	}
+	virtual double _Value7_() {
+		Value7.Value = v::SumLots_Buy;
+
+		return Value7._execute_();
+	}
+	virtual double _Value8_() {
+		Value8.Value = v::SumLots_Sell;
+
+		return Value8._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[103].run(104);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		/* Inputs, modified into the code must be set here every time */
+		ObjY = 23;
+		ObjCorner = (int)CORNER_RIGHT_UPPER;
+		ObjTitleFontColor = (color)clrBlack;
+		ObjLabelsFontColor = (color)clrNavy;
+		ObjFontColor = (color)clrGreen;
+		FormatNumber1 = (int)EMPTY_VALUE;
+		FormatTime1 = (int)EMPTY_VALUE;
+		FormatNumber2 = (int)EMPTY_VALUE;
+		FormatTime2 = (int)EMPTY_VALUE;
+		FormatTime3 = (int)EMPTY_VALUE;
+		FormatTime4 = (int)EMPTY_VALUE;
+		FormatTime5 = (int)EMPTY_VALUE;
+		FormatTime6 = (int)EMPTY_VALUE;
+		FormatTime7 = (int)EMPTY_VALUE;
+		FormatTime8 = (int)EMPTY_VALUE;
+	}
+};
+
+// Block 1881211 (ATR_PointSize)
+class Block105: public MDL_Formula_21<MDLIC_value_value,double,string,MDLIC_market_point,double>
+{
+
+	public: /* Constructor */
+	Block105() {
+		__block_number = 105;
+		__block_user_number = "1881211";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {109};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "/";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = v::ATR_DAY;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Symbol = CurrentSymbol();
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[109].run(105);
+		}
+	}
+};
+
+// Block 1881212 (Modify Var)
+class Block106: public MDL_ModifyVariables<int,MDLIC_candles_candles,double,int,MDLIC_indicators_iATR,double,int,MDLIC_market_tickvalue,double,int,MDLIC_market_point,double,int,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block106() {
+		__block_number = 106;
+		__block_user_number = "1881212";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {105};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Value1.CandleID = 1;
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {
+		Value1.Symbol = CurrentSymbol();
+		Value1.Period = PERIOD_D1;
+
+		return Value1._execute_();
+	}
+	virtual double _Value2_() {
+		Value2.Symbol = CurrentSymbol();
+		Value2.Period = PERIOD_D1;
+
+		return Value2._execute_();
+	}
+	virtual double _Value3_() {
+		Value3.Symbol = CurrentSymbol();
+
+		return Value3._execute_();
+	}
+	virtual double _Value4_() {
+		Value4.Symbol = CurrentSymbol();
+
+		return Value4._execute_();
+	}
+	virtual double _Value5_() {return Value5._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[105].run(106);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::Price_Close_Day = _Value1_();
+		v::ATR_DAY = _Value2_();
+		v::Moneypertick = _Value3_();
+		v::PointSize = _Value4_();
+	}
+};
+
+// Block 1881216 (Lots_Percent)
+class Block107: public MDL_Formula_22<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block107() {
+		__block_number = 107;
+		__block_user_number = "1881216";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {108};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = c::Risk_Percent;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[108].run(107);
+		}
+	}
+};
+
+// Block 1881218 (Lots_Percent)
+class Block108: public MDL_Formula_23<MDLIC_value_value,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block108() {
+		__block_number = 108;
+		__block_user_number = "1881218";
+
+		// Block input parameters
+		compare = "/";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = v::Lots_Percent;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = v::ATR_PointSize;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+};
+
+// Block 1881219 (ATR_PointSize)
+class Block109: public MDL_Formula_24<MDLIC_value_value,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block109() {
+		__block_number = 109;
+		__block_user_number = "1881219";
+
+		// Block input parameters
+		compare = "/";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = v::ATR_PointSize;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = c::MAX_Order;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+};
+
+// Block 2136428 (Bucket of Trades)
+class Block110: public MDL_BucketSelectOpened<color,string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block110() {
+		__block_number = 110;
+		__block_user_number = "2136428";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {112};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[112].run(110);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		BucketID = (color)clrGray;
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 2136521 (Bucket of Trades)
+class Block111: public MDL_BucketSelectOpened<color,string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block111() {
+		__block_number = 111;
+		__block_user_number = "2136521";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {113};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[113].run(111);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		BucketID = (color)clrMagenta;
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 2136522 (Modify Variables)
+class Block112: public MDL_ModifyVariables<int,MDLIC_bucket_bucket_11,double,int,MDLIC_bucket_bucket_12,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block112() {
+		__block_number = 112;
+		__block_user_number = "2136522";
+		_beforeExecuteEnabled = true;
+
+		// IC input parameters
+		Value1.Attribute = 2;
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {
+		Value1.BucketID = clrGray;
+
+		return Value1._execute_();
+	}
+	virtual double _Value2_() {
+		Value2.BucketID = clrGray;
+
+		return Value2._execute_();
+	}
+	virtual double _Value3_() {return Value3._execute_();}
+	virtual double _Value4_() {return Value4._execute_();}
+	virtual double _Value5_() {return Value5._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::SumLots_Buy = _Value1_();
+		v::Profit_Buy = _Value2_();
+	}
+};
+
+// Block 2136523 (Modify Variables)
+class Block113: public MDL_ModifyVariables<int,MDLIC_bucket_bucket_13,double,int,MDLIC_bucket_bucket_14,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block113() {
+		__block_number = 113;
+		__block_user_number = "2136523";
+		_beforeExecuteEnabled = true;
+
+		// IC input parameters
+		Value1.Attribute = 2;
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {
+		Value1.BucketID = clrMagenta;
+
+		return Value1._execute_();
+	}
+	virtual double _Value2_() {
+		Value2.BucketID = clrMagenta;
+
+		return Value2._execute_();
+	}
+	virtual double _Value3_() {return Value3._execute_();}
+	virtual double _Value4_() {return Value4._execute_();}
+	virtual double _Value5_() {return Value5._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::SumLots_Sell = _Value1_();
+		v::Profit_Sell = _Value2_();
+	}
+};
+
+// Block 2136524 (Trade closed)
+class Block114: public MDL_eTrade_TradeClosed<string,string,string,string,string,string,int>
+{
+
+	public: /* Constructor */
+	Block114() {
+		__block_number = 114;
+		__block_user_number = "2136524";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[2] = {126,2};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2,3,4";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[2].run(114);
+			_blocks_[126].run(114);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 2136526 (Trade closed)
+class Block115: public MDL_eTrade_TradeClosed<string,string,string,string,string,string,int>
+{
+
+	public: /* Constructor */
+	Block115() {
+		__block_number = 115;
+		__block_user_number = "2136526";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[2] = {127,3};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2,3,4";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[3].run(115);
+			_blocks_[127].run(115);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 3975985 (Formula)
+class Block116: public MDL_Formula_25<MDLIC_value_value,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block116() {
+		__block_number = 116;
+		__block_user_number = "3975985";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {117};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = v::Profit_Percent;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = c::Trailing_Profit_Percent;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[117].run(116);
+		}
+	}
+};
+
+// Block 3979356 (Check profit (unrealized))
+class Block117: public MDL_CheckUProfit<string,string,string,string,string,string,string,double,double,string,string,double,double>
+{
+
+	public: /* Constructor */
+	Block117() {
+		__block_number = 117;
+		__block_user_number = "3979356";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {124};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[124].run(117);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ProfitAmount = (double)v::Trailing_Profit_Percent;
+	}
+};
+
+// Block 4976004 (For each Trade)
+class Block118: public MDL_LoopStartTrades<string,string,string,string,string,string,int,int,int,int>
+{
+
+	public: /* Constructor */
+	Block118() {
+		__block_number = 118;
+		__block_user_number = "4976004";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {119};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+		LoopLimit = 1;
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[119].run(118);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 4976005 (Condition)
+class Block119: public MDL_Condition<MDLIC_inloop_OrderStopLoss,double,string,MDLIC_iCustom_ZigZag,double,int>
+{
+
+	public: /* Constructor */
+	Block119() {
+		__block_number = 119;
+		__block_user_number = "4976005";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {120};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Ro.ZigZagDeviation = 0;
+		Ro.ZigZagBackstep = 0;
+		Ro.ModeZigZag = 2;
+		// Block input parameters
+		compare = "!=";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.ZigZagDepth = c::Candle_ZZ;
+		Ro.Symbol = CurrentSymbol();
+		Ro.Period = CurrentTimeframe();
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[120].run(119);
+		}
+	}
+};
+
+// Block 4976006 (modify stops)
+class Block120: public MDL_LoopModifySLTP<string,MDLIC_value_value,double,string,double,double,double,double,MDLIC_iCustom_ZigZag,double,MDLIC_value_value,double,MDLIC_value_value,double,string,double,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,color>
+{
+
+	public: /* Constructor */
+	Block120() {
+		__block_number = 120;
+		__block_user_number = "4976006";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {138};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		dPrice.Value = 0.0;
+		fNewStopLoss.ZigZagDeviation = 0;
+		fNewStopLoss.ZigZagBackstep = 0;
+		fNewStopLoss.ModeZigZag = 2;
+		dpNewStopLoss.Value = 10.0;
+		ddNewStopLoss.Value = 0.001;
+		fNewTakeProfit.Value = 50.0;
+		dpNewTakeProfit.Value = 10.0;
+		ddNewTakeProfit.Value = 0.001;
+		// Block input parameters
+		NewSLmode = "function";
+		NewTPmode = "none";
+	}
+
+	public: /* Custom methods */
+	virtual double _dPrice_() {return dPrice._execute_();}
+	virtual double _fNewStopLoss_() {
+		fNewStopLoss.ZigZagDepth = c::Candle_ZZ;
+		fNewStopLoss.Symbol = CurrentSymbol();
+		fNewStopLoss.Period = CurrentTimeframe();
+
+		return fNewStopLoss._execute_();
+	}
+	virtual double _dpNewStopLoss_() {return dpNewStopLoss._execute_();}
+	virtual double _ddNewStopLoss_() {return ddNewStopLoss._execute_();}
+	virtual double _fNewTakeProfit_() {return fNewTakeProfit._execute_();}
+	virtual double _dpNewTakeProfit_() {return dpNewTakeProfit._execute_();}
+	virtual double _ddNewTakeProfit_() {return ddNewTakeProfit._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[138].run(120);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		LevelColor = (color)clrDeepPink;
+	}
+};
+
+// Block 4976008 (For each Trade)
+class Block121: public MDL_LoopStartTrades<string,string,string,string,string,string,int,int,int,int>
+{
+
+	public: /* Constructor */
+	Block121() {
+		__block_number = 121;
+		__block_user_number = "4976008";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {122};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+		LoopLimit = 1;
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[122].run(121);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 4976009 (Condition)
+class Block122: public MDL_Condition<MDLIC_inloop_OrderStopLoss,double,string,MDLIC_iCustom_ZigZag,double,int>
+{
+
+	public: /* Constructor */
+	Block122() {
+		__block_number = 122;
+		__block_user_number = "4976009";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {123};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Ro.ZigZagDeviation = 0;
+		Ro.ZigZagBackstep = 0;
+		Ro.ModeZigZag = 1;
+		// Block input parameters
+		compare = "!=";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.ZigZagDepth = c::Candle_ZZ;
+		Ro.Symbol = CurrentSymbol();
+		Ro.Period = CurrentTimeframe();
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[123].run(122);
+		}
+	}
+};
+
+// Block 4976010 (modify stops)
+class Block123: public MDL_LoopModifySLTP<string,MDLIC_value_value,double,string,double,double,double,double,MDLIC_iCustom_ZigZag,double,MDLIC_value_value,double,MDLIC_value_value,double,string,double,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,color>
+{
+
+	public: /* Constructor */
+	Block123() {
+		__block_number = 123;
+		__block_user_number = "4976010";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {139};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		dPrice.Value = 0.0;
+		fNewStopLoss.ZigZagDeviation = 0;
+		fNewStopLoss.ZigZagBackstep = 0;
+		fNewStopLoss.ModeZigZag = 1;
+		dpNewStopLoss.Value = 10.0;
+		ddNewStopLoss.Value = 0.001;
+		fNewTakeProfit.Value = 50.0;
+		dpNewTakeProfit.Value = 10.0;
+		ddNewTakeProfit.Value = 0.001;
+		// Block input parameters
+		NewSLmode = "function";
+		NewTPmode = "none";
+	}
+
+	public: /* Custom methods */
+	virtual double _dPrice_() {return dPrice._execute_();}
+	virtual double _fNewStopLoss_() {
+		fNewStopLoss.ZigZagDepth = c::Candle_ZZ;
+		fNewStopLoss.Symbol = CurrentSymbol();
+		fNewStopLoss.Period = CurrentTimeframe();
+
+		return fNewStopLoss._execute_();
+	}
+	virtual double _dpNewStopLoss_() {return dpNewStopLoss._execute_();}
+	virtual double _ddNewStopLoss_() {return ddNewStopLoss._execute_();}
+	virtual double _fNewTakeProfit_() {return fNewTakeProfit._execute_();}
+	virtual double _dpNewTakeProfit_() {return dpNewTakeProfit._execute_();}
+	virtual double _ddNewTakeProfit_() {return ddNewTakeProfit._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[139].run(123);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		LevelColor = (color)clrDeepPink;
+	}
+};
+
+// Block 4976035 (Candle ZZ)
+class Block124: public MDL_Condition<MDLIC_prices_prices,double,string,MDLIC_prices_HighestFromToCandles,double,int>
+{
+
+	public: /* Constructor */
+	Block124() {
+		__block_number = 124;
+		__block_user_number = "4976035";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {118};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Ro.StartBar = 2;
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Symbol = CurrentSymbol();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.EndBar = c::Candle_ZZ;
+		Ro.Symbol = CurrentSymbol();
+		Ro.Period = CurrentTimeframe();
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[118].run(124);
+		}
+	}
+};
+
+// Block 4976036 (Candle ZZ)
+class Block125: public MDL_Condition<MDLIC_prices_prices,double,string,MDLIC_prices_LowestFromToCandles,double,int>
+{
+
+	public: /* Constructor */
+	Block125() {
+		__block_number = 125;
+		__block_user_number = "4976036";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {121};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Lo.Price = "BID";
+		Ro.StartBar = 2;
+		// Block input parameters
+		compare = "<";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Symbol = CurrentSymbol();
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.EndBar = c::Candle_ZZ;
+		Ro.Symbol = CurrentSymbol();
+		Ro.Period = CurrentTimeframe();
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[121].run(125);
+		}
+	}
+};
+
+// Block 4976037 (Check positions count)
+class Block126: public MDL_CheckTradesCount<string,int,string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block126() {
+		__block_number = 126;
+		__block_user_number = "4976037";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {116};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		Compare = "==";
+		CompareCount = 1;
+		GroupMode = "all";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[116].run(126);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 4976038 (Check positions count)
+class Block127: public MDL_CheckTradesCount<string,int,string,string,string,string,string>
+{
+
+	public: /* Constructor */
+	Block127() {
+		__block_number = 127;
+		__block_user_number = "4976038";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {128};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		Compare = "==";
+		CompareCount = 1;
+		GroupMode = "all";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[128].run(127);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+	}
+};
+
+// Block 4976039 (Formula)
+class Block128: public MDL_Formula_26<MDLIC_value_value,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block128() {
+		__block_number = 128;
+		__block_user_number = "4976039";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {129};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = v::Profit_Percent;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = c::Trailing_Profit_Percent;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[129].run(128);
+		}
+	}
+};
+
+// Block 4979410 (Check profit (unrealized))
+class Block129: public MDL_CheckUProfit<string,string,string,string,string,string,string,double,double,string,string,double,double>
+{
+
+	public: /* Constructor */
+	Block129() {
+		__block_number = 129;
+		__block_user_number = "4979410";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {125};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[125].run(129);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ProfitAmount = (double)v::Trailing_Profit_Percent;
+	}
+};
+
+// Block 4979411 (Buy now)
+class Block130: public MDL_BuyNow<string,string,string,double,double,double,double,double,MDLIC_value_value,double,double,double,int,double,double,double,double,double,int,int,double,bool,double,double,bool,double,string,bool,double,string,string,bool,double,string,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,string,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,string,int,int,int,MDLIC_value_time,datetime,ulong,string,color>
+{
+
+	public: /* Constructor */
+	Block130() {
+		__block_number = 130;
+		__block_user_number = "4979411";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {133};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		dVolumeSize.Value = 0.1;
+		dpStopLoss.Value = 100.0;
+		ddStopLoss.Value = 0.01;
+		dpTakeProfit.Value = 100.0;
+		ddTakeProfit.Value = 0.01;
+		dExp.ModeTimeShift = 2;
+		dExp.TimeShiftDays = 1.0;
+		dExp.TimeSkipWeekdays = true;
+		// Block input parameters
+		mmMgMultiplyOnLoss = 1.5;
+		StopLossMode = "none";
+		TakeProfitMode = "none";
+	}
+
+	public: /* Custom methods */
+	virtual double _dVolumeSize_() {return dVolumeSize._execute_();}
+	virtual double _dlStopLoss_() {return dlStopLoss._execute_();}
+	virtual double _dpStopLoss_() {return dpStopLoss._execute_();}
+	virtual double _ddStopLoss_() {return ddStopLoss._execute_();}
+	virtual double _dlTakeProfit_() {return dlTakeProfit._execute_();}
+	virtual double _dpTakeProfit_() {return dpTakeProfit._execute_();}
+	virtual double _ddTakeProfit_() {return ddTakeProfit._execute_();}
+	virtual datetime _dExp_() {return dExp._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[133].run(130);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		VolumeSize = (double)v::Lots_BS;
+		ArrowColorBuy = (color)clrBlue;
+	}
+};
+
+// Block 4979412 (Sell now)
+class Block131: public MDL_SellNow<string,string,string,double,double,double,double,double,MDLIC_value_value,double,double,double,int,double,double,double,double,double,int,int,double,bool,double,double,bool,double,string,bool,double,string,string,bool,double,string,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,string,double,double,double,MDLIC_value_value,double,MDLIC_value_value,double,MDLIC_value_value,double,string,int,int,int,MDLIC_value_time,datetime,ulong,string,color>
+{
+
+	public: /* Constructor */
+	Block131() {
+		__block_number = 131;
+		__block_user_number = "4979412";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {132};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		dVolumeSize.Value = 0.1;
+		dpStopLoss.Value = 100.0;
+		ddStopLoss.Value = 0.01;
+		dpTakeProfit.Value = 100.0;
+		ddTakeProfit.Value = 0.01;
+		dExp.ModeTimeShift = 2;
+		dExp.TimeShiftDays = 1.0;
+		dExp.TimeSkipWeekdays = true;
+		// Block input parameters
+		mmMgMultiplyOnLoss = 1.5;
+		StopLossMode = "none";
+		TakeProfitMode = "none";
+		TakeProfitPips = 28.0;
+	}
+
+	public: /* Custom methods */
+	virtual double _dVolumeSize_() {return dVolumeSize._execute_();}
+	virtual double _dlStopLoss_() {return dlStopLoss._execute_();}
+	virtual double _dpStopLoss_() {return dpStopLoss._execute_();}
+	virtual double _ddStopLoss_() {return ddStopLoss._execute_();}
+	virtual double _dlTakeProfit_() {return dlTakeProfit._execute_();}
+	virtual double _dpTakeProfit_() {return dpTakeProfit._execute_();}
+	virtual double _ddTakeProfit_() {return ddTakeProfit._execute_();}
+	virtual datetime _dExp_() {return dExp._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[132].run(131);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		VolumeSize = (double)v::Lots_BS;
+		ArrowColorSell = (color)clrRed;
+	}
+};
+
+// Block 4979551 (Delete pending orders)
+class Block132: public MDL_DeletePendingOrders<string,string,string,string,string,string,color>
+{
+
+	public: /* Constructor */
+	Block132() {
+		__block_number = 132;
+		__block_user_number = "4979551";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {135};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2,3,4";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[135].run(132);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 4979552 (Delete pending orders)
+class Block133: public MDL_DeletePendingOrders<string,string,string,string,string,string,color>
+{
+
+	public: /* Constructor */
+	Block133() {
+		__block_number = 133;
+		__block_user_number = "4979552";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {134};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		GroupMode = "all";
+		Group = "1,2,3,4";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[134].run(133);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 4979553 (Close positions)
+class Block134: public MDL_CloseOpened<string,string,string,string,string,int,ulong,color>
+{
+
+	public: /* Constructor */
+	Block134() {
+		__block_number = 134;
+		__block_user_number = "4979553";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 4979554 (Close positions)
+class Block135: public MDL_CloseOpened<string,string,string,string,string,int,ulong,color>
+{
+
+	public: /* Constructor */
+	Block135() {
+		__block_number = 135;
+		__block_user_number = "4979554";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 4979555 (Once per bar)
+class Block136: public MDL_OncePerBar<string,ENUM_TIMEFRAMES,int>
+{
+
+	public: /* Constructor */
+	Block136() {
+		__block_number = 136;
+		__block_user_number = "4979555";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {130};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[130].run(136);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		Period = (ENUM_TIMEFRAMES)CurrentTimeframe();
+	}
+};
+
+// Block 4979556 (Once per bar)
+class Block137: public MDL_OncePerBar<string,ENUM_TIMEFRAMES,int>
+{
+
+	public: /* Constructor */
+	Block137() {
+		__block_number = 137;
+		__block_user_number = "4979556";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {131};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[131].run(137);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		Period = (ENUM_TIMEFRAMES)CurrentTimeframe();
+	}
+};
+
+// Block 4979557 (Break even point)
+class Block138: public MDL_BreakEvenPoint<string,string,string,string,string,string,double,double,double,string,double>
+{
+
+	public: /* Constructor */
+	Block138() {
+		__block_number = 138;
+		__block_user_number = "4979557";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+		BEoffsetMode = "pips";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		OnProfitPips = (double)c::BE_Pip;
+		BEPoffsetPips = (double)c::BE_Offset;
+	}
+};
+
+// Block 4979558 (Break even point)
+class Block139: public MDL_BreakEvenPoint<string,string,string,string,string,string,double,double,double,string,double>
+{
+
+	public: /* Constructor */
+	Block139() {
+		__block_number = 139;
+		__block_user_number = "4979558";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+		BEoffsetMode = "pips";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		OnProfitPips = (double)c::BE_Pip;
+		BEPoffsetPips = (double)c::BE_Offset;
+	}
+};
+
+// Block 4979559 (Break even point)
+class Block140: public MDL_BreakEvenPoint<string,string,string,string,string,string,double,double,double,string,double>
+{
+
+	public: /* Constructor */
+	Block140() {
+		__block_number = 140;
+		__block_user_number = "4979559";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "buys";
+		BEoffsetMode = "pips";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		OnProfitPips = (double)c::BE_Pip;
+		BEPoffsetPips = (double)c::BE_Offset;
+	}
+};
+
+// Block 4979560 (Break even point)
+class Block141: public MDL_BreakEvenPoint<string,string,string,string,string,string,double,double,double,string,double>
+{
+
+	public: /* Constructor */
+	Block141() {
+		__block_number = 141;
+		__block_user_number = "4979560";
+		_beforeExecuteEnabled = true;
+		// Block input parameters
+		GroupMode = "all";
+		BuysOrSells = "sells";
+		BEoffsetMode = "pips";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		OnProfitPips = (double)c::BE_Pip;
+		BEPoffsetPips = (double)c::BE_Offset;
+	}
+};
+
+// Block 4979561 (Close trades)
+class Block142: public MDL_CloseOpened<string,string,string,string,string,int,ulong,color>
+{
+
+	public: /* Constructor */
+	Block142() {
+		__block_number = 142;
+		__block_user_number = "4979561";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {147};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[147].run(142);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		Symbol = (string)CurrentSymbol();
+		ArrowColor = (color)clrDeepPink;
+	}
+};
+
+// Block 4979562 (Condition)
+class Block143: public MDL_Condition<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block143() {
+		__block_number = 143;
+		__block_user_number = "4979562";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {142};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "<=";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = v::Trailing_Balance;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[142].run(143);
+		}
+	}
+};
+
+// Block 4979563 (Condition)
+class Block144: public MDL_Condition<MDLIC_account_AccountBalance,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block144() {
+		__block_number = 144;
+		__block_user_number = "4979563";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {145};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {
+		Ro.Value = v::New_Balance;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[145].run(144);
+		}
+	}
+};
+
+// Block 4979564 (Modify Variables)
+class Block145: public MDL_ModifyVariables<int,MDLIC_account_AccountBalance,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block145() {
+		__block_number = 145;
+		__block_user_number = "4979564";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {146};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {return Value1._execute_();}
+	virtual double _Value2_() {return Value2._execute_();}
+	virtual double _Value3_() {return Value3._execute_();}
+	virtual double _Value4_() {return Value4._execute_();}
+	virtual double _Value5_() {return Value5._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[146].run(145);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::New_Balance = _Value1_();
+	}
+};
+
+// Block 4979565 (Formula)
+class Block146: public MDL_Formula_27<MDLIC_value_value,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block146() {
+		__block_number = 146;
+		__block_user_number = "4979565";
+
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = v::New_Balance;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = c::Balance_Trailing_Percent;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+};
+
+// Block 4979566 (Modify Variables)
+class Block147: public MDL_ModifyVariables<int,MDLIC_account_AccountBalance,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double,int,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block147() {
+		__block_number = 147;
+		__block_user_number = "4979566";
+		_beforeExecuteEnabled = true;
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[1] = {148};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Custom methods */
+	virtual double _Value1_() {return Value1._execute_();}
+	virtual double _Value2_() {return Value2._execute_();}
+	virtual double _Value3_() {return Value3._execute_();}
+	virtual double _Value4_() {return Value4._execute_();}
+	virtual double _Value5_() {return Value5._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[148].run(147);
+		}
+	}
+
+	virtual void _beforeExecute_()
+	{
+
+		v::New_Balance = _Value1_();
+	}
+};
+
+// Block 4979567 (Formula)
+class Block148: public MDL_Formula_28<MDLIC_value_value,double,string,MDLIC_value_value,double>
+{
+
+	public: /* Constructor */
+	Block148() {
+		__block_number = 148;
+		__block_user_number = "4979567";
+
+		// Block input parameters
+		compare = "*";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = v::New_Balance;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {
+		Ro.Value = c::Balance_Trailing_Percent;
+
+		return Ro._execute_();
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+};
+
+// Block 4979568 (Trailing_Balance)
+class Block149: public MDL_Condition<MDLIC_value_value,double,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block149() {
+		__block_number = 149;
+		__block_user_number = "4979568";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[2] = {143,144};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+		// Block input parameters
+		compare = "==";
+	}
+
+	public: /* Custom methods */
+	virtual double _Lo_() {
+		Lo.Value = c::Trailing_Balance_ON_OFF;
+
+		return Lo._execute_();
+	}
+	virtual double _Ro_() {return Ro._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[143].run(149);
+			_blocks_[144].run(149);
+		}
+	}
+};
+
+// Block 4979569 (MT4 Login Number)
+class Block150: public MDL_Condition<MDLIC_account_AccountNumber,long,string,MDLIC_value_value,double,int>
+{
+
+	public: /* Constructor */
+	Block150() {
+		__block_number = 150;
+		__block_user_number = "4979569";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[2] = {153,154};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Ro.Value = 16644492.0;
+		// Block input parameters
+		compare = "!=";
+	}
+
+	public: /* Custom methods */
+	virtual long _Lo_() {return Lo._execute_();}
+	virtual double _Ro_() {return Ro._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 0) {
+			_blocks_[154].run(150);
+		}
+		else if (value == 1) {
+			_blocks_[153].run(150);
+		}
+	}
+};
+
+// Block 4979571 (If Real account)
+class Block151: public MDL_IfReal
+{
+
+	public: /* Constructor */
+	Block151() {
+		__block_number = 151;
+		__block_user_number = "4979571";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[2] = {150,152};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[150].run(151);
+			_blocks_[152].run(151);
+		}
+	}
+};
+
+// Block 4979572 (Condition)
+class Block152: public MDL_Condition<MDLIC_value_time,datetime,string,MDLIC_value_time,datetime,int>
+{
+
+	public: /* Constructor */
+	Block152() {
+		__block_number = 152;
+		__block_user_number = "4979572";
+
+
+		// Fill the list of outbound blocks
+		int ___outbound_blocks[2] = {153,154};
+		ArrayCopy(__outbound_blocks, ___outbound_blocks);
+
+		// IC input parameters
+		Ro.ModeTime = 1;
+		Ro.TimeStamp = "2025.10.31";
+	}
+
+	public: /* Custom methods */
+	virtual datetime _Lo_() {return Lo._execute_();}
+	virtual datetime _Ro_() {return Ro._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+		if (value == 1) {
+			_blocks_[153].run(152);
+			_blocks_[154].run(152);
+		}
+	}
+};
+
+// Block 4979573 (Terminate)
+class Block153: public MDL_Terminate<string>
+{
+
+	public: /* Constructor */
+	Block153() {
+		__block_number = 153;
+		__block_user_number = "4979573";
+
+		// Block input parameters
+		Message = "please contact admin.";
+	}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+};
+
+// Block 4979576 (Alert message)
+class Block154: public MDL_AlertMessageAdvanced<string,string,MDLIC_value_value,double,string,MDLIC_value_value,double,string,MDLIC_value_value,double,string,MDLIC_value_value,double,string,MDLIC_value_value,double,string,MDLIC_value_value,double,string,MDLIC_value_value,double,string,MDLIC_value_value,double,string,MDLIC_value_value,double,string,MDLIC_value_value,double,bool>
+{
+
+	public: /* Constructor */
+	Block154() {
+		__block_number = 154;
+		__block_user_number = "4979576";
+
+
+		// IC input parameters
+		AlertValue1.Value = 0.0;
+		AlertValue2.Value = 0.0;
+		AlertValue3.Value = 0.0;
+		AlertValue4.Value = 0.0;
+		AlertValue5.Value = 0.0;
+		AlertValue6.Value = 0.0;
+		AlertValue7.Value = 0.0;
+		AlertValue8.Value = 0.0;
+		AlertValue9.Value = 0.0;
+		AlertValue10.Value = 0.0;
+		// Block input parameters
+		AlertTitle = "https://www.facebook.com/RichmanMakeMoney";
+	}
+
+	public: /* Custom methods */
+	virtual double _AlertValue1_() {return AlertValue1._execute_();}
+	virtual double _AlertValue2_() {return AlertValue2._execute_();}
+	virtual double _AlertValue3_() {return AlertValue3._execute_();}
+	virtual double _AlertValue4_() {return AlertValue4._execute_();}
+	virtual double _AlertValue5_() {return AlertValue5._execute_();}
+	virtual double _AlertValue6_() {return AlertValue6._execute_();}
+	virtual double _AlertValue7_() {return AlertValue7._execute_();}
+	virtual double _AlertValue8_() {return AlertValue8._execute_();}
+	virtual double _AlertValue9_() {return AlertValue9._execute_();}
+	virtual double _AlertValue10_() {return AlertValue10._execute_();}
+
+	public: /* Callback & Run */
+	virtual void _callback_(int value) {
+	}
+};
+
+
+/************************************************************************************************************************/
+// +------------------------------------------------------------------------------------------------------------------+ //
+// |                                                   Functions                                                      | //
+// |                                 System and Custom functions used in the program                                  | //
+// +------------------------------------------------------------------------------------------------------------------+ //
+/************************************************************************************************************************/
+
+
+double AccountBalance()
+{
+	return NormalizeDouble(AccountInfoDouble(ACCOUNT_BALANCE), 2);
+}
+
+double AccountBalanceAtStart()
+{
+	// This function MUST be run once at pogram's start
+	static double memory = 0;
+
+	if (memory == 0)
+	{
+		memory = NormalizeDouble(AccountInfoDouble(ACCOUNT_BALANCE), 2);
+	}
+
+	return memory;
+}
+
+double AccountEquity()
+{
+	return AccountInfoDouble(ACCOUNT_EQUITY);
+}
+
+double AccountFreeMargin()
+{
+	return AccountInfoDouble(ACCOUNT_MARGIN_FREE);
+}
+
+double AlignLots(string symbol, double lots, double lowerlots = 0.0, double upperlots = 0.0)
+{
+	double LotStep = SymbolInfoDouble(symbol, SYMBOL_VOLUME_STEP);
+	double LotSize = SymbolInfoDouble(symbol, SYMBOL_TRADE_CONTRACT_SIZE);
+	double MinLots = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MIN);
+	double MaxLots = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MAX);
+
+	if (LotStep > MinLots) MinLots = LotStep;
+
+	if (lots == EMPTY_VALUE) {lots = 0.0;}
+
+	lots = MathRound(lots / LotStep) * LotStep;
+
+	if (lots < MinLots) {lots = MinLots;}
+	if (lots > MaxLots) {lots = MaxLots;}
+
+	if (lowerlots > 0.0)
+	{
+		lowerlots = MathRound(lowerlots / LotStep) * LotStep;
+		if (lots < lowerlots) {lots = lowerlots;}
+	}
+
+	if (upperlots > 0.0)
+	{
+		upperlots = MathRound(upperlots / LotStep) * LotStep;
+		if (lots > upperlots) {lots = upperlots;}
+	}
+
+	return lots;
+}
+
+double AlignStopLoss(
+	string symbol,
+	int type,
+	double price,
+	double slo = 0.0, // original sl, used when modifying
+	double sll = 0.0,
+	double slp = 0.0,
+	bool consider_freezelevel = false
+	)
+{
+	double sl = 0.0;
+	
+	if (MathAbs(sll) == EMPTY_VALUE) {sll = 0.0;}
+	if (MathAbs(slp) == EMPTY_VALUE) {slp = 0.0;}
+
+	if (sll == 0.0 && slp == 0.0)
+	{
+		return 0.0;
+	}
+
+	if (price <= 0.0)
+	{
+		Print(__FUNCTION__ + " error: No price entered");
+
+		return -1;
+	}
+
+	double point = SymbolInfoDouble(symbol, SYMBOL_POINT);
+	int digits   = (int)SymbolInfoInteger(symbol, SYMBOL_DIGITS);
+	slp          = slp * PipValue(symbol) * point;
+
+	//-- buy-sell identifier ---------------------------------------------
+	int bs = 1;
+
+	if (
+		   type == ORDER_TYPE_SELL
+		|| type == ORDER_TYPE_SELL_STOP
+		|| type == ORDER_TYPE_SELL_LIMIT
+		|| type == ORDER_TYPE_SELL_STOP_LIMIT
+		)
+	{
+		bs = -1;
+	}
+
+	//-- prices that will be used ----------------------------------------
+	double askbid = price;
+	double bidask = price;
+
+	if (type < 2)
+	{
+		double ask = SymbolInfoDouble(symbol, SYMBOL_ASK);
+		double bid = SymbolInfoDouble(symbol, SYMBOL_BID);
+
+		askbid = ask;
+		bidask = bid;
+
+		if (bs < 0)
+		{
+		  askbid = bid;
+		  bidask = ask;
+		}
+	}
+
+	//-- build sl level -------------------------------------------------- 
+	if (sll == 0.0 && slp != 0.0) {sll = price;}
+
+	if (sll > 0.0) {sl = sll - slp * bs;}
+
+	if (sl < 0.0)
+	{
+		return -1;
+	}
+
+	sl  = NormalizeDouble(sl, digits);
+	slo = NormalizeDouble(slo, digits);
+
+	if (sl == slo)
+	{
+		return sl;
+	}
+
+	//-- build limit levels ----------------------------------------------
+	double minstops = (double)SymbolInfoInteger(symbol, SYMBOL_TRADE_STOPS_LEVEL);
+
+	if (consider_freezelevel == true)
+	{
+		double freezelevel = (double)SymbolInfoInteger(symbol, SYMBOL_TRADE_FREEZE_LEVEL);
+
+		if (freezelevel > minstops) {minstops = freezelevel;}
+	}
+
+	minstops = NormalizeDouble(minstops * point,digits);
+
+	double sllimit = bidask - minstops * bs; // SL min price level
+
+	//-- check and align sl, print errors --------------------------------
+	//-- do not do it when the stop is the same as the original
+	if (sl > 0.0 && sl != slo)
+	{
+		if ((bs > 0 && sl > askbid) || (bs < 0 && sl < askbid))
+		{
+			string abstr = "";
+
+			if (bs > 0) {abstr = "Bid";} else {abstr = "Ask";}
+
+			Print(
+				"Error: Invalid SL requested (",
+				DoubleToStr(sl, digits),
+				" for ", abstr, " price ",
+				bidask,
+				")"
+			);
+
+			return -1;
+		}
+		else if ((bs > 0 && sl > sllimit) || (bs < 0 && sl < sllimit))
+		{
+			if (USE_VIRTUAL_STOPS)
+			{
+				return sl;
+			}
+
+			Print(
+				"Warning: Too short SL requested (",
+				DoubleToStr(sl, digits),
+				" or ",
+				DoubleToStr(MathAbs(sl - askbid) / point, 0),
+				" points), minimum will be taken (",
+				DoubleToStr(sllimit, digits),
+				" or ",
+				DoubleToStr(MathAbs(askbid - sllimit) / point, 0),
+				" points)"
+			);
+
+			sl = sllimit;
+
+			return sl;
+		}
+	}
+
+	// align by the ticksize
+	double ticksize = SymbolInfoDouble(symbol, SYMBOL_TRADE_TICK_SIZE);
+	sl = MathRound(sl / ticksize) * ticksize;
+
+	return sl;
+}
+
+double AlignTakeProfit(
+	string symbol,
+	int type,
+	double price,
+	double tpo = 0.0, // original tp, used when modifying
+	double tpl = 0.0,
+	double tpp = 0.0,
+	bool consider_freezelevel = false
+	)
+{
+	double tp = 0.0;
+	
+	if (MathAbs(tpl) == EMPTY_VALUE) {tpl = 0.0;}
+	if (MathAbs(tpp) == EMPTY_VALUE) {tpp = 0.0;}
+
+	if (tpl == 0.0 && tpp == 0.0)
+	{
+		return 0.0;
+	}
+
+	if (price <= 0.0)
+	{
+		Print(__FUNCTION__ + " error: No price entered");
+
+		return -1;
+	}
+
+	double point = SymbolInfoDouble(symbol, SYMBOL_POINT);
+	int digits   = (int)SymbolInfoInteger(symbol, SYMBOL_DIGITS);
+	tpp          = tpp * PipValue(symbol) * point;
+	
+	//-- buy-sell identifier ---------------------------------------------
+	int bs = 1;
+
+	if (
+		   type == ORDER_TYPE_SELL
+		|| type == ORDER_TYPE_SELL_STOP
+		|| type == ORDER_TYPE_SELL_LIMIT
+		|| type == ORDER_TYPE_SELL_STOP_LIMIT
+		)
+	{
+		bs = -1;
+	}
+	
+	//-- prices that will be used ----------------------------------------
+	double askbid = price;
+	double bidask = price;
+	
+	if (type < 2)
+	{
+		double ask = SymbolInfoDouble(symbol, SYMBOL_ASK);
+		double bid = SymbolInfoDouble(symbol, SYMBOL_BID);
+		
+		askbid = ask;
+		bidask = bid;
+
+		if (bs < 0)
+		{
+		  askbid = bid;
+		  bidask = ask;
+		}
+	}
+	
+	//-- build tp level --------------------------------------------------- 
+	if (tpl == 0.0 && tpp != 0.0) {tpl = price;}
+
+	if (tpl > 0.0) {tp = tpl + tpp * bs;}
+	
+	if (tp < 0.0)
+	{
+		return -1;
+	}
+
+	tp  = NormalizeDouble(tp, digits);
+	tpo = NormalizeDouble(tpo, digits);
+
+	if (tp == tpo)
+	{
+		return tp;
+	}
+	
+	//-- build limit levels ----------------------------------------------
+	double minstops = (double)SymbolInfoInteger(symbol, SYMBOL_TRADE_STOPS_LEVEL);
+
+	if (consider_freezelevel == true)
+	{
+		double freezelevel = (double)SymbolInfoInteger(symbol, SYMBOL_TRADE_FREEZE_LEVEL);
+
+		if (freezelevel > minstops) {minstops = freezelevel;}
+	}
+
+	minstops = NormalizeDouble(minstops * point,digits);
+	
+	double tplimit = bidask + minstops * bs; // TP min price level
+	
+	//-- check and align tp, print errors --------------------------------
+	//-- do not do it when the stop is the same as the original
+	if (tp > 0.0 && tp != tpo)
+	{
+		if ((bs > 0 && tp < bidask) || (bs < 0 && tp > bidask))
+		{
+			string abstr = "";
+
+			if (bs > 0) {abstr = "Bid";} else {abstr = "Ask";}
+
+			Print(
+				"Error: Invalid TP requested (",
+				DoubleToStr(tp, digits),
+				" for ", abstr, " price ",
+				bidask,
+				")"
+			);
+
+			return -1;
+		}
+		else if ((bs > 0 && tp < tplimit) || (bs < 0 && tp > tplimit))
+		{
+			if (USE_VIRTUAL_STOPS)
+			{
+				return tp;
+			}
+
+			Print(
+				"Warning: Too short TP requested (",
+				DoubleToStr(tp, digits),
+				" or ",
+				DoubleToStr(MathAbs(tp - askbid) / point, 0),
+				" points), minimum will be taken (",
+				DoubleToStr(tplimit, digits),
+				" or ",
+				DoubleToStr(MathAbs(askbid - tplimit) / point, 0),
+				" points)"
+			);
+
+			tp = tplimit;
+
+			return tp;
+		}
+	}
+	
+	// align by the ticksize
+	double ticksize = SymbolInfoDouble(symbol, SYMBOL_TRADE_TICK_SIZE);
+	tp = MathRound(tp / ticksize) * ticksize;
+	
+	return tp;
+}
+
+template<typename T>
+bool ArrayEnsureValue(T &array[], T value)
+{
+	int size   = ArraySize(array);
+
+	if (size > 0)
+	{
+		if (InArray(array, value))
+		{
+			// value found -> exit
+			return false; // no value added
+		}
+	}
+
+	// value does not exists -> add it
+	ArrayResize(array, size+1);
+	array[size] = value;
+
+	return true; // value added
+}
+
+template<typename T>
+int ArraySearch(T &array[], T value)
+{
+	int index = -1;
+	int size  = ArraySize(array);
+
+	for (int i = 0; i < size; i++)
+	{
+		if (array[i] == value)
+		{
+			index = i;
+			break;
+		}  
+	}
+
+   return index;
+}
+
+template<typename T>
+bool ArrayStripKey(T &array[], int key)
+{
+	int x    = 0;
+	int size = ArraySize(array);
+
+	for (int i=0; i<size; i++)
+	{
+		if (i != key)
+		{
+			array[x] = array[i];
+			x++;
+		}
+	}
+
+	if (x < size)
+	{
+		ArrayResize(array, x);
+		
+		return true; // stripped
+	}
+
+	return false; // not stripped
+}
+
+template<typename T>
+bool ArrayStripValue(T &array[], T value)
+{
+	int x    = 0;
+	int size = ArraySize(array);
+
+	for (int i=0; i<size; i++)
+	{
+		if (array[i] != value)
+		{
+			array[x] = array[i];
+			x++;
+		}
+	}
+
+	if (x < size)
+	{
+		ArrayResize(array, x);
+		
+		return true; // stripped
+	}
+
+	return false; // not stripped
+}
+
+double Bet1326(
+	string group,
+	string symbol,
+	int pool,
+	double initialLots,
+	bool reverse = false
+) {  
+	double info[];
+	GetBetTradesInfo(info, group, symbol, pool, false);
+
+	double lots         = info[0];
+	double profitOrLoss = info[1]; // 0 - unknown, 1 - profit, -1 - loss
+
+	//-- 1-3-2-6 Logic
+	double minLot = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MIN);
+
+	if (initialLots < minLot)
+	{
+		initialLots = minLot;  
+	}
+
+	if (lots == 0)
+	{
+		lots = initialLots;
+	}
+	else
+	{
+		if (
+			   (reverse == false && profitOrLoss == 1)
+			|| (reverse == true && profitOrLoss == -1)
+		) {
+			double div = lots / initialLots;
+
+			     if (div < 1.5) {lots = initialLots * 3;}
+			else if (div < 2.5) {lots = initialLots * 6;}
+			else if (div < 3.5) {lots = initialLots * 2;}
+			else {lots = initialLots;}
+		}
+		else
+		{
+			lots = initialLots;
+		}
+	}
+
+	return lots;
+}
+
+double BetDalembert(
+	string group,
+	string symbol,
+	int pool,
+	double initialLots,
+	double reverse = false
+) {  
+	double info[];
+	GetBetTradesInfo(info, group, symbol, pool, false);
+
+	double lots         = info[0];
+	double profitOrLoss = info[1]; // 0 - unknown, 1 - profit, -1 - loss
+
+	//-- Dalembert Logic
+	double minLot = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MIN);
+
+	if (initialLots < minLot)
+	{
+		initialLots = minLot;  
+	}
+
+	if (lots == 0)
+	{
+		lots = initialLots;
+	}
+	else
+	{
+		if (
+			   (reverse == 0 && profitOrLoss == 1)
+			|| (reverse == 1 && profitOrLoss == -1)
+		) {
+			lots = lots - initialLots;
+			if (lots < initialLots) {lots = initialLots;}
+		}
+		else
+		{
+			lots = lots + initialLots;
+		}
+	}
+
+	return lots;
+}
+
+double BetFibonacci(
+	string group,
+	string symbol,
+	int pool,
+	double initialLots
+) {
+	double info[];
+	GetBetTradesInfo(info, group, symbol, pool, false);
+
+	double lots         = info[0];
+	double profitOrLoss = info[1]; // 0 - unknown, 1 - profit, -1 - loss
+
+	//-- Fibonacci Logic
+	double minLot = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MIN);
+
+	if (initialLots < minLot)
+	{
+		initialLots = minLot;  
+	}
+
+	if (lots == 0)
+	{
+		lots = initialLots;
+	}
+	else
+	{  
+		int fibo1 = 1;
+		int fibo2 = 0;
+		int fibo3 = 0;
+		int fibo4 = 0;
+		double div = lots / initialLots;
+
+		if (div <= 0) {div = 1;}
+
+		while (true)
+		{
+			fibo1 = fibo1 + fibo2;
+			fibo3 = fibo2;
+			fibo2 = fibo1 - fibo2;
+			fibo4 = fibo2 - fibo3;
+
+			if (fibo1 > NormalizeDouble(div, 2))
+			{
+				break;
+			}
+		}
+
+		if (profitOrLoss == 1)
+		{
+			if (fibo4 <= 0) {fibo4 = 1;}
+			lots = initialLots * fibo4;
+		}
+		else
+		{
+			lots = initialLots * fibo1;
+		}
+	}
+
+	lots = NormalizeDouble(lots, 2);
+
+	return lots;
+}
+
+double BetLabouchere(
+	string group,
+	string symbol,
+	int pool,
+	double initialLots,
+	string listOfNumbers,
+	double reverse = false
+) {
+	double info[];
+	GetBetTradesInfo(info, group, symbol, pool, false);
+
+	double lots         = info[0];
+	double profitOrLoss = info[1]; // 0 - unknown, 1 - profit, -1 - loss
+
+	//-- Labouchere Logic
+	static string memGroup[];
+	static string memList[];
+	static long memTicket[];
+
+	int startAgain = false;
+
+	//- get the list of numbers as it is stored in the memory, or store it
+	int id = ArraySearch(memGroup, group);
+
+	if (id == -1)
+	{
+		startAgain = true;
+
+		if (listOfNumbers == "") {listOfNumbers = "1";}
+
+		id = ArraySize(memGroup);
+
+		ArrayResize(memGroup, id+1, id+1);
+		ArrayResize(memList, id+1, id+1);
+		ArrayResize(memTicket, id+1, id+1);
+
+		memGroup[id] = group;
+		memList[id]  = listOfNumbers;
+	}
+
+	if (memTicket[id] == (long)OrderTicket())
+	{
+		// the last known ticket (memTicket[id]) should be different than OderTicket() normally
+		// when failed to create a new trade - the last ticket remains the same
+		// so we need to reset
+		memList[id] = listOfNumbers;
+	}
+
+	memTicket[id] = (long)OrderTicket();
+
+	//- now turn the string into integer array
+	int list[];
+	string listS[];
+
+	StringExplode(",", memList[id], listS);
+	ArrayResize(list, ArraySize(listS));
+
+	for (int s = 0; s < ArraySize(listS); s++)
+	{
+		list[s] = (int)StringToInteger(StringTrim(listS[s]));  
+	}
+
+	//-- 
+	int size = ArraySize(list);
+
+	double minLot = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MIN);
+
+	if (initialLots < minLot)
+	{
+		initialLots = minLot;  
+	}
+
+	if (lots == 0)
+	{
+		startAgain = true;
+	}
+
+	if (startAgain == true)
+	{
+		if (size == 1)
+		{
+			lots = initialLots * list[0];
+		}
+		else {
+			lots = initialLots * (list[0] + list[size-1]);
+		}
+	}
+	else 
+	{
+		if (
+			   (reverse == 0 && profitOrLoss == 1)
+			|| (reverse == 1 && profitOrLoss == -1)
+		) {
+			size = size - 2;
+			
+			if (size < 0) {
+				size = 0;
+			}
+			
+			if (size == 0) {
+				// Set the initial list of numbers
+				StringExplode(",", listOfNumbers, listS);
+				ArrayResize(list, ArraySize(listS));
+			
+				for (int s = 0; s < ArraySize(listS); s++)
+				{
+					list[s] = (int)StringToInteger(StringTrim(listS[s]));  
+				}
+				
+				size = ArraySize(list);
+			}
+			else {
+				// Cancel the first and the last number in the list
+				// shift array 1 step left
+				for (int pos = 0; pos < ArraySize(list) - 1; pos++) {
+					list[pos] = list[pos+1];
+				}
+				
+				ArrayResize(list, size);
+			}
+			
+			int rightNum = (size > 1) ? list[size - 1] : 0;
+			lots = initialLots * (list[0] + rightNum);
+
+			if (lots < initialLots) {lots = initialLots;}
+		}
+		else
+		{
+			size = size + 1;
+			ArrayResize(list, size);
+			
+			int rightNum = (size > 2) ? list[size - 2] : 0;
+
+			list[size - 1] = list[0] + rightNum;
+			lots       = initialLots * (list[0] + list[size - 1]);
+
+			if (lots < initialLots) {lots = initialLots;}
+		}
+	}
+
+	Print("Labouchere (for group "
+		+ (string)id
+		+ ") current list of numbers: "
+		+ StringImplode(",", list)
+	);
+
+	size=ArraySize(list);
+
+	if (size == 0)
+	{
+		ArrayStripKey(memGroup, id);
+		ArrayStripKey(memList, id);
+		ArrayStripKey(memTicket, id);
+	}
+	else {
+		memList[id] = StringImplode(",", list);
+	}
+
+	return lots;
+}
+
+double BetMartingale(
+	string group,
+	string symbol,
+	int pool,
+	double initialLots,
+	double multiplyOnLoss,
+	double multiplyOnProfit,
+	double addOnLoss,
+	double addOnProfit,
+	int resetOnLoss,
+	int resetOnProfit
+) {
+	double info[];
+	GetBetTradesInfo(info, group, symbol, pool, true);
+
+	double lots         = info[0];
+	double profitOrLoss = info[1]; // 0 - unknown, 1 - profit, -1 - loss
+	double consecutive  = info[2];
+
+	//-- Martingale Logic
+	if (lots == 0)
+	{
+		lots = initialLots;
+	}
+	else
+	{
+		if (profitOrLoss == 1)
+		{
+			if (resetOnProfit > 0 && consecutive >= resetOnProfit)
+			{
+				lots = initialLots;
+			}
+			else
+			{
+				if (multiplyOnProfit <= 0)
+				{
+					multiplyOnProfit = 1;
+				}
+
+				lots = (lots * multiplyOnProfit) + addOnProfit;
+			}
+		}
+		else
+		{
+			if (resetOnLoss > 0 && consecutive >= resetOnLoss)
+			{
+				lots = initialLots;  
+			}
+			else
+			{
+				if (multiplyOnLoss <= 0)
+				{
+					multiplyOnLoss = 1;
+				}
+
+				lots = (lots * multiplyOnLoss) + addOnLoss;
+			}
+		}
+	}
+
+	return lots;
+}
+
+double BetSequence(
+	string group,
+	string symbol,
+	int pool,
+	double initialLots,
+	string sequenceOnLoss,
+	string sequenceOnProfit,
+	bool reverse = false
+) {  
+	double info[];
+	GetBetTradesInfo(info, group, symbol, pool, false);
+
+	double lots         = info[0];
+	double profitOrLoss = info[1]; // 0 - unknown, 1 - profit, -1 - loss
+
+	//-- Sequence stuff
+	static string memGroup[];
+	static string memLossList[];
+	static string memProfitList[];
+	static long memTicket[];
+
+	//- get the list of numbers as it is stored in the memory, or store it
+	int id = ArraySearch(memGroup, group);
+
+	if (id == -1)
+	{
+		if (sequenceOnLoss == "") {sequenceOnLoss = "1";}
+
+		if (sequenceOnProfit == "") {sequenceOnProfit = "1";}
+
+		id = ArraySize(memGroup);
+
+		ArrayResize(memGroup, id+1, id+1);
+		ArrayResize(memLossList, id+1, id+1);
+		ArrayResize(memProfitList, id+1, id+1);
+		ArrayResize(memTicket, id+1, id+1);
+
+		memGroup[id]      = group;
+		memLossList[id]   = sequenceOnLoss;
+		memProfitList[id] = sequenceOnProfit;
+	}
+
+	bool lossReset   = false;
+	bool profitReset = false;
+
+	if (profitOrLoss == -1 && memLossList[id] == "")
+	{
+		lossReset         = true;
+		memProfitList[id] = "";
+	}
+
+	if (profitOrLoss == 1 && memProfitList[id] == "")
+	{
+		profitReset     = true;
+		memLossList[id] = "";
+	}
+
+	if (profitOrLoss == 1 || memLossList[id] == "")
+	{
+		memLossList[id] = sequenceOnLoss;
+
+		if (lossReset) {
+			memLossList[id] = "1," + memLossList[id];
+		}
+	}
+
+	if (profitOrLoss == -1 || memProfitList[id] == "")
+	{
+		memProfitList[id] = sequenceOnProfit;
+
+		if (profitReset) {
+			memProfitList[id] = "1," + memProfitList[id];
+		}
+	}
+
+	if (memTicket[id] == (long)OrderTicket())
+	{
+		// Normally the last known ticket (memTicket[id]) should be different than OderTicket()
+		// when failed to create a new trade, the last ticket remains the same
+		// so we need to reset
+		memLossList[id]   = sequenceOnLoss;
+		memProfitList[id] = sequenceOnProfit;
+	}
+
+	memTicket[id] = (long)OrderTicket();
+
+	//- now turn the string into integer array
+	int s = 0;
+	double listLoss[];
+	double listProfit[];
+	string listS[];
+
+	StringExplode(",", memLossList[id], listS);
+	ArrayResize(listLoss, ArraySize(listS), ArraySize(listS));
+
+	for (s = 0; s < ArraySize(listS); s++)
+	{
+		listLoss[s] = (double)StringToDouble(StringTrim(listS[s]));  
+	}
+
+	StringExplode(",", memProfitList[id], listS);
+	ArrayResize(listProfit, ArraySize(listS), ArraySize(listS));
+
+	for (s = 0; s < ArraySize(listS); s++)
+	{
+		listProfit[s] = (double)StringToDouble(StringTrim(listS[s]));  
+	}
+
+	//--
+	double minLot = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MIN);
+
+	if (initialLots < minLot)
+	{
+		initialLots = minLot;  
+	}
+
+	if (lots == 0)
+	{
+		lots = initialLots;
+	}
+	else
+	{
+		if (
+			   (reverse == false && profitOrLoss ==1)
+			|| (reverse == true && profitOrLoss == -1)
+		) {
+			lots = initialLots * listProfit[0];
+
+			// shift array 1 step left
+			int size = ArraySize(listProfit);
+
+			for(int pos = 0; pos < size-1; pos++)
+			{
+				listProfit[pos] = listProfit[pos+1];
+			}
+
+			if (size > 0)
+			{
+				ArrayResize(listProfit, size-1, size-1);
+				memProfitList[id] = StringImplode(",", listProfit);
+			}
+		}
+		else
+		{
+			lots = initialLots * listLoss[0];
+
+			// shift array 1 step left
+			int size = ArraySize(listLoss);
+
+			for(int pos = 0; pos < size-1; pos++)
+			{
+				listLoss[pos] = listLoss[pos+1];
+			}
+
+			if (size > 0)
+			{
+				ArrayResize(listLoss, size-1, size-1);
+				memLossList[id] = StringImplode(",", listLoss);
+			}
+		}
+	}
+
+	return lots;
+}
+
+int BucketsOfOrders(color &label, int &list[], int &pool, bool set=false)
+{
+	static color mem_labels[];
+	static string mem_tickets[];
+	static int mem_pool[]; // 0 - trades, 1 - pending orders, 2 - history trades
+	
+	//-- cache, this will store only the last list that was set
+	static int mem_tickets_last[];
+	static color mem_label_last = clrNONE;
+	static int mem_pool_last = 0;
+	
+  
+	int size;
+	
+	//-- get data if the same data was asked before
+	if (set == false && (label == clrNONE || label == mem_label_last))
+	{
+		ArrayResize(list, 0);
+		ArrayCopy(list, mem_tickets_last);
+
+	  	label = mem_label_last;
+		pool = mem_pool_last;
+
+		return ArraySize(list);
+	}
+	
+	int idx = ArraySearch(mem_labels, label);
+	
+	//-- set
+	if (set == true)
+	{
+		if (idx == -1)
+		{
+			size = ArraySize(mem_labels);
+
+			ArrayResize(mem_labels, size+1);
+			ArrayResize(mem_pool, size+1);
+			ArrayResize(mem_tickets, size+1);
+			
+			mem_labels[size] = label;
+			mem_pool[size]   = pool;
+			idx              = size;
+		}
+
+		mem_tickets[idx] = StringImplode(",", list);
+		mem_pool[idx]	  = pool;
+
+		//-- cache, save this array in a temporary memory
+		ArrayResize(mem_tickets_last, 0);
+		ArrayCopy(mem_tickets_last, list);
+
+		mem_label_last = label;
+		mem_pool_last  = pool;
+		
+		return true;
+	}
+
+	if (idx == -1)
+	{
+		ArrayResize(list, 0);
+
+		return 0;
+	}
+	
+	//-- get data
+	pool = mem_pool[idx];
+
+	if (mem_tickets[idx] == "")
+	{
+		// because StringExplode returns one empty element for an empty string
+		ArrayResize(list, 0);
+	}
+	else
+	{
+		StringExplode(",", mem_tickets[idx], list);
+	}
+
+	return ArraySize(list);
+}
+
+long BuyLater(
+	string symbol,
+	double lots,
+	double price,
+	double sll = 0, // SL level
+	double tpl = 0, // TP level
+	double slp = 0, // SL adjust in points
+	double tpp = 0, // TP adjust in points
+	double slippage = 0,
+	datetime expiration = 0,
+	int magic = 0,
+	string comment = "",
+	color arrowcolor = clrNONE,
+	bool oco = false
+	)
+{
+	double ask = SymbolInfoDouble(symbol,SYMBOL_ASK);
+	ENUM_ORDER_TYPE type = 0;
+
+	     if (price == ask) {type = ORDER_TYPE_BUY;}
+	else if (price < ask)  {type = ORDER_TYPE_BUY_LIMIT;}
+	else if (price > ask)  {type = ORDER_TYPE_BUY_STOP;}
+
+	return OrderCreate(
+		symbol,
+		type,
+		lots,
+		price,
+		sll,
+		tpl,
+		slp,
+		tpp,
+		slippage,
+		magic,
+		comment,
+		arrowcolor,
+		expiration,
+		oco
+	);
+}
+
+long BuyNow(
+	string symbol,
+	double lots,
+	double sll,
+	double tpl,
+	double slp,
+	double tpp,
+	double slippage = 0,
+	int magic = 0,
+	string comment = "",
+	color arrowcolor = clrNONE,
+	datetime expiration = 0
+	)
+{
+	return OrderCreate(
+		symbol,
+		POSITION_TYPE_BUY,
+		lots,
+		0,
+		sll,
+		tpl,
+		slp,
+		tpp,
+		slippage,
+		magic,
+		comment,
+		arrowcolor,
+		expiration
+	);
+}
+
+int CheckForTradingError(int error_code=-1, string msg_prefix="")
+{
+   // return 0 -> no error
+   // return 1 -> overcomable error
+   // return 2 -> fatal error
+   
+   int retval=0;
+   static int tryouts=0;
+   
+   //-- error check -----------------------------------------------------
+   switch(error_code)
+   {
+      //-- no error
+      case 0:
+         retval=0;
+         break;
+      //-- overcomable errors
+      case TRADE_RETCODE_REQUOTE:
+      case TRADE_RETCODE_REJECT:
+      case TRADE_RETCODE_ERROR:
+      case TRADE_RETCODE_TIMEOUT:
+      case TRADE_RETCODE_INVALID_VOLUME:
+      case TRADE_RETCODE_INVALID_PRICE:
+      case TRADE_RETCODE_INVALID_STOPS:
+      case TRADE_RETCODE_INVALID_EXPIRATION:
+      case TRADE_RETCODE_PRICE_CHANGED:
+      case TRADE_RETCODE_PRICE_OFF:
+      case TRADE_RETCODE_TOO_MANY_REQUESTS:
+      case TRADE_RETCODE_NO_CHANGES:
+      case TRADE_RETCODE_CONNECTION:
+         retval=1;
+         break;
+      //-- critical errors
+      default:
+         retval=2;
+         break;
+   }
+   
+   if (error_code > 0)
+   {
+      string msg = "";
+      if (retval == 1)
+      {
+         StringConcatenate(msg, msg_prefix,": ",ErrorMessage(error_code),". Retrying in 5 seconds..");
+         Sleep(500); 
+      }
+      else if (retval == 2)
+      {
+         StringConcatenate(msg, msg_prefix,": ",ErrorMessage(error_code));
+      }
+      Print(msg);
+   }
+   
+   if (retval==0)
+   {
+      tryouts=0;
+   }
+   else if (retval==1)
+   {
+      tryouts++;
+      if (tryouts>=10)
+      {
+         tryouts=0;
+         retval=2;
+      }
+      else
+      {
+         Print("retry #"+(string)tryouts+" of 10");
+      }
+   }
+   
+   return(retval);
+}
+
+bool CloseTrade(ulong ticket, ulong deviation = 0, color clr = clrNONE)
+{
+	while(true)
+	{
+		bool success = false;
+
+		if (!PositionSelectByTicket(ticket))
+		{
+			return false;
+		}
+
+		string symbol = PositionGetString(POSITION_SYMBOL);
+		long magic    = PositionGetInteger(POSITION_MAGIC);
+		double volume = PositionGetDouble(POSITION_VOLUME);
+
+		// With some CFD we can open position with the max volume more than once,
+		// so we get a position that has volume bigger than the maximum.
+		// Then we cannot close that position, because the volume is too high.
+		// For that reason here we will close it in parts.
+		double max_volume  = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MAX);
+		double part_volume = (volume > max_volume) ? max_volume : volume;
+
+		//-- close --------------------------------------------------------
+		MqlTradeRequest request;
+		MqlTradeResult result;
+		MqlTradeCheckResult check_result;
+		ZeroMemory(request);
+		ZeroMemory(result);
+		ZeroMemory(check_result);
+
+		if((ENUM_POSITION_TYPE)PositionGetInteger(POSITION_TYPE) == POSITION_TYPE_BUY)
+		{
+			//--- prepare request for close BUY position
+			request.type  = ORDER_TYPE_SELL;
+			request.price = SymbolInfoDouble(symbol, SYMBOL_BID);
+		}
+		else
+		{
+			//--- prepare request for close SELL position
+			request.type  = ORDER_TYPE_BUY;
+			request.price = SymbolInfoDouble(symbol, SYMBOL_ASK);
+		}
+
+		request.action    = TRADE_ACTION_DEAL;
+		request.symbol    = symbol;
+		request.volume    = part_volume;
+		request.magic     = magic;
+		request.deviation = (int)(deviation * PipValue(symbol));
+
+		// for hedging mode
+		request.position  = ticket;
+
+		// filling type
+		if (IsFillingTypeAllowed(symbol, SYMBOL_FILLING_FOK))
+			request.type_filling = ORDER_FILLING_FOK;
+		else if (IsFillingTypeAllowed(symbol, SYMBOL_FILLING_IOC))
+			request.type_filling = ORDER_FILLING_IOC;
+		else if (IsFillingTypeAllowed(symbol, ORDER_FILLING_RETURN)) // just in case
+			request.type_filling = ORDER_FILLING_RETURN;
+		else
+			request.type_filling = ORDER_FILLING_RETURN;
+
+		success = OrderSend(request, result);
+
+		//-- error check --------------------------------------------------
+		if (!success || (result.retcode != TRADE_RETCODE_DONE && result.retcode != TRADE_RETCODE_PLACED && result.retcode != TRADE_RETCODE_DONE_PARTIAL))
+		{
+			string errmsgpfx = "Closing position/trade error";
+
+			int erraction = CheckForTradingError(result.retcode, errmsgpfx);
+
+			switch(erraction)
+			{
+				case 0: break;    // no error
+				case 1: continue; // overcomable error
+				case 2: break;    // fatal error
+			}
+
+			return false;
+		}
+		
+		//-- finish work --------------------------------------------------
+		if (result.retcode == TRADE_RETCODE_DONE || result.retcode == TRADE_RETCODE_PLACED)
+		{
+			// we are closing the position in parts?
+			if (volume != part_volume)
+			{
+				continue; // continue the "while" loop, so that the whole volume could be closed
+			}
+
+			while (true)
+			{
+			  	if (MQLInfoInteger(MQL_TESTER) || !PositionSelectByTicket(ticket))
+				{
+					break;
+				}
+
+				Sleep(10);
+			}
+		}
+
+		if (success == true)
+		{
+			if (USE_VIRTUAL_STOPS)
+			{
+				VirtualStopsDriver("clear", ticket);
+			}
+
+			expirationWorker.RemoveExpiration(ticket);
+		}
+		
+		break;
+	}
+	
+	OnTrade();
+
+	return true;
+}
+
+template<typename DT1, typename DT2>
+bool CompareValues(string sign, DT1 v1, DT2 v2)
+{
+	     if (sign == ">") return(v1 > v2);
+	else if (sign == "<") return(v1 < v2);
+	else if (sign == ">=") return(v1 >= v2);
+	else if (sign == "<=") return(v1 <= v2);
+	else if (sign == "==") return(v1 == v2);
+	else if (sign == "!=") return(v1 != v2);
+	else if (sign == "x>") return(v1 > v2);
+	else if (sign == "x<") return(v1 < v2);
+
+	return false;
+}
+
+string CurrentSymbol(string symbol = "")
+{
+   static string memory = "";
+
+	// Set
+   if (symbol != "")
+	{
+		memory = symbol;
+	}
+	// Get
+	else if (memory == "")
+	{
+		memory = Symbol();
+	}
+
+   return memory;
+}
+
+ENUM_TIMEFRAMES CurrentTimeframe(ENUM_TIMEFRAMES tf=-1)
+{
+   static ENUM_TIMEFRAMES memory=0;
+   if (tf>=0) {memory=tf;}
+   return(memory);
+}
+
+double CustomPoint(string symbol)
+{
+	static string symbols[];
+	static double points[];
+	static string last_symbol = "-";
+	static double last_point  = 0;
+	static int last_i         = 0;
+	static int size           = 0;
+
+	//-- variant A) use the cache for the last used symbol
+	if (symbol == last_symbol)
+	{
+		return last_point;
+	}
+
+	//-- variant B) search in the array cache
+	int i			= last_i;
+	int start_i	= i;
+	bool found	= false;
+
+	if (size > 0)
+	{
+		while (true)
+		{
+			if (symbols[i] == symbol)
+			{
+				last_symbol	= symbol;
+				last_point	= points[i];
+				last_i		= i;
+
+				return last_point;
+			}
+
+			i++;
+
+			if (i >= size)
+			{
+				i = 0;
+			}
+			if (i == start_i) {break;}
+		}
+	}
+
+	//-- variant C) add this symbol to the cache
+	i		= size;
+	size	= size + 1;
+
+	ArrayResize(symbols, size);
+	ArrayResize(points, size);
+
+	symbols[i]	= symbol;
+	points[i]	= 0;
+	last_symbol	= symbol;
+	last_i		= i;
+
+	//-- unserialize rules from FXD_POINT_FORMAT_RULES
+	string rules[];
+	StringExplode(",", POINT_FORMAT_RULES, rules);
+
+	int rules_count = ArraySize(rules);
+
+	if (rules_count > 0)
+	{
+		string rule[];
+
+		for (int r = 0; r < rules_count; r++)
+		{
+			StringExplode("=", rules[r], rule);
+
+			//-- a single rule must contain 2 parts, [0] from and [1] to
+			if (ArraySize(rule) != 2) {continue;}
+
+			double from = StringToDouble(rule[0]);
+			double to	= StringToDouble(rule[1]);
+
+			//-- "to" must be a positive number, different than 0
+			if (to <= 0) {continue;}
+
+			//-- "from" can be a number or a string
+			// a) string
+			if (from == 0 && StringLen(rule[0]) > 0)
+			{
+				string s_from = rule[0];
+				int pos       = StringFind(s_from, "?");
+
+				if (pos < 0) // ? not found
+				{
+					if (StringFind(symbol, s_from) == 0) {points[i] = to;}
+				}
+				else if (pos == 0) // ? is the first symbol => match the second symbol
+				{
+					if (StringFind(symbol, StringSubstr(s_from, 1), 3) == 3)
+					{
+						points[i] = to;
+					}
+				}
+				else if (pos > 0) // ? is the second symbol => match the first symbol
+				{
+					if (StringFind(symbol, StringSubstr(s_from, 0, pos)) == 0)
+					{
+						points[i] = to;
+					}
+				}
+			}
+
+			// b) number
+			if (from == 0) {continue;}
+
+			if (SymbolInfoDouble(symbol, SYMBOL_POINT) == from)
+			{
+				points[i] = to;
+			}
+		}
+	}
+
+	if (points[i] == 0)
+	{
+		points[i] = SymbolInfoDouble(symbol, SYMBOL_POINT);
+	}
+
+	last_point = points[i];
+
+	return last_point;
+}
+
+bool DeleteOrder(ulong ticket, color arrowcolor=clrNONE)
+{
+   while(true)
+   {
+      MqlTradeRequest request;
+      MqlTradeResult result;
+      MqlTradeCheckResult check_result;
+      ZeroMemory(request);
+      ZeroMemory(result);
+      ZeroMemory(check_result);
+   
+      request.order=ticket;
+      request.action=TRADE_ACTION_REMOVE;
+      request.comment="Pending order canceled";
+   
+      if (!OrderCheck(request,check_result))  {
+         Print("OrderCheck() failed: "+(string)check_result.comment+" ("+(string)check_result.retcode+")");
+         return false;
+      }
+      
+      bool success = OrderSend(request,result);
+      
+      //-- error check --------------------------------------------------
+      if (!success || result.retcode!=TRADE_RETCODE_DONE)
+      {
+         string errmsgpfx="Delete order error";
+         int erraction=CheckForTradingError(result.retcode, errmsgpfx);
+         switch(erraction)
+         {
+            case 0: break;    // no error
+            case 1: continue; // overcomable error
+            case 2: break;    // fatal error
+         }
+         return(false);
+      }
+      
+      //-- finish work --------------------------------------------------
+      if (result.retcode==TRADE_RETCODE_DONE)
+      {
+         //== Wait until MT5 updates it's cache
+         int w;
+         for (w=0; w<5000; w++)
+         {
+            if (!OrderSelect(ticket)) {break;}
+            Sleep(1);
+         }
+         if (w==5000) {
+            Print("Check error: Delete order");  
+         }
+         if (OrderSelect(ticket)) {
+            Print("Something went wrong with the order");
+            return false;
+         }
+      }
+		
+		if (success==true) {
+         if (USE_VIRTUAL_STOPS) {
+            VirtualStopsDriver("clear",ticket);
+         }
+         //RegisterEvent("trade");
+         //return(true);
+      }
+		
+      break;
+   }
+   OnTrade();
+   return(true);
+}
+
+string DoubleToStr(double d, int dig){return(DoubleToString(d,dig));}
+
+void DrawSpreadInfo()
+{
+   static bool allow_draw = true;
+   if (allow_draw==false) {return;}
+   if (MQLInfoInteger(MQL_TESTER) && !MQLInfoInteger(MQL_VISUAL_MODE)) {allow_draw=false;} // Allowed to draw only once in testing mode
+
+   static bool passed         = false;
+   static double max_spread   = 0;
+   static double min_spread   = EMPTY_VALUE;
+   static double avg_spread   = 0;
+   static double avg_add      = 0;
+   static double avg_cnt      = 0;
+
+   double custom_point = CustomPoint(Symbol());
+   double current_spread = 0;
+   if (custom_point > 0) {
+      current_spread = (SymbolInfoDouble(Symbol(),SYMBOL_ASK)-SymbolInfoDouble(Symbol(),SYMBOL_BID))/custom_point;
+   }
+   if (current_spread > max_spread) {max_spread = current_spread;}
+   if (current_spread < min_spread) {min_spread = current_spread;}
+   
+   avg_cnt++;
+   avg_add     = avg_add + current_spread;
+   avg_spread  = avg_add / avg_cnt;
+
+   int x=0; int y=0;
+   string name;
+
+   // create objects
+   if (passed == false)
+   {
+      passed=true;
+      
+      name="fxd_spread_current_label";
+      if (ObjectFind(0, name)==-1) {
+         ObjectCreate(0, name, OBJ_LABEL, 0, 0, 0);
+         ObjectSetInteger(0, name, OBJPROP_XDISTANCE, x+1);
+         ObjectSetInteger(0, name, OBJPROP_YDISTANCE, y+1);
+         ObjectSetInteger(0, name, OBJPROP_CORNER, CORNER_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_ANCHOR, ANCHOR_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_HIDDEN, true);
+         ObjectSetInteger(0, name, OBJPROP_FONTSIZE, 18);
+         ObjectSetInteger(0, name, OBJPROP_COLOR, clrDarkOrange);
+         ObjectSetString(0, name, OBJPROP_FONT, "Arial");
+         ObjectSetString(0, name, OBJPROP_TEXT, "Spread:");
+      }
+      name="fxd_spread_max_label";
+      if (ObjectFind(0, name)==-1) {
+         ObjectCreate(0, name, OBJ_LABEL, 0, 0, 0);
+         ObjectSetInteger(0, name, OBJPROP_XDISTANCE, x+148);
+         ObjectSetInteger(0, name, OBJPROP_YDISTANCE, y+17);
+         ObjectSetInteger(0, name, OBJPROP_CORNER, CORNER_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_ANCHOR, ANCHOR_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_HIDDEN, true);
+         ObjectSetInteger(0, name, OBJPROP_FONTSIZE, 7);
+         ObjectSetInteger(0, name, OBJPROP_COLOR, clrOrangeRed);
+         ObjectSetString(0, name, OBJPROP_FONT, "Arial");
+         ObjectSetString(0, name, OBJPROP_TEXT, "max:");
+      }
+      name="fxd_spread_avg_label";
+      if (ObjectFind(0, name)==-1) {
+         ObjectCreate(0, name, OBJ_LABEL, 0, 0, 0);
+         ObjectSetInteger(0, name, OBJPROP_XDISTANCE, x+148);
+         ObjectSetInteger(0, name, OBJPROP_YDISTANCE, y+9);
+         ObjectSetInteger(0, name, OBJPROP_CORNER, CORNER_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_ANCHOR, ANCHOR_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_HIDDEN, true);
+         ObjectSetInteger(0, name, OBJPROP_FONTSIZE, 7);
+         ObjectSetInteger(0, name, OBJPROP_COLOR, clrDarkOrange);
+         ObjectSetString(0, name, OBJPROP_FONT, "Arial");
+         ObjectSetString(0, name, OBJPROP_TEXT, "avg:");
+      }
+      name="fxd_spread_min_label";
+      if (ObjectFind(0, name)==-1) {
+         ObjectCreate(0, name, OBJ_LABEL, 0, 0, 0);
+         ObjectSetInteger(0, name, OBJPROP_XDISTANCE, x+148);
+         ObjectSetInteger(0, name, OBJPROP_YDISTANCE, y+1);
+         ObjectSetInteger(0, name, OBJPROP_CORNER, CORNER_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_ANCHOR, ANCHOR_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_HIDDEN, true);
+         ObjectSetInteger(0, name, OBJPROP_FONTSIZE, 7);
+         ObjectSetInteger(0, name, OBJPROP_COLOR, clrGold);
+         ObjectSetString(0, name, OBJPROP_FONT, "Arial");
+         ObjectSetString(0, name, OBJPROP_TEXT, "min:");
+      }
+      name="fxd_spread_current";
+      if (ObjectFind(0, name)==-1) {
+         ObjectCreate(0, name, OBJ_LABEL, 0, 0, 0);
+         ObjectSetInteger(0, name, OBJPROP_XDISTANCE, x+93);
+         ObjectSetInteger(0, name, OBJPROP_YDISTANCE, y+1);
+         ObjectSetInteger(0, name, OBJPROP_CORNER, CORNER_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_ANCHOR, ANCHOR_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_HIDDEN, true);
+         ObjectSetInteger(0, name, OBJPROP_FONTSIZE, 18);
+         ObjectSetInteger(0, name, OBJPROP_COLOR, clrDarkOrange);
+         ObjectSetString(0, name, OBJPROP_FONT, "Arial");
+         ObjectSetString(0, name, OBJPROP_TEXT, "0");
+      }
+      name="fxd_spread_max";
+      if (ObjectFind(0, name)==-1) {
+         ObjectCreate(0, name, OBJ_LABEL, 0, 0, 0);
+         ObjectSetInteger(0, name, OBJPROP_XDISTANCE, x+173);
+         ObjectSetInteger(0, name, OBJPROP_YDISTANCE, y+17);
+         ObjectSetInteger(0, name, OBJPROP_CORNER, CORNER_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_ANCHOR, ANCHOR_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_HIDDEN, true);
+         ObjectSetInteger(0, name, OBJPROP_FONTSIZE, 7);
+         ObjectSetInteger(0, name, OBJPROP_COLOR, clrOrangeRed);
+         ObjectSetString(0, name, OBJPROP_FONT, "Arial");
+         ObjectSetString(0, name, OBJPROP_TEXT, "0");
+      }
+      name="fxd_spread_avg";
+      if (ObjectFind(0, name)==-1) {
+         ObjectCreate(0, name, OBJ_LABEL, 0, 0, 0);
+         ObjectSetInteger(0, name, OBJPROP_XDISTANCE, x+173);
+         ObjectSetInteger(0, name, OBJPROP_YDISTANCE, y+9);
+         ObjectSetInteger(0, name, OBJPROP_CORNER, CORNER_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_ANCHOR, ANCHOR_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_HIDDEN, true);
+         ObjectSetInteger(0, name, OBJPROP_FONTSIZE, 7);
+         ObjectSetInteger(0, name, OBJPROP_COLOR, clrDarkOrange);
+         ObjectSetString(0, name, OBJPROP_FONT, "Arial");
+         ObjectSetString(0, name, OBJPROP_TEXT, "0");
+      }
+      name="fxd_spread_min";
+      if (ObjectFind(0, name)==-1) {
+         ObjectCreate(0, name, OBJ_LABEL, 0, 0, 0);
+         ObjectSetInteger(0, name, OBJPROP_XDISTANCE, x+173);
+         ObjectSetInteger(0, name, OBJPROP_YDISTANCE, y+1);
+         ObjectSetInteger(0, name, OBJPROP_CORNER, CORNER_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_ANCHOR, ANCHOR_LEFT_LOWER);
+         ObjectSetInteger(0, name, OBJPROP_HIDDEN, true);
+         ObjectSetInteger(0, name, OBJPROP_FONTSIZE, 7);
+         ObjectSetInteger(0, name, OBJPROP_COLOR, clrGold);
+         ObjectSetString(0, name, OBJPROP_FONT, "Arial");
+         ObjectSetString(0, name, OBJPROP_TEXT, "0");
+      }
+   }
+   
+   ObjectSetString(0, "fxd_spread_current", OBJPROP_TEXT, DoubleToStr(current_spread,2));
+   ObjectSetString(0, "fxd_spread_max", OBJPROP_TEXT, DoubleToStr(max_spread,2));
+   ObjectSetString(0, "fxd_spread_avg", OBJPROP_TEXT, DoubleToStr(avg_spread,2));
+   ObjectSetString(0, "fxd_spread_min", OBJPROP_TEXT, DoubleToStr(min_spread,2));
+}
+
+string DrawStatus(string text="")
+{
+   static string memory;
+   if (text=="") {
+      return(memory);
+   }
+   
+   static bool passed = false;
+   int x=210; int y=0;
+   string name;
+
+   //-- draw the objects once
+   if (passed == false)
+   {
+      passed = true;
+      name="fxd_status_title";
+      ObjectCreate(0,name, OBJ_LABEL, 0, 0, 0);
+      ObjectSetInteger(0,name, OBJPROP_BACK, false);
+      ObjectSetInteger(0, name, OBJPROP_CORNER, CORNER_LEFT_LOWER);
+      ObjectSetInteger(0, name, OBJPROP_ANCHOR, ANCHOR_LEFT_LOWER);
+      ObjectSetInteger(0, name, OBJPROP_HIDDEN, true);
+      ObjectSetInteger(0,name, OBJPROP_XDISTANCE, x);
+      ObjectSetInteger(0,name, OBJPROP_YDISTANCE, y+17);
+      ObjectSetString(0,name, OBJPROP_TEXT, "Status");
+      ObjectSetString(0,name, OBJPROP_FONT, "Arial");
+      ObjectSetInteger(0,name, OBJPROP_FONTSIZE, 7);
+      ObjectSetInteger(0,name, OBJPROP_COLOR, clrGray);
+      
+      name="fxd_status_text";
+      ObjectCreate(0,name, OBJ_LABEL, 0, 0, 0);
+      ObjectSetInteger(0,name, OBJPROP_BACK, false);
+      ObjectSetInteger(0, name, OBJPROP_CORNER, CORNER_LEFT_LOWER);
+      ObjectSetInteger(0, name, OBJPROP_ANCHOR, ANCHOR_LEFT_LOWER);
+      ObjectSetInteger(0, name, OBJPROP_HIDDEN, true);
+      ObjectSetInteger(0,name, OBJPROP_XDISTANCE, x+2);
+      ObjectSetInteger(0,name, OBJPROP_YDISTANCE, y+1);
+      ObjectSetString(0,name, OBJPROP_FONT, "Arial");
+      ObjectSetInteger(0,name, OBJPROP_FONTSIZE, 12);
+      ObjectSetInteger(0,name, OBJPROP_COLOR, clrAqua);
+   }
+
+   //-- update the text when needed
+   if (text != memory) {
+      memory=text;
+      ObjectSetString(0,"fxd_status_text", OBJPROP_TEXT, text);
+   }
+   
+   return(text);
+}
+
+double DynamicLots(string symbol, string mode="balance", double value=0, double sl=0, string align="align")
+{
+   double size=0;
+   double LotStep=SymbolLotStep(symbol);
+   double LotSize=SymbolLotSize(symbol);
+   double MinLots=SymbolMinLot(symbol);
+   double MaxLots=SymbolMaxLot(symbol);
+   double TickValue=SymbolInfoDouble(symbol,SYMBOL_TRADE_TICK_VALUE);
+   double margin_required=0;
+   bool ocm = OrderCalcMargin(ORDER_TYPE_BUY,symbol,1,ask(symbol),margin_required); // This is the MODE_MARGINREQUIRED analog in MQL5
+   //if (value>MaxLots) {value=value/LotSize;} // Money-to-Lot conversion
+   
+        if (mode=="fixed" || mode=="lots") {size=value;}
+   else if (mode=="block-equity")     {size=(value/100)*AccountEquity()/margin_required;}
+   else if (mode=="block-balance")    {size=(value/100)*AccountBalance()/margin_required;}
+   else if (mode=="block-freemargin") {size=(value/100)*AccountFreeMargin()/margin_required;}
+   else if (mode=="equity")     {size=(value/100)*AccountEquity()/(LotSize*TickValue);}
+   else if (mode=="balance")    {size=(value/100)*AccountBalance()/(LotSize*TickValue);}
+   else if (mode=="freemargin") {size=(value/100)*AccountFreeMargin()/(LotSize*TickValue);}
+   else if (mode=="equityRisk") {size=((value/100)*AccountEquity())/(sl*TickValue*PipValue(symbol));}
+   else if (mode=="balanceRisk"){size=((value/100)*AccountBalance())/(sl*TickValue*PipValue(symbol));}
+   else if (mode=="freemarginRisk") {size=((value/100)*AccountFreeMargin())/(sl*TickValue*PipValue(symbol));}
+   else if (mode=="fixedRisk")   {size=(value)/(sl*TickValue*PipValue(symbol));}
+   else if (mode=="fixedRatio" || mode=="RJFR") { 
+      /////
+      // Ryan Jones Fixed Ratio MM static data
+      static double RJFR_start_lots=0;
+      static double RJFR_delta=0;
+      static double RJFR_units=1;
+      static double RJFR_target_lower=0;
+      static double RJFR_target_upper=0;
+      /////
+      
+      if (RJFR_start_lots<=0) {RJFR_start_lots=value;}
+      if (RJFR_start_lots<MinLots) {RJFR_start_lots=MinLots;}
+      if (RJFR_delta<=0) {RJFR_delta=sl;}
+      if (RJFR_target_upper<=0) {
+         RJFR_target_upper=AccountEquity()+(RJFR_units*RJFR_delta);
+         Print("Fixed Ratio MM: Units=>",RJFR_units,"; Delta=",RJFR_delta,"; Upper Target Equity=>",RJFR_target_upper);
+      }
+      if (AccountEquity()>=RJFR_target_upper)
+      {
+         while(true) {
+            Print("Fixed Ratio MM going up to ",(RJFR_start_lots*(RJFR_units+1))," lots: Equity is above Upper Target Equity (",AccountEquity(),">=",RJFR_target_upper,")");
+            RJFR_units++;
+            RJFR_target_lower=RJFR_target_upper;
+            RJFR_target_upper=RJFR_target_upper+(RJFR_units*RJFR_delta);
+            Print("Fixed Ratio MM: Units=>",RJFR_units,"; Delta=",RJFR_delta,"; Lower Target Equity=>",RJFR_target_lower,"; Upper Target Equity=>",RJFR_target_upper);
+            if (AccountEquity()<RJFR_target_upper) {break;}
+         }
+      }
+      else if (AccountEquity()<=RJFR_target_lower)
+      {
+         while(true) {
+         if (AccountEquity()>RJFR_target_lower) {break;}
+            if (RJFR_units>1) {         
+               Print("Fixed Ratio MM going down to ",(RJFR_start_lots*(RJFR_units-1))," lots: Equity is below Lower Target Equity | ", AccountEquity()," <= ",RJFR_target_lower,")");
+               RJFR_target_upper=RJFR_target_lower;
+               RJFR_target_lower=RJFR_target_lower-((RJFR_units-1)*RJFR_delta);
+               RJFR_units--;
+               Print("Fixed Ratio MM: Units=>",RJFR_units,"; Delta=",RJFR_delta,"; Lower Target Equity=>",RJFR_target_lower,"; Upper Target Equity=>",RJFR_target_upper);
+            } else {break;}
+         }
+      }
+      size=RJFR_start_lots*RJFR_units;
+   }
+		
+	if (size==EMPTY_VALUE) {size=0;}
+   
+   static bool alert_min_lots=false;
+   if (size<MinLots && alert_min_lots==false) {alert_min_lots=true;
+      Alert("You want to trade ",size," lot, but your broker's minimum is ",MinLots," lot. The trade/order will continue with ",MinLots," lot instead of ",size," lot. The same rule will be applied for next trades/orders with desired lot size lower than the minimum. You will not see this message again until you restart the program.");
+   }
+
+   size=MathRound(size/LotStep)*LotStep;
+   
+   if (align=="align") {
+      if (size<MinLots) {size=MinLots;}
+      if (size>MaxLots) {size=MaxLots;}
+   }
+   
+   return (size);
+}
+
+string ErrorMessage(int error_code=-1)
+{
+	string e = "";
+	if (error_code<0) {error_code=GetLastError();}
+	
+
+	switch(error_code)
+	{
+		//--- success
+		case 0: return("The operation completed successfully");
+		
+		//--- Runtime
+		case 4001: e = "Unexpected internal error"; break;
+		case 4002: e = "Wrong parameter in the inner call of the client terminal function"; break;
+		case 4003: e = "Wrong parameter when calling the system function"; break;
+		case 4004: e = "Not enough memory to perform the system function"; break;
+		case 4005: e = "The structure contains objects of strings and/or dynamic arrays and/or structure of such objects and/or classes"; break;
+		case 4006: e = "Array of a wrong type, wrong size, or a damaged object of a dynamic array"; break;
+		case 4007: e = "Not enough memory for the relocation of an array, or an attempt to change the size of a static array"; break;
+		case 4008: e = "Not enough memory for the relocation of string"; break;
+		case 4009: e = "Not initialized string"; break;
+		case 4010: e = "Invalid date and/or time"; break;
+		case 4011: e = "Requested array size exceeds 2 GB"; break;
+		case 4012: e = "Wrong pointer"; break;
+		case 4013: e = "Wrong type of pointer"; break;
+		case 4014: e = "System function is not allowed to call"; break;
+		case 4015: e = "The names of the dynamic and the static resource match"; break;
+		case 4016: e = "Resource with this name has not been found in EX5"; break;
+		case 4017: e = "Unsupported resource type or its size exceeds 16 Mb"; break;
+		case 4018: e = "The resource name exceeds 63 characters"; break;
+		
+		//-- Charts
+		case 4101: e = "Wrong chart ID"; break;
+		case 4102: e = "Chart does not respond"; break;
+		case 4103: e = "Chart not found"; break;
+		case 4104: e = "No Expert Advisor in the chart that could handle the event"; break;
+		case 4105: e = "Chart opening error"; break;
+		case 4106: e = "Failed to change chart symbol and period"; break;
+		case 4107: e = "Wrong parameter for timer"; break;
+		case 4108: e = "Failed to create timer"; break;
+		case 4109: e = "Wrong chart property ID"; break;
+		case 4110: e = "Error creating screenshots"; break;
+		case 4111: e = "Error navigating through chart"; break;
+		case 4112: e = "Error applying template"; break;
+		case 4113: e = "Subwindow containing the indicator was not found"; break;
+		case 4114: e = "Error adding an indicator to chart"; break;
+		case 4115: e = "Error deleting an indicator from the chart"; break;
+		case 4116: e = "Indicator not found on the specified chart"; break;
+
+		//-- Graphical Objects
+		case 4201: e = "Error working with a graphical object"; break;
+		case 4202: e = "Graphical object was not found"; break;
+		case 4203: e = "Wrong ID of a graphical object property"; break;
+		case 4204: e = "Unable to get date corresponding to the value"; break;
+		case 4205: e = "Unable to get value corresponding to the date"; break;
+
+		//-- Market Info
+		case 4301: e = "Unknown symbol"; break;
+		case 4302: e = "Symbol is not selected in MarketWatch"; break;
+		case 4303: e = "Wrong identifier of a symbol property"; break;
+		case 4304: e = "Time of the last tick is not known (no ticks)"; break;
+		case 4305: e = "Error adding or deleting a symbol in MarketWatch"; break;
+
+		//-- History Access
+		case 4401: e = "Requested history not found"; break;
+		case 4402: e = "Wrong ID of the history property"; break;
+
+		//-- Global Variables
+		case 4501: e = "Global variable of the client terminal is not found"; break;
+		case 4502: e = "Global variable of the client terminal with the same name already exists"; break;
+		case 4510: e = "Email sending failed"; break;
+		case 4511: e = "Sound playing failed"; break;
+		case 4512: e = "Wrong identifier of the program property"; break;
+		case 4513: e = "Wrong identifier of the terminal property"; break;
+		case 4514: e = "File sending via ftp failed"; break;
+		case 4515: e = "Failed to send a notification"; break;
+		case 4516: e = "Invalid parameter for sending a notification - an empty string or NULL has been passed to the SendNotification() function"; break;
+		case 4517: e = "Wrong settings of notifications in the terminal (ID is not specified or permission is not set)"; break;
+		case 4518: e = "Too frequent sending of notifications"; break;
+
+		//-- Custom Indicator Buffers
+		case 4601: e = "Not enough memory for the distribution of indicator buffers"; break;
+		case 4602: e = "Wrong indicator buffer index"; break;
+
+		//-- Custom Indicator Properties
+		case 4603: e = "Wrong ID of the custom indicator property"; break;
+
+		//-- Account
+		case 4701: e = "Wrong account property ID"; break;
+		case 4751: e = "Wrong trade property ID"; break;
+		case 4752: e = "Trading by Expert Advisors prohibited"; break;
+		case 4753: e = "Position not found"; break;
+		case 4754: e = "Order not found"; break;
+		case 4755: e = "Deal not found"; break;
+		case 4756: e = "Trade request sending failed"; break;
+
+		//-- Indicators
+		case 4801: e = "Unknown symbol"; break;
+		case 4802: e = "Indicator cannot be created"; break;
+		case 4803: e = "Not enough memory to add the indicator"; break;
+		case 4804: e = "The indicator cannot be applied to another indicator"; break;
+		case 4805: e = "Error applying an indicator to chart"; break;
+		case 4806: e = "Requested data not found"; break;
+		case 4807: e = "Wrong indicator handle"; break;
+		case 4808: e = "Wrong number of parameters when creating an indicator"; break;
+		case 4809: e = "No parameters when creating an indicator"; break;
+		case 4810: e = "The first parameter in the array must be the name of the custom indicator"; break;
+		case 4811: e = "Invalid parameter type in the array when creating an indicator"; break;
+		case 4812: e = "Wrong index of the requested indicator buffer"; break;
+
+		//-- Depth of Market
+		case 4901: e = "Depth Of Market can not be added"; break;
+		case 4902: e = "Depth Of Market can not be removed"; break;
+		case 4903: e = "The data from Depth Of Market can not be obtained"; break;
+		case 4904: e = "Error in subscribing to receive new data from Depth Of Market"; break;
+
+		//-- File Operations
+		case 5001: e = "More than 64 files cannot be opened at the same time"; break;
+		case 5002: e = "Invalid file name"; break;
+		case 5003: e = "Too long file name"; break;
+		case 5004: e = "File opening error"; break;
+		case 5005: e = "Not enough memory for cache to read"; break;
+		case 5006: e = "File deleting error"; break;
+		case 5007: e = "A file with this handle was closed, or was not opening at all"; break;
+		case 5008: e = "Wrong file handle"; break;
+		case 5009: e = "The file must be opened for writing"; break;
+		case 5010: e = "The file must be opened for reading"; break;
+		case 5011: e = "The file must be opened as a binary one"; break;
+		case 5012: e = "The file must be opened as a text"; break;
+		case 5013: e = "The file must be opened as a text or CSV"; break;
+		case 5014: e = "The file must be opened as CSV"; break;
+		case 5015: e = "File reading error"; break;
+		case 5016: e = "String size must be specified, because the file is opened as binary"; break;
+		case 5017: e = "A text file must be for string arrays, for other arrays - binary"; break;
+		case 5018: e = "This is not a file, this is a directory"; break;
+		case 5019: e = "File does not exist"; break;
+		case 5020: e = "File can not be rewritten"; break;
+		case 5021: e = "Wrong directory name"; break;
+		case 5022: e = "Directory does not exist"; break;
+		case 5023: e = "This is a file, not a directory"; break;
+		case 5024: e = "The directory cannot be removed"; break;
+		case 5025: e = "Failed to clear the directory (probably one or more files are blocked and removal operation failed)"; break;
+		case 5026: e = "Failed to write a resource to a file"; break;
+
+		//-- String Casting
+		case 5030: e = "No date in the string"; break;
+		case 5031: e = "Wrong date in the string"; break;
+		case 5032: e = "Wrong time in the string"; break;
+		case 5033: e = "Error converting string to date"; break;
+		case 5034: e = "Not enough memory for the string"; break;
+		case 5035: e = "The string length is less than expected"; break;
+		case 5036: e = "Too large number, more than ULONG_MAX"; break;
+		case 5037: e = "Invalid format string"; break;
+		case 5038: e = "Amount of format specifiers more than the parameters"; break;
+		case 5039: e = "Amount of parameters more than the format specifiers"; break;
+		case 5040: e = "Damaged parameter of string type"; break;
+		case 5041: e = "Position outside the string"; break;
+		case 5042: e = "0 added to the string end, a useless operation"; break;
+		case 5043: e = "Unknown data type when converting to a string"; break;
+		case 5044: e = "Damaged string object"; break;
+
+		//-- Operations with Arrays
+		case 5050: e = "Copying incompatible arrays. String array can be copied only to a string array, and a numeric array - in numeric array only"; break;
+		case 5051: e = "The receiving array is declared as AS_SERIES, and it is of insufficient size"; break;
+		case 5052: e = "Too small array, the starting position is outside the array"; break;
+		case 5053: e = "An array of zero length"; break;
+		case 5054: e = "Must be a numeric array"; break;
+		case 5055: e = "Must be a one-dimensional array"; break;
+		case 5056: e = "Timeseries cannot be used"; break;
+		case 5057: e = "Must be an array of type double"; break;
+		case 5058: e = "Must be an array of type float"; break;
+		case 5059: e = "Must be an array of type long"; break;
+		case 5060: e = "Must be an array of type int"; break;
+		case 5061: e = "Must be an array of type short"; break;
+		case 5062: e = "Must be an array of type char"; break;
+		
+		//-- Operations with OpenCL
+		case 5100: e = "OpenCL functions are not supported on this computer"; break;
+		case 5101: e = "Internal error occurred when running OpenCL"; break;
+		case 5102: e = "Invalid OpenCL handle"; break;
+		case 5103: e = "Error creating the OpenCL context"; break;
+		case 5104: e = "Failed to create a run queue in OpenCL"; break;
+		case 5105: e = "Error occurred when compiling an OpenCL program"; break;
+		case 5106: e = "Too long kernel name (OpenCL kernel)"; break;
+		case 5107: e = "Error creating an OpenCL kernel"; break;
+		case 5108: e = "Error occurred when setting parameters for the OpenCL kernel"; break;
+		case 5109: e = "OpenCL program runtime error"; break;
+		case 5110: e = "Invalid size of the OpenCL buffer"; break;
+		case 5111: e = "Invalid offset in the OpenCL buffer"; break;
+		case 5112: e = "Failed to create an OpenCL buffer"; break;
+		
+		//-- Operations with WebRequest
+		case 5200: e = "Invalid URL"; break;
+		case 5201: e = "Failed to connect to specified URL"; break;
+		case 5202: e = "Timeout exceeded"; break;
+		case 5203: e = "HTTP request failed"; break;
+
+		//-- trading errors
+		case 10004: e = "Requote occured"; break;
+		case 10006: e = "Order is not accepted by the server"; break;
+		case 10007: e = "Request canceled by trader"; break;
+		case 10010: e = "Only part of the request was completed"; break;
+		case 10011: e = "Request processing error"; break;
+		case 10012: e = "Request canceled by timeout"; break;
+		case 10013: e = "Invalid request"; break;
+		case 10014: e = "Invalid volume"; break;
+		case 10015: e = "Invalid price"; break;
+		case 10016: e = "Invalid SL or TP"; break;
+		case 10017: e = "Trading is disabled"; break;
+		case 10018: e = "Market is closed"; break;
+		case 10019: e = "Not enough money to trade"; break;
+		case 10020: e = "Prices changed"; break;
+		case 10021: e = "There are no quotes to process the request"; break;
+		case 10022: e = "Invalid expiration date in the order request"; break;
+		case 10023: e = "Order state changed"; break;
+		case 10024: e = "Too frequent requests"; break;
+		case 10025: e = "No changes in request"; break;
+		case 10026: e = "Autotrading is disabled by the server"; break;
+		case 10027: e = "Autotrading is disabled by the client terminal"; break;
+		case 10028: e = "Request locked for processing"; break;
+		case 10029: e = "Order or trade frozen"; break;
+		case 10030: e = "Invalid order filling type"; break;
+		case 10031: e = "No connection with the trade server"; break;
+		case 10032: e = "Operation is allowed only for live accounts"; break;
+		case 10033: e = "The number of pending orders has reached the limit"; break;
+		case 10034: e = "The volume of orders and trades for the symbol has reached the limit"; break;
+		case 10035: e = "Incorrect or prohibited order type"; break;
+		case 10036: e = "Position with the specified POSITION_IDENTIFIER has already been closed"; break;
+		case 10038: e = "A close volume exceeds the current position volume"; break;
+		case 10039: e = "A close order already exists for a specified position"; break;
+		//-- User-Defined Errors
+		case 65536: e = "User defined errors"; break;
+		default:	e = "Unknown error";
+	}
+
+	StringConcatenate(e, e," (",error_code,")");
+	
+	return e;
+}
+
+datetime ExpirationTime(string mode="GTC",int days=0, int hours=0, int minutes=0, datetime custom=0)
+{
+	datetime now        = TimeCurrent();
+   datetime expiration = now;
+
+	     if (mode == "GTC" || mode == "") {expiration = 0;}
+	else if (mode == "today")             {expiration = (datetime)(MathFloor((now + 86400.0) / 86400.0) * 86400.0);}
+	else if (mode == "specified")
+	{
+		expiration = 0;
+
+		if ((days + hours + minutes) > 0)
+		{
+			expiration = now + (86400 * days) + (3600 * hours) + (60 * minutes);
+		}
+	}
+	else
+	{
+		if (custom <= now)
+		{
+			if (custom < 31557600)
+			{
+				custom = now + custom;
+			}
+			else
+			{
+				custom = 0;
+			}
+		}
+
+		expiration = custom;
+	}
+
+	return expiration;
+}
+
+ENUM_ORDER_TYPE_TIME ExpirationTypeByTime(string symbol, datetime expiration)
+{
+	datetime now                   = TimeCurrent();
+	ENUM_ORDER_TYPE_TIME type_time = ORDER_TIME_GTC;
+
+	// Detect Type Time
+	if (expiration == 0 || expiration <= now)
+	{
+		type_time = ORDER_TIME_GTC;
+	}
+	else if (expiration == (datetime)(MathFloor((now + 86400.0) / 86400.0) * 86400.0))
+	{
+		type_time = ORDER_TIME_DAY;
+	}
+	else
+	{
+		type_time = ORDER_TIME_SPECIFIED;
+	}
+
+	// What if certain Type Time is not allowed?
+	if (type_time == ORDER_TIME_GTC && !IsExpirationTypeAllowed(symbol, SYMBOL_EXPIRATION_GTC))
+	{
+		type_time = ORDER_TIME_DAY;
+	}
+	
+	if (type_time == ORDER_TIME_DAY && !IsExpirationTypeAllowed(symbol, SYMBOL_EXPIRATION_DAY))
+	{
+		type_time = ORDER_TIME_SPECIFIED;
+	}
+
+	// Return Type Time
+	return type_time;
+}
+
+class ExpirationWorker
+{
+private:
+	struct CachedItems
+	{
+		long ticket;
+		datetime expiration;
+	};
+
+	CachedItems cachedItems[];
+	long chartID;
+	string chartObjectPrefix;
+	string chartObjectSuffix;
+
+	template<typename T>
+	void ArrayClone(T &dest[], T &src[])
+	{
+		int size = ArraySize(src);
+		ArrayResize(dest, size);
+
+		for (int i = 0; i < size; i++)
+		{
+			dest[i] = src[i];
+		}
+	}
+
+	void InitialDiscovery()
+	{
+		ArrayResize(cachedItems, 0);
+
+		int total = PositionsTotal();
+
+		for (int index = 0; index <= total; index++)
+		{
+			long ticket = GetTicketByIndex(index);
+
+			if (ticket == 0) continue;
+
+			datetime expiration = GetExpirationFromObject(ticket);
+
+			if (expiration > 0)
+			{
+				SetExpirationInCache(ticket, expiration);
+			}
+		}
+	}
+
+	long GetTicketByIndex(int index)
+	{
+		return (long)PositionGetTicket(index);
+	}
+
+	datetime GetExpirationFromObject(long ticket)
+	{
+		datetime expiration = (datetime)0;
+		
+		string objectName = chartObjectPrefix + IntegerToString(ticket) + chartObjectSuffix;
+
+		if (ObjectFind(chartID, objectName) == chartID)
+		{
+			expiration = (datetime)ObjectGetInteger(chartID, objectName, OBJPROP_TIME);
+		}
+
+		return expiration;
+	}
+
+	bool RemoveExpirationObject(long ticket)
+	{
+		bool success      = false;
+		string objectName = "";
+
+		objectName = chartObjectPrefix + IntegerToString(ticket) + chartObjectSuffix;
+		success    = ObjectDelete(chartID, objectName);
+
+		return success;
+	}
+
+	void RemoveExpirationFromCache(long ticket)
+	{
+		int size = ArraySize(cachedItems);
+		CachedItems newItems[];
+		int newSize = 0;
+		bool itemRemoved = false;
+
+		for (int i = 0; i < size; i++)
+		{
+			if (cachedItems[i].ticket == ticket)
+			{
+				itemRemoved = true;
+			}
+			else
+			{
+				newSize++;
+				ArrayResize(newItems, newSize);
+				newItems[newSize - 1].ticket     = cachedItems[i].ticket;
+				newItems[newSize - 1].expiration = cachedItems[i].expiration;
+			}
+		}
+
+		if (itemRemoved) ArrayClone(cachedItems, newItems);
+	}
+
+	void SetExpirationInCache(long ticket, datetime expiration)
+	{
+		bool alreadyExists = false;
+		int size           = ArraySize(cachedItems);
+
+		for (int i = 0; i < size; i++)
+		{
+			if (cachedItems[i].ticket == ticket)
+			{
+				cachedItems[i].expiration = expiration;
+				alreadyExists = true;
+				break;
+			}
+		}
+
+		if (alreadyExists == false)
+		{
+			ArrayResize(cachedItems, size + 1);
+			cachedItems[size].ticket     = ticket;
+			cachedItems[size].expiration = expiration;
+		}
+	}
+
+	bool SetExpirationInObject(long ticket, datetime expiration)
+	{
+		if (!PositionSelectByTicket(ticket)) return false;
+
+		string objectName = chartObjectPrefix + IntegerToString(ticket) + chartObjectSuffix;
+		double price      = OrderOpenPrice();
+
+		if (ObjectFind(chartID, objectName) == chartID)
+		{
+			ObjectSetInteger(chartID, objectName, OBJPROP_TIME, expiration);
+			ObjectSetDouble(chartID, objectName, OBJPROP_PRICE, price);
+		}
+		else
+		{
+			ObjectCreate(chartID, objectName, OBJ_ARROW, 0, expiration, price);
+		}
+
+		ObjectSetInteger(chartID, objectName, OBJPROP_ARROWCODE, 77);
+		ObjectSetInteger(chartID, objectName, OBJPROP_HIDDEN, true);
+		ObjectSetInteger(chartID, objectName, OBJPROP_ANCHOR, ANCHOR_TOP);
+		ObjectSetInteger(chartID, objectName, OBJPROP_COLOR, clrRed);
+		ObjectSetInteger(chartID, objectName, OBJPROP_SELECTABLE, false);
+		ObjectSetInteger(chartID, objectName, OBJPROP_TIMEFRAMES, OBJ_NO_PERIODS);
+		ObjectSetString(chartID, objectName, OBJPROP_TEXT, TimeToString(expiration));
+
+		return true;
+	}
+	
+	bool TradeExists(long ticket)
+	{
+		bool exists  = false;
+
+		for (int i = 0; i < PositionsTotal(); i++)
+		{
+			long positionTicket = (long)PositionGetTicket(i);
+
+			if (!positionTicket) continue;
+
+			if (positionTicket == ticket)
+			{
+				exists = true;
+				break;
+			}
+		}
+
+		return exists;
+	}
+
+public:
+	// Default constructor
+	ExpirationWorker()
+	{
+		chartID           = 0;
+		chartObjectPrefix = "#";
+		chartObjectSuffix = " Expiration Marker";
+
+		InitialDiscovery();
+	}
+
+	void SetExpiration(long ticket, datetime expiration)
+	{
+		if (expiration <= 0)
+		{
+			RemoveExpiration(ticket);
+		}
+		else
+		{
+			SetExpirationInObject(ticket, expiration);
+			SetExpirationInCache(ticket, expiration);
+		}
+	}
+
+	datetime GetExpiration(long ticket)
+	{
+		datetime expiration = (datetime)0;
+		int size            = ArraySize(cachedItems);
+
+		for (int i = 0; i < size; i++)
+		{
+			if (cachedItems[i].ticket == ticket)
+			{
+				expiration = cachedItems[i].expiration;
+				break;
+			}
+		}
+
+		return expiration;
+	}
+
+	void RemoveExpiration(long ticket)
+	{
+		RemoveExpirationObject(ticket);
+		RemoveExpirationFromCache(ticket);
+	}
+
+	void Run()
+	{
+		int count = ArraySize(cachedItems);
+
+		if (count > 0)
+		{
+			datetime timeNow = TimeCurrent();
+
+			for (int i = 0; i < count; i++)
+			{
+				if (timeNow >= cachedItems[i].expiration)
+				{
+					long ticket           = cachedItems[i].ticket;
+					bool removeExpiration = false;
+
+					if (TradeExists(ticket))
+					{
+						if (CloseTrade(ticket))
+						{
+							Print("close #", ticket, " by expiration");
+							removeExpiration = true;
+						}
+					}
+					else
+					{
+						removeExpiration = true;
+					}
+
+					if (removeExpiration)
+					{
+						RemoveExpiration(ticket);
+
+						// Removing expiration causes change in the size of the cache,
+						// so reset of the size and one step back of the index is needed
+						count = ArraySize(cachedItems);
+						i--;
+					}
+				}
+			}
+		}
+	}
+};
+
+ExpirationWorker expirationWorker;
+
+bool FilterEventTrade(string group_mode,string group,string market_mode="market",string market="",string BuysOrSells="both", string LimitsOrStops="")
+{
+	int TradesOrders = (LimitsOrStops == "") ? 0 : 1;
+
+	return FilterOrderBy(group_mode, group, market_mode, market, BuysOrSells, LimitsOrStops, TradesOrders, true);
+}
+
+bool FilterOrderBy(
+	string group_mode    = "all",
+	string group         = "0",
+	string market_mode   = "all",
+	string market        = "",
+	string BuysOrSells   = "both",
+	string LimitsOrStops = "",
+	int unused           = 0, // for MQL4 compatibility
+	bool onTrade         = false
+) {
+	//-- db
+	static string markets[];
+	static string market0	= "-";
+	static int markets_size = 0;
+	
+	static string groups[];
+	static string group0	  = "-";
+	static int groups_size = 0;
+	
+	//-- local variables
+	bool type_pass	  = false;
+	bool market_pass = false;
+	bool group_pass  = false;
+
+	int i;
+	long type;
+	ulong magic_number;
+	string symbol;
+	
+	// Trades
+	if (onTrade == false)
+	{
+		type         = OrderType();
+		magic_number = OrderMagicNumber();
+		symbol       = OrderSymbol();
+	}
+	else
+	{
+		type         = e_attrType();
+		magic_number = e_attrMagicNumber();
+		symbol       = e_attrSymbol();
+	}
+	
+	// Trades && History trades
+	if (LimitsOrStops == "")
+	{
+		if (
+				(BuysOrSells == "both"  && (type == ORDER_TYPE_BUY || type == ORDER_TYPE_SELL))
+			|| (BuysOrSells == "buys"  && type == ORDER_TYPE_BUY)
+			|| (BuysOrSells == "sells" && type == ORDER_TYPE_SELL)
+			)
+		{
+			type_pass = true;
+		}
+	}
+	// Pending orders
+	else
+	{
+		if (
+				(BuysOrSells == "both" && (type == ORDER_TYPE_BUY_LIMIT || type == ORDER_TYPE_BUY_STOP || type == ORDER_TYPE_SELL_LIMIT || type == ORDER_TYPE_SELL_STOP))
+			||	(BuysOrSells == "buys" && (type == ORDER_TYPE_BUY_LIMIT || type == ORDER_TYPE_BUY_STOP))
+			|| (BuysOrSells == "sells" && (type == ORDER_TYPE_SELL_LIMIT || type == ORDER_TYPE_SELL_STOP))
+			)
+		{
+			if (
+					(LimitsOrStops == "both" && (type == ORDER_TYPE_BUY_STOP || type == ORDER_TYPE_SELL_STOP || type == ORDER_TYPE_BUY_LIMIT || type == ORDER_TYPE_SELL_LIMIT))
+				||	(LimitsOrStops == "stops" && (type == ORDER_TYPE_BUY_STOP || type == ORDER_TYPE_SELL_STOP))
+				|| (LimitsOrStops == "limits" && (type == ORDER_TYPE_BUY_LIMIT || type == ORDER_TYPE_SELL_LIMIT))	
+				)
+			{
+				type_pass = true;
+			}
+		}
+	}
+	if (type_pass == false) {return false;}
+	
+	//-- check group
+	if (group_mode == "group")
+	{
+		if (group == "")
+		{
+			if (magic_number == MagicStart)
+			{
+				group_pass = true;
+			}
+		}
+		else
+		{
+			if (group0 != group)
+			{
+				group0 = group;
+				StringExplode(",", group, groups);
+				groups_size = ArraySize(groups);
+
+				for(i = 0; i < groups_size; i++)
+				{
+					groups[i] = StringTrim(groups[i]);
+
+					if (groups[i] == "")
+					{
+						groups[i] = "0";
+					}
+				}
+			}
+
+			for(i = 0; i < groups_size; i++)
+			{
+				if (magic_number == (MagicStart + (int)groups[i]))
+				{
+					group_pass = true;
+
+					break;
+				}
+			}
+		}
+	}
+	else if (group_mode == "all" || (group_mode == "manual" && magic_number == 0))
+	{
+		group_pass = true;  
+	}
+
+	if (group_pass == false) {return false;}
+	
+	// check market
+	if (market_mode == "all")
+	{
+		market_pass = true;
+	}
+	else
+	{
+		if (symbol == market)
+		{
+			market_pass = true;
+		}
+		else
+		{
+			if (market0 != market)
+			{
+				market0 = market;
+
+				if (market == "")
+				{
+					markets_size = 1;
+					ArrayResize(markets,1);
+					markets[0] = Symbol();
+				}
+				else
+				{
+					StringExplode(",", market, markets);
+					markets_size = ArraySize(markets);
+
+					for(i = 0; i < markets_size; i++)
+					{
+						markets[i] = StringTrim(markets[i]);
+
+						if (markets[i] == "")
+						{
+							markets[i] = Symbol();
+						}
+					}
+				}
+			}
+
+			for(i = 0; i < markets_size; i++)
+			{
+				if (symbol == markets[i])
+				{
+					market_pass = true;
+
+					break;
+				}
+			}
+		}
+	}
+
+	if (market_pass == false) {return false;}
+ 
+	return(true);
+}
+
+/**
+* This overload works for numeric values and for boolean values
+*/
+template<typename T>
+string FormatValueForPrinting(
+	T value,
+	int digits,
+	int timeFormat
+) {
+	string outputValue = "";
+	string typeName    = typename(value);
+
+	if (typeName == "double" || typeName == "float")
+	{
+		if (digits >= -16 && digits <= 8)
+		{
+			if (value > -1.0 && value < 1.0)
+			{
+				/**
+				* Find how many zeroes are after the point, but before the first non-zero digit.
+				* For example 0.000195 has 3 zeroes
+				* The function would return negative value for values bigger than 0
+				*
+				* @see https://stackoverflow.com/questions/31001901/how-can-i-count-the-number-of-zero-decimals-in-javascript/31002148#31002148
+				*/
+				int zeroesAfterPoint = (int)-MathFloor(MathLog10(MathAbs(value)) + 1);
+
+				digits = zeroesAfterPoint + digits;
+			}
+			
+			T normalizedValue  = NormalizeDouble(value, digits);
+			outputValue = DoubleToString(normalizedValue, digits);
+		}
+		else
+		{
+			outputValue = (string)NormalizeDouble(value, 8);
+		}
+	}
+	else {
+		outputValue = IntegerToString((long)value);
+	}
+
+	return outputValue;
+}
+
+/**
+* Bool overload
+*/
+string FormatValueForPrinting(
+	bool value,
+	int digits,
+	int timeFormat
+) {
+	return (value) ? "true" : "false";
+}
+
+/**
+* Datetime overload
+*/
+string FormatValueForPrinting(
+	datetime value,
+	int digits,
+	int timeFormat
+) {
+	if (
+		timeFormat == (int)EMPTY_VALUE
+		|| timeFormat == EMPTY_VALUE
+	) timeFormat = TIME_DATE|TIME_MINUTES;
+	return TimeToString(value, timeFormat);
+}
+
+/**
+* String overload
+*/
+string FormatValueForPrinting(
+	string value,
+	int digits,
+	int timeFormat
+) {
+	return value;
+}
+
+void GetBetTradesInfo(
+	double &output[],
+	string group,
+	string symbol,
+	int pool, // 0: try running trades first and then history trades, 1: try running only, 2: try history only
+	bool findConsecutive = false
+) {
+	if (ArraySize(output) < 4)
+	{
+		ArrayResize(output, 4);
+		ArrayInitialize(output, 0.0);
+	}
+
+	double lots         = output[0]; // will be the lot size of the first loaded trade
+	double profitOrLoss = output[1]; // 0 is initial value, 1 is profit, -1 is loss
+	double consecutive  = output[2]; // the number of consecutive profitable or losable trades
+	double profit       = output[3]; // will be the profit of the first loaded trade
+	bool historyTrades  = (pool == 2) ? true : false;
+	
+	int total = (historyTrades) ? HistoryTradesTotal() : TradesTotal();
+
+	for (int pos = total - 1; pos >= 0; pos--)
+	{
+		if (
+			   (!historyTrades && TradeSelectByIndex(pos, "group", group, "symbol", symbol))
+			|| (historyTrades && HistoryTradeSelectByIndex(pos, "group", group, "symbol", symbol))
+		) {
+			if (
+				((pool == 0 || pool == 1) && TimeCurrent() - OrderOpenTime() < 3) // skip for brand new trades
+				||
+				(
+					// exclude expired pending orders
+					!historyTrades
+					&& OrderExpiration() > 0
+					&& OrderExpiration() <= OrderCloseTime()
+				)
+			) {
+				continue;
+			}
+
+			if (lots == 0.0)
+			{
+				lots = OrderLots();
+			}
+
+			profit = OrderClosePrice() - OrderOpenPrice();
+			profit = NormalizeDouble(profit, SymbolDigits(OrderSymbol()));
+			
+			if (profit == 0.0)
+			{
+				// Consider a trade with zero profit as non existent
+				continue;
+			}
+
+			if (IsOrderTypeSell())
+			{
+				profit = -1 * profit;
+			}
+
+			if (profitOrLoss == 0)
+			{
+				// We enter here only for the first trade
+				profitOrLoss = (profit < 0.0) ? -1 : 1;
+
+				consecutive++;
+
+				if (findConsecutive == false) break;
+			}
+			else
+			{
+				// For the trades after the first one, if its profit is the opposite of profitOrLoss, we need to break
+				if (
+					   (profitOrLoss > 0.0 && profit < 0.0)
+					|| (profitOrLoss < 0.0 && profit > 0.0)
+				) {
+					break;
+				}
+
+				consecutive++;
+			}
+		}
+	}
+
+	output[0] = lots;
+	output[1] = profitOrLoss;
+	output[2] = consecutive;
+	output[3] = profit;
+	
+	if (pool == 0 && (findConsecutive || profitOrLoss == 0))
+	{
+		// running trades tried, continue with the history trades
+		pool = 2;
+		GetBetTradesInfo(output, group, symbol, pool, findConsecutive);
+	}
+}
+
+double HighestFromTo(string symbol, ENUM_TIMEFRAMES timeframe, datetime time1, datetime time2, int what_to_get=0)
+{
+	static datetime HighestTime = 0;
+	static double HighestID     = 0.0;
+
+	double retval     = 0.0;
+	double HighestVal = 0;
+
+	if (HighestTime == 0) {HighestTime = TimeCurrent();}
+
+	//-- Time mode ---------------------------------------------------------------------
+	if (time1 > 1000000)
+	{
+		double CandleHigh = 0.0;
+		int x1            = iBarShift(symbol, timeframe, time1, false);
+		int x2            = iBarShift(symbol, timeframe, time2, false);
+
+		if (x1 < x2)
+		{
+			x1 = iBarShift(symbol, timeframe, (time1 - 86400), false);
+		}
+
+		if (x1 < 0 || x2 < 0)
+		{
+			return -1;
+		}
+
+		for (int i = x2; i <= x1; i++)
+		{
+			CandleHigh = iHigh(symbol, timeframe, i);
+
+			if (CandleHigh > HighestVal)
+			{
+				HighestVal  = CandleHigh;
+				HighestTime = iTime(symbol, timeframe, i);
+				HighestID   = i;
+			}
+		}
+	}
+	//-- Bars mode ---------------------------------------------------------------------
+	else
+	{
+		int shift = 0;
+
+		if (time1 == time2)
+		{
+			shift = (int)time1;
+		}
+		else
+		{
+			int totalbars = iBars(symbol, timeframe) - 1;
+
+			if (time2 > totalbars || time2 == 0)
+			{
+				time2 = totalbars;
+			}
+
+			shift = iHighest(symbol, timeframe, MODE_HIGH, (int)(time2-time1)+1, (int)time1);
+		}
+
+		HighestVal  = iHigh(symbol, timeframe, shift);
+		HighestTime = iTime(symbol, timeframe, shift);
+		HighestID   = shift;
+	}
+
+	retval = HighestVal;
+
+	if (what_to_get == 2)
+	{
+		retval = (double)HighestTime;
+	}
+	else if (what_to_get == 0)
+	{
+		retval = HighestID;
+	}
+
+	retval = NormalizeDouble(retval, (int)SymbolInfoInteger(symbol, SYMBOL_DIGITS));
+
+	return retval;
+}
+
+bool HistoryTradeSelectByIndex(
+	int index,
+	string group_mode    = "all",
+	string group         = "0",
+	string market_mode   = "all",
+	string market        = "",
+	string BuysOrSells   = "both"
+) {
+	if (LoadHistoryTrade(index, "select_by_pos") && LoadedType() == 3)
+	{
+		if (FilterOrderBy(
+			group_mode,
+			group,
+			market_mode,
+			market,
+			BuysOrSells)
+		) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+int HistoryTradesTotal(datetime from_date=0, datetime to_date=0)
+{
+	if (to_date == 0) {to_date = TimeCurrent() + 1;}
+	
+	HistorySelect(from_date, to_date);
+	
+	SelectedHistoryFromTime(from_date);
+	SelectedHistoryToTime(to_date);
+	
+	return HistoryDealsTotal();
+}
+
+void HistoryTradesTotalReset()
+{
+	if (SelectedHistoryToTime() > 0 || SelectedHistoryFromTime() > 0) {
+		HistorySelect(SelectedHistoryFromTime(), SelectedHistoryToTime());
+	}
+}
+
+template<typename T>
+bool InArray(T &array[], T value)
+{
+	int size = ArraySize(array);
+
+	if (size > 0)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			if (array[i] == value)
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+//+------------------------------------------------------------------+
+//| Checks if the specified expiration mode is allowed               |
+//+------------------------------------------------------------------+
+bool IsExpirationTypeAllowed(string symbol,int exp_type)
+  {
+//--- Obtain the value of the property that describes allowed expiration modes
+   int expiration=(int)SymbolInfoInteger(symbol,SYMBOL_EXPIRATION_MODE);
+//--- Return true, if mode exp_type is allowed
+   return((expiration&exp_type)==exp_type);
+  }
+
+bool IsFillingTypeAllowed(string symbol,int fill_type)
+{
+//--- Obtain the value of the property that describes allowed filling modes
+   int filling=(int)SymbolInfoInteger(symbol,SYMBOL_FILLING_MODE);
+//--- Return true, if mode fill_type is allowed
+   return((filling & fill_type)==fill_type);
+}
+
+bool IsOrderTypeBuy()
+{
+	int loadedType = LoadedType();
+
+	if (loadedType == 1)
+	{
+		if (PositionGetInteger(POSITION_TYPE) == POSITION_TYPE_BUY)
+		{
+			return true;
+		}
+	}
+	else if (loadedType == 3)
+	{
+		return (OrderType() == ORDER_TYPE_BUY);
+	}
+	else if (loadedType == 4)
+	{
+		ulong orderTicket = OrderTicket();
+
+		if (
+			HistoryOrderSelect(orderTicket)
+			&& (
+				HistoryOrderGetInteger(orderTicket, ORDER_TYPE) == ORDER_TYPE_BUY_LIMIT
+				|| HistoryOrderGetInteger(orderTicket, ORDER_TYPE) == ORDER_TYPE_BUY_STOP
+			)
+		) {
+			return true;
+		}
+	}
+	else if (
+		OrderGetInteger(ORDER_TYPE) == ORDER_TYPE_BUY_LIMIT
+		|| OrderGetInteger(ORDER_TYPE) == ORDER_TYPE_BUY_STOP
+	) {
+		return true;
+	}
+
+	return false;
+}
+
+bool IsOrderTypeSell()
+{
+	int loadedType = LoadedType();
+
+	if (loadedType == 1)
+	{
+		if (PositionGetInteger(POSITION_TYPE) == POSITION_TYPE_SELL)
+		{
+			return true;
+		}
+	}
+	else if (loadedType == 3)
+	{
+		return (OrderType() == ORDER_TYPE_SELL);
+	}
+	else if (loadedType == 4)
+	{
+		ulong orderTicket = OrderTicket();
+		
+		if (
+			HistoryOrderSelect(orderTicket)
+			&& (
+				HistoryOrderGetInteger(orderTicket, ORDER_TYPE) == ORDER_TYPE_SELL_LIMIT
+				|| HistoryOrderGetInteger(orderTicket, ORDER_TYPE) == ORDER_TYPE_SELL_STOP
+			)
+		) {
+			return true;
+		}
+	}
+	else if (
+		OrderGetInteger(ORDER_TYPE) == ORDER_TYPE_SELL_LIMIT
+		|| OrderGetInteger(ORDER_TYPE) == ORDER_TYPE_SELL_STOP
+	) {
+		return true;
+	}
+
+	return false;
+}
+
+bool LoadHistoryOrder(int index, string selectby="select_by_pos")
+{
+	if (selectby == "select_by_pos")
+	{
+		ulong ticket  = HistoryOrderGetTicket(index);
+
+		if (ticket > 0)
+		{
+			if (
+				   HistoryOrderGetInteger(ticket, ORDER_TYPE) >= 2
+				&& HistoryOrderSelect(ticket))
+			{
+				OrderTicket(ticket);
+
+				LoadedType(4);
+
+				return true;
+			}
+			else if (
+				   HistoryOrderGetInteger(ticket, ORDER_TYPE) < 2
+				&& HistoryOrderSelect(HistoryDealGetInteger(ticket, DEAL_POSITION_ID))
+				&& (ENUM_DEAL_ENTRY)HistoryDealGetInteger(ticket, DEAL_ENTRY) == DEAL_ENTRY_OUT
+				)
+			{
+				OrderTicket(ticket);
+
+				LoadedType(3);
+
+				return true;
+			}
+		}
+	}
+
+	if (selectby == "select_by_ticket")
+	{
+		if (HistoryOrderSelect(index))
+		{
+			HistoryDealSelect(index); // Select deal, it will be just one with pos=0
+			HistoryDealGetTicket(0); // Load the one and only selected deal
+
+			OrderTicket(index);
+
+			if (HistoryOrderGetInteger(index, ORDER_TYPE) >= 2)
+			{
+				LoadedType(4);
+
+				return true;
+			}
+			else
+			{
+				LoadedType(3);
+
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+bool LoadHistoryTrade(int index, string selectby="select_by_pos")
+{
+	if (selectby == "select_by_pos")
+	{
+		ulong ticket  = HistoryDealGetTicket(index);
+
+		if (ticket > 0)
+		{
+			if (
+				   //HistoryDealSelect(ticket) - commented, because it breaks HistorySelect()
+				   HistoryDealGetInteger(ticket, DEAL_TYPE) < 2
+				&& (ENUM_DEAL_ENTRY)HistoryDealGetInteger(ticket, DEAL_ENTRY) == DEAL_ENTRY_OUT
+				)
+			{
+				OrderTicket(ticket);
+
+				LoadedType(3);
+
+				return true;
+			}
+		}
+	}
+
+	if (selectby == "select_by_ticket")
+	{
+		if (HistoryDealSelect(index))
+		{
+			OrderTicket(index);
+
+			if (HistoryDealGetInteger(index, DEAL_TYPE) < 2)
+			{
+				LoadedType(3);
+
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+bool LoadPendingOrder(long ticket)
+{
+	bool success = false;
+
+   if (OrderSelect(ticket))
+	{
+		// The order could be from any type, so check the type
+		// and allow only true pending orders.
+		ENUM_ORDER_TYPE type = (ENUM_ORDER_TYPE)OrderGetInteger(ORDER_TYPE);
+
+		if (
+			   type == ORDER_TYPE_BUY_LIMIT
+			|| type == ORDER_TYPE_SELL_LIMIT
+			|| type == ORDER_TYPE_BUY_STOP
+			|| type == ORDER_TYPE_SELL_STOP
+		) {
+			LoadedType(2);
+			OrderTicket(ticket);
+			success = true;
+		}
+	}
+
+   return success;
+}
+
+bool LoadPosition(ulong ticket)
+{
+   bool success = PositionSelectByTicket(ticket);
+
+   if (success) {
+		LoadedType(1);
+		OrderTicket(ticket);
+	}
+
+   return success;
+}
+
+long LoadedObjectChartID(long chart_id = -1)
+{
+	static long memory = -1;
+
+	if (chart_id > -1) {memory = chart_id;}
+
+	return memory;
+}
+
+string LoadedObjectName(string name = "")
+{
+	static string memory = "";
+
+	if (name != "") {memory = name;}
+
+	return memory;
+}
+
+int LoadedObjectSubwindow(int sub_window=-2)
+{
+	static int memory = -2;
+
+	if (sub_window > -2) {memory = sub_window;}
+
+	return memory;
+}
+
+int LoadedObjectType(int type = -2)
+{
+	static int memory = -2;
+
+	if (type > -2) {memory = type;}
+
+	return memory;
+}
+
+int LoadedType(int type = 0)
+{
+	// 1 - position
+	// 2 - pending order
+	// 3 - history position
+	// 4 - history pending order
+
+	static int memory;
+
+	if (type > 0) {memory = type;}
+
+	return memory;
+}
+
+bool LoopedResume()
+{
+	long ticket = attrTicketInLoop();
+	int type    = attrTypeInLoop();
+
+	if (ticket > 0 && ticket != OrderTicket()) {
+		     if (type == 1) return LoadPosition(ticket);
+		else if (type == 2) return LoadPendingOrder(ticket);
+		else if (type == 3) return LoadHistoryOrder((int)ticket, "select_by_ticket");
+	}
+
+	return false;
+}
+
+double LowestFromTo(string symbol, ENUM_TIMEFRAMES timeframe, datetime time1, datetime time2, int what_to_get=0)
+{
+	static datetime LowestTime = 0;
+	static double LowestID     = 0.0;
+
+	double retval    = 0.0;
+	double LowestVal = 0.0;
+
+	if (LowestTime == 0) {LowestTime = TimeCurrent();}
+
+	//-- Time mode ---------------------------------------------------------------------
+	if (time1 > 1000000)
+	{
+		double CandleLow = 0.0;
+		int x1           = iBarShift(symbol, timeframe, time1, false);
+		int x2           = iBarShift(symbol, timeframe, time2, false);
+
+		if (x1 < x2)
+		{
+			x1 = iBarShift(symbol, timeframe, (time1 - 86400), false);
+		}
+
+		if (x1 < 0 || x2 < 0)
+		{
+			return -1;
+		}
+
+		for (int i = x2; i <= x1; i++)
+		{
+			CandleLow = iLow(symbol, timeframe, i);
+
+			if (CandleLow < LowestVal || LowestVal == 0)
+			{
+				LowestVal  = CandleLow;
+				LowestTime = iTime(symbol, timeframe, i);
+				LowestID   = i;
+			}
+		}
+	}
+	//-- Bars mode ---------------------------------------------------------------------
+	else
+	{
+		int shift = 0;
+
+		if (time1 == time2)
+		{
+			shift = (int)time1;
+		}
+		else
+		{
+			int totalbars = iBars(symbol, timeframe) - 1;
+
+			if (time2 > totalbars || time2 == 0)
+			{
+				time2 = totalbars;
+			}
+
+			shift = iLowest(symbol, timeframe, MODE_LOW, (int)((time2-time1)+1), (int)time1);
+		}
+
+		LowestVal  = iLow(symbol, timeframe, shift);
+		LowestTime = iTime(symbol, timeframe, shift);
+		LowestID   = shift;
+	}
+
+	retval = LowestVal;
+
+	if (what_to_get == 2)
+	{
+		retval = (double)LowestTime;
+	}
+	else if (what_to_get == 0)
+	{
+		retval = LowestID;
+	}
+	
+	retval = NormalizeDouble(retval, (int)SymbolInfoInteger(symbol, SYMBOL_DIGITS));
+
+	return retval;
+}
+
+bool ModifyOrder(
+	long ticket,
+	double op,
+	double sll = 0,
+	double tpl = 0,
+	double slp = 0,
+	double tpp = 0,
+	datetime exp = 0,
+	color clr = clrNONE
+) {
+	int bs = 1;
+
+	if (LoadedType() == 1)
+	{
+		if (OrderType() == POSITION_TYPE_SELL)
+		{bs = -1;} // Positive when Buy, negative when Sell
+	}
+	else
+	{
+		if (
+				OrderType() == ORDER_TYPE_SELL
+			|| OrderType() == ORDER_TYPE_SELL_STOP
+			|| OrderType() == ORDER_TYPE_SELL_LIMIT
+		)
+		{bs = -1;} // Positive when Buy, negative when Sell
+	}
+
+	while (true)
+	{
+		uint time0 = GetTickCount();
+		
+		if (LoadedType() == 1)
+		{
+			if (!PositionSelectByTicket(ticket)) {return false;}
+		}
+		else
+		{
+			if (!OrderSelect(ticket)) {return false;}
+		}
+
+		string symbol      = OrderSymbol();
+		int type           = OrderType();
+		int digits         = (int)SymbolInfoInteger(symbol,SYMBOL_DIGITS);
+		double ask         = SymbolInfoDouble(symbol,SYMBOL_ASK);
+		double bid         = SymbolInfoDouble(symbol,SYMBOL_BID);
+		double point       = SymbolInfoDouble(symbol,SYMBOL_POINT);
+		double stoplevel   = point * SymbolInfoInteger(symbol, SYMBOL_TRADE_STOPS_LEVEL);
+		double freezelevel = point * SymbolInfoInteger(symbol, SYMBOL_TRADE_FREEZE_LEVEL);
+
+		if (OrderType() < 2) {op = OrderOpenPrice();} else {op = NormalizeDouble(op,digits);}
+		
+		sll = NormalizeDouble(sll,digits);
+		tpl = NormalizeDouble(tpl,digits);
+
+		if (op < 0 || op >= EMPTY_VALUE || sll < 0 || slp < 0 || tpl < 0 || tpp < 0)
+		{
+			break;
+		}
+
+		//-- OP -----------------------------------------------------------
+		// https://book.mql4.com/appendix/limits
+		if (type == ORDER_TYPE_BUY_LIMIT)
+		{
+			if (ask - op < stoplevel) {op = ask - stoplevel;}
+			if (ask - op <= freezelevel) {op = ask - freezelevel - point;}
+		}
+		else if (type == ORDER_TYPE_BUY_STOP)
+		{
+			if (op - ask < stoplevel) {op = ask + stoplevel;}
+			if (op - ask <= freezelevel) {op = ask + freezelevel + point;}
+		}
+		else if (type == ORDER_TYPE_SELL_LIMIT)
+		{
+			if (op - bid < stoplevel) {op = bid + stoplevel;}
+			if (op - bid <= freezelevel) {op = bid + freezelevel + point;}
+		}
+		else if (type == ORDER_TYPE_SELL_STOP)
+		{
+			if (bid - op < stoplevel) {op = bid - stoplevel;}
+			if (bid - op < freezelevel) {op = bid - freezelevel - point;}
+		}
+
+		op = NormalizeDouble(op, digits);
+
+		//-- SL and TP ----------------------------------------------------
+		double sl = 0, tp = 0, vsl = 0, vtp = 0;
+
+		sl = AlignStopLoss(symbol, type, op, attrStopLoss(), sll, slp);
+
+		if (sl < 0) {break;}
+
+		tp = AlignTakeProfit(symbol, type, op, attrTakeProfit(), tpl, tpp);
+
+		if (tp < 0) {break;}
+
+		if (USE_VIRTUAL_STOPS)
+		{
+			//-- virtual SL and TP --------------------------------------------
+			vsl = sl;
+			vtp = tp;
+			sl  = 0;
+			tp  = 0;
+
+			double askbid = ask;
+
+			if (bs < 0) {askbid = bid;}
+
+			if (vsl > 0 || USE_EMERGENCY_STOPS == "always")
+			{
+				if (EMERGENCY_STOPS_REL > 0 || EMERGENCY_STOPS_ADD > 0)
+				{
+					sl = vsl - EMERGENCY_STOPS_REL*MathAbs(askbid-vsl)*bs;
+
+					if (sl <= 0) {sl = askbid;}
+					sl = sl-toDigits(EMERGENCY_STOPS_ADD,symbol)*bs;
+				}
+			}
+
+			if (vtp > 0 || USE_EMERGENCY_STOPS == "always")
+			{
+				if (EMERGENCY_STOPS_REL>0 || EMERGENCY_STOPS_ADD>0)
+				{
+					tp=vtp+EMERGENCY_STOPS_REL*MathAbs(vtp-askbid)*bs;
+
+					if (tp <= 0) {tp = askbid;}
+
+					tp = tp + toDigits(EMERGENCY_STOPS_ADD,symbol)*bs;
+				}
+			}
+
+			vsl = NormalizeDouble(vsl,digits);
+			vtp = NormalizeDouble(vtp,digits);
+		}
+
+		sl = NormalizeDouble(sl,digits);
+		tp = NormalizeDouble(tp,digits);
+
+		//-- modify -------------------------------------------------------
+		ResetLastError();
+		
+		if (USE_VIRTUAL_STOPS)
+		{
+			if (vsl != attrStopLoss() || vtp != attrTakeProfit())
+			{
+				VirtualStopsDriver("set", ticket, vsl, vtp, toPips(MathAbs(op-vsl), symbol), toPips(MathAbs(vtp-op), symbol));
+			}
+		}
+		
+		bool success = false;
+		
+		// check if needed to modify
+		if (LoadedType() == 1)
+		{
+			if (
+				   sl == NormalizeDouble(PositionGetDouble(POSITION_SL),digits)
+				&& tp == NormalizeDouble(PositionGetDouble(POSITION_TP),digits)
+				&& exp == OrderExpirationTime()
+			) {
+				return true;
+			}
+		}
+		else
+		{
+			if (
+				   op == NormalizeDouble(OrderGetDouble(ORDER_PRICE_OPEN),digits)
+				&& sl == NormalizeDouble(OrderGetDouble(ORDER_SL),digits)
+				&& tp == NormalizeDouble(OrderGetDouble(ORDER_TP),digits)
+			) {
+				return true;
+			}
+		}
+
+		// prepare to modify
+		MqlTradeRequest request;
+		MqlTradeResult result;
+		MqlTradeCheckResult check_result;
+		ZeroMemory(request);
+		ZeroMemory(result);
+		ZeroMemory(check_result);
+
+		// modify
+		if (LoadedType() == 1)
+		{
+			// in case of position, only sl and tp are going to be modified
+			request.action   = TRADE_ACTION_SLTP;
+			request.symbol   = symbol;
+			request.position = PositionGetInteger(POSITION_TICKET);
+			request.magic    = PositionGetInteger(POSITION_MAGIC);
+			request.comment  = PositionGetString(POSITION_COMMENT);
+		}
+		else
+		{
+			// in case of pending order
+			request.action     = TRADE_ACTION_MODIFY;
+			request.order      = ticket;
+			request.price      = op;
+			request.volume     = OrderGetDouble(ORDER_VOLUME_CURRENT);
+			request.magic      = OrderGetInteger(ORDER_MAGIC);
+			request.type_time  = ExpirationTypeByTime(symbol, exp);
+			request.expiration = exp;
+			request.comment    = OrderGetString(ORDER_COMMENT);
+
+			//-- filling type
+			uint filling = (uint)SymbolInfoInteger(request.symbol,SYMBOL_FILLING_MODE);
+
+			if (filling == SYMBOL_FILLING_FOK)
+			{
+				request.type_filling = ORDER_FILLING_FOK;
+			}
+			else if (filling == SYMBOL_FILLING_IOC)
+			{
+				request.type_filling = ORDER_FILLING_IOC;
+			}
+		}
+		
+		request.sl = sl;
+		request.tp = tp;
+
+		if (!OrderCheck(request,check_result))
+		{
+			Print("OrderCheck() failed: " + (string)check_result.comment + " (" + (string)check_result.retcode + ")");
+
+			return false;
+		}
+
+		success = OrderSend(request, result);
+
+		//-- error check --------------------------------------------------
+		if (result.retcode != TRADE_RETCODE_DONE)
+		{
+			string errmsgpfx = "Modify error";
+			int erraction = CheckForTradingError(result.retcode, errmsgpfx);
+
+			switch(erraction)
+			{
+				case 0: break;    // no error
+				case 1: continue; // overcomable error
+				case 2: break;    // fatal error
+			}
+
+			return false;
+		}
+
+		//-- finish work --------------------------------------------------
+		if (result.retcode == TRADE_RETCODE_DONE)
+		{
+			//== Wait until MT5 updates its cache
+			int w;
+
+			for (w = 0; w < 5000; w++)
+			{
+				if (((LoadedType() == 1 && PositionSelectByTicket(ticket)) || OrderSelect(ticket)) && (sl == NormalizeDouble(OrderStopLoss(), digits) && tp == NormalizeDouble(OrderTakeProfit(), digits)))
+				{
+					break;
+				}
+
+				Sleep(1);
+			}
+
+			if (w == 5000)
+			{
+				Print("Check error: Modify order stops");  
+			}
+
+			if (!((LoadedType() == 1 && PositionSelectByTicket(ticket)) || OrderSelect(ticket)) || (sl != NormalizeDouble(OrderStopLoss(), digits) || tp != NormalizeDouble(OrderTakeProfit(), digits)))
+			{
+				Print("Something went wrong when trying to modify the stops");
+
+				return false;
+			}
+
+			if (!((LoadedType() == 1 && PositionSelectByTicket(ticket)) || OrderSelect(ticket)))
+			{
+				return false;
+			}
+
+			OrderModified((int)ticket);
+		}
+
+		break;
+	}
+
+	OnTrade();
+
+	return true;
+}
+
+bool ModifyStops(ulong ticket, double sl=-1, double tp=-1, color clr=clrNONE)
+{
+   return ModifyOrder(
+		ticket,
+		OrderOpenPrice(),
+		sl,
+		tp,
+		0,
+		0,
+		OrderExpirationTime()
+	);
+}
+
+int OCODriver()
+{
+	static long last_known_ticket = 0;
+	static long orders1[];
+	static long orders2[];
+	int i, size;
+
+	int total = OrdersTotal();
+
+	for (int pos=total-1; pos>=0; pos--)
+	{
+		if (LoadPendingOrder(OrderGetTicket(pos)))
+		{
+			long ticket = OrderTicket();
+
+			//-- end here if we reach the last known ticket
+			if (ticket == last_known_ticket) {break;}
+
+			//-- set the last known ticket, only if this is the first iteration
+			if (pos == total-1) {
+				last_known_ticket = ticket;
+			}
+
+			//-- we are searching for pending orders, skip trades
+			if (OrderType() <= ORDER_TYPE_SELL) {continue;}
+
+			//--
+			if (StringSubstr(OrderComment(), 0, 5) == "[oco:")
+			{
+				int ticket_oco = StrToInteger(StringSubstr(OrderComment(), 5, StringLen(OrderComment())-1)); 
+
+				bool found = false;
+				size = ArraySize(orders2);
+				for (i=0; i<size; i++)
+				{
+					if (orders2[i] == ticket_oco) {
+						found = true;
+						break;
+					}
+				}
+
+				if (found == false) {
+					ArrayResize(orders1, size+1);
+					ArrayResize(orders2, size+1);
+					orders1[size] = ticket_oco;
+					orders2[size] = ticket;
+				}
+			}
+		}
+	}
+
+	size = ArraySize(orders1);
+	int dbremove = false;
+
+	for (i = size - 1; i >= 0; i--)
+	{
+		if (LoadPendingOrder(orders1[i]) == false || OrderType() <= ORDER_TYPE_SELL)
+		{
+			if (LoadPendingOrder(orders2[i])) {
+				if (DeleteOrder(orders2[i]))
+				{
+					dbremove = true;
+				}
+			}
+			else {
+				dbremove = true;
+			}
+			
+			if (dbremove == true)
+			{
+				ArrayStripKey(orders1, i);
+				ArrayStripKey(orders2, i);
+			}
+		}
+	}
+
+	size = ArraySize(orders2);
+	dbremove = false;
+	for (i=size-1; i>=0; i--)
+	{
+		if (LoadPendingOrder(orders2[i]) == false || OrderType() <= ORDER_TYPE_SELL)
+		{
+			if (LoadPendingOrder(orders1[i])) {
+				if (DeleteOrder(orders1[i]))
+				{
+					dbremove = true;
+				}
+			}
+			else {
+				dbremove = true;
+			}
+			
+			if (dbremove == true)
+			{
+				ArrayStripKey(orders1, i);
+				ArrayStripKey(orders2, i);
+			}
+		}
+	}
+
+	return true;
+}
+
+int ObjectGetShiftByValue(string name, double value) {
+   ENUM_TIMEFRAMES timeframe=TFMigrate(PERIOD_CURRENT);
+   datetime Arr[];
+   MqlRates mql4[];
+   if(ObjectGetTimeByValue(0,name,value)<0) {return(-1);}
+   CopyRates(NULL,timeframe,0,1,mql4);
+      if(CopyTime(NULL, timeframe, mql4[0].time, ObjectGetTimeByValue(0,name,value), Arr)>0) {return(ArraySize(Arr)-1);}
+      else {return(-1);}
+}
+
+int ObjectGetShiftByValue(long chart_id, string name, double value) {
+   ENUM_TIMEFRAMES timeframe=TFMigrate(PERIOD_CURRENT);
+   datetime Arr[];
+   MqlRates mql4[];
+   if(ObjectGetTimeByValue(chart_id,name,value)<0) {return(-1);}
+   CopyRates(NULL, timeframe, 0, 1, mql4);
+   if(CopyTime(NULL, timeframe, mql4[0].time, ObjectGetTimeByValue(chart_id,name,value),Arr)>0) {return(ArraySize(Arr)-1);}
+   else {return(-1);}
+}
+
+double ObjectGetValueByShift(string name, int shift)
+{
+	MqlRates rates[];
+	CopyRates(NULL, PERIOD_CURRENT, shift, 1, rates);
+
+	return ObjectGetValueByTime(0, name, rates[0].time, 0);
+}
+
+double ObjectGetValueByShift(long ctart_id, string name, int shift)
+{
+	MqlRates rates[];
+	CopyRates(NULL, PERIOD_CURRENT, shift, 1, rates);
+
+	return ObjectGetValueByTime(ctart_id, name, rates[0].time, 0);
+}
+
+bool OnTimerSet(double seconds)
+{
+   if (seconds<=0) {
+      EventKillTimer();
+   }
+   else if (seconds < 1) {
+      return (EventSetMillisecondTimer((int)(seconds*1000)));  
+   }
+   else {
+      return (EventSetTimer((int)seconds));
+   }
+   
+   return true;
+}
+
+class OnTradeEventDetector
+{
+private:
+	//--- structures
+	struct EventValues
+	{
+		// special fields
+		string   reason,
+		         detail;
+
+		// order related fields
+		long     magic,
+		         ticket;
+		int      type;
+		datetime timeClose,
+		         timeOpen,
+		         timeExpiration;
+		double   commission,
+		         priceOpen,
+		         priceClose,
+		         profit,
+		         stopLoss,
+		         swap,
+		         takeProfit,
+		         volume;
+		string   comment,
+		         symbol;
+	};
+
+	struct Position
+	{
+		ENUM_POSITION_TYPE type;
+		ENUM_POSITION_REASON reason;
+		long     positionId,
+		         magic,
+		         ticket,
+		         timeMs,
+		         timeUpdateMs;
+		datetime time,
+					timeExpiration,
+		         timeUpdate;
+		double   priceCurrent,
+		         priceOpen,
+		         profit,
+		         stopLoss,
+		         swap,
+		         takeProfit,
+		         volume;
+		string   externalId,
+		         comment,
+		         symbol;
+	};
+
+	struct PendingOrder
+	{
+		ENUM_ORDER_TYPE type;
+		ENUM_ORDER_STATE state;
+		ENUM_ORDER_TYPE_FILLING typeFilling;
+		ENUM_ORDER_TYPE_TIME typeTime;
+		ENUM_ORDER_REASON reason;
+		long     magic,
+		         positionId,
+		         positionById,
+		         ticket,
+		         timeSetupMs,
+		         timeDoneMs;
+		datetime timeDone,
+		         timeExpiration,
+		         timeSetup;
+		double   priceCurrent,
+		         priceOpen,
+		         priceStopLimit,
+		         stopLoss,
+		         takeProfit,
+		         volume,
+		         volumeInitial;
+		string   externalId,
+		         comment,
+		         symbol;
+	};
+	
+	struct PositionExpirationTimes
+	{
+		long ticket;
+		datetime timeExpiration;
+	};
+
+	//--- variables and arrays
+	bool debug;
+	
+	// Because we can have multiple new events at once, the idea is
+	// to run the detector repeatedly until no new event is detected.
+	// When this variable is true, it means that the event detection
+	// is repeated. It should stop repeating when no new event is detected.
+	bool isRepeat;
+
+	int eventValuesQueueIndex;
+	EventValues eventValues[];
+
+	PendingOrder previousPendingOrders[];
+	PendingOrder pendingOrders[];
+
+	Position previousPositions[];
+	Position positions[];
+
+	PositionExpirationTimes positionExpirationTimes[];
+
+	//--- methods
+
+	/**
+	* Like ArrayCopy(), but for any type.
+	*/
+	template<typename T>
+	void CopyList(T &dest[], T &src[])
+	{
+		int size = ArraySize(src);
+		ArrayResize(dest, size);
+
+		for (int i = 0; i < size; i++)
+		{
+			dest[i] = src[i];
+		}
+	}
+
+	/**
+	* Overloaded method 1 of 2
+	*/
+	int MakeListOf(PendingOrder &list[])
+	{
+		ArrayResize(list, 0);
+
+		int count        = OrdersTotal();
+		int howManyAdded = 0;
+
+		for (int index = 0; index < count; index++)
+		{
+			if (OrderGetTicket(index) <= 0) continue;
+
+			ENUM_ORDER_TYPE orderType = (ENUM_ORDER_TYPE)OrderGetInteger(ORDER_TYPE);
+
+			if (
+				orderType != ORDER_TYPE_BUY_LIMIT
+				&& orderType != ORDER_TYPE_SELL_LIMIT
+				&& orderType != ORDER_TYPE_BUY_STOP
+				&& orderType != ORDER_TYPE_SELL_STOP
+				&& orderType != ORDER_TYPE_BUY_STOP_LIMIT
+				&& orderType != ORDER_TYPE_SELL_STOP_LIMIT
+			) {
+				continue;
+			}
+
+			howManyAdded++;
+			ArrayResize(list, howManyAdded);
+			int i = howManyAdded - 1;
+
+			// enum types
+			list[i].type        = (ENUM_ORDER_TYPE)OrderGetInteger(ORDER_TYPE);
+			list[i].state       = (ENUM_ORDER_STATE)OrderGetInteger(ORDER_STATE);
+			list[i].typeFilling = (ENUM_ORDER_TYPE_FILLING)OrderGetInteger(ORDER_TYPE_FILLING);
+			list[i].typeTime    = (ENUM_ORDER_TYPE_TIME)OrderGetInteger(ORDER_TYPE_TIME);
+			list[i].reason      = (ENUM_ORDER_REASON)OrderGetInteger(ORDER_REASON);
+
+			// long
+			list[i].magic        = (long)OrderGetInteger(ORDER_MAGIC);
+			list[i].positionId   = (long)OrderGetInteger(ORDER_POSITION_ID);
+			list[i].positionById = (long)OrderGetInteger(ORDER_POSITION_BY_ID);
+			list[i].ticket       = (long)OrderGetInteger(ORDER_TICKET);
+			list[i].timeSetupMs  = (long)OrderGetInteger(ORDER_TIME_SETUP_MSC);
+			list[i].timeDoneMs   = (long)OrderGetInteger(ORDER_TIME_DONE_MSC);
+
+			// datetime
+			list[i].timeDone       = (datetime)OrderGetInteger(ORDER_TIME_DONE);
+			list[i].timeExpiration = (datetime)OrderGetInteger(ORDER_TIME_EXPIRATION);
+			list[i].timeSetup      = (datetime)OrderGetInteger(ORDER_TIME_SETUP);
+
+			// double
+			list[i].priceCurrent   = OrderGetDouble(ORDER_PRICE_CURRENT);
+			list[i].priceOpen      = OrderGetDouble(ORDER_PRICE_OPEN);
+			list[i].priceStopLimit = OrderGetDouble(ORDER_PRICE_STOPLIMIT);
+			list[i].stopLoss       = OrderGetDouble(ORDER_SL);
+			list[i].takeProfit     = OrderGetDouble(ORDER_TP);
+			list[i].volume         = OrderGetDouble(ORDER_VOLUME_CURRENT);
+			list[i].volumeInitial  = OrderGetDouble(ORDER_VOLUME_INITIAL);
+
+			// string
+			list[i].externalId = OrderGetString(ORDER_EXTERNAL_ID);
+			list[i].comment    = OrderGetString(ORDER_COMMENT);
+			list[i].symbol     = OrderGetString(ORDER_SYMBOL);
+		}
+
+		return howManyAdded;
+	}
+
+	/**
+	* Overloaded method 2 of 2
+	*/
+	int MakeListOf(Position &list[])
+	{
+		ArrayResize(list, 0);
+
+		int count        = PositionsTotal();
+		int howManyAdded = 0;
+
+		for (int index = 0; index < count; index++)
+		{
+			if (PositionGetTicket(index) <= 0) continue;
+
+			howManyAdded++;
+			ArrayResize(list, howManyAdded);
+			int i = howManyAdded - 1;
+
+			// enum types
+			list[i].type   = (ENUM_POSITION_TYPE)PositionGetInteger(POSITION_TYPE);
+			list[i].reason = (ENUM_POSITION_REASON)PositionGetInteger(POSITION_REASON);
+
+			// long
+			list[i].positionId   = (long)PositionGetInteger(POSITION_IDENTIFIER);
+			list[i].magic        = (long)PositionGetInteger(POSITION_MAGIC);
+			list[i].ticket       = (long)PositionGetInteger(POSITION_TICKET);
+			list[i].timeMs       = (long)PositionGetInteger(POSITION_TIME_MSC);
+			list[i].timeUpdateMs = (long)PositionGetInteger(POSITION_TIME_UPDATE_MSC);
+
+			// datetime
+			list[i].time           = (datetime)PositionGetInteger(POSITION_TIME);
+			list[i].timeExpiration = (datetime)0;
+			list[i].timeUpdate     = (datetime)PositionGetInteger(POSITION_TIME_UPDATE);
+
+			// double
+			list[i].priceCurrent = PositionGetDouble(POSITION_PRICE_CURRENT);
+			list[i].priceOpen    = PositionGetDouble(POSITION_PRICE_OPEN);
+			list[i].profit       = PositionGetDouble(POSITION_PROFIT);
+			list[i].stopLoss     = PositionGetDouble(POSITION_SL);
+			list[i].swap         = PositionGetDouble(POSITION_SWAP);
+			list[i].takeProfit   = PositionGetDouble(POSITION_TP);
+			list[i].volume       = PositionGetDouble(POSITION_VOLUME);
+
+			// string
+			list[i].externalId = PositionGetString(POSITION_EXTERNAL_ID);
+			list[i].comment    = PositionGetString(POSITION_COMMENT);
+			list[i].symbol     = PositionGetString(POSITION_SYMBOL);
+
+			// extract expiration
+			list[i].timeExpiration = expirationWorker.GetExpiration(list[i].ticket);
+
+			if (USE_VIRTUAL_STOPS)
+			{
+				list[i].stopLoss   = VirtualStopsDriver("get sl", list[i].ticket);
+				list[i].takeProfit = VirtualStopsDriver("get tp", list[i].ticket);
+			}
+		}
+
+		return howManyAdded;
+	}
+
+	/**
+	* This method loops through 2 lists of items and finds a difference. This difference is the event.
+	* "Items" are either pending orders or positions.
+	*
+	* Returns true if an event is detected or false if not.
+	*/
+	template<typename ITEMS_TYPE> 
+	bool DetectEvent(ITEMS_TYPE &previousItems[], ITEMS_TYPE &currentItems[])
+	{
+		ITEMS_TYPE item;
+		string reason   = "";
+		string detail   = "";
+		int countBefore = ArraySize(previousItems);
+		int countNow    = ArraySize(currentItems);
+
+		// closed
+		if (reason == "") {
+			for (int index = 0; index < countBefore; index++) {
+				item = FindMissingItem(previousItems, currentItems);
+
+				if (item.ticket > 0) {
+					DeleteItem(previousItems, item);
+					reason = "close";
+
+					break;
+				}
+			}
+		}
+
+		// new
+		if (reason == "") {
+			for (int index = 0; index < countNow; index++) {
+				item = FindMissingItem(currentItems, previousItems);
+
+				if (item.ticket > 0) {
+					if (
+						item.type < 2 // it's a running trade
+						&& item.ticket != attrTicketParent(item.ticket)
+					) {
+						// In MQL4: When a trade is closed partially, the ticket changes.
+						// The original (parent) trade is closed and a new one is created,
+						// with a different ticket.
+						reason = "decrement";
+					}
+					else {
+						reason = "new";
+					}
+
+					PushItem(previousItems, item);
+
+					break;
+				}
+			}
+		}
+
+		// modified
+		if (reason == "") {
+			if (countBefore != countNow) {
+				Print("OnTrade event detector: Uncovered situation reached");
+			}
+
+			for (int index = 0; index < countNow; index++) {
+				int previousIndex = -1;
+
+				ITEMS_TYPE current = currentItems[index];
+				ITEMS_TYPE previous;
+				previous.ticket = 0;
+
+				for (int j = 0; j < countBefore; j++) {
+					if (current.ticket == previousItems[j].ticket) {
+						previousIndex = j;
+						previous = previousItems[j];
+
+						break;
+					}
+				}
+
+				if (current.ticket != previous.ticket) {
+					Print("OnTrade event detector: Uncovered situation reached (2)");
+				}
+
+				if (previous.volume < current.volume) {
+					previousItems[previousIndex].volume = current.volume;
+					item = previousItems[previousIndex];
+
+					reason = "increment";
+
+					break;
+				}
+
+				if (previous.volume > current.volume) {
+					previousItems[previousIndex].volume = current.volume;
+					item = previousItems[previousIndex];
+
+					reason = "decrement";
+
+					break;
+				}
+
+				if (
+					previous.stopLoss != current.stopLoss
+					&& previous.takeProfit != current.takeProfit
+				) {
+					previousItems[previousIndex].stopLoss = current.stopLoss;
+					previousItems[previousIndex].takeProfit = current.takeProfit;
+					item = previousItems[previousIndex];
+
+					reason = "modify";
+					detail = "sltp";
+
+					break;
+				}
+				// SL modified
+				else if (previous.stopLoss != current.stopLoss) {
+					previousItems[previousIndex].stopLoss = current.stopLoss;
+					item = previousItems[previousIndex];
+
+					reason = "modify";
+					detail = "sl";
+
+					break;
+				}
+				// TP modified
+				else if (previous.takeProfit != current.takeProfit) {
+					previousItems[previousIndex].takeProfit = current.takeProfit;
+					item = previousItems[previousIndex];
+
+					reason = "modify";
+					detail = "tp";
+
+					break;
+				}
+
+				if (previous.timeExpiration != current.timeExpiration) {
+					previousItems[previousIndex].timeExpiration = current.timeExpiration;
+					item = previousItems[previousIndex];
+
+					reason = "modify";
+					detail = "expiration";
+
+					break;
+				}
+			}
+		}
+
+		if (reason == "")
+		{
+			return false;
+		}
+
+		UpdateValues(item, reason, detail);
+
+		return true;
+	}
+
+	/**
+	* From the source list of orders or positions, find the item that is missing
+	* in the target list of orders or positions. The searching is by the item's ticket.
+	*
+	* If all items from the source list exist in the target list, return an empty item with ticket 0.
+	* If for some item in source list there is no item in the target list, return that source item.
+	*/
+	template<typename T> 
+	T FindMissingItem(T &source[], T &target[])
+	{
+		int sourceCount = ArraySize(source);
+		int targetCount  = ArraySize(target);
+		T item;
+		item.ticket = 0;
+
+		long ticket = 0;
+
+		for (int i = 0; i < sourceCount; i++)
+		{
+			bool found = false;
+
+			for (int j = 0; j < targetCount; j++)
+			{
+				if (source[i].ticket == target[j].ticket)
+				{
+					found = true;
+					break;
+				}
+			}
+
+			if (found == false)
+			{
+				item = source[i];
+				break;
+			}
+		}
+
+		return item;
+	}
+
+	/**
+	* From the list of previous orders or positions, find and remove the
+	* provided item.
+	*/
+	template<typename T> 
+	bool DeleteItem(T &list[], T &item)
+	{
+		int listCount = ArraySize(list);
+		bool removed = false;
+
+		for (int i = 0; i < listCount; i++)
+		{
+			if (list[i].ticket == item.ticket) {
+				ArrayStripKey(list, i);
+				removed = true;
+
+				break;
+			}
+		}
+
+		return removed;
+	}
+
+	/**
+	* Push a new item in the list
+	*/
+	template<typename T> 
+	void PushItem(T &list[], T &item)
+	{
+		int listCount = ArraySize(list);
+
+		ArrayResize(list, listCount + 1);
+
+		list[listCount] = item;
+	}
+
+	/**
+	* Overloaded method 1 of 2
+	*/
+	void UpdateValues(Position &item, string reason, string detail)
+	{
+		long ticket        = item.ticket;
+		datetime timeOpen  = item.time;
+		datetime timeClose = (datetime)0;
+		double priceOpen   = item.priceOpen;
+		double priceClose  = item.priceCurrent;
+		double profit      = item.profit;
+		double swap        = item.swap;
+		double commission  = 0.0;
+		double volume      = item.volume;
+
+		if (reason == "close" || reason == "decrement")
+		{
+			if (HistorySelectByPosition(item.positionId))
+			{
+				int total = HistoryDealsTotal();
+
+				// Fallback:
+				// After reports and tests, one year after I re-wrote this class with
+				// great care and tests, I noted that the last deal doesn't give us
+				// proper data. It doesn't even apear as a close deal. For that
+				// reason, as a second variant I'm getting data from orders
+				// and the position itself.
+				//
+				// In the future, check if things are working normally again and remove
+				// the fallback code.
+				int totalOrders = HistoryOrdersTotal();
+
+				if (total > 0)
+				{
+					long firstTicket = (long)HistoryDealGetTicket(0);
+					long lastTicket  = (long)HistoryDealGetTicket(total - 1);
+					long lastOrderTicket = (long)HistoryOrderGetTicket(totalOrders - 1);
+
+					// Ticket is the ticket of the previous deal, the one before the last one
+					ticket = (long)HistoryDealGetTicket(total - 2);
+
+					if (HistoryDealSelect(firstTicket)) {
+						priceOpen = HistoryDealGetDouble(firstTicket, DEAL_PRICE);
+						timeOpen  = (datetime)HistoryDealGetInteger(firstTicket, DEAL_TIME);
+					}
+
+					if (HistoryDealSelect(lastTicket)) {
+						timeClose  = (datetime)HistoryDealGetInteger(lastTicket, DEAL_TIME);
+						priceClose = HistoryDealGetDouble(lastTicket, DEAL_PRICE);
+
+						profit     = HistoryDealGetDouble(lastTicket, DEAL_PROFIT);
+						swap       = HistoryDealGetDouble(lastTicket, DEAL_SWAP);
+						commission = HistoryDealGetDouble(lastTicket, DEAL_COMMISSION);
+						
+						volume = HistoryDealGetDouble(lastTicket, DEAL_VOLUME);
+					}
+
+					// Find why the position has been closed
+					if (detail == "")
+					{
+						if (
+							item.timeExpiration > 0
+							&& item.timeExpiration <= timeClose
+						) {
+							detail = "expiration";
+						}
+					}
+
+					if (detail == "")
+					{
+						if (HistoryDealSelect(lastTicket)) {
+							ENUM_DEAL_REASON dealReason = (ENUM_DEAL_REASON)HistoryDealGetInteger(lastTicket, DEAL_REASON);
+
+							switch (dealReason)
+							{
+								case DEAL_REASON_SL: detail = "sl"; break;
+								case DEAL_REASON_TP: detail = "tp"; break;
+								case DEAL_REASON_SO: detail = "so"; break;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		int i = eventValuesQueueIndex;
+
+		eventValues[i].reason = reason;
+		eventValues[i].detail = detail;
+
+		eventValues[i].priceClose     = priceClose;
+		eventValues[i].timeClose      = timeClose;
+		eventValues[i].comment        = item.comment;
+		eventValues[i].commission     = commission;
+		eventValues[i].timeExpiration = item.timeExpiration;
+		eventValues[i].volume         = volume;
+		eventValues[i].magic          = item.magic;
+		eventValues[i].priceOpen      = priceOpen;
+		eventValues[i].timeOpen       = timeOpen;
+		eventValues[i].profit         = profit;
+		eventValues[i].stopLoss       = item.stopLoss;
+		eventValues[i].swap           = swap;
+		eventValues[i].symbol         = item.symbol;
+		eventValues[i].takeProfit     = item.takeProfit;
+		eventValues[i].ticket         = ticket;
+		eventValues[i].type           = item.type;
+
+		if (debug)
+		{
+			PrintUpdatedValues();
+		}
+	}
+
+	/**
+	* Overloaded method 2 of 2
+	*/
+	void UpdateValues(PendingOrder &item, string reason, string detail)
+	{
+		datetime timeExpiration = item.timeExpiration;
+
+		// When the lifetime of the order is ORDER_TIME_DAY,
+		// the expiration (ORDER_TIME_EXPIRATION) equals to the time of opening.
+		// Here we fix this.
+		if (item.typeTime == ORDER_TIME_DAY)
+		{
+			timeExpiration = (datetime)(MathFloor(((double)item.timeSetup + 86400.0) / 86400.0) * 86400.0);
+		}
+
+		int i = eventValuesQueueIndex;
+
+		eventValues[i].reason = reason;
+		eventValues[i].detail = detail;
+
+		eventValues[i].priceClose     = item.priceCurrent;
+		eventValues[i].timeClose      = item.timeDone;
+		eventValues[i].comment        = item.comment;
+		eventValues[i].commission     = 0.0;
+		eventValues[i].timeExpiration = timeExpiration;
+		eventValues[i].volume         = item.volume;
+		eventValues[i].magic          = item.magic;
+		eventValues[i].priceOpen      = item.priceOpen;
+		eventValues[i].timeOpen       = item.timeSetup;
+		eventValues[i].profit         = 0.0;
+		eventValues[i].stopLoss       = item.stopLoss;
+		eventValues[i].swap           = 0.0;
+		eventValues[i].symbol         = item.symbol;
+		eventValues[i].takeProfit     = item.takeProfit;
+		eventValues[i].ticket         = item.ticket;
+		eventValues[i].type           = item.type;
+
+		if (debug)
+		{
+			PrintUpdatedValues();
+		}
+	}
+
+	void PrintUpdatedValues()
+	{
+		Print(
+			" <<<\n",
+			" | reason: ", e_Reason(),
+			" | detail: ", e_ReasonDetail(),
+			" | ticket: ", e_attrTicket(),
+			" | type: ", EnumToString((ENUM_ORDER_TYPE)e_attrType()),
+			"\n",
+			" | openTime : ", e_attrOpenTime(),
+			" | openPrice : ", e_attrOpenPrice(),
+			"\n",
+			" | closeTime: ", e_attrCloseTime(),
+			" | closePrice: ", e_attrClosePrice(),
+			"\n",
+			" | volume: ", e_attrLots(),
+			" | sl: ", e_attrStopLoss(),
+			" | tp: ", e_attrTakeProfit(),
+			" | profit: ", e_attrProfit(),
+			" | swap: ", e_attrSwap(),
+			" | exp: ", e_attrExpiration(),
+			" | comment: ", e_attrComment(),
+			"\n >>>"
+		);
+	}
+
+	int AddEventValues()
+	{
+		eventValuesQueueIndex++;
+		ArrayResize(eventValues, eventValuesQueueIndex + 1);
+
+		return eventValuesQueueIndex;
+	}
+
+	int RemoveEventValues()
+	{
+		if (eventValuesQueueIndex == -1)
+		{
+			Print("Cannot remove event values, add them first. (in function ", __FUNCTION__, ")");
+		}
+		else
+		{
+			eventValuesQueueIndex--;
+			ArrayResize(eventValues, eventValuesQueueIndex + 1);
+		}
+
+		return eventValuesQueueIndex;
+	}
+
+public:
+	/**
+	* Default constructor
+	*/
+	OnTradeEventDetector(void)
+	{
+		debug = false;
+		isRepeat = false;
+		eventValuesQueueIndex = -1;
+	};
+
+	bool Start()
+	{
+		AddEventValues();
+
+		if (isRepeat == false) {
+			MakeListOf(pendingOrders);
+			MakeListOf(positions);
+		}
+
+		bool success = false;
+
+		if (!success) success = DetectEvent(previousPendingOrders, pendingOrders);
+
+		if (!success) success = DetectEvent(previousPositions, positions);
+
+		//CopyList(previousPendingOrders, pendingOrders);
+		//CopyList(previousPositions, positions);
+
+		isRepeat = success; // Repeat until no success
+
+		return success;
+	}
+
+	void End()
+	{
+		RemoveEventValues();
+	}
+
+	string EventValueReason() {return eventValues[eventValuesQueueIndex].reason;}
+	string EventValueDetail() {return eventValues[eventValuesQueueIndex].detail;}
+
+	int EventValueType() {return eventValues[eventValuesQueueIndex].type;}
+
+	datetime EventValueTimeClose()      {return eventValues[eventValuesQueueIndex].timeClose;}
+	datetime EventValueTimeOpen()       {return eventValues[eventValuesQueueIndex].timeOpen;}
+	datetime EventValueTimeExpiration() {return eventValues[eventValuesQueueIndex].timeExpiration;}
+
+	long EventValueMagic()  {return eventValues[eventValuesQueueIndex].magic;}
+	long EventValueTicket() {return eventValues[eventValuesQueueIndex].ticket;}
+
+	double EventValueCommission() {return eventValues[eventValuesQueueIndex].commission;}
+	double EventValuePriceOpen()  {return eventValues[eventValuesQueueIndex].priceOpen;}
+	double EventValuePriceClose() {return eventValues[eventValuesQueueIndex].priceClose;}
+	double EventValueProfit()     {return eventValues[eventValuesQueueIndex].profit;}
+	double EventValueStopLoss()   {return eventValues[eventValuesQueueIndex].stopLoss;}
+	double EventValueSwap()       {return eventValues[eventValuesQueueIndex].swap;}
+	double EventValueTakeProfit() {return eventValues[eventValuesQueueIndex].takeProfit;}
+	double EventValueVolume()     {return eventValues[eventValuesQueueIndex].volume;}
+
+	string EventValueComment() {return eventValues[eventValuesQueueIndex].comment;}
+	string EventValueSymbol()  {return eventValues[eventValuesQueueIndex].symbol;}
+};
+
+OnTradeEventDetector onTradeEventDetector;
+
+/**
+* When a trade is a child, its Open Price is the same as the Open Price of the most parent trade.
+* This function will return the actual Open Price of this parent trade, which would be the Close
+* Price of the previous child trade, or the parent trade if this is the only child, or itself if
+* it's the trade is not a child.
+*/
+double OrderChildOpenPrice() {
+	long ticket = PositionGetInteger(POSITION_TICKET);
+	long positionID = PositionGetInteger(POSITION_IDENTIFIER);
+
+	HistorySelectByPosition(positionID);
+
+	double openPrice = 0;
+	int total = HistoryDealsTotal();
+
+	if (total > 0) {
+		double orderClosePrice = HistoryDealGetDouble(HistoryDealGetTicket(total -1), DEAL_PRICE);
+		openPrice = orderClosePrice;
+	}
+
+	PositionSelectByTicket(ticket);
+	
+	HistoryTradesTotalReset();
+
+	return openPrice;
+}
+
+double OrderClosePrice()
+{
+	int type = LoadedType();
+
+	if (type == 1)
+	{
+		if (PositionGetInteger(POSITION_TYPE) == POSITION_TYPE_BUY)
+		{
+			return SymbolInfoDouble(PositionGetString(POSITION_SYMBOL), SYMBOL_BID);
+		}
+		else if (PositionGetInteger(POSITION_TYPE) == POSITION_TYPE_SELL)
+		{
+			return SymbolInfoDouble(PositionGetString(POSITION_SYMBOL), SYMBOL_ASK);
+		}
+	}
+	if (type == 3) {
+		ulong dealTicket = OrderTicket();
+		HistoryDealSelect(dealTicket);
+		ENUM_DEAL_ENTRY dealEntry = (ENUM_DEAL_ENTRY)HistoryDealGetInteger(dealTicket, DEAL_ENTRY);
+		long positionId = HistoryDealGetInteger(dealTicket, DEAL_POSITION_ID);
+		double price = HistoryDealGetDouble(dealTicket, DEAL_PRICE);
+
+		HistorySelectByPosition(positionId);
+		
+		// Search for the first OUT deal after this one and get the price from it
+
+		int total = HistoryDealsTotal();
+	
+		for (int i = total - 1; i >= 0; i--) {
+			ulong ticket = HistoryDealGetTicket(i);
+	
+			if (ticket == dealTicket) {
+				// Get the current value if the deal is the the last one
+				if (i == total - 1 && PositionSelectByDeal(ticket))
+				{
+					if (PositionGetInteger(POSITION_TYPE) == POSITION_TYPE_BUY)
+					{
+						price = SymbolInfoDouble(PositionGetString(POSITION_SYMBOL), SYMBOL_BID);
+					}
+					else if (PositionGetInteger(POSITION_TYPE) == POSITION_TYPE_SELL)
+					{
+						price = SymbolInfoDouble(PositionGetString(POSITION_SYMBOL), SYMBOL_ASK);
+					}
+				}
+		
+				break;
+			}
+	
+			if (HistoryDealGetInteger(ticket, DEAL_ENTRY) == DEAL_ENTRY_OUT) {
+				price = HistoryDealGetDouble(ticket, DEAL_PRICE);
+			}
+		}
+		
+		HistoryTradesTotalReset();
+		
+		return price;
+	}
+	if (type == 4) {
+		// TODO: Why I used deals here?
+		ulong dealTicket = OrderTicket();
+
+		if (HistoryDealSelect(dealTicket)) {
+			return HistoryDealGetDouble(dealTicket, DEAL_PRICE);
+		}
+	}
+
+	return(OrderGetDouble(ORDER_PRICE_CURRENT));
+}
+
+datetime OrderCloseTime()
+{
+	int type = LoadedType();
+
+	if (type == 1)
+	{
+		return 0;
+	}
+
+	if (type == 3)
+	{
+		ulong dealTicket = OrderTicket();
+		HistoryDealSelect(dealTicket);
+		ENUM_DEAL_ENTRY dealEntry = (ENUM_DEAL_ENTRY)HistoryDealGetInteger(dealTicket, DEAL_ENTRY);
+		long positionId = HistoryDealGetInteger(dealTicket, DEAL_POSITION_ID);
+		datetime time = (datetime)HistoryDealGetInteger(dealTicket, DEAL_TIME);
+
+		HistorySelectByPosition(positionId);
+
+		// Search for the first OUT deal after this one and get the time from it
+
+		int total = HistoryDealsTotal();
+
+		for (int i = total - 1; i >= 0; i--) {
+			ulong ticket = HistoryDealGetTicket(i);
+
+			if (ticket == dealTicket) {
+				if (i == total - 1 && PositionSelectByDeal(ticket))
+				{
+					time = (datetime)0;
+				}
+
+				break;
+			}
+
+			if (HistoryDealGetInteger(ticket, DEAL_ENTRY) == DEAL_ENTRY_OUT) {
+				time = (datetime)HistoryDealGetInteger(ticket, DEAL_TIME);
+			}
+		}
+
+		HistoryTradesTotalReset();
+
+		return time;
+	}
+
+	if (type == 4)
+	{
+		ulong orderTicket = OrderTicket();
+		
+		if (HistoryOrderSelect(orderTicket)) {
+			return (datetime)HistoryOrderGetInteger(orderTicket, ORDER_TIME_DONE);
+		}
+	}
+	
+	return (datetime)OrderGetInteger(ORDER_TIME_DONE);
+}
+
+string OrderComment()
+{
+	int type = LoadedType();
+
+	if (type == 1) {return PositionGetString(POSITION_COMMENT);}
+	if (type == 3) {
+		ulong ticket = OrderTicket();
+		
+		if (HistoryDealSelect(ticket)) {
+			return HistoryOrderGetString(HistoryDealGetInteger(ticket, DEAL_POSITION_ID), ORDER_COMMENT);
+		}
+	}
+	if (type == 4) {
+		ulong ticket = OrderTicket();
+		
+		if (HistoryOrderSelect(ticket)) {
+			return HistoryOrderGetString(ticket, ORDER_COMMENT);
+		}
+	}
+
+	return OrderGetString(ORDER_COMMENT);
+}
+
+double OrderCommission()
+{
+	int type = LoadedType();
+
+	if (type == 1) {
+		// TODO: POSITION_COMMISSION deprecated and probably never worked. Find a way to use DEAL_COMMISSION.
+		return PositionGetDouble(8);
+	}
+	if (type == 3) {
+		ulong ticket = OrderTicket();
+
+		if (HistoryDealSelect(ticket)) {
+			return HistoryDealGetDouble(ticket, DEAL_COMMISSION);
+		}
+	}
+	if (type == 4) {return 0;}
+
+	return 0;
+}
+
+long OrderCreate(
+	string   symbol     = "",
+	int      type       = ORDER_TYPE_BUY,
+	double   lots       = 0,
+	double   op         = 0,
+	double   sll        = 0,
+	double   tpl        = 0,
+	double   slp        = 0,
+	double   tpp        = 0,
+	double   slippage   = 0,
+	ulong    magic      = 0,
+	string   comment    = NULL,
+	color    arrowcolor = clrNONE,
+	datetime expiration = 0,
+	bool     oco        = false
+	)
+{
+	OnTrade(); // When position is closed by sl or tp, this event is not fired (by MetaTrader) until the end of the tick, and if a new position is opened, it will be missed. 
+
+	uint time0 = GetTickCount(); // used to measure speed of execution of the order
+	
+	bool placeExpirationObject = false; // whether or not to create an object for expiration for trades
+
+	bool closing = false;
+	double lots0 = 0;
+	long type0   = type;
+
+	if (
+		   (AccountInfoInteger(ACCOUNT_MARGIN_MODE) == ACCOUNT_MARGIN_MODE_RETAIL_NETTING)
+		&& (type == POSITION_TYPE_BUY || type == POSITION_TYPE_SELL)
+		)
+	{
+		if (PositionSelect(symbol))
+		{
+			if ((int)PositionGetInteger(POSITION_TYPE) != type)
+			{
+				closing = true;
+			}
+
+			lots0 = NormalizeDouble(PositionGetDouble(POSITION_VOLUME), 5);
+			type0 = PositionGetInteger(POSITION_TYPE);
+		}
+	}
+
+	ulong ticket = -1;
+
+	// calculate buy/sell flag (1 when Buy or -1 when Sell)
+	int bs = 1;
+
+	if (
+		   type == ORDER_TYPE_SELL
+		|| type == ORDER_TYPE_SELL_STOP
+		|| type == ORDER_TYPE_SELL_LIMIT
+	)
+	{
+		bs = -1;
+	}
+
+	if (symbol == "") {symbol = Symbol();}
+
+	lots = AlignLots(symbol, lots);
+
+	int digits = 0;
+	double ask = 0, bid = 0, point = 0, ticksize = 0;
+	double sl = 0, tp = 0;
+	double vsl = 0, vtp = 0;
+	bool successed = false;
+
+	//-- attempts to send position/order ---------------------------------
+	while (true)
+	{
+		digits   = (int)SymbolInfoInteger(symbol, SYMBOL_DIGITS);
+		ask      = SymbolInfoDouble(symbol, SYMBOL_ASK);
+		bid      = SymbolInfoDouble(symbol, SYMBOL_BID);
+		point    = SymbolInfoDouble(symbol, SYMBOL_POINT);
+		ticksize = SymbolInfoDouble(symbol, SYMBOL_TRADE_TICK_SIZE);
+
+		//- not enough money check: fix maximum possible lot by margin required, or quit
+		if ((type == POSITION_TYPE_BUY || type == POSITION_TYPE_SELL) && closing == false)
+		{
+			double LotStep         = SymbolLotStep(symbol);
+			double MinLots         = SymbolMinLot(symbol);
+			double margin_required = 0;
+			bool ocm               = OrderCalcMargin((ENUM_ORDER_TYPE)type, symbol, 1, SymbolInfoDouble(symbol, SYMBOL_ASK), margin_required);
+			static bool not_enough_message = false;
+
+			if (margin_required != 0)
+			{
+				double max_size_by_margin = AccountFreeMargin() / margin_required;
+			
+				if (lots > max_size_by_margin)
+				{
+					double lots_old = lots;
+					lots = max_size_by_margin;
+
+					if (lots < MinLots)
+					{
+						if (not_enough_message == false)
+						{
+							Print("Not enough money to trade :( The robot is still working, waiting for some funds to appear...");
+						}
+
+						not_enough_message = true;
+
+						return -1;
+					}
+					else
+					{
+						lots = MathFloor(lots / LotStep) * LotStep;
+						Print("Not enough money to trade " + DoubleToString(lots_old, 2) + ", the volume to trade will be the maximum possible of " + DoubleToString(lots, 2));
+					}
+				}
+			}
+
+			not_enough_message = false;
+		}
+
+		// fix the comment, because it seems that the comment is deleted if its lenght is > 31 symbols
+		if (StringLen(comment) > 31)
+		{
+			comment = StringSubstr(comment, 0, 31);
+		}
+
+		//- expiration for trades
+		if (type == POSITION_TYPE_BUY || type == POSITION_TYPE_SELL)
+		{
+			if (expiration > 0)
+			{
+				//- bo broker?
+				if (
+					   StringLen(symbol) > 6
+					&& StringSubstr(symbol, StringLen(symbol) - 2) == "bo"
+				) {
+					//- convert UNIX to seconds
+					if (expiration > TimeCurrent()-100)
+					{
+						expiration = expiration - TimeCurrent();
+					}
+
+					comment = "BO exp:" + (string)expiration;
+				}
+				else
+				{
+					// The expiration in this case is a vertical line
+					// Comment doesn't always work,
+					// because it changes when the trade is partially closed
+					placeExpirationObject = true;
+				}
+			}
+		}
+
+		if (type == ORDER_TYPE_BUY || type == ORDER_TYPE_SELL)
+		{
+			op = (bs > 0) ? ask : bid;
+		}
+
+		op  = NormalizeDouble(op, digits);
+		sll = NormalizeDouble(sll, digits);
+		tpl = NormalizeDouble(tpl, digits);
+
+		if (op < 0 || op >= EMPTY_VALUE || sll < 0 || slp < 0 || tpl < 0 || tpp < 0)
+		{
+			break;
+		}
+
+		//-- SL and TP ----------------------------------------------------
+		vsl = 0;
+		vtp = 0;
+
+		sl = AlignStopLoss(symbol, type, op, 0, NormalizeDouble(sll,digits), slp);
+
+		if (sl < 0) {break;}
+
+		tp = AlignTakeProfit(symbol, type, op, 0, NormalizeDouble(tpl,digits), tpp);
+
+		if (tp < 0) {break;}
+
+		if (USE_VIRTUAL_STOPS)
+		{
+			//-- virtual SL and TP --------------------------------------------
+			vsl = sl;
+			vtp = tp;
+			sl = 0;
+			tp = 0;
+			
+			double askbid = (bs > 0) ? ask : bid;
+			
+			if (vsl > 0 || USE_EMERGENCY_STOPS == "always")
+			{
+				if (EMERGENCY_STOPS_REL > 0 || EMERGENCY_STOPS_ADD > 0)
+				{
+					sl = vsl - EMERGENCY_STOPS_REL * MathAbs(askbid - vsl) * bs;
+
+					if (sl <= 0) {sl = askbid;}
+
+					sl = sl - toDigits(EMERGENCY_STOPS_ADD, symbol) * bs;
+				}
+			}
+
+			if (vtp > 0 || USE_EMERGENCY_STOPS == "always")
+			{
+				if (EMERGENCY_STOPS_REL > 0 || EMERGENCY_STOPS_ADD > 0)
+				{
+					tp = vtp + EMERGENCY_STOPS_REL * MathAbs(vtp - askbid) * bs;
+
+					if (tp <= 0) {tp = askbid;}
+
+					tp = tp + toDigits(EMERGENCY_STOPS_ADD, symbol) * bs;
+				}
+			}
+
+			vsl = NormalizeDouble(vsl, digits);
+			vtp = NormalizeDouble(vtp, digits);
+		}
+
+		sl = NormalizeDouble(sl, digits);
+		tp = NormalizeDouble(tp, digits);
+
+		//-- send ---------------------------------------------------------
+		MqlTradeRequest request;
+		MqlTradeResult result;
+		MqlTradeCheckResult check_result;
+		ZeroMemory(request);
+		ZeroMemory(result);
+		ZeroMemory(check_result);
+
+		ENUM_SYMBOL_TRADE_EXECUTION exec = (ENUM_SYMBOL_TRADE_EXECUTION)SymbolInfoInteger(symbol,SYMBOL_TRADE_EXEMODE);
+
+		//-- fix prices by ticksize
+		op = MathRound(op / ticksize) * ticksize;
+		sl = MathRound(sl / ticksize) * ticksize;
+		tp = MathRound(tp / ticksize) * ticksize;
+
+		request.symbol     = symbol;
+		request.type       = (ENUM_ORDER_TYPE)type;
+		request.volume     = lots;
+		request.price      = op;
+		request.deviation  = (ulong)(slippage * PipValue(symbol));
+		request.sl         = sl;
+		request.tp         = tp;
+		request.comment    = comment;
+		request.magic      = magic;
+		request.type_time  = ExpirationTypeByTime(symbol, expiration);
+		request.expiration = expiration;
+
+		//-- request action
+		if (type > ORDER_TYPE_SELL)
+		{
+			request.action = TRADE_ACTION_PENDING;
+		}
+		else
+		{
+			request.action = TRADE_ACTION_DEAL;
+		}
+		//-- filling type
+		
+		// check ORDER_FILLING_RETURN for pending orders only 
+		if (type > ORDER_TYPE_SELL)
+		{
+			if (IsFillingTypeAllowed(symbol, ORDER_FILLING_RETURN))
+				request.type_filling = ORDER_FILLING_RETURN;
+			else if (IsFillingTypeAllowed(symbol, ORDER_FILLING_FOK))
+				request.type_filling = ORDER_FILLING_FOK;
+			else if (IsFillingTypeAllowed(symbol, ORDER_FILLING_IOC))
+				request.type_filling = ORDER_FILLING_IOC;
+		}
+		else
+		{
+			// in case of positions I would check for SYMBOL_FILLING_ and then set ORDER_FILLING_
+			// this is because it appears that IsFillingTypeAllowed() works correct with SYMBOL_FILLING_, but then the position works correctly with ORDER_FILLING_
+			// FOK and IOC integer values are not the same for ORDER and SYMBOL
+
+			if (IsFillingTypeAllowed(symbol, SYMBOL_FILLING_FOK))
+				request.type_filling = ORDER_FILLING_FOK;
+			else if (IsFillingTypeAllowed(symbol, SYMBOL_FILLING_IOC))
+				request.type_filling = ORDER_FILLING_IOC;
+			else if (IsFillingTypeAllowed(symbol, ORDER_FILLING_RETURN)) // just in case
+				request.type_filling = ORDER_FILLING_RETURN;
+			else
+				request.type_filling = ORDER_FILLING_RETURN;
+		}
+
+		if (!OrderCheck(request,check_result))
+		{
+			Print("OrderCheck() failed: ", (string)check_result.comment, " (", (string)check_result.retcode, ")");
+
+			return -1;
+		}
+
+		bool success = OrderSend(request, result);
+
+		//-- check security flag ------------------------------------------
+		if (successed == true)
+		{
+			Print("The program will be removed because of suspicious attempt to create a new position");
+			ExpertRemove();
+			Sleep(10000);
+
+			break;
+		}
+
+		if (success) {successed = true;}
+
+		//-- error check --------------------------------------------------
+		if (
+			   success == false
+			|| (
+				   result.retcode != TRADE_RETCODE_DONE
+				&& result.retcode != TRADE_RETCODE_PLACED
+				&& result.retcode != TRADE_RETCODE_DONE_PARTIAL
+			)
+		)
+		{
+			string errmsgpfx = (type > ORDER_TYPE_SELL) ? "New pending order error" : "New position error";
+
+			int erraction = CheckForTradingError(result.retcode, errmsgpfx);
+
+			switch (erraction)
+			{
+				case 0: break;    // no error
+				case 1: continue; // overcomable error
+				case 2: break;    // fatal error
+			}
+
+			return -1;
+		}
+
+		//-- finish work --------------------------------------------------
+		if (
+			   result.retcode == TRADE_RETCODE_DONE
+			|| result.retcode == TRADE_RETCODE_PLACED
+			|| result.retcode == TRADE_RETCODE_DONE_PARTIAL
+		) {
+			ticket = result.order;
+			//== Whatever was created, we need to wait until MT5 updates it's cache
+
+			//-- Synchronize: Position
+			if (type <= ORDER_TYPE_SELL)
+			{
+				if (AccountInfoInteger(ACCOUNT_MARGIN_MODE) == ACCOUNT_MARGIN_MODE_RETAIL_NETTING)
+				{
+					if (closing == false)
+					{
+						//- new position: 2 situations here - new position or add to position
+						//- ... because of that we will check the lot size instead of PositionSelect
+						while (true)
+						{
+							if (PositionSelect(symbol) && (lots0 != NormalizeDouble(PositionGetDouble(POSITION_VOLUME), 5))) {break;}
+							Sleep(10);
+						}
+					}
+					else
+					{
+						//- closing position: full
+						if (lots0 == NormalizeDouble(result.volume, 5))
+						{
+							while (true)
+							{
+								if (!PositionSelect(symbol)) {break;}
+								Sleep(10);
+							}
+						}
+						//- closing position: partial
+						else if (lots0 > NormalizeDouble(result.volume, 5))
+						{
+							while (true)
+							{
+								if (PositionSelect(symbol) && (lots0 != NormalizeDouble(PositionGetDouble(POSITION_VOLUME), 5))) {break;}
+								Sleep(10);
+							}
+						}
+						else if (lots0 < NormalizeDouble(result.volume, 5))
+						{
+						//-- position reverse
+							while (true)
+							{
+								if (PositionSelect(symbol) && (type0 != PositionGetInteger(POSITION_TYPE))) {break;}
+								Sleep(10);
+							}
+						}
+					}
+				}
+				else if (AccountInfoInteger(ACCOUNT_MARGIN_MODE) == ACCOUNT_MARGIN_MODE_RETAIL_HEDGING)
+				{
+					if (closing == false)
+					{
+						while (true)
+						{
+							if (PositionSelectByTicket(ticket)) {break;}
+							Sleep(10);
+						}
+					}
+				}
+			}
+			//-- Synchronize: Order
+			else
+			{
+				while (true)
+				{
+					if (LoadPendingOrder(result.order)) {break;}
+					Sleep(10);
+				}
+			}
+
+			//-- fix arrow color (it works only in visual mode)
+			// TODO: this piece of code slows down the backtest for some reason
+			if (0 && MQLInfoInteger(MQL_VISUAL_MODE) && arrowcolor != CLR_NONE)
+			{
+				if (type <= ORDER_TYPE_SELL)
+				{
+					uint t0 = GetTickCount();
+					ENUM_OBJECT objType = (type==POSITION_TYPE_BUY) ? OBJ_ARROW_BUY : OBJ_ARROW_SELL;
+
+					// wait for the object to be created (MQL5 is async even here)
+					while(true)
+					{
+						int total        = ObjectsTotal(0,0,objType);
+						string name      = ObjectName(0,total-1,0,objType);
+						datetime objTime = (datetime)ObjectGetInteger(0,name,OBJPROP_TIME);
+
+						if (objTime > TimeCurrent()-1)
+						{
+							if (StringFind(name, "#" + IntegerToString(ticket) + " ") == 0)
+							{
+								ObjectSetInteger(0,name,OBJPROP_COLOR,arrowcolor);
+							}
+
+							break;
+						}
+
+						if (GetTickCount() - t0 > 1000) break;
+					}
+				}
+				else
+				{
+					// Pending orders don't have arrows
+				}
+			}
+		}
+
+		if (ticket > 0)
+		{
+			if (USE_VIRTUAL_STOPS)
+			{
+				VirtualStopsDriver("set", ticket, vsl, vtp, toPips(MathAbs(op-vsl), symbol), toPips(MathAbs(vtp-op), symbol));
+			}
+
+			//-- show some info
+			double slip = 0;
+
+			if (LoadPosition(ticket))
+			{
+				if (placeExpirationObject)
+				{
+					expirationWorker.SetExpiration(ticket, expiration);
+				}
+
+				if (
+					   !MQLInfoInteger(MQL_TESTER)
+					&& !MQLInfoInteger(MQL_VISUAL_MODE)
+					&& !MQLInfoInteger(MQL_OPTIMIZATION)
+				) {
+					slip = OrderOpenPrice() - op;
+
+					Print(
+						"Operation details: Speed ",
+						(GetTickCount() - time0),
+						" ms | Slippage ",
+						DoubleToStr(toPips(slip, symbol), 1),
+						" pips"
+					);
+				}
+			}
+			
+			//-- fix stops in case of slippage
+			if (
+				   !MQLInfoInteger(MQL_TESTER)
+				&& !MQLInfoInteger(MQL_VISUAL_MODE)
+				&& !MQLInfoInteger(MQL_OPTIMIZATION)
+			) {
+
+				slip = NormalizeDouble(OrderOpenPrice(), digits) - NormalizeDouble(op, digits);
+
+				if (slip != 0 && (OrderStopLoss() != 0 || OrderTakeProfit() != 0))
+				{
+					Print("Correcting stops because of slippage...");
+
+					sl = OrderStopLoss();
+					tp = OrderTakeProfit();
+
+					if (sl != 0 || tp != 0)
+					{
+						if (sl != 0) {sl = NormalizeDouble(OrderStopLoss() + slip, digits);}
+						if (tp != 0) {tp = NormalizeDouble(OrderTakeProfit() + slip, digits);}
+
+						ModifyOrder(ticket, OrderOpenPrice(), sl, tp, 0, 0);
+					}
+				}
+			}
+
+			//RegisterEvent("trade");
+
+			break;
+		}
+
+		break;
+	}
+
+	if (oco == true && ticket > 0)
+	{
+		if (USE_VIRTUAL_STOPS)
+		{
+			sl = vsl;
+			tp = vtp;
+		}
+
+		sl = (sl > 0) ? NormalizeDouble(MathAbs(op-sl), digits) : 0;
+		tp = (tp > 0) ? NormalizeDouble(MathAbs(op-tp), digits) : 0;
+		
+		int typeoco = type;
+
+		if (typeoco == ORDER_TYPE_BUY_STOP)
+		{
+			typeoco = ORDER_TYPE_SELL_STOP;
+			op = bid - MathAbs(op-ask);
+		}
+		else if (typeoco == ORDER_TYPE_BUY_LIMIT)
+		{
+			typeoco = ORDER_TYPE_SELL_LIMIT;
+			op = bid + MathAbs(op-ask);
+		}
+		else if (typeoco == ORDER_TYPE_SELL_STOP)
+		{
+			typeoco = ORDER_TYPE_BUY_STOP;
+			op = ask + MathAbs(op-bid);
+		}
+		else if (typeoco == ORDER_TYPE_SELL_LIMIT)
+		{
+			typeoco = ORDER_TYPE_BUY_LIMIT;
+			op = ask - MathAbs(op-bid);
+		}
+
+		if (typeoco == ORDER_TYPE_BUY_STOP || typeoco == ORDER_TYPE_BUY_LIMIT)
+		{
+			sl = (sl > 0) ? op - sl : 0;
+			tp = (tp > 0) ? op + tp : 0;
+		}
+		else {
+			sl = (sl > 0) ? op + sl : 0;
+			tp = (tp > 0) ? op - tp : 0;
+		}
+
+		comment = "[oco:" + (string)ticket + "]";
+
+		OrderCreate(
+			symbol,
+			typeoco,
+			lots,
+			op,
+			sl,
+			tp,
+			0,
+			0,
+			slippage,
+			magic,
+			comment,
+			arrowcolor,
+			expiration,
+			false
+		);
+	}
+
+	OnTrade();
+
+	return (long)ticket;
+}
+
+datetime OrderExpiration()
+{
+	return OrderExpirationTime();
+}
+
+datetime OrderExpirationTime()
+{
+	int LoadedType = LoadedType();
+
+	if (LoadedType == 1) return expirationWorker.GetExpiration(PositionGetInteger(POSITION_TICKET));
+	if (LoadedType == 2) return (datetime)OrderGetInteger(ORDER_TIME_EXPIRATION);
+
+	return 0;
+}
+
+double OrderLots()
+{
+	int type = LoadedType();
+	double lots = 0;
+
+	if (type == 1) {
+		lots = PositionGetDouble(POSITION_VOLUME);
+	}
+	else if (type == 3) {
+		// Calculate lots as the difference between the intial lots
+		// and the lots of all
+
+		if (HistoryDealSelect(OrderTicket())) {
+			long positionId = HistoryDealGetInteger(OrderTicket(), DEAL_POSITION_ID);
+	
+			HistorySelectByPosition(positionId);
+	
+			int total = HistoryDealsTotal();
+	
+			lots = 0.0;
+	
+			for (int i = 0; i < total; i++) {
+				ulong ticket = HistoryDealGetTicket(i);
+				ENUM_DEAL_ENTRY entry = (ENUM_DEAL_ENTRY)HistoryDealGetInteger(ticket, DEAL_ENTRY);
+				double dealVolume = HistoryDealGetDouble(ticket, DEAL_VOLUME);
+	
+				if (entry == DEAL_ENTRY_IN) {
+					lots += dealVolume;
+				}
+				else {
+					// If the last deal is the final close, it's size would be the same as the
+					// calculated lots. In this case, skip, otherwise the final lots will be 0.
+					if (NormalizeDouble(dealVolume, 4) < NormalizeDouble(lots, 4)) {
+						lots -= dealVolume;
+					}
+				}
+			}
+		}
+
+		HistoryTradesTotalReset();
+	}
+	else if (type == 4) {
+		ulong ticket = OrderTicket();
+		
+		if (HistoryOrderSelect(ticket)) {
+			lots = HistoryOrderGetDouble(ticket, ORDER_VOLUME_INITIAL);
+		}
+	}
+	else {lots = OrderGetDouble(ORDER_VOLUME_CURRENT);}
+
+	return NormalizeDouble(lots, 2);
+}
+
+int OrderMagicNumber()
+{
+	int type = LoadedType();
+
+	if (type == 1) {return (int)PositionGetInteger(POSITION_MAGIC);}
+	if (type == 3) {
+		ulong dealTicket = OrderTicket();
+		
+		if (HistoryDealSelect(dealTicket)) {
+			ulong orderTicket = HistoryDealGetInteger(dealTicket, DEAL_ORDER);
+			
+			if (HistoryOrderSelect(orderTicket)) {
+				return (int)HistoryOrderGetInteger(orderTicket, ORDER_MAGIC);
+			}
+		}
+	}
+	if (type == 4) {
+		ulong orderTicket = OrderTicket();
+		
+		if (HistoryOrderSelect(orderTicket)) {
+			return (int)HistoryOrderGetInteger(orderTicket, ORDER_MAGIC);
+		}
+	}
+
+	return (int)OrderGetInteger(ORDER_MAGIC);
+}
+
+bool OrderModified(ulong ticket = 0, string action = "set")
+{
+	static ulong memory[];
+
+	if (ticket == 0)
+	{
+		ticket = OrderTicket();
+		action = "get";
+	}
+	else if (ticket > 0 && action != "clear")
+	{
+		action = "set";
+	}
+
+	bool modified_status = InArray(memory, ticket);
+	
+	if (action == "get")
+	{
+		return modified_status;
+	}
+	else if (action == "set")
+	{
+		ArrayEnsureValue(memory, ticket);
+
+		return true;
+	}
+	else if (action == "clear")
+	{
+		ArrayStripValue(memory, ticket);
+
+		return true;
+	}
+
+	return false;
+}
+
+double OrderOpenPrice()
+{
+	double op  = 0.0;
+	int type   = LoadedType();
+	int digits = (int)SymbolInfoInteger(OrderSymbol(), SYMBOL_DIGITS);
+
+	if (type == 1)
+	{
+		op = PositionGetDouble(POSITION_PRICE_OPEN);
+	}
+	else if (type == 3)
+	{
+		// Get the value from the very first deal in the position
+		
+		ulong dealTicket = OrderTicket();
+
+		if (HistoryDealSelect(dealTicket)) {
+			ulong positionId = HistoryDealGetInteger(dealTicket, DEAL_POSITION_ID);
+
+			HistorySelectByPosition(positionId);
+
+			ulong ticket = HistoryDealGetTicket(0);
+
+			op = HistoryDealGetDouble(ticket, DEAL_PRICE);
+		}
+
+		HistoryTradesTotalReset();
+	}
+	else if (type == 4)
+	{
+		ulong orderTicket = OrderTicket();
+		
+		if (HistoryOrderSelect(orderTicket)) {
+			op = HistoryOrderGetDouble(orderTicket, ORDER_PRICE_OPEN);
+		}
+	}
+   else
+   {
+   	op = OrderGetDouble(ORDER_PRICE_OPEN);
+   }
+
+	return NormalizeDouble(op, digits);
+}
+
+datetime OrderOpenTime()
+{
+	datetime time = 0;
+	int type      = LoadedType();
+
+	if (type == 1)
+	{
+		time = (datetime)PositionGetInteger(POSITION_TIME);
+	}
+	else if (type == 3)
+	{
+		// Get the value from the very first deal in the position
+
+		ulong dealTicket = OrderTicket();
+
+		if (HistoryDealSelect(dealTicket)) {
+			ulong positionId = HistoryDealGetInteger(dealTicket, DEAL_POSITION_ID);
+	
+			HistorySelectByPosition(positionId);
+	
+			ulong ticket = HistoryDealGetTicket(0);
+			
+			time = (datetime)HistoryDealGetInteger(ticket, DEAL_TIME);
+		}
+		
+		HistoryTradesTotalReset();
+	}
+	else if (type == 4)
+	{
+		ulong orderTicket = OrderTicket();
+		
+		if (HistoryOrderSelect(orderTicket)) {
+			time = (datetime)HistoryOrderGetInteger(orderTicket, ORDER_TIME_SETUP);
+		}
+	}
+	else
+	{
+		time = (datetime)OrderGetInteger(ORDER_TIME_SETUP);
+	}
+	
+	return time;
+}
+
+double OrderProfit()
+{
+	int type = LoadedType();
+
+   if (type == 1) {
+		return PositionGetDouble(POSITION_PROFIT);
+	}
+   if (type == 3) {
+   	ulong dealTicket = OrderTicket();
+   	
+   	if (HistoryDealSelect(dealTicket)) {
+			return HistoryDealGetDouble(dealTicket, DEAL_PROFIT);
+		}
+	}
+   if (type == 4) {
+		return 0;
+	}
+	
+	return 0;
+}
+
+double OrderStopLoss()
+{
+	int type = LoadedType();
+
+	if (type == 1) {return PositionGetDouble(POSITION_SL);}
+	if (type == 3) {
+		ulong dealTicket = OrderTicket();
+		
+		if (HistoryDealSelect(dealTicket)) {
+			return HistoryDealGetDouble(dealTicket, DEAL_SL);
+		}
+	}
+	if (type == 4) {
+		ulong orderTicket = OrderTicket();
+		
+		if (HistoryOrderSelect(orderTicket)) {
+			return HistoryOrderGetDouble(orderTicket, ORDER_SL);
+		}
+	}
+
+	return OrderGetDouble(ORDER_SL);
+}
+
+double OrderSwap()
+{
+	int type = LoadedType();
+
+	if (type == 1) {return PositionGetDouble(POSITION_SWAP);}
+	if (type == 3) {
+		ulong dealTicket = OrderTicket();
+		
+		if (HistoryDealSelect(dealTicket)) {
+			return HistoryDealGetDouble(dealTicket, DEAL_SWAP);
+		}
+	}
+	if (type == 4) {return 0;}
+
+	return 0;
+}
+
+string OrderSymbol()
+{
+	int type = LoadedType();
+
+	if (type == 1) {return PositionGetString(POSITION_SYMBOL);}
+	if (type == 3) {
+		ulong dealTicket = OrderTicket();
+		
+		if (HistoryDealSelect(dealTicket)) {
+			return HistoryDealGetString(dealTicket, DEAL_SYMBOL);
+		}
+	}
+	if (type == 4) {
+		ulong orderTicket = OrderTicket();
+		
+		if (HistoryOrderSelect(orderTicket)) {
+			return HistoryOrderGetString(orderTicket, ORDER_SYMBOL);
+		}
+	}
+
+	return OrderGetString(ORDER_SYMBOL);
+}
+
+double OrderTakeProfit()
+{
+	int type = LoadedType();
+
+	if (type == 1) {return PositionGetDouble(POSITION_TP);}
+	if (type == 3) {
+		ulong dealTicket = OrderTicket();
+		
+		if (HistoryDealSelect(dealTicket)) {
+			return HistoryDealGetDouble(dealTicket, DEAL_TP);
+		}
+	}
+	if (type == 4) {
+		ulong orderTicket = OrderTicket();
+		
+		if (HistoryOrderSelect(orderTicket)) {
+			return HistoryOrderGetDouble(orderTicket, ORDER_TP);
+		}
+	}
+
+	return OrderGetDouble(ORDER_TP);
+}
+
+long OrderTicket(long ticket = 0)
+{
+	static long memory = 0;
+
+	if (ticket > 0) {memory = ticket;}
+
+	return memory;
+}
+
+int OrderType()
+{
+	int type = LoadedType();
+
+	if (type == 1) {return (int)PositionGetInteger(POSITION_TYPE);}
+	if (type == 2) {return (int)OrderGetInteger(ORDER_TYPE);}
+	if (type == 3)
+	{
+		ulong dealTicket = OrderTicket();
+		int orderType = -1;
+
+		if (HistoryDealSelect(dealTicket)) {
+			long positionId = HistoryDealGetInteger(dealTicket, DEAL_POSITION_ID);
+
+			HistorySelectByPosition(positionId);
+	
+			ulong firstDealTicket = HistoryDealGetTicket(0);
+
+			orderType = (int)HistoryDealGetInteger(firstDealTicket, DEAL_TYPE);
+		}
+
+		HistoryTradesTotalReset();
+
+		return orderType;
+	}
+	if (type == 4) {
+		ulong orderTicket = OrderTicket();
+		
+		if (HistoryOrderSelect(orderTicket)) {
+			return (int)HistoryOrderGetInteger(OrderTicket(),ORDER_TYPE);
+		}
+	}
+
+	return (int)OrderGetInteger(ORDER_TYPE);
+}
+
+bool PendingOrderSelectByIndex(
+	int index,
+	string group_mode    = "all",
+	string group         = "0",
+	string market_mode   = "all",
+	string market        = "",
+	string BuysOrSells   = "both",
+	string LimitsOrStops = "both"
+)
+{
+	if (LoadPendingOrder(OrderGetTicket(index)))
+	{
+		if (FilterOrderBy(
+			group_mode,
+			group,
+			market_mode,
+			market,
+			BuysOrSells,
+			LimitsOrStops,
+			1)
+		) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+bool PendingOrderSelectByTicket(ulong ticket)
+{
+	bool success = OrderSelect(ticket);
+
+	if (success) {
+		LoadedType(2);
+		OrderTicket(ticket);
+	}
+
+	return success;
+}
+
+double PipValue(string symbol)
+{
+	if (symbol == "") symbol = Symbol();
+
+	return CustomPoint(symbol) / SymbolInfoDouble(symbol, SYMBOL_POINT);
+}
+
+bool PositionSelectByDeal(ulong dealTicket)
+{
+	bool success = false;
+
+	if (HistoryDealSelect(dealTicket)) {
+		long positionId = HistoryDealGetInteger(dealTicket, DEAL_POSITION_ID);
+		
+		if (positionId)
+		{
+			int total = PositionsTotal();
+			
+			for (int i = total - 1; i >= 0; i--)
+			{
+				if (PositionGetTicket(i))
+				{
+					if (PositionGetInteger(POSITION_IDENTIFIER) == positionId)
+					{
+						success = true;
+	
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	return success;
+}
+
+int SecondsFromComponents(double days, double hours, double minutes, int seconds)
+{
+	int retval =
+		86400 * (int)MathFloor(days)
+		+ 3600 * (int)(MathFloor(hours) + (24 * (days - MathFloor(days))))
+		+ 60 * (int)(MathFloor(minutes) + (60 * (hours - MathFloor(hours))))
+		+ (int)((double)seconds + (60 * (minutes - MathFloor(minutes))));
+
+	return retval;
+}
+
+datetime SelectedHistoryFromTime(datetime setTime = -1)
+{
+	static datetime time;
+	
+	if (setTime > -1)
+	{
+		time = setTime;
+	}
+	
+	return time;
+}
+
+datetime SelectedHistoryToTime(datetime setTime = -1)
+{
+	static datetime time;
+	
+	if (setTime > -1)
+	{
+		time = setTime;
+	}
+	
+	return time;
+}
+
+long SellLater(
+	string symbol,
+	double lots,
+	double price,
+	double sll = 0, // SL level
+	double tpl = 0, // TP level
+	double slp = 0, // SL adjust in points
+	double tpp = 0, // TP adjust in points
+	double slippage = 0,
+	datetime expiration = 0,
+	int magic = 0,
+	string comment = "",
+	color arrowcolor = clrNONE,
+	bool oco = false
+	)
+{
+	double bid = SymbolInfoDouble(symbol,SYMBOL_BID);
+	ENUM_ORDER_TYPE type = 0;
+
+	     if (price == bid) {type = ORDER_TYPE_SELL;}
+	else if (price < bid)  {type = ORDER_TYPE_SELL_STOP;}
+	else if (price > bid)  {type = ORDER_TYPE_SELL_LIMIT;}
+
+	return OrderCreate(
+		symbol,
+		type,
+		lots,
+		price,
+		sll,
+		tpl,
+		slp,
+		tpp,
+		slippage,
+		magic,
+		comment,
+		arrowcolor,
+		expiration,
+		oco
+	);
+}
+
+long SellNow(
+	string symbol,
+	double lots,
+	double sll,
+	double tpl,
+	double slp,
+	double tpp,
+	double slippage = 0,
+	int magic = 0,
+	string comment = "",
+	color arrowcolor = clrNONE,
+	datetime expiration = 0
+	)
+{
+	return OrderCreate(
+		symbol,
+		POSITION_TYPE_SELL,
+		lots,
+		0,
+		sll,
+		tpl,
+		slp,
+		tpp,
+		slippage,
+		magic,
+		comment,
+		arrowcolor,
+		expiration
+	);
+}
+
+bool SkipThePass(bool set=false)
+{
+   static int mem_fid=0;
+   static bool mem=false;
+   if (set==true) {
+      mem=true;
+      mem_fid=FXD_CURRENT_FUNCTION_ID;
+   }
+   else {
+      if (mem_fid!=FXD_CURRENT_FUNCTION_ID) {
+         mem=false; // reset
+         return(false);
+      }
+      if (mem==true) {
+         mem=false; // reset
+         return(true);
+      }
+   }
+   return(mem);
+}
+
+double StrToDouble(string s)
+{
+	return StringToDouble(s);
+}
+
+int StrToInteger(string value)
+{
+	return (int)StringToInteger(value);
+}
+
+template<typename T>
+void StringExplode(string delimiter, string inputString, T &output[])
+{
+	int begin   = 0;
+	int end     = 0;
+	int element = 0;
+	int length  = StringLen(inputString);
+	int length_delimiter = StringLen(delimiter);
+	T empty_val  = (typename(T) == "string") ? (T)"" : (T)0;
+
+	if (length > 0)
+	{
+		while (true)
+		{
+			end = StringFind(inputString, delimiter, begin);
+
+			ArrayResize(output, element + 1);
+			output[element] = empty_val;
+	
+			if (end != -1)
+			{
+				if (end > begin)
+				{
+					output[element] = (T)StringSubstr(inputString, begin, end - begin);
+				}
+			}
+			else
+			{
+				output[element] = (T)StringSubstr(inputString, begin, length - begin);
+				break;
+			}
+			
+			begin = end + 1 + (length_delimiter - 1);
+			element++;
+		}
+	}
+	else
+	{
+		ArrayResize(output, 1);
+		output[element] = empty_val;
+	}
+}
+
+template<typename T>
+string StringImplode(string delimeter, T &array[])
+{
+   string retval = "";
+	int size      = ArraySize(array);
+
+   for (int i = 0; i < size; i++)
+	{
+      StringConcatenate(retval, retval, (string)array[i], delimeter);
+   }
+
+   return StringSubstr(retval, 0, (StringLen(retval) - StringLen(delimeter)));
+}
+
+datetime StringToTimeEx(string str, string mode="server")
+{
+	// mode: server, local, gmt
+	int offset = 0;
+
+	if (mode == "server") {offset = 0;}
+	else if (mode == "local") {offset = (int)(TimeLocal() - TimeCurrent());}
+	else if (mode == "gmt") {offset = (int)(TimeGMT() - TimeCurrent());}
+
+	datetime time = StringToTime(str) - offset;
+
+	return time;
+}
+
+string StringTrim(string text)
+{
+	StringTrimRight(text);
+	StringTrimLeft(text);
+
+	return text;
+}
+
+double SymbolAsk(string symbol)
+{
+	if (symbol == "") symbol = Symbol();
+
+	return SymbolInfoDouble(symbol, SYMBOL_ASK);
+}
+
+double SymbolBid(string symbol)
+{
+	if (symbol == "") symbol = Symbol();
+
+	return SymbolInfoDouble(symbol, SYMBOL_BID);
+}
+
+int SymbolDigits(string symbol)
+{
+	if (symbol == "") symbol = Symbol();
+
+	return (int)SymbolInfoInteger(symbol, SYMBOL_DIGITS);
+}
+
+double SymbolLotSize(string symbol)
+{
+	if (symbol == "") symbol = Symbol();
+
+	return SymbolInfoDouble(symbol, SYMBOL_TRADE_CONTRACT_SIZE);
+}
+
+double SymbolLotStep(string symbol)
+{
+	if (symbol == "") symbol = Symbol();
+
+	return SymbolInfoDouble(symbol, SYMBOL_VOLUME_STEP);
+}
+
+double SymbolMaxLot(string symbol)
+{
+	if (symbol == "") symbol = Symbol();
+
+	return SymbolInfoDouble(symbol, SYMBOL_VOLUME_MAX);
+}
+
+double SymbolMinLot(string symbol)
+{
+	if (symbol == "") symbol = Symbol();
+
+	return SymbolInfoDouble(symbol, SYMBOL_VOLUME_MIN);
+}
+
+ENUM_TIMEFRAMES TFMigrate(int tf)
+{
+	switch (tf)
+	{
+		case 0: return PERIOD_CURRENT;
+		case 1: return PERIOD_M1;
+		case 5: return PERIOD_M5;
+		case 15: return PERIOD_M15;
+		case 30: return PERIOD_M30;
+		case 60: return PERIOD_H1;
+		case 240: return PERIOD_H4;
+		case 1440: return PERIOD_D1;
+		case 10080: return PERIOD_W1;
+		case 43200: return PERIOD_MN1;
+
+		case 2: return PERIOD_M2;
+		case 3: return PERIOD_M3;
+		case 4: return PERIOD_M4;      
+		case 6: return PERIOD_M6;
+		case 10: return PERIOD_M10;
+		case 12: return PERIOD_M12;
+		case 16385: return PERIOD_H1;
+		case 16386: return PERIOD_H2;
+		case 16387: return PERIOD_H3;
+		case 16388: return PERIOD_H4;
+		case 16390: return PERIOD_H6;
+		case 16392: return PERIOD_H8;
+		case 16396: return PERIOD_H12;
+		case 16408: return PERIOD_D1;
+		case 32769: return PERIOD_W1;
+		case 49153: return PERIOD_MN1;
+
+		default: return PERIOD_CURRENT;
+	}
+}
+
+double TicksData(string symbol = "", int type = 0, int shift = 0)
+{
+	static bool collecting_ticks = false;
+	static string symbols[];
+	static int zero_sid[];
+	static double memoryASK[][100];
+	static double memoryBID[][100];
+
+	int sid = 0, size = 0, i = 0, id = 0;
+	double ask = 0, bid = 0, retval = 0;
+	bool exists = false;
+
+	if (ArraySize(symbols) == 0)
+	{
+		ArrayResize(symbols, 1);
+		ArrayResize(zero_sid, 1);
+		ArrayResize(memoryASK, 1);
+		ArrayResize(memoryBID, 1);
+
+		symbols[0] = _Symbol;
+	}
+
+	if (type > 0 && shift > 0)
+	{
+		collecting_ticks = true;
+	}
+
+	if (collecting_ticks == false)
+	{
+		if (type > 0 && shift == 0)
+		{
+			// going to get ticks
+		}
+		else
+		{
+			return 0;
+		}
+	}
+
+	if (symbol == "") symbol = _Symbol;
+
+	if (type == 0)
+	{
+		exists = false;
+		size   = ArraySize(symbols);
+
+		if (size == 0) {ArrayResize(symbols, 1);}
+
+		for (i=0; i<size; i++)
+		{
+			if (symbols[i] == symbol)
+			{
+				exists = true;
+				sid    = i;
+				break;
+			}
+		}
+
+		if (exists == false)
+		{
+			int newsize = ArraySize(symbols) + 1;
+
+			ArrayResize(symbols, newsize);
+			symbols[newsize-1] = symbol;
+
+			ArrayResize(zero_sid, newsize);
+			ArrayResize(memoryASK, newsize);
+			ArrayResize(memoryBID, newsize);
+
+			sid=newsize;
+		}
+
+		if (sid >= 0)
+		{
+			ask = SymbolInfoDouble(symbol, SYMBOL_ASK);
+			bid = SymbolInfoDouble(symbol, SYMBOL_BID);
+
+			if (bid == 0 && MQLInfoInteger(MQL_TESTER))
+			{
+				Print("Ticks data collector error: " + symbol + " cannot be backtested. Only the current symbol can be backtested. The EA will be terminated.");
+				ExpertRemove();
+			}
+
+			if (
+				   symbol == _Symbol
+				|| ask != memoryASK[sid][0]
+				|| bid != memoryBID[sid][0]
+			)
+			{
+				memoryASK[sid][zero_sid[sid]] = ask;
+				memoryBID[sid][zero_sid[sid]] = bid;
+				zero_sid[sid]                 = zero_sid[sid] + 1;
+
+				if (zero_sid[sid] == 100)
+				{
+					zero_sid[sid] = 0;
+				}
+			}
+		}
+	}
+	else
+	{
+		if (shift <= 0)
+		{
+			if (type == SYMBOL_ASK)
+			{
+				return SymbolInfoDouble(symbol, SYMBOL_ASK);
+			}
+			else if (type == SYMBOL_BID)
+			{
+				return SymbolInfoDouble(symbol, SYMBOL_BID); 
+			}
+			else
+			{
+				double mid = ((SymbolInfoDouble(symbol, SYMBOL_ASK) + SymbolInfoDouble(symbol, SYMBOL_BID)) / 2);
+
+				return mid;
+			}
+		}
+		else
+		{
+			size = ArraySize(symbols);
+
+			for (i = 0; i < size; i++)
+			{
+				if (symbols[i] == symbol)
+				{
+					sid = i;
+				}
+			}
+
+			if (shift < 100)
+			{
+				id = zero_sid[sid] - shift - 1;
+
+				if(id < 0) {id = id + 100;}
+
+				if (type == SYMBOL_ASK)
+				{
+					retval = memoryASK[sid][id];
+
+					if (retval == 0)
+					{
+						retval = SymbolInfoDouble(symbol, SYMBOL_ASK);
+					}
+				}
+				else if (type == SYMBOL_BID)
+				{
+					retval = memoryBID[sid][id];
+
+					if (retval == 0)
+					{
+						retval = SymbolInfoDouble(symbol, SYMBOL_BID);
+					}
+				}
+			}
+		}
+	}
+
+	return retval;
+}
+
+int TicksPerSecond(bool get_max = false, bool set = false)
+{
+	static datetime time0 = 0;
+	static int ticks      = 0;
+	static int tps        = 0;
+	static int tpsmax     = 0;
+
+	datetime time1 = TimeLocal();
+
+	if (set == true)
+	{
+		if (time1 > time0)
+		{
+			if (time1 - time0 > 1)
+			{
+				tps = 0;
+			}
+			else
+			{
+				tps = ticks;
+			}
+
+			time0 = time1;
+			ticks = 0;
+		}
+
+		ticks++;
+
+		if (tps > tpsmax) {tpsmax = tps;}
+	}
+
+	if (get_max)
+	{
+		return tpsmax;
+	}
+
+	return tps;
+}
+
+datetime TimeAtStart(string cmd = "server")
+{
+	static datetime local  = 0;
+	static datetime server = 0;
+
+	if (cmd == "local")
+	{
+		return local;
+	}
+	else if (cmd == "server")
+	{
+		return server;
+	}
+	else if (cmd == "set")
+	{
+		local  = TimeLocal();
+		server = TimeCurrent();
+	}
+
+	return 0;
+}
+
+int TimeDay(datetime time)
+{
+	MqlDateTime tm;
+   TimeToStruct(time,tm);
+   return(tm.day);
+}
+
+int TimeDayOfWeek(datetime time)
+{
+   MqlDateTime tm;
+   TimeToStruct(time,tm);
+   return(tm.day_of_week);
+}
+
+datetime TimeFromComponents(
+	int time_src = 0,
+	int    y = 0,
+	int    m = 0,
+	double d = 0,
+	double h = 0,
+	double i = 0,
+	int    s = 0
+) {
+	MqlDateTime tm;
+	int offset = 0;
+
+	if (time_src == 0) {
+		TimeCurrent(tm);
+	}
+	else if (time_src == 1) {
+		TimeLocal(tm); 
+		offset = (int)(TimeLocal() - TimeCurrent());
+	}
+	else if (time_src == 2) {
+		TimeGMT(tm);
+		offset = (int)(TimeGMT() - TimeCurrent());
+	}
+
+	if (y > 0)
+	{
+		if (y < 100) {y = 2000 + y;}
+		tm.year = y;
+	}
+	if (m > 0) {tm.mon = m;}
+	if (d > 0) {tm.day = (int)MathFloor(d);}
+
+	tm.hour = (int)(MathFloor(h) + (24 * (d - MathFloor(d))));
+	tm.min  = (int)(MathFloor(i) + (60 * (h - MathFloor(h))));
+	tm.sec  = (int)((double)s + (60 * (i - MathFloor(i))));
+	
+	datetime time = StructToTime(tm) - offset;
+
+	return time;
+}
+
+datetime TimeFromString(int mode_time, string stamp)
+{
+	datetime t = 0;
+
+	     if (mode_time == 0) t = TimeCurrent();
+	else if (mode_time == 1) t = TimeLocal();
+	else if (mode_time == 2) t = TimeGMT();
+
+	int stamplen = StringLen(stamp);
+
+	if (stamplen < 9)
+	{
+		int thour    = TimeHour(t);
+		int tminute  = TimeMinute(t);
+		int tseconds = TimeSeconds(t);
+
+		int hour   = (int)StringSubstr(stamp, 0, 2);
+		int minute = (int)StringSubstr(stamp, 3, 2);
+		int second = 0;
+
+		if (stamplen > 5)
+		{
+			second = (int)StringSubstr(stamp, 6, 2);
+		}
+
+		datetime t1 = (datetime)(t - (thour-hour)*3600 - (tminute - minute)*60 - (tseconds-second));
+
+		return t1;
+	}
+
+	return StringToTime(stamp);
+}
+
+int TimeHour(datetime time)
+{
+	MqlDateTime tm;
+	TimeToStruct(time,tm);
+
+	return tm.hour;
+}
+
+int TimeMinute(datetime time)
+{
+	MqlDateTime tm;
+	TimeToStruct(time,tm);
+	
+	return tm.min;
+}
+
+int TimeMonth(datetime time)
+{
+	MqlDateTime tm;
+	TimeToStruct(time,tm);
+
+	return tm.mon;
+}
+
+int TimeSeconds(datetime time)
+{
+	MqlDateTime tm;
+	TimeToStruct(time,tm);
+
+	return tm.sec;
+}
+
+int TimeYear(datetime time)
+{
+   MqlDateTime tm;
+	TimeToStruct(time,tm);
+
+	return tm.year;
+}
+
+bool TradeSelectByIndex(
+	int index,
+	string group_mode    = "all",
+	string group         = "0",
+	string market_mode   = "all",
+	string market        = "",
+	string BuysOrSells   = "both"
+) {
+	if (LoadPosition(PositionGetTicket(index)))
+	{
+		if (FilterOrderBy(
+			group_mode,
+			group,
+			market_mode,
+			market,
+			BuysOrSells)
+			)
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
+bool TradeSelectByTicket(ulong ticket)
+{
+	if (LoadPosition(ticket) && OrderType() < 2)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+int TradesTotal()
+{
+	return PositionsTotal();
+}
+
+double VirtualStopsDriver(
+	string command = "",
+	ulong ti       = 0,
+	double sl      = 0,
+	double tp      = 0,
+	double slp     = 0,
+	double tpp     = 0
+)
+{
+	static bool initialized     = false;
+	static string name          = "";
+	static string loop_name[2]  = {"sl", "tp"};
+	static color  loop_color[2] = {DeepPink, DodgerBlue};
+	static double loop_price[2] = {0, 0};
+	static ulong mem_to_ti[]; // tickets
+	static int mem_to[];      // timeouts
+	static bool trade_pass = false;
+	int i = 0;
+
+	// Are Virtual Stops even enabled?
+	if (!USE_VIRTUAL_STOPS)
+	{
+		return 0;
+	}
+	
+	if (initialized == false || command == "initialize")
+	{
+		initialized = true;
+	}
+
+	// Listen
+	if (command == "" || command == "listen")
+	{
+		int total     = ObjectsTotal(0, -1, OBJ_HLINE);
+		int length    = 0;
+		color clr     = clrNONE;
+		int sltp      = 0;
+		ulong ticket  = 0;
+		double level  = 0;
+		double askbid = 0;
+		int polarity  = 0;
+		string symbol = "";
+
+		for (i = total - 1; i >= 0; i--)
+		{
+			name = ObjectName(0, i, -1, OBJ_HLINE); // for example: #1 sl
+
+			if (StringSubstr(name, 0, 1) != "#")
+			{
+				continue;
+			}
+
+			length = StringLen(name);
+
+			if (length < 5)
+			{
+				continue;
+			}
+
+			clr = (color)ObjectGetInteger(0, name, OBJPROP_COLOR);
+
+			if (clr != loop_color[0] && clr != loop_color[1])
+			{
+				continue;
+			}
+
+			string last_symbols = StringSubstr(name, length-2, 2);
+
+			if (last_symbols == "sl")
+			{
+				sltp = -1;
+			}
+			else if (last_symbols == "tp")
+			{
+				sltp = 1;
+			}
+			else
+			{
+				continue;	
+			}
+
+			ulong ticket0 = StringToInteger(StringSubstr(name, 1, length - 4));
+
+			// prevent loading the same ticket number twice in a row
+			if (ticket0 != ticket)
+			{
+				ticket = ticket0;
+
+				if (TradeSelectByTicket(ticket))
+				{
+					symbol     = OrderSymbol();
+					polarity   = (OrderType() == 0) ? 1 : -1;
+					askbid   = (OrderType() == 0) ? SymbolInfoDouble(symbol, SYMBOL_BID) : SymbolInfoDouble(symbol, SYMBOL_ASK);
+					
+					trade_pass = true;
+				}
+				else
+				{
+					trade_pass = false;
+				}
+			}
+
+			if (trade_pass)
+			{
+				level    = ObjectGetDouble(0, name, OBJPROP_PRICE, 0);
+
+				if (level > 0)
+				{
+					// polarize levels
+					double level_p  = polarity * level;
+					double askbid_p = polarity * askbid;
+
+					if (
+						   (sltp == -1 && (level_p - askbid_p) >= 0) // sl
+						|| (sltp == 1 && (askbid_p - level_p) >= 0)  // tp
+					)
+					{
+						//-- Virtual Stops SL Timeout
+						if (
+							   (VIRTUAL_STOPS_TIMEOUT > 0)
+							&& (sltp == -1 && (level_p - askbid_p) >= 0) // sl
+						)
+						{
+							// start timeout?
+							int index = ArraySearch(mem_to_ti, ticket);
+
+							if (index < 0)
+							{
+								int size = ArraySize(mem_to_ti);
+								ArrayResize(mem_to_ti, size+1);
+								ArrayResize(mem_to, size+1);
+								mem_to_ti[size] = ticket;
+								mem_to[size]    = (int)TimeLocal();
+
+								Print(
+									"#",
+									ticket,
+									" timeout of ",
+									VIRTUAL_STOPS_TIMEOUT,
+									" seconds started"
+								);
+
+								return 0;
+							}
+							else
+							{
+								if (TimeLocal() - mem_to[index] <= VIRTUAL_STOPS_TIMEOUT)
+								{
+									return 0;
+								}
+							}
+						}
+
+						if (CloseTrade(ticket))
+						{
+							// check this before deleting the lines
+							//OnTradeListener();
+
+							// delete objects
+							ObjectDelete(0, "#" + (string)ticket + " sl");
+							ObjectDelete(0, "#" + (string)ticket + " tp");
+						}
+					}
+					else
+					{
+						if (VIRTUAL_STOPS_TIMEOUT > 0)
+						{
+							i = ArraySearch(mem_to_ti, ticket);
+
+							if (i >= 0)
+							{
+								ArrayStripKey(mem_to_ti, i);
+								ArrayStripKey(mem_to, i);
+							}
+						}
+					}
+				}
+			}
+			else if (
+					!PendingOrderSelectByTicket(ticket)
+				|| OrderCloseTime() > 0 // in case the order has been closed
+			)
+			{
+				ObjectDelete(0, name);
+			}
+			else
+			{
+				PendingOrderSelectByTicket(ticket);
+			}
+		}
+	}
+	// Get SL or TP
+	else if (
+		ti > 0
+		&& (
+			   command == "get sl"
+			|| command == "get tp"
+		)
+	)
+	{
+		double value = 0;
+
+		name = "#" + IntegerToString(ti) + " " + StringSubstr(command, 4, 2);
+
+		if (ObjectFind(0, name) > -1)
+		{
+			value = ObjectGetDouble(0, name, OBJPROP_PRICE, 0);
+		}
+
+		return value;
+	}
+	// Set SL and TP
+	else if (
+		ti > 0
+		&& (
+			   command == "set"
+			|| command == "modify"
+			|| command == "clear"
+			|| command == "partial"
+		)
+	)
+	{
+		loop_price[0] = sl;
+		loop_price[1] = tp;
+
+		for (i = 0; i < 2; i++)
+		{
+			name = "#" + IntegerToString(ti) + " " + loop_name[i];
+			
+			if (loop_price[i] > 0)
+			{
+				// 1) create a new line
+				if (ObjectFind(0, name) == -1)
+				{
+						 ObjectCreate(0, name, OBJ_HLINE, 0, 0, loop_price[i]);
+					ObjectSetInteger(0, name, OBJPROP_WIDTH, 1);
+					ObjectSetInteger(0, name, OBJPROP_COLOR, loop_color[i]);
+					ObjectSetInteger(0, name, OBJPROP_STYLE, STYLE_DOT);
+					ObjectSetString(0, name, OBJPROP_TEXT, name + " (virtual)");
+				}
+				// 2) modify existing line
+				else
+				{
+					ObjectSetDouble(0, name, OBJPROP_PRICE, 0, loop_price[i]);
+				}
+			}
+			else
+			{
+				// 3) delete existing line
+				ObjectDelete(0, name);
+			}
+		}
+
+		// print message
+		if (command == "set" || command == "modify")
+		{
+			Print(
+				command,
+				" #",
+				IntegerToString(ti),
+				": virtual sl ",
+				DoubleToStr(sl, (int)SymbolInfoInteger(Symbol(),SYMBOL_DIGITS)),
+				" tp ",
+				DoubleToStr(tp,(int)SymbolInfoInteger(Symbol(),SYMBOL_DIGITS))
+			);
+		}
+
+		return 1;
+	}
+
+	return 1;
+}
+
+int WindowFindVisible(long chart_id, string term)
+{
+   //-- the search term can be chart name, such as Force(13), or subwindow index
+   if (term == "" || term == "0") {return 0;}
+   
+   int subwindow = (int)StringToInteger(term);
+   
+   if (subwindow == 0 && StringLen(term) > 1)
+   {
+      subwindow = ChartWindowFind(chart_id, term);
+   }
+   
+   if (subwindow > 0 && !ChartGetInteger(chart_id, CHART_WINDOW_IS_VISIBLE, subwindow))
+   {
+      return -1;  
+   }
+   
+   return subwindow;
+}
+
+double ask(string symbol = NULL)
+{
+	return SymbolInfoDouble(symbol, SYMBOL_ASK);
+}
+
+double attrLotsInitial()
+{
+	double retval = 0.0;
+	ulong ticket = OrderTicket();
+
+	long parentTicket = attrTicketParent(ticket);
+
+	if (HistorySelectByPosition(parentTicket)) {
+		int total = HistoryDealsTotal();
+
+		if (total > 0) {
+			long dealTicket = (long)HistoryDealGetTicket(0);
+
+			retval = HistoryDealGetDouble(dealTicket, DEAL_VOLUME);
+		}
+	}
+
+	HistoryTradesTotalReset();
+	PositionSelectByTicket(ticket);
+
+   return retval;
+}
+
+double attrLotsInitial(string symbol) {
+	double retval = 0.0;
+
+   if (!PositionSelect(symbol)) {
+   	return 0.0;
+   }
+  
+   long positionId = PositionGetInteger(POSITION_IDENTIFIER);
+   
+   if (HistorySelectByPosition(positionId)) {
+		int total = HistoryDealsTotal();
+
+		if (total > 0) {
+			long ticket = (long)HistoryDealGetTicket(0);
+			
+			retval = HistoryDealGetDouble(ticket, DEAL_VOLUME);
+		}
+	}
+
+	HistoryTradesTotalReset();
+
+   return retval;
+}
+
+double attrStopLoss()
+{
+	if (USE_VIRTUAL_STOPS)
+	{
+		return VirtualStopsDriver("get sl", OrderTicket());
+	}
+
+	return OrderStopLoss();
+}
+
+double attrTakeProfit()
+{
+	if (USE_VIRTUAL_STOPS)
+	{
+		return VirtualStopsDriver("get tp", OrderTicket());
+	}
+
+   return OrderTakeProfit();
+}
+
+long attrTicketInLoop(long ticket = 0)
+{
+	static long t;
+
+	if (ticket > 0) {t = ticket;}
+
+	return t;
+}
+
+/**
+* Get the parent position ticket when the current position
+* was created as "add to volume" child.
+* In other cases, return the input ticket.
+*/
+long attrTicketParent(long ticket)
+{
+	long parentTicket = 0;
+
+	if (PositionSelectByTicket(ticket)) {
+		string comment = PositionGetString(POSITION_COMMENT);
+		int tagPos     = StringFind(comment, "[p=");
+		
+		if (tagPos >= 0) {
+			string tag   = StringSubstr(comment, tagPos);
+			tag          = StringSubstr(tag, 0, StringFind(tag, "]") + 1);
+			parentTicket = StringToInteger(StringSubstr(tag, 3, -1));
+		}
+	}
+
+	if (parentTicket == 0) {
+		parentTicket = ticket;
+	}
+
+	return parentTicket;
+}
+
+int attrTypeInLoop(int type=0)
+{
+	static int t;
+
+	if (type > 0) {t = type;}
+
+	return t;
+}
+
+template<typename DT1, typename DT2>
+bool compare(string sign, DT1 v1, DT2 v2)
+{
+	     if (sign == ">") return(v1 > v2);
+	else if (sign == "<") return(v1 < v2);
+	else if (sign == ">=") return(v1 >= v2);
+	else if (sign == "<=") return(v1 <= v2);
+	else if (sign == "==") return(v1 == v2);
+	else if (sign == "!=") return(v1 != v2);
+	else if (sign == "x>") return(v1 > v2);
+	else if (sign == "x<") return(v1 < v2);
+
+	return false;
+}
+
+string e_Reason() {return onTradeEventDetector.EventValueReason();}
+
+string e_ReasonDetail() {return onTradeEventDetector.EventValueDetail();}
+
+double e_attrClosePrice() {return onTradeEventDetector.EventValuePriceClose();}
+
+datetime e_attrCloseTime() {return onTradeEventDetector.EventValueTimeClose();}
+
+string e_attrComment() {return onTradeEventDetector.EventValueComment();}
+
+datetime e_attrExpiration() {return onTradeEventDetector.EventValueTimeExpiration();}
+
+double e_attrLots() {return onTradeEventDetector.EventValueVolume();}
+
+long e_attrMagicNumber() {return onTradeEventDetector.EventValueMagic();}
+
+double e_attrOpenPrice() {return onTradeEventDetector.EventValuePriceOpen();}
+
+datetime e_attrOpenTime() {return onTradeEventDetector.EventValueTimeOpen();}
+
+double e_attrProfit() {return onTradeEventDetector.EventValueProfit();}
+
+double e_attrStopLoss() {return onTradeEventDetector.EventValueStopLoss();}
+
+double e_attrSwap() {return onTradeEventDetector.EventValueSwap();}
+
+string e_attrSymbol() {return onTradeEventDetector.EventValueSymbol();}
+
+double e_attrTakeProfit() {return onTradeEventDetector.EventValueTakeProfit();}
+
+long e_attrTicket() {return onTradeEventDetector.EventValueTicket();}
+
+int e_attrType() {return onTradeEventDetector.EventValueType();}
+
+template<typename DT1, typename DT2>
+double formula(string sign, DT1 v1, DT2 v2)
+{
+	     if (sign == "+") return(v1 + v2);
+	else if (sign == "-") return(v1 - v2);
+	else if (sign == "*") return(v1 * v2);
+	else if (sign == "/") return(v1 / v2);
+
+	return false;
+}
+
+string formula(string sign, string v1, string v2)
+{
+	if (sign == "+") return(v1 + v2);
+	else {
+		double _v1 = StringToDouble(v1);
+		double _v2 = StringToDouble(v2);
+		
+		     if (sign == "-") return DoubleToString(_v1 - _v2);
+		else if (sign == "*") return DoubleToString(_v1 * _v2);
+		else if (sign == "/") return DoubleToString(_v1 / _v2);
+	}
+
+	return v1 + v2;
+}
+
+double formula(string sign, string v1, double v2)
+{
+	     if (sign == "+") return StringToDouble(v1) + v2;
+	else if (sign == "-") return StringToDouble(v1) - v2;
+	else if (sign == "*") return StringToDouble(v1) * v2;
+	else if (sign == "/") return StringToDouble(v1) / v2;
+
+	return StringToDouble(v1) + v2;
+}
+
+double formula(string sign, double v1, string v2)
+{
+	if (sign == "+") return (v1 + StringToDouble(v2));
+	else if (sign == "-") return v1 - StringToDouble(v2);
+	else if (sign == "*") return v1 * StringToDouble(v2);
+	else if (sign == "/") return v1 / StringToDouble(v2);
+
+	return v1 + StringToDouble(v2);
+}
+
+double fxdCustomIndicator(int handle, int mode=0, int shift=0)
+{
+	static double buffer[1];
+
+	if (handle < 0)
+	{
+		Print("Error: Indicator not handled. (handle=",handle," | error code=",GetLastError(),")");
+		return 0;
+	}
+
+	int tryouts = 0;
+
+	while (true)
+	{
+		if (BarsCalculated(handle) > 0) break;
+		else
+		{
+			tryouts++;
+
+			if (MQLInfoInteger(MQL_TESTER))
+			{
+				Sleep(10);
+			}
+			else
+			{
+				if (tryouts > 100)
+				{
+					Print("Error: Custom indicator could not load (handle=",handle," | error code=",GetLastError(),")");
+
+					break;
+				}
+
+				Sleep(50);
+			}
+		}
+	}
+
+	int success = CopyBuffer(handle,mode,shift,1,buffer);
+
+	if (success < 0)
+	{
+		Print("Error: Cannot get value from a custom indicator. (handle=",handle," | error code=",GetLastError(),")");
+		return 0;
+	}
+
+	//ArraySetAsSeries(buffer,true);
+
+	return buffer[0];
+}
+
+double iATR( 
+	string             symbol,
+	ENUM_TIMEFRAMES    timeframe,
+	int                ma_period,
+	int                shift
+)
+{
+	int handle = iATR(symbol, timeframe, ma_period);
+	double val = fxdCustomIndicator(handle, 0, shift);
+
+	return NormalizeDouble(val, 10);
+}
+
+int iCandleID(string SYMBOL, ENUM_TIMEFRAMES TIMEFRAME, datetime time_stamp)
+{
+	bool TimeStampPrevDayShift = true;
+	int CandleID               = 0;
+
+	// get the time resolution of the desired period, in minutes
+	int mins_tf  = TIMEFRAME;
+	int mins_tf0 = 0;
+
+	if (TIMEFRAME == PERIOD_CURRENT)
+	{
+		mins_tf = (int)PeriodSeconds(PERIOD_CURRENT) / 60;
+	}
+
+	// get the difference between now and the time we want, in minutes
+	int days_adjust = 0;
+
+	if (TimeStampPrevDayShift)
+	{
+		// automatically shift to the previous day
+		if (time_stamp > TimeCurrent())
+		{
+			time_stamp = time_stamp - 86400;
+		}
+
+		// also shift weekdays
+		while (true)
+		{
+			int dow = TimeDayOfWeek(time_stamp);
+
+			if (dow > 0 && dow < 6) {break;}
+
+			time_stamp = time_stamp - 86400;
+			days_adjust++;
+		}
+	}
+
+	int mins_diff = (int)(TimeCurrent() - time_stamp);
+	mins_diff = mins_diff - days_adjust*86400;
+	mins_diff = mins_diff / 60;
+
+	// the difference is negative => quit here
+	if (mins_diff < 0)
+	{
+		return (int)EMPTY_VALUE;
+	}
+
+	// now calculate the candle ID, it is relative to the current time
+	if (mins_diff > 0)
+	{
+		CandleID = (int)MathCeil((double)mins_diff/(double)mins_tf);
+	}
+
+	// now, after all the shifting and in case of missing candles, the calculated candle id can be few candles early
+	// so we will search for the right candle
+	while(true)
+	{
+		if (iTime(SYMBOL, TIMEFRAME, CandleID) >= time_stamp) {break;}
+
+		CandleID--;
+
+		if (CandleID <= 0) {CandleID = 0; break;}
+	}
+
+	return CandleID;
+}
+
+double iMA( 
+	string             symbol,
+	ENUM_TIMEFRAMES    timeframe,
+	int                ma_period,
+	int                ma_shift,
+	ENUM_MA_METHOD     ma_method,
+	ENUM_APPLIED_PRICE applied_price,
+	int                shift
+)
+{
+	int handle = iMA(symbol, timeframe, ma_period, ma_shift, ma_method, applied_price);
+	double val = fxdCustomIndicator(handle, 0, shift);
+
+	return NormalizeDouble(val, 10);
+}
+
+double iZigZag(
+	string symbol = NULL,
+	ENUM_TIMEFRAMES timeframe = 0,
+	int InpDepth = 12,
+	int InpDeviation = 5,
+	int InpBackstep = 3,
+	int mode = 0,
+	int shift = 0
+)
+{
+	// iCustom always creates new handle, even if the input parameters are always the same
+	// That's why some caching is needed.
+	static string memory[][3];
+
+	int digits = 0;
+	int handle = INVALID_HANDLE;
+	
+	string marker = symbol + IntegerToString(timeframe) + IntegerToString(InpDepth) + IntegerToString(InpDeviation) + IntegerToString(InpBackstep);
+	int size = ArrayRange(memory, 0);
+
+	for (int i = size-1; i >= 0; i--)
+	{
+		if (memory[i][0] == marker)
+		{
+			handle = (int)StringToInteger(memory[i][1]);
+			digits = (int)StringToInteger(memory[i][2]);
+
+			break;
+		}
+	}
+	
+	if (handle == INVALID_HANDLE)
+	{
+		digits = (int)SymbolInfoInteger(symbol, SYMBOL_DIGITS);
+
+		handle = iCustom(
+			symbol,
+			timeframe,
+			"Examples\\ZigZag",
+			InpDepth,
+			InpDeviation,
+			InpBackstep
+		);
+		
+		ArrayResize(memory, size+1);
+		
+		memory[size][0] = marker;
+		memory[size][1] = IntegerToString(handle);
+		memory[size][2] = IntegerToString(digits);
+	}
+
+	double value = fxdCustomIndicator(handle, mode, shift);
+	
+	return NormalizeDouble(value, 10);
+}
+
+double toDigits(double pips, string symbol)
+{
+	if (symbol == "") symbol = Symbol();
+
+	int digits   = (int)SymbolInfoInteger(symbol, SYMBOL_DIGITS);
+	double point = SymbolInfoDouble(symbol, SYMBOL_POINT);
+
+	return NormalizeDouble(pips * PipValue(symbol) * point, digits);
+}
+
+double toPips(double digits, string symbol)
+{
+	if (symbol == "") symbol = Symbol();
+
+   return digits / (PipValue(symbol) * SymbolInfoDouble(symbol, SYMBOL_POINT));
+}
+
+
+
+
+
+
+class FxdWaiting
+{
+	private:
+		int beginning_id;
+		ushort bank  [][2][20]; // 2 banks, 20 possible parallel waiting blocks per chain of blocks
+		ushort state [][2];     // second dimention values: 0 - count of the blocks put on hold, 1 - current bank id
+
+	public:
+		void Initialize(int count)
+		{
+			ArrayResize(bank, count);
+			ArrayResize(state, count);
+		}
+
+		bool Run(int id = 0)
+		{
+			beginning_id = id;
+
+			int range = ArrayRange(state, 0);
+			if (range < id+1) {
+				ArrayResize(bank, id+1);
+				ArrayResize(state, id+1);
+
+				// set values to 0, otherwise they have random values
+				for (int ii = range; ii < id+1; ii++)
+				{
+				   state[ii][0] = 0;
+				   state[ii][1] = 0;
+				}
+			}
+
+			// are there blocks put on hold?
+			int count = state[id][0];
+			int bank_id = state[id][1];
+
+			// if no block are put on hold -> escape
+			if (count == 0) {return false;}
+			else
+			{
+				state[id][0] = 0; // null the count
+				state[id][1] = (bank_id) ? 0 : 1; // switch to the other bank
+			}
+
+			//== now we will run the blocks put on hold
+
+			for (int i = 0; i < count; i++)
+			{
+				int block_to_run = bank[id][bank_id][i];
+				_blocks_[block_to_run].run();
+			}
+
+			return true;
+		}
+
+		void Accumulate(int block_id = 0)
+		{
+			int count   = ++state[beginning_id][0];
+			int bank_id = state[beginning_id][1];
+
+			bank[beginning_id][bank_id][count-1] = (ushort)block_id;
+		}
+};
+FxdWaiting fxdWait;
+
+
+
+//+------------------------------------------------------------------+
+//| END                                                              |
+//| Created with fxDreema EA Builder           https://fxdreema.com/ |
+//+------------------------------------------------------------------+
+
+/*<fxdreema:eNrtfWtz47aS6F/Rcqu29u51JiRI8JWTU+WHJpk99tjX8kxO8kVFS7CHMUVqKcpjn63891t4kSBF6kGDsh6YD5mJADYaQHeju9HoDnzP/9+Zbxi+NkriGI2yMIln2k+Bb1jA/9/Q138KfBN3gb72EKJorP008x1fu+h/PP1yeYf/z/a1WTJPRwj/D/A102W/ZkH6iDL2K9C1n/4KfWNzeJZeB8/0CDywOTwH1MFzDALPbAHPrIVnEXiWNHiQwINS4Dm+ZgAPGDqdtL0h0Pxz0AyZouu0hWw3Q3YIZLctZKcZsksge20hu82QKbEaegvQ0AKW59WChhaAOuMrox1o8n0TaEodBmgL2mgGDShosy1oqxm0SUFbLUGD5gUx2DbCtqCbFwSwBbHbggbNoNmCOG3X2lwJug0zQtcCdgNd4ybKjIbXEnSD1CNNdK1BS24kZNAEmkp9YLTFGqwEDVqCdhuIz4UOY3TQihvZ9/WgbY8d01Zb0E4z1pRCAGwL2m0GzbC224L2GkEbVF4Dpx1o22sGzU5G4LbE2mjaRscwGYW040b6fQNoQNfa1NuCdpqxphRiGm1Bu82gGdagLWivEbRFKcQ0W4IGzaBNSiFmC620BmHgazYVpWYLtRTUqvU2U8Nbn4OLYt/wNXpMmU5bqWzVoWowVN0WKnkzO0C2+23PPbuZZiHdLKstp8Faw8Siy2C1ZTJYu7gWM59a2HeW0axUUK61Wlh5Vi2aTJWwrLaTh827xXCFLUHbeiNoxmSW3Rb0EvKlEsZy2i5IszRnssZy22JtNYOmB4XV9nizm0WuQ/kZtmU6Z8k22hR0W86z7WasKYXAtscbXLIgVBjDtsdbo2JPSR6DbsuNS2Qn075hW250lhAfZXTYhhtd4HnWEhnCnEaOfNA2W5DW3Fhv6bimbTJXIWzLjQ2nKwFNZYjdhhtd0zNcvfFscZkvzZANmirmGHRbbrS8hgXxDJdyo23KB+3RbbSttguyxO/AFgS2BO01+3gY8dm2ZNDMJYFBO/IXRKfcaLttsbaat5HKENtrC9psBk2xdtpyo2c3gQbM9HNacmOTt4RPCIMGbbGGzaDpie6YLbFuMFhxE1PTnZbcCCyjGTQ9wBzYFnSjDAHMmevYbbfRaQTtMgpx2oJuJj6XKsGO2xZ044KYzBHjtORG07GasabE5+ptsW4mPpdSiNuSG03TaF4QKkNc0BZ044KYFlUW3JbcSL5vomuGdTtupCpSA9bsotCFbUGDZtCMQuzNzWe7eQcddqHntCXpZpMRUvHhtnDRNOqnnsVMOrclD1pLTDpI6cLT24JuVtiZlPZa8aBrAKOB5KDrGeziFLTFukGUslExaLMt1qAZNBWlntUW9BKs2YLAtqCNZtBsG1uciMAwbQvUSmncxO8gPacd6IbrTdpEGdFrcSJanmPr9fe9tInKO89rC9ptBs2v7fW2sL1G2IywDd1oCxs2420z2KAlbHMJbIvBNtvCtpthsztf3WpLgc1kwq4+DB22hd2Mt8nxttuuSe0RZnoO9FzIYLfgyhxALWzPhJxO3FawKYCmNeF4t+VLs4l3PIvzjtGWL81mnmcXe4bRji8pck2w2Xq3iahpom98EcWiMNpE0zSRNgbLdrBNJA1dCdC0gxCy0KI2oTQUttEMm4XSGO24kQJogs2X2mkLewneTLJuHE1DLziboPJd9NpiDJv5kAeItYgSXbaBjE2A0RZluxllRhyg7dGo2814syMGtD0aG0WHByE7YoDV1kpqxptdmxgAtoUNm/Fm4hTY8hzMLMaYgHWkgrX4SrgtKc9uFh02Z5a2jGg3Mzm7jDFMvS1sqxk2EyBmW260l1Ae4xgTtIXdLEXY7ahhmm1hu82w2TFgWh3A5qGxLY9G6CxZE8aNZtuj0Wmmb4evidMBbL6Xrvw1cfh6t+ZLb+Wa1Ifc2L726fPX/m070GxJWsXd8Nj/ZUvyF2m8j5LRE30QAiF+EIK5
+CRh4PJe8GcnSJCLtwCEvSYCvXd//iUbZDUrPghSDxYgF0YzqKnn7l+k4yMhvlq9l6Zwjd33/5+dgwhWbM/K3zj+6e52SFtfXrs/+e/jx09k1/9/7P+/CCTIIKhgT4GvhmH/9HERzNMzCCf+6hDlg07lKxugunJSUKvw1/m0gqlvknPZYQxZMpmyauu7TeHo8Tdx4HsTjCH26EL/jEK+C9Imuu+5rpMETP8L/ekiLlaDfOqxLMpkmMYqz3xFdYw7CrbRfJXH2TexgVzpcBK9icxX+r8k85RobKCGZjxDG86yMZLXLAI2SeFyzdl/xtpQ+NYtdGHwLH7JSo8VWHDfgic9EzKHQSGZdahU//Q2hp1KjKTReBK+NH+LFmNUsJh2TrENjM12D2uancIpRGrORC3bBPOgR0r5Jw1EtbUNfGxFymQ3Z3zUE7jDxEF7/ennOhgh/DR+/cTTwklOq+xjG47NXtuN0DNfXKmRsrCJ/29cGr5P7JBKma/vaDUrDZMyX9aZ/++n6Ynj+5fa2//mOc8b59e1t//zu0/Xn/Fu8DAWHg93lcMwkisUVi7dncSCNxS1fCy+T7y05HLwnh5s7zeFAcbji8PYcbkrjcNvXwvMoYXr1hjyeE3KVAwpelszfTIm/DV4vESWJkl1g8Nbb8PHbYrNJmj/Oo6gfhVP6o9iBSo/BKIhQRUm5vv/zEj2jiKypBXxNPwHmB/vEdD+AE6if2MYH98TQ9RMD/2vk+x/D+2RIPhFGJv9/nkRJysyUUZSecboXugyy1yif0ODu98v+cHB9yeSq0O+3cExZmmNKJ1AZ4ZeUMjab3RLYtMcCVGpPnQWjp4YVHaAIjbLgPqpaYmxDaDsaVz+nC/trOB6juL7tjyQdo7Qq9/AcvwVpNpjf/xbGY3pAURohH2KKD8KYfkjYlqLu+to4nGE8x9pP975O54ZeMpTSfAW6/79/iTzFRL/na+FsOJrPsmTCP3S5WUsFN7aOX2cZmrBxJskYRUMGBrMNxvciDb5jwoiD0Sjkk5kGWLRnKJ0NR0mSlgSD7WvTMI4LdKGvzTh52r4WJ+kkiDjPzBCGlSUpmYuFDW0j30ac5aD4tyn828pXl1rrsyzI5rNcwkBfS+Lk4QF31el6joMsEJcc+loWZoysLF/D8+yVJmr7WvLwQNaKgbV8LSIsjEPt4U8z3/S1LJkS5EwdQ7V87XsQZnzqHj680xDvnrBXjq8l82w6z2Yi5DCZ599Zvoby//2LjDOakd7E4YFl3n0wenpMk3k8/mEk8M6/Pzw4D1BnlJm3GL7275y4H5I4++E74tKGLwheBC52h+glS4MCY6wR3BOy/mHGeZF+xx7gb9ExMlCOEaVTKZ1KsmPkbVaT8osov4ji8N32i7zR9akcI8oxolhcOUaUY6TWMeIRt8UgiCZJrFwju+kayYPvlG+kU9+Ip+vKN1Kk+av1jRDZ7fnaL2kyn2IxrdElC6KI4UdaeNzKCTgxTyxOGFQO868IqXLBXCel8cTO5q+z63SAIib1fO1+Ts8lzPSX4STMcHuWTPP2hIkN3ddO0zT5nsshkjQ1Si8Qmt6E8VMtm+JjOw3GqC2fSvFher52gSKUoRsUj8P48Rrv0uxAGRUYfLa9KZ1uL8nnu9yXCcq+TMOFu8Gvlu2Ce6vKr5ST8Z8GrhX25y28C3eUdzEp8n/vJvPCw2NefVeZ11PMW8O85GFGLfMaOuPer2w9DIbis++f8XB+YsDWOFeB6WsJuXYIsiwN77FlOLw+++/++V2TfUYV38LPYPlazKx/y9eqAZ+ur92kyRSlGbXVALnVuLm9viE3Gze3n877X08vv/T56mGtjBgPuaMG5p6Kyyk2L3O7xfQ14wNgs82tcC5nms00Ya1AmcvIMoH9XCajw2Uya5bJVNRUXSarZpmsGmeIwT19z9yvVHX1MYkr+p2M9fGANXjA7eAh3cDNXThvOnshcR2FD69fi0Oj23MXbqg0k3/D/N9SLF2b
+z7pXmvbS4xe/VhGPX0ffkeMXQsgeIFWP33vypyOLlzxU2fzg1Q/g4NW7PnjZWhnq9F19+rK1AgdwBIOuj2C2VuaKc3gf1srscK2gsFbWCl1hH9bKkrtW0lUZmqtCqTLvpcrYtn7cqozXRpUZvKcPYaB8CMqHoHwIyofwtoPXUwfvNg9e01Y+BPHgtVo57wf6ARy8W/IhDN7ThzDYLx/C4D19CIP98iEM3tOHMNgvH8LgPX0IgyPxIVjqOuRdVZlj9yFYjY8jLcj2JI8VWhJnDTGnhnkaq/FrHEzCEes9Zk0SbA3b14zcbb4scttgCF0zSii/ZfyaRPMJ4jFOJD3XCxqXWwfhv/KYY/0DHvUyyWbDswEPOi263YazJ8bPsDIGb8IhueADHPk+/mV4g9IRijMOn/YVfsTSiT3pcHnzGZYG4of8JDB8bSziLGGd6ZxXLbKLJe4LGt8GWZh8icOMr5mFP6dpzLBsKjpdoIgydPEqBfraZHL1+CkOszCI8BpXEHBph6t5lIXT6PU6vkxmM1FtAHq1x02aPIRZSQ1zaJ/T8RgPUQKSPx4pdSjBKKF6i2Yoq4HglJprcLD5Vn6ZTlFKwuLEQwf4Gg6Rw3A5aeLzMYlRtfkmpIF0OcHhJcgbKYnk/Eg2g+aKxShWut3dVOhN97VxxDtJZVp9jecW46nUocvzWjbuWOq4IgMsGRjrDsEToqRSt+elDou7DkrNS/bdq+k4uKysEMA7X3STuvdw1VLgwceSB19zF/DQU8lDr0V4jq/1X8QA3V/uztkJ2n+ZVl6EueTH/ClYbjPpFMjCKzCsPfVfphIfJgLpyQWMvX2XmC/HuzxLBFt/lphv1vbfJebvu5j1dZ6iIEPX59fiSrm+NojC6TR4RKLl5/na1et5MpkwnUmYYhF1fjZ/raYOkm/nSXnXpZNYexZv3rWJ57zNxAt9W/i3I9f0c8hClEPRV98fVyLRcWR6J7afsaHtp+uurusbR6KTZxQ4q/Bb7D9rH+2/gbL/lP2n7L/9sv8Gyv47WvtvoOy//bf/dGX/7UpeGmUAvtEAtEQDEL9cZsJqFKW3aNyFAWjJMADxzSiKoj2zAHXBApSV9cOlK7GhCWjaesUE1HfDBHx40N/LBLSbrwDZuXGZbPUeADtiksk0SHlFun/7mf3jNpEVsbiOTjhKk9nsezk70Yp1liszbBlOIywwk3gcZiFL/NShwKBTeDNzV1Fe7tWBleBEKIuljbfd6H/8eHF+6rVJ5rOMWcF2mXWgmHVdZgWKWVefv+4xMavTeLJ2QYCOlCsGlu4vSaY03cueUCF2M+f4LiVBq5L8zdANuBs0+PBwr3vmFrO/OY2HCfmtLrO9fKoFknIxMaqluR/PXnO0d592AbXq0Cjr0ZIBvfvXHsd/uTiFFXPG0XeFlLecyNAxNxa1+MahLdHKyP6Hs9EGs9meEKmA7VKStL1Kui9zR94KjcifbZJk49WqQZDFdzYkSysNQsjR5kpxlP72LaQHWrnrxyRF1a5nEUuXi7Etuv6SMgFJgxsu8dwGUZAhnqQXuwlFJNIvU64G4CR8yfgRFdWUnErfi+R7zL27oyi9ToP4Ed3Si9TK7OZRRN24jdArH6AgFT5YOcBF8mdY9OezndTgTW/gZgJY3O+XFKE8L7KAxqrlK/U+pXe9ghuxuh+XwSxrGrk8IXIdlSeBXumZfIswk+KZ5NMcIIr/vsg1rDqwVwQjjH9vlGO/PCdpxe0AdkXObf/obcxDarjszQ+hDH7PRXjm19Pbu+H56eeLy/6gxKPXcVm8AV/7objBIxQm3IMYJRl2Os+SwShNqDe/5ktOWkWTmQNNvvMs9eJ9fd54Fo4vwxg1tp/OnhbaHaEdc361A4BCB5qnfiDQuABJRDOX6dwxIqIhSjeHr/PX68svV/3hr58u+lzfzD+4QLNRGk6x9V6KZgC60IkkWy2kUY6WKwIKMrSQzN7wxBnim+nFLlDcnY/hC02BXrNFrF1o
+lS8LpWSGdQtZyN6vhUfxIguYFVk6Lc1+qTx1TF3JU5rXGXjA0I2t2TM4BTQdUgLt27726eECTZJ9Of4hRriHMe4Fo1Eyj7PVVnfVxLF3xIG0dROH0g3YPqkCWaR6ixiB7Q2pYozXJlVgVaSqcdykClc5PK/QbMZCSLCaNI1QMEM9Qr+jrBeMJ2H8QbbekVM1lHODdIfSSRgHe+O7r6K8nKKrdperH6l/idKM3UTRcP0iEELWA4mVW+ReFeRMYkvyVnx6uJ6iGI23U7bBXE87l3JOGOScmCaz9e5k8aVBSZ0Bu6LPnHrn3sePW2cpp4mlzCUhFjgWm53Kw1P691kQBfGoLsiBAF87qMLwtf+SG1OBjXtj5Pvn82yIY95L71EW0DJ97b+Itf1X49KSEWxfC8Z/zmc8Mu1HIy+8maLZPMo9n8905CiZzV46kxOOBDnh+NrHJJ3Mo2BPjtIywivYvnpRA3amCprr6rrkWAxKFO7yK5n3PC4pa/WD0bfycxDhU9x4XpILf+cOwOK70wm3DNiXmNmrzcJTkqL+c3lc/NgpiRF/GnteCvL628+cl6uDkudyZQanGC4ZviMJICU9M8C+PDR6+iK85zoMPYF6n9HoCbvpHsKs95/zOEVBFP4Ljf/P5mWdzCPXGhqTMbs7IFlw5jSM/OKbjIZ3E+3qssngWk/SOwlSZ5iq+LvmetcF17suLxlanTa3nIetCg9bQNVmwxHlFrA8b9cM66KsonzOozNWlrVcy9rA7taKaa0f6yEJLQB1XZnW+21a011UpvUKvgcVl5ppwEO2rQlVGDtnW5cKESvjWqoMMJRx3Z1xbRhVn/wRW9eE3MCuWdcl2bIf5jVdSGVeb8u8NgxPr9rXurKvGUebrR4yY3RJmP9syP5uKjUAfS3kEb2Y3vEThLNk/CqkjmeZZT6G8fjslR2ZIX9UUZeqZlmKmzq5gU9mEtbLNZCb/u2n64vh+Zfb2/7nu42eVnOFROLLap2+8e7Hj/PoYeffWOcizFQPrVc/wzK6ep6wiw+tKV1YbZwLb5EoKEjfIFHADkgUyc4PvEfY+XFzOiTpHlfVUlnX41FMvvB2eMTZwWVXR6LGOkZPB95Fuq44sRJ9ELhc2OgVN6erH7q3w/C2rb68Tdgo9WVX1BfDU+rLSoni6lX1RT909QXo21Zf3mYQKfVl59UXcJQXNcTTn6svPEfB8seHlbRUhnPw1zXAUOJGiRu54sZQ1tIa1pJVSdp0BNYSAMrZq6ylVjJFZdVcrb5Ytn5szl5gbi21Zk6Kku4dLpPHcBRE17f7kp7Q1yium+VDcndGhUb34/utBiy4FrDd7dInGVLlf13jAblRVb90cKz5XynZeJslgT3rxHwgiKhMsK0zwRqVrMaee6yZYAktOUBdzyiDo40UcpTBsUbKiEpgGwCHbXBgujBVdInyl8oVNaa6nlnremYhQ82BX89g2rC2bj9KyQN9sP4Nz6gcec5R+zdcQ8LzaOhrxgk4Mfci+RidtXoivZyZXPJCOsP5ojeu3GYA53hfR7vQbk45sMkLSpMw1VEnKMrHrXtC6dInlPT30uvsrb+jJHuu3lF2+I5SX0hSVCdh9k+W1MvEVRLG0Y2Dz7+A+ZsYiYv8LcFUbEy94BB7sTpoJzLD0Q2Vf2EzxeLQ0y9gojj8rKX4bhKz9t3gZjjIgrR7rqYJVYTxOmJolat0Q4a29MNnaPfwGRqIDI2mnfOzIfAzHq4jdnYVO2/IzlA/eHb2joidr4YDsrVbYmc+XEfs7Cl23pCdvYM/nQ19ZdHD98z36/jaXRqEURg/XmEfWZ3PDM8xm3wMX9D4Kv8Nq9j6c4WHMV1MqG0r2NOFaw6TUjYhQLijTUYmRV8D+qq4EbuYKD7Sa+dpY/Rxa2WugAaolLQPyPuyid5dlafqiOMJRS0XBiStNYv7XLVfIO9cGpHsg87o+CFj3SWsqkByDWu6UymrCKvJcJFWOQJncjqCkoymMO8eodAe
+ThzY+08sLqe9hN3VzFb7Uqt38NBSuaL5YbCbl6GdJowm01a3ofJuQy1VhklgKscAO3kbuo8pZffmOhRvuroO7e461FpIS33M16GOYarr0L2/DsW7qPwzK54HH9t1qGOY6jp0T69D8d4pht6MoQ/+OtQxTHUdupfXoXjnFDtvyM7w8NlZXYfu5XUo3jnFzhuys3fw7Gzt3nVoyVOn7kPVfehh3IdiXlP3oTtwH2q66kK08Tho1O4Axd7BeW7SZ5Rep5fJKIhwlgJOsuR3Lh9Y+oJCsFi+lqGXrJzdgIoOfHFC0huMfJ9CF8SKCOt3FKQi71ulcWKagIQ3AqHxIngVm0SYvybzVEzmguVYAZTUBdPyklSV5gEaJfG41GzQ5n48rpm4kzfmVziW73nFtHlLAaU6ZSDAr0xYz5sq0y2gLUzWLMCJU6021kwU5o23KMJYzkrNtthMUC23W2L7RfA6awaOkS43OyXgRe22HPNSB4q8AKEj8S7lCoxt4scwyhgzdSjXQbNcl1V2GU+m95DPZnmkillWwOGOvCq+1xFwzW3fo8NG1dxZXzN3WHDKidVNvKLpa5fhJMxwe5ZM8/aEJYN6L10L6pJy0tFkijcoHofx43biXKzNyybKymFHZ9ub0un2kny+yzWqCt8auq00Ks7FYEe5uGRm7ywbg8NjY31X2biaitLQHVX1lLOxuTRSdH27iGmrhX5XYg3a5xylmIsKjRz4mpmbFxXDBLt0IOOSkhrPPuqIMU1Jyu51PEKncW6X7EfZCIx0L4h73xjay9kKlE9Hd1fCQ99JrbUUJ5U4yVKctCYnmZVyCcfOSVBFQe5/FCSE6lp2xflZeWBhmfqhX8vCxihIQ1/fbMzdoZ24fXCliTBFozxXNvQ1GtyO9+CHKKBM5tKug6dQvCr26K/9Z5S+Lv5MbFF+M/Ds+2fz1yGVWHEy5IAdX7sJZrO+6JfuiEVlxDXi5SELgZWOO3JXtcvXdpKsUSyKPyZpDwWjb7279bJLgkqhD3tXskue93X9vF9nhn4kfxq4njhSorGEA7/xds5mv53NR08oo7nEHeKh+SWld0HvKjE6YkspFy75qtH6HfRB4665eGVdyNh8svjCvBBCK/jRKhuwlrMjajd0oLP4JGl7/Gi3q/xsYrbAmzCkf9Uowqv5GR8n1PQtVX8oztHTLEvD+8qVroefBoYjVH3zqPvaLcrmaVzTsK7q/8My1X8f5syLL3RVmgAYuTLDTIs4GV4SbaYbAWnryrTYzLSAzsFHfNpGqwpLLcIeWVhiHb2/b4EjlyK2gVNhdwod4Q1UhY7W4OxKMLd96JWOHMMGSwsCYjI9jaLk+3UkJOzA0Wkp5ouOiFXKBa5BTWfsLL7pPirKKCvnUi5lddx/hK9kUxqo+iPZyTXo2CyfUI6xM0Uv3RG9ed2mz9u2lM97/33etqUU0+Vsj58elX3eh6+Y2rvn814IktqK05vaiRiJ9/R627byem/R6429amWvN1Reb0KH7iZeb2KnRelV8IhiukHvKzc64k1Xub634fqu5vazdqU697u7vr1tur4Xmfo43N9bn3fnLnBQqDZb8oGrrAcbmhrQPfjwGkfflg+cvZSvJXjlBG/P1o6unODrsHYlksbUD90J7hi75wR3DOUEf5MT3KoUKnGAfsxOcMdc6Sn7yhbCWBVFabMzwdiZoA1djqYOfO0Hgx5bwnqAMnuQqQM5B6rgQGg4PgU8zBo8zHfAw6rBw3oHPGANHnA7eHQk801J3tOrZBw+vH4tBNv7eE/FV6t6+dWqdO+pzWfdK017syhFCHbkxgRCCKkvveqquSd/Oj0prA1PimVXDx0cFRIcHOq4UMfFARwXljoutnpcVD37cFcelb3XceECz7PgtvxiOo1x+QdCU+ING15/Hl6za4t1nWLA137+WbJXbLUU2g0fGN2t4/SBYe6pI5zlDG9WfAimc9ABoa5pm6DRzQ3YbzuTH5WiK4eesZfsPEpmaE/o
+GW87R3fVc4WKH6yrPFvGzvvBCMGA/aJvoOh7RT3qSgaqo6Zvz3C3dU2JM6SRigcswbLSxjblbrxZR6qNwSIx97rKmKlXEkYCoB+2MuYZrtmKmfHU4nE4Its2DK9OaxjHZUCvTqcoDZO8liYc+X7/6nT4sYgdvjqdfQsfMtF3Rj6coOwb/RD/7/VFf9inQ2E4p9NpFKIx8bDxZbi5/XTeH55fXg/6TXGRuA5pgY/lazf920/XF8PzL7e3/c93bJEHHJ8WMVdLYyJar5yJ6zWwpRtEyfdDWLodkpPmkcpJ09cwI/b+4zH7qXdF57FUSsJqWl0AD11IeroSkrKF5N+UkNw7Ienpxy4kozWFpFsJcTMOX5P0lucifoeSXe0TPS1SvpS4CcvXPj3Q9yzbSfa9xVLyLp4bjZ9byR12hTuc2nqzO1o3vokP6mXopmXmc26yZDw77Yadmh6dYmJE39Es+yFLfkiiMZLw6pQ7W6Q8MF1ka0s9Jt3eY1LbqfpR9W2zvYxXo1sSAO0uvfG0gngcodmQ/V2jOjtsv8PrXy/P2baFhe+eRi6gc/L9xzAen71qIve4vkbbWLRUEe3ESpBNpmyFSfm0NyjKsgwKHEAWxlGSTIfk4MVncK7Xb5hoY4fUcahem6wWOm6lzoGxdV2jtc5dbx+s1sSbU1aY7687sCJ6deGaOr+LyVh1hepVDL9AxajwCgx5+T1Wo26QzNMRWlcw8cqFFYFmiBCvgpTFjvIJeuJH+F8PmGHqigGeJ5NpEqN4oUikW2lfqJtoVzpUqidW4fMKCzi9HSghmY+wWDWy2mWxoCLrIV5+6XmpC7YLg6pvJa+AiRvyIowccyg0FiUYq8UzcetvCD3N6ipk4kZenbHuw7w2Y2Ux6ZhFZca6ZqEuY7X5KZxilMZBTskPQYQPzb/+yukaKLpWdH1IdM1X5CyYoVxnwtrXPE3Z21zP14TWuij8KW6aDelfNRxgMTUgH8D0tdPBP9gJgxUlSsKFErJ46iwN0cYzuA3iR85+D2mQG66er5Gmm5CWmCvKkZus5aPQG1Oo/kHXSR3307vb4WfGAXnvm2RWqFOyLFVZaY8+Jxjf+9fbeRyH8eOulZuTlVeFzJS6o3oxmfBqTbGSm9N19N3wSglq1fJScluxTIHe7OjlbFxVIpv49WsSzSf58xgsd8IXNC63DsJ/5XWZ9A84OcBlks3O/smFY9HrNpw9Mf6FehkIb8L3Qx8g51baJiQZwHkR2Pnp8uYzzFxiIgJfM/l2jEUUJYQWmWSKq+6DXPwW6QWNb4MsTL7EYcaXyCKSySgeLPFOFyiivALw/RhfzcmEeqtuEroxYp3ryeTq8VMcZmEQ4eWuIOfSDlfzKAun0et1fJnMeB+Dri+OpS/3oTkdqgWxcZ/T8RgPUoARD/JShxKMErK3aIayGghOqbkJB8MEdvN0Td7lFj2jdIbKhySH8TG8TxphALLeF0GEJvcozVYsbd6vYUBAMLoM7pP56BtKUTM4u9zxMmQpPoy8dusJPLGLtS66Ns2VDD1A/4NP/JoBDdZcbAX0NfMEsEHMvLlmKwBrbBra5jz5ZTpFae4jForQ4zKxeFyhyn2cxKjaLJz0VFJgas0bKa/nqgjhKloPi5QBLHe7u6kIDt3XxhHvtM2Aw/FU6qjlKS0bdyx1XFGILRkY60/BE6JUVLfdpQ6LGw5KzUu23KvpOLisrBDAm15029q243Gnksddb+PxyGPJI6+39Y6v9V9E59Uvd+dMx+m/TLn5JMR59F+mueEkLiqGUthM/AOsWfZfpsqMP0QzHmzdjM93a/t2fJE/6K/GZyfYNH49TyYTpt0KUyleo5zNX4sMKmdRq5REVYsW6DJCKkj6zNfPNNBrV29cJdm0DplrL6aT3SjAwtDdzW893vg4RdddfTFP3srq6Nu/agW6tQMG7UAZtMqgVQatMmiVQasM2o0MWuAqg1YZtMqgVQatMmibDVpLNGhxXBJT40dReovG
+UgxaSeWjMHLHYdG6dLJrmbSe/v4m7cODvicmrel2XZN9R17qrBMoC0xVl2YbdWmqARQeUBXZCf1Zxh5VZAeblmYxN43U/7+7V5J940l3Wo/GI+lueZhLNzLRMjRVgWYTH7rnvFnf2FqpmXYPB4C1vHxW20c8gL7duwpesFI/Kz2Z6YKyZdRWwhTIalqcBem+vFMHFGlSyuI+SNd4kVfJ5aHvSimWex0BmpNli6nNgNt4UJMncw5+eCSmFvv7z3zZ2e/nODt5pcbZgSnTrpSyMbavnX9DoyeqWhbLdhiP4fF7QzK93pTFgs96Iz7H5RxZqRdgwx3Rods/mH8TQ9q7llTiDTVUF1nJVlkl5GWVqHqIVFaJBbeQ6+xcVonVtcz3Lq0EcB2VVmJ7aSVcV6WVWF8CuCqthLRkngeZVgK4rkorsUaCt2NLKwFcb+fSSojKg8orod7fq7wSiq4VXau8EiqvxNqmqqfySnScV8J1VF6JNUxT0zQ2iVlarNG6X87gdUwx0zRU4NIWApeqHKoClzhLWtsMXJJQdnk/g5feY+JbCmAa/LMz2WipAKaN7sMOP4DJtMABBDCZFlABTGsGMLmuCmASGcCxDiCAqWutWk5VexXB1MCSUEUwiRwJV4ZcfGULYSzGfpO1Js5EQ9YTXH21U4sjBMp0S6CAbT0FFvAwa/Aw3wEPqwYP6x3wgDV4wO3g0ZFEhpK8kFfJOHx4/VpIlvcJmBG9kLrg5NA7CJix+ax7pWmvKNlurXN9LaGk9cYeDwihbdd5PO7Jn05Ftd1WVA+UqFai+khEta1E9VZFtVWpmqVENaZCR5W4USEbKmRDhSIpulZ0rUKRDiAUyXQcFYrUcSiSYVTM/l15IrdboUhY5Vah7uocVuew0i8VXSu6VvrlAeiXlqMr/bJj/dKEutIv19EvYatX2JtfEuA08MbI9/+B0HR4Gcyy4fXn4TULHF436hX42s8/Lwt77SwD/E48iLak3E7v4YNovK+n8ywRaGYp90OrzP3WjgT+tH4oveoawmq+Me6OGGXcv1k0oHVP6FDAdin9VS/KduSebET+bDXuDLqe0Zzow2Z7cMcXWDAcru//PP8WpNlgfv9bGI9pYu7i2QFuTlJGzdhQOb++/dy/Hd5++uXXu+GXm5v+Ldux6/s//8nmCYuffuf1GGBuYl3f/0kQ+ZhQTdjxtV9Qkj6GgYBT3uOcr5/LipEFlJ3wBoj98iJLvuZxzfL6/s/L4B5FM2GorygdB3HAp1Pqci7s4ihKPwfPrwJKRT9hLJd1v77/s2EQkDdWpvJLilDMKYJ1qUK2fY0Mm1dEIsp+j+RY6TErcFkUyvukcTHenMbFy8PyL1aqDSZ9IRFkn+e44lBexKd/dXP3+/Dr6eWXPv+J9mOutNpefMF5RD42Vi6CMHpdFWeD1y8ehyMiC4fh6d1tzUrzHHand7fTfK7YdLJarQr0tdzeXm3RVRcKlB4GlVYHrFgdk1P2VRKj1ylKM3bILYsAwoWciPdkiHsv1Rw3tFWrMzObZ2aumJnFh7pJwjjrcX5cFlEE8nlN8Tc1c+IuZMxGN7wPd5C8ca7WWuRurZg2l9if+6e3HUQuYRKvWv7rTxE2bydcMS+7JhrL3ppBU5mHvdZW2Sum5OTvlkjZoqFQ2I/P0JEzQ9fXsL9mcZwN5uysNWdnxZzd3PWWBmEUxo/DsyAK4lGJN115BvSz79eNtMG83WaadWsn24HxQJRCWZYsqa/Tf+nagjDcDZ+R6+UqNaFvC/92hH+7wr894d+GLgAyxJENcWhDHNsQ8yEa4uiGLUITxzdcqd46qkX8R3w/m/60qaFkuPpuWEq4hg60t2opuQYw9PUtJdfXTs/Pr798vvuwTYsJV/kzlcH0RoMJp4ZIkyeUrjCTcCnFYEReuw1P6d/kdWT82iavY3f2CM6AiwuLsgpoS8wRXF61MiPxyzdOCaw1pbWMCFzjevEoN9faI+HDN07orQaDzbWxFbYC
+fmRZmUTx3RvnYDXPYS3tnxg9VNVj5d8lGwEWVazKY2zRDMDtbHChHKBMkwCWZsgH2dhCqJ3iemaB4WuD+QS/UKpuoiNtE599vzLGxvZA7QzXMwJAMcPqLrrSdlGYYotd3AXdn6g5x6r765vq/oZU3d/oWvfHgR70gmEjrd+ER631t6vJ10KAGIW36+L0903zTf247OJ9m77GN6aEwhTAVoHgQTX1jkTdUda2w+dOZXlXSARQCQffIZHQMm/UarYHm73xxjYu0eHCERqSS7Chumere3tOInRLUm6/r8eqb9qZHrgbN1zVh+6Y7DGVVjh/R+6oDvY5PJEnh/UcfpulfnTxOfzqwwpUkrTqR/4MHlOf3UaJleo7W1BY/0typKjjaz/gENbbcPa01q3jBoqq5Ws/GvnZKCirME/tUgzZkQCxj1JXJaQpru6q2NKy8QpM/eA1VXdbBqpNDdTqfkizUtuhtGgsdmic6gW/nw06Y3VXsXoLVncP3yj1tsXqTuGLWo+xtsDrJn2icnX6T1pFr1NGN3LBQiPPOuJ0TzmgWjmgDprXgWHaFnA3qXLisEgH6nI6qGLybDVUgZMtFDgBRlfq8/4WOMH0B4GqOVRhSQhUzaGtsKRePvpMU9UcovS36Q1NbQzKstuZllV6ymdxxxV6NvKqAz6thXiqZXcw77MMRnfLoHIPH+5lCxMNh3vZsou5hxfURue4Uw9TIjQ3PJ/qAwg7OKC2XkauxSFliYdUdS3ATq2FOqnUSdX6pDLVSbXVk6pqTbnqpIJgeTG49XwX2KV9Ak7ME6uTVPk4oByHvFXFqM1+vwnSLAwioXBpfS44SB4Dj9GbmNaS5PlABJUh+S+ZxcF6PgBb9t4on+ZGCeIMY0e8HmMrCPC0txaETinO3lEOFbMN7xSL2opFO2ZRp1IM/XhZ1PQc6LlwW3fzbum5YMtAHMnRdwAz3khIf7EBdm+8qgc0BqhxZPkShu23Kiu+/Ai3K04h45Dv7E3P8UxoyygHYJJzuhMtGvNZPxh9ozxSPagN2nheEhR/52d48d3phBf4ZV/i5DfV5sUMz/lDcT4uxMwQo1e2MXXjAv5NMSYWNfrzclFjlz+r4NKJRMC7L0PnAKye8pfihf+hlIqGealoMrXef87jFAVR+C80/j+rxUnVx2zvSMroNyoW9QJwmaixPMfWdWuld/kdC9thb+xlkkwvwhQV2dwxKaLvaJb9kCU/JNEYzbiXFvfFqfHLjlb8a/8Zpa+LP1+Gk7BUft6huV/7YukB+XzOll6Sz47MOgvSrAgFOPSnPBbRH3ooGH3r5RuxnO8ryaJNZ0dCks77un7ef5f4B0qGrXLD46M6jKMkmdIg2kGWTC+T2axJybfo0z42zQg9o2jTnPD/tjQnPN6Qc8JFwz/Cxz+CxxpMPLIXhq/RHhdoyhK9m74GR75P37cO//iDcxbv9xwG5eoQdEDafBaMnmYZmlYrwOD5FqjkCTlysLc4I9KseE673pNZknqRPjM9/3J72/981yIVq5xU91KE4JHmuq+ivMKLWXaRWMYhZ7qndNFsAnn8heAtioIsfEZ3CVvRZIriKS9HY/vauKm8TVfV0T+j74PLSZKzxMM8LtQWg7YLghL4Gs1LjvOlCW3MBMkr61i4fA2E3Guz2LMMTK/rcndT6oQ34KGEjpKob5Gopq+Np8vXs4U3TLR5l408lj0yZAWT1iL5uxtO8haWnXH+OAO3BU+osEALGoWV1iUkz+h5oW8ZIKjvNLgsk71FyV5ES85GwZUbBRmJyB/bWGvssfyx1yQT3ITzP0Z5Rk081ihKLxCa3oTxU3c2lhRfikVtLBolMLikonSX7m50eXc3ExoKMcuS6WwNo6qimNgd+WaNzX2zo63e3VBqc3fOmSJerB62N8VV3pTteVMcuxL/ZEPlTSFk6ClvynZ0f0N5UxaFoKe8Katll1spG2joh+5NaS45oLwpypuyexJVeVOUN0V5U3bOmyIlpbvy
+pjRHwlYUE1s/Zm+K2a5ouelrRGuZDelfNZxnsd3M5SNOJDT4B9sg/BaLHnoF7W2SfnYhRvbvSywtHIXG0P01fPyGZtnHNJncJeeNaZz560PiozgLUvEqBIfXxWP+I654olfVBs/XfvsWZHfJL6jkqml5sO+HXWQe8S0z2fwe3fyNbplNcPB2kWlvU8ScUanShYj52zIRY+foXibflYTpRsLYSsJs7Hk5BgnjLH1xVw5XB77288959Db9/ZzHqwsZAnYpKZ8U5nFk2BU2Cwun9zbFuh1I1LuRR70nMyIhZr0Rn+Pycx1U3sDuyl1NJ3HwqznSPQCOXJqUTwpLuoolu2NJpxI3cews6ak3r0fy5pXtt3rzukJRhkf05tXyHM9ackX5jm9eS+FT6tFrV+FbePvVo9fuHr06JlSPXgVZ05iFG3K/XVVtb3LQfU2i+QQJTPkQvrDcLnlrXvTCxBd8hlj4hU6v6IaLTi1cgdJm3mT6GvgAOTzaJrAvloBUQmNlhzafYf4RWdzX8rryYxFHCdoMneMqx52LcyO+oPEtjlv4Eod5+QZyU60bRQJF3ukCRZQ7gK+BPOhiMqGmxU1CdyaPb8DicXL1+CkOca4gvN4V5Fza4WoeZeE0er2OeRgJXsAP+VV5uY8gVni4hEP7nI7HeJACTI6JV+lQglFC9hbNUFYDwSk1N+FgmMBunq7Ju7CoDk6tQTRDBYyP4X3SCAOQ9b4IIoSrjGcrljbv1zAgIBhdBvfJfPQNpagZnF3ueBnO8tIqLA/VCTyxi7UuujbNlQw9QP9zFsxQzYAGay62AvqaeQLYIGbeXLMVgDU2DW1znvwynaI0D5jmEgWXl2eRJ1c1USBCs3AsF4FK64Q8OQvd6A28IDh0XxtHUiNg1kjPSUadSh21PKVl446ljisKsSUD47yfeQRJ3XaXOixuOCg1L9lyr6YjDeURVgjgTZcc0bLOtuNxp5LHXW/j8chjySOvt/WOr/VfRFPml7tzpij1X6YXwWvpAHDJr78m83RWXVQMJYznGSp9gHXJ/su0ZkI6n1AWTmrnA5hShHG7Y33EoEFS6zmZp6NSy7Ii0CQhXDhBdcWjOcQrUhxYFISe+BH+1wNW4avHIumSTKZJjOLsd0RvJTkIt9J+lcT0klBIKFjqwApt8+YqfLwB3BACJSTzEchWVE//UpcBGiXia5h87RZjY81iF/LYyfzNq8VWHDfgiYsmDdYn8kYy61Kr+OlvCD2VGk2hUaBDY+HLnBwrq0kHLWiyrpkuQm3zUzjFOI3Z0JavZSleF8w1+Eo6CqfT4JEvFM+gcvV6nkwmqGRXk+pgaZp8J2FyrD4FLSZxRpZ640zMi0arjNI1pJjL6+fk+y6/NJJkxTpkrr2YTnZ5VcZK5lartoRUp2Fvuu7qi84u6gbDf9Z5S9Rkita7RTa1dXODFiiDVhm0yqBVBq0yaJVBu38GLS3LqQxaZdAqg1YZtMqgrTdoLdGgFWpZjaL0Fo2lGLRATmAGRu44LFqXTnYtk9Yz3t2kfXjQ98OkhdDY/WJCJKEO1nhxO3/iR9aKvUbQRY5d96Xm28qBscWTEU3h+doFilCGblA8DuNHkppkdqCvNXEwJ51tb0qn20vy+S5la7eSC8falaqVlu2Ce2tjZhf2522BnR6EYA/qDe0uF4PD42J9V7kYVir6Wa6uuJhxcWMFWncXstoBXyM0vaijN+jX78fQUqp0GqwO2vUUxd2XEYObH8fS89NBNuPincVqdgZldsb/r9iZUqG1a+wsqtR7xM2W4uYtcbPr6RVuVocz5+bl9QLbProHNHPrVfCCvViz0tv6LnhJRoIOTO7X8QhfHvMEBbv/KogIvHiE9dW0d0/RXn6ymdXS0zvyiP5eR8A1t/t20IPNtfL2iv5tRf9r0n/1LDAdeNT035hgwjB2RJ2LF16uFTFFQju/DyZxEDjd5Vl/eEOzj2M6zrvVpyJc7FGTo/OsT+lKuJue8lFxgp7+
+DW2/EX7UKSbXjCC7ef8GoSMptd5ZioKn/jOKb5Kw+9f271Vk2mYT7aFnFPemfKrL82CYujIJG4SIu3NCZMHFo6TIGlLEVVKkYyniVMpRQ0NJES5FPKWKvLMQkWGKeEqGdCxDDFDJ/+PaSogwIWLrShU5ACli60qKdC1FcKBJSYo4yivOpYix0R0X9LVHLjo61UV4SMn+3HLZxv7dckl0TdKbqiwvBbeCI2E11abiSM6RoFVhNOBrwYgkVRye0r/PgiiIR3Wx/gYvZbRuDbS//Sw5k59O0wvm2bUEXLtPYy2D2YGm6oetweWVc/fAq7F70DZ3jHlXVNVo87ILUt79jL7vH9uaim3XMLor6rKnHzzbWivrEX9lk83fQy2ygM24xOiYwwVsQJnOyPBgWw84BTzMGjzMd8DDqsHDegc8YA0ecDt4dCQ5pcTwQfKwMXx4/VqIjveJ4xPD6/WO4/hsPuteadorhHBFdzLgjlhIEEJo23UW0j3502UMhw23lf98YyWn8+TnOCM7dkhSbIZFYmK52c8tX/uRvaAvZUDHz2NqLbaO5A1Umc9XCIijS30ObVupaUpNU2raErFpKzVtq2qaZZUd2cBUahq0HaWmHYma5ig1bYWAqCQ9AN7hq2luq2Kx7QpCGaNFah9efx5e0xoam9xy/Sz5lmvN1Hc74hp3j9M1TvJP1VxDLudqs3Lsm4d/s+W1utkyFgyqz3OcHFTGrfS/SeZXfHTbtmVZHtga2+LkpzVsa6zNtt7xsu3VndW7TB7DuFfQ1FK2rcaBWfDgb7acxviuzkjSkZTs/dPDLWJUtAf0CDHCPYxxjwm81eRYfaBp7wg5jsifbT/QdFoFPqnEpvuf2FTfemLTug+3k9e0yAm+ebBOW1I3NiN13BPoAH4w9A+moQheEbw8gu9cc17b4HVUCOfqWDDbPT6NuTGEk/zm+NoVms3YqwNs304jFMxQj9DnKOsF40kYf2hyuL6ZaiVFMN6hdBLGQYb2h2pLKC/P/FN9egx3xOf6Top147U5VRjIk5kIpdkdX23L8LVvWTad+T/++P379w8PwQjdJ8nTh1Ey+fE2HH2bBPFV8ISueGFtjDoBcRnco8iovO8hLU137u0cqytLPJQQAo0IgfdByGxEyHwfhKxGhKz3QQg2IgTfByG7ESH7fRByGhFy3gchtxEh930Q8hoR8raGECgJRr1S8kmQjPq2UAJE3M+SAYrHn5MsfAhHAVcGBWW9G/VFRnwK4OcVU8ROx8/41qbz15L4Xf1bolRC3xb+7Qj/doV/e8K/SR2M/H8MuU+pTbaKvUmhzy7P6GLsqFqFH2ZCe2tqFS1IM0NZFsaPdD4ORzEYZeEzGjbxDQY6TZM/0SgbxtwZQpwEaRzGj78k494zqHbMXqd8c9DLFKUZ/2qUjNEwCuLHOds+y9eu/t8lzCs8BhkajlJEdObQNxzbsDxgQ6i7pthlQsKemrpMgsdwNJxlQcojTxyX+vix9fMczsL7CA2j8D4N0tdh/jy8xMEkLIX1JGze1A9TVzhB6XBWOBiAr9EsCRgb8uR/mM4ZdZmYJXWBpB5SLFPGvv5B1w36cZawHwysEhsNnRe76/QD0PhB/Rd/USk0n6Hhc5hm8yAazni1BIAlTLF0Qivx6RH6p9yLVwyDQBOUPqJ49FoDBPeptA9TFFWdV9UuwbjkvMKrirMpZDNMCJyOMhZPQADQ1tHrKELDKcsIyiQhbo4xsw9n0xQF4yGRvCUHoVl0YRKraMQRtxmaZXjHvyXfh2E8xsdRki4UwnxMg+m3YZKGKM7y8wrjfpdM75KzJCOHCfUZcs5BL9MwzTuzI4Aca9PXtCQMGDeg2SgNp5UPsAgkiQPE+j24yKPYLT8vZ1kQZ6J1hRWPeZbkQSnFfUZxypc60OM1yALO+CQhAitz2oglZLrCwjFOakei9BmlwwFl4gUMFnosoECOmzSMHzdCgt2YML8fG6KPfacLKFTaO0EAFzkdXqJn
+zCJ1CIjtGyMAcAHAE2B+sE9M9wM4gfqJbXxwT4yijlSOGacYXN/v6nT4MZjV7EqpsQ6dcTK/Z2f5WuuRx8oyyIMI1+JqGJY2Sh0Wl2s7/eeQ5PNYHLfcKnVgTN+4iHIRhFnHAeUeshf85nRIqhnXLnjRKHfetq+dz7MhLm+6ZO61vWTvPL0FGv7xR+3OC61yVwAK0V2NAriuk2whjLNnkxxVSzaipo/U1cCVl4uA5BXYLO0smzruBjdNh1O5VTZbUtBoWsuWRaP8Ya+GA2JG1Q7LG6VLg38gNB1eBrOsmRlqe0nmBpzFi6V4q44vNMkmMiGXWw2RCa3dMV01QHkp0y1GM0vdBKywND9TWMBsaW+JK1ZT7tLSGSpneg1i9Ge5e+ZrZ0b9UEYHQ4H6oUAHQ5n1Q5kdDGXVD2V1MBSsHwrKH2pQT4GDDihwUE+Bgw4ocFBPgYMOKHBQT4GDDihwUE+Bgw4ocFBPgQPZFGhzDbH24ORN0nX3eTaMktnspV53L1plz7UfP86jh9q58ibp5sJNGo7QkKQzHJJosjpzYaGTVDQcXzu9ux1enP6+OLrYJt1IJvf52MNMnH91RnK5h2xCI6lrB+G/UC2hCa3SZ36ZZLPl7oFyD9n7TaCfDWr3O2+TO2uTUtKSNa/pItsQwuA/k6DPGkOoaJQ7c2WLK1v8nW1xh2Q9HtKXcXEyjGpdwA3d5KKCEymjKFqJS0M/6cjgCTMajxPihqhHpq6fXGQ8NuOV2DR1lK0P4ZPg7J+1+hBv6mLIQfOQA9lD4u6D+YSeefPX+uuyUgfpugCHjre04bKs1EMuAnp+8NRPv9IuffEZ8IbJVztIH76UyqNu+EquD8kO0sWn4HUO0roH4zIdYNDXghQFPA8/DVpwy2iwC/QlqQCE5IEswCZ/eQhY6BN7hRH6juVSpL+xIBlcP9X5aSHvxWmKgt6/Gw2Twj9diD+x8IkF1MHaqJMirmJxuirmJgn2LmFueV4T5mADzM06zM31F92wncqyL6w6XFh1i0y4FndzA9ytOtytTXCvrLu7SDLQqSJvuo3IWxsgD+uQh2sjD6u4L6y7YZgLRAOdRqKBG+Bu1+Fur0/uoIK7YXBizrG3SGhWCXmH784i8vYGyDt1yDt1yItF+ATsjZ+qWUyrK28BawF53W1C3tkAebcOeXftldcX1t2q4A51sEDwoJFo3LVR/6scUMRCSdcIJlwrqO6v/w8LjPZ+
+:fxdreema>*/

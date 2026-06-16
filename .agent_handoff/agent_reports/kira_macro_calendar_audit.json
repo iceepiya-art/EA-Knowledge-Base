@@ -1,0 +1,14 @@
+{
+  "agent": "Kira",
+  "data": {
+    "macro_file_count": 1,
+    "preview": [
+      "G:\\My Drive\\save log-blueprint-skill\\EA-Knowledge-Base\\.agent_handoff\\agent_reports\\kira_macro_calendar_audit.json"
+    ]
+  },
+  "job": "kira_macro_calendar_audit",
+  "recommendation": "Use local or verified-free macro sources before paid APIs.",
+  "status": "ok",
+  "summary": "Found 1 local macro/calendar/COT files.",
+  "updated_at": "2026-06-12T08:28:51+07:00"
+}
