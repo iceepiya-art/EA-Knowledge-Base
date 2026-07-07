@@ -5,11 +5,20 @@ The manager owns the Flask API process so the dashboard can start/stop it.
 """
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 from unittest.mock import Mock
+
+import pytest
 from contextlib import contextmanager
 
 from server_manager import ServerManager, create_app
+
+
+@pytest.fixture(autouse=True)
+def clear_telegram_env(monkeypatch):
+    monkeypatch.delenv("TELEGRAM_BOT_TOKEN", raising=False)
+    monkeypatch.delenv("SALES_TELEGRAM_BOT_TOKEN", raising=False)
 
 
 def test_status_reports_api_online_when_probe_succeeds(tmp_path, monkeypatch):
@@ -102,6 +111,7 @@ def test_start_spawns_telegram_bot_when_configured(tmp_path, monkeypatch):
         state_dir=tmp_path / "state",
         telegram_script=telegram_script,
         telegram_token_file=token_file,
+        crm_telegram_script=tmp_path / "missing_crm.py",
         auto_worker_script=tmp_path / "missing_worker.py",
         parallel_supervisor_script=tmp_path / "missing_supervisor.py",
     )
@@ -125,12 +135,73 @@ def test_start_spawns_telegram_bot_when_configured(tmp_path, monkeypatch):
     assert Path(bot_args[1]).name == "telegram_bot.py"
 
 
+def test_start_spawns_crm_telegram_bot_when_sales_token_configured(tmp_path, monkeypatch):
+    telegram_script = tmp_path / "telegram_bot.py"
+    telegram_script.write_text("print('bot')", encoding="utf-8")
+    crm_script = tmp_path / "crm_telegram_bot.py"
+    crm_script.write_text("print('crm bot')", encoding="utf-8")
+    env_file = tmp_path / ".env"
+    env_file.write_text("SALES_TELEGRAM_BOT_TOKEN=123:token\n", encoding="utf-8")
+    manager = ServerManager(
+        state_dir=tmp_path / "state",
+        telegram_script=telegram_script,
+        telegram_token_file=tmp_path / "missing_token.txt",
+        crm_telegram_script=crm_script,
+        env_file=env_file,
+        auto_worker_script=tmp_path / "missing_worker.py",
+        parallel_supervisor_script=tmp_path / "missing_supervisor.py",
+    )
+    fake_api_proc = Mock()
+    fake_api_proc.pid = 12345
+    fake_api_proc.poll.return_value = None
+    fake_crm_proc = Mock()
+    fake_crm_proc.pid = 23456
+    fake_crm_proc.poll.return_value = None
+    monkeypatch.setattr(manager, "_api_online", lambda: False)
+    monkeypatch.setattr(manager, "_wait_api", lambda timeout=10.0: True)
+    popen = Mock(side_effect=[fake_api_proc, fake_crm_proc])
+    monkeypatch.setattr("server_manager.subprocess.Popen", popen)
+
+    data = manager.start()
+
+    assert data["crm_telegram_status"] == "started"
+    assert data["crm_telegram_pid"] == 23456
+    assert manager.crm_telegram_pid_path.read_text(encoding="utf-8") == "23456"
+    crm_args = popen.call_args_list[1].args[0]
+    assert Path(crm_args[1]).name == "crm_telegram_bot.py"
+
+
+def test_status_reports_crm_telegram_fields(tmp_path, monkeypatch):
+    crm_script = tmp_path / "crm_telegram_bot.py"
+    crm_script.write_text("print('crm bot')", encoding="utf-8")
+    env_file = tmp_path / ".env"
+    env_file.write_text("SALES_TELEGRAM_BOT_TOKEN=123:token\n", encoding="utf-8")
+    manager = ServerManager(
+        state_dir=tmp_path / "state",
+        telegram_token_file=tmp_path / "missing_token.txt",
+        crm_telegram_script=crm_script,
+        env_file=env_file,
+        auto_worker_script=tmp_path / "missing_worker.py",
+        parallel_supervisor_script=tmp_path / "missing_supervisor.py",
+    )
+    manager._write_pid_to(manager.crm_telegram_pid_path, 23456)
+    monkeypatch.setattr(manager, "_api_online", lambda: True)
+    monkeypatch.setattr(manager, "_pid_running", lambda pid: pid == 23456)
+
+    data = manager.status()
+
+    assert data["crm_telegram_configured"] is True
+    assert data["crm_telegram_managed"] is True
+    assert data["crm_telegram_pid"] == 23456
+    assert data["crm_telegram_log_path"].endswith("crm_telegram_bot.log")
+
 def test_start_spawns_auto_learning_worker(tmp_path, monkeypatch):
     worker_script = tmp_path / "auto_learning_worker.py"
     worker_script.write_text("print('worker')", encoding="utf-8")
     manager = ServerManager(
         state_dir=tmp_path / "state",
         telegram_token_file=tmp_path / "missing_token.txt",
+        crm_telegram_script=tmp_path / "missing_crm.py",
         auto_worker_script=worker_script,
         parallel_supervisor_script=tmp_path / "missing_supervisor.py",
     )
@@ -163,6 +234,7 @@ def test_start_spawns_parallel_agent_supervisor(tmp_path, monkeypatch):
     manager = ServerManager(
         state_dir=tmp_path / "state",
         telegram_token_file=tmp_path / "missing_token.txt",
+        crm_telegram_script=tmp_path / "missing_crm.py",
         auto_worker_script=tmp_path / "missing_worker.py",
         parallel_supervisor_script=supervisor_script,
     )
@@ -191,6 +263,7 @@ def test_status_reports_parallel_supervisor_fields(tmp_path, monkeypatch):
     manager = ServerManager(
         state_dir=tmp_path / "state",
         telegram_token_file=tmp_path / "missing_token.txt",
+        crm_telegram_script=tmp_path / "missing_crm.py",
         auto_worker_script=tmp_path / "missing_worker.py",
         parallel_supervisor_script=supervisor_script,
     )
@@ -215,6 +288,7 @@ def test_start_starts_telegram_even_when_api_already_online(tmp_path, monkeypatc
         state_dir=tmp_path / "state",
         telegram_script=telegram_script,
         telegram_token_file=token_file,
+        crm_telegram_script=tmp_path / "missing_crm.py",
         auto_worker_script=tmp_path / "missing_worker.py",
         parallel_supervisor_script=tmp_path / "missing_supervisor.py",
     )
@@ -242,6 +316,7 @@ def test_start_does_not_spawn_duplicate_telegram_bot(tmp_path, monkeypatch):
         state_dir=tmp_path / "state",
         telegram_script=telegram_script,
         telegram_token_file=token_file,
+        crm_telegram_script=tmp_path / "missing_crm.py",
         auto_worker_script=tmp_path / "missing_worker.py",
         parallel_supervisor_script=tmp_path / "missing_supervisor.py",
     )
@@ -259,10 +334,54 @@ def test_start_does_not_spawn_duplicate_telegram_bot(tmp_path, monkeypatch):
     popen.assert_not_called()
 
 
+def test_start_adopts_running_auxiliary_services_when_pid_files_missing(tmp_path, monkeypatch):
+    crm_script = tmp_path / "crm_telegram_bot.py"
+    crm_script.write_text("print('crm')", encoding="utf-8")
+    worker_script = tmp_path / "auto_learning_worker.py"
+    worker_script.write_text("print('worker')", encoding="utf-8")
+    supervisor_script = tmp_path / "parallel_agent_supervisor.py"
+    supervisor_script.write_text("print('supervisor')", encoding="utf-8")
+    env_file = tmp_path / ".env"
+    env_file.write_text("SALES_TELEGRAM_BOT_TOKEN=123:token\n", encoding="utf-8")
+    manager = ServerManager(
+        state_dir=tmp_path / "state",
+        telegram_token_file=tmp_path / "missing_token.txt",
+        crm_telegram_script=crm_script,
+        env_file=env_file,
+        auto_worker_script=worker_script,
+        parallel_supervisor_script=supervisor_script,
+    )
+    existing = {
+        crm_script: 23456,
+        worker_script: 24680,
+        supervisor_script: 13579,
+    }
+    monkeypatch.setattr(manager, "_api_online", lambda: True)
+    monkeypatch.setattr(manager, "_find_api_server_pid", lambda: None)
+    monkeypatch.setattr(manager, "_pid_running", lambda pid: pid in existing.values())
+    monkeypatch.setattr(manager, "_find_process_pid_by_script", lambda script: existing.get(Path(script)))
+    popen = Mock()
+    monkeypatch.setattr("server_manager.subprocess.Popen", popen)
+
+    data = manager.start()
+
+    assert data["crm_telegram_status"] == "already_running"
+    assert data["crm_telegram_pid"] == 23456
+    assert manager.crm_telegram_pid_path.read_text(encoding="utf-8") == "23456"
+    assert data["auto_worker_status"] == "already_running"
+    assert data["auto_worker_pid"] == 24680
+    assert manager.auto_worker_pid_path.read_text(encoding="utf-8") == "24680"
+    assert data["parallel_supervisor_status"] == "already_running"
+    assert data["parallel_supervisor_pid"] == 13579
+    assert manager.parallel_supervisor_pid_path.read_text(encoding="utf-8") == "13579"
+    popen.assert_not_called()
+
+
 def test_start_does_not_spawn_when_api_already_online(tmp_path, monkeypatch):
     manager = ServerManager(
         state_dir=tmp_path,
         telegram_token_file=tmp_path / "missing_token.txt",
+        crm_telegram_script=tmp_path / "missing_crm.py",
         auto_worker_script=tmp_path / "missing_worker.py",
         parallel_supervisor_script=tmp_path / "missing_supervisor.py",
     )
@@ -316,6 +435,47 @@ def test_pid_running_windows_uses_tasklist_output(tmp_path, monkeypatch):
     )
 
     assert manager._pid_running(4321) is True
+
+
+def test_find_process_pid_by_script_matches_relative_cmdline_in_script_cwd(tmp_path, monkeypatch):
+    script_path = tmp_path / "crm_telegram_bot.py"
+    script_path.write_text("print('bot')", encoding="utf-8")
+    manager = ServerManager(state_dir=tmp_path, crm_telegram_script=script_path)
+
+    class FakeProcess:
+        info = {"pid": 4321, "cmdline": ["py", "-3.13", "crm_telegram_bot.py"]}
+
+        def cwd(self):
+            return str(tmp_path)
+
+    fake_psutil = Mock()
+    fake_psutil.process_iter.return_value = [FakeProcess()]
+    fake_psutil.NoSuchProcess = RuntimeError
+    fake_psutil.AccessDenied = RuntimeError
+    monkeypatch.setitem(sys.modules, "psutil", fake_psutil)
+    monkeypatch.setattr(
+        "server_manager.subprocess.run",
+        Mock(side_effect=AssertionError("slow fallback should not be used")),
+    )
+
+    assert manager._find_process_pid_by_script(script_path) == 4321
+
+
+def test_find_process_pid_by_script_skips_slow_fallback_after_successful_psutil_scan(tmp_path, monkeypatch):
+    script_path = tmp_path / "auto_learning_worker.py"
+    script_path.write_text("print('worker')", encoding="utf-8")
+    manager = ServerManager(auto_worker_script=script_path)
+
+    fake_psutil = Mock()
+    fake_psutil.process_iter.return_value = []
+    fake_psutil.NoSuchProcess = RuntimeError
+    fake_psutil.AccessDenied = RuntimeError
+    monkeypatch.setitem(sys.modules, "psutil", fake_psutil)
+    slow_fallback = Mock(return_value=Mock(stdout=""))
+    monkeypatch.setattr("server_manager.subprocess.run", slow_fallback)
+
+    assert manager._find_process_pid_by_script(script_path) is None
+    slow_fallback.assert_not_called()
 
 
 def test_manager_status_endpoint_returns_json(tmp_path, monkeypatch):
