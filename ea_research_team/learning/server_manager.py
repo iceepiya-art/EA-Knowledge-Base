@@ -22,7 +22,9 @@ ROOT = Path(__file__).resolve().parents[2]
 LEARNING_DIR = Path(__file__).resolve().parent
 SERVER_SCRIPT = LEARNING_DIR / "server.py"
 TELEGRAM_SCRIPT = LEARNING_DIR / "telegram_bot.py"
+CRM_TELEGRAM_SCRIPT = LEARNING_DIR / "crm_telegram_bot.py"
 TELEGRAM_TOKEN_FILE = LEARNING_DIR / "telegram_token.txt"
+ENV_FILE = ROOT / ".env"
 AUTO_WORKER_SCRIPT = LEARNING_DIR / "auto_learning_worker.py"
 PARALLEL_SUPERVISOR_SCRIPT = LEARNING_DIR / "parallel_agent_supervisor.py"
 DEFAULT_STATE_DIR = LEARNING_DIR / ".server_manager"
@@ -52,6 +54,8 @@ class ServerManager:
         server_script: str | Path = SERVER_SCRIPT,
         telegram_script: str | Path = TELEGRAM_SCRIPT,
         telegram_token_file: str | Path = TELEGRAM_TOKEN_FILE,
+        crm_telegram_script: str | Path = CRM_TELEGRAM_SCRIPT,
+        env_file: str | Path = ENV_FILE,
         auto_worker_script: str | Path = AUTO_WORKER_SCRIPT,
         parallel_supervisor_script: str | Path = PARALLEL_SUPERVISOR_SCRIPT,
         api_status_timeout: float = DEFAULT_API_STATUS_TIMEOUT,
@@ -62,6 +66,8 @@ class ServerManager:
         self.log_path = self.state_dir / "api_server.log"
         self.telegram_pid_path = self.state_dir / "telegram_bot.pid"
         self.telegram_log_path = self.state_dir / "telegram_bot.log"
+        self.crm_telegram_pid_path = self.state_dir / "crm_telegram_bot.pid"
+        self.crm_telegram_log_path = self.state_dir / "crm_telegram_bot.log"
         self.auto_worker_pid_path = self.state_dir / "auto_learning_worker.pid"
         self.auto_worker_log_path = self.state_dir / "auto_learning_worker.log"
         self.parallel_supervisor_pid_path = self.state_dir / "parallel_agent_supervisor.pid"
@@ -71,14 +77,18 @@ class ServerManager:
         self.server_script = Path(server_script)
         self.telegram_script = Path(telegram_script)
         self.telegram_token_file = Path(telegram_token_file)
+        self.crm_telegram_script = Path(crm_telegram_script)
+        self.env_file = Path(env_file)
         self.auto_worker_script = Path(auto_worker_script)
         self.parallel_supervisor_script = Path(parallel_supervisor_script)
         self.process: subprocess.Popen | None = None
         self.telegram_process: subprocess.Popen | None = None
+        self.crm_telegram_process: subprocess.Popen | None = None
         self.auto_worker_process: subprocess.Popen | None = None
         self.parallel_supervisor_process: subprocess.Popen | None = None
         self._log_handle = None
         self._telegram_log_handle = None
+        self._crm_telegram_log_handle = None
         self._auto_worker_log_handle = None
         self._parallel_supervisor_log_handle = None
 
@@ -99,6 +109,7 @@ class ServerManager:
             pid = self._adopt_external_api_process()
             managed = bool(pid and self._pid_running(pid))
         telegram = self._telegram_status()
+        crm_telegram = self._crm_telegram_status()
         auto_worker = self._auto_worker_status()
         parallel_supervisor = self._parallel_supervisor_status()
         return {
@@ -110,6 +121,10 @@ class ServerManager:
             "telegram_managed": telegram["managed"],
             "telegram_pid": telegram["pid"],
             "telegram_log_path": str(self.telegram_log_path),
+            "crm_telegram_configured": self._crm_telegram_configured(),
+            "crm_telegram_managed": crm_telegram["managed"],
+            "crm_telegram_pid": crm_telegram["pid"],
+            "crm_telegram_log_path": str(self.crm_telegram_log_path),
             "auto_worker_available": self.auto_worker_script.exists(),
             "auto_worker_managed": auto_worker["managed"],
             "auto_worker_pid": auto_worker["pid"],
@@ -129,9 +144,10 @@ class ServerManager:
         current = self.status()
         if current["api_online"]:
             telegram = self._ensure_telegram_bot()
+            crm_telegram = self._ensure_crm_telegram_bot()
             auto_worker = self._ensure_auto_worker()
             parallel_supervisor = self._ensure_parallel_supervisor()
-            return {**current, "status": "already_running", **telegram, **auto_worker, **parallel_supervisor}
+            return {**current, "status": "already_running", **telegram, **crm_telegram, **auto_worker, **parallel_supervisor}
 
         env = os.environ.copy()
         env["EA_KB_NO_RELOADER"] = "1"
@@ -147,6 +163,7 @@ class ServerManager:
         self._write_pid(self.process.pid)
         api_online = self._wait_api()
         telegram = self._ensure_telegram_bot()
+        crm_telegram = self._ensure_crm_telegram_bot()
         auto_worker = self._ensure_auto_worker()
         parallel_supervisor = self._ensure_parallel_supervisor()
         return {
@@ -156,12 +173,14 @@ class ServerManager:
             "managed": True,
             "log_path": str(self.log_path),
             **telegram,
+            **crm_telegram,
             **auto_worker,
             **parallel_supervisor,
         }
 
     def stop(self) -> dict[str, Any]:
         telegram = self._stop_telegram_bot()
+        crm_telegram = self._stop_crm_telegram_bot()
         auto_worker = self._stop_auto_worker()
         parallel_supervisor = self._stop_parallel_supervisor()
         pid = self._read_pid()
@@ -171,6 +190,7 @@ class ServerManager:
                 "stopped": False,
                 "api_online": self._api_online(),
                 "telegram": telegram,
+                "crm_telegram": crm_telegram,
                 "auto_worker": auto_worker,
                 "parallel_supervisor": parallel_supervisor,
             }
@@ -197,6 +217,7 @@ class ServerManager:
             "pid": pid,
             "api_online": self._api_online(),
             "telegram": telegram,
+            "crm_telegram": crm_telegram,
             "auto_worker": auto_worker,
             "parallel_supervisor": parallel_supervisor,
         }
@@ -297,12 +318,7 @@ class ServerManager:
         return bool(os.environ.get("TELEGRAM_BOT_TOKEN")) or self.telegram_token_file.exists()
 
     def _telegram_status(self) -> dict[str, Any]:
-        pid = self._read_pid_from(self.telegram_pid_path)
-        managed = bool(pid and self._pid_running(pid))
-        if pid and not managed:
-            self._clear_pid_path(self.telegram_pid_path)
-            pid = None
-        return {"managed": managed, "pid": pid if managed else None}
+        return self._script_status(self.telegram_pid_path, self.telegram_script)
 
     def _ensure_telegram_bot(self) -> dict[str, Any]:
         if not self._telegram_configured():
@@ -364,21 +380,97 @@ class ServerManager:
         self._clear_pid_path(self.telegram_pid_path)
         return {"status": "stopped", "stopped": True, "pid": pid}
 
+    def _env_file_has_key(self, key: str) -> bool:
+        if not self.env_file.exists():
+            return False
+        prefix = f"{key}="
+        try:
+            for line in self.env_file.read_text(encoding="utf-8").splitlines():
+                stripped = line.strip()
+                if stripped and not stripped.startswith("#") and stripped.startswith(prefix):
+                    return bool(stripped.split("=", 1)[1].strip().strip('"\''))
+        except OSError:
+            return False
+        return False
+
+    def _crm_telegram_configured(self) -> bool:
+        return bool(os.environ.get("SALES_TELEGRAM_BOT_TOKEN")) or self._env_file_has_key("SALES_TELEGRAM_BOT_TOKEN")
+
+    def _crm_telegram_status(self) -> dict[str, Any]:
+        return self._script_status(self.crm_telegram_pid_path, self.crm_telegram_script)
+
+    def _ensure_crm_telegram_bot(self) -> dict[str, Any]:
+        if not self.crm_telegram_script.exists():
+            self._clear_pid_path(self.crm_telegram_pid_path)
+            return {
+                "crm_telegram_status": "unavailable",
+                "crm_telegram_pid": None,
+                "crm_telegram_managed": False,
+                "crm_telegram_log_path": str(self.crm_telegram_log_path),
+            }
+        if not self._crm_telegram_configured():
+            self._clear_pid_path(self.crm_telegram_pid_path)
+            return {
+                "crm_telegram_status": "unconfigured",
+                "crm_telegram_pid": None,
+                "crm_telegram_managed": False,
+                "crm_telegram_log_path": str(self.crm_telegram_log_path),
+            }
+
+        current = self._crm_telegram_status()
+        if current["managed"]:
+            return {
+                "crm_telegram_status": "already_running",
+                "crm_telegram_pid": current["pid"],
+                "crm_telegram_managed": True,
+                "crm_telegram_log_path": str(self.crm_telegram_log_path),
+            }
+
+        env = os.environ.copy()
+        env["PYTHONUNBUFFERED"] = "1"
+        self._crm_telegram_log_handle = self.crm_telegram_log_path.open("a", encoding="utf-8")
+        self.crm_telegram_process = subprocess.Popen(
+            [sys.executable, str(self.crm_telegram_script)],
+            cwd=str(self.crm_telegram_script.parent),
+            stdout=self._crm_telegram_log_handle,
+            stderr=subprocess.STDOUT,
+            env=env,
+        )
+        self._write_pid_to(self.crm_telegram_pid_path, self.crm_telegram_process.pid)
+        return {
+            "crm_telegram_status": "started",
+            "crm_telegram_pid": self.crm_telegram_process.pid,
+            "crm_telegram_managed": True,
+            "crm_telegram_log_path": str(self.crm_telegram_log_path),
+        }
+
+    def _stop_crm_telegram_bot(self) -> dict[str, Any]:
+        pid = self._read_pid_from(self.crm_telegram_pid_path)
+        if not pid:
+            return {"status": "not_running", "stopped": False}
+
+        if self.crm_telegram_process and self.crm_telegram_process.poll() is None:
+            self.crm_telegram_process.terminate()
+            try:
+                self.crm_telegram_process.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                self.crm_telegram_process.kill()
+                self.crm_telegram_process.wait(timeout=5)
+        elif self._pid_running(pid):
+            os.kill(pid, signal.SIGTERM)
+            deadline = time.time() + 5
+            while time.time() < deadline and self._pid_running(pid):
+                time.sleep(0.1)
+            if self._pid_running(pid):
+                os.kill(pid, signal.SIGTERM)
+
+        self._clear_pid_path(self.crm_telegram_pid_path)
+        return {"status": "stopped", "stopped": True, "pid": pid}
     def _auto_worker_status(self) -> dict[str, Any]:
-        pid = self._read_pid_from(self.auto_worker_pid_path)
-        managed = bool(pid and self._pid_running(pid))
-        if pid and not managed:
-            self._clear_pid_path(self.auto_worker_pid_path)
-            pid = None
-        return {"managed": managed, "pid": pid if managed else None}
+        return self._script_status(self.auto_worker_pid_path, self.auto_worker_script)
 
     def _parallel_supervisor_status(self) -> dict[str, Any]:
-        pid = self._read_pid_from(self.parallel_supervisor_pid_path)
-        managed = bool(pid and self._pid_running(pid))
-        if pid and not managed:
-            self._clear_pid_path(self.parallel_supervisor_pid_path)
-            pid = None
-        return {"managed": managed, "pid": pid if managed else None}
+        return self._script_status(self.parallel_supervisor_pid_path, self.parallel_supervisor_script)
 
     def _ensure_auto_worker(self) -> dict[str, Any]:
         if not self.auto_worker_script.exists():
@@ -507,6 +599,71 @@ class ServerManager:
 
     def _read_pid(self) -> int | None:
         return self._read_pid_from(self.pid_path)
+
+    def _script_status(self, pid_path: Path, script_path: Path) -> dict[str, Any]:
+        pid = self._read_pid_from(pid_path)
+        managed = bool(pid and self._pid_running(pid))
+        if pid and not managed:
+            self._clear_pid_path(pid_path)
+            pid = None
+        if not managed and script_path.exists() and self._can_adopt_script_process(script_path):
+            pid = self._find_process_pid_by_script(script_path)
+            managed = bool(pid and self._pid_running(pid))
+            if managed:
+                self._write_pid_to(pid_path, pid)
+        return {"managed": managed, "pid": pid if managed else None}
+
+    def _can_adopt_script_process(self, script_path: Path) -> bool:
+        return self.state_dir == DEFAULT_STATE_DIR or Path(script_path).parent != LEARNING_DIR
+
+    def _find_process_pid_by_script(self, script_path: str | Path) -> int | None:
+        needle = str(Path(script_path))
+        try:
+            import psutil  # type: ignore
+
+            script = Path(script_path)
+            script_name = script.name
+            script_parent = script.parent.resolve()
+            for proc in psutil.process_iter(["pid", "cmdline"]):
+                try:
+                    cmdline = proc.info.get("cmdline") or []
+                    if any(str(part) == needle for part in cmdline):
+                        return int(proc.info["pid"])
+                    if any(Path(str(part)).name == script_name for part in cmdline):
+                        try:
+                            if Path(proc.cwd()).resolve() == script_parent:
+                                return int(proc.info["pid"])
+                        except (psutil.NoSuchProcess, psutil.AccessDenied, OSError):
+                            continue
+                except (psutil.NoSuchProcess, psutil.AccessDenied):
+                    continue
+            return None
+        except Exception:
+            pass
+        if not sys.platform.startswith("win") or self.state_dir != DEFAULT_STATE_DIR:
+            return None
+        ps_needle = needle.replace("'", "''")
+        try:
+            result = subprocess.run(
+                [
+                    "powershell",
+                    "-NoProfile",
+                    "-Command",
+                    (
+                        f"$needle = '{ps_needle}'; "
+                        "Get-CimInstance Win32_Process | "
+                        "Where-Object { $_.CommandLine -and $_.CommandLine.Contains($needle) } | "
+                        "Select-Object -First 1 -ExpandProperty ProcessId"
+                    ),
+                ],
+                capture_output=True,
+                text=True,
+                timeout=5,
+            )
+            pid_text = result.stdout.strip().splitlines()[0] if result.stdout.strip() else ""
+            return int(pid_text) if pid_text else None
+        except Exception:
+            return None
 
     def _read_pid_from(self, path: Path) -> int | None:
         if not path.exists():
