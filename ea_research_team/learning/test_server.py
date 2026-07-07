@@ -7,6 +7,8 @@ from __future__ import annotations
 
 import json
 import io
+import os
+import time
 from pathlib import Path
 from unittest.mock import patch
 
@@ -866,6 +868,30 @@ def test_download_status_accepts_utf8_bom(tmp_path):
     assert data["running"] is True
     assert data["status"] == "Transcribing"
     assert data["percent"] == 12
+
+
+def test_download_status_marks_stale_running_file_idle(tmp_path):
+    status_path = tmp_path / "download_status.json"
+    status_path.write_text(json.dumps({
+        "running": True,
+        "status": "Transcribing",
+        "percent": 3,
+        "current_video_id": "old-video",
+    }), encoding="utf-8")
+    old_time = time.time() - 3600
+    os.utime(status_path, (old_time, old_time))
+    app = create_app({
+        "TESTING": True,
+        "DOWNLOAD_STATUS_PATH": str(status_path),
+        "DOWNLOAD_STATUS_STALE_SECONDS": 60,
+    })
+
+    data = app.test_client().get("/api/learning/download-status").get_json()
+
+    assert data["running"] is False
+    assert data["status"] == "Stale download status"
+    assert data["previous_status"] == "Transcribing"
+    assert data["previous_video_id"] == "old-video"
 
 
 def test_parallel_agent_status_reads_status_and_reports(tmp_path):

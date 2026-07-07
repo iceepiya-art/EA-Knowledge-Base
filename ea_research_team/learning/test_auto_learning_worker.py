@@ -153,3 +153,25 @@ def test_tick_respects_cooldown_between_actions(tmp_path):
     assert first["action"] == "youtube_batch"
     assert second["action"] == "cooldown"
     assert runner.call_count == 1
+
+
+def test_write_status_retries_drivefs_replace_lock(tmp_path, monkeypatch):
+    api = FakeApi()
+    config = WorkerConfig(workspace_root=tmp_path, state_dir=tmp_path / "state", cooldown_seconds=0)
+    worker = AutoLearningWorker(config, api=api, runner=Mock(), now=lambda: 100.0)
+    original_replace = Path.replace
+    calls = {"count": 0}
+
+    def flaky_replace(self, target):
+        calls["count"] += 1
+        if calls["count"] == 1:
+            raise PermissionError("DriveFS locked status file")
+        return original_replace(self, target)
+
+    monkeypatch.setattr(Path, "replace", flaky_replace)
+
+    worker._write_status({"action": "probe"})
+
+    assert calls["count"] == 2
+    assert worker.status_path.exists()
+    assert "probe" in worker.status_path.read_text(encoding="utf-8")

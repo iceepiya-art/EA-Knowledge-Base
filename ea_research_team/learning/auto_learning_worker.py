@@ -214,9 +214,23 @@ class AutoLearningWorker:
             "updated_at": _now_iso(),
             **result,
         }
-        tmp = self.status_path.with_suffix(".tmp")
-        tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
-        tmp.replace(self.status_path)
+        content = json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True)
+        last_error: OSError | None = None
+        for attempt in range(3):
+            tmp = self.status_path.with_name(f"{self.status_path.name}.{os.getpid()}.{attempt}.tmp")
+            try:
+                tmp.write_text(content, encoding="utf-8")
+                tmp.replace(self.status_path)
+                return
+            except OSError as exc:
+                last_error = exc
+                try:
+                    tmp.unlink(missing_ok=True)
+                except OSError:
+                    pass
+                time.sleep(0.2 * (attempt + 1))
+        if last_error:
+            raise last_error
 
 
 def main() -> int:

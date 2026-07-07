@@ -2411,6 +2411,18 @@ def create_app(config: dict | None = None) -> Flask:
             return _json({"running": False, "status": "Not Running", "percent": 0})
         try:
             state = json.loads(status_path.read_text(encoding="utf-8-sig"))
+            stale_seconds = int(app.config.get("DOWNLOAD_STATUS_STALE_SECONDS", 6 * 60 * 60))
+            if state.get("running") and stale_seconds > 0:
+                age_seconds = max(0, time.time() - status_path.stat().st_mtime)
+                if age_seconds > stale_seconds:
+                    return _json({
+                        "running": False,
+                        "status": "Stale download status",
+                        "percent": 0,
+                        "previous_status": state.get("status"),
+                        "previous_video_id": state.get("current_video_id"),
+                        "stale_age_seconds": int(age_seconds),
+                    })
             return _json(state)
         except Exception:
             return _json({"running": False, "status": "Error reading status", "percent": 0})
