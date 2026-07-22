@@ -12,6 +12,7 @@ def test_home_ftmo_preflight_is_read_only_and_never_starts_trading():
     assert 'if not exist "%ROOT%.env"' in text
     assert "terminal64.exe" in text
     assert "http://127.0.0.1:5000/dashboard" in text
+    assert "pause" in text
     assert "1_START_TRADING_NOW.bat" not in text
     assert "START_MASTER_TRADING_CYCLE.bat" not in text
     assert "START_MASTER_MINIMAL.bat" not in text
