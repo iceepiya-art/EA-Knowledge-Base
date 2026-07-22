@@ -1,11 +1,14 @@
 .env
 .env.secret
+home_runtime.env
+reports/home_deploy/
 logs/
 scratch/
 __pycache__/
 *.pyc
 .gemini/
 *.md
+!tools/home_deploy/README.md
 !AUTOSAVE_TO_GitHub.md
 !NEXT_TASK.md
 ea_research_team/learning/telegram_token.txt
