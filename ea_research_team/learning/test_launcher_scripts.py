@@ -39,7 +39,40 @@ def test_stop_launcher_stops_api_and_manager_port():
 
     assert "/api/manager/stop" in text
     assert "LocalPort 5050" in text
+    assert "LocalPort 5000" in text
     assert "Stop-Process" in text
+
+
+def test_backend_launcher_is_root_relative_not_drive_hardcoded():
+    text = (ROOT / "Start_EA_Backend.bat").read_text(encoding="utf-8")
+
+    assert 'set "ROOT=%~dp0"' in text
+    assert 'set "LEARNING=%ROOT%ea_research_team\\learning"' in text
+    assert "g:\\My Drive" not in text.lower()
+
+
+def test_local_backend_launcher_prepares_runtime_copy():
+    text = (ROOT / "Start_EA_Backend_Local.bat").read_text(encoding="utf-8")
+
+    assert "ea_research_team.learning.local_runtime prepare" in text
+    assert "EA_KB_LOCAL_RUNTIME_ROOT" in text
+    assert 'call "%EA_KB_LOCAL_RUNTIME_ROOT%\\Start_EA_Backend.bat"' in text
+
+
+def test_migrate_launcher_stops_drive_backend_after_prepare_only():
+    text = (ROOT / "MIGRATE_TO_LOCAL_RUNTIME.bat").read_text(encoding="utf-8")
+
+    assert "local_runtime prepare" in text
+    assert "Local runtime preparation failed. Existing services were not stopped." in text
+    assert text.index("local_runtime prepare") < text.index("Stop_EA_Knowledge_Brain.bat")
+
+
+def test_migrate_launcher_stops_non_interactively():
+    migration = (ROOT / "MIGRATE_TO_LOCAL_RUNTIME.bat").read_text(encoding="utf-8")
+    stop = (ROOT / "Stop_EA_Knowledge_Brain.bat").read_text(encoding="utf-8")
+
+    assert 'set "EA_KB_NO_PAUSE=1"' in migration
+    assert "if not defined EA_KB_NO_PAUSE pause" in stop
 
 
 def test_master_trading_cycle_opens_dashboard_with_all_services():
@@ -75,10 +108,13 @@ def test_master_trading_cycle_uses_command_line_guards_not_window_titles():
 
 
 def test_dashboard_settings_loads_engine_status_panel():
-    text = (ROOT / "00_Dashboard" / "EA_Knowledge_Brain_Dashboard.html").read_text(encoding="utf-8")
+    dashboard_dir = ROOT / "00_Dashboard"
+    text = (dashboard_dir / "EA_Knowledge_Brain_Dashboard.html").read_text(encoding="utf-8")
+    script_text = (dashboard_dir / "test_1.js").read_text(encoding="utf-8")
 
     assert "Engine Status" in text
-    assert "/api/learning/engine-status" in text
-    assert "loadEngineStatus" in text
     assert "engine-video-status" in text
     assert "engine-ocr-status" in text
+    assert "test_1.js" in text
+    assert "loadEngineStatus" in script_text
+    assert "/api/learning/engine-status" in script_text
