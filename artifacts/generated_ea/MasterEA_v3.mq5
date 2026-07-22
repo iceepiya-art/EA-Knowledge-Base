@@ -28,7 +28,6 @@ input ENUM_ACCOUNT_RISK_PROFILE AccountRiskProfile = ACCOUNT_PROFILE_PERSONAL;
 input long      ExpectedAccountLogin = 0; // 0 disables the login lock
 input double    PersonalEquityFloor = 0.0; // 0 disables personal floor
 input double    FTMOInitialBalance = 0.0; // Required for FTMO 2-Step
-input double    FTMODailyResetBalance = 0.0; // Balance recorded at 00:00 CE(S)T
 input double    FTMOSafetyBufferPercent = 20.0; // Block before the 5%% daily / 10%% max limit
 input double    FTMODailyInternalLossPercent = 4.0; // Internal stop, stricter than FTMO 5%%
 input bool      EnableFTMORiskLadder = true;
@@ -64,8 +63,10 @@ input int       RRStepTrailOffset   = 2;    // Locked R = achieved R - 2
 
 input group "=== Grid / Recovery Mechanics (DEACTIVATED) ==="
 input int       AutoGridStepPoints  = 250;  
-input bool      EnableAutoGrid      = false; // DISABLED for Prop Firm compliance
-input bool      AllowRecoveryScaling = false; // NEVER scale into a losing position in prop forward tests
+// Grid and loss-recovery scaling are intentionally unavailable in this FTMO EA.
+// Keeping these as constants prevents an input change from re-enabling either path.
+const bool      EnableAutoGrid      = false;
+const bool      AllowRecoveryScaling = false;
 input int       MaxGridSteps        = 7;    
 
 // Strategy Parameters (Updated Dynamically from /api/strategy/daily)
@@ -89,35 +90,95 @@ double legacy_highest_usd_profit = 0;
 
 int h_atr;
 
+// FTMO's daily-loss day changes at midnight in Prague time (CET/CEST), not
+// at the broker's server midnight.  The two variables form one persistent
+// transaction: date key first, then the balance captured for that date.
+string FTMOResetKeyPrefix()
+  {
+   return "MasterEA_v3_FTMO_reset_" + (string)AccountInfoInteger(ACCOUNT_LOGIN) + "_";
+  }
+
+int LastSundayOfMonth(const int year,const int month)
+  {
+   MqlDateTime d;
+   d.year=year; d.mon=month+1; d.day=1; d.hour=0; d.min=0; d.sec=0;
+   if(month==12) { d.year=year+1; d.mon=1; }
+   datetime first_next=StructToTime(d);
+   datetime last_day=first_next-86400;
+   return TimeDay(last_day)-TimeDayOfWeek(last_day);
+  }
+
+// EU DST: 01:00 UTC on the final Sunday of March through 01:00 UTC on the
+// final Sunday of October.  Using UTC makes this independent of MT5 broker time.
+bool IsCentralEuropeSummerTime(const datetime utc)
+  {
+   MqlDateTime d; TimeToStruct(utc,d);
+   int march_day=LastSundayOfMonth(d.year,3);
+   int october_day=LastSundayOfMonth(d.year,10);
+   MqlDateTime start; start.year=d.year; start.mon=3; start.day=march_day; start.hour=1; start.min=0; start.sec=0;
+   MqlDateTime finish; finish.year=d.year; finish.mon=10; finish.day=october_day; finish.hour=1; finish.min=0; finish.sec=0;
+   return (utc>=StructToTime(start) && utc<StructToTime(finish));
+  }
+
+datetime CentralEuropeNow()
+  {
+   datetime utc=TimeGMT();
+   return utc+(IsCentralEuropeSummerTime(utc) ? 2*3600 : 3600);
+  }
+
+double FTMODailyResetBalance=0.0;
+int FTMODailyResetDateKey=0;
+
+bool RefreshFTMODailyReset(string &reason)
+  {
+   reason="";
+   if(AccountRiskProfile!=ACCOUNT_PROFILE_FTMO_2STEP) return true;
+   MqlDateTime ce; TimeToStruct(CentralEuropeNow(),ce);
+   int date_key=ce.year*10000+ce.mon*100+ce.day;
+   string day_key=FTMOResetKeyPrefix()+"date";
+   string balance_key=FTMOResetKeyPrefix()+"balance";
+   double stored_date=0.0,stored_balance=0.0;
+   bool have_date=GlobalVariableGet(day_key,stored_date);
+   bool have_balance=GlobalVariableGet(balance_key,stored_balance);
+   if(have_date && have_balance && (int)stored_date==date_key && stored_balance>0.0)
+     { FTMODailyResetDateKey=date_key; FTMODailyResetBalance=stored_balance; return true; }
+   // First timer/tick after CE(S)T midnight records the balance automatically.
+   double balance=AccountInfoDouble(ACCOUNT_BALANCE);
+   if(balance<=0.0 || GlobalVariableSet(balance_key,balance)==0 || GlobalVariableSet(day_key,(double)date_key)==0)
+     { reason="ftmo_daily_reset_persistence_failed"; return false; }
+   FTMODailyResetDateKey=date_key;
+   FTMODailyResetBalance=balance;
+   Print("FTMO CE(S)T daily reset recorded. date=",date_key," balance=",DoubleToString(balance,2));
+   return true;
+  }
+
 bool CanOpenNewTrade(string &reason)
   {
    reason = "";
    long login = AccountInfoInteger(ACCOUNT_LOGIN);
-   if(ExpectedAccountLogin > 0 && login != ExpectedAccountLogin)
+   if(AccountRiskProfile != ACCOUNT_PROFILE_FTMO_2STEP)
+     { reason="account_risk_profile_must_be_ftmo_2step"; return false; }
+   if(ExpectedAccountLogin <= 0 || login != ExpectedAccountLogin)
      {
       reason = StringFormat("account_lock_mismatch expected=%I64d actual=%I64d", ExpectedAccountLogin, login);
       return false;
      }
    double equity = AccountInfoDouble(ACCOUNT_EQUITY);
-   if(AccountRiskProfile == ACCOUNT_PROFILE_TOPSTEP)
-     {
-      reason = "topstep_profile_requires_topstepx_api_guard";
-      return false; // Topstep orders must not be routed through MT5 MasterEA.
-     }
-   if(AccountRiskProfile == ACCOUNT_PROFILE_PERSONAL)
-     {
-      if(PersonalEquityFloor > 0.0 && equity <= PersonalEquityFloor)
-        { reason = "personal_equity_floor_reached"; return false; }
-      return true;
-     }
-   if(FTMOInitialBalance <= 0.0 || FTMODailyResetBalance <= 0.0)
+   if(FTMOInitialBalance <= 0.0)
      { reason = "ftmo_profile_not_configured"; return false; }
+   if(!RefreshFTMODailyReset(reason) || FTMODailyResetBalance<=0.0)
+     return false;
    double daily_floor = FTMODailyResetBalance - FTMOInitialBalance * (FTMODailyInternalLossPercent / 100.0);
    double max_floor = FTMOInitialBalance * 0.90;
-   double remaining = MathMin(equity - daily_floor, equity - max_floor);
+   double daily_remaining=equity-daily_floor;
+   double max_remaining=equity-max_floor;
    double buffer = FTMOInitialBalance * 0.05 * MathMax(0.0, FTMOSafetyBufferPercent) / 100.0;
-   if(remaining <= 0.0) { reason = "ftmo_loss_limit_reached"; return false; }
-   if(remaining <= buffer) { reason = "ftmo_safety_buffer_reached"; return false; }
+   if(daily_remaining<=0.0) { reason="ftmo_internal_daily_loss_4pct_reached"; return false; }
+   if(max_remaining<=0.0) { reason="ftmo_maximum_loss_10pct_reached"; return false; }
+   if(max_remaining<=buffer) { reason="ftmo_maximum_loss_safety_buffer_reached"; return false; }
+   double next_risk=FTMORiskPercentForNextTrade();
+   if(next_risk<=0.0) { reason="ftmo_risk_ladder_12_consecutive_sl_reached"; return false; }
+   Print("FTMO preflight passed. reset_date=",FTMODailyResetDateKey," reset_balance=",DoubleToString(FTMODailyResetBalance,2)," daily_remaining=",DoubleToString(daily_remaining,2)," max_remaining=",DoubleToString(max_remaining,2)," next_risk_pct=",DoubleToString(next_risk,2));
    return true;
   }
 
@@ -285,7 +346,6 @@ void OnTick()
    }
 
    ManageTrades();
-   if (EnableAutoGrid) ManageAutoGrid();
   }
 
 //+------------------------------------------------------------------+
@@ -293,6 +353,9 @@ void OnTick()
 //+------------------------------------------------------------------+
 void OnTimer()
   {
+   string reset_reason;
+   if(AccountRiskProfile==ACCOUNT_PROFILE_FTMO_2STEP && !RefreshFTMODailyReset(reset_reason))
+      Print("FTMO fail-closed: ",reset_reason);
    // Check strategy every hour
    datetime currentTime = TimeCurrent();
    if(currentTime - lastStrategyCheckTime >= 3600)
@@ -724,10 +787,12 @@ void LogTradeResult(bool ok, string action, string signal_id, double lot, double
 double CalculateLotSize(string sym, double entry_price, double sl_price)
   {
    double effective_risk_percent = FTMORiskPercentForNextTrade();
-   if(effective_risk_percent <= 0) return 0.0;
+   if(effective_risk_percent <= 0)
+     { Print("FTMO risk decision: BLOCK next_risk_pct=0 reason=consecutive_sl_limit"); return 0.0; }
    double balance = AccountInfoDouble(ACCOUNT_BALANCE);
    double risk_amount = balance * (effective_risk_percent / 100.0);
    if(MaxRiskPerTradeDollar > 0.0) risk_amount = MathMin(risk_amount, MaxRiskPerTradeDollar);
+   Print("FTMO risk decision: next_risk_pct=",DoubleToString(effective_risk_percent,2)," risk_amount=",DoubleToString(risk_amount,2));
    double tick_value = SymbolInfoDouble(sym, SYMBOL_TRADE_TICK_VALUE);
    double tick_size = SymbolInfoDouble(sym, SYMBOL_TRADE_TICK_SIZE);
    if(tick_size == 0 || tick_value == 0 || sl_price == 0 || MathAbs(entry_price - sl_price) < tick_size) 
