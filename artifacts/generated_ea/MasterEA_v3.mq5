@@ -20,7 +20,7 @@ input group "=== API Configuration ==="
 input string    API_SERVER          = "http://127.0.0.1:5000"; 
 input int       WebRequestTimeoutMs = 10000;
 input int       MagicNumber         = 999;
-input double    RiskPercent         = 0.25; // PipFarm 5K forward-test ceiling
+input double    RiskPercent         = 0.20; // Base risk; FTMO ladder overrides when enabled
 input double    MaxRiskPerTradeDollar = 12.50; // 0.25% of a $5K evaluation
 
 input group "=== Account Lock / Risk Profile ==="
@@ -30,6 +30,13 @@ input double    PersonalEquityFloor = 0.0; // 0 disables personal floor
 input double    FTMOInitialBalance = 0.0; // Required for FTMO 2-Step
 input double    FTMODailyResetBalance = 0.0; // Balance recorded at 00:00 CE(S)T
 input double    FTMOSafetyBufferPercent = 20.0; // Block before the 5%% daily / 10%% max limit
+input double    FTMODailyInternalLossPercent = 4.0; // Internal stop, stricter than FTMO 5%%
+input bool      EnableFTMORiskLadder = true;
+input double    FTMORiskStep1 = 0.20;
+input double    FTMORiskStep2 = 0.25;
+input double    FTMORiskStep3 = 0.30;
+input double    FTMORiskStep4 = 0.35;
+input int       FTMOMaxConsecutiveSL = 12;
 
 input group "=== Prop Firm / Topstep Safety ==="
 input double    MaxDailyLossDollar  = 50.0;   // Internal buffer below PipFarm 5K daily loss
@@ -105,13 +112,34 @@ bool CanOpenNewTrade(string &reason)
      }
    if(FTMOInitialBalance <= 0.0 || FTMODailyResetBalance <= 0.0)
      { reason = "ftmo_profile_not_configured"; return false; }
-   double daily_floor = FTMODailyResetBalance - FTMOInitialBalance * 0.05;
+   double daily_floor = FTMODailyResetBalance - FTMOInitialBalance * (FTMODailyInternalLossPercent / 100.0);
    double max_floor = FTMOInitialBalance * 0.90;
    double remaining = MathMin(equity - daily_floor, equity - max_floor);
    double buffer = FTMOInitialBalance * 0.05 * MathMax(0.0, FTMOSafetyBufferPercent) / 100.0;
    if(remaining <= 0.0) { reason = "ftmo_loss_limit_reached"; return false; }
    if(remaining <= buffer) { reason = "ftmo_safety_buffer_reached"; return false; }
    return true;
+  }
+
+double FTMORiskPercentForNextTrade()
+  {
+   if(AccountRiskProfile != ACCOUNT_PROFILE_FTMO_2STEP || !EnableFTMORiskLadder) return RiskPercent;
+   int losses = 0;
+   if(!HistorySelect(TimeCurrent() - 30 * 86400, TimeCurrent())) return FTMORiskStep1;
+   for(int i = HistoryDealsTotal() - 1; i >= 0; --i)
+     {
+      ulong deal = HistoryDealGetTicket(i);
+      if((int)HistoryDealGetInteger(deal, DEAL_MAGIC) != MagicNumber) continue;
+      if(HistoryDealGetInteger(deal, DEAL_ENTRY) != DEAL_ENTRY_OUT) continue;
+      long reason = HistoryDealGetInteger(deal, DEAL_REASON);
+      if(reason == DEAL_REASON_TP) break;
+      if(reason == DEAL_REASON_SL) { losses++; if(losses >= FTMOMaxConsecutiveSL) return 0.0; continue; }
+      break;
+     }
+   if(losses <= 0) return FTMORiskStep1;
+   if(losses == 1) return FTMORiskStep2;
+   if(losses == 2) return FTMORiskStep3;
+   return FTMORiskStep4;
   }
 
 bool IsNativeUsdHighImpactNewsBlocked(string &reason)
@@ -695,9 +723,10 @@ void LogTradeResult(bool ok, string action, string signal_id, double lot, double
 
 double CalculateLotSize(string sym, double entry_price, double sl_price)
   {
-   if(RiskPercent <= 0) return 0.0;
+   double effective_risk_percent = FTMORiskPercentForNextTrade();
+   if(effective_risk_percent <= 0) return 0.0;
    double balance = AccountInfoDouble(ACCOUNT_BALANCE);
-   double risk_amount = balance * (RiskPercent / 100.0);
+   double risk_amount = balance * (effective_risk_percent / 100.0);
    if(MaxRiskPerTradeDollar > 0.0) risk_amount = MathMin(risk_amount, MaxRiskPerTradeDollar);
    double tick_value = SymbolInfoDouble(sym, SYMBOL_TRADE_TICK_VALUE);
    double tick_size = SymbolInfoDouble(sym, SYMBOL_TRADE_TICK_SIZE);

@@ -19,3 +19,13 @@ def test_masterea_fails_closed_for_unconfigured_ftmo_and_topstep_mt5_routing():
     assert "ftmo_profile_not_configured" in text
     assert "topstep_profile_requires_topstepx_api_guard" in text
     assert "Signal rejected: account risk guard" in text
+
+
+def test_masterea_has_ftmo_recovery_ladder_and_four_percent_internal_stop():
+    text = SOURCE.read_text(encoding="utf-8")
+    assert "FTMODailyInternalLossPercent = 4.0" in text
+    assert "FTMORiskStep1 = 0.20" in text
+    assert "FTMORiskStep4 = 0.35" in text
+    assert "FTMOMaxConsecutiveSL = 12" in text
+    assert "DEAL_REASON_TP" in text
+    assert "DEAL_REASON_SL" in text
