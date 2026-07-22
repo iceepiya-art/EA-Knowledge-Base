@@ -2431,6 +2431,27 @@ def create_app(config: dict | None = None) -> Flask:
     def get_parallel_agent_status():
         return _json(_parallel_agent_status(app))
 
+    # MasterEA v3 polls this local endpoint. Keep the contract independent of
+    # dashboard state so a missing signal fails safe as HOLD/no action.
+    @app.route("/api/signals/latest", methods=["GET"])
+    def get_latest_signal():
+        symbol = (request.args.get("symbol") or "").strip()
+        signal_path = Path(app.config.get("SIGNAL_FILE", Path(__file__).with_name("latest_signal.json")))
+        if not signal_path.exists():
+            return _json({"status": "ok", "signal": None})
+        try:
+            payload = json.loads(signal_path.read_text(encoding="utf-8-sig"))
+        except (OSError, json.JSONDecodeError) as exc:
+            return _err(f"Unable to read latest signal: {exc}", 500)
+        if not symbol:
+            return _json({"status": "ok", "signal": payload})
+        signal = None
+        if isinstance(payload, dict):
+            if isinstance(payload.get(symbol), dict):
+                signal = payload[symbol]
+            elif str(payload.get("symbol", "")) == symbol:
+                signal = payload
+        return _json({"status": "ok", "signal": signal})
     return app
 
 
