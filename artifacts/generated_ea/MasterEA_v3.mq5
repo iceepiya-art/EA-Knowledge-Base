@@ -305,6 +305,12 @@ void FetchSignal()
          Print("Signal rejected: circuit breaker active. signal_id=", signalId);
          return;
         }
+      string account_reason;
+      if(!CanOpenNewTrade(account_reason))
+        {
+         Print("Signal rejected: account risk guard. reason=", account_reason, " signal_id=", signalId);
+         return;
+        }
        
       MqlDateTime dt;
       TimeCurrent(dt);
@@ -739,12 +745,6 @@ void BroadcastSignal(string type, double sl, double tp) {
             } else {
                 SocketClose(socket);
             }
-        }
-      string account_reason;
-      if(!CanOpenNewTrade(account_reason))
-        {
-         Print("Signal rejected: account risk guard. reason=", account_reason, " signal_id=", signalId);
-         return;
         }
         if(attempt < 3) Sleep(150);
     }
