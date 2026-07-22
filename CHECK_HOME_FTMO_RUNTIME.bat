@@ -51,9 +51,13 @@ if errorlevel 1 (
 echo.
 if "%FAILED%"=="1" (
   echo [BLOCKED] Resolve the failed checks before using the runtime.
+  echo.
+  pause
   exit /b 1
 )
 
 echo [OK] Runtime preflight completed. No trading action was performed.
 echo Next: verify the FTMO account in MT5, then attach the EA manually when you choose.
+echo.
+pause
 exit /b 0
