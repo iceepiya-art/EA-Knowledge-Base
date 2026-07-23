@@ -105,7 +105,9 @@ int LastSundayOfMonth(const int year,const int month)
    if(month==12) { d.year=year+1; d.mon=1; }
    datetime first_next=StructToTime(d);
    datetime last_day=first_next-86400;
-   return TimeDay(last_day)-TimeDayOfWeek(last_day);
+   MqlDateTime last;
+   TimeToStruct(last_day,last);
+   return last.day-last.day_of_week;
   }
 
 // EU DST: 01:00 UTC on the final Sunday of March through 01:00 UTC on the
