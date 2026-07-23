@@ -1132,6 +1132,33 @@ def create_app(config: dict | None = None) -> Flask:
     app = Flask(__name__)
     if config:
         app.config.update(config)
+    active_symbols_lock = threading.Lock()
+
+    def record_active_symbol(symbol: str) -> None:
+        """Record the EA polling heartbeat for the local trading-cycle scanner.
+
+        MasterEA polls ``/api/signals/latest`` once per second.  The runner
+        must treat that poll as the authoritative local registration; otherwise
+        it waits forever even though the EA is attached and reachable.
+        """
+        symbol = str(symbol or "").strip()
+        if not symbol:
+            return
+        registry_path = Path(app.config.get("ACTIVE_SYMBOLS_FILE", Path(__file__).with_name("active_symbols.json")))
+        with active_symbols_lock:
+            registry: dict[str, Any] = {}
+            try:
+                if registry_path.exists():
+                    loaded = json.loads(registry_path.read_text(encoding="utf-8-sig"))
+                    if isinstance(loaded, dict):
+                        registry = loaded
+            except (OSError, json.JSONDecodeError):
+                registry = {}
+            registry[symbol] = {"last_seen": time.time()}
+            temp_path = registry_path.with_suffix(registry_path.suffix + ".tmp")
+            registry_path.parent.mkdir(parents=True, exist_ok=True)
+            temp_path.write_text(json.dumps(registry, ensure_ascii=False), encoding="utf-8")
+            os.replace(temp_path, registry_path)
 
     # ------------------------------------------------------------------ #
     # OPTIONS pre-flight for all routes
@@ -2436,6 +2463,7 @@ def create_app(config: dict | None = None) -> Flask:
     @app.route("/api/signals/latest", methods=["GET"])
     def get_latest_signal():
         symbol = (request.args.get("symbol") or "").strip()
+        record_active_symbol(symbol)
         signal_path = Path(app.config.get("SIGNAL_FILE", Path(__file__).with_name("latest_signal.json")))
         if not signal_path.exists():
             return _json({"status": "ok", "signal": None})
