@@ -38,8 +38,8 @@ input double    FTMORiskStep4 = 0.35;
 input int       FTMOMaxConsecutiveSL = 12;
 
 input group "=== Prop Firm / Topstep Safety ==="
-input double    MaxDailyLossDollar  = 50.0;   // Internal buffer below PipFarm 5K daily loss
-input double    MaxDailyProfitDollar = 75.0;  // Spread profit across days for consistency
+input double    MaxDailyLossDollar  = 0.0;    // 0 disables this legacy broker-day circuit breaker; FTMO 4%% guard remains active
+input double    MaxDailyProfitDollar = 0.0;   // 0 disables this optional broker-day profit stop
 input int       MaxOpenPositionsPerSymbol = 1;
 input int       MaxSpreadPoints     = 50;      // Skip signals if spread is > 50 points
 input int       StartTradingHour    = 14;      // Avoid Asian Session (e.g. 14 = London Open)
@@ -335,12 +335,12 @@ void OnTick()
        double current_equity = AccountInfoDouble(ACCOUNT_EQUITY);
        double daily_pnl = current_equity - StartOfDayBalance;
        
-       if (daily_pnl <= -MaxDailyLossDollar) {
+       if (MaxDailyLossDollar > 0.0 && daily_pnl <= -MaxDailyLossDollar) {
            Print("CIRCUIT BREAKER HIT (MT5): Daily Loss Limit breached (-$", MaxDailyLossDollar, ")! Closing scoped EA positions only.");
            HaltTradingForDay = true;
            CloseScopedPositions("daily_loss_circuit_breaker");
        }
-       else if (daily_pnl >= MaxDailyProfitDollar) {
+       else if (MaxDailyProfitDollar > 0.0 && daily_pnl >= MaxDailyProfitDollar) {
            Print("PROFIT TARGET HIT (MT5): Daily Profit Target reached (+$", MaxDailyProfitDollar, ")! Closing scoped EA positions only.");
            HaltTradingForDay = true;
            CloseScopedPositions("daily_profit_circuit_breaker");
