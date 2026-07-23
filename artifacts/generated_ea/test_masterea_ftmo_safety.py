@@ -53,6 +53,11 @@ def test_preflight_enforces_daily_and_maximum_loss_fail_closed():
     assert "GlobalVariableSet(balance_key,balance)==0" in SOURCE
 
 
+def test_zero_legacy_dollar_limits_do_not_trip_the_ftmo_circuit_breaker():
+    assert "MaxDailyLossDollar > 0.0 && daily_pnl <= -MaxDailyLossDollar" in SOURCE
+    assert "MaxDailyProfitDollar > 0.0 && daily_pnl >= MaxDailyProfitDollar" in SOURCE
+
+
 def test_signal_endpoint_is_200_with_no_signal_and_unknown_path_is_404(tmp_path):
     app = create_app({"TESTING": True, "SIGNAL_FILE": str(tmp_path / "no_signal.json")})
     client = app.test_client()
