@@ -158,6 +158,10 @@ bool CanOpenNewTrade(string &reason)
   {
    reason = "";
    long login = AccountInfoInteger(ACCOUNT_LOGIN);
+   // Topstep execution is deliberately owned by the TopstepX API executor.
+   // Never allow an MT5-attached EA to open a Topstep-profile trade.
+   if(AccountRiskProfile == ACCOUNT_PROFILE_TOPSTEP)
+     { reason="topstep_profile_requires_topstepx_api_guard"; return false; }
    if(AccountRiskProfile != ACCOUNT_PROFILE_FTMO_2STEP)
      { reason="account_risk_profile_must_be_ftmo_2step"; return false; }
    if(ExpectedAccountLogin <= 0 || login != ExpectedAccountLogin)
